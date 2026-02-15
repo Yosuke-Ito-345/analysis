@@ -1182,6 +1182,13 @@ HB.instance Definition _ f g := max_mfun_subproof f g.
 
 Definition max_mfun f g : {mfun aT >-> _} := f \max g.
 
+Lemma min_mfun_subproof f g : @isMeasurableFun d _ aT rT (f \min g).
+Proof. by split; apply: measurable_minr. Qed.
+
+HB.instance Definition _ f g := min_mfun_subproof f g.
+
+Definition min_mfun f g : {mfun aT >-> _} := f \min g.
+
 End ring.
 Arguments indic_mfun {d aT rT} _.
 (* TODO: move earlier?*)
