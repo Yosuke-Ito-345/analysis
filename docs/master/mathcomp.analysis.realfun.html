@@ -79,6 +79,20 @@
           </ul>
           </details>
           </li>
+<li><details id="mathcomp.analysis.probability_theory"><summary>probability_theory</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.probability_theory.bernoulli_distribution.html">bernoulli_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.beta_distribution.html">beta_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.binomial_distribution.html">binomial_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.exponential_distribution.html">exponential_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.normal_distribution.html">normal_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.poisson_distribution.html">poisson_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.probability.html">probability</a></li>
+<li><a href="mathcomp.analysis.probability_theory.random_variable.html">random_variable</a></li>
+<li><a href="mathcomp.analysis.probability_theory.uniform_distribution.html">uniform_distribution</a></li>
+          </ul>
+          </details>
+          </li>
 <li><details id="mathcomp.analysis.showcase"><summary>showcase</summary>
           <ul>
           <li><a href="mathcomp.analysis.showcase.pnt.html">pnt</a></li>
@@ -92,6 +106,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
 <li><a href="mathcomp.analysis.topology_theory.nat_topology.html">nat_topology</a></li>
@@ -134,7 +149,6 @@
 <li><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></li>
 <li><a href="mathcomp.analysis.numfun.html">numfun</a></li>
 <li><a href="mathcomp.analysis.pi_irrational.html">pi_irrational</a></li>
-<li><a href="mathcomp.analysis.probability.html">probability</a></li>
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
@@ -284,7 +298,7 @@ exists M0 : R,
   M0 \is Num.real /\
   (forall x : R, (M0 < x)%R -> ([eta +%R M] @^-1` t)%classic x)
 
-Arguments cvg_addrl {R} M%ring_scope [t] _
+Arguments cvg_addrl {R} M%_ring_scope [t] _
 cvg_addrl is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvg_addrl
 Declared in library mathcomp.analysis.realfun, line 63, characters 6-15
@@ -310,7 +324,7 @@ exists M0 : R,
   M0 \is Num.real /\
   (forall x : R, (M0 < x)%R -> (+%R^~ M @^-1` t)%classic x)
 
-Arguments cvg_addrr {R} M%ring_scope [t] _
+Arguments cvg_addrr {R} M%_ring_scope [t] _
 cvg_addrr is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvg_addrr
 Declared in library mathcomp.analysis.realfun, line 71, characters 6-15
@@ -333,7 +347,7 @@ exists M0 : R,
   M0 \is Num.real /\
   (forall x : R, (x < M0)%R -> (+%R^~ M @^-1` t)%classic x)
 
-Arguments cvg_addrr_Ny {R} M%ring_scope [t] _
+Arguments cvg_addrr_Ny {R} M%_ring_scope [t] _
 cvg_addrr_Ny is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvg_addrr_Ny
 Declared in library mathcomp.analysis.realfun, line 74, characters 6-18
@@ -359,7 +373,7 @@ exists M0 : R,
   M0 \is Num.real /\
   (forall x : R, (x < M0)%R -> ([eta +%R M] @^-1` t)%classic x)
 
-Arguments cvg_addrl_Ny {R} M%ring_scope [t] _
+Arguments cvg_addrl_Ny {R} M%_ring_scope [t] _
 cvg_addrl_Ny is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvg_addrl_Ny
 Declared in library mathcomp.analysis.realfun, line 81, characters 6-18
@@ -375,7 +389,7 @@ forall {R : realFieldType} (M : R) [T : topologicalType] (f : R -> T) (l : T),
 (f r @[r --> +oo%R] --> l)%classic
 
 cvg_centerr is not universe polymorphic
-Arguments cvg_centerr {R} M%ring_scope [T] f%function_scope l
+Arguments cvg_centerr {R} M%_ring_scope [T] f%_function_scope l
 cvg_centerr is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvg_centerr
 Declared in library mathcomp.analysis.realfun, line 85, characters 6-17
@@ -397,7 +411,7 @@ forall {R : realFieldType} (M : R) [T : topologicalType] (f : R -> T) (l : T),
 (f r @[r --> +oo%R] --> l)%classic
 
 cvg_shiftr is not universe polymorphic
-Arguments cvg_shiftr {R} M%ring_scope [T] f%function_scope l
+Arguments cvg_shiftr {R} M%_ring_scope [T] f%_function_scope l
 cvg_shiftr is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvg_shiftr
 Declared in library mathcomp.analysis.realfun, line 96, characters 6-16
@@ -418,7 +432,7 @@ forall {R : realFieldType} {T : topologicalType} (f : R -> T) (x : R),
 (f x @[x --> x] --> f x)%classic
 
 left_right_continuousP is not universe polymorphic
-Arguments left_right_continuousP {R T} f%function_scope x%ring_scope
+Arguments left_right_continuousP {R T} f%_function_scope x%_ring_scope
 left_right_continuousP is opaque
 Expands to: Constant mathcomp.analysis.realfun.left_right_continuousP
 Declared in library mathcomp.analysis.realfun, line 105, characters 6-28
@@ -461,8 +475,8 @@ exists2 i : R,
           is_true (y != p)) t0 ->
          ([eta f] @^-1` t) t0))%classic
 
-Arguments cvg_at_right_left_dnbhs {R} [f]%function_scope 
-  [p l]%ring_scope _ _ [t] _
+Arguments cvg_at_right_left_dnbhs {R} [f]%_function_scope 
+  [p l]%_ring_scope _ _ [t] _
 cvg_at_right_left_dnbhs is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvg_at_right_left_dnbhs
 Declared in library mathcomp.analysis.realfun, line 117, characters 6-29
@@ -501,7 +515,7 @@ forall {R : realType} (f : R -> R) (p l : R),
  (f (u n) @[n --> \oo] --> l)%classic)
 
 cvg_at_rightP is not universe polymorphic
-Arguments cvg_at_rightP {R} f%function_scope (p l)%ring_scope
+Arguments cvg_at_rightP {R} f%_function_scope (p l)%_ring_scope
 cvg_at_rightP is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvg_at_rightP
 Declared in library mathcomp.analysis.realfun, line 142, characters 6-19
@@ -551,7 +565,7 @@ forall {R : realType} (f : R -> R) (p l : R),
  (f (u n) @[n --> \oo] --> l)%classic)
 
 cvg_at_leftP is not universe polymorphic
-Arguments cvg_at_leftP {R} f%function_scope (p l)%ring_scope
+Arguments cvg_at_leftP {R} f%_function_scope (p l)%_ring_scope
 cvg_at_leftP is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvg_at_leftP
 Declared in library mathcomp.analysis.realfun, line 178, characters 6-18
@@ -578,7 +592,7 @@ forall {R : realType} (f : R -> R) (p l : R),
  (f (u n) @[n --> \oo] --> l)%classic)
 
 cvgr_dnbhsP is not universe polymorphic
-Arguments cvgr_dnbhsP {R} f%function_scope (p l)%ring_scope
+Arguments cvgr_dnbhsP {R} f%_function_scope (p l)%_ring_scope
 cvgr_dnbhsP is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvgr_dnbhsP
 Declared in library mathcomp.analysis.realfun, line 191, characters 6-17
@@ -610,7 +624,7 @@ forall {R : realType} (f : R -> \bar R) (p l : R),
  (f (u n) @[n --> \oo] --> l%:E)%classic)
 
 cvge_at_rightP is not universe polymorphic
-Arguments cvge_at_rightP {R} f%function_scope (p l)%ring_scope
+Arguments cvge_at_rightP {R} f%_function_scope (p l)%_ring_scope
 cvge_at_rightP is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvge_at_rightP
 Declared in library mathcomp.analysis.realfun, line 209, characters 6-20
@@ -655,7 +669,7 @@ forall {R : realType} (f : R -> \bar R) (p l : R),
  (f (u n) @[n --> \oo] --> l%:E)%classic)
 
 cvge_at_leftP is not universe polymorphic
-Arguments cvge_at_leftP {R} f%function_scope (p l)%ring_scope
+Arguments cvge_at_leftP {R} f%_function_scope (p l)%_ring_scope
 cvge_at_leftP is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvge_at_leftP
 Declared in library mathcomp.analysis.realfun, line 240, characters 6-19
@@ -685,7 +699,7 @@ forall {R : realType} (f : R -> R) (l : R),
  (u n @[n --> \oo] --> +oo%R)%classic -> (f (u n) @[n --> \oo] --> l)%classic)
 
 cvg_pinftyP is not universe polymorphic
-Arguments cvg_pinftyP {R} f%function_scope l%ring_scope
+Arguments cvg_pinftyP {R} f%_function_scope l%_ring_scope
 cvg_pinftyP is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvg_pinftyP
 Declared in library mathcomp.analysis.realfun, line 257, characters 6-17
@@ -718,7 +732,7 @@ forall {R : realType} (f : R -> R) (l : R),
  (u n @[n --> \oo] --> -oo%R)%classic -> (f (u n) @[n --> \oo] --> l)%classic)
 
 cvg_ninftyP is not universe polymorphic
-Arguments cvg_ninftyP {R} f%function_scope l%ring_scope
+Arguments cvg_ninftyP {R} f%_function_scope l%_ring_scope
 cvg_ninftyP is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvg_ninftyP
 Declared in library mathcomp.analysis.realfun, line 277, characters 6-17
@@ -748,7 +762,7 @@ forall {R : realType} (f : R -> \bar R) (l : \bar R),
  (u n @[n --> \oo] --> +oo%R)%classic -> (f (u n) @[n --> \oo] --> l)%classic)
 
 cvge_pinftyP is not universe polymorphic
-Arguments cvge_pinftyP {R} f%function_scope l%ereal_scope
+Arguments cvge_pinftyP {R} f%_function_scope l%_ereal_scope
 cvge_pinftyP is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvge_pinftyP
 Declared in library mathcomp.analysis.realfun, line 295, characters 6-18
@@ -780,7 +794,7 @@ forall {R : realType} (f : R -> \bar R) (l : \bar R),
  (u n @[n --> \oo] --> -oo%R)%classic -> (f (u n) @[n --> \oo] --> l)%classic)
 
 cvge_ninftyP is not universe polymorphic
-Arguments cvge_ninftyP {R} f%function_scope l%ereal_scope
+Arguments cvge_ninftyP {R} f%_function_scope l%_ereal_scope
 cvge_ninftyP is opaque
 Expands to: Constant mathcomp.analysis.realfun.cvge_ninftyP
 Declared in library mathcomp.analysis.realfun, line 315, characters 6-18
@@ -820,7 +834,7 @@ nbhs (sup (range f)) t ->
 exists M : R,
   M \is Num.real /\ (forall x : R, (M < x)%R -> ([eta f] @^-1` t)%classic x)
 
-Arguments nondecreasing_cvgr {R} [f]%function_scope _ _ [t] _
+Arguments nondecreasing_cvgr {R} [f]%_function_scope _ _ [t] _
 nondecreasing_cvgr is opaque
 Expands to: Constant mathcomp.analysis.realfun.nondecreasing_cvgr
 Declared in library mathcomp.analysis.realfun, line 334, characters 6-24
@@ -862,7 +876,7 @@ exists2 i : R,
    `<=` (fun t0 : R =>
          (fun u : R => is_true (a < u)%R) t0 -> ([eta f] @^-1` t) t0))%classic
 
-Arguments nonincreasing_at_right_cvgr {R} [f]%function_scope 
+Arguments nonincreasing_at_right_cvgr {R} [f]%_function_scope 
   [a b] _ _ _ [t] _
 nonincreasing_at_right_cvgr is opaque
 Expands to: Constant mathcomp.analysis.realfun.nonincreasing_at_right_cvgr
@@ -940,8 +954,8 @@ exists2 i : R,
    `<=` (fun t0 : R =>
          (fun u : R => is_true (a < u)%R) t0 -> ([eta f] @^-1` t) t0))%classic
 
-Arguments nonincreasing_at_right_is_cvgr {R} [f]%function_scope
-  [a]%ring_scope _ _ [t] _
+Arguments nonincreasing_at_right_is_cvgr {R} [f]%_function_scope
+  [a]%_ring_scope _ _ [t] _
 nonincreasing_at_right_is_cvgr is opaque
 Expands to: Constant mathcomp.analysis.realfun.nonincreasing_at_right_is_cvgr
 Declared in library mathcomp.analysis.realfun, line 397, characters 6-36
@@ -979,7 +993,7 @@ exists2 i : R,
    `<=` (fun t0 : R =>
          (fun u : R => is_true (a < u)%R) t0 -> ([eta f] @^-1` t) t0))%classic
 
-Arguments nondecreasing_at_right_cvgr {R} [f]%function_scope 
+Arguments nondecreasing_at_right_cvgr {R} [f]%_function_scope 
   [a b] _ _ _ [t] _
 nondecreasing_at_right_cvgr is opaque
 Expands to: Constant mathcomp.analysis.realfun.nondecreasing_at_right_cvgr
@@ -1028,8 +1042,8 @@ exists2 i : R,
    `<=` (fun t0 : R =>
          (fun u : R => is_true (a < u)%R) t0 -> ([eta f] @^-1` t) t0))%classic
 
-Arguments nondecreasing_at_right_is_cvgr {R} [f]%function_scope
-  [a]%ring_scope _ _ [t] _
+Arguments nondecreasing_at_right_is_cvgr {R} [f]%_function_scope
+  [a]%_ring_scope _ _ [t] _
 nondecreasing_at_right_is_cvgr is opaque
 Expands to: Constant mathcomp.analysis.realfun.nondecreasing_at_right_is_cvgr
 Declared in library mathcomp.analysis.realfun, line 425, characters 6-36
@@ -1069,8 +1083,8 @@ exists2 i : R,
    `<=` (fun t0 : R =>
          (fun u : R => is_true (u < a)%R) t0 -> ([eta f] @^-1` t) t0))%classic
 
-Arguments nondecreasing_at_left_is_cvgr {R} [f]%function_scope 
-  [a]%ring_scope _ _ [t] _
+Arguments nondecreasing_at_left_is_cvgr {R} [f]%_function_scope
+  [a]%_ring_scope _ _ [t] _
 nondecreasing_at_left_is_cvgr is opaque
 Expands to: Constant mathcomp.analysis.realfun.nondecreasing_at_left_is_cvgr
 Declared in library mathcomp.analysis.realfun, line 435, characters 6-35
@@ -1139,7 +1153,8 @@ x \in `]a, b[%R ->
 (lim (f x0 @[x0 --> x^'-])%classic <= lim (f x0 @[x0 --> x^'+])%classic)%R =
 true
 
-Arguments nondecreasing_at_left_at_right {R} [f]%function_scope [a b] _ [x] _
+Arguments nondecreasing_at_left_at_right {R} [f]%_function_scope 
+  [a b] _ [x] _
 nondecreasing_at_left_at_right is opaque
 Expands to: Constant mathcomp.analysis.realfun.nondecreasing_at_left_at_right
 Declared in library mathcomp.analysis.realfun, line 477, characters 6-36
@@ -1176,7 +1191,8 @@ x \in `]a, b[%R ->
 (lim (f x0 @[x0 --> x^'+])%classic <= lim (f x0 @[x0 --> x^'-])%classic)%R =
 true
 
-Arguments nonincreasing_at_left_at_right {R} [f]%function_scope [a b] _ [x] _
+Arguments nonincreasing_at_left_at_right {R} [f]%_function_scope 
+  [a b] _ [x] _
 nonincreasing_at_left_at_right is opaque
 Expands to: Constant mathcomp.analysis.realfun.nonincreasing_at_left_at_right
 Declared in library mathcomp.analysis.realfun, line 491, characters 6-36
@@ -1219,7 +1235,7 @@ nbhs (ereal_sup (R:=R) (range f)) t ->
 exists M : R,
   M \is Num.real /\ (forall x : R, (M < x)%R -> ([eta f] @^-1` t)%classic x)
 
-Arguments nondecreasing_cvge {R} [f]%function_scope _ [t] _
+Arguments nondecreasing_cvge {R} [f]%_function_scope _ [t] _
 nondecreasing_cvge is opaque
 Expands to: Constant mathcomp.analysis.realfun.nondecreasing_cvge
 Declared in library mathcomp.analysis.realfun, line 514, characters 6-24
@@ -1320,7 +1336,7 @@ nbhs (lim (f r @[r --> +oo%R])%classic) t ->
 exists M : R,
   M \is Num.real /\ (forall x : R, (M < x)%R -> ([eta f] @^-1` t)%classic x)
 
-Arguments nondecreasing_is_cvge {R} [f]%function_scope _ [t] _
+Arguments nondecreasing_is_cvge {R} [f]%_function_scope _ [t] _
 nondecreasing_is_cvge is opaque
 Expands to: Constant mathcomp.analysis.realfun.nondecreasing_is_cvge
 Declared in library mathcomp.analysis.realfun, line 595, characters 6-27
@@ -1339,7 +1355,7 @@ forall {R : realType} {f : R -> \bar R} {a : R} (b : itv_bound R),
                          [set f x | x in [set` Interval (BRight a) b]])%classic
 
 nondecreasing_at_right_cvge is not universe polymorphic
-Arguments nondecreasing_at_right_cvge {R} {f}%function_scope {a} b _ _ t _
+Arguments nondecreasing_at_right_cvge {R} {f}%_function_scope {a} b _ _ t _
 nondecreasing_at_right_cvge is opaque
 Expands to: Constant mathcomp.analysis.realfun.nondecreasing_at_right_cvge
 Declared in library mathcomp.analysis.realfun, line 599, characters 6-33
@@ -1517,8 +1533,8 @@ forall {R : realType} {f : R -> \bar R} {a : R},
 cvg (f x @[x --> a^'+])%classic
 
 nondecreasing_at_right_is_cvge is not universe polymorphic
-Arguments nondecreasing_at_right_is_cvge {R} {f}%function_scope
-  {a}%ring_scope _ t _
+Arguments nondecreasing_at_right_is_cvge {R} {f}%_function_scope
+  {a}%_ring_scope _ t _
 nondecreasing_at_right_is_cvge is opaque
 Expands to: Constant mathcomp.analysis.realfun.nondecreasing_at_right_is_cvge
 Declared in library mathcomp.analysis.realfun, line 763, characters 6-36
@@ -1548,7 +1564,7 @@ nbhs (ereal_inf (R:=R) (range f)) t ->
 exists M : R,
   M \is Num.real /\ (forall x : R, (M < x)%R -> ([eta f] @^-1` t)%classic x)
 
-Arguments nonincreasing_cvge {R} [f]%function_scope _ [t] _
+Arguments nonincreasing_cvge {R} [f]%_function_scope _ [t] _
 nonincreasing_cvge is opaque
 Expands to: Constant mathcomp.analysis.realfun.nonincreasing_cvge
 Declared in library mathcomp.analysis.realfun, line 772, characters 6-24
@@ -1569,7 +1585,7 @@ forall {R : realType} {f : R -> \bar R} {a : R} (b : itv_bound R),
                          [set f x | x in [set` Interval (BRight a) b]])%classic
 
 nonincreasing_at_right_cvge is not universe polymorphic
-Arguments nonincreasing_at_right_cvge {R} {f}%function_scope {a} b _ _ t _
+Arguments nonincreasing_at_right_cvge {R} {f}%_function_scope {a} b _ _ t _
 nonincreasing_at_right_cvge is opaque
 Expands to: Constant mathcomp.analysis.realfun.nonincreasing_at_right_cvge
 Declared in library mathcomp.analysis.realfun, line 779, characters 6-33
@@ -1598,8 +1614,8 @@ forall {R : realType} {f : R -> \bar R} {a : R},
 cvg (f x @[x --> a^'+])%classic
 
 nonincreasing_at_right_is_cvge is not universe polymorphic
-Arguments nonincreasing_at_right_is_cvge {R} {f}%function_scope
-  {a}%ring_scope _ t _
+Arguments nonincreasing_at_right_is_cvge {R} {f}%_function_scope
+  {a}%_ring_scope _ t _
 nonincreasing_at_right_is_cvge is opaque
 Expands to: Constant mathcomp.analysis.realfun.nonincreasing_at_right_is_cvge
 Declared in library mathcomp.analysis.realfun, line 794, characters 6-36
@@ -1630,7 +1646,7 @@ Declared in library mathcomp.analysis.realfun, line 794, characters 6-36
 <span class="vernacular">Definition</span><span class="id"> </span><span id="lime_sup" class="id"><a name="lime_sup" class="" title="lime_sup : forall [R : realType], (R -> \bar R) -> R -> \bar R
 
 lime_sup is not universe polymorphic
-Arguments lime_sup [R] f%function_scope a%ring_scope
+Arguments lime_sup [R] f%_function_scope a%_ring_scope
 lime_sup is transparent
 Expands to: Constant mathcomp.analysis.realfun.lime_sup
 Declared in library mathcomp.analysis.realfun, line 816, characters 11-19
@@ -1639,7 +1655,7 @@ Declared in library mathcomp.analysis.realfun, line 816, characters 11-19
 <span class="vernacular">Definition</span><span class="id"> </span><span id="lime_inf" class="id"><a name="lime_inf" class="" title="lime_inf : forall [R : realType], (R -> \bar R) -> R -> \bar R
 
 lime_inf is not universe polymorphic
-Arguments lime_inf [R] f%function_scope a%ring_scope
+Arguments lime_inf [R] f%_function_scope a%_ring_scope
 lime_inf is transparent
 Expands to: Constant mathcomp.analysis.realfun.lime_inf
 Declared in library mathcomp.analysis.realfun, line 818, characters 11-19
@@ -1707,7 +1723,7 @@ lim
     ereal_sup (R:=R) [set f0 x | x in ball a0 r `\ a0]) f a e @[e --> 0^'+])%classic
 
 lime_sup_lim is not universe polymorphic
-Arguments lime_sup_lim [R] f%function_scope a%ring_scope
+Arguments lime_sup_lim [R] f%_function_scope a%_ring_scope
 lime_sup_lim is opaque
 Expands to: Constant mathcomp.analysis.realfun.lime_sup_lim
 Declared in library mathcomp.analysis.realfun, line 861, characters 6-18
@@ -1737,7 +1753,7 @@ lim
      f a e @[e --> 0^'+])%classic
 
 lime_inf_lim is not universe polymorphic
-Arguments lime_inf_lim [R] f%function_scope a%ring_scope
+Arguments lime_inf_lim [R] f%_function_scope a%_ring_scope
 lime_inf_lim is opaque
 Expands to: Constant mathcomp.analysis.realfun.lime_inf_lim
 Declared in library mathcomp.analysis.realfun, line 873, characters 6-18
@@ -1758,7 +1774,7 @@ ereal_inf (R:=R)
      | e in `]0%R, +oo[]
 
 lime_supE is not universe polymorphic
-Arguments lime_supE [R] f%function_scope a%ring_scope
+Arguments lime_supE [R] f%_function_scope a%_ring_scope
 lime_supE is opaque
 Expands to: Constant mathcomp.analysis.realfun.lime_supE
 Declared in library mathcomp.analysis.realfun, line 879, characters 6-15
@@ -1785,7 +1801,7 @@ ereal_sup (R:=R)
      | e in `]0%R, +oo[]
 
 lime_infE is not universe polymorphic
-Arguments lime_infE [R] f%function_scope a%ring_scope
+Arguments lime_infE [R] f%_function_scope a%_ring_scope
 lime_infE is opaque
 Expands to: Constant mathcomp.analysis.realfun.lime_infE
 Declared in library mathcomp.analysis.realfun, line 887, characters 6-15
@@ -1801,7 +1817,7 @@ forall [R : realType] (f : R -> \bar R) (a : R),
 lime_inf (R:=R) (\- f)%E a = (- lime_sup (R:=R) f a)%E
 
 lime_infN is not universe polymorphic
-Arguments lime_infN [R] f%function_scope a%ring_scope
+Arguments lime_infN [R] f%_function_scope a%_ring_scope
 lime_infN is opaque
 Expands to: Constant mathcomp.analysis.realfun.lime_infN
 Declared in library mathcomp.analysis.realfun, line 891, characters 6-15
@@ -1816,7 +1832,7 @@ forall [R : realType] (f : R -> \bar R) (a : R),
 lime_sup (R:=R) (\- f)%E a = (- lime_inf (R:=R) f a)%E
 
 lime_supN is not universe polymorphic
-Arguments lime_supN [R] f%function_scope a%ring_scope
+Arguments lime_supN [R] f%_function_scope a%_ring_scope
 lime_supN is opaque
 Expands to: Constant mathcomp.analysis.realfun.lime_supN
 Declared in library mathcomp.analysis.realfun, line 894, characters 6-15
@@ -1831,8 +1847,8 @@ forall [R : realType] [f : R -> \bar R] (a : R),
 (forall x : R, (0%R <= f x)%E) -> (0%R <= lime_sup (R:=R) f a)%E
 
 __deprecated__lime_sup_ge0 is not universe polymorphic
-Arguments __deprecated__lime_sup_ge0 [R] [f]%function_scope 
-  a%ring_scope _%function_scope
+Arguments __deprecated__lime_sup_ge0 [R] [f]%_function_scope 
+  a%_ring_scope _%_function_scope
 __deprecated__lime_sup_ge0 is opaque
 Expands to: Constant mathcomp.analysis.realfun.__deprecated__lime_sup_ge0
 Declared in library mathcomp.analysis.realfun, line 897, characters 6-32
@@ -1847,7 +1863,8 @@ forall [R : realType] [f : R -> \bar R] (a : R),
 (forall x : R, (0%R <= f x)%E) -> (0%R <= lime_inf (R:=R) f a)%E
 
 lime_inf_ge0 is not universe polymorphic
-Arguments lime_inf_ge0 [R] [f]%function_scope a%ring_scope _%function_scope
+Arguments lime_inf_ge0 [R] [f]%_function_scope a%_ring_scope
+  _%_function_scope
 lime_inf_ge0 is opaque
 Expands to: Constant mathcomp.analysis.realfun.lime_inf_ge0
 Declared in library mathcomp.analysis.realfun, line 900, characters 6-18
@@ -1866,7 +1883,7 @@ forall [R : realType] [f g : R -> \bar R] [a : R],
 (lime_sup (R:=R) (f \+ g) a <= lime_sup (R:=R) f a + lime_sup (R:=R) g a)%E
 
 lime_supD is not universe polymorphic
-Arguments lime_supD [R] [f g]%function_scope [a]%ring_scope _
+Arguments lime_supD [R] [f g]%_function_scope [a]%_ring_scope _
 lime_supD is opaque
 Expands to: Constant mathcomp.analysis.realfun.lime_supD
 Declared in library mathcomp.analysis.realfun, line 907, characters 6-15
@@ -1891,7 +1908,7 @@ forall [R : realType] [f g : R -> \bar R] [a : R],
 (lime_sup (R:=R) f a <= lime_sup (R:=R) g a)%E
 
 lime_sup_le is not universe polymorphic
-Arguments lime_sup_le [R] [f g]%function_scope [a]%ring_scope _
+Arguments lime_sup_le [R] [f g]%_function_scope [a]%_ring_scope _
 lime_sup_le is opaque
 Expands to: Constant mathcomp.analysis.realfun.lime_sup_le
 Declared in library mathcomp.analysis.realfun, line 919, characters 6-17
@@ -1909,7 +1926,7 @@ forall [R : realType] (f : R -> \bar R) (a : R),
 (lime_inf (R:=R) f a <= lime_sup (R:=R) f a)%E
 
 lime_inf_sup is not universe polymorphic
-Arguments lime_inf_sup [R] f%function_scope a%ring_scope
+Arguments lime_inf_sup [R] f%_function_scope a%_ring_scope
 lime_inf_sup is opaque
 Expands to: Constant mathcomp.analysis.realfun.lime_inf_sup
 Declared in library mathcomp.analysis.realfun, line 926, characters 6-18
@@ -1986,7 +2003,7 @@ forall [R : realType] [f : R -> \bar R] [a l : R],
 (f r @[r --> a] --> l%:E)%classic -> lime_inf (R:=R) f a = l%:E
 
 lim_lime_inf is not universe polymorphic
-Arguments lim_lime_inf [R] [f]%function_scope [a l]%ring_scope _
+Arguments lim_lime_inf [R] [f]%_function_scope [a l]%_ring_scope _
 lim_lime_inf is opaque
 Expands to: Constant mathcomp.analysis.realfun.lim_lime_inf
 Declared in library mathcomp.analysis.realfun, line 986, characters 6-18
@@ -2004,7 +2021,7 @@ forall [R : realType] [f : R -> \bar R] [a l : R],
 (f r @[r --> a] --> l%:E)%classic -> lime_sup (R:=R) f a = l%:E
 
 lim_lime_sup is not universe polymorphic
-Arguments lim_lime_sup [R] [f]%function_scope [a l]%ring_scope _
+Arguments lim_lime_sup [R] [f]%_function_scope [a l]%_ring_scope _
 lim_lime_sup is opaque
 Expands to: Constant mathcomp.analysis.realfun.lim_lime_sup
 Declared in library mathcomp.analysis.realfun, line 993, characters 6-18
@@ -2077,8 +2094,8 @@ exists2 i : R,
    `<=` (fun t0 : R =>
          (fun u : R => is_true (a < u)%R) t0 -> ([eta f] @^-1` t) t0))%classic
 
-Arguments lime_sup_inf_at_right [R] [f]%function_scope 
-  [a l]%ring_scope _ _ [t] _
+Arguments lime_sup_inf_at_right [R] [f]%_function_scope 
+  [a l]%_ring_scope _ _ [t] _
 lime_sup_inf_at_right is opaque
 Expands to: Constant mathcomp.analysis.realfun.lime_sup_inf_at_right
 Declared in library mathcomp.analysis.realfun, line 1035, characters 6-27
@@ -2156,8 +2173,8 @@ exists2 i : R,
    `<=` (fun t0 : R =>
          (fun u : R => is_true (u < a)%R) t0 -> ([eta f] @^-1` t) t0))%classic
 
-Arguments lime_sup_inf_at_left [R] [f]%function_scope 
-  [a l]%ring_scope _ _ [t] _
+Arguments lime_sup_inf_at_left [R] [f]%_function_scope 
+  [a l]%_ring_scope _ _ [t] _
 lime_sup_inf_at_left is opaque
 Expands to: Constant mathcomp.analysis.realfun.lime_sup_inf_at_left
 Declared in library mathcomp.analysis.realfun, line 1088, characters 6-26
@@ -2180,7 +2197,7 @@ Qed.</div></details>
 forall {R : numFieldType} {V : normedModType R}, (R -> V) -> R -> R -> Prop
 
 derivable_oo_LRcontinuous is not universe polymorphic
-Arguments derivable_oo_LRcontinuous {R V} f%function_scope (x y)%ring_scope
+Arguments derivable_oo_LRcontinuous {R V} f%_function_scope (x y)%_ring_scope
 derivable_oo_LRcontinuous is transparent
 Expands to: Constant mathcomp.analysis.realfun.derivable_oo_LRcontinuous
 Declared in library mathcomp.analysis.realfun, line 1101, characters 11-36
@@ -2207,8 +2224,8 @@ nbhs (from_subspace `[x, y] f x0) t ->
  then within `[x, y] (nbhs x0)
  else globally [set x0]) (from_subspace `[x, y] f @^-1` t)%classic
 
-Arguments derivable_oo_LRcontinuous_within {R V} [f]%function_scope
-  [x y]%ring_scope _ [x0 t] _
+Arguments derivable_oo_LRcontinuous_within {R V} [f]%_function_scope
+  [x y]%_ring_scope _ [x0 t] _
 derivable_oo_LRcontinuous_within is opaque
 Expands to: Constant
             mathcomp.analysis.realfun.derivable_oo_LRcontinuous_within
@@ -2235,7 +2252,7 @@ Qed.</div></details>
 forall {R : numFieldType} {V : normedModType R}, (R -> V) -> R -> Prop
 
 derivable_Nyo_Lcontinuous is not universe polymorphic
-Arguments derivable_Nyo_Lcontinuous {R V} f%function_scope x%ring_scope
+Arguments derivable_Nyo_Lcontinuous {R V} f%_function_scope x%_ring_scope
 derivable_Nyo_Lcontinuous is transparent
 Expands to: Constant mathcomp.analysis.realfun.derivable_Nyo_Lcontinuous
 Declared in library mathcomp.analysis.realfun, line 1121, characters 11-36
@@ -2246,7 +2263,7 @@ Declared in library mathcomp.analysis.realfun, line 1121, characters 11-36
 forall {R : numFieldType} {V : normedModType R}, (R -> V) -> R -> Prop
 
 derivable_oy_Rcontinuous is not universe polymorphic
-Arguments derivable_oy_Rcontinuous {R V} f%function_scope x%ring_scope
+Arguments derivable_oy_Rcontinuous {R V} f%_function_scope x%_ring_scope
 derivable_oy_Rcontinuous is transparent
 Expands to: Constant mathcomp.analysis.realfun.derivable_oy_Rcontinuous
 Declared in library mathcomp.analysis.realfun, line 1124, characters 11-35
@@ -2273,7 +2290,7 @@ nbhs (from_subspace `[x, +oo[ f x0) t ->
  else globally [set x0]) (from_subspace `[x, +oo[ f @^-1` t)%classic
 
 Arguments derivable_oy_Rcontinuous_within_itvcy {R V} 
-  [f]%function_scope [x]%ring_scope _ [x0 t] _
+  [f]%_function_scope [x]%_ring_scope _ [x0 t] _
 derivable_oy_Rcontinuous_within_itvcy is opaque
 Expands to: Constant
             mathcomp.analysis.realfun.derivable_oy_Rcontinuous_within_itvcy
@@ -2312,7 +2329,7 @@ nbhs (from_subspace `]-oo, x] f x0) t ->
  else globally [set x0]) (from_subspace `]-oo, x] f @^-1` t)%classic
 
 Arguments derivable_Noy_Lcontinuous_within_itvNyc 
-  {R V} [f]%function_scope [x]%ring_scope _ [x0 t] 
+  {R V} [f]%_function_scope [x]%_ring_scope _ [x0 t] 
   _
 derivable_Noy_Lcontinuous_within_itvNyc is opaque
 Expands to: Constant
@@ -2356,8 +2373,8 @@ forall {R : realFieldType} {V : normedModType R} [a b c d : R] [f : R -> V],
 derivable_oo_LRcontinuous f a b -> derivable_oo_LRcontinuous f c d
 
 derivable_oo_continuousW is not universe polymorphic
-Arguments derivable_oo_continuousW {R V} [a b c d]%ring_scope
-  [f]%function_scope _ _ _
+Arguments derivable_oo_continuousW {R V} [a b c d]%_ring_scope
+  [f]%_function_scope _ _ _
 derivable_oo_continuousW is opaque
 Expands to: Constant mathcomp.analysis.realfun.derivable_oo_continuousW
 Declared in library mathcomp.analysis.realfun, line 1168, characters 6-30
@@ -2392,8 +2409,8 @@ forall {R : realFieldType} {V : normedModType R} [a c d : R] [f : R -> V],
 (a <= c)%R -> derivable_oy_Rcontinuous f a -> derivable_oo_LRcontinuous f c d
 
 derivable_oy_continuousWoo is not universe polymorphic
-Arguments derivable_oy_continuousWoo {R V} [a c d]%ring_scope
-  [f]%function_scope _ _ _
+Arguments derivable_oy_continuousWoo {R V} [a c d]%_ring_scope
+  [f]%_function_scope _ _ _
 derivable_oy_continuousWoo is opaque
 Expands to: Constant mathcomp.analysis.realfun.derivable_oy_continuousWoo
 Declared in library mathcomp.analysis.realfun, line 1191, characters 6-32
@@ -2423,8 +2440,8 @@ forall {R : realFieldType} {V : normedModType R} [a c : R] [f : R -> V],
 (a <= c)%R -> derivable_oy_Rcontinuous f a -> derivable_oy_Rcontinuous f c
 
 derivable_oy_continuousW is not universe polymorphic
-Arguments derivable_oy_continuousW {R V} [a c]%ring_scope 
-  [f]%function_scope _ _
+Arguments derivable_oy_continuousW {R V} [a c]%_ring_scope
+  [f]%_function_scope _ _
 derivable_oy_continuousW is opaque
 Expands to: Constant mathcomp.analysis.realfun.derivable_oy_continuousW
 Declared in library mathcomp.analysis.realfun, line 1210, characters 6-30
@@ -2451,8 +2468,8 @@ forall {R : realFieldType} {V : normedModType R} [b c d : R] [f : R -> V],
 derivable_Nyo_Lcontinuous f b -> derivable_oo_LRcontinuous f c d
 
 derivable_Nyo_continuousWoo is not universe polymorphic
-Arguments derivable_Nyo_continuousWoo {R V} [b c d]%ring_scope
-  [f]%function_scope _ _ _
+Arguments derivable_Nyo_continuousWoo {R V} [b c d]%_ring_scope
+  [f]%_function_scope _ _ _
 derivable_Nyo_continuousWoo is opaque
 Expands to: Constant mathcomp.analysis.realfun.derivable_Nyo_continuousWoo
 Declared in library mathcomp.analysis.realfun, line 1224, characters 6-33
@@ -2482,8 +2499,8 @@ forall {R : realFieldType} {V : normedModType R} [b d : R] [f : R -> V],
 (d <= b)%R -> derivable_Nyo_Lcontinuous f b -> derivable_Nyo_Lcontinuous f d
 
 derivable_Nyo_continuousW is not universe polymorphic
-Arguments derivable_Nyo_continuousW {R V} [b d]%ring_scope 
-  [f]%function_scope _ _
+Arguments derivable_Nyo_continuousW {R V} [b d]%_ring_scope
+  [f]%_function_scope _ _
 derivable_Nyo_continuousW is opaque
 Expands to: Constant mathcomp.analysis.realfun.derivable_Nyo_continuousW
 Declared in library mathcomp.analysis.realfun, line 1243, characters 6-31
@@ -2531,7 +2548,7 @@ nbhs (from_subspace [set` I] f x) t ->
  then within [set` I] (nbhs x)
  else globally [set x]) (from_subspace [set` I] f @^-1` t)%classic
 
-Arguments continuous_subspace_itv [R I] [f]%function_scope _ [x t] _
+Arguments continuous_subspace_itv [R I] [f]%_function_scope _ [x t] _
 continuous_subspace_itv is opaque
 Expands to: Constant mathcomp.analysis.realfun.continuous_subspace_itv
 Declared in library mathcomp.analysis.realfun, line 1266, characters 6-29
@@ -2563,8 +2580,8 @@ y \in I ->
 (fun x0 : R => [eta (>= x0)%R]) (f x) (f y) =
 (fun x0 : R => [eta (>= x0)%R]) x y
 
-Arguments itv_continuous_inj_le [R] [f]%function_scope 
-  [I] _ _%function_scope _ [x y] _ _
+Arguments itv_continuous_inj_le [R] [f]%_function_scope 
+  [I] _ _%_function_scope _ [x y] _ _
 itv_continuous_inj_le is opaque
 Expands to: Constant mathcomp.analysis.realfun.itv_continuous_inj_le
 Declared in library mathcomp.analysis.realfun, line 1273, characters 6-27
@@ -2672,8 +2689,8 @@ x \in I ->
 y \in I ->
 (fun x0 : R => [eta (>= x0)%R]) (f x) (f y) = (fun y0 : R => <=%R^~ y0) x y
 
-Arguments itv_continuous_inj_ge [R] [f]%function_scope 
-  [I] _ _%function_scope _ [x y] _ _
+Arguments itv_continuous_inj_ge [R] [f]%_function_scope 
+  [I] _ _%_function_scope _ [x y] _ _
 itv_continuous_inj_ge is opaque
 Expands to: Constant mathcomp.analysis.realfun.itv_continuous_inj_ge
 Declared in library mathcomp.analysis.realfun, line 1357, characters 6-27
@@ -2699,8 +2716,8 @@ forall [R : realType] [f : R -> R] [I : interval R],
 unstable.strict_monotonic (T:=R) (T':=R) (pT:=itvPredType R) I f
 
 itv_continuous_inj_mono is not universe polymorphic
-Arguments itv_continuous_inj_mono [R] [f]%function_scope 
-  [I] _%function_scope _
+Arguments itv_continuous_inj_mono [R] [f]%_function_scope 
+  [I] _%_function_scope _
 itv_continuous_inj_mono is opaque
 Expands to: Constant mathcomp.analysis.realfun.itv_continuous_inj_mono
 Declared in library mathcomp.analysis.realfun, line 1370, characters 6-29
@@ -2741,8 +2758,9 @@ y \in `[a, b]%R ->
 (fun x0 : R => [eta (>= x0)%R]) (f x) (f y) =
 (fun x0 : R => [eta (>= x0)%R]) x y
 
-Arguments segment_continuous_inj_le [R] [f]%function_scope 
-  [a b]%ring_scope _ _%function_scope _ [x y] _ _
+Arguments segment_continuous_inj_le [R] [f]%_function_scope 
+  [a b]%_ring_scope _ _%_function_scope _ [x y] _ 
+  _
 segment_continuous_inj_le is opaque
 Expands to: Constant mathcomp.analysis.realfun.segment_continuous_inj_le
 Declared in library mathcomp.analysis.realfun, line 1386, characters 6-31
@@ -2780,8 +2798,9 @@ x \in `[a, b]%R ->
 y \in `[a, b]%R ->
 (fun x0 : R => [eta (>= x0)%R]) (f x) (f y) = (fun y0 : R => <=%R^~ y0) x y
 
-Arguments segment_continuous_inj_ge [R] [f]%function_scope 
-  [a b]%ring_scope _ _%function_scope _ [x y] _ _
+Arguments segment_continuous_inj_ge [R] [f]%_function_scope 
+  [a b]%_ring_scope _ _%_function_scope _ [x y] _ 
+  _
 segment_continuous_inj_ge is opaque
 Expands to: Constant mathcomp.analysis.realfun.segment_continuous_inj_ge
 Declared in library mathcomp.analysis.realfun, line 1399, characters 6-31
@@ -2820,8 +2839,8 @@ y \in `[f a, f b]%R ->
 (fun x0 : R => [eta (>= x0)%R]) (g x) (g y) =
 (fun x0 : R => [eta (>= x0)%R]) x y
 
-Arguments segment_can_le [R] [a b]%ring_scope [f g]%function_scope 
-  _ _%function_scope _ [x y] _ _
+Arguments segment_can_le [R] [a b]%_ring_scope [f g]%_function_scope 
+  _ _%_function_scope _ [x y] _ _
 segment_can_le is opaque
 Expands to: Constant mathcomp.analysis.realfun.segment_can_le
 Declared in library mathcomp.analysis.realfun, line 1413, characters 6-20
@@ -2859,7 +2878,7 @@ Qed.</div></details>
 forall [R : realType] (a b : R), {fun `[(- b)%R, (- a)%R] >-> `[a, b]}
 
 realfun_itvN_oppr__canonical__functions_Fun is not universe polymorphic
-Arguments realfun_itvN_oppr__canonical__functions_Fun [R] (a b)%ring_scope
+Arguments realfun_itvN_oppr__canonical__functions_Fun [R] (a b)%_ring_scope
 realfun_itvN_oppr__canonical__functions_Fun is transparent
 Expands to: Constant
             mathcomp.analysis.realfun.realfun_itvN_oppr__canonical__functions_Fun
@@ -2868,7 +2887,7 @@ Declared in library mathcomp.analysis.realfun, line 1436, characters 0-52
 forall [R : realType] (a b : R), {fun `[(- b)%R, (- a)%R] >-> `[a, b]}
 
 realfun_itvN_oppr__canonical__functions_Fun is not universe polymorphic
-Arguments realfun_itvN_oppr__canonical__functions_Fun [R] (a b)%ring_scope
+Arguments realfun_itvN_oppr__canonical__functions_Fun [R] (a b)%_ring_scope
 realfun_itvN_oppr__canonical__functions_Fun is transparent
 Expands to: Constant
             mathcomp.analysis.realfun.realfun_itvN_oppr__canonical__functions_Fun
@@ -2877,7 +2896,7 @@ Declared in library mathcomp.analysis.realfun, line 1436, characters 0-52
 forall [R : realType] (a b : R), {fun `[(- b)%R, (- a)%R] >-> `[a, b]}
 
 realfun_itvN_oppr__canonical__functions_Fun is not universe polymorphic
-Arguments realfun_itvN_oppr__canonical__functions_Fun [R] (a b)%ring_scope
+Arguments realfun_itvN_oppr__canonical__functions_Fun [R] (a b)%_ring_scope
 realfun_itvN_oppr__canonical__functions_Fun is transparent
 Expands to: Constant
             mathcomp.analysis.realfun.realfun_itvN_oppr__canonical__functions_Fun
@@ -2886,7 +2905,7 @@ Declared in library mathcomp.analysis.realfun, line 1436, characters 0-52
 forall [R : realType] (a b : R), {fun `[(- b)%R, (- a)%R] >-> `[a, b]}
 
 realfun_itvN_oppr__canonical__functions_Fun is not universe polymorphic
-Arguments realfun_itvN_oppr__canonical__functions_Fun [R] (a b)%ring_scope
+Arguments realfun_itvN_oppr__canonical__functions_Fun [R] (a b)%_ring_scope
 realfun_itvN_oppr__canonical__functions_Fun is transparent
 Expands to: Constant
             mathcomp.analysis.realfun.realfun_itvN_oppr__canonical__functions_Fun
@@ -2895,7 +2914,7 @@ Declared in library mathcomp.analysis.realfun, line 1436, characters 0-52
 forall [R : realType] (a b : R), {fun `[(- b)%R, (- a)%R] >-> `[a, b]}
 
 realfun_itvN_oppr__canonical__functions_Fun is not universe polymorphic
-Arguments realfun_itvN_oppr__canonical__functions_Fun [R] (a b)%ring_scope
+Arguments realfun_itvN_oppr__canonical__functions_Fun [R] (a b)%_ring_scope
 realfun_itvN_oppr__canonical__functions_Fun is transparent
 Expands to: Constant
             mathcomp.analysis.realfun.realfun_itvN_oppr__canonical__functions_Fun
@@ -2904,7 +2923,7 @@ Declared in library mathcomp.analysis.realfun, line 1436, characters 0-52
 forall [R : realType] (a b : R), {fun `[(- b)%R, (- a)%R] >-> `[a, b]}
 
 realfun_itvN_oppr__canonical__functions_Fun is not universe polymorphic
-Arguments realfun_itvN_oppr__canonical__functions_Fun [R] (a b)%ring_scope
+Arguments realfun_itvN_oppr__canonical__functions_Fun [R] (a b)%_ring_scope
 realfun_itvN_oppr__canonical__functions_Fun is transparent
 Expands to: Constant
             mathcomp.analysis.realfun.realfun_itvN_oppr__canonical__functions_Fun
@@ -2913,7 +2932,7 @@ Declared in library mathcomp.analysis.realfun, line 1436, characters 0-52
 forall [R : realType] (a b : R), {fun `[(- b)%R, (- a)%R] >-> `[a, b]}
 
 realfun_itvN_oppr__canonical__functions_Fun is not universe polymorphic
-Arguments realfun_itvN_oppr__canonical__functions_Fun [R] (a b)%ring_scope
+Arguments realfun_itvN_oppr__canonical__functions_Fun [R] (a b)%_ring_scope
 realfun_itvN_oppr__canonical__functions_Fun is transparent
 Expands to: Constant
             mathcomp.analysis.realfun.realfun_itvN_oppr__canonical__functions_Fun
@@ -2941,8 +2960,8 @@ x \in `[f b, f a]%R ->
 y \in `[f b, f a]%R ->
 (fun x0 : R => [eta (>= x0)%R]) (g x) (g y) = (fun y0 : R => <=%R^~ y0) x y
 
-Arguments segment_can_ge [R] [a b]%ring_scope [f g]%function_scope 
-  _ _%function_scope _ [x y] _ _
+Arguments segment_can_ge [R] [a b]%_ring_scope [f g]%_function_scope 
+  _ _%_function_scope _ [x y] _ _
 segment_can_ge is opaque
 Expands to: Constant mathcomp.analysis.realfun.segment_can_ge
 Declared in library mathcomp.analysis.realfun, line 1440, characters 6-20
@@ -2970,8 +2989,8 @@ forall [R : realType] [a b : R] [f g : R -> R],
 unstable.strict_monotonic (T:=R) (T':=R) (pT:=itvPredType R) (f @`[a, b])%R g
 
 segment_can_mono is not universe polymorphic
-Arguments segment_can_mono [R] [a b]%ring_scope [f g]%function_scope 
-  _ _%function_scope _
+Arguments segment_can_mono [R] [a b]%_ring_scope [f g]%_function_scope 
+  _ _%_function_scope _
 segment_can_mono is opaque
 Expands to: Constant mathcomp.analysis.realfun.segment_can_mono
 Declared in library mathcomp.analysis.realfun, line 1454, characters 6-22
@@ -3002,8 +3021,8 @@ forall [R : realType] [a b : R] [f : R -> R],
 forall [t : R],
 (f @`[a, b])%classic t -> exists2 x : R, `[a, b]%classic x & f x = t
 
-Arguments segment_continuous_surjective [R] [a b]%ring_scope
-  [f]%function_scope _ _%function_scope [t] _
+Arguments segment_continuous_surjective [R] [a b]%_ring_scope
+  [f]%_function_scope _ _%_function_scope [t] _
 segment_continuous_surjective is opaque
 Expands to: Constant mathcomp.analysis.realfun.segment_continuous_surjective
 Declared in library mathcomp.analysis.realfun, line 1465, characters 6-35
@@ -3030,8 +3049,8 @@ forall [R : realType] [a b : R] [f : R -> R],
 forall [t : R],
 `[f a, f b]%classic t -> exists2 x : R, `[a, b]%classic x & f x = t
 
-Arguments segment_continuous_le_surjective [R] [a b]%ring_scope
-  [f]%function_scope _ _ _%function_scope [t] _
+Arguments segment_continuous_le_surjective [R] [a b]%_ring_scope
+  [f]%_function_scope _ _ _%_function_scope [t] _
 segment_continuous_le_surjective is opaque
 Expands to: Constant
             mathcomp.analysis.realfun.segment_continuous_le_surjective
@@ -3061,8 +3080,8 @@ forall [R : realType] [a b : R] [f : R -> R],
 forall [t : R],
 `[f b, f a]%classic t -> exists2 x : R, `[a, b]%classic x & f x = t
 
-Arguments segment_continuous_ge_surjective [R] [a b]%ring_scope
-  [f]%function_scope _ _ _%function_scope [t] _
+Arguments segment_continuous_ge_surjective [R] [a b]%_ring_scope
+  [f]%_function_scope _ _ _%_function_scope [t] _
 segment_continuous_ge_surjective is opaque
 Expands to: Constant
             mathcomp.analysis.realfun.segment_continuous_ge_surjective
@@ -3084,8 +3103,8 @@ forall [R : realType] [a b : R] [f : R -> R],
 [set f x | x in `[a, b]]%classic = (f @`[a, b])%classic
 
 continuous_inj_image_segment is not universe polymorphic
-Arguments continuous_inj_image_segment [R] [a b]%ring_scope
-  [f]%function_scope _ _%function_scope _
+Arguments continuous_inj_image_segment [R] [a b]%_ring_scope
+  [f]%_function_scope _ _%_function_scope _
 continuous_inj_image_segment is opaque
 Expands to: Constant mathcomp.analysis.realfun.continuous_inj_image_segment
 Declared in library mathcomp.analysis.realfun, line 1483, characters 6-34
@@ -3109,8 +3128,8 @@ forall y : R,
 reflect (exists2 x : R, x \in `[a, b]%R & f x = y) (y \in (f @`[a, b])%R)
 
 continuous_inj_image_segmentP is not universe polymorphic
-Arguments continuous_inj_image_segmentP [R] [a b]%ring_scope
-  [f]%function_scope _ _%function_scope _ y%ring_scope
+Arguments continuous_inj_image_segmentP [R] [a b]%_ring_scope
+  [f]%_function_scope _ _%_function_scope _ y%_ring_scope
 continuous_inj_image_segmentP is opaque
 Expands to: Constant mathcomp.analysis.realfun.continuous_inj_image_segmentP
 Declared in library mathcomp.analysis.realfun, line 1492, characters 6-35
@@ -3139,8 +3158,9 @@ forall [R : realType] [a b : R] [f g : R -> R],
 {in `[a, b]%R, cancel f g} ->
 forall [x : R], x \in (f @`[a, b])%R -> f (g x) = x
 
-Arguments segment_continuous_can_sym [R] [a b]%ring_scope
-  [f g]%function_scope _ _%function_scope _ [x] _
+Arguments segment_continuous_can_sym [R] [a b]%_ring_scope
+  [f g]%_function_scope _ _%_function_scope _ [x] 
+  _
 segment_continuous_can_sym is opaque
 Expands to: Constant mathcomp.analysis.realfun.segment_continuous_can_sym
 Declared in library mathcomp.analysis.realfun, line 1500, characters 6-32
@@ -3176,8 +3196,9 @@ forall [R : realType] [a b : R] [f g : R -> R],
 {in `[a, b]%R, cancel f g} ->
 forall [x : R], x \in `[f a, f b]%R -> f (g x) = x
 
-Arguments segment_continuous_le_can_sym [R] [a b]%ring_scope
-  [f g]%function_scope _ _%function_scope _ [x] _
+Arguments segment_continuous_le_can_sym [R] [a b]%_ring_scope
+  [f g]%_function_scope _ _%_function_scope _ [x] 
+  _
 segment_continuous_le_can_sym is opaque
 Expands to: Constant mathcomp.analysis.realfun.segment_continuous_le_can_sym
 Declared in library mathcomp.analysis.realfun, line 1515, characters 6-35
@@ -3207,8 +3228,9 @@ forall [R : realType] [a b : R] [f g : R -> R],
 {in `[a, b]%R, cancel f g} ->
 forall [x : R], x \in `[f b, f a]%R -> f (g x) = x
 
-Arguments segment_continuous_ge_can_sym [R] [a b]%ring_scope
-  [f g]%function_scope _ _%function_scope _ [x] _
+Arguments segment_continuous_ge_can_sym [R] [a b]%_ring_scope
+  [f g]%_function_scope _ _%_function_scope _ [x] 
+  _
 segment_continuous_ge_can_sym is opaque
 Expands to: Constant mathcomp.analysis.realfun.segment_continuous_ge_can_sym
 Declared in library mathcomp.analysis.realfun, line 1524, characters 6-35
@@ -3242,8 +3264,8 @@ nbhs (from_subspace `[a, b] f x) t ->
  then within `[a, b] (nbhs x)
  else globally [set x]) (from_subspace `[a, b] f @^-1` t)%classic
 
-Arguments segment_inc_surj_continuous [R] [a b]%ring_scope 
-  [f]%function_scope _ _ [x t] _
+Arguments segment_inc_surj_continuous [R] [a b]%_ring_scope
+  [f]%_function_scope _ _ [x t] _
 segment_inc_surj_continuous is opaque
 Expands to: Constant mathcomp.analysis.realfun.segment_inc_surj_continuous
 Declared in library mathcomp.analysis.realfun, line 1533, characters 6-33
@@ -3344,8 +3366,8 @@ nbhs (from_subspace `[a, b] f x) t ->
  then within `[a, b] (nbhs x)
  else globally [set x]) (from_subspace `[a, b] f @^-1` t)%classic
 
-Arguments segment_dec_surj_continuous [R] [a b]%ring_scope 
-  [f]%function_scope _ _ [x t] _
+Arguments segment_dec_surj_continuous [R] [a b]%_ring_scope
+  [f]%_function_scope _ _ [x t] _
 segment_dec_surj_continuous is opaque
 Expands to: Constant mathcomp.analysis.realfun.segment_dec_surj_continuous
 Declared in library mathcomp.analysis.realfun, line 1609, characters 6-33
@@ -3383,8 +3405,8 @@ nbhs (from_subspace `[a, b] f x) t ->
  then within `[a, b] (nbhs x)
  else globally [set x]) (from_subspace `[a, b] f @^-1` t)%classic
 
-Arguments segment_mono_surj_continuous [R] [a b]%ring_scope
-  [f]%function_scope _ _ [x t] _
+Arguments segment_mono_surj_continuous [R] [a b]%_ring_scope
+  [f]%_function_scope _ _ [x t] _
 segment_mono_surj_continuous is opaque
 Expands to: Constant mathcomp.analysis.realfun.segment_mono_surj_continuous
 Declared in library mathcomp.analysis.realfun, line 1622, characters 6-34
@@ -3430,8 +3452,8 @@ nbhs (from_subspace `[f a, f b] g x) t ->
  then within `[f a, f b] (nbhs x)
  else globally [set x]) (from_subspace `[f a, f b] g @^-1` t)%classic
 
-Arguments segment_can_le_continuous [R] [a b]%ring_scope 
-  [f g]%function_scope _ _%function_scope _ [x t] 
+Arguments segment_can_le_continuous [R] [a b]%_ring_scope
+  [f g]%_function_scope _ _%_function_scope _ [x t] 
   _
 segment_can_le_continuous is opaque
 Expands to: Constant mathcomp.analysis.realfun.segment_can_le_continuous
@@ -3473,8 +3495,8 @@ nbhs (from_subspace `[f b, f a] g x) t ->
  then within `[f b, f a] (nbhs x)
  else globally [set x]) (from_subspace `[f b, f a] g @^-1` t)%classic
 
-Arguments segment_can_ge_continuous [R] [a b]%ring_scope 
-  [f g]%function_scope _ _%function_scope _ [x t] 
+Arguments segment_can_ge_continuous [R] [a b]%_ring_scope
+  [f g]%_function_scope _ _%_function_scope _ [x t] 
   _
 segment_can_ge_continuous is opaque
 Expands to: Constant mathcomp.analysis.realfun.segment_can_ge_continuous
@@ -3516,8 +3538,8 @@ nbhs (from_subspace (f @`[a, b]) g x) t ->
  then within (f @`[a, b]) (nbhs x)
  else globally [set x]) (from_subspace (f @`[a, b]) g @^-1` t)%classic
 
-Arguments segment_can_continuous [R] [a b]%ring_scope 
-  [f g]%function_scope _ _%function_scope _ [x t] 
+Arguments segment_can_continuous [R] [a b]%_ring_scope 
+  [f g]%_function_scope _ _%_function_scope _ [x t] 
   _
 segment_can_continuous is opaque
 Expands to: Constant mathcomp.analysis.realfun.segment_can_continuous
@@ -3548,8 +3570,8 @@ forall [R : realType] [f g : R -> R] [x : R],
 {near f x, cancel g f}
 
 near_can_continuousAcan_sym is not universe polymorphic
-Arguments near_can_continuousAcan_sym [R] [f g]%function_scope 
-  [x]%ring_scope _ _
+Arguments near_can_continuousAcan_sym [R] [f g]%_function_scope
+  [x]%_ring_scope _ _
 near_can_continuousAcan_sym is opaque
 Expands to: Constant mathcomp.analysis.realfun.near_can_continuousAcan_sym
 Declared in library mathcomp.analysis.realfun, line 1672, characters 6-33
@@ -3599,7 +3621,7 @@ forall [R : realType] [f g : R -> R] [x : R],
                         x0 g
 
 near_can_continuous is not universe polymorphic
-Arguments near_can_continuous [R] [f g]%function_scope [x]%ring_scope _ _
+Arguments near_can_continuous [R] [f g]%_function_scope [x]%_ring_scope _ _
 near_can_continuous is opaque
 Expands to: Constant mathcomp.analysis.realfun.near_can_continuous
 Declared in library mathcomp.analysis.realfun, line 1702, characters 6-25
@@ -3618,7 +3640,8 @@ forall [R : realType] [f g : R -> R] [x : R],
 {near x, cancel f g} -> {near f x, cancel g f}
 
 near_continuous_can_sym is not universe polymorphic
-Arguments near_continuous_can_sym [R] [f g]%function_scope [x]%ring_scope _ _
+Arguments near_continuous_can_sym [R] [f g]%_function_scope 
+  [x]%_ring_scope _ _
 near_continuous_can_sym is opaque
 Expands to: Constant mathcomp.analysis.realfun.near_continuous_can_sym
 Declared in library mathcomp.analysis.realfun, line 1706, characters 6-29
@@ -3648,7 +3671,7 @@ exists2 i : R,
   [set e | (0 < e)%R]%classic i &
   (ball_ [eta normr] x i `<=` (GRing.exp (R:=R))^~ n @^-1` t)%classic
 
-Arguments exprn_continuous [R] [n]%nat_scope [x t] _
+Arguments exprn_continuous [R] [n]%_nat_scope [x t] _
 exprn_continuous is opaque
 Expands to: Constant mathcomp.analysis.realfun.exprn_continuous
 Declared in library mathcomp.analysis.realfun, line 1715, characters 6-22
@@ -3738,7 +3761,7 @@ is_derive x 1%R f a <->
      & g x = a])
 
 is_derive1_caratheodory is not universe polymorphic
-Arguments is_derive1_caratheodory [R] f%function_scope (x a)%ring_scope
+Arguments is_derive1_caratheodory [R] f%_function_scope (x a)%_ring_scope
 is_derive1_caratheodory is opaque
 Expands to: Constant mathcomp.analysis.realfun.is_derive1_caratheodory
 Declared in library mathcomp.analysis.realfun, line 1750, characters 6-29
@@ -3783,8 +3806,8 @@ forall [R : realType] [f : R -> R] (x y : R),
 f x = f y
 
 is_derive_0_is_cst is not universe polymorphic
-Arguments is_derive_0_is_cst [R] [f]%function_scope 
-  (x y)%ring_scope _%function_scope
+Arguments is_derive_0_is_cst [R] [f]%_function_scope 
+  (x y)%_ring_scope _%_function_scope
 is_derive_0_is_cst is opaque
 Expands to: Constant mathcomp.analysis.realfun.is_derive_0_is_cst
 Declared in library mathcomp.analysis.realfun, line 1781, characters 6-24
@@ -3825,7 +3848,7 @@ is_derive x v
   (- f x ^- 2 *: t)%R
 
 is_deriveV is not universe polymorphic
-Arguments is_deriveV [R] [f]%function_scope [x t v]%ring_scope _ _
+Arguments is_deriveV [R] [f]%_function_scope [x t v]%_ring_scope _ _
 is_deriveV is opaque
 Expands to: Constant mathcomp.analysis.realfun.is_deriveV
 Declared in library mathcomp.analysis.realfun, line 1802, characters 6-16
@@ -3851,7 +3874,7 @@ forall [R : realType] [f g : R -> R]
 is_derive x 1%R f l -> l != 0%R -> is_derive (f x) 1%R g l^-1%R
 
 is_derive_inverse is not universe polymorphic
-Arguments is_derive_inverse [R] [f g]%function_scope [l x] _ _ _ _
+Arguments is_derive_inverse [R] [f g]%_function_scope [l x] _ _ _ _
 is_derive_inverse is opaque
 Expands to: Constant mathcomp.analysis.realfun.is_derive_inverse
 Declared in library mathcomp.analysis.realfun, line 1811, characters 6-23
@@ -3916,7 +3939,7 @@ forall {K : realType} [r : K],
 (0 < r)%R -> 'D_1 Num.ExtraDef.sqrtr r = (2 * Num.ExtraDef.sqrtr r)^-1%R
 
 derive_sqrt is not universe polymorphic
-Arguments derive_sqrt {K} [r]%ring_scope _
+Arguments derive_sqrt {K} [r]%_ring_scope _
 derive_sqrt is opaque
 Expands to: Constant mathcomp.analysis.realfun.derive_sqrt
 Declared in library mathcomp.analysis.realfun, line 1863, characters 6-17
@@ -3939,7 +3962,7 @@ forall {R : realFieldType},
 R -> R -> (R -> R) -> constructive_ereal_extended__canonical__Order_POrder
 
 total_variation is not universe polymorphic
-Arguments total_variation {R} (a b)%ring_scope f%function_scope
+Arguments total_variation {R} (a b)%_ring_scope f%_function_scope
 total_variation is transparent
 Expands to: Constant mathcomp.analysis.realfun.total_variation
 Declared in library mathcomp.analysis.realfun, line 1874, characters 11-26
@@ -3952,7 +3975,7 @@ Declared in library mathcomp.analysis.realfun, line 1874, characters 11-26
 forall {R : realFieldType} (a : R) (f : R -> R), total_variation a a f = 0%R
 
 total_variationxx is not universe polymorphic
-Arguments total_variationxx {R} a%ring_scope f%function_scope
+Arguments total_variationxx {R} a%_ring_scope f%_function_scope
 total_variationxx is opaque
 Expands to: Constant mathcomp.analysis.realfun.total_variationxx
 Declared in library mathcomp.analysis.realfun, line 1879, characters 6-23
@@ -3969,8 +3992,8 @@ forall {R : realFieldType} [a b : R] [f : R -> R],
 total_variation a b f = (f b - f a)%:E
 
 nondecreasing_total_variation is not universe polymorphic
-Arguments nondecreasing_total_variation {R} [a b]%ring_scope
-  [f]%function_scope _ _
+Arguments nondecreasing_total_variation {R} [a b]%_ring_scope
+  [f]%_function_scope _ _
 nondecreasing_total_variation is opaque
 Expands to: Constant mathcomp.analysis.realfun.nondecreasing_total_variation
 Declared in library mathcomp.analysis.realfun, line 1882, characters 6-35
@@ -3995,7 +4018,7 @@ forall {R : realFieldType} (a b : R) (f : R -> R),
 total_variation a b (\- f)%R = total_variation a b f
 
 total_variationN is not universe polymorphic
-Arguments total_variationN {R} (a b)%ring_scope f%function_scope
+Arguments total_variationN {R} (a b)%_ring_scope f%_function_scope
 total_variationN is opaque
 Expands to: Constant mathcomp.analysis.realfun.total_variationN
 Declared in library mathcomp.analysis.realfun, line 1896, characters 6-22
@@ -4019,7 +4042,7 @@ forall {R : realType} [a b : R] (f : R -> R),
 (a <= b)%R -> (`|f b - f a|%:E <= total_variation a b f)%E
 
 total_variation_ge is not universe polymorphic
-Arguments total_variation_ge {R} [a b]%ring_scope f%function_scope _
+Arguments total_variation_ge {R} [a b]%_ring_scope f%_function_scope _
 total_variation_ge is opaque
 Expands to: Constant mathcomp.analysis.realfun.total_variation_ge
 Declared in library mathcomp.analysis.realfun, line 1908, characters 6-24
@@ -4039,7 +4062,7 @@ forall {R : realType} [a b : R] (f : R -> R),
 (a <= b)%R -> (0%R <= total_variation a b f)%E
 
 total_variation_ge0 is not universe polymorphic
-Arguments total_variation_ge0 {R} [a b]%ring_scope f%function_scope _
+Arguments total_variation_ge0 {R} [a b]%_ring_scope f%_function_scope _
 total_variation_ge0 is opaque
 Expands to: Constant mathcomp.analysis.realfun.total_variation_ge0
 Declared in library mathcomp.analysis.realfun, line 1917, characters 6-25
@@ -4054,7 +4077,7 @@ forall {R : realType} [a b : R] (f : R -> R),
 (a <= b)%R -> bounded_variation a b f <-> total_variation a b f \is a fin_num
 
 bounded_variationP is not universe polymorphic
-Arguments bounded_variationP {R} [a b]%ring_scope f%function_scope _
+Arguments bounded_variationP {R} [a b]%_ring_scope f%_function_scope _
 bounded_variationP is opaque
 Expands to: Constant mathcomp.analysis.realfun.bounded_variationP
 Declared in library mathcomp.analysis.realfun, line 1920, characters 6-24
@@ -4079,7 +4102,7 @@ forall {R : realType} [a b : R] (f : R -> R)
  total_variation a b f + total_variation a b g)%E
 
 total_variation_le is not universe polymorphic
-Arguments total_variation_le {R} [a b]%ring_scope (f g)%function_scope _
+Arguments total_variation_le {R} [a b]%_ring_scope (f g)%_function_scope _
 total_variation_le is opaque
 Expands to: Constant mathcomp.analysis.realfun.total_variation_le
 Declared in library mathcomp.analysis.realfun, line 1931, characters 6-24
@@ -4194,7 +4217,7 @@ forall {R : realType} [a b c : R] (f : R -> R),
 total_variation a b f = (total_variation a c f + total_variation c b f)%E
 
 total_variationD is not universe polymorphic
-Arguments total_variationD {R} [a b]%ring_scope [c] f%function_scope _ _
+Arguments total_variationD {R} [a b]%_ring_scope [c] f%_function_scope _ _
 total_variationD is opaque
 Expands to: Constant mathcomp.analysis.realfun.total_variationD
 Declared in library mathcomp.analysis.realfun, line 2029, characters 6-22
@@ -4219,7 +4242,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="neg_tv" class="id"><a name="neg_tv" class="" title="neg_tv : forall {R : realType}, R -> (R -> R) -> R -> \bar R
 
 neg_tv is not universe polymorphic
-Arguments neg_tv {R} a%ring_scope f%function_scope x%ring_scope
+Arguments neg_tv {R} a%_ring_scope f%_function_scope x%_ring_scope
 neg_tv is transparent
 Expands to: Constant mathcomp.analysis.realfun.neg_tv
 Declared in library mathcomp.analysis.realfun, line 2045, characters 11-17
@@ -4228,7 +4251,7 @@ Declared in library mathcomp.analysis.realfun, line 2045, characters 11-17
 <span class="vernacular">Definition</span><span class="id"> </span><span id="pos_tv" class="id"><a name="pos_tv" class="" title="pos_tv : forall {R : realType}, R -> (R -> R) -> R -> \bar R
 
 pos_tv is not universe polymorphic
-Arguments pos_tv {R} a%ring_scope f%function_scope x%ring_scope
+Arguments pos_tv {R} a%_ring_scope f%_function_scope x%_ring_scope
 pos_tv is transparent
 Expands to: Constant mathcomp.analysis.realfun.pos_tv
 Declared in library mathcomp.analysis.realfun, line 2047, characters 11-17
@@ -4250,7 +4273,7 @@ y \in `[a, b]%R ->
 (((total_variation a)^~ f) x <= ((total_variation a)^~ f) y)%E = true
 
 Arguments total_variation_nondecreasing {R} [a b] 
-  f%function_scope [x y] _ _ _
+  f%_function_scope [x y] _ _ _
 total_variation_nondecreasing is opaque
 Expands to: Constant mathcomp.analysis.realfun.total_variation_nondecreasing
 Declared in library mathcomp.analysis.realfun, line 2049, characters 6-35
@@ -4270,7 +4293,7 @@ bounded_variation a b f ->
 bounded_variation a b (fine \o (total_variation a)^~ f)
 
 total_variation_bounded_variation is not universe polymorphic
-Arguments total_variation_bounded_variation {R} [a b] [f]%function_scope _ _
+Arguments total_variation_bounded_variation {R} [a b] [f]%_function_scope _ _
 total_variation_bounded_variation is opaque
 Expands to: Constant
             mathcomp.analysis.realfun.total_variation_bounded_variation
@@ -4304,7 +4327,7 @@ y \in `[a, b]%R ->
 (fun n m : R => is_true (n <= m)%R) x y ->
 (neg_tv a f x <= neg_tv a f y)%E = true
 
-Arguments neg_tv_nondecreasing {R} [a b] f%function_scope [x y] _ _ _
+Arguments neg_tv_nondecreasing {R} [a b] f%_function_scope [x y] _ _ _
 neg_tv_nondecreasing is opaque
 Expands to: Constant mathcomp.analysis.realfun.neg_tv_nondecreasing
 Declared in library mathcomp.analysis.realfun, line 2070, characters 6-26
@@ -4334,8 +4357,8 @@ bounded_variation a b f ->
 forall [x : R],
 x \in `[a, b]%R -> f x = (fine \o pos_tv a f \- (fine \o neg_tv a f))%R x
 
-Arguments bounded_variation_pos_neg_tvE {R} [a b]%ring_scope
-  [f]%function_scope _ [x] _
+Arguments bounded_variation_pos_neg_tvE {R} [a b]%_ring_scope
+  [f]%_function_scope _ [x] _
 bounded_variation_pos_neg_tvE is opaque
 Expands to: Constant mathcomp.analysis.realfun.bounded_variation_pos_neg_tvE
 Declared in library mathcomp.analysis.realfun, line 2081, characters 6-35
@@ -4376,8 +4399,8 @@ y \in `[a, b]%R ->
 (fun n m : R => is_true (n <= m)%R) x y ->
 ((fine \o neg_tv a f) x <= (fine \o neg_tv a f) y)%R = true
 
-Arguments fine_neg_tv_nondecreasing {R} [a b]%ring_scope 
-  [f]%function_scope _ [x y] _ _ _
+Arguments fine_neg_tv_nondecreasing {R} [a b]%_ring_scope 
+  [f]%_function_scope _ [x y] _ _ _
 fine_neg_tv_nondecreasing is opaque
 Expands to: Constant mathcomp.analysis.realfun.fine_neg_tv_nondecreasing
 Declared in library mathcomp.analysis.realfun, line 2100, characters 6-31
@@ -4401,7 +4424,8 @@ forall {R : realType} [a b : R] [f : R -> R],
 bounded_variation a b f -> bounded_variation a b (fine \o neg_tv a f)
 
 neg_tv_bounded_variation is not universe polymorphic
-Arguments neg_tv_bounded_variation {R} [a b]%ring_scope [f]%function_scope _
+Arguments neg_tv_bounded_variation {R} [a b]%_ring_scope 
+  [f]%_function_scope _
 neg_tv_bounded_variation is opaque
 Expands to: Constant mathcomp.analysis.realfun.neg_tv_bounded_variation
 Declared in library mathcomp.analysis.realfun, line 2113, characters 6-30
@@ -4440,7 +4464,7 @@ exists2 i : R,
          ((fine \o (total_variation a)^~ f) @^-1` t) t0))%classic
 
 Arguments total_variation_right_continuous {R} [a b x] 
-  [f]%function_scope _ _ _ _ [t] _
+  [f]%_function_scope _ _ _ _ [t] _
 total_variation_right_continuous is opaque
 Expands to: Constant
             mathcomp.analysis.realfun.total_variation_right_continuous
@@ -4530,7 +4554,7 @@ exists2 i : R,
          (fun u : R => is_true (x < u)%R) t0 ->
          ((fine \o neg_tv a f) @^-1` t) t0))%classic
 
-Arguments neg_tv_right_continuous {R} [a x b] [f]%function_scope 
+Arguments neg_tv_right_continuous {R} [a x b] [f]%_function_scope 
   _ _ _ _ [t] _
 neg_tv_right_continuous is opaque
 Expands to: Constant mathcomp.analysis.realfun.neg_tv_right_continuous
@@ -4571,7 +4595,7 @@ forall {R : realType} (a b : R) (f : R -> R),
 total_variation a b f = total_variation (- b) (- a) (f \o -%R%R)
 
 total_variation_opp is not universe polymorphic
-Arguments total_variation_opp {R} (a b)%ring_scope f%function_scope
+Arguments total_variation_opp {R} (a b)%_ring_scope f%_function_scope
 total_variation_opp is opaque
 Expands to: Constant mathcomp.analysis.realfun.total_variation_opp
 Declared in library mathcomp.analysis.realfun, line 2206, characters 6-25
@@ -4608,7 +4632,7 @@ exists2 i : R,
          ((fine \o (total_variation a)^~ f) @^-1` t) t0))%classic
 
 Arguments total_variation_left_continuous {R} [a b x] 
-  [f]%function_scope _ _ _ _ [t] _
+  [f]%_function_scope _ _ _ _ [t] _
 total_variation_left_continuous is opaque
 Expands to: Constant
             mathcomp.analysis.realfun.total_variation_left_continuous
@@ -4678,8 +4702,8 @@ nbhs (from_subspace `[a, b] (fine \o (total_variation a)^~ f) x) t ->
  else globally [set x])
   (from_subspace `[a, b] (fine \o (total_variation a)^~ f) @^-1` t)%classic
 
-Arguments total_variation_continuous {R} [a b] [f]%function_scope 
-  _ _%function_scope _ [x t] _
+Arguments total_variation_continuous {R} [a b] [f]%_function_scope 
+  _ _%_function_scope _ [x t] _
 total_variation_continuous is opaque
 Expands to: Constant mathcomp.analysis.realfun.total_variation_continuous
 Declared in library mathcomp.analysis.realfun, line 2249, characters 6-32
@@ -4707,7 +4731,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="discontinuity" class="id"><a name="discontinuity" class="" title="discontinuity : forall {R : realType}, (R -> R) -> R -> Prop
 
 discontinuity is not universe polymorphic
-Arguments discontinuity {R} f%function_scope r%ring_scope
+Arguments discontinuity {R} f%_function_scope r%_ring_scope
 discontinuity is transparent
 Expands to: Constant mathcomp.analysis.realfun.discontinuity
 Declared in library mathcomp.analysis.realfun, line 2268, characters 11-24
@@ -4735,8 +4759,8 @@ itv_partition a b s ->
  F b - F a)%R
 
 nondecreasing_fun_sum_le is not universe polymorphic
-Arguments nondecreasing_fun_sum_le {R} [a b]%ring_scope 
-  [F]%function_scope ndF [s]%seq_scope _
+Arguments nondecreasing_fun_sum_le {R} [a b]%_ring_scope 
+  [F]%_function_scope ndF [s]%_seq_scope _
 nondecreasing_fun_sum_le is opaque
 Expands to: Constant mathcomp.analysis.realfun.nondecreasing_fun_sum_le
 Declared in library mathcomp.analysis.realfun, line 2281, characters 6-30
@@ -4903,7 +4927,8 @@ forall {R : realType} [a b : R] [F : R -> R],
 countable (T:=R) [set x | x \in `]a, b[%R /\ discontinuity F x]
 
 discontinuity_countable is not universe polymorphic
-Arguments discontinuity_countable {R} [a b]%ring_scope [F]%function_scope ndF
+Arguments discontinuity_countable {R} [a b]%_ring_scope 
+  [F]%_function_scope ndF
 discontinuity_countable is opaque
 Expands to: Constant mathcomp.analysis.realfun.discontinuity_countable
 Declared in library mathcomp.analysis.realfun, line 2436, characters 6-29
@@ -5038,8 +5063,8 @@ forall {R : realType} [g dg : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> dg x != 0%R) -> (g b - g a)%R != 0%R
 
 differentiable_subr_neq0 is not universe polymorphic
-Arguments differentiable_subr_neq0 {R} [g dg]%function_scope 
-  [a b]%ring_scope ab (cg gdg dg0)%function_scope
+Arguments differentiable_subr_neq0 {R} [g dg]%_function_scope
+  [a b]%_ring_scope ab (cg gdg dg0)%_function_scope
 differentiable_subr_neq0 is opaque
 Expands to: Constant mathcomp.analysis.realfun.differentiable_subr_neq0
 Declared in library mathcomp.analysis.realfun, line 2557, characters 6-30
@@ -5063,8 +5088,8 @@ exists2 c : R,
   c \in `]a, b[%R & (df c / dg c)%R = ((f b - f a) / (g b - g a))%R
 
 cauchy_MVT is not universe polymorphic
-Arguments cauchy_MVT {R} [f df g dg]%function_scope 
-  [a b]%ring_scope ab (cf cg fdf gdg dg0)%function_scope
+Arguments cauchy_MVT {R} [f df g dg]%_function_scope 
+  [a b]%_ring_scope ab (cf cg fdf gdg dg0)%_function_scope
 cauchy_MVT is opaque
 Expands to: Constant mathcomp.analysis.realfun.cauchy_MVT
 Declared in library mathcomp.analysis.realfun, line 2563, characters 6-16
@@ -5207,9 +5232,9 @@ exists2 i : R,
          (fun u : R => is_true (a < u)%R) t0 ->
          ((fun x : R => (f x / g x)%R) @^-1` t) t0))%classic
 
-Arguments lhopital_at_right {R} [f df g dg]%function_scope 
-  [a b l]%ring_scope ab (fdf gdg)%function_scope fa0 
-  ga0 cdg%function_scope _ [t] _
+Arguments lhopital_at_right {R} [f df g dg]%_function_scope
+  [a b l]%_ring_scope ab (fdf gdg)%_function_scope 
+  fa0 ga0 cdg%_function_scope _ [t] _
 lhopital_at_right is opaque
 Expands to: Constant mathcomp.analysis.realfun.lhopital_at_right
 Declared in library mathcomp.analysis.realfun, line 2656, characters 6-23
@@ -5390,9 +5415,9 @@ exists2 i : R,
          (fun u : R => is_true (u < b)%R) t0 ->
          ((fun x : R => (f x / g x)%R) @^-1` t) t0))%classic
 
-Arguments lhopital_at_left {R} [f df g dg]%function_scope 
-  [a b l]%ring_scope ab (fdf gdg)%function_scope fa0 
-  ga0 cdg%function_scope _ [t] _
+Arguments lhopital_at_left {R} [f df g dg]%_function_scope
+  [a b l]%_ring_scope ab (fdf gdg)%_function_scope 
+  fa0 ga0 cdg%_function_scope _ [t] _
 lhopital_at_left is opaque
 Expands to: Constant mathcomp.analysis.realfun.lhopital_at_left
 Declared in library mathcomp.analysis.realfun, line 2800, characters 6-22
@@ -5467,9 +5492,9 @@ exists2 i : R,
           is_true (y != c)) t0 ->
          ((fun x : R => (f x / g x)%R) @^-1` t) t0))%classic
 
-Arguments lhopital {R} [f df g dg]%function_scope 
-  [a b c l]%ring_scope cab (fdf gdg)%function_scope 
-  fa0 ga0 cdg%function_scope _ [t] _
+Arguments lhopital {R} [f df g dg]%_function_scope 
+  [a b c l]%_ring_scope cab (fdf gdg)%_function_scope 
+  fa0 ga0 cdg%_function_scope _ [t] _
 lhopital is opaque
 Expands to: Constant mathcomp.analysis.realfun.lhopital
 Declared in library mathcomp.analysis.realfun, line 2833, characters 6-14

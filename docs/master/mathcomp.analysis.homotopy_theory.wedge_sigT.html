@@ -79,6 +79,20 @@
           </ul>
           </details>
           </li>
+<li><details id="mathcomp.analysis.probability_theory"><summary>probability_theory</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.probability_theory.bernoulli_distribution.html">bernoulli_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.beta_distribution.html">beta_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.binomial_distribution.html">binomial_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.exponential_distribution.html">exponential_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.normal_distribution.html">normal_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.poisson_distribution.html">poisson_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.probability.html">probability</a></li>
+<li><a href="mathcomp.analysis.probability_theory.random_variable.html">random_variable</a></li>
+<li><a href="mathcomp.analysis.probability_theory.uniform_distribution.html">uniform_distribution</a></li>
+          </ul>
+          </details>
+          </li>
 <li><details id="mathcomp.analysis.showcase"><summary>showcase</summary>
           <ul>
           <li><a href="mathcomp.analysis.showcase.pnt.html">pnt</a></li>
@@ -92,6 +106,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
 <li><a href="mathcomp.analysis.topology_theory.nat_topology.html">nat_topology</a></li>
@@ -134,7 +149,6 @@
 <li><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></li>
 <li><a href="mathcomp.analysis.numfun.html">numfun</a></li>
 <li><a href="mathcomp.analysis.pi_irrational.html">pi_irrational</a></li>
-<li><a href="mathcomp.analysis.probability.html">probability</a></li>
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
@@ -303,7 +317,7 @@ forall {I : choiceType} [X : I -> topologicalType],
 (forall i : I, X i) -> equiv_rel {i : I & X i}
 
 wedge_rel is not universe polymorphic
-Arguments wedge_rel {I} [X]%function_scope p0%function_scope
+Arguments wedge_rel {I} [X]%_function_scope p0%_function_scope
 wedge_rel is opaque but may be made transparent
 Expands to: Constant mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_rel
 Declared in
@@ -316,7 +330,7 @@ forall {I : choiceType} [X : I -> topologicalType],
 (forall i : I, X i) -> Type
 
 wedge is not universe polymorphic
-Arguments wedge {I} [X]%function_scope p0%function_scope
+Arguments wedge {I} [X]%_function_scope p0%_function_scope
 wedge is opaque but may be made transparent
 Expands to: Constant mathcomp.analysis.homotopy_theory.wedge_sigT.wedge
 Declared in
@@ -328,7 +342,7 @@ forall {I : choiceType} [X : I -> topologicalType]
 X i -> wedge (X:=X) p0
 
 wedge_lift is not universe polymorphic
-Arguments wedge_lift {I} [X]%function_scope p0%function_scope [i] _
+Arguments wedge_lift {I} [X]%_function_scope p0%_function_scope [i] _
 wedge_lift is transparent
 Expands to: Constant mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_lift
 Declared in
@@ -341,7 +355,7 @@ forall {I : choiceType} [X : I -> topologicalType],
 
 wedge_sigT_wedge__canonical__topology_structure_Topological is not universe polymorphic
 Arguments wedge_sigT_wedge__canonical__topology_structure_Topological 
-  {I} [X]%function_scope p0%function_scope
+  {I} [X]%_function_scope p0%_function_scope
 wedge_sigT_wedge__canonical__topology_structure_Topological is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge__canonical__topology_structure_Topological
@@ -353,7 +367,7 @@ forall {I : choiceType} [X : I -> topologicalType],
 
 wedge_sigT_wedge__canonical__topology_structure_Topological is not universe polymorphic
 Arguments wedge_sigT_wedge__canonical__topology_structure_Topological 
-  {I} [X]%function_scope p0%function_scope
+  {I} [X]%_function_scope p0%_function_scope
 wedge_sigT_wedge__canonical__topology_structure_Topological is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge__canonical__topology_structure_Topological
@@ -365,7 +379,7 @@ forall {I : choiceType} [X : I -> topologicalType],
 
 wedge_sigT_wedge__canonical__topology_structure_Topological is not universe polymorphic
 Arguments wedge_sigT_wedge__canonical__topology_structure_Topological 
-  {I} [X]%function_scope p0%function_scope
+  {I} [X]%_function_scope p0%_function_scope
 wedge_sigT_wedge__canonical__topology_structure_Topological is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge__canonical__topology_structure_Topological
@@ -377,7 +391,7 @@ forall {I : choiceType} [X : I -> topologicalType],
 
 wedge_sigT_wedge__canonical__topology_structure_Topological is not universe polymorphic
 Arguments wedge_sigT_wedge__canonical__topology_structure_Topological 
-  {I} [X]%function_scope p0%function_scope
+  {I} [X]%_function_scope p0%_function_scope
 wedge_sigT_wedge__canonical__topology_structure_Topological is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge__canonical__topology_structure_Topological
@@ -389,7 +403,7 @@ forall {I : choiceType} [X : I -> topologicalType],
 
 wedge_sigT_wedge__canonical__topology_structure_Topological is not universe polymorphic
 Arguments wedge_sigT_wedge__canonical__topology_structure_Topological 
-  {I} [X]%function_scope p0%function_scope
+  {I} [X]%_function_scope p0%_function_scope
 wedge_sigT_wedge__canonical__topology_structure_Topological is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge__canonical__topology_structure_Topological
@@ -402,7 +416,7 @@ forall {I : choiceType} [X : I -> topologicalType],
 
 wedge_sigT_wedge__canonical__generic_quotient_Quotient is not universe polymorphic
 Arguments wedge_sigT_wedge__canonical__generic_quotient_Quotient 
-  {I} [X]%function_scope p0%function_scope
+  {I} [X]%_function_scope p0%_function_scope
 wedge_sigT_wedge__canonical__generic_quotient_Quotient is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge__canonical__generic_quotient_Quotient
@@ -414,7 +428,7 @@ forall {I : choiceType} [X : I -> topologicalType],
 
 wedge_sigT_wedge__canonical__generic_quotient_Quotient is not universe polymorphic
 Arguments wedge_sigT_wedge__canonical__generic_quotient_Quotient 
-  {I} [X]%function_scope p0%function_scope
+  {I} [X]%_function_scope p0%_function_scope
 wedge_sigT_wedge__canonical__generic_quotient_Quotient is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge__canonical__generic_quotient_Quotient
@@ -426,7 +440,7 @@ forall {I : choiceType} [X : I -> topologicalType],
 
 wedge_sigT_wedge__canonical__generic_quotient_Quotient is not universe polymorphic
 Arguments wedge_sigT_wedge__canonical__generic_quotient_Quotient 
-  {I} [X]%function_scope p0%function_scope
+  {I} [X]%_function_scope p0%_function_scope
 wedge_sigT_wedge__canonical__generic_quotient_Quotient is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge__canonical__generic_quotient_Quotient
@@ -438,7 +452,7 @@ forall {I : choiceType} [X : I -> topologicalType],
 
 wedge_sigT_wedge__canonical__generic_quotient_Quotient is not universe polymorphic
 Arguments wedge_sigT_wedge__canonical__generic_quotient_Quotient 
-  {I} [X]%function_scope p0%function_scope
+  {I} [X]%_function_scope p0%_function_scope
 wedge_sigT_wedge__canonical__generic_quotient_Quotient is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge__canonical__generic_quotient_Quotient
@@ -450,7 +464,7 @@ forall {I : choiceType} [X : I -> topologicalType],
 
 wedge_sigT_wedge__canonical__generic_quotient_Quotient is not universe polymorphic
 Arguments wedge_sigT_wedge__canonical__generic_quotient_Quotient 
-  {I} [X]%function_scope p0%function_scope
+  {I} [X]%_function_scope p0%_function_scope
 wedge_sigT_wedge__canonical__generic_quotient_Quotient is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge__canonical__generic_quotient_Quotient
@@ -478,7 +492,7 @@ nbhs (wedge_lift (X:=X) p0 (i:=i) x) t ->
       class) in
  nbhs) x (wedge_lift (X:=X) p0 (i:=i) @^-1` t)%classic
 
-Arguments wedge_lift_continuous {I} [X p0]%function_scope [i x t] _
+Arguments wedge_lift_continuous {I} [X p0]%_function_scope [i x t] _
 wedge_lift_continuous is opaque
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_lift_continuous
@@ -497,7 +511,7 @@ continuousType (X i) (wedge_sigT_wedge__canonical__filter_Nbhs (X:=X) p0)
 
 wedge_sigT_wedge_lift__canonical__topology_structure_Continuous is not universe polymorphic
 Arguments wedge_sigT_wedge_lift__canonical__topology_structure_Continuous 
-  {I} [X]%function_scope p0%function_scope i
+  {I} [X]%_function_scope p0%_function_scope i
 wedge_sigT_wedge_lift__canonical__topology_structure_Continuous is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge_lift__canonical__topology_structure_Continuous
@@ -510,7 +524,7 @@ continuousType (X i) (wedge_sigT_wedge__canonical__filter_Nbhs (X:=X) p0)
 
 wedge_sigT_wedge_lift__canonical__topology_structure_Continuous is not universe polymorphic
 Arguments wedge_sigT_wedge_lift__canonical__topology_structure_Continuous 
-  {I} [X]%function_scope p0%function_scope i
+  {I} [X]%_function_scope p0%_function_scope i
 wedge_sigT_wedge_lift__canonical__topology_structure_Continuous is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge_lift__canonical__topology_structure_Continuous
@@ -523,7 +537,7 @@ continuousType (X i) (wedge_sigT_wedge__canonical__filter_Nbhs (X:=X) p0)
 
 wedge_sigT_wedge_lift__canonical__topology_structure_Continuous is not universe polymorphic
 Arguments wedge_sigT_wedge_lift__canonical__topology_structure_Continuous 
-  {I} [X]%function_scope p0%function_scope i
+  {I} [X]%_function_scope p0%_function_scope i
 wedge_sigT_wedge_lift__canonical__topology_structure_Continuous is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge_lift__canonical__topology_structure_Continuous
@@ -536,7 +550,7 @@ continuousType (X i) (wedge_sigT_wedge__canonical__filter_Nbhs (X:=X) p0)
 
 wedge_sigT_wedge_lift__canonical__topology_structure_Continuous is not universe polymorphic
 Arguments wedge_sigT_wedge_lift__canonical__topology_structure_Continuous 
-  {I} [X]%function_scope p0%function_scope i
+  {I} [X]%_function_scope p0%_function_scope i
 wedge_sigT_wedge_lift__canonical__topology_structure_Continuous is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge_lift__canonical__topology_structure_Continuous
@@ -549,7 +563,7 @@ continuousType (X i) (wedge_sigT_wedge__canonical__filter_Nbhs (X:=X) p0)
 
 wedge_sigT_wedge_lift__canonical__topology_structure_Continuous is not universe polymorphic
 Arguments wedge_sigT_wedge_lift__canonical__topology_structure_Continuous 
-  {I} [X]%function_scope p0%function_scope i
+  {I} [X]%_function_scope p0%_function_scope i
 wedge_sigT_wedge_lift__canonical__topology_structure_Continuous is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge_lift__canonical__topology_structure_Continuous
@@ -563,7 +577,7 @@ continuousType (X i) (wedge_sigT_wedge__canonical__filter_Nbhs (X:=X) p0)
 
 wedge_sigT_wedge_lift__canonical__topology_structure_Continuous is not universe polymorphic
 Arguments wedge_sigT_wedge_lift__canonical__topology_structure_Continuous 
-  {I} [X]%function_scope p0%function_scope i
+  {I} [X]%_function_scope p0%_function_scope i
 wedge_sigT_wedge_lift__canonical__topology_structure_Continuous is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_wedge_lift__canonical__topology_structure_Continuous
@@ -580,7 +594,7 @@ x != p0 i ->
 nbhs (wedge_lift (X:=X) p0 (i:=i) x)
 
 wedge_lift_nbhs is not universe polymorphic
-Arguments wedge_lift_nbhs {I} [X p0]%function_scope [i x] _ _
+Arguments wedge_lift_nbhs {I} [X p0]%_function_scope [i x] _ _
 wedge_lift_nbhs is opaque
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_lift_nbhs
@@ -614,7 +628,7 @@ X j ->
 wedge_lift (X:=X) p0 (i:=j) (p0 j) = wedge_lift (X:=X) p0 (i:=i) (p0 i)
 
 wedge_liftE is not universe polymorphic
-Arguments wedge_liftE {I} [X]%function_scope p0%function_scope [i] x [j] y
+Arguments wedge_liftE {I} [X]%_function_scope p0%_function_scope [i] x [j] y
 wedge_liftE is opaque
 Expands to: Constant mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_liftE
 Declared in
@@ -632,7 +646,7 @@ forall {I : choiceType} [X : I -> topologicalType]
 open U <-> (forall i : I, open (wedge_lift (X:=X) p0 (i:=i) @^-1` U)%classic)
 
 wedge_openP is not universe polymorphic
-Arguments wedge_openP {I} [X p0]%function_scope U%classical_set_scope
+Arguments wedge_openP {I} [X p0]%_function_scope U%_classical_set_scope
 wedge_openP is opaque
 Expands to: Constant mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_openP
 Declared in
@@ -666,7 +680,7 @@ nbhs (wedge_lift (X:=X) p0 (i:=i0) (p0 i0)) =
 (\bigcap_i (wedge_lift (X:=X) p0 (i:=i) x @[x --> p0 i]))%classic
 
 wedge_point_nbhs is not universe polymorphic
-Arguments wedge_point_nbhs {I} [X]%function_scope p0%function_scope i0
+Arguments wedge_point_nbhs {I} [X]%_function_scope p0%_function_scope i0
 wedge_point_nbhs is opaque
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_point_nbhs
@@ -710,7 +724,7 @@ forall {I : choiceType} [X : I -> topologicalType]
 wedge_nbhs_spec (X:=X) (p0:=p0) z z (nbhs z)
 
 wedge_nbhs_specP is not universe polymorphic
-Arguments wedge_nbhs_specP {I} [X p0]%function_scope z _%function_scope
+Arguments wedge_nbhs_specP {I} [X p0]%_function_scope z _%_function_scope
 wedge_nbhs_specP is opaque
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_nbhs_specP
@@ -733,7 +747,7 @@ forall {I : choiceType} [X : I -> topologicalType] (p0 : forall i : I, X i),
 [set: wedge (X:=X) p0]%classic
 
 wedgeTE is not universe polymorphic
-Arguments wedgeTE {I} [X]%function_scope p0%function_scope
+Arguments wedgeTE {I} [X]%_function_scope p0%_function_scope
 wedgeTE is opaque
 Expands to: Constant mathcomp.analysis.homotopy_theory.wedge_sigT.wedgeTE
 Declared in
@@ -767,7 +781,8 @@ exists
   a : wedge_sigT_wedge__canonical__topology_structure_Topological (X:=X) p0,
   ([set: wedge (X:=X) p0] `&` cluster F)%classic a
 
-Arguments wedge_compact {I} [X p0]%function_scope _ _%function_scope [F] _ _
+Arguments wedge_compact {I} [X p0]%_function_scope 
+  _ _%_function_scope [F] _ _
 wedge_compact is opaque
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_compact
@@ -811,8 +826,8 @@ forall
    closed C & B = ([set: wedge (X:=X) p0] `&` C)%classic) ->
 B = [set: wedge (X:=X) p0]%classic
 
-Arguments wedge_connected {I} [X p0]%function_scope 
-  _%function_scope [B] _ _ _
+Arguments wedge_connected {I} [X p0]%_function_scope 
+  _%_function_scope [B] _ _ _
 wedge_connected is opaque
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_connected
@@ -840,8 +855,8 @@ forall {I : choiceType} [X : I -> topologicalType]
 (forall i : I, X i -> Z) -> wedge (X:=X) p0 -> Z
 
 wedge_fun is not universe polymorphic
-Arguments wedge_fun {I} [X p0]%function_scope {Z}%type_scope 
-  f%function_scope _
+Arguments wedge_fun {I} [X p0]%_function_scope {Z}%_type_scope
+  f%_function_scope _
 wedge_fun is transparent
 Expands to: Constant mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_fun
 Declared in
@@ -869,8 +884,8 @@ exists B : set (quotient_topology (wedge (X:=X) p0)),
   [/\ isOpenTopological.op quotient_topology.HB_unnamed_factory_12 B, B x
     & (B `<=` wedge_fun (X:=X) (p0:=p0) f @^-1` t)%classic]
 
-Arguments wedge_fun_continuous {I} [X p0]%function_scope 
-  {Z} [f]%function_scope (_ _)%function_scope [x t] 
+Arguments wedge_fun_continuous {I} [X p0]%_function_scope 
+  {Z} [f]%_function_scope (_ _)%_function_scope [x t] 
   _
 wedge_fun_continuous is opaque
 Expands to: Constant
@@ -896,8 +911,8 @@ forall {I : choiceType} [X : I -> topologicalType]
 wedge_fun (X:=X) (p0:=p0) f (wedge_lift (X:=X) p0 (i:=i0) a) = f i0 a
 
 wedge_lift_funE is not universe polymorphic
-Arguments wedge_lift_funE {I} [X p0]%function_scope 
-  {Z}%type_scope [f]%function_scope [i0] a _%function_scope
+Arguments wedge_lift_funE {I} [X p0]%_function_scope 
+  {Z}%_type_scope [f]%_function_scope [i0] a _%_function_scope
 wedge_lift_funE is opaque
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_lift_funE
@@ -921,8 +936,8 @@ h \o wedge_fun (X:=X) (p0:=p0) f =
 wedge_fun (X:=X) (p0:=p0) (fun i : I => h \o f i)
 
 wedge_fun_comp is not universe polymorphic
-Arguments wedge_fun_comp {I} [X]%function_scope p0%function_scope
-  {Z1 Z2}%type_scope (h f)%function_scope
+Arguments wedge_fun_comp {I} [X]%_function_scope p0%_function_scope
+  {Z1 Z2}%_type_scope (h f)%_function_scope
 wedge_fun_comp is opaque
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_fun_comp
@@ -942,7 +957,7 @@ forall {I : choiceType} [X : I -> topologicalType] [p0 : forall i : I, X i],
 wedge (X:=X) p0 -> prod_topology (fun x : I => X x)
 
 wedge_prod is not universe polymorphic
-Arguments wedge_prod {I} [X p0]%function_scope _ i
+Arguments wedge_prod {I} [X p0]%_function_scope _ i
 wedge_prod is transparent
 Expands to: Constant mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_prod
 Declared in
@@ -955,7 +970,7 @@ forall {I : choiceType} [X : I -> topologicalType]
 dfwith p0 i (p0 i) = dfwith p0 j (p0 j)
 
 wedge_prod_pointE is not universe polymorphic
-Arguments wedge_prod_pointE {I} [X]%function_scope p0%function_scope i j
+Arguments wedge_prod_pointE {I} [X]%_function_scope p0%_function_scope i j
 wedge_prod_pointE is opaque
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_prod_pointE
@@ -980,7 +995,7 @@ forall {I : choiceType} [X : I -> topologicalType]
   [p0 : forall i : I, X i] [x1 x2 : wedge (X:=X) p0],
 wedge_prod (X:=X) (p0:=p0) x1 = wedge_prod (X:=X) (p0:=p0) x2 -> x1 = x2
 
-Arguments wedge_prod_inj {I} [X p0]%function_scope [x1 x2] _
+Arguments wedge_prod_inj {I} [X p0]%_function_scope [x1 x2] _
 wedge_prod_inj is opaque
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_prod_inj
@@ -1021,7 +1036,7 @@ exists B : set (quotient_topology (wedge (X:=X) p0)),
   [/\ isOpenTopological.op quotient_topology.HB_unnamed_factory_12 B, B x
     & (B `<=` wedge_prod (X:=X) (p0:=p0) @^-1` t)%classic]
 
-Arguments wedge_prod_continuous {I} [X p0]%function_scope [x t] _
+Arguments wedge_prod_continuous {I} [X p0]%_function_scope [x t] _
 wedge_prod_continuous is opaque
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_prod_continuous
@@ -1045,8 +1060,9 @@ nbhs (wedge_prod (X:=X) (p0:=p0) x)
   [set wedge_prod (X:=X) (p0:=p0) x | x in A]%classic
 
 wedge_prod_open is not universe polymorphic
-Arguments wedge_prod_open {I} [X p0]%function_scope 
-  [x] [A]%classical_set_scope _ _%function_scope _
+Arguments wedge_prod_open {I} [X p0]%_function_scope 
+  [x] [A]%_classical_set_scope _ _%_function_scope 
+  _
 wedge_prod_open is opaque
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_prod_open
@@ -1127,7 +1143,8 @@ forall {I : choiceType} [X : I -> topologicalType] [p0 : forall i : I, X i],
 (forall i : I, hausdorff_space (X i)) ->
 forall [p q : wedge (X:=X) p0], cluster (nbhs p) q -> p = q
 
-Arguments wedge_hausdorff {I} [X p0]%function_scope _%function_scope [p q] _
+Arguments wedge_hausdorff {I} [X p0]%_function_scope 
+  _%_function_scope [p q] _
 wedge_hausdorff is opaque
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_hausdorff
@@ -1176,8 +1193,8 @@ exists2 i : set T * set (wedge_sigT_wedge__canonical__filter_Nbhs (X:=X) p0),
     P.1 `*` P.2) i
    `<=` uncurry (fun t0 : T => wedge_fun (X:=X) (p0:=p0) (k^~ t0)) @^-1` t)%classic
 
-Arguments wedge_fun_joint_continuous {I} [X p0]%function_scope 
-  [T R] [k]%function_scope _ (_ _ _)%function_scope 
+Arguments wedge_fun_joint_continuous {I} [X p0]%_function_scope 
+  [T R] [k]%_function_scope _ (_ _ _)%_function_scope 
   [x t] _
 wedge_fun_joint_continuous is opaque
 Expands to: Constant
@@ -1232,7 +1249,7 @@ library mathcomp.analysis.homotopy_theory.wedge_sigT, line 339, characters 6-32
 <span class="vernacular">Definition</span><span class="id"> </span><span id="pwedge" class="id"><a name="pwedge" class="" title="pwedge : forall {I : pointedType}, (I -> ptopologicalType) -> Type
 
 pwedge is not universe polymorphic
-Arguments pwedge {I} X%function_scope
+Arguments pwedge {I} X%_function_scope
 pwedge is transparent
 Expands to: Constant mathcomp.analysis.homotopy_theory.wedge_sigT.pwedge
 Declared in
@@ -1246,7 +1263,7 @@ forall {I : pointedType}, (I -> ptopologicalType) -> topologicalType
 
 wedge_sigT_pwedge__canonical__topology_structure_Topological is not universe polymorphic
 Arguments wedge_sigT_pwedge__canonical__topology_structure_Topological 
-  {I} X%function_scope
+  {I} X%_function_scope
 wedge_sigT_pwedge__canonical__topology_structure_Topological is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_pwedge__canonical__topology_structure_Topological
@@ -1257,7 +1274,7 @@ forall {I : pointedType}, (I -> ptopologicalType) -> topologicalType
 
 wedge_sigT_pwedge__canonical__topology_structure_Topological is not universe polymorphic
 Arguments wedge_sigT_pwedge__canonical__topology_structure_Topological 
-  {I} X%function_scope
+  {I} X%_function_scope
 wedge_sigT_pwedge__canonical__topology_structure_Topological is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_pwedge__canonical__topology_structure_Topological
@@ -1268,7 +1285,7 @@ forall {I : pointedType}, (I -> ptopologicalType) -> topologicalType
 
 wedge_sigT_pwedge__canonical__topology_structure_Topological is not universe polymorphic
 Arguments wedge_sigT_pwedge__canonical__topology_structure_Topological 
-  {I} X%function_scope
+  {I} X%_function_scope
 wedge_sigT_pwedge__canonical__topology_structure_Topological is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_pwedge__canonical__topology_structure_Topological
@@ -1279,7 +1296,7 @@ forall {I : pointedType}, (I -> ptopologicalType) -> topologicalType
 
 wedge_sigT_pwedge__canonical__topology_structure_Topological is not universe polymorphic
 Arguments wedge_sigT_pwedge__canonical__topology_structure_Topological 
-  {I} X%function_scope
+  {I} X%_function_scope
 wedge_sigT_pwedge__canonical__topology_structure_Topological is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_pwedge__canonical__topology_structure_Topological
@@ -1290,7 +1307,7 @@ forall {I : pointedType}, (I -> ptopologicalType) -> topologicalType
 
 wedge_sigT_pwedge__canonical__topology_structure_Topological is not universe polymorphic
 Arguments wedge_sigT_pwedge__canonical__topology_structure_Topological 
-  {I} X%function_scope
+  {I} X%_function_scope
 wedge_sigT_pwedge__canonical__topology_structure_Topological is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_pwedge__canonical__topology_structure_Topological
@@ -1308,7 +1325,7 @@ quotType
 
 wedge_sigT_pwedge__canonical__generic_quotient_Quotient is not universe polymorphic
 Arguments wedge_sigT_pwedge__canonical__generic_quotient_Quotient 
-  {I} X%function_scope
+  {I} X%_function_scope
 wedge_sigT_pwedge__canonical__generic_quotient_Quotient is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_pwedge__canonical__generic_quotient_Quotient
@@ -1325,7 +1342,7 @@ quotType
 
 wedge_sigT_pwedge__canonical__generic_quotient_Quotient is not universe polymorphic
 Arguments wedge_sigT_pwedge__canonical__generic_quotient_Quotient 
-  {I} X%function_scope
+  {I} X%_function_scope
 wedge_sigT_pwedge__canonical__generic_quotient_Quotient is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_pwedge__canonical__generic_quotient_Quotient
@@ -1342,7 +1359,7 @@ quotType
 
 wedge_sigT_pwedge__canonical__generic_quotient_Quotient is not universe polymorphic
 Arguments wedge_sigT_pwedge__canonical__generic_quotient_Quotient 
-  {I} X%function_scope
+  {I} X%_function_scope
 wedge_sigT_pwedge__canonical__generic_quotient_Quotient is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_pwedge__canonical__generic_quotient_Quotient
@@ -1359,7 +1376,7 @@ quotType
 
 wedge_sigT_pwedge__canonical__generic_quotient_Quotient is not universe polymorphic
 Arguments wedge_sigT_pwedge__canonical__generic_quotient_Quotient 
-  {I} X%function_scope
+  {I} X%_function_scope
 wedge_sigT_pwedge__canonical__generic_quotient_Quotient is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_pwedge__canonical__generic_quotient_Quotient
@@ -1376,7 +1393,7 @@ quotType
 
 wedge_sigT_pwedge__canonical__generic_quotient_Quotient is not universe polymorphic
 Arguments wedge_sigT_pwedge__canonical__generic_quotient_Quotient 
-  {I} X%function_scope
+  {I} X%_function_scope
 wedge_sigT_pwedge__canonical__generic_quotient_Quotient is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_pwedge__canonical__generic_quotient_Quotient
@@ -1388,7 +1405,7 @@ forall {I : pointedType}, (I -> ptopologicalType) -> ptopologicalType
 
 wedge_sigT_pwedge__canonical__topology_structure_PointedTopological is not universe polymorphic
 Arguments wedge_sigT_pwedge__canonical__topology_structure_PointedTopological
-  {I} X%function_scope
+  {I} X%_function_scope
 wedge_sigT_pwedge__canonical__topology_structure_PointedTopological is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_pwedge__canonical__topology_structure_PointedTopological
@@ -1399,7 +1416,7 @@ forall {I : pointedType}, (I -> ptopologicalType) -> ptopologicalType
 
 wedge_sigT_pwedge__canonical__topology_structure_PointedTopological is not universe polymorphic
 Arguments wedge_sigT_pwedge__canonical__topology_structure_PointedTopological
-  {I} X%function_scope
+  {I} X%_function_scope
 wedge_sigT_pwedge__canonical__topology_structure_PointedTopological is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_pwedge__canonical__topology_structure_PointedTopological
@@ -1410,7 +1427,7 @@ forall {I : pointedType}, (I -> ptopologicalType) -> ptopologicalType
 
 wedge_sigT_pwedge__canonical__topology_structure_PointedTopological is not universe polymorphic
 Arguments wedge_sigT_pwedge__canonical__topology_structure_PointedTopological
-  {I} X%function_scope
+  {I} X%_function_scope
 wedge_sigT_pwedge__canonical__topology_structure_PointedTopological is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_pwedge__canonical__topology_structure_PointedTopological
@@ -1421,7 +1438,7 @@ forall {I : pointedType}, (I -> ptopologicalType) -> ptopologicalType
 
 wedge_sigT_pwedge__canonical__topology_structure_PointedTopological is not universe polymorphic
 Arguments wedge_sigT_pwedge__canonical__topology_structure_PointedTopological
-  {I} X%function_scope
+  {I} X%_function_scope
 wedge_sigT_pwedge__canonical__topology_structure_PointedTopological is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_pwedge__canonical__topology_structure_PointedTopological
@@ -1432,7 +1449,7 @@ forall {I : pointedType}, (I -> ptopologicalType) -> ptopologicalType
 
 wedge_sigT_pwedge__canonical__topology_structure_PointedTopological is not universe polymorphic
 Arguments wedge_sigT_pwedge__canonical__topology_structure_PointedTopological
-  {I} X%function_scope
+  {I} X%_function_scope
 wedge_sigT_pwedge__canonical__topology_structure_PointedTopological is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.wedge_sigT_pwedge__canonical__topology_structure_PointedTopological
@@ -1449,7 +1466,7 @@ library mathcomp.analysis.homotopy_theory.wedge_sigT, line 388, characters 0-64
 forall (X Y : bpTopologicalType) (b : bool), if b then X else Y
 
 bpwedge_shared_pt is not universe polymorphic
-Arguments bpwedge_shared_pt X Y b%bool_scope
+Arguments bpwedge_shared_pt X Y b%_bool_scope
 bpwedge_shared_pt is transparent
 Expands to: Constant
             mathcomp.analysis.homotopy_theory.wedge_sigT.bpwedge_shared_pt

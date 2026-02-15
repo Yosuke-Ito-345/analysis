@@ -79,6 +79,20 @@
           </ul>
           </details>
           </li>
+<li><details id="mathcomp.analysis.probability_theory"><summary>probability_theory</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.probability_theory.bernoulli_distribution.html">bernoulli_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.beta_distribution.html">beta_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.binomial_distribution.html">binomial_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.exponential_distribution.html">exponential_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.normal_distribution.html">normal_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.poisson_distribution.html">poisson_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.probability.html">probability</a></li>
+<li><a href="mathcomp.analysis.probability_theory.random_variable.html">random_variable</a></li>
+<li><a href="mathcomp.analysis.probability_theory.uniform_distribution.html">uniform_distribution</a></li>
+          </ul>
+          </details>
+          </li>
 <li><details id="mathcomp.analysis.showcase"><summary>showcase</summary>
           <ul>
           <li><a href="mathcomp.analysis.showcase.pnt.html">pnt</a></li>
@@ -92,6 +106,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
 <li><a href="mathcomp.analysis.topology_theory.nat_topology.html">nat_topology</a></li>
@@ -134,7 +149,6 @@
 <li><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></li>
 <li><a href="mathcomp.analysis.numfun.html">numfun</a></li>
 <li><a href="mathcomp.analysis.pi_irrational.html">pi_irrational</a></li>
-<li><a href="mathcomp.analysis.probability.html">probability</a></li>
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
@@ -265,8 +279,8 @@ forall [d : measure_display] [T : measurableType d]
 (\int[mu]_x f x)%E = limn (sintegral (R:=R) mu \o (fun x : nat => g x))
 
 nd_ge0_integral_lim is not universe polymorphic
-Arguments nd_ge0_integral_lim [d]%measure_display_scope 
-  [T R] mu [f]%function_scope [g] (f0 nd_g gf)%function_scope
+Arguments nd_ge0_integral_lim [d]%_measure_display_scope 
+  [T R] mu [f]%_function_scope [g] (f0 nd_g gf)%_function_scope
 nd_ge0_integral_lim is opaque
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_monotone_convergence.nd_ge0_integral_lim
@@ -343,9 +357,9 @@ measurable_fun (T:=T)
 (\int[mu]_(x in D) f1 x <= \int[mu]_(x in D) f2 x)%E
 
 ge0_le_integral is not universe polymorphic
-Arguments ge0_le_integral [d]%measure_display_scope 
-  [T R] mu [D]%classical_set_scope mD [f1 f2]%function_scope
-  f10%function_scope mf1 mf2 _%function_scope
+Arguments ge0_le_integral [d]%_measure_display_scope 
+  [T R] mu [D]%_classical_set_scope mD [f1 f2]%_function_scope
+  f10%_function_scope mf1 mf2 _%_function_scope
 ge0_le_integral is opaque
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_monotone_convergence.ge0_le_integral
@@ -550,8 +564,8 @@ forall [g' : (T -> \bar R) ^nat],
 limn (fun n : nat => (\int[mu]_(x in D) g' n x)%E)
 
 monotone_convergence is not universe polymorphic
-Arguments monotone_convergence [d]%measure_display_scope 
-  [T R] mu [D]%classical_set_scope mD [g'] (mg' g'0 nd_g')%function_scope
+Arguments monotone_convergence [d]%_measure_display_scope 
+  [T R] mu [D]%_classical_set_scope mD [g'] (mg' g'0 nd_g')%_function_scope
 monotone_convergence is opaque
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_monotone_convergence.monotone_convergence
@@ -631,8 +645,8 @@ exists2 i : nat,
   ((fun N : nat => [set n | N <= n]) i
    `<=` (fun n : nat => (\int[mu]_(x in D) g' n x)%E) @^-1` t)%classic
 
-Arguments cvg_monotone_convergence [d]%measure_display_scope 
-  [T R mu] [D]%classical_set_scope mD [g'] (mg' g'0 nd_g')%function_scope 
+Arguments cvg_monotone_convergence [d]%_measure_display_scope 
+  [T R mu] [D]%_classical_set_scope mD [g'] (mg' g'0 nd_g')%_function_scope
   [t] _
 cvg_monotone_convergence is opaque
 Expands to: Constant
@@ -673,8 +687,8 @@ forall [f : (T -> \bar R) ^nat],
  limn_einf (fun n : nat => \int[mu]_(x in D) f n x))%E
 
 fatou is not universe polymorphic
-Arguments fatou [d]%measure_display_scope [T R] mu 
-  [D]%classical_set_scope mD [f] (mf f0)%function_scope
+Arguments fatou [d]%_measure_display_scope [T R] mu 
+  [D]%_classical_set_scope mD [f] (mf f0)%_function_scope
 fatou is opaque
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_monotone_convergence.fatou

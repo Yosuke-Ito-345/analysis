@@ -79,6 +79,20 @@
           </ul>
           </details>
           </li>
+<li><details id="mathcomp.analysis.probability_theory"><summary>probability_theory</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.probability_theory.bernoulli_distribution.html">bernoulli_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.beta_distribution.html">beta_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.binomial_distribution.html">binomial_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.exponential_distribution.html">exponential_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.normal_distribution.html">normal_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.poisson_distribution.html">poisson_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.probability.html">probability</a></li>
+<li><a href="mathcomp.analysis.probability_theory.random_variable.html">random_variable</a></li>
+<li><a href="mathcomp.analysis.probability_theory.uniform_distribution.html">uniform_distribution</a></li>
+          </ul>
+          </details>
+          </li>
 <li><details id="mathcomp.analysis.showcase"><summary>showcase</summary>
           <ul>
           <li><a href="mathcomp.analysis.showcase.pnt.html">pnt</a></li>
@@ -92,6 +106,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
 <li><a href="mathcomp.analysis.topology_theory.nat_topology.html">nat_topology</a></li>
@@ -134,7 +149,6 @@
 <li><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></li>
 <li><a href="mathcomp.analysis.numfun.html">numfun</a></li>
 <li><a href="mathcomp.analysis.pi_irrational.html">pi_irrational</a></li>
-<li><a href="mathcomp.analysis.probability.html">probability</a></li>
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
@@ -280,7 +294,7 @@ properties like zero dimensional and perfect, and discrete.
 <span class="vernacular">Definition</span><span class="id"> </span><span id="set_nbhs" class="id"><a name="set_nbhs" class="" title="set_nbhs : forall {T : topologicalType}, set T -> set (set T)
 
 set_nbhs is not universe polymorphic
-Arguments set_nbhs {T} A%classical_set_scope _
+Arguments set_nbhs {T} A%_classical_set_scope _
 set_nbhs is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.set_nbhs
@@ -311,7 +325,7 @@ set_nbhs A B <->
 (exists C : set T, [/\ open C, (A `<=` C)%classic & (C `<=` B)%classic])
 
 set_nbhsP is not universe polymorphic
-Arguments set_nbhsP {T} (A B)%classical_set_scope
+Arguments set_nbhsP {T} (A B)%_classical_set_scope
 set_nbhsP is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.set_nbhsP
@@ -383,7 +397,7 @@ compact_closed :
 forall {T : topologicalType} [A : set T],
 hausdorff_space T -> compact A -> forall [t : T], closure A t -> A t
 
-Arguments compact_closed {T} [A]%classical_set_scope _ _ [t] _
+Arguments compact_closed {T} [A]%_classical_set_scope _ _ [t] _
 compact_closed is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.compact_closed
@@ -415,7 +429,7 @@ nbhs x V ->
 ProperFilter F ->
 F V -> cluster F = [set x]%classic -> forall [t : set T], nbhs x t -> F t
 
-Arguments compact_cluster_set1 {T} [x F] [V]%classical_set_scope 
+Arguments compact_cluster_set1 {T} [x F] [V]%_classical_set_scope 
   _ _ _ _ _ _ [t] _
 compact_cluster_set1 is opaque
 Expands to: Constant
@@ -452,7 +466,7 @@ forall {T : topologicalType} [A : set T],
 hausdorff_space T -> compact A -> precompact A
 
 compact_precompact is not universe polymorphic
-Arguments compact_precompact {T} [A]%classical_set_scope _ _
+Arguments compact_precompact {T} [A]%_classical_set_scope _ _
 compact_precompact is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.compact_precompact
@@ -623,7 +637,7 @@ subspace_hausdorff :
 forall {T : topologicalType} [A : set T],
 hausdorff_space T -> forall [p q : subspace A], cluster (nbhs p) q -> p = q
 
-Arguments subspace_hausdorff {T} [A]%classical_set_scope _ [p q] _
+Arguments subspace_hausdorff {T} [A]%_classical_set_scope _ [p q] _
 subspace_hausdorff is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.subspace_hausdorff
@@ -974,7 +988,7 @@ forall [M : set T],
 open_nbhs l' M ->
 forall [B : set T], nbhs l B -> exists a : T, (M `&` B)%classic a
 
-Arguments cvgi_close [T] [T']%type_scope {F FF} [f]%function_scope 
+Arguments cvgi_close [T] [T']%_type_scope {F FF} [f]%_function_scope 
   [l l'] _ _ _ [M] _ [B] _
 cvgi_close is opaque
 Expands to: Constant
@@ -1098,8 +1112,8 @@ forall [x y : T],
 [set x0 | f x `@[x --> F] --> x0]%classic x ->
 [set x0 | f x `@[x --> F] --> x0]%classic y -> x = y
 
-Arguments cvgi_unique [T] sep {U}%type_scope {F FF} 
-  [f]%function_scope _ [x y] _ _
+Arguments cvgi_unique [T] sep {U}%_type_scope {F FF} 
+  [f]%_function_scope _ [x y] _ _
 cvgi_unique is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.cvgi_unique
@@ -1175,7 +1189,7 @@ forall [f : U -> T] [l : T],
 (f x @[x --> F] --> l)%classic -> lim (f x @[x --> F])%classic = l
 
 cvg_lim is not universe polymorphic
-Arguments cvg_lim [T] sep {U}%type_scope {F FF} [f]%function_scope [l] _
+Arguments cvg_lim [T] sep {U}%_type_scope {F FF} [f]%_function_scope [l] _
 cvg_lim is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.cvg_lim
@@ -1197,7 +1211,8 @@ forall [l : T] [f : U -> T],
 (\near F, f F = l) -> lim (f x @[x --> F])%classic = l
 
 lim_near_cst is not universe polymorphic
-Arguments lim_near_cst [T] sep {U}%type_scope {F FF} [l] [f]%function_scope _
+Arguments lim_near_cst [T] sep {U}%_type_scope {F FF} 
+  [l] [f]%_function_scope _
 lim_near_cst is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.lim_near_cst
@@ -1217,7 +1232,7 @@ forall {U : Type} {F : set_system U},
 ProperFilter F -> forall k : T, lim (k @[_ --> F])%classic = k
 
 lim_cst is not universe polymorphic
-Arguments lim_cst [T] sep {U}%type_scope {F FF} k
+Arguments lim_cst [T] sep {U}%_type_scope {F FF} k
 lim_cst is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.lim_cst
@@ -1240,7 +1255,7 @@ F (fun x : U => is_subset1 (f x)) ->
 (f x `@[x --> F] --> l)%classic -> lim (f x `@[x --> F])%classic = l
 
 cvgi_lim is not universe polymorphic
-Arguments cvgi_lim [T] sep {U}%type_scope {F FF} [f]%function_scope [l] _ _
+Arguments cvgi_lim [T] sep {U}%_type_scope {F FF} [f]%_function_scope [l] _ _
 cvgi_lim is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.cvgi_lim
@@ -1447,7 +1462,7 @@ nbhs x V ->
 forall [t : set T],
 nbhs x t -> exists2 i : set T, nbhs x i & (closure i `<=` t)%classic
 
-Arguments compact_regular {T} [x] [V]%classical_set_scope _ _ _ [t] _
+Arguments compact_regular {T} [x] [V]%_classical_set_scope _ _ _ [t] _
 compact_regular is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.compact_regular
@@ -1495,8 +1510,8 @@ closed A ->
 forall [t : set T],
 set_nbhs A t -> exists2 i : set T, set_nbhs A i & (closure i `<=` t)%classic
 
-Arguments compact_normal_local {T} [K]%classical_set_scope 
-  _ _ [A]%classical_set_scope _ _ [t] _
+Arguments compact_normal_local {T} [K]%_classical_set_scope 
+  _ _ [A]%_classical_set_scope _ _ [t] _
 compact_normal_local is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.compact_normal_local
@@ -1620,7 +1635,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="totally_disconnected" class="id"><a name="totally_disconnected" class="" title="totally_disconnected : forall {T : topologicalType}, set T -> Prop
 
 totally_disconnected is not universe polymorphic
-Arguments totally_disconnected {T} A%classical_set_scope
+Arguments totally_disconnected {T} A%_classical_set_scope
 totally_disconnected is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.totally_disconnected
@@ -2443,7 +2458,7 @@ forall [R : realType] [T Ii : Type],
 (Ii -> PseudoMetric.axioms_ R T) -> countable (T:=Ii) [set: Ii] -> Type
 
 sup_pseudometric is not universe polymorphic
-Arguments sup_pseudometric [R] [T Ii]%type_scope Tc%function_scope Icnt
+Arguments sup_pseudometric [R] [T Ii]%_type_scope Tc%_function_scope Icnt
 sup_pseudometric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.sup_pseudometric
@@ -2473,7 +2488,7 @@ countable (T:=Ii) [set: Ii] -> pseudoMetricType R
 separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric is not universe polymorphic
 Arguments
   separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric
-  [R T] [Ii]%type_scope Tc%function_scope Icnt
+  [R T] [Ii]%_type_scope Tc%_function_scope Icnt
 separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric
@@ -2487,7 +2502,7 @@ countable (T:=Ii) [set: Ii] -> pseudoMetricType R
 separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric is not universe polymorphic
 Arguments
   separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric
-  [R T] [Ii]%type_scope Tc%function_scope Icnt
+  [R T] [Ii]%_type_scope Tc%_function_scope Icnt
 separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric
@@ -2501,7 +2516,7 @@ countable (T:=Ii) [set: Ii] -> pseudoMetricType R
 separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric is not universe polymorphic
 Arguments
   separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric
-  [R T] [Ii]%type_scope Tc%function_scope Icnt
+  [R T] [Ii]%_type_scope Tc%_function_scope Icnt
 separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric
@@ -2515,7 +2530,7 @@ countable (T:=Ii) [set: Ii] -> pseudoMetricType R
 separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric is not universe polymorphic
 Arguments
   separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric
-  [R T] [Ii]%type_scope Tc%function_scope Icnt
+  [R T] [Ii]%_type_scope Tc%_function_scope Icnt
 separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric
@@ -2529,7 +2544,7 @@ countable (T:=Ii) [set: Ii] -> pseudoMetricType R
 separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric is not universe polymorphic
 Arguments
   separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric
-  [R T] [Ii]%type_scope Tc%function_scope Icnt
+  [R T] [Ii]%_type_scope Tc%_function_scope Icnt
 separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.separation_axioms_sup_pseudometric__canonical__pseudometric_structure_PseudoMetric
@@ -2553,7 +2568,7 @@ library mathcomp.analysis.topology_theory.separation_axioms, line 974, character
 <span class="vernacular">Definition</span><span class="id"> </span><span id="gauge.gauge" class="id"><a name="gauge.gauge" class="" title="gauge.gauge : forall {T : uniformType}, set (T * T) -> set_system (T * T)
 
 gauge.gauge is not universe polymorphic
-Arguments gauge.gauge {T} E%classical_set_scope _
+Arguments gauge.gauge {T} E%_classical_set_scope _
 gauge.gauge is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.gauge.gauge
@@ -2573,7 +2588,7 @@ entourage
      (E `&` E^-1%relation)%classic)
 
 gauge.iter_split_ent is not universe polymorphic
-Arguments gauge.iter_split_ent {T} [E]%classical_set_scope entE j%nat_scope
+Arguments gauge.iter_split_ent {T} [E]%_classical_set_scope entE j%_nat_scope
 gauge.iter_split_ent is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.gauge.iter_split_ent
@@ -2590,8 +2605,8 @@ forall {T : uniformType} [E : set (T * T)],
 entourage E -> forall [A : set (T * T)], gauge.gauge E A -> entourage A
 
 gauge.gauge_ent is not universe polymorphic
-Arguments gauge.gauge_ent {T} [E]%classical_set_scope 
-  entE [A]%classical_set_scope _
+Arguments gauge.gauge_ent {T} [E]%_classical_set_scope 
+  entE [A]%_classical_set_scope _
 gauge.gauge_ent is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.gauge.gauge_ent
@@ -2610,7 +2625,7 @@ forall {T : uniformType} [E : set (T * T)],
 entourage E -> Filter (gauge.gauge E)
 
 gauge.gauge_filter is not universe polymorphic
-Arguments gauge.gauge_filter {T} [E]%classical_set_scope entE
+Arguments gauge.gauge_filter {T} [E]%_classical_set_scope entE
 gauge.gauge_filter is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.gauge.gauge_filter
@@ -2643,8 +2658,8 @@ entourage E ->
 forall [A : set (T * T)],
 gauge.gauge E A -> forall [t : T * T], diagonal t -> A t
 
-Arguments gauge.gauge_refl {T} [E]%classical_set_scope 
-  entE [A]%classical_set_scope _ [t] _
+Arguments gauge.gauge_refl {T} [E]%_classical_set_scope 
+  entE [A]%_classical_set_scope _ [t] _
 gauge.gauge_refl is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.gauge.gauge_refl
@@ -2664,8 +2679,8 @@ entourage E ->
 forall [A : set (T * T)], gauge.gauge E A -> gauge.gauge E A^-1%relation
 
 gauge.gauge_inv is not universe polymorphic
-Arguments gauge.gauge_inv {T} [E]%classical_set_scope 
-  entE [A]%classical_set_scope _
+Arguments gauge.gauge_inv {T} [E]%_classical_set_scope 
+  entE [A]%_classical_set_scope _
 gauge.gauge_inv is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.gauge.gauge_inv
@@ -2689,8 +2704,8 @@ gauge.gauge E A ->
 exists2 B : set (T * T), gauge.gauge E B & ((B \; B)%relation `<=` A)%classic
 
 gauge.gauge_split is not universe polymorphic
-Arguments gauge.gauge_split {T} [E]%classical_set_scope 
-  entE [A]%classical_set_scope _
+Arguments gauge.gauge_split {T} [E]%_classical_set_scope 
+  entE [A]%_classical_set_scope _
 gauge.gauge_split is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.gauge.gauge_split
@@ -2759,7 +2774,7 @@ forall {T : uniformType} [E : set (T * T)], entourage E -> uniformType
 
 gauge.gauge_gauged__canonical__uniform_structure_Uniform is not universe polymorphic
 Arguments gauge.gauge_gauged__canonical__uniform_structure_Uniform 
-  {T} [E]%classical_set_scope entE
+  {T} [E]%_classical_set_scope entE
 gauge.gauge_gauged__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.gauge.gauge_gauged__canonical__uniform_structure_Uniform
@@ -2770,7 +2785,7 @@ forall {T : uniformType} [E : set (T * T)], entourage E -> uniformType
 
 gauge.gauge_gauged__canonical__uniform_structure_Uniform is not universe polymorphic
 Arguments gauge.gauge_gauged__canonical__uniform_structure_Uniform 
-  {T} [E]%classical_set_scope entE
+  {T} [E]%_classical_set_scope entE
 gauge.gauge_gauged__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.gauge.gauge_gauged__canonical__uniform_structure_Uniform
@@ -2781,7 +2796,7 @@ forall {T : uniformType} [E : set (T * T)], entourage E -> uniformType
 
 gauge.gauge_gauged__canonical__uniform_structure_Uniform is not universe polymorphic
 Arguments gauge.gauge_gauged__canonical__uniform_structure_Uniform 
-  {T} [E]%classical_set_scope entE
+  {T} [E]%_classical_set_scope entE
 gauge.gauge_gauged__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.gauge.gauge_gauged__canonical__uniform_structure_Uniform
@@ -2792,7 +2807,7 @@ forall {T : uniformType} [E : set (T * T)], entourage E -> uniformType
 
 gauge.gauge_gauged__canonical__uniform_structure_Uniform is not universe polymorphic
 Arguments gauge.gauge_gauged__canonical__uniform_structure_Uniform 
-  {T} [E]%classical_set_scope entE
+  {T} [E]%_classical_set_scope entE
 gauge.gauge_gauged__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.gauge.gauge_gauged__canonical__uniform_structure_Uniform
@@ -2804,7 +2819,7 @@ forall {T : uniformType} [E : set (T * T)], entourage E -> uniformType
 
 gauge.gauge_gauged__canonical__uniform_structure_Uniform is not universe polymorphic
 Arguments gauge.gauge_gauged__canonical__uniform_structure_Uniform 
-  {T} [E]%classical_set_scope entE
+  {T} [E]%_classical_set_scope entE
 gauge.gauge_gauged__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.gauge.gauge_gauged__canonical__uniform_structure_Uniform
@@ -2817,7 +2832,7 @@ forall {T : uniformType} [E : set (T * T)] (entE : entourage E),
 countable_uniformity T
 
 gauge.gauge_countable_uniformity is not universe polymorphic
-Arguments gauge.gauge_countable_uniformity {T} [E]%classical_set_scope entE
+Arguments gauge.gauge_countable_uniformity {T} [E]%_classical_set_scope entE
 gauge.gauge_countable_uniformity is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.gauge.gauge_countable_uniformity
@@ -2835,7 +2850,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="gauge.type" class="id"><a name="gauge.type" class="" title="gauge.type : forall {T : uniformType} [E : set (T * T)], entourage E -> Type
 
 gauge.type is not universe polymorphic
-Arguments gauge.type {T} [E]%classical_set_scope entE
+Arguments gauge.type {T} [E]%_classical_set_scope entE
 gauge.type is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.gauge.type
@@ -2889,7 +2904,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="perfect_set" class="id"><a name="perfect_set" class="" title="perfect_set : forall {T : topologicalType}, set T -> Prop
 
 perfect_set is not universe polymorphic
-Arguments perfect_set {T} A%classical_set_scope
+Arguments perfect_set {T} A%_classical_set_scope
 perfect_set is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.perfect_set
@@ -2902,7 +2917,7 @@ forall {T : topologicalType} (A : set T),
 perfect_set A <-> closed A /\ isolated A = set0
 
 perfectP is not universe polymorphic
-Arguments perfectP {T} A%classical_set_scope
+Arguments perfectP {T} A%_classical_set_scope
 perfectP is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.perfectP
@@ -2992,7 +3007,7 @@ forall {I : choiceType} {X : I -> topologicalType},
 (forall i : I, hausdorff_space (X i)) ->
 forall [p q : {i : I & X i}], cluster (nbhs p) q -> p = q
 
-Arguments sigT_hausdorff {I} {X}%function_scope _%function_scope [p q] _
+Arguments sigT_hausdorff {I} {X}%_function_scope _%_function_scope [p q] _
 sigT_hausdorff is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.separation_axioms.sigT_hausdorff

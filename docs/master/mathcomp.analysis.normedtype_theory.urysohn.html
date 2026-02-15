@@ -79,6 +79,20 @@
           </ul>
           </details>
           </li>
+<li><details id="mathcomp.analysis.probability_theory"><summary>probability_theory</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.probability_theory.bernoulli_distribution.html">bernoulli_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.beta_distribution.html">beta_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.binomial_distribution.html">binomial_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.exponential_distribution.html">exponential_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.normal_distribution.html">normal_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.poisson_distribution.html">poisson_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.probability.html">probability</a></li>
+<li><a href="mathcomp.analysis.probability_theory.random_variable.html">random_variable</a></li>
+<li><a href="mathcomp.analysis.probability_theory.uniform_distribution.html">uniform_distribution</a></li>
+          </ul>
+          </details>
+          </li>
 <li><details id="mathcomp.analysis.showcase"><summary>showcase</summary>
           <ul>
           <li><a href="mathcomp.analysis.showcase.pnt.html">pnt</a></li>
@@ -92,6 +106,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
 <li><a href="mathcomp.analysis.topology_theory.nat_topology.html">nat_topology</a></li>
@@ -134,7 +149,6 @@
 <li><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></li>
 <li><a href="mathcomp.analysis.numfun.html">numfun</a></li>
 <li><a href="mathcomp.analysis.pi_irrational.html">pi_irrational</a></li>
-<li><a href="mathcomp.analysis.probability.html">probability</a></li>
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
@@ -309,7 +323,7 @@ forall {R : realType} {X : pseudoMetricType R} [r : R] [xy : X * X],
 (edist xy < r%:E)%E -> ball xy.1 r xy.2
 
 edist_lt_ball is not universe polymorphic
-Arguments edist_lt_ball {R X} [r]%ring_scope [xy] _
+Arguments edist_lt_ball {R X} [r]%_ring_scope [xy] _
 edist_lt_ball is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.edist_lt_ball
@@ -328,7 +342,7 @@ forall {R : realType} {X : pseudoMetricType R} [r : R] [xy : X * X],
 (0 < r)%R -> ball xy.1 r xy.2 -> (edist xy <= r%:E)%E
 
 edist_fin is not universe polymorphic
-Arguments edist_fin {R X} [r]%ring_scope [xy] _ _
+Arguments edist_fin {R X} [r]%_ring_scope [xy] _ _
 edist_fin is opaque
 Expands to: Constant mathcomp.analysis.normedtype_theory.urysohn.edist_fin
 Declared in
@@ -668,7 +682,7 @@ Qed.</div></details>
 forall {R : realType} {T : pseudoMetricType R}, set T -> T -> \bar R
 
 edist_inf is not universe polymorphic
-Arguments edist_inf {R T} A%classical_set_scope z
+Arguments edist_inf {R T} A%_classical_set_scope z
 edist_inf is transparent
 Expands to: Constant mathcomp.analysis.normedtype_theory.urysohn.edist_inf
 Declared in
@@ -680,7 +694,7 @@ forall {R : realType} {T : pseudoMetricType R} (A : set T) (w : T),
 (0%R <= edist_inf A w)%E
 
 edist_inf_ge0 is not universe polymorphic
-Arguments edist_inf_ge0 {R T} A%classical_set_scope w
+Arguments edist_inf_ge0 {R T} A%_classical_set_scope w
 edist_inf_ge0 is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.edist_inf_ge0
@@ -698,7 +712,7 @@ forall {R : realType} {T : pseudoMetricType R} (A : set T) (w : T),
 edist_inf A w != -oo%E
 
 edist_inf_neqNy is not universe polymorphic
-Arguments edist_inf_neqNy {R T} A%classical_set_scope w
+Arguments edist_inf_neqNy {R T} A%_classical_set_scope w
 edist_inf_neqNy is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.edist_inf_neqNy
@@ -716,7 +730,7 @@ forall {R : realType} {T : pseudoMetricType R} (A : set T) (x y : T),
 (edist_inf A x <= edist (x, y) + edist_inf A y)%E
 
 edist_inf_triangle is not universe polymorphic
-Arguments edist_inf_triangle {R T} A%classical_set_scope x y
+Arguments edist_inf_triangle {R T} A%_classical_set_scope x y
 edist_inf_triangle is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.edist_inf_triangle
@@ -757,7 +771,7 @@ nbhs (edist_inf A x) t ->
       class) in
  nbhs) x (edist_inf A @^-1` t)%classic
 
-Arguments edist_inf_continuous {R T} [A]%classical_set_scope [x t] _
+Arguments edist_inf_continuous {R T} [A]%_classical_set_scope [x t] _
 edist_inf_continuous is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.edist_inf_continuous
@@ -811,7 +825,7 @@ forall {R : realType} {T : pseudoMetricType R} [A : set T] [a : T],
 A a -> edist_inf A a = 0%R
 
 edist_inf0 is not universe polymorphic
-Arguments edist_inf0 {R T} [A]%classical_set_scope [a] _
+Arguments edist_inf0 {R T} [A]%_classical_set_scope [a] _
 edist_inf0 is opaque
 Expands to: Constant mathcomp.analysis.normedtype_theory.urysohn.edist_inf0
 Declared in
@@ -890,7 +904,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="uniform_separator" class="id"><a name="uniform_separator" class="" title="uniform_separator : forall {T : topologicalType}, set T -> set T -> Prop
 
 uniform_separator is not universe polymorphic
-Arguments uniform_separator {T} (A B)%classical_set_scope
+Arguments uniform_separator {T} (A B)%_classical_set_scope
 uniform_separator is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.uniform_separator
@@ -922,7 +936,7 @@ Qed.</div></details>
 forall {T : topologicalType} {R : realType}, set T -> set T -> T -> R
 
 Urysohn is not universe polymorphic
-Arguments Urysohn {T R} (A B)%classical_set_scope _
+Arguments Urysohn {T R} (A B)%_classical_set_scope _
 Urysohn is transparent
 Expands to: Constant mathcomp.analysis.normedtype_theory.urysohn.Urysohn
 Declared in
@@ -947,7 +961,7 @@ nbhs (Urysohn A B x) t ->
       class) in
  nbhs) x (Urysohn A B @^-1` t)%classic
 
-Arguments Urysohn_continuous {T R} [A B]%classical_set_scope [x t] _
+Arguments Urysohn_continuous {T R} [A B]%_classical_set_scope [x t] _
 Urysohn_continuous is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.Urysohn_continuous
@@ -969,7 +983,7 @@ Urysohn_range :
 forall {T : topologicalType} {R : realType} [A B : set T] [t : R],
 range (Urysohn A B) t -> (t \in `[0, 1]%R) = true
 
-Arguments Urysohn_range {T R} [A B]%classical_set_scope [t] _
+Arguments Urysohn_range {T R} [A B]%_classical_set_scope [t] _
 Urysohn_range is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.Urysohn_range
@@ -993,7 +1007,7 @@ forall {T : topologicalType} {R : realType} [A B : set T],
 uniform_separator A B ->
 forall [t : R], [set Urysohn A B x | x in A]%classic t -> t = 0%R
 
-Arguments Urysohn_sub0 {T R} [A B]%classical_set_scope _ [t] _
+Arguments Urysohn_sub0 {T R} [A B]%_classical_set_scope _ [t] _
 Urysohn_sub0 is opaque
 Expands to: Constant mathcomp.analysis.normedtype_theory.urysohn.Urysohn_sub0
 Declared in
@@ -1017,7 +1031,7 @@ forall {T : topologicalType} {R : realType} [A B : set T],
 uniform_separator A B ->
 forall [t : R], [set Urysohn A B x | x in B]%classic t -> t = 1%R
 
-Arguments Urysohn_sub1 {T R} [A B]%classical_set_scope _ [t] _
+Arguments Urysohn_sub1 {T R} [A B]%_classical_set_scope _ [t] _
 Urysohn_sub1 is opaque
 Expands to: Constant mathcomp.analysis.normedtype_theory.urysohn.Urysohn_sub1
 Declared in
@@ -1036,7 +1050,7 @@ uniform_separator A B ->
 [set Urysohn A B x | x in A]%classic = [set 0%R]%classic
 
 Urysohn_eq0 is not universe polymorphic
-Arguments Urysohn_eq0 {T R} [A B]%classical_set_scope _ _
+Arguments Urysohn_eq0 {T R} [A B]%_classical_set_scope _ _
 Urysohn_eq0 is opaque
 Expands to: Constant mathcomp.analysis.normedtype_theory.urysohn.Urysohn_eq0
 Declared in
@@ -1058,7 +1072,7 @@ uniform_separator A B ->
 [set Urysohn A B x | x in B]%classic = [set 1%R]%classic
 
 Urysohn_eq1 is not universe polymorphic
-Arguments Urysohn_eq1 {T R} [A B]%classical_set_scope _ _
+Arguments Urysohn_eq1 {T R} [A B]%_classical_set_scope _ _
 Urysohn_eq1 is opaque
 Expands to: Constant mathcomp.analysis.normedtype_theory.urysohn.Urysohn_eq1
 Declared in
@@ -1082,7 +1096,7 @@ forall {T : uniformType} [A B : set T],
 uniform_separator A B
 
 uniform_separatorW is not universe polymorphic
-Arguments uniform_separatorW {T} [A B]%classical_set_scope _
+Arguments uniform_separatorW {T} [A B]%_classical_set_scope _
 uniform_separatorW is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.uniform_separatorW
@@ -1287,7 +1301,7 @@ forall {T : topologicalType}, normal_space T -> set T -> uniformType
 
 urysohn_urysohnType__canonical__uniform_structure_Uniform is not universe polymorphic
 Arguments urysohn_urysohnType__canonical__uniform_structure_Uniform 
-  {T} normalT A%classical_set_scope
+  {T} normalT A%_classical_set_scope
 urysohn_urysohnType__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.urysohn_urysohnType__canonical__uniform_structure_Uniform
@@ -1298,7 +1312,7 @@ forall {T : topologicalType}, normal_space T -> set T -> uniformType
 
 urysohn_urysohnType__canonical__uniform_structure_Uniform is not universe polymorphic
 Arguments urysohn_urysohnType__canonical__uniform_structure_Uniform 
-  {T} normalT A%classical_set_scope
+  {T} normalT A%_classical_set_scope
 urysohn_urysohnType__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.urysohn_urysohnType__canonical__uniform_structure_Uniform
@@ -1309,7 +1323,7 @@ forall {T : topologicalType}, normal_space T -> set T -> uniformType
 
 urysohn_urysohnType__canonical__uniform_structure_Uniform is not universe polymorphic
 Arguments urysohn_urysohnType__canonical__uniform_structure_Uniform 
-  {T} normalT A%classical_set_scope
+  {T} normalT A%_classical_set_scope
 urysohn_urysohnType__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.urysohn_urysohnType__canonical__uniform_structure_Uniform
@@ -1320,7 +1334,7 @@ forall {T : topologicalType}, normal_space T -> set T -> uniformType
 
 urysohn_urysohnType__canonical__uniform_structure_Uniform is not universe polymorphic
 Arguments urysohn_urysohnType__canonical__uniform_structure_Uniform 
-  {T} normalT A%classical_set_scope
+  {T} normalT A%_classical_set_scope
 urysohn_urysohnType__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.urysohn_urysohnType__canonical__uniform_structure_Uniform
@@ -1335,7 +1349,7 @@ normal_space T -> set T -> Pointed.axioms_ T -> puniformType
 
 urysohn_urysohnType__canonical__uniform_structure_PointedUniform is not universe polymorphic
 Arguments urysohn_urysohnType__canonical__uniform_structure_PointedUniform
-  {T} normalT A%classical_set_scope p
+  {T} normalT A%_classical_set_scope p
 urysohn_urysohnType__canonical__uniform_structure_PointedUniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.urysohn_urysohnType__canonical__uniform_structure_PointedUniform
@@ -1347,7 +1361,7 @@ normal_space T -> set T -> Pointed.axioms_ T -> puniformType
 
 urysohn_urysohnType__canonical__uniform_structure_PointedUniform is not universe polymorphic
 Arguments urysohn_urysohnType__canonical__uniform_structure_PointedUniform
-  {T} normalT A%classical_set_scope p
+  {T} normalT A%_classical_set_scope p
 urysohn_urysohnType__canonical__uniform_structure_PointedUniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.urysohn_urysohnType__canonical__uniform_structure_PointedUniform
@@ -1359,7 +1373,7 @@ normal_space T -> set T -> Pointed.axioms_ T -> puniformType
 
 urysohn_urysohnType__canonical__uniform_structure_PointedUniform is not universe polymorphic
 Arguments urysohn_urysohnType__canonical__uniform_structure_PointedUniform
-  {T} normalT A%classical_set_scope p
+  {T} normalT A%_classical_set_scope p
 urysohn_urysohnType__canonical__uniform_structure_PointedUniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.urysohn_urysohnType__canonical__uniform_structure_PointedUniform
@@ -1371,7 +1385,7 @@ normal_space T -> set T -> Pointed.axioms_ T -> puniformType
 
 urysohn_urysohnType__canonical__uniform_structure_PointedUniform is not universe polymorphic
 Arguments urysohn_urysohnType__canonical__uniform_structure_PointedUniform
-  {T} normalT A%classical_set_scope p
+  {T} normalT A%_classical_set_scope p
 urysohn_urysohnType__canonical__uniform_structure_PointedUniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.urysohn_urysohnType__canonical__uniform_structure_PointedUniform
@@ -1383,7 +1397,7 @@ normal_space T -> set T -> Pointed.axioms_ T -> puniformType
 
 urysohn_urysohnType__canonical__uniform_structure_PointedUniform is not universe polymorphic
 Arguments urysohn_urysohnType__canonical__uniform_structure_PointedUniform
-  {T} normalT A%classical_set_scope p
+  {T} normalT A%_classical_set_scope p
 urysohn_urysohnType__canonical__uniform_structure_PointedUniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.urysohn_urysohnType__canonical__uniform_structure_PointedUniform
@@ -1395,7 +1409,7 @@ normal_space T -> set T -> Pointed.axioms_ T -> puniformType
 
 urysohn_urysohnType__canonical__uniform_structure_PointedUniform is not universe polymorphic
 Arguments urysohn_urysohnType__canonical__uniform_structure_PointedUniform
-  {T} normalT A%classical_set_scope p
+  {T} normalT A%_classical_set_scope p
 urysohn_urysohnType__canonical__uniform_structure_PointedUniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.urysohn_urysohnType__canonical__uniform_structure_PointedUniform
@@ -1410,7 +1424,7 @@ forall [A B : set T],
 closed A -> closed B -> (A `&` B)%classic = set0 -> uniform_separator A B
 
 normal_uniform_separator is not universe polymorphic
-Arguments normal_uniform_separator {T} normalT [A B]%classical_set_scope 
+Arguments normal_uniform_separator {T} normalT [A B]%_classical_set_scope 
   _ _ _
 normal_uniform_separator is opaque
 Expands to: Constant
@@ -1467,7 +1481,7 @@ uniform_separator A B <->
      & ([set f x | x in B] `<=` [set 1%R])%classic])
 
 uniform_separatorP is not universe polymorphic
-Arguments uniform_separatorP {T R} (A B)%classical_set_scope
+Arguments uniform_separatorP {T R} (A B)%_classical_set_scope
 uniform_separatorP is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.uniform_separatorP
@@ -1486,7 +1500,7 @@ library mathcomp.analysis.normedtype_theory.urysohn, line 587, characters 6-24
 <span class="id">-</span><span class="id"> exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#Urysohn_sub0">Urysohn_sub0</a></span>.<br/>
 <span class="id">-</span><span class="id"> exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#Urysohn_sub1">Urysohn_sub1</a></span>.<br/>
 <span class="id">case=&gt;</span><span class="id"> f</span><span class="id"> [ctsf</span><span class="id"> f01</span><span class="id"> fA0</span><span class="id"> fB1]</span>.<br/>
-<span class="id">pose</span><span class="id"> T'</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#Uniform.Exports.uniformType">uniformType</a></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.weak_topology.html#weak_topology">weak_topology</a></span><span class="id"> f</span>.<br/>
+<span class="id">pose</span><span class="id"> T'</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#Uniform.Exports.uniformType">uniformType</a></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.initial_topology.html#initial_topology">initial_topology</a></span><span class="id"> f</span>.<br/>
 <span class="gallina-kwd">exists</span> (<span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#Uniform.class">Uniform</a></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#Uniform.class">class</a></span><span class="id"> T'</span>)<span class="id">,</span> (<span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9">[set</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9"> </a></span><span id="xy:127" class="id"><span id="xy:126" class="id"><a name="xy:127" class="">xy</a></span></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9"> |</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#ball">ball</a></span> (<span class="id">f</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#xy:126">xy</a></span>.<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#::pair_scope:x_'.1'">1</a></span>)<span class="id"> 1</span> (<span class="id">f</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#xy:126">xy</a></span>.<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#::pair_scope:x_'.2'">2</a></span>)<span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9">]</a></span>)<span class="id">;</span><span class="id"> split</span>.<br/>
 <span class="id">-</span><span class="gallina-kwd"> exists</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9">[set</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9"> </a></span><span id="xy:129" class="id"><span id="xy:128" class="id"><a name="xy:129" class="">xy</a></span></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9"> |</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#ball">ball</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#xy:128">xy</a></span>.<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#::pair_scope:x_'.1'">1</a></span><span class="id"> 1</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#xy:128">xy</a></span>.<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#::pair_scope:x_'.2'">2</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9">]</a></span><span class="id">;</span><span class="id"> last</span><span class="gallina-kwd"> by</span><span class="id"> case</span>.<br/>
 &nbsp;&nbsp;<span class="gallina-kwd">by</span><span class="id"> rewrite</span><span class="id"> -</span><span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#entourage_ballE">entourage_ballE</a></span><span class="id">;</span><span class="gallina-kwd"> exists</span><span class="id"> 1</span><span class="id"> =&gt;</span><span class="id"> //=</span>.<br/>
@@ -1610,7 +1624,7 @@ forall {T : uniformType} [x : T] [B : set T],
 closed B -> ~ B x -> uniform_separator [set x] B
 
 point_uniform_separator is not universe polymorphic
-Arguments point_uniform_separator {R T} [x] [B]%classical_set_scope _ _
+Arguments point_uniform_separator {R T} [x] [B]%_classical_set_scope _ _
 point_uniform_separator is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.point_uniform_separator
@@ -1723,7 +1737,7 @@ Qed.</div></details>
 <span class="vernacular">Hypothesis</span><span class="id"> </span><span id="completely_regular_uniformity.completely_regular_uniformity.crs" class="id"><a name="completely_regular_uniformity.completely_regular_uniformity.crs" class="">crs</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#completely_regular_space">completely_regular_space</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#completely_regular_uniformity.completely_regular_uniformity.X">X</a></span>.<br/>
 <br/>
 <span class="vernacular">Let</span><span class="id"> </span><span id="completely_regular_uniformity.completely_regular_uniformity.X'" class="id"><a name="completely_regular_uniformity.completely_regular_uniformity.X'" class="">X'</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#Uniform.Exports.uniformType">uniformType</a></span><span class="id"> :=</span><span class="id"> @</span><span class="id"><a href="mathcomp.analysis.topology_theory.supremum_topology.html#sup_topology">sup_topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#completely_regular_uniformity.completely_regular_uniformity.X">X</a></span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#6556914db359db999889decec6a4a562">{</a></span><span id="f:158" class="id"><a name="f:158" class="">f</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#6556914db359db999889decec6a4a562"> :</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#6556914db359db999889decec6a4a562"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#completely_regular_uniformity.completely_regular_uniformity.X">X</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#completely_regular_uniformity.completely_regular_uniformity.R">R</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#6556914db359db999889decec6a4a562"> |</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#6556914db359db999889decec6a4a562"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#continuous">continuous</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#f:158">f</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#6556914db359db999889decec6a4a562">}</a></span><br/>
-&nbsp;&nbsp;(<span class="gallina-kwd">fun</span><span class="id"> </span><span id="f:159" class="id"><a name="f:159" class="">f</a></span><span class="id"> =&gt;</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#Uniform.class">Uniform</a></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#Uniform.class">class</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.weak_topology.html#weak_topology">weak_topology</a></span> (<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#projT1">projT1</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#f:159">f</a></span>))).<br/>
+&nbsp;&nbsp;(<span class="gallina-kwd">fun</span><span class="id"> </span><span id="f:159" class="id"><a name="f:159" class="">f</a></span><span class="id"> =&gt;</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#Uniform.class">Uniform</a></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#Uniform.class">class</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.initial_topology.html#initial_topology">initial_topology</a></span> (<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#projT1">projT1</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#f:159">f</a></span>))).<br/>
 <br/>
 <span class="vernacular">Let</span><span class="id"> </span><span id="completely_regular_uniformity.completely_regular_uniformity.completely_regular_nbhsE" class="id"><a name="completely_regular_uniformity.completely_regular_uniformity.completely_regular_nbhsE" class="">completely_regular_nbhsE</a></span><span class="id"> :</span><span class="id"> @</span><span class="id"><a href="mathcomp.classical.filter.html#nbhs">nbhs</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#completely_regular_uniformity.completely_regular_uniformity.X">X</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#completely_regular_uniformity.completely_regular_uniformity.X">X</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#nbhs_">nbhs_</a></span> (<span class="id">@</span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#entourage">entourage</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#completely_regular_uniformity.completely_regular_uniformity.X'">X'</a></span>).<br/>
 <details>
@@ -1750,7 +1764,7 @@ Qed.</div></details>
 &nbsp;&nbsp;<span class="gallina-kwd">by</span><span class="id"> apply:</span><span class="id"> fU1;</span><span class="gallina-kwd"> exists</span><span class="id"> z</span>.<br/>
 <span class="id">move=&gt;</span><span class="id"> r</span><span class="id"> /=</span><span class="id"> [_];</span><span class="id"> apply</span><span class="id"> =&gt;</span><span class="id"> /=</span>.<br/>
 <span class="id">pose</span><span class="id"> f'</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.boolp.html#645f16a05b4a0a088d9d94c6b782d08e">{classic</a></span><span class="id"><a href="mathcomp.classical.boolp.html#645f16a05b4a0a088d9d94c6b782d08e"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#6556914db359db999889decec6a4a562">{</a></span><span id="f:161" class="id"><a name="f:161" class="">f</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#6556914db359db999889decec6a4a562"> :</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#6556914db359db999889decec6a4a562"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#completely_regular_uniformity.completely_regular_uniformity.X">X</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#completely_regular_uniformity.completely_regular_uniformity.R">R</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#6556914db359db999889decec6a4a562"> |</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#6556914db359db999889decec6a4a562"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#continuous">continuous</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#f:161">f</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#6556914db359db999889decec6a4a562">}</a></span><span class="id"><a href="mathcomp.classical.boolp.html#645f16a05b4a0a088d9d94c6b782d08e">}</a></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#exist">exist</a></span><span class="id"> _</span><span class="id"> f</span><span class="id"> ctsf</span>.<br/>
-<span class="id">suff</span><span class="id"> /</span><span class="id"><a href="mathcomp.classical.boolp.html#asboolP">asboolP</a></span><span class="id"> entE</span><span class="id"> :</span><span class="id"> @</span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#entourage">entourage</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.weak_topology.html#weak_topology">weak_topology</a></span><span class="id"> f</span>) (<span class="id">f'</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"> </a></span><span class="id">E</span>).<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#::pair_scope:x_'.2'">2</a></span>.<br/>
+<span class="id">suff</span><span class="id"> /</span><span class="id"><a href="mathcomp.classical.boolp.html#asboolP">asboolP</a></span><span class="id"> entE</span><span class="id"> :</span><span class="id"> @</span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#entourage">entourage</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.initial_topology.html#initial_topology">initial_topology</a></span><span class="id"> f</span>) (<span class="id">f'</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"> </a></span><span class="id">E</span>).<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#::pair_scope:x_'.2'">2</a></span>.<br/>
 &nbsp;&nbsp;<span class="gallina-kwd">by</span><span class="gallina-kwd"> exists</span> (<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#exist">exist</a></span><span class="id"> _</span> (<span class="id">f'</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"> </a></span><span class="id">E</span>)<span class="id"> entE</span>).<br/>
 <span class="gallina-kwd">exists</span> (<span class="gallina-kwd">fun</span><span class="id"> </span><span id="pq:163" class="id"><span id="pq:162" class="id"><a name="pq:163" class="">pq</a></span></span><span class="id"> =&gt;</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#ball">ball</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#pq:162">pq</a></span>.<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#::pair_scope:x_'.1'">1</a></span><span class="id"> 1</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#pq:162">pq</a></span>.<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#::pair_scope:x_'.2'">2</a></span>)<span class="id"> =&gt;</span><span class="id"> //=</span>.<br/>
 <span class="gallina-kwd">by</span><span class="id"> rewrite</span><span class="id"> /</span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#entourage">entourage</a></span><span class="id"> /=;</span><span class="gallina-kwd"> exists</span><span class="id"> 1</span><span class="id"> =&gt;</span><span class="id"> /=</span>.<br/>
@@ -2135,7 +2149,7 @@ library mathcomp.analysis.normedtype_theory.urysohn, line 772, characters 0-144
 &nbsp;&nbsp;(<span class="id">@</span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#type">completely_regular_uniformity</a></span>.<span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#type">type</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#locally_compact_uniform.R">R</a></span><span class="id"> _</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#one_point_compactification_completely_reg">one_point_compactification_completely_reg</a></span>).<br/>
 <br/>
-<span class="vernacular">Let</span><span class="id"> </span><span id="locally_compact_uniform.X'" class="id"><a name="locally_compact_uniform.X'" class="">X'</a></span><span class="id"> :=</span><span class="id"> @</span><span class="id"><a href="mathcomp.analysis.topology_theory.weak_topology.html#weak_topology">weak_topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#locally_compact_uniform.X">X</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#locally_compact_uniform.opc">opc</a></span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#Some">Some</a></span>.<br/>
+<span class="vernacular">Let</span><span class="id"> </span><span id="locally_compact_uniform.X'" class="id"><a name="locally_compact_uniform.X'" class="">X'</a></span><span class="id"> :=</span><span class="id"> @</span><span class="id"><a href="mathcomp.analysis.topology_theory.initial_topology.html#initial_topology">initial_topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#locally_compact_uniform.X">X</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#locally_compact_uniform.opc">opc</a></span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#Some">Some</a></span>.<br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_one_point_compactification_weakE" class="id"><a name="nbhs_one_point_compactification_weakE" class="" title="nbhs_one_point_compactification_weakE :
 forall {X : topologicalType} {R : realType} (lcpt : locally_compact [set: X])
   (hsdf : hausdorff_space X),
@@ -2152,7 +2166,8 @@ library mathcomp.analysis.normedtype_theory.urysohn, line 778, characters 6-43
 <details>
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
-<span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#nbhs_entourageE">nbhs_entourageE</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.one_point_compactification.html#one_point_compactification_weak_topology">one_point_compactification_weak_topology</a></span>. Qed.</div></details>
+<span class="gallina-kwd">by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#nbhs_entourageE">nbhs_entourageE</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.one_point_compactification.html#one_point_compactification_initial_topology">one_point_compactification_initial_topology</a></span>.<br/>
+Qed.</div></details>
 <br/>
 <span id="Topological_sort__canonical__uniform_structure_Uniform" class="id"><span id="HB_unnamed_mixin_64" class="id"><span id="Topological_sort__canonical__topology_structure_Topological" class="id"><span id="HB_unnamed_mixin_63" class="id"><span id="HB_unnamed_mixin_62" class="id"><span id="HB_unnamed_mixin_61" class="id"><span id="HB_unnamed_mixin_60" class="id"><span id="HB_unnamed_mixin_59" class="id"><span id="uniform_structure_Nbhs_isUniform__to__topology_structure_Nbhs_isTopological" class="id"><span id="uniform_structure_Nbhs_isUniform__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="HB_unnamed_factory_56" class="id"><a name="Topological_sort__canonical__uniform_structure_Uniform" class="" title="Topological_sort__canonical__uniform_structure_Uniform :
 forall {X : topologicalType},
@@ -2165,7 +2180,7 @@ Topological_sort__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.Topological_sort__canonical__uniform_structure_Uniform
 Declared in
-library mathcomp.analysis.normedtype_theory.urysohn, line 781, characters 0-258
+library mathcomp.analysis.normedtype_theory.urysohn, line 783, characters 0-258
 ">#[local,</a></span></span></span></span></span></span></span></span></span></span></span><span id="Topological_sort__canonical__uniform_structure_Uniform" class="id"><span id="HB_unnamed_mixin_64" class="id"><span id="Topological_sort__canonical__topology_structure_Topological" class="id"><span id="HB_unnamed_mixin_63" class="id"><span id="HB_unnamed_mixin_62" class="id"><span id="HB_unnamed_mixin_61" class="id"><span id="HB_unnamed_mixin_60" class="id"><span id="HB_unnamed_mixin_59" class="id"><span id="uniform_structure_Nbhs_isUniform__to__topology_structure_Nbhs_isTopological" class="id"><span id="uniform_structure_Nbhs_isUniform__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="HB_unnamed_factory_56" class="id"><a name="Topological_sort__canonical__uniform_structure_Uniform" class="" title="Topological_sort__canonical__uniform_structure_Uniform :
 forall {X : topologicalType},
 realType -> locally_compact [set: X] -> hausdorff_space X -> uniformType
@@ -2177,7 +2192,7 @@ Topological_sort__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.Topological_sort__canonical__uniform_structure_Uniform
 Declared in
-library mathcomp.analysis.normedtype_theory.urysohn, line 781, characters 0-258
+library mathcomp.analysis.normedtype_theory.urysohn, line 783, characters 0-258
 "> non_forgetful_inheritance]</a></span></span></span></span></span></span></span></span></span></span></span><br/>
 <span id="Topological_sort__canonical__uniform_structure_Uniform" class="id"><span id="HB_unnamed_mixin_64" class="id"><span id="Topological_sort__canonical__topology_structure_Topological" class="id"><span id="HB_unnamed_mixin_63" class="id"><span id="HB_unnamed_mixin_62" class="id"><span id="HB_unnamed_mixin_61" class="id"><span id="HB_unnamed_mixin_60" class="id"><span id="HB_unnamed_mixin_59" class="id"><span id="uniform_structure_Nbhs_isUniform__to__topology_structure_Nbhs_isTopological" class="id"><span id="uniform_structure_Nbhs_isUniform__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="HB_unnamed_factory_56" class="id"><a name="Topological_sort__canonical__uniform_structure_Uniform" class="" title="Topological_sort__canonical__uniform_structure_Uniform :
 forall {X : topologicalType},
@@ -2190,7 +2205,7 @@ Topological_sort__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.Topological_sort__canonical__uniform_structure_Uniform
 Declared in
-library mathcomp.analysis.normedtype_theory.urysohn, line 781, characters 0-258
+library mathcomp.analysis.normedtype_theory.urysohn, line 783, characters 0-258
 ">HB</a></span></span></span></span></span></span></span></span></span></span></span>.<span id="Topological_sort__canonical__uniform_structure_Uniform" class="id"><span id="HB_unnamed_mixin_64" class="id"><span id="Topological_sort__canonical__topology_structure_Topological" class="id"><span id="HB_unnamed_mixin_63" class="id"><span id="HB_unnamed_mixin_62" class="id"><span id="HB_unnamed_mixin_61" class="id"><span id="HB_unnamed_mixin_60" class="id"><span id="HB_unnamed_mixin_59" class="id"><span id="uniform_structure_Nbhs_isUniform__to__topology_structure_Nbhs_isTopological" class="id"><span id="uniform_structure_Nbhs_isUniform__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="HB_unnamed_factory_56" class="id"><a name="Topological_sort__canonical__uniform_structure_Uniform" class="" title="Topological_sort__canonical__uniform_structure_Uniform :
 forall {X : topologicalType},
 realType -> locally_compact [set: X] -> hausdorff_space X -> uniformType
@@ -2202,7 +2217,7 @@ Topological_sort__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.Topological_sort__canonical__uniform_structure_Uniform
 Declared in
-library mathcomp.analysis.normedtype_theory.urysohn, line 781, characters 0-258
+library mathcomp.analysis.normedtype_theory.urysohn, line 783, characters 0-258
 ">instance</a></span></span></span></span></span></span></span></span></span></span></span><span class="vernacular"> Definition</span><span id="Topological_sort__canonical__uniform_structure_Uniform" class="id"><span id="HB_unnamed_mixin_64" class="id"><span id="Topological_sort__canonical__topology_structure_Topological" class="id"><span id="HB_unnamed_mixin_63" class="id"><span id="HB_unnamed_mixin_62" class="id"><span id="HB_unnamed_mixin_61" class="id"><span id="HB_unnamed_mixin_60" class="id"><span id="HB_unnamed_mixin_59" class="id"><span id="uniform_structure_Nbhs_isUniform__to__topology_structure_Nbhs_isTopological" class="id"><span id="uniform_structure_Nbhs_isUniform__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="HB_unnamed_factory_56" class="id"><a name="Topological_sort__canonical__uniform_structure_Uniform" class="" title="Topological_sort__canonical__uniform_structure_Uniform :
 forall {X : topologicalType},
 realType -> locally_compact [set: X] -> hausdorff_space X -> uniformType
@@ -2214,7 +2229,7 @@ Topological_sort__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.Topological_sort__canonical__uniform_structure_Uniform
 Declared in
-library mathcomp.analysis.normedtype_theory.urysohn, line 781, characters 0-258
+library mathcomp.analysis.normedtype_theory.urysohn, line 783, characters 0-258
 "> _</a></span></span></span></span></span></span></span></span></span></span></span><span id="Topological_sort__canonical__uniform_structure_Uniform" class="id"><span id="HB_unnamed_mixin_64" class="id"><span id="Topological_sort__canonical__topology_structure_Topological" class="id"><span id="HB_unnamed_mixin_63" class="id"><span id="HB_unnamed_mixin_62" class="id"><span id="HB_unnamed_mixin_61" class="id"><span id="HB_unnamed_mixin_60" class="id"><span id="HB_unnamed_mixin_59" class="id"><span id="uniform_structure_Nbhs_isUniform__to__topology_structure_Nbhs_isTopological" class="id"><span id="uniform_structure_Nbhs_isUniform__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="HB_unnamed_factory_56" class="id"><a name="Topological_sort__canonical__uniform_structure_Uniform" class="" title="Topological_sort__canonical__uniform_structure_Uniform :
 forall {X : topologicalType},
 realType -> locally_compact [set: X] -> hausdorff_space X -> uniformType
@@ -2226,7 +2241,7 @@ Topological_sort__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.Topological_sort__canonical__uniform_structure_Uniform
 Declared in
-library mathcomp.analysis.normedtype_theory.urysohn, line 781, characters 0-258
+library mathcomp.analysis.normedtype_theory.urysohn, line 783, characters 0-258
 "> :=</a></span></span></span></span></span></span></span></span></span></span></span><span id="Topological_sort__canonical__uniform_structure_Uniform" class="id"><span id="HB_unnamed_mixin_64" class="id"><span id="Topological_sort__canonical__topology_structure_Topological" class="id"><span id="HB_unnamed_mixin_63" class="id"><span id="HB_unnamed_mixin_62" class="id"><span id="HB_unnamed_mixin_61" class="id"><span id="HB_unnamed_mixin_60" class="id"><span id="HB_unnamed_mixin_59" class="id"><span id="uniform_structure_Nbhs_isUniform__to__topology_structure_Nbhs_isTopological" class="id"><span id="uniform_structure_Nbhs_isUniform__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="HB_unnamed_factory_56" class="id"><a name="Topological_sort__canonical__uniform_structure_Uniform" class="" title="Topological_sort__canonical__uniform_structure_Uniform :
 forall {X : topologicalType},
 realType -> locally_compact [set: X] -> hausdorff_space X -> uniformType
@@ -2238,7 +2253,7 @@ Topological_sort__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.Topological_sort__canonical__uniform_structure_Uniform
 Declared in
-library mathcomp.analysis.normedtype_theory.urysohn, line 781, characters 0-258
+library mathcomp.analysis.normedtype_theory.urysohn, line 783, characters 0-258
 "> @Nbhs_isUniform</a></span></span></span></span></span></span></span></span></span></span></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#Nbhs_isUniform.Build">Build</a></span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#locally_compact_uniform.X">X</a></span><br/>
 &nbsp;&nbsp;(<span class="id">@</span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#entourage">entourage</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#locally_compact_uniform.X'">X'</a></span>)<br/>
@@ -2273,7 +2288,7 @@ locally_compact_completely_regular is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.locally_compact_completely_regular
 Declared in
-library mathcomp.analysis.normedtype_theory.urysohn, line 791, characters 6-40
+library mathcomp.analysis.normedtype_theory.urysohn, line 793, characters 6-40
 ">locally_compact_completely_regular</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#completely_regular_space">completely_regular_space</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#locally_compact_uniform.X">X</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -2300,7 +2315,7 @@ completely_regular_regular is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.completely_regular_regular
 Declared in
-library mathcomp.analysis.normedtype_theory.urysohn, line 796, characters 6-32
+library mathcomp.analysis.normedtype_theory.urysohn, line 798, characters 6-32
 ">completely_regular_regular</a></span><span class="id"> {</span><span id="R:170" class="id"><a name="R:170" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html#Real.Exports.realType">realType</a></span><span class="id">}</span><span class="id"> {</span><span id="X:171" class="id"><a name="X:171" class="">X</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#Topological.Exports.topologicalType">topologicalType</a></span><span class="id">}</span><span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#completely_regular_space">completely_regular_space</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#X:171">X</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id">@</span><span class="id"><a href="mathcomp.analysis.topology_theory.separation_axioms.html#regular_space">regular_space</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#X:171">X</a></span>.<br/>
 <details>
@@ -2327,7 +2342,7 @@ regular_openP is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.regular_openP
 Declared in
-library mathcomp.analysis.normedtype_theory.urysohn, line 805, characters 6-19
+library mathcomp.analysis.normedtype_theory.urysohn, line 807, characters 6-19
 ">regular_openP</a></span><span class="id"> {</span><span id="T:172" class="id"><a name="T:172" class="">T</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#Topological.Exports.topologicalType">topologicalType</a></span><span class="id">}</span> (<span id="x:173" class="id"><a name="x:173" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#T:172">T</a></span>)<span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#7c80fbc9405d98c9b96117793e1b9981">{for</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#7c80fbc9405d98c9b96117793e1b9981"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#x:173">x</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#7c80fbc9405d98c9b96117793e1b9981">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#7c80fbc9405d98c9b96117793e1b9981"> </a></span><span class="id">@</span><span class="id"><a href="mathcomp.analysis.topology_theory.separation_axioms.html#regular_space">regular_space</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#T:172">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#7c80fbc9405d98c9b96117793e1b9981">}</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"> &lt;-&gt;</a></span><span class="gallina-kwd"> forall</span><span class="id"> </span><span id="A:174" class="id"><a name="A:174" class="">A</a></span><span class="id">,</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#closed">closed</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#A:174">A</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181">~</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#A:174">A</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#x:173">x</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><br/>
 &nbsp;&nbsp;<span class="gallina-kwd">exists</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"> </a></span><span id="U:175" class="id"><a name="U:175" class="">U</a></span><span class="id"> </span><span id="V:176" class="id"><a name="V:176" class="">V</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#T:172">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#b76985613d3b3ca583bb3217c76109bb">[/\</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#b76985613d3b3ca583bb3217c76109bb"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#open">open</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#U:175">U</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#b76985613d3b3ca583bb3217c76109bb">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#b76985613d3b3ca583bb3217c76109bb"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#open">open</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#V:176">V</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#b76985613d3b3ca583bb3217c76109bb">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#b76985613d3b3ca583bb3217c76109bb"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#U:175">U</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#x:173">x</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#b76985613d3b3ca583bb3217c76109bb">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#b76985613d3b3ca583bb3217c76109bb"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#A:174">A</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#e19db46c1d4073266228fb7781521a56"> `&lt;=`</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#e19db46c1d4073266228fb7781521a56"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#V:176">V</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#b76985613d3b3ca583bb3217c76109bb"> &amp;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#b76985613d3b3ca583bb3217c76109bb"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#U:175">U</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#c7636f45aa1745dbf533da3d408cece1"> `&amp;`</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#c7636f45aa1745dbf533da3d408cece1"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#V:176">V</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#set0">set0</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#b76985613d3b3ca583bb3217c76109bb">]</a></span>.<br/>
@@ -2367,7 +2382,7 @@ pseudometric_normal is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.urysohn.pseudometric_normal
 Declared in
-library mathcomp.analysis.normedtype_theory.urysohn, line 826, characters 6-25
+library mathcomp.analysis.normedtype_theory.urysohn, line 828, characters 6-25
 ">pseudometric_normal</a></span><span class="id"> {</span><span id="R:177" class="id"><a name="R:177" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html#Real.Exports.realType">realType</a></span><span class="id">}</span><span class="id"> {</span><span id="X:178" class="id"><a name="X:178" class="">X</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#PseudoMetric.Exports.pseudoMetricType">pseudoMetricType</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#R:177">R</a></span><span class="id">}</span><span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.separation_axioms.html#normal_space">normal_space</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.urysohn.html#X:178">X</a></span>.<br/>
 <details>

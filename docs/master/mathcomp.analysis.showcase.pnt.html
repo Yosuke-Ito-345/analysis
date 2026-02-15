@@ -79,6 +79,20 @@
           </ul>
           </details>
           </li>
+<li><details id="mathcomp.analysis.probability_theory"><summary>probability_theory</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.probability_theory.bernoulli_distribution.html">bernoulli_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.beta_distribution.html">beta_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.binomial_distribution.html">binomial_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.exponential_distribution.html">exponential_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.normal_distribution.html">normal_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.poisson_distribution.html">poisson_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.probability.html">probability</a></li>
+<li><a href="mathcomp.analysis.probability_theory.random_variable.html">random_variable</a></li>
+<li><a href="mathcomp.analysis.probability_theory.uniform_distribution.html">uniform_distribution</a></li>
+          </ul>
+          </details>
+          </li>
 <li><details id="mathcomp.analysis.showcase"><summary>showcase</summary>
           <ul>
           <li><a href="mathcomp.analysis.showcase.pnt.html">pnt</a></li>
@@ -92,6 +106,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
 <li><a href="mathcomp.analysis.topology_theory.nat_topology.html">nat_topology</a></li>
@@ -134,7 +149,6 @@
 <li><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></li>
 <li><a href="mathcomp.analysis.numfun.html">numfun</a></li>
 <li><a href="mathcomp.analysis.pi_irrational.html">pi_irrational</a></li>
-<li><a href="mathcomp.analysis.probability.html">probability</a></li>
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
@@ -264,7 +278,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="next_prime" class="id"><a name="next_prime" class="" title="next_prime : nat -> nat
 
 next_prime is not universe polymorphic
-Arguments next_prime n%nat_scope
+Arguments next_prime n%_nat_scope
 next_prime is transparent
 Expands to: Constant mathcomp.analysis.showcase.pnt.next_prime
 Declared in library mathcomp.analysis.showcase.pnt, line 49, characters 11-21
@@ -274,7 +288,7 @@ Declared in library mathcomp.analysis.showcase.pnt, line 49, characters 11-21
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="prime_next_prime" class="id"><a name="prime_next_prime" class="" title="prime_next_prime : forall n : nat, prime (next_prime n)
 
 prime_next_prime is not universe polymorphic
-Arguments prime_next_prime n%nat_scope
+Arguments prime_next_prime n%_nat_scope
 prime_next_prime is opaque
 Expands to: Constant mathcomp.analysis.showcase.pnt.prime_next_prime
 Declared in library mathcomp.analysis.showcase.pnt, line 52, characters 6-22
@@ -288,7 +302,7 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="next_prime_min" class="id"><a name="next_prime_min" class="" title="next_prime_min : forall [i j : nat], i < j < next_prime i -> ~~ prime j
 
 next_prime_min is not universe polymorphic
-Arguments next_prime_min [i j]%nat_scope _
+Arguments next_prime_min [i j]%_nat_scope _
 next_prime_min is opaque
 Expands to: Constant mathcomp.analysis.showcase.pnt.next_prime_min
 Declared in library mathcomp.analysis.showcase.pnt, line 57, characters 6-20
@@ -309,7 +323,7 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="next_prime_lt" class="id"><a name="next_prime_lt" class="" title="next_prime_lt : forall n : nat, n < next_prime n
 
 next_prime_lt is not universe polymorphic
-Arguments next_prime_lt n%nat_scope
+Arguments next_prime_lt n%_nat_scope
 next_prime_lt is opaque
 Expands to: Constant mathcomp.analysis.showcase.pnt.next_prime_lt
 Declared in library mathcomp.analysis.showcase.pnt, line 69, characters 6-19
@@ -325,7 +339,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="prime_seq" class="id"><a name="prime_seq" class="" title="prime_seq : nat -> nat
 
 prime_seq is not universe polymorphic
-Arguments prime_seq n%nat_scope
+Arguments prime_seq n%_nat_scope
 prime_seq is transparent
 Expands to: Constant mathcomp.analysis.showcase.pnt.prime_seq
 Declared in library mathcomp.analysis.showcase.pnt, line 76, characters 11-20
@@ -350,7 +364,7 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="mem_prime_seq" class="id"><a name="mem_prime_seq" class="" title="mem_prime_seq : forall p : nat, (p \in range prime_seq) = prime p
 
 mem_prime_seq is not universe polymorphic
-Arguments mem_prime_seq p%nat_scope
+Arguments mem_prime_seq p%_nat_scope
 mem_prime_seq is opaque
 Expands to: Constant mathcomp.analysis.showcase.pnt.mem_prime_seq
 Declared in library mathcomp.analysis.showcase.pnt, line 85, characters 6-19

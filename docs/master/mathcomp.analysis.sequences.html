@@ -79,6 +79,20 @@
           </ul>
           </details>
           </li>
+<li><details id="mathcomp.analysis.probability_theory"><summary>probability_theory</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.probability_theory.bernoulli_distribution.html">bernoulli_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.beta_distribution.html">beta_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.binomial_distribution.html">binomial_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.exponential_distribution.html">exponential_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.normal_distribution.html">normal_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.poisson_distribution.html">poisson_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.probability.html">probability</a></li>
+<li><a href="mathcomp.analysis.probability_theory.random_variable.html">random_variable</a></li>
+<li><a href="mathcomp.analysis.probability_theory.uniform_distribution.html">uniform_distribution</a></li>
+          </ul>
+          </details>
+          </li>
 <li><details id="mathcomp.analysis.showcase"><summary>showcase</summary>
           <ul>
           <li><a href="mathcomp.analysis.showcase.pnt.html">pnt</a></li>
@@ -92,6 +106,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
 <li><a href="mathcomp.analysis.topology_theory.nat_topology.html">nat_topology</a></li>
@@ -134,7 +149,6 @@
 <li><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></li>
 <li><a href="mathcomp.analysis.numfun.html">numfun</a></li>
 <li><a href="mathcomp.analysis.pi_irrational.html">pi_irrational</a></li>
-<li><a href="mathcomp.analysis.probability.html">probability</a></li>
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
@@ -374,7 +388,7 @@ and uniformly bounded subset of functions correspond.
 <span class="vernacular">Definition</span><span class="id"> </span><span id="sequence" class="id"><a name="sequence" class="" title="sequence : Type -> Type
 
 sequence is not universe polymorphic
-Arguments sequence R%type_scope
+Arguments sequence R%_type_scope
 sequence is transparent
 Expands to: Constant mathcomp.analysis.sequences.sequence
 Declared in library mathcomp.analysis.sequences, line 162, characters 11-19
@@ -382,7 +396,7 @@ Declared in library mathcomp.analysis.sequences, line 162, characters 11-19
 <span class="vernacular">Definition</span><span class="id"> </span><span id="mk_sequence" class="id"><a name="mk_sequence" class="" title="mk_sequence : forall [R : Type], R ^nat -> R ^nat
 
 mk_sequence is not universe polymorphic
-Arguments mk_sequence [R]%type_scope f / _
+Arguments mk_sequence [R]%_type_scope f / _
 The reduction tactics unfold mk_sequence when applied to 2 arguments
 mk_sequence is transparent
 Expands to: Constant mathcomp.analysis.sequences.mk_sequence
@@ -592,7 +606,7 @@ forall [x0 y : nat],
 (fun n m : nat => is_true (n <= m)) x0 y ->
 ((f^~ x) x0 <= (f^~ x) y)%O = true
 
-Arguments lef_at [aT]%type_scope [d T f] x _ [x y] _
+Arguments lef_at [aT]%_type_scope [d T f] x _ [x y] _
 lef_at is opaque
 Expands to: Constant mathcomp.analysis.sequences.lef_at
 Declared in library mathcomp.analysis.sequences, line 241, characters 6-12
@@ -619,8 +633,8 @@ forall (x : T) [x0 y : nat],
 (fun n m : nat => is_true (n <= m)) x0 y ->
 (((f \+ g)^~ x) x0 <= ((f \+ g)^~ x) y)%R = true
 
-Arguments nondecreasing_seqD [T]%type_scope [R f g] 
-  (_ _)%function_scope x [x y] _
+Arguments nondecreasing_seqD [T]%_type_scope [R f g] 
+  (_ _)%_function_scope x [x y] _
 nondecreasing_seqD is opaque
 Expands to: Constant mathcomp.analysis.sequences.nondecreasing_seqD
 Declared in library mathcomp.analysis.sequences, line 245, characters 6-24
@@ -645,7 +659,7 @@ Declared in library mathcomp.analysis.sequences, line 245, characters 6-24
 <span class="vernacular">Definition</span><span class="id"> </span><span id="seqDU" class="id"><a name="seqDU" class="" title="seqDU : forall [T : Type], (set T) ^nat -> nat -> set T
 
 seqDU is not universe polymorphic
-Arguments seqDU [T]%type_scope F n%nat_scope _
+Arguments seqDU [T]%_type_scope F n%_nat_scope _
 seqDU is transparent
 Expands to: Constant mathcomp.analysis.sequences.seqDU
 Declared in library mathcomp.analysis.sequences, line 260, characters 11-16
@@ -655,7 +669,7 @@ Declared in library mathcomp.analysis.sequences, line 260, characters 11-16
 forall {T : Type} (F : (set T) ^nat), trivIset (T:=T) [set: nat] (seqDU F)
 
 trivIset_seqDU is not universe polymorphic
-Arguments trivIset_seqDU {T}%type_scope F i j _ _ _
+Arguments trivIset_seqDU {T}%_type_scope F i j _ _ _
 trivIset_seqDU is opaque
 Expands to: Constant mathcomp.analysis.sequences.trivIset_seqDU
 Declared in library mathcomp.analysis.sequences, line 262, characters 6-20
@@ -675,7 +689,7 @@ forall [T : Type] (F : (set T) ^nat) (n : nat),
 \big[setU/set0]_(k < n) F k = \big[setU/set0]_(k < n) seqDU F k
 
 bigsetU_seqDU is not universe polymorphic
-Arguments bigsetU_seqDU [T]%type_scope F n%nat_scope
+Arguments bigsetU_seqDU [T]%_type_scope F n%_nat_scope
 bigsetU_seqDU is opaque
 Expands to: Constant mathcomp.analysis.sequences.bigsetU_seqDU
 Declared in library mathcomp.analysis.sequences, line 271, characters 6-19
@@ -698,7 +712,7 @@ forall [T : Type] (F : (set T) ^nat),
 (\bigcup_k F k)%classic = (\bigcup_k seqDU F k)%classic
 
 seqDU_bigcup_eq is not universe polymorphic
-Arguments seqDU_bigcup_eq [T]%type_scope F
+Arguments seqDU_bigcup_eq [T]%_type_scope F
 seqDU_bigcup_eq is opaque
 Expands to: Constant mathcomp.analysis.sequences.seqDU_bigcup_eq
 Declared in library mathcomp.analysis.sequences, line 283, characters 6-21
@@ -725,7 +739,7 @@ seqDU (fun n : nat => (S0 `&` F n)%classic) =
 (fun n : nat => (S0 `&` F n `\` \bigcup_(i < n) F i)%classic)
 
 seqDUIE is not universe polymorphic
-Arguments seqDUIE [T]%type_scope S%classical_set_scope F
+Arguments seqDUIE [T]%_type_scope S%_classical_set_scope F
 seqDUIE is opaque
 Expands to: Constant mathcomp.analysis.sequences.seqDUIE
 Declared in library mathcomp.analysis.sequences, line 298, characters 6-13
@@ -748,7 +762,7 @@ Expanded type for implicit arguments
 subset_seqDU :
 forall [T : Type] [A : (set T) ^nat] [i : nat] [t : T], seqDU A i t -> A i t
 
-Arguments subset_seqDU [T]%type_scope [A] [i]%nat_scope [t] _
+Arguments subset_seqDU [T]%_type_scope [A] [i]%_nat_scope [t] _
 subset_seqDU is opaque
 Expands to: Constant mathcomp.analysis.sequences.subset_seqDU
 Declared in library mathcomp.analysis.sequences, line 307, characters 6-18
@@ -769,7 +783,7 @@ Declared in library mathcomp.analysis.sequences, line 307, characters 6-18
 <span class="vernacular">Definition</span><span class="id"> </span><span id="seqD" class="id"><a name="seqD" class="" title="seqD : forall [T : Type], (set T) ^nat -> nat -> set T
 
 seqD is not universe polymorphic
-Arguments seqD [T]%type_scope F n%nat_scope _
+Arguments seqD [T]%_type_scope F n%_nat_scope _
 seqD is transparent
 Expands to: Constant mathcomp.analysis.sequences.seqD
 Declared in library mathcomp.analysis.sequences, line 318, characters 11-15
@@ -780,7 +794,7 @@ forall [T : Type] [F : (set T) ^nat],
 {homo F : n m / n <= m >-> (n <= m)%O} -> seqDU F = seqD F
 
 seqDU_seqD is not universe polymorphic
-Arguments seqDU_seqD [T]%type_scope [F] _
+Arguments seqDU_seqD [T]%_type_scope [F] _
 seqDU_seqD is opaque
 Expands to: Constant mathcomp.analysis.sequences.seqDU_seqD
 Declared in library mathcomp.analysis.sequences, line 320, characters 6-16
@@ -806,7 +820,7 @@ forall [i j : nat],
 [set: nat]%classic i ->
 [set: nat]%classic j -> (seqD F i `&` seqD F j !=set0)%classic -> i = j
 
-Arguments trivIset_seqD [T]%type_scope [F] _ [i j] _ _ _
+Arguments trivIset_seqD [T]%_type_scope [F] _ [i j] _ _ _
 trivIset_seqD is opaque
 Expands to: Constant mathcomp.analysis.sequences.trivIset_seqD
 Declared in library mathcomp.analysis.sequences, line 327, characters 6-19
@@ -821,7 +835,7 @@ forall [T : Type] (F : (set T) ^nat) (n : nat),
 \big[setU/set0]_(i < n) F i = \big[setU/set0]_(i < n) seqD F i
 
 bigsetU_seqD is not universe polymorphic
-Arguments bigsetU_seqD [T]%type_scope F n%nat_scope
+Arguments bigsetU_seqD [T]%_type_scope F n%_nat_scope
 bigsetU_seqD is opaque
 Expands to: Constant mathcomp.analysis.sequences.bigsetU_seqD
 Declared in library mathcomp.analysis.sequences, line 330, characters 6-18
@@ -845,7 +859,7 @@ forall [T : Type] [F : (set T) ^nat],
 forall n : nat, F n.+1 = (F n `|` seqD F n.+1)%classic
 
 setU_seqD is not universe polymorphic
-Arguments setU_seqD [T]%type_scope [F] _ n%nat_scope
+Arguments setU_seqD [T]%_type_scope [F] _ n%_nat_scope
 setU_seqD is opaque
 Expands to: Constant mathcomp.analysis.sequences.setU_seqD
 Declared in library mathcomp.analysis.sequences, line 342, characters 6-15
@@ -865,7 +879,7 @@ forall [T : Type] [F : (set T) ^nat] (n : nat),
 \big[setU/set0]_(i < n.+1) seqD F i = F n
 
 nondecreasing_bigsetU_seqD is not universe polymorphic
-Arguments nondecreasing_bigsetU_seqD [T]%type_scope [F] n%nat_scope _
+Arguments nondecreasing_bigsetU_seqD [T]%_type_scope [F] n%_nat_scope _
 nondecreasing_bigsetU_seqD is opaque
 Expands to: Constant mathcomp.analysis.sequences.nondecreasing_bigsetU_seqD
 Declared in library mathcomp.analysis.sequences, line 350, characters 6-32
@@ -888,7 +902,7 @@ forall [T : Type] (F : (set T) ^nat),
 (\bigcup_n seqD F n)%classic = (\bigcup_n F n)%classic
 
 eq_bigcup_seqD is not universe polymorphic
-Arguments eq_bigcup_seqD [T]%type_scope F
+Arguments eq_bigcup_seqD [T]%_type_scope F
 eq_bigcup_seqD is opaque
 Expands to: Constant mathcomp.analysis.sequences.eq_bigcup_seqD
 Declared in library mathcomp.analysis.sequences, line 362, characters 6-20
@@ -909,7 +923,7 @@ forall [T : Type] (F : (set T) ^nat),
 (\bigcup_n F n)%classic
 
 eq_bigcup_seqD_bigsetU is not universe polymorphic
-Arguments eq_bigcup_seqD_bigsetU [T]%type_scope F
+Arguments eq_bigcup_seqD_bigsetU [T]%_type_scope F
 eq_bigcup_seqD_bigsetU is opaque
 Expands to: Constant mathcomp.analysis.sequences.eq_bigcup_seqD_bigsetU
 Declared in library mathcomp.analysis.sequences, line 371, characters 6-28
@@ -929,7 +943,7 @@ forall [T : Type] (F : (set T) ^nat),
 (\bigcup_k \big[setU/set0]_(i < k.+1) F i)%classic = (\bigcup_k F k)%classic
 
 bigcup_bigsetU_bigcup is not universe polymorphic
-Arguments bigcup_bigsetU_bigcup [T]%type_scope F
+Arguments bigcup_bigsetU_bigcup [T]%_type_scope F
 bigcup_bigsetU_bigcup is opaque
 Expands to: Constant mathcomp.analysis.sequences.bigcup_bigsetU_bigcup
 Declared in library mathcomp.analysis.sequences, line 380, characters 6-27
@@ -951,7 +965,7 @@ seqDU (fun n0 : nat => `]r, (r + n0%:R%R)%E]%classic) n =
 `](r + n.-1%:R%R)%E, (r + n%:R%R)%E]%classic
 
 seqDUE is not universe polymorphic
-Arguments seqDUE {R} n%nat_scope r%ring_scope
+Arguments seqDUE {R} n%_nat_scope r%_ring_scope
 seqDUE is opaque
 Expands to: Constant mathcomp.analysis.sequences.seqDUE
 Declared in library mathcomp.analysis.sequences, line 390, characters 6-12
@@ -987,7 +1001,7 @@ forall (N : nat) [V : ptopologicalType] (f : nat -> V)
 (u_ x @[x --> \oo] --> l)%classic
 
 cvg_restrict is not universe polymorphic
-Arguments cvg_restrict N%nat_scope [V] f%function_scope u_ l
+Arguments cvg_restrict N%_nat_scope [V] f%_function_scope u_ l
 cvg_restrict is opaque
 Expands to: Constant mathcomp.analysis.sequences.cvg_restrict
 Declared in library mathcomp.analysis.sequences, line 414, characters 6-18
@@ -1006,7 +1020,7 @@ forall (N : nat) [V : ptopologicalType] (f : nat -> V) (u_ : V ^nat),
 cvgn [sequence if (n <= N)%N then f n else u_ n]_n%R = cvgn u_
 
 is_cvg_restrict is not universe polymorphic
-Arguments is_cvg_restrict N%nat_scope [V] f%function_scope u_
+Arguments is_cvg_restrict N%_nat_scope [V] f%_function_scope u_
 is_cvg_restrict is opaque
 Expands to: Constant mathcomp.analysis.sequences.is_cvg_restrict
 Declared in library mathcomp.analysis.sequences, line 422, characters 6-21
@@ -1025,7 +1039,7 @@ forall (N : nat) [V : ptopologicalType] (u_ : V ^nat) (l : set_system V),
 (u_ x @[x --> \oo] --> l)%classic
 
 cvg_centern is not universe polymorphic
-Arguments cvg_centern N%nat_scope [V] u_ l
+Arguments cvg_centern N%_nat_scope [V] u_ l
 cvg_centern is opaque
 Expands to: Constant mathcomp.analysis.sequences.cvg_centern
 Declared in library mathcomp.analysis.sequences, line 429, characters 6-17
@@ -1046,7 +1060,7 @@ forall (N : nat) [V : ptopologicalType] (u_ : V ^nat) (l : set_system V),
 (u_ x @[x --> \oo] --> l)%classic
 
 cvg_shiftn is not universe polymorphic
-Arguments cvg_shiftn N%nat_scope [V] u_ l
+Arguments cvg_shiftn N%_nat_scope [V] u_ l
 cvg_shiftn is opaque
 Expands to: Constant mathcomp.analysis.sequences.cvg_shiftn
 Declared in library mathcomp.analysis.sequences, line 438, characters 6-16
@@ -1070,7 +1084,7 @@ forall [V : ptopologicalType] (u_ : nat -> V) (l : set_system V),
 (u_ x @[x --> \oo] --> l)%classic
 
 cvg_shiftS is not universe polymorphic
-Arguments cvg_shiftS [V] u_%function_scope l
+Arguments cvg_shiftS [V] u_%_function_scope l
 cvg_shiftS is opaque
 Expands to: Constant mathcomp.analysis.sequences.cvg_shiftS
 Declared in library mathcomp.analysis.sequences, line 450, characters 6-16
@@ -1095,7 +1109,7 @@ forall [R : realFieldType] [u : R ^nat] [M : R],
 cvgn u -> (M < limn u)%R -> \forall n \near \oo%classic, (M <= u n)%R
 
 lt_lim is not universe polymorphic
-Arguments lt_lim [R u] [M]%ring_scope _ _ _
+Arguments lt_lim [R u] [M]%_ring_scope _ _ _
 lt_lim is opaque
 Expands to: Constant mathcomp.analysis.sequences.lt_lim
 Declared in library mathcomp.analysis.sequences, line 463, characters 6-12
@@ -1118,7 +1132,7 @@ forall [R : realFieldType] [u_ : R ^nat],
 cvgn u_ -> forall n : nat, (limn u_ <= u_ n)%R
 
 nonincreasing_cvgn_ge is not universe polymorphic
-Arguments nonincreasing_cvgn_ge [R u_] _ _ n%nat_scope
+Arguments nonincreasing_cvgn_ge [R u_] _ _ n%_nat_scope
 nonincreasing_cvgn_ge is opaque
 Expands to: Constant mathcomp.analysis.sequences.nonincreasing_cvgn_ge
 Declared in library mathcomp.analysis.sequences, line 474, characters 6-27
@@ -1146,7 +1160,7 @@ forall [R : realFieldType] [u_ : R ^nat],
 cvgn u_ -> forall n : nat, (u_ n <= limn u_)%R
 
 nondecreasing_cvgn_le is not universe polymorphic
-Arguments nondecreasing_cvgn_le [R u_] _ _ n%nat_scope
+Arguments nondecreasing_cvgn_le [R u_] _ _ n%_nat_scope
 nondecreasing_cvgn_le is opaque
 Expands to: Constant mathcomp.analysis.sequences.nondecreasing_cvgn_le
 Declared in library mathcomp.analysis.sequences, line 490, characters 6-27
@@ -1298,7 +1312,7 @@ forall [V : GRing.Zmodule.Exports.zmodType] (u_ : V ^nat) (n : nat),
 series u_ n.+1 = (series u_ n + u_ n)%E
 
 seriesSr is not universe polymorphic
-Arguments seriesSr [V] u_ n%nat_scope
+Arguments seriesSr [V] u_ n%_nat_scope
 seriesSr is opaque
 Expands to: Constant mathcomp.analysis.sequences.seriesSr
 Declared in library mathcomp.analysis.sequences, line 527, characters 6-14
@@ -1313,7 +1327,7 @@ forall [V : GRing.Zmodule.Exports.zmodType] (u_ : V ^nat) (n : nat),
 series u_ n.+1 = (u_ n + series u_ n)%E
 
 seriesS is not universe polymorphic
-Arguments seriesS [V] u_ n%nat_scope
+Arguments seriesS [V] u_ n%_nat_scope
 seriesS is opaque
 Expands to: Constant mathcomp.analysis.sequences.seriesS
 Declared in library mathcomp.analysis.sequences, line 530, characters 6-13
@@ -1328,7 +1342,7 @@ forall [V : GRing.Zmodule.Exports.zmodType] (u_ : V ^nat) (n : nat),
 (series u_ n.+1 - series u_ n)%R = u_ n
 
 seriesSB is not universe polymorphic
-Arguments seriesSB [V] u_ n%nat_scope
+Arguments seriesSB [V] u_ n%_nat_scope
 seriesSB is opaque
 Expands to: Constant mathcomp.analysis.sequences.seriesSB
 Declared in library mathcomp.analysis.sequences, line 533, characters 6-14
@@ -1343,7 +1357,7 @@ forall [V : GRing.Zmodule.Exports.zmodType] (u_ : V ^nat) (m n : nat),
 series u_ (n + m) = (series u_ m + (\sum_(m <= k < n + m) u_ k)%R)%E
 
 series_addn is not universe polymorphic
-Arguments series_addn [V] u_ (m n)%nat_scope
+Arguments series_addn [V] u_ (m n)%_nat_scope
 series_addn is opaque
 Expands to: Constant mathcomp.analysis.sequences.series_addn
 Declared in library mathcomp.analysis.sequences, line 536, characters 6-17
@@ -1358,7 +1372,7 @@ forall [V : GRing.Zmodule.Exports.zmodType] (u_ : V ^nat) [m n : nat],
 m <= n -> (series u_ n - series u_ m)%R = (\sum_(m <= k < n) u_ k)%R
 
 sub_series_geq is not universe polymorphic
-Arguments sub_series_geq [V] u_ [m n]%nat_scope _
+Arguments sub_series_geq [V] u_ [m n]%_nat_scope _
 sub_series_geq is opaque
 Expands to: Constant mathcomp.analysis.sequences.sub_series_geq
 Declared in library mathcomp.analysis.sequences, line 539, characters 6-20
@@ -1375,7 +1389,7 @@ forall [V : GRing.Zmodule.Exports.zmodType] (u_ : V ^nat) (m n : nat),
 (if m <= n then (\sum_(m <= k < n) u_ k)%R else (- \sum_(n <= k < m) u_ k)%R)
 
 sub_series is not universe polymorphic
-Arguments sub_series [V] u_ (m n)%nat_scope
+Arguments sub_series [V] u_ (m n)%_nat_scope
 sub_series is opaque
 Expands to: Constant mathcomp.analysis.sequences.sub_series
 Declared in library mathcomp.analysis.sequences, line 543, characters 6-16
@@ -1392,7 +1406,7 @@ forall [V : GRing.Zmodule.Exports.zmodType] (u_ : V ^nat) (n : nat),
 (series u_ n.*2 - series u_ n)%R = (\sum_(n <= k < n.*2) u_ k)%R
 
 sub_double_series is not universe polymorphic
-Arguments sub_double_series [V] u_ n%nat_scope
+Arguments sub_double_series [V] u_ n%_nat_scope
 sub_double_series is opaque
 Expands to: Constant mathcomp.analysis.sequences.sub_double_series
 Declared in library mathcomp.analysis.sequences, line 548, characters 6-23
@@ -1443,7 +1457,7 @@ forall [R : pzRingType] [V : lmodType R] (f : V ^nat) (k : R),
 series (k *: f)%R = (k *: series f)%R
 
 seriesZ is not universe polymorphic
-Arguments seriesZ [R V] f k%ring_scope
+Arguments seriesZ [R V] f k%_ring_scope
 seriesZ is opaque
 Expands to: Constant mathcomp.analysis.sequences.seriesZ
 Declared in library mathcomp.analysis.sequences, line 563, characters 6-13
@@ -1505,7 +1519,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` series (k *: f)%R @^-1` t)%classic
 
-Arguments is_cvg_seriesZ [V f] [k]%ring_scope _ [t] _
+Arguments is_cvg_seriesZ [V f] [k]%_ring_scope _ [t] _
 is_cvg_seriesZ is opaque
 Expands to: Constant mathcomp.analysis.sequences.is_cvg_seriesZ
 Declared in library mathcomp.analysis.sequences, line 578, characters 6-20
@@ -1520,7 +1534,7 @@ forall [V : numFieldType] [f : V ^nat] (k : V),
 cvgn (series f) -> limn (series (k *: f)%R) = (k *: limn (series f))%R
 
 lim_seriesZ is not universe polymorphic
-Arguments lim_seriesZ [V f] k%ring_scope _
+Arguments lim_seriesZ [V f] k%_ring_scope _
 lim_seriesZ is opaque
 Expands to: Constant mathcomp.analysis.sequences.lim_seriesZ
 Declared in library mathcomp.analysis.sequences, line 581, characters 6-17
@@ -1630,7 +1644,7 @@ cvgn (series g) ->
 (forall n : nat, (f n <= g n)%R) -> (limn (series f) <= limn (series g))%R
 
 lim_series_le is not universe polymorphic
-Arguments lim_series_le [V f g] _ _ _%function_scope
+Arguments lim_series_le [V f g] _ _ _%_function_scope
 lim_series_le is opaque
 Expands to: Constant mathcomp.analysis.sequences.lim_series_le
 Declared in library mathcomp.analysis.sequences, line 603, characters 6-19
@@ -1678,7 +1692,7 @@ forall [V : GRing.Zmodule.Exports.zmodType] (u_ : V ^nat) (n : nat),
 u_ n = (u_ 0%N + series (telescope u_) n)%E
 
 eq_sum_telescope is not universe polymorphic
-Arguments eq_sum_telescope [V] u_ n%nat_scope
+Arguments eq_sum_telescope [V] u_ n%_nat_scope
 eq_sum_telescope is opaque
 Expands to: Constant mathcomp.analysis.sequences.eq_sum_telescope
 Declared in library mathcomp.analysis.sequences, line 617, characters 6-22
@@ -1698,7 +1712,7 @@ forall (N : nat) [K : numFieldType] [V : normedModType K] (u_ : V ^nat),
 cvgn [sequence \sum_(N <= k < n) u_ k]_n%R = cvgn (series u_)
 
 is_cvg_series_restrict is not universe polymorphic
-Arguments is_cvg_series_restrict N%nat_scope [K V] u_
+Arguments is_cvg_series_restrict N%_nat_scope [K V] u_
 is_cvg_series_restrict is opaque
 Expands to: Constant mathcomp.analysis.sequences.is_cvg_series_restrict
 Declared in library mathcomp.analysis.sequences, line 625, characters 6-28
@@ -1836,7 +1850,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` u_ @^-1` t)%classic
 
-Arguments near_nondecreasing_is_cvgn [R u_] [M]%ring_scope _ _ [t] _
+Arguments near_nondecreasing_is_cvgn [R u_] [M]%_ring_scope _ _ [t] _
 near_nondecreasing_is_cvgn is opaque
 Expands to: Constant mathcomp.analysis.sequences.near_nondecreasing_is_cvgn
 Declared in library mathcomp.analysis.sequences, line 669, characters 6-32
@@ -1932,7 +1946,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` u_ @^-1` t)%classic
 
-Arguments near_nonincreasing_is_cvgn [R u_] [m]%ring_scope _ _ [t] _
+Arguments near_nonincreasing_is_cvgn [R u_] [m]%_ring_scope _ _ [t] _
 near_nonincreasing_is_cvgn is opaque
 Expands to: Constant mathcomp.analysis.sequences.near_nonincreasing_is_cvgn
 Declared in library mathcomp.analysis.sequences, line 694, characters 6-32
@@ -1999,7 +2013,7 @@ Declared in library mathcomp.analysis.sequences, line 725, characters 11-19
 forall {R : numFieldType} (i : nat), ((0 : R) < (harmonic i : R))%R
 
 harmonic_gt0 is not universe polymorphic
-Arguments harmonic_gt0 {R} i%nat_scope
+Arguments harmonic_gt0 {R} i%_nat_scope
 harmonic_gt0 is opaque
 Expands to: Constant mathcomp.analysis.sequences.harmonic_gt0
 Declared in library mathcomp.analysis.sequences, line 728, characters 6-18
@@ -2013,7 +2027,7 @@ Declared in library mathcomp.analysis.sequences, line 728, characters 6-18
 forall {R : numFieldType} (i : nat), ((0 : R) <= (harmonic i : R))%R
 
 harmonic_ge0 is not universe polymorphic
-Arguments harmonic_ge0 {R} i%nat_scope
+Arguments harmonic_ge0 {R} i%_nat_scope
 harmonic_ge0 is opaque
 Expands to: Constant mathcomp.analysis.sequences.harmonic_ge0
 Declared in library mathcomp.analysis.sequences, line 731, characters 6-18
@@ -2152,7 +2166,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` arithmetic_mean (R:=R) u_ @^-1` t)%classic
 
-Arguments cesaro [R u_] [l]%ring_scope _ [t] _
+Arguments cesaro [R u_] [l]%_ring_scope _ [t] _
 cesaro is opaque
 Expands to: Constant mathcomp.analysis.sequences.cesaro
 Declared in library mathcomp.analysis.sequences, line 779, characters 8-14
@@ -2227,7 +2241,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` u_ @^-1` t)%classic
 
-Arguments cesaro_converse [R u_] [l]%ring_scope _ _ [t] _
+Arguments cesaro_converse [R u_] [l]%_ring_scope _ _ [t] _
 cesaro_converse is opaque
 Expands to: Constant mathcomp.analysis.sequences.cesaro_converse
 Declared in library mathcomp.analysis.sequences, line 828, characters 6-21
@@ -2354,8 +2368,8 @@ forall [x y : nat],
  (fun n : nat => \sum_(m <= k < n | P k) u_ k) y)%R =
 true
 
-Arguments nondecreasing_series [R u_ P] [m]%nat_scope 
-  _%function_scope [x y] _
+Arguments nondecreasing_series [R u_ P] [m]%_nat_scope 
+  _%_function_scope [x y] _
 nondecreasing_series is opaque
 Expands to: Constant mathcomp.analysis.sequences.nondecreasing_series
 Declared in library mathcomp.analysis.sequences, line 911, characters 6-26
@@ -2377,7 +2391,7 @@ forall [R : numFieldType] [u_ : R ^nat],
 (forall n : nat, (0 < u_ n)%R) -> increasing_seq (series u_)
 
 increasing_series is not universe polymorphic
-Arguments increasing_series [R u_] _%function_scope x y
+Arguments increasing_series [R u_] _%_function_scope x y
 increasing_series is opaque
 Expands to: Constant mathcomp.analysis.sequences.increasing_series
 Declared in library mathcomp.analysis.sequences, line 922, characters 6-23
@@ -2395,7 +2409,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="arithmetic" class="id"><a name="arithmetic" class="" title="arithmetic : forall {R : GRing.Zmodule.Exports.zmodType}, R -> R -> R ^nat
 
 arithmetic is not universe polymorphic
-Arguments arithmetic {R} (a z)%ring_scope n /
+Arguments arithmetic {R} (a z)%_ring_scope n /
   (where some original arguments have been renamed)
 The reduction tactics unfold arithmetic when applied to 4 arguments
 arithmetic is transparent
@@ -2421,7 +2435,7 @@ Declared in library mathcomp.analysis.sequences, line 934, characters 6-22
 <span class="vernacular">Definition</span><span class="id"> </span><span id="geometric" class="id"><a name="geometric" class="" title="geometric : forall {R : fieldType}, R -> R -> R ^nat
 
 geometric is not universe polymorphic
-Arguments geometric {R} (a z)%ring_scope n /
+Arguments geometric {R} (a z)%_ring_scope n /
   (where some original arguments have been renamed)
 The reduction tactics unfold geometric when applied to 4 arguments
 geometric is transparent
@@ -2458,7 +2472,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` arithmetic a z @^-1` t)%classic
 
-Arguments cvg_arithmetic [R] a%ring_scope [z]%ring_scope _ [t] _
+Arguments cvg_arithmetic [R] a%_ring_scope [z]%_ring_scope _ [t] _
 cvg_arithmetic is opaque
 Expands to: Constant mathcomp.analysis.sequences.cvg_arithmetic
 Declared in library mathcomp.analysis.sequences, line 943, characters 6-20
@@ -2490,7 +2504,7 @@ exists2 i : nat,
   ((fun N : nat => [set n | N <= n]) i
    `<=` (GRing.exp (R:=R) z : R ^nat) @^-1` t)%classic
 
-Arguments cvg_expr [R] [z]%ring_scope _ [t] _
+Arguments cvg_expr [R] [z]%_ring_scope _ [t] _
 cvg_expr is opaque
 Expands to: Constant mathcomp.analysis.sequences.cvg_expr
 Declared in library mathcomp.analysis.sequences, line 952, characters 6-14
@@ -2515,7 +2529,7 @@ forall [R : numFieldType] [a z : R] (n : nat),
 (0 <= a)%R -> (0 <= z)%R -> (0 <= geometric a z n)%R
 
 geometric_ge0 is not universe polymorphic
-Arguments geometric_ge0 [R] [a z]%ring_scope n%nat_scope _ _
+Arguments geometric_ge0 [R] [a z]%_ring_scope n%_nat_scope _ _
 geometric_ge0 is opaque
 Expands to: Constant mathcomp.analysis.sequences.geometric_ge0
 Declared in library mathcomp.analysis.sequences, line 966, characters 6-19
@@ -2532,7 +2546,7 @@ z != 1%R ->
 series (geometric a z) = [sequence a * (1 - z ^+ n) / (1 - z)]_n%R
 
 geometric_seriesE is not universe polymorphic
-Arguments geometric_seriesE [R] a%ring_scope [z]%ring_scope _
+Arguments geometric_seriesE [R] a%_ring_scope [z]%_ring_scope _
 geometric_seriesE is opaque
 Expands to: Constant mathcomp.analysis.sequences.geometric_seriesE
 Declared in library mathcomp.analysis.sequences, line 970, characters 6-23
@@ -2563,7 +2577,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` series (geometric a z) @^-1` t)%classic
 
-Arguments cvg_geometric_series [R] [a z]%ring_scope _ [t] _
+Arguments cvg_geometric_series [R] [a z]%_ring_scope _ [t] _
 cvg_geometric_series is opaque
 Expands to: Constant mathcomp.analysis.sequences.cvg_geometric_series
 Declared in library mathcomp.analysis.sequences, line 979, characters 6-26
@@ -2584,7 +2598,7 @@ forall {R : archiRealFieldType} (r : R) (n : nat),
  ((r / 2 ^+ n)%R : R^o))%classic
 
 cvg_geometric_series_half is not universe polymorphic
-Arguments cvg_geometric_series_half {R} r%ring_scope n%nat_scope t _
+Arguments cvg_geometric_series_half {R} r%_ring_scope n%_nat_scope t _
 cvg_geometric_series_half is opaque
 Expands to: Constant mathcomp.analysis.sequences.cvg_geometric_series_half
 Declared in library mathcomp.analysis.sequences, line 988, characters 6-31
@@ -2608,7 +2622,7 @@ forall {R : fieldType} (n m : nat) (x : R),
 (\sum_(m <= i < m + n) x ^+ i)%R = series (geometric (x ^+ m) x) n
 
 geometric_partial_tail is not universe polymorphic
-Arguments geometric_partial_tail {R} (n m)%nat_scope x%ring_scope
+Arguments geometric_partial_tail {R} (n m)%_nat_scope x%_ring_scope
 geometric_partial_tail is opaque
 Expands to: Constant mathcomp.analysis.sequences.geometric_partial_tail
 Declared in library mathcomp.analysis.sequences, line 1001, characters 6-28
@@ -2635,7 +2649,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` geometric a z @^-1` t)%classic
 
-Arguments cvg_geometric [R] a%ring_scope [z]%ring_scope _ [t] _
+Arguments cvg_geometric [R] a%_ring_scope [z]%_ring_scope _ [t] _
 cvg_geometric is opaque
 Expands to: Constant mathcomp.analysis.sequences.cvg_geometric
 Declared in library mathcomp.analysis.sequences, line 1007, characters 6-19
@@ -2661,7 +2675,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` series (geometric a z) @^-1` t)%classic
 
-Arguments is_cvg_geometric_series [R] [a z]%ring_scope _ [t] _
+Arguments is_cvg_geometric_series [R] [a z]%_ring_scope _ [t] _
 is_cvg_geometric_series is opaque
 Expands to: Constant mathcomp.analysis.sequences.is_cvg_geometric_series
 Declared in library mathcomp.analysis.sequences, line 1011, characters 6-29
@@ -2694,7 +2708,7 @@ forall {K : numFieldType} [u_ : K ^nat],
 (forall n : nat, (0 <= u_ n)%R) -> [normed series u_]%R = series u_
 
 ger0_normed is not universe polymorphic
-Arguments ger0_normed {K} [u_] _%function_scope
+Arguments ger0_normed {K} [u_] _%_function_scope
 ger0_normed is opaque
 Expands to: Constant mathcomp.analysis.sequences.ger0_normed
 Declared in library mathcomp.analysis.sequences, line 1021, characters 6-17
@@ -2755,7 +2769,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` series u_ @^-1` t)%classic
 
-Arguments series_le_cvg [R u_ v_] (_ _ _)%function_scope _ [t] _
+Arguments series_le_cvg [R u_ v_] (_ _ _)%_function_scope _ [t] _
 series_le_cvg is opaque
 Expands to: Constant mathcomp.analysis.sequences.series_le_cvg
 Declared in library mathcomp.analysis.sequences, line 1041, characters 6-19
@@ -2872,8 +2886,8 @@ exists2 i : R,
           is_true (y != 0%R)) t0 ->
          ([eta f] @^-1` t) t0))%classic
 
-Arguments cvg_to_0_linear [R] [f]%function_scope [K k]%ring_scope 
-  _ _%function_scope [t] _
+Arguments cvg_to_0_linear [R] [f]%_function_scope 
+  [K k]%_ring_scope _ _%_function_scope [t] _
 cvg_to_0_linear is opaque
 Expands to: Constant mathcomp.analysis.sequences.cvg_to_0_linear
 Declared in library mathcomp.analysis.sequences, line 1078, characters 6-21
@@ -2979,8 +2993,8 @@ exists2 i : R,
           is_true (y != 0%R)) t0 ->
          ((fun x : R => limn (series (g x))) @^-1` t) t0))%classic
 
-Arguments lim_cvg_to_0_linear [R] [f g]%function_scope 
-  [k] _ _ _%function_scope [t] _
+Arguments lim_cvg_to_0_linear [R] [f g]%_function_scope 
+  [k] _ _ _%_function_scope [t] _
 lim_cvg_to_0_linear is opaque
 Expands to: Constant mathcomp.analysis.sequences.lim_cvg_to_0_linear
 Declared in library mathcomp.analysis.sequences, line 1099, characters 6-25
@@ -3013,7 +3027,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="exp_coeff" class="id"><a name="exp_coeff" class="" title="exp_coeff : forall [R : realType], R -> R ^nat
 
 exp_coeff is not universe polymorphic
-Arguments exp_coeff [R] x%ring_scope _
+Arguments exp_coeff [R] x%_ring_scope _
 exp_coeff is transparent
 Expands to: Constant mathcomp.analysis.sequences.exp_coeff
 Declared in library mathcomp.analysis.sequences, line 1123, characters 11-20
@@ -3026,7 +3040,7 @@ forall [R : realType] [x : R] (n : nat),
 (0 <= x)%R -> (0 <= exp_coeff (R:=R) x n)%R
 
 exp_coeff_ge0 is not universe polymorphic
-Arguments exp_coeff_ge0 [R] [x]%ring_scope n%nat_scope _
+Arguments exp_coeff_ge0 [R] [x]%_ring_scope n%_nat_scope _
 exp_coeff_ge0 is opaque
 Expands to: Constant mathcomp.analysis.sequences.exp_coeff_ge0
 Declared in library mathcomp.analysis.sequences, line 1127, characters 6-19
@@ -3040,7 +3054,7 @@ Declared in library mathcomp.analysis.sequences, line 1127, characters 6-19
 forall (R : realType) (n : nat), series (exp_coeff (R:=R) 0) n.+1 = 1%R
 
 series_exp_coeff0 is not universe polymorphic
-Arguments series_exp_coeff0 R n%nat_scope
+Arguments series_exp_coeff0 R n%_nat_scope
 series_exp_coeff0 is opaque
 Expands to: Constant mathcomp.analysis.sequences.series_exp_coeff0
 Declared in library mathcomp.analysis.sequences, line 1130, characters 6-23
@@ -3106,7 +3120,7 @@ forall (N : nat) [x0 y : nat],
  (fun N0 n : nat => \sum_(N0.+1 <= i < n) exp_coeff (R:=R) x i) N y)%R =
 true
 
-Arguments incr_S1 [R] [x]%ring_scope x0 N%nat_scope [x y] _
+Arguments incr_S1 [R] [x]%_ring_scope x0 N%_nat_scope [x y] _
 incr_S1 is opaque
 Expands to: Constant mathcomp.analysis.sequences.incr_S1
 Declared in library mathcomp.analysis.sequences, line 1166, characters 6-13
@@ -3159,7 +3173,7 @@ exists2 i : nat,
   ((fun N : nat => [set n | N <= n]) i
    `<=` series (exp_coeff (R:=R) x) @^-1` t)%classic
 
-Arguments is_cvg_series_exp_coeff_pos [R] [x]%ring_scope x0 [t] _
+Arguments is_cvg_series_exp_coeff_pos [R] [x]%_ring_scope x0 [t] _
 is_cvg_series_exp_coeff_pos is opaque
 Expands to: Constant mathcomp.analysis.sequences.is_cvg_series_exp_coeff_pos
 Declared in library mathcomp.analysis.sequences, line 1194, characters 6-33
@@ -3181,7 +3195,7 @@ forall [R : realType] (x : R),
 [normed series (exp_coeff (R:=R) x)]%R = series (exp_coeff (R:=R) `|x|)
 
 normed_series_exp_coeff is not universe polymorphic
-Arguments normed_series_exp_coeff [R] x%ring_scope
+Arguments normed_series_exp_coeff [R] x%_ring_scope
 normed_series_exp_coeff is opaque
 Expands to: Constant mathcomp.analysis.sequences.normed_series_exp_coeff
 Declared in library mathcomp.analysis.sequences, line 1205, characters 6-29
@@ -3197,7 +3211,7 @@ Qed.</div></details>
 forall {R : realType} (x : R), cvgn (series (exp_coeff (R:=R) x))
 
 is_cvg_series_exp_coeff is not universe polymorphic
-Arguments is_cvg_series_exp_coeff {R} x%ring_scope t _
+Arguments is_cvg_series_exp_coeff {R} x%_ring_scope t _
 is_cvg_series_exp_coeff is opaque
 Expands to: Constant mathcomp.analysis.sequences.is_cvg_series_exp_coeff
 Declared in library mathcomp.analysis.sequences, line 1211, characters 6-29
@@ -3227,7 +3241,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` exp_coeff (R:=R) x @^-1` t)%classic
 
-Arguments cvg_exp_coeff [R] x%ring_scope [t] _
+Arguments cvg_exp_coeff [R] x%_ring_scope [t] _
 cvg_exp_coeff is opaque
 Expands to: Constant mathcomp.analysis.sequences.cvg_exp_coeff
 Declared in library mathcomp.analysis.sequences, line 1222, characters 6-19
@@ -3243,7 +3257,7 @@ Declared in library mathcomp.analysis.sequences, line 1222, characters 6-19
 <span class="vernacular">Definition</span><span class="id"> </span><span id="expR" class="id"><a name="expR" class="" title="expR : forall {R : realType}, R -> R
 
 expR is not universe polymorphic
-Arguments expR {R} x%ring_scope
+Arguments expR {R} x%_ring_scope
 expR is transparent
 Expands to: Constant mathcomp.analysis.sequences.expR
 Declared in library mathcomp.analysis.sequences, line 1229, characters 11-15
@@ -3300,7 +3314,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="nseries" class="id"><a name="nseries" class="" title="nseries : nat ^nat -> nat -> nat
 
 nseries is not universe polymorphic
-Arguments nseries u n%nat_scope
+Arguments nseries u n%_nat_scope
 nseries is transparent
 Expands to: Constant mathcomp.analysis.sequences.nseries
 Declared in library mathcomp.analysis.sequences, line 1253, characters 11-18
@@ -3399,7 +3413,7 @@ S != set0 ->
 (u x @[x --> \oo] --> ereal_inf (R:=R) S)%classic}
 
 ereal_inf_seq is not universe polymorphic
-Arguments ereal_inf_seq {R} [S]%classical_set_scope _
+Arguments ereal_inf_seq {R} [S]%_classical_set_scope _
 ereal_inf_seq is opaque
 Expands to: Constant mathcomp.analysis.sequences.ereal_inf_seq
 Declared in library mathcomp.analysis.sequences, line 1294, characters 6-19
@@ -3439,7 +3453,7 @@ S != set0 ->
 (u x @[x --> \oo] --> ereal_sup (R:=R) S)%classic}
 
 ereal_sup_seq is not universe polymorphic
-Arguments ereal_sup_seq {R} [S]%classical_set_scope _
+Arguments ereal_sup_seq {R} [S]%_classical_set_scope _
 ereal_sup_seq is opaque
 Expands to: Constant mathcomp.analysis.sequences.ereal_sup_seq
 Declared in library mathcomp.analysis.sequences, line 1321, characters 6-19
@@ -3536,7 +3550,7 @@ forall [R : numDomainType] (u_ : (\bar R) ^nat) (n : nat),
 eseries u_ n.+1 = (eseries u_ n + u_ n)%E
 
 eseriesSr is not universe polymorphic
-Arguments eseriesSr [R] u_ n%nat_scope
+Arguments eseriesSr [R] u_ n%_nat_scope
 eseriesSr is opaque
 Expands to: Constant mathcomp.analysis.sequences.eseriesSr
 Declared in library mathcomp.analysis.sequences, line 1365, characters 6-15
@@ -3551,7 +3565,7 @@ forall [R : numDomainType] (u_ : (\bar R) ^nat) (n : nat),
 eseries u_ n.+1 = (u_ n + eseries u_ n)%E
 
 eseriesS is not universe polymorphic
-Arguments eseriesS [R] u_ n%nat_scope
+Arguments eseriesS [R] u_ n%_nat_scope
 eseriesS is opaque
 Expands to: Constant mathcomp.analysis.sequences.eseriesS
 Declared in library mathcomp.analysis.sequences, line 1368, characters 6-14
@@ -3566,7 +3580,7 @@ forall [R : numDomainType] [u_ : (\bar R) ^nat] [n : nat],
 eseries u_ n \is a fin_num -> (eseries u_ n.+1 - eseries u_ n)%E = u_ n
 
 eseriesSB is not universe polymorphic
-Arguments eseriesSB [R u_] [n]%nat_scope _
+Arguments eseriesSB [R u_] [n]%_nat_scope _
 eseriesSB is opaque
 Expands to: Constant mathcomp.analysis.sequences.eseriesSB
 Declared in library mathcomp.analysis.sequences, line 1371, characters 6-15
@@ -3582,7 +3596,7 @@ forall [R : numDomainType] (u_ : (\bar R) ^nat) (m n : nat),
 eseries u_ (n + m) = (eseries u_ m + (\sum_(m <= k < n + m) u_ k)%R)%E
 
 eseries_addn is not universe polymorphic
-Arguments eseries_addn [R] u_ (m n)%nat_scope
+Arguments eseries_addn [R] u_ (m n)%_nat_scope
 eseries_addn is opaque
 Expands to: Constant mathcomp.analysis.sequences.eseries_addn
 Declared in library mathcomp.analysis.sequences, line 1375, characters 6-18
@@ -3599,7 +3613,7 @@ eseries u_ m \is a fin_num ->
 (eseries u_ n - eseries u_ m)%E = (\sum_(m <= k < n) u_ k)%R
 
 sub_eseries_geq is not universe polymorphic
-Arguments sub_eseries_geq [R u_] [m n]%nat_scope _ _
+Arguments sub_eseries_geq [R u_] [m n]%_nat_scope _ _
 sub_eseries_geq is opaque
 Expands to: Constant mathcomp.analysis.sequences.sub_eseries_geq
 Declared in library mathcomp.analysis.sequences, line 1378, characters 6-21
@@ -3620,7 +3634,7 @@ eseries u_ n \is a fin_num ->
  else (- (\sum_(n <= k < m) u_ k)%R)%E)
 
 sub_eseries is not universe polymorphic
-Arguments sub_eseries [R u_] [m n]%nat_scope _ _
+Arguments sub_eseries [R u_] [m n]%_nat_scope _ _
 sub_eseries is opaque
 Expands to: Constant mathcomp.analysis.sequences.sub_eseries
 Declared in library mathcomp.analysis.sequences, line 1382, characters 6-17
@@ -3640,7 +3654,7 @@ eseries u_ n \is a fin_num ->
 (eseries u_ n.*2 - eseries u_ n)%E = (\sum_(n <= k < n.*2) u_ k)%R
 
 sub_double_eseries is not universe polymorphic
-Arguments sub_double_eseries [R u_] [n]%nat_scope _
+Arguments sub_double_eseries [R u_] [n]%_nat_scope _
 sub_double_eseries is opaque
 Expands to: Constant mathcomp.analysis.sequences.sub_double_eseries
 Declared in library mathcomp.analysis.sequences, line 1390, characters 6-24
@@ -3672,7 +3686,7 @@ exists2 i : nat,
   ((fun N : nat => [set n0 | N <= n0]) i
    `<=` eseries (fun k : nat => (r / (2 ^ (k + n.+1))%:R)%:E) @^-1` t)%classic
 
-Arguments cvg_geometric_eseries_half {R} [r]%ring_scope [n]%nat_scope [t] _
+Arguments cvg_geometric_eseries_half {R} [r]%_ring_scope [n]%_nat_scope [t] _
 cvg_geometric_eseries_half is opaque
 Expands to: Constant mathcomp.analysis.sequences.cvg_geometric_eseries_half
 Declared in library mathcomp.analysis.sequences, line 1400, characters 6-32
@@ -3919,8 +3933,8 @@ forall [x y : nat],
  (fun n : nat => (\sum_(N <= i < n | P i) u_ i)%R) y)%E =
 true
 
-Arguments ereal_nondecreasing_series [R u_ P] [N]%nat_scope 
-  _%function_scope [x y] _
+Arguments ereal_nondecreasing_series [R u_ P] [N]%_nat_scope
+  _%_function_scope [x y] _
 ereal_nondecreasing_series is opaque
 Expands to: Constant mathcomp.analysis.sequences.ereal_nondecreasing_series
 Declared in library mathcomp.analysis.sequences, line 1513, characters 6-32
@@ -3936,7 +3950,7 @@ Declared in library mathcomp.analysis.sequences, line 1513, characters 6-32
 forall [R : numFieldType] [f g : nat -> \bar R], f = g -> limn f = limn g
 
 congr_lim is not universe polymorphic
-Arguments congr_lim [R] [f g]%function_scope _
+Arguments congr_lim [R] [f g]%_function_scope _
 congr_lim is opaque
 Expands to: Constant mathcomp.analysis.sequences.congr_lim
 Declared in library mathcomp.analysis.sequences, line 1518, characters 6-15
@@ -3955,8 +3969,8 @@ limn (EFin \o f) \is a fin_num ->
 (limn (EFin \o f) - (f n)%:E)%E
 
 nondecreasing_telescope_sumey is not universe polymorphic
-Arguments nondecreasing_telescope_sumey [R] n%nat_scope 
-  [f]%function_scope _ _
+Arguments nondecreasing_telescope_sumey [R] n%_nat_scope 
+  [f]%_function_scope _ _
 nondecreasing_telescope_sumey is opaque
 Expands to: Constant
             mathcomp.analysis.sequences.nondecreasing_telescope_sumey
@@ -3995,7 +4009,7 @@ forall {R : numFieldType} (f : (\bar R) ^nat) (P : nat -> bool) (N : nat),
 \big[+%R/0%R]_(0 <= i <oo | P i && (N <= i)) f i
 
 eseries_cond is not universe polymorphic
-Arguments eseries_cond {R} f P%function_scope N%nat_scope
+Arguments eseries_cond {R} f P%_function_scope N%_nat_scope
 eseries_cond is opaque
 Expands to: Constant mathcomp.analysis.sequences.eseries_cond
 Declared in library mathcomp.analysis.sequences, line 1548, characters 6-18
@@ -4012,7 +4026,7 @@ forall {R : numFieldType} (f : (\bar R) ^nat) (P Q : nat -> bool) (N : nat),
 \big[+%R/0%R]_(N <= i <oo | Q i) (if P i then f i else 0%R)
 
 eseries_mkcondl is not universe polymorphic
-Arguments eseries_mkcondl {R} f (P Q)%function_scope N%nat_scope
+Arguments eseries_mkcondl {R} f (P Q)%_function_scope N%_nat_scope
 eseries_mkcondl is opaque
 Expands to: Constant mathcomp.analysis.sequences.eseries_mkcondl
 Declared in library mathcomp.analysis.sequences, line 1552, characters 6-21
@@ -4030,7 +4044,7 @@ forall {R : numFieldType} (f : (\bar R) ^nat) (P Q : nat -> bool) (N : nat),
 \big[+%R/0%R]_(N <= i <oo | P i) (if Q i then f i else 0%R)
 
 eseries_mkcondr is not universe polymorphic
-Arguments eseries_mkcondr {R} f (P Q)%function_scope N%nat_scope
+Arguments eseries_mkcondr {R} f (P Q)%_function_scope N%_nat_scope
 eseries_mkcondr is opaque
 Expands to: Constant mathcomp.analysis.sequences.eseries_mkcondr
 Declared in library mathcomp.analysis.sequences, line 1557, characters 6-21
@@ -4048,7 +4062,7 @@ forall [R : numFieldType] [f g : (\bar R) ^nat] [P : pred nat] {N : nat},
 \big[+%R/0%R]_(N <= i <oo | P i) f i = \big[+%R/0%R]_(N <= i <oo | P i) g i
 
 eq_eseriesr is not universe polymorphic
-Arguments eq_eseriesr [R f g P] {N}%nat_scope _%function_scope
+Arguments eq_eseriesr [R f g P] {N}%_nat_scope _%_function_scope
 eq_eseriesr is opaque
 Expands to: Constant mathcomp.analysis.sequences.eq_eseriesr
 Declared in library mathcomp.analysis.sequences, line 1562, characters 6-17
@@ -4066,7 +4080,7 @@ P =1 Q ->
 \big[+%R/0%R]_(N <= i <oo | P i) f i = \big[+%R/0%R]_(N <= i <oo | Q i) f i
 
 eq_eseriesl is not universe polymorphic
-Arguments eq_eseriesl [R P Q] f N%nat_scope _
+Arguments eq_eseriesl [R P Q] f N%_nat_scope _
 eq_eseriesl is opaque
 Expands to: Constant mathcomp.analysis.sequences.eq_eseriesl
 Declared in library mathcomp.analysis.sequences, line 1567, characters 6-17
@@ -4105,7 +4119,7 @@ forall [R : realFieldType] (f : (\bar R) ^nat) (k : nat) (P : pred nat),
 \big[+%R/0%R]_(0 <= i <oo | (k <= i) && P i) f i
 
 ereal_series_cond is not universe polymorphic
-Arguments ereal_series_cond [R] f k%nat_scope P
+Arguments ereal_series_cond [R] f k%_nat_scope P
 ereal_series_cond is opaque
 Expands to: Constant mathcomp.analysis.sequences.ereal_series_cond
 Declared in library mathcomp.analysis.sequences, line 1580, characters 6-23
@@ -4124,7 +4138,7 @@ forall [R : realFieldType] (f : (\bar R) ^nat) (k : nat),
 \big[+%R/0%R]_(k <= i <oo) f i = \big[+%R/0%R]_(0 <= i <oo | k <= i) f i
 
 ereal_series is not universe polymorphic
-Arguments ereal_series [R] f k%nat_scope
+Arguments ereal_series [R] f k%_nat_scope
 ereal_series is opaque
 Expands to: Constant mathcomp.analysis.sequences.ereal_series
 Declared in library mathcomp.analysis.sequences, line 1588, characters 6-18
@@ -4142,7 +4156,7 @@ forall [R : realFieldType] [f : (\bar R) ^nat] [N : nat] [P : pred nat],
 \big[+%R/0%R]_(N <= i <oo | P i) f i = 0%R
 
 eseries0 is not universe polymorphic
-Arguments eseries0 [R f] [N]%nat_scope [P] _%function_scope
+Arguments eseries0 [R f] [N]%_nat_scope [P] _%_function_scope
 eseries0 is opaque
 Expands to: Constant mathcomp.analysis.sequences.eseries0
 Declared in library mathcomp.analysis.sequences, line 1594, characters 6-14
@@ -4184,8 +4198,8 @@ forall [R : realType] [u_ : (\bar R) ^nat] [P : pred nat] {m : nat} (k : nat),
 ((\sum_(m <= i < k | P i) u_ i)%R <= \big[+%R/0%R]_(m <= i <oo | P i) u_ i)%E
 
 nneseries_lim_ge is not universe polymorphic
-Arguments nneseries_lim_ge [R u_ P] {m}%nat_scope 
-  k%nat_scope _%function_scope
+Arguments nneseries_lim_ge [R u_ P] {m}%_nat_scope 
+  k%_nat_scope _%_function_scope
 nneseries_lim_ge is opaque
 Expands to: Constant mathcomp.analysis.sequences.nneseries_lim_ge
 Declared in library mathcomp.analysis.sequences, line 1613, characters 6-22
@@ -4205,7 +4219,7 @@ forall [R : realFieldType] [u_ : (\bar R) ^nat] [P : pred nat] [k : nat],
 P k -> u_ k = +oo%E -> \big[+%R/0%R]_(0 <= i <oo | P i) u_ i = +oo%E
 
 eseries_pinfty is not universe polymorphic
-Arguments eseries_pinfty [R u_ P] [k]%nat_scope _%function_scope _ _
+Arguments eseries_pinfty [R u_ P] [k]%_nat_scope _%_function_scope _ _
 eseries_pinfty is opaque
 Expands to: Constant mathcomp.analysis.sequences.eseries_pinfty
 Declared in library mathcomp.analysis.sequences, line 1621, characters 6-20
@@ -4244,8 +4258,8 @@ exists2 i : nat,
   ((fun N : nat => [set n | N <= n]) i
    `<=` (fun n : nat => (\sum_(m <= i0 < n | P i0) u_ i0)%R) @^-1` t)%classic
 
-Arguments is_cvg_ereal_nneg_natsum_cond [R u_] [m]%nat_scope 
-  [P] _%function_scope [t] _
+Arguments is_cvg_ereal_nneg_natsum_cond [R u_] [m]%_nat_scope 
+  [P] _%_function_scope [t] _
 is_cvg_ereal_nneg_natsum_cond is opaque
 Expands to: Constant
             mathcomp.analysis.sequences.is_cvg_ereal_nneg_natsum_cond
@@ -4276,8 +4290,8 @@ exists2 i : nat,
   ((fun N : nat => [set n | N <= n]) i
    `<=` (fun n : nat => (\sum_(m <= i0 < n | P i0) u_ i0)%R) @^-1` t)%classic
 
-Arguments is_cvg_ereal_npos_natsum_cond [R u_] [m]%nat_scope 
-  [P] _%function_scope [t] _
+Arguments is_cvg_ereal_npos_natsum_cond [R u_] [m]%_nat_scope 
+  [P] _%_function_scope [t] _
 is_cvg_ereal_npos_natsum_cond is opaque
 Expands to: Constant
             mathcomp.analysis.sequences.is_cvg_ereal_npos_natsum_cond
@@ -4308,8 +4322,8 @@ exists2 i : nat,
   ((fun N : nat => [set n | N <= n]) i
    `<=` (fun n : nat => (\sum_(m <= i0 < n) u_ i0)%R) @^-1` t)%classic
 
-Arguments is_cvg_ereal_nneg_natsum [R u_] [m]%nat_scope 
-  _%function_scope [t] _
+Arguments is_cvg_ereal_nneg_natsum [R u_] [m]%_nat_scope 
+  _%_function_scope [t] _
 is_cvg_ereal_nneg_natsum is opaque
 Expands to: Constant mathcomp.analysis.sequences.is_cvg_ereal_nneg_natsum
 Declared in library mathcomp.analysis.sequences, line 1651, characters 6-30
@@ -4337,8 +4351,8 @@ exists2 i : nat,
   ((fun N : nat => [set n | N <= n]) i
    `<=` (fun n : nat => (\sum_(m <= i0 < n) u_ i0)%R) @^-1` t)%classic
 
-Arguments is_cvg_ereal_npos_natsum [R u_] [m]%nat_scope 
-  _%function_scope [t] _
+Arguments is_cvg_ereal_npos_natsum [R u_] [m]%_nat_scope 
+  _%_function_scope [t] _
 is_cvg_ereal_npos_natsum is opaque
 Expands to: Constant mathcomp.analysis.sequences.is_cvg_ereal_npos_natsum
 Declared in library mathcomp.analysis.sequences, line 1655, characters 6-30
@@ -4366,7 +4380,8 @@ exists2 i : nat,
   ((fun N0 : nat => [set n | N0 <= n]) i
    `<=` (fun n : nat => (\sum_(N <= i0 < n | P i0) u_ i0)%R) @^-1` t)%classic
 
-Arguments is_cvg_nneseries_cond [R u_ P] [N]%nat_scope _%function_scope [t] _
+Arguments is_cvg_nneseries_cond [R u_ P] [N]%_nat_scope 
+  _%_function_scope [t] _
 is_cvg_nneseries_cond is opaque
 Expands to: Constant mathcomp.analysis.sequences.is_cvg_nneseries_cond
 Declared in library mathcomp.analysis.sequences, line 1659, characters 6-27
@@ -4395,7 +4410,8 @@ exists2 i : nat,
   ((fun N0 : nat => [set n | N0 <= n]) i
    `<=` (fun n : nat => (\sum_(N <= i0 < n | P i0) u_ i0)%R) @^-1` t)%classic
 
-Arguments is_cvg_npeseries_cond [R u_ P] [N]%nat_scope _%function_scope [t] _
+Arguments is_cvg_npeseries_cond [R u_ P] [N]%_nat_scope 
+  _%_function_scope [t] _
 is_cvg_npeseries_cond is opaque
 Expands to: Constant mathcomp.analysis.sequences.is_cvg_npeseries_cond
 Declared in library mathcomp.analysis.sequences, line 1665, characters 6-27
@@ -4423,7 +4439,7 @@ exists2 i : nat,
   ((fun N0 : nat => [set n | N0 <= n]) i
    `<=` (fun n : nat => (\sum_(N <= i0 < n | P i0) u_ i0)%R) @^-1` t)%classic
 
-Arguments is_cvg_nneseries [R u_ P] [N]%nat_scope _%function_scope [t] _
+Arguments is_cvg_nneseries [R u_ P] [N]%_nat_scope _%_function_scope [t] _
 is_cvg_nneseries is opaque
 Expands to: Constant mathcomp.analysis.sequences.is_cvg_nneseries
 Declared in library mathcomp.analysis.sequences, line 1669, characters 6-22
@@ -4451,7 +4467,7 @@ exists2 i : nat,
   ((fun N0 : nat => [set n | N0 <= n]) i
    `<=` (fun n : nat => (\sum_(N <= i0 < n | P i0) u_ i0)%R) @^-1` t)%classic
 
-Arguments is_cvg_npeseries [R u_ P] [N]%nat_scope _%function_scope [t] _
+Arguments is_cvg_npeseries [R u_ P] [N]%_nat_scope _%_function_scope [t] _
 is_cvg_npeseries is opaque
 Expands to: Constant mathcomp.analysis.sequences.is_cvg_npeseries
 Declared in library mathcomp.analysis.sequences, line 1673, characters 6-22
@@ -4468,7 +4484,7 @@ forall [R : realType] [u_ : (\bar R) ^nat] [P : pred nat] [N : nat],
 (0%R <= \big[+%R/0%R]_(N <= i <oo | P i) u_ i)%E
 
 nneseries_ge0 is not universe polymorphic
-Arguments nneseries_ge0 [R u_ P] [N]%nat_scope _%function_scope
+Arguments nneseries_ge0 [R u_ P] [N]%_nat_scope _%_function_scope
 nneseries_ge0 is opaque
 Expands to: Constant mathcomp.analysis.sequences.nneseries_ge0
 Declared in library mathcomp.analysis.sequences, line 1677, characters 6-19
@@ -4487,7 +4503,7 @@ forall [R : realType] [u_ : (\bar R) ^nat] [P : pred nat] [N : nat],
 (\big[+%R/0%R]_(N <= i <oo | P i) u_ i <= 0%R)%E
 
 npeseries_le0 is not universe polymorphic
-Arguments npeseries_le0 [R u_ P] [N]%nat_scope _%function_scope
+Arguments npeseries_le0 [R u_ P] [N]%_nat_scope _%_function_scope
 npeseries_le0 is opaque
 Expands to: Constant mathcomp.analysis.sequences.npeseries_le0
 Declared in library mathcomp.analysis.sequences, line 1684, characters 6-19
@@ -4521,7 +4537,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` series u @^-1` t)%classic
 
-Arguments nnseries_is_cvg {R} [u]%function_scope _%function_scope _ [t] _
+Arguments nnseries_is_cvg {R} [u]%_function_scope _%_function_scope _ [t] _
 nnseries_is_cvg is opaque
 Expands to: Constant mathcomp.analysis.sequences.nnseries_is_cvg
 Declared in library mathcomp.analysis.sequences, line 1695, characters 6-21
@@ -4549,8 +4565,8 @@ forall [R : realType] [f : nat -> \bar R] [P : pred nat] (x : R) (N : nat),
 (x%:E * \big[+%R/0%R]_(N <= i <oo | P i) f i)%E
 
 nneseriesZl is not universe polymorphic
-Arguments nneseriesZl [R] [f]%function_scope [P] x%ring_scope 
-  N%nat_scope _%function_scope
+Arguments nneseriesZl [R] [f]%_function_scope [P] 
+  x%_ring_scope N%_nat_scope _%_function_scope
 nneseriesZl is opaque
 Expands to: Constant mathcomp.analysis.sequences.nneseriesZl
 Declared in library mathcomp.analysis.sequences, line 1710, characters 6-17
@@ -4571,7 +4587,7 @@ forall [R : realType] [f g : (\bar R) ^nat] [P Q : pred nat] [m : nat],
 (\big[+%R/0%R]_(m <= i <oo | P i) f i +? \big[+%R/0%R]_(m <= i <oo | Q i) g i)%E
 
 adde_def_nneseries is not universe polymorphic
-Arguments adde_def_nneseries [R f g P Q] [m]%nat_scope (_ _)%function_scope
+Arguments adde_def_nneseries [R f g P Q] [m]%_nat_scope (_ _)%_function_scope
 adde_def_nneseries is opaque
 Expands to: Constant mathcomp.analysis.sequences.adde_def_nneseries
 Declared in library mathcomp.analysis.sequences, line 1718, characters 6-24
@@ -4594,7 +4610,7 @@ forall [R : realType] [u_ : (\bar R) ^nat] [P : pred nat] [k : nat],
 P k -> u_ k = +oo%E -> \big[+%R/0%R]_(0 <= i <oo | P i) u_ i = +oo%E
 
 nneseries_pinfty is not universe polymorphic
-Arguments nneseries_pinfty [R u_ P] [k]%nat_scope _%function_scope _ _
+Arguments nneseries_pinfty [R u_ P] [k]%_nat_scope _%_function_scope _ _
 nneseries_pinfty is opaque
 Expands to: Constant mathcomp.analysis.sequences.nneseries_pinfty
 Declared in library mathcomp.analysis.sequences, line 1729, characters 6-22
@@ -4615,7 +4631,7 @@ forall [R : realType] [u v : (\bar R) ^nat] [P : pred nat] [N : nat],
 (\big[+%R/0%R]_(N <= i <oo | P i) u i <= \big[+%R/0%R]_(N <= i <oo | P i) v i)%E
 
 lee_nneseries is not universe polymorphic
-Arguments lee_nneseries [R u v P] [N]%nat_scope (_ _)%function_scope
+Arguments lee_nneseries [R u v P] [N]%_nat_scope (_ _)%_function_scope
 lee_nneseries is opaque
 Expands to: Constant mathcomp.analysis.sequences.lee_nneseries
 Declared in library mathcomp.analysis.sequences, line 1737, characters 6-19
@@ -4640,7 +4656,7 @@ forall [R : realType] [u : (\bar R) ^nat] [P Q : pred nat] (N : nat),
 (\big[+%R/0%R]_(N <= i <oo | P i) u i <= \big[+%R/0%R]_(N <= i <oo | Q i) u i)%E
 
 subset_lee_nneseries is not universe polymorphic
-Arguments subset_lee_nneseries [R u P Q] N%nat_scope (_ _)%function_scope
+Arguments subset_lee_nneseries [R u P Q] N%_nat_scope (_ _)%_function_scope
 subset_lee_nneseries is opaque
 Expands to: Constant mathcomp.analysis.sequences.subset_lee_nneseries
 Declared in library mathcomp.analysis.sequences, line 1749, characters 6-26
@@ -4668,7 +4684,7 @@ forall [R : realType] [u v : (\bar R) ^nat] [P : pred nat],
 (\big[+%R/0%R]_(0 <= i <oo | P i) v i <= \big[+%R/0%R]_(0 <= i <oo | P i) u i)%E
 
 lee_npeseries is not universe polymorphic
-Arguments lee_npeseries [R u v P] (_ _)%function_scope
+Arguments lee_npeseries [R u v P] (_ _)%_function_scope
 lee_npeseries is opaque
 Expands to: Constant mathcomp.analysis.sequences.lee_npeseries
 Declared in library mathcomp.analysis.sequences, line 1764, characters 6-19
@@ -4703,7 +4719,7 @@ forall [R : realFieldType] [P : pred nat] (f : nat -> \bar R) (N : nat),
 \big[+%R/0%R]_(N <= i <oo) (if P i then f i else 0%R)
 
 eseries_mkcond is not universe polymorphic
-Arguments eseries_mkcond [R P] f%function_scope N%nat_scope
+Arguments eseries_mkcond [R P] f%_function_scope N%_nat_scope
 eseries_mkcond is opaque
 Expands to: Constant mathcomp.analysis.sequences.eseries_mkcond
 Declared in library mathcomp.analysis.sequences, line 1785, characters 6-20
@@ -4732,8 +4748,8 @@ forall {R : realType} {f : nat -> \bar R} (N n : nat),
 ((\sum_(N <= k < N + n) f k)%R + \big[+%R/0%R]_(N + n <= k <oo) f k)%E
 
 nneseries_split is not universe polymorphic
-Arguments nneseries_split {R} {f}%function_scope (N n)%nat_scope
-  _%function_scope
+Arguments nneseries_split {R} {f}%_function_scope 
+  (N n)%_nat_scope _%_function_scope
 nneseries_split is opaque
 Expands to: Constant mathcomp.analysis.sequences.nneseries_split
 Declared in library mathcomp.analysis.sequences, line 1798, characters 6-21
@@ -4769,8 +4785,8 @@ forall [R : realType] [f : nat -> \bar R] (N n : nat) [P : pred nat],
  \big[+%R/0%R]_(N + n <= k <oo | P k) f k)%E
 
 nneseries_split_cond is not universe polymorphic
-Arguments nneseries_split_cond [R] [f]%function_scope 
-  (N n)%nat_scope [P] _%function_scope
+Arguments nneseries_split_cond [R] [f]%_function_scope 
+  (N n)%_nat_scope [P] _%_function_scope
 nneseries_split_cond is opaque
 Expands to: Constant mathcomp.analysis.sequences.nneseries_split_cond
 Declared in library mathcomp.analysis.sequences, line 1820, characters 6-26
@@ -4794,8 +4810,8 @@ P n ->
 (f n + \big[+%R/0%R]_(0 <= k <oo | P k && (k != n)) f k)%E
 
 nneseriesD1 is not universe polymorphic
-Arguments nneseriesD1 {R} [f]%function_scope [n]%nat_scope 
-  [P] _%function_scope _
+Arguments nneseriesD1 {R} [f]%_function_scope [n]%_nat_scope 
+  [P] _%_function_scope _
 nneseriesD1 is opaque
 Expands to: Constant mathcomp.analysis.sequences.nneseriesD1
 Declared in library mathcomp.analysis.sequences, line 1830, characters 6-17
@@ -4833,7 +4849,7 @@ P 0 ->
 (f 0%N + \big[+%R/0%R]_(1 <= k <oo | P k) f k)%E
 
 nneseries_recl is not universe polymorphic
-Arguments nneseries_recl {R} [P] [f]%function_scope _%function_scope _
+Arguments nneseries_recl {R} [P] [f]%_function_scope _%_function_scope _
 nneseries_recl is opaque
 Expands to: Constant mathcomp.analysis.sequences.nneseries_recl
 Declared in library mathcomp.analysis.sequences, line 1854, characters 6-20
@@ -4866,8 +4882,8 @@ exists2 i : nat,
   ((fun N : nat => [set n | N <= n]) i
    `<=` (fun N : nat => \big[+%R/0%R]_(N <= k <oo | P k) f k) @^-1` t)%classic
 
-Arguments nneseries_tail_cvg [R f] [P]%function_scope 
-  _ _%function_scope [t] _
+Arguments nneseries_tail_cvg [R f] [P]%_function_scope 
+  _ _%_function_scope [t] _
 nneseries_tail_cvg is opaque
 Expands to: Constant mathcomp.analysis.sequences.nneseries_tail_cvg
 Declared in library mathcomp.analysis.sequences, line 1862, characters 6-24
@@ -4904,8 +4920,8 @@ forall [R : realType] [f g : nat -> \bar R] [P : pred nat] [N : nat],
 (\big[+%R/0%R]_(N <= i <oo | P i) f i + \big[+%R/0%R]_(N <= i <oo | P i) g i)%E
 
 nneseriesD is not universe polymorphic
-Arguments nneseriesD [R] [f g]%function_scope [P] 
-  [N]%nat_scope (_ _)%function_scope
+Arguments nneseriesD [R] [f g]%_function_scope [P] 
+  [N]%_nat_scope (_ _)%_function_scope
 nneseriesD is opaque
 Expands to: Constant mathcomp.analysis.sequences.nneseriesD
 Declared in library mathcomp.analysis.sequences, line 1885, characters 6-16
@@ -4933,8 +4949,8 @@ forall [R : realType] (m n : nat) [f : nat -> nat -> \bar R] (N : nat),
 (\sum_(m <= i < n) \big[+%R/0]_(N <= j <oo) f i j)%R
 
 nneseries_sum_nat is not universe polymorphic
-Arguments nneseries_sum_nat [R] (m n)%nat_scope [f]%function_scope
-  N%nat_scope _%function_scope
+Arguments nneseries_sum_nat [R] (m n)%_nat_scope [f]%_function_scope
+  N%_nat_scope _%_function_scope
 nneseries_sum_nat is opaque
 Expands to: Constant mathcomp.analysis.sequences.nneseries_sum_nat
 Declared in library mathcomp.analysis.sequences, line 1900, characters 6-23
@@ -4961,8 +4977,8 @@ forall [I : Type] (r : seq I) [P : {pred I}] [R : realType]
 (\sum_(i <- r | P i) \big[+%R/0]_(N <= j <oo) f i j)%R
 
 nneseries_sum is not universe polymorphic
-Arguments nneseries_sum [I]%type_scope r%seq_scope 
-  [P R] [f]%function_scope N%nat_scope _%function_scope
+Arguments nneseries_sum [I]%_type_scope r%_seq_scope 
+  [P R] [f]%_function_scope N%_nat_scope _%_function_scope
 nneseries_sum is opaque
 Expands to: Constant mathcomp.analysis.sequences.nneseries_sum
 Declared in library mathcomp.analysis.sequences, line 1913, characters 6-19
@@ -4988,7 +5004,7 @@ forall {R : realType} [f : (\bar R) ^nat] (k : nat),
 \big[+%R/0%R]_(0 <= i <oo) f (i + k) = \big[+%R/0%R]_(k <= i <oo) f i
 
 nneseries_addn is not universe polymorphic
-Arguments nneseries_addn {R} [f] k%nat_scope _%function_scope
+Arguments nneseries_addn {R} [f] k%_nat_scope _%_function_scope
 nneseries_addn is opaque
 Expands to: Constant mathcomp.analysis.sequences.nneseries_addn
 Declared in library mathcomp.analysis.sequences, line 1927, characters 6-20
@@ -5011,7 +5027,7 @@ forall [R : realFieldType] [u : (\bar R) ^nat] [M : R],
 cvgn u -> (M%:E < limn u)%E -> \forall n \near \oo%classic, (M%:E <= u n)%E
 
 lte_lim is not universe polymorphic
-Arguments lte_lim [R u] [M]%ring_scope _ _ _
+Arguments lte_lim [R u] [M]%_ring_scope _ _ _
 lte_lim is opaque
 Expands to: Constant mathcomp.analysis.sequences.lte_lim
 Declared in library mathcomp.analysis.sequences, line 1938, characters 6-13
@@ -5045,7 +5061,7 @@ forall [R : realType] [A : (\bar R) ^nat]
  \big[+%R/0%R]_(0 <= i <oo | P i) A i + e%:E)%E
 
 epsilon_trick is not universe polymorphic
-Arguments epsilon_trick [R A e] P _%function_scope _
+Arguments epsilon_trick [R A e] P _%_function_scope _
 epsilon_trick is opaque
 Expands to: Constant mathcomp.analysis.sequences.epsilon_trick
 Declared in library mathcomp.analysis.sequences, line 1955, characters 6-19
@@ -5089,7 +5105,7 @@ forall [R : realType] [eps : R] (P : pred nat),
 (\big[+%R/0%R]_(0 <= i <oo | P i) (eps / (2 ^ i.+1)%:R)%:E <= eps%:E)%E
 
 epsilon_trick0 is not universe polymorphic
-Arguments epsilon_trick0 [R] [eps]%ring_scope P _
+Arguments epsilon_trick0 [R] [eps]%_ring_scope P _
 epsilon_trick0 is opaque
 Expands to: Constant mathcomp.analysis.sequences.epsilon_trick0
 Declared in library mathcomp.analysis.sequences, line 1987, characters 6-20
@@ -5132,7 +5148,8 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` [eta u] @^-1` t)%classic
 
-Arguments minr_cvg_0_cvg_0 {R} [u] [r]%ring_scope _ _%function_scope _ [t] _
+Arguments minr_cvg_0_cvg_0 {R} [u] [r]%_ring_scope 
+  _ _%_function_scope _ [t] _
 minr_cvg_0_cvg_0 is opaque
 Expands to: Constant mathcomp.analysis.sequences.minr_cvg_0_cvg_0
 Declared in library mathcomp.analysis.sequences, line 2004, characters 6-22
@@ -5170,7 +5187,8 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` [eta u] @^-1` t)%classic
 
-Arguments maxr_cvg_0_cvg_0 {R} [u] [r]%ring_scope _ _%function_scope _ [t] _
+Arguments maxr_cvg_0_cvg_0 {R} [u] [r]%_ring_scope 
+  _ _%_function_scope _ [t] _
 maxr_cvg_0_cvg_0 is opaque
 Expands to: Constant mathcomp.analysis.sequences.maxr_cvg_0_cvg_0
 Declared in library mathcomp.analysis.sequences, line 2016, characters 6-22
@@ -5201,7 +5219,8 @@ forall {R : realFieldType} [u : (\bar R) ^nat] [x : \bar R],
 \forall n \near \oo%classic, u n \is a fin_num
 
 mine_cvg_0_cvg_fin_num is not universe polymorphic
-Arguments mine_cvg_0_cvg_fin_num {R} [u] [x]%ereal_scope _ _%function_scope _
+Arguments mine_cvg_0_cvg_fin_num {R} [u] [x]%_ereal_scope 
+  _ _%_function_scope _
 mine_cvg_0_cvg_fin_num is opaque
 Expands to: Constant mathcomp.analysis.sequences.mine_cvg_0_cvg_fin_num
 Declared in library mathcomp.analysis.sequences, line 2033, characters 6-28
@@ -5242,7 +5261,8 @@ exists2 i : nat,
   ((fun N : nat => [set n | N <= n]) i
    `<=` (fun n : nat => minr (fine (u n)) r) @^-1` t)%classic
 
-Arguments mine_cvg_minr_cvg {R} [u] [r]%ring_scope _ _%function_scope _ [t] _
+Arguments mine_cvg_minr_cvg {R} [u] [r]%_ring_scope 
+  _ _%_function_scope _ [t] _
 mine_cvg_minr_cvg is opaque
 Expands to: Constant mathcomp.analysis.sequences.mine_cvg_minr_cvg
 Declared in library mathcomp.analysis.sequences, line 2047, characters 6-23
@@ -5282,7 +5302,8 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` [eta u] @^-1` t)%classic
 
-Arguments mine_cvg_0_cvg_0 {R} [u] [x]%ereal_scope _ _%function_scope _ [t] _
+Arguments mine_cvg_0_cvg_0 {R} [u] [x]%_ereal_scope 
+  _ _%_function_scope _ [t] _
 mine_cvg_0_cvg_0 is opaque
 Expands to: Constant mathcomp.analysis.sequences.mine_cvg_0_cvg_0
 Declared in library mathcomp.analysis.sequences, line 2061, characters 6-22
@@ -5309,7 +5330,8 @@ forall {R : realFieldType} [u : (\bar R) ^nat] [x : \bar R],
 \forall n \near \oo%classic, u n \is a fin_num
 
 maxe_cvg_0_cvg_fin_num is not universe polymorphic
-Arguments maxe_cvg_0_cvg_fin_num {R} [u] [x]%ereal_scope _ _%function_scope _
+Arguments maxe_cvg_0_cvg_fin_num {R} [u] [x]%_ereal_scope 
+  _ _%_function_scope _
 maxe_cvg_0_cvg_fin_num is opaque
 Expands to: Constant mathcomp.analysis.sequences.maxe_cvg_0_cvg_fin_num
 Declared in library mathcomp.analysis.sequences, line 2074, characters 6-28
@@ -5347,7 +5369,8 @@ exists2 i : nat,
   ((fun N : nat => [set n | N <= n]) i
    `<=` (fun n : nat => maxr (fine (u n)) r) @^-1` t)%classic
 
-Arguments maxe_cvg_maxr_cvg {R} [u] [r]%ring_scope _ _%function_scope _ [t] _
+Arguments maxe_cvg_maxr_cvg {R} [u] [r]%_ring_scope 
+  _ _%_function_scope _ [t] _
 maxe_cvg_maxr_cvg is opaque
 Expands to: Constant mathcomp.analysis.sequences.maxe_cvg_maxr_cvg
 Declared in library mathcomp.analysis.sequences, line 2085, characters 6-23
@@ -5385,7 +5408,8 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` [eta u] @^-1` t)%classic
 
-Arguments maxe_cvg_0_cvg_0 {R} [u] [x]%ereal_scope _ _%function_scope _ [t] _
+Arguments maxe_cvg_0_cvg_0 {R} [u] [x]%_ereal_scope 
+  _ _%_function_scope _ [t] _
 maxe_cvg_0_cvg_0 is opaque
 Expands to: Constant mathcomp.analysis.sequences.maxe_cvg_0_cvg_0
 Declared in library mathcomp.analysis.sequences, line 2097, characters 6-22
@@ -5406,7 +5430,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="sdrop" class="id"><a name="sdrop" class="" title="sdrop : forall [T : Type], T ^nat -> nat -> set T
 
 sdrop is not universe polymorphic
-Arguments sdrop [T]%type_scope u n%nat_scope _
+Arguments sdrop [T]%_type_scope u n%_nat_scope _
 sdrop is transparent
 Expands to: Constant mathcomp.analysis.sequences.sdrop
 Declared in library mathcomp.analysis.sequences, line 2109, characters 11-16
@@ -5421,7 +5445,7 @@ forall [d : Order.disp_t] [R : porderType d] [u : (R^o) ^nat],
 has_lbound (T:=R) (range u) -> forall m : nat, has_lbound (T:=R) (sdrop u m)
 
 has_lbound_sdrop is not universe polymorphic
-Arguments has_lbound_sdrop [d R u] _ m%nat_scope
+Arguments has_lbound_sdrop [d R u] _ m%_nat_scope
 has_lbound_sdrop is opaque
 Expands to: Constant mathcomp.analysis.sequences.has_lbound_sdrop
 Declared in library mathcomp.analysis.sequences, line 2115, characters 6-22
@@ -5438,7 +5462,7 @@ forall [d : Order.disp_t] [R : porderType d] [u : (R^o) ^nat],
 has_ubound (T:=R) (range u) -> forall m : nat, has_ubound (T:=R) (sdrop u m)
 
 has_ubound_sdrop is not universe polymorphic
-Arguments has_ubound_sdrop [d R u] _ m%nat_scope
+Arguments has_ubound_sdrop [d R u] _ m%_nat_scope
 has_ubound_sdrop is opaque
 Expands to: Constant mathcomp.analysis.sequences.has_ubound_sdrop
 Declared in library mathcomp.analysis.sequences, line 2121, characters 6-22
@@ -5626,7 +5650,7 @@ forall [R : realType] [u : (R^o) ^nat] (n : nat),
 cvgn u -> (infs (R:=R) u n <= sups (R:=R) u n)%R
 
 infs_le_sups is not universe polymorphic
-Arguments infs_le_sups [R u] n%nat_scope _
+Arguments infs_le_sups [R u] n%_nat_scope _
 infs_le_sups is opaque
 Expands to: Constant mathcomp.analysis.sequences.infs_le_sups
 Declared in library mathcomp.analysis.sequences, line 2182, characters 6-18
@@ -5719,8 +5743,8 @@ forall [R : realType] [T : Type] [D : set T] (r : R)
 (D `&` \bigcup_(k in [set k | n <= k]) f k @^-1` `]r, +oo[)%classic
 
 sups_preimage is not universe polymorphic
-Arguments sups_preimage [R] [T]%type_scope [D]%classical_set_scope
-  r%ring_scope [f] n%nat_scope _%function_scope
+Arguments sups_preimage [R] [T]%_type_scope [D]%_classical_set_scope
+  r%_ring_scope [f] n%_nat_scope _%_function_scope
 sups_preimage is opaque
 Expands to: Constant mathcomp.analysis.sequences.sups_preimage
 Declared in library mathcomp.analysis.sequences, line 2213, characters 6-19
@@ -5750,8 +5774,8 @@ forall [R : realType] [T : Type] [D : set T] (r : R)
 (D `&` \bigcup_(k in [set k | n <= k]) f k @^-1` `]-oo, r[)%classic
 
 infs_preimage is not universe polymorphic
-Arguments infs_preimage [R] [T]%type_scope [D]%classical_set_scope
-  r%ring_scope [f] n%nat_scope _%function_scope
+Arguments infs_preimage [R] [T]%_type_scope [D]%_classical_set_scope
+  r%_ring_scope [f] n%_nat_scope _%_function_scope
 infs_preimage is opaque
 Expands to: Constant mathcomp.analysis.sequences.infs_preimage
 Declared in library mathcomp.analysis.sequences, line 2229, characters 6-19
@@ -6286,7 +6310,7 @@ forall [R : realType] (u : (\bar R) ^nat) (n : nat),
 (einfs (R:=R) u n <= esups (R:=R) u n)%E
 
 einfs_le_esups is not universe polymorphic
-Arguments einfs_le_esups [R] u n%nat_scope
+Arguments einfs_le_esups [R] u n%_nat_scope
 einfs_le_esups is opaque
 Expands to: Constant mathcomp.analysis.sequences.einfs_le_esups
 Declared in library mathcomp.analysis.sequences, line 2453, characters 6-20
@@ -6398,7 +6422,7 @@ forall [R : realType] [T : Type] (a : \bar R) (f : (T -> \bar R) ^nat)
 (\bigcup_(k in [set k | n <= k]) f k @^-1` `]a, +oo[)%classic
 
 esups_preimage is not universe polymorphic
-Arguments esups_preimage [R] [T]%type_scope a%ereal_scope f n%nat_scope
+Arguments esups_preimage [R] [T]%_type_scope a%_ereal_scope f n%_nat_scope
 esups_preimage is opaque
 Expands to: Constant mathcomp.analysis.sequences.esups_preimage
 Declared in library mathcomp.analysis.sequences, line 2472, characters 6-20
@@ -6422,7 +6446,7 @@ forall [R : realType] [T : Type] (a : \bar R) (f : (T -> \bar R) ^nat)
 (\bigcap_(k in [set k | n <= k]) f k @^-1` `[a, +oo[)%classic
 
 einfs_preimage is not universe polymorphic
-Arguments einfs_preimage [R] [T]%type_scope a%ereal_scope f n%nat_scope
+Arguments einfs_preimage [R] [T]%_type_scope a%_ereal_scope f n%_nat_scope
 einfs_preimage is opaque
 Expands to: Constant mathcomp.analysis.sequences.einfs_preimage
 Declared in library mathcomp.analysis.sequences, line 2483, characters 6-20
@@ -6520,7 +6544,7 @@ l \is a fin_num ->
 limn_einf (fun x : nat => (l + u x)%E) = (l + limn_einf u)%E
 
 limn_einf_shift is not universe polymorphic
-Arguments limn_einf_shift [R] u [l]%ereal_scope _
+Arguments limn_einf_shift [R] u [l]%_ereal_scope _
 limn_einf_shift is opaque
 Expands to: Constant mathcomp.analysis.sequences.limn_einf_shift
 Declared in library mathcomp.analysis.sequences, line 2533, characters 6-21
@@ -6561,7 +6585,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` u @^-1` t)%classic
 
-Arguments limn_esup_le_cvg [R u] [l]%ereal_scope _ _%function_scope [t] _
+Arguments limn_esup_le_cvg [R u] [l]%_ereal_scope _ _%_function_scope [t] _
 limn_esup_le_cvg is opaque
 Expands to: Constant mathcomp.analysis.sequences.limn_esup_le_cvg
 Declared in library mathcomp.analysis.sequences, line 2551, characters 6-22
@@ -6781,7 +6805,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` esups (R:=R) u @^-1` t)%classic
 
-Arguments cvg_esups [R u] [l]%ereal_scope _ [t] _
+Arguments cvg_esups [R u] [l]%_ereal_scope _ [t] _
 cvg_esups is opaque
 Expands to: Constant mathcomp.analysis.sequences.cvg_esups
 Declared in library mathcomp.analysis.sequences, line 2615, characters 6-15
@@ -6826,7 +6850,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` einfs (R:=R) u @^-1` t)%classic
 
-Arguments cvg_einfs [R u] [l]%ereal_scope _ [t] _
+Arguments cvg_einfs [R u] [l]%_ereal_scope _ [t] _
 cvg_einfs is opaque
 Expands to: Constant mathcomp.analysis.sequences.cvg_einfs
 Declared in library mathcomp.analysis.sequences, line 2638, characters 6-15
@@ -6843,7 +6867,7 @@ forall [R : realType] [u : (\bar R) ^nat] [l : \bar R],
 (u x @[x --> \oo] --> l)%classic -> (limn_einf u = l) * (limn_esup u = l)
 
 cvg_limn_einf_sup is not universe polymorphic
-Arguments cvg_limn_einf_sup [R u] [l]%ereal_scope _
+Arguments cvg_limn_einf_sup [R u] [l]%_ereal_scope _
 cvg_limn_einf_sup is opaque
 Expands to: Constant mathcomp.analysis.sequences.cvg_limn_einf_sup
 Declared in library mathcomp.analysis.sequences, line 2644, characters 6-23
@@ -6897,7 +6921,7 @@ forall {R : realType} (n : nat) [a x : R],
 (0 < x)%R -> (`|x| < 1)%R -> (series (geometric a x) n <= a / (1 - x))%R
 
 geometric_le_lim is not universe polymorphic
-Arguments geometric_le_lim {R} n%nat_scope [a x]%ring_scope _ _ _
+Arguments geometric_le_lim {R} n%_nat_scope [a x]%_ring_scope _ _ _
 geometric_le_lim is opaque
 Expands to: Constant mathcomp.analysis.sequences.geometric_le_lim
 Declared in library mathcomp.analysis.sequences, line 2666, characters 6-22
@@ -6920,7 +6944,7 @@ cluster (u_ x @[x --> \oo])%classic a <->
  (0 < e)%R -> exists2 p : nat, n <= p & (`|a - u_ p| <= e)%R)
 
 cluster_eventuallyP is not universe polymorphic
-Arguments cluster_eventuallyP {R} u_ a%ring_scope
+Arguments cluster_eventuallyP {R} u_ a%_ring_scope
 cluster_eventuallyP is opaque
 Expands to: Constant mathcomp.analysis.sequences.cluster_eventuallyP
 Declared in library mathcomp.analysis.sequences, line 2677, characters 6-25
@@ -7034,7 +7058,7 @@ cluster (u_ x @[x --> \oo])%classic a <->
    increasing_seq f & ((u_ \o f) x @[x --> \oo] --> a)%classic)
 
 cluster_eventually_cvg is not universe polymorphic
-Arguments cluster_eventually_cvg {R} u_ a%ring_scope
+Arguments cluster_eventually_cvg {R} u_ a%_ring_scope
 cluster_eventually_cvg is opaque
 Expands to: Constant mathcomp.analysis.sequences.cluster_eventually_cvg
 Declared in library mathcomp.analysis.sequences, line 2769, characters 6-28
@@ -7074,7 +7098,7 @@ exists
          R,
   (A `&` B)%classic a0
 
-Arguments limit_point_cluster_eventually {R} [u_] [a]%ring_scope _ [A B] _ _
+Arguments limit_point_cluster_eventually {R} [u_] [a]%_ring_scope _ [A B] _ _
 limit_point_cluster_eventually is opaque
 Expands to: Constant
             mathcomp.analysis.sequences.limit_point_cluster_eventually
@@ -7162,7 +7186,7 @@ set
 Prop
 
 adjacent_set is not universe polymorphic
-Arguments adjacent_set {R} (A B)%classical_set_scope
+Arguments adjacent_set {R} (A B)%_classical_set_scope
 adjacent_set is transparent
 Expands to: Constant mathcomp.analysis.sequences.adjacent_set
 Declared in library mathcomp.analysis.sequences, line 2854, characters 11-23
@@ -7179,7 +7203,7 @@ forall {R : realType}
 adjacent_set A B -> sup A = inf B
 
 adjacent_sup_inf is not universe polymorphic
-Arguments adjacent_sup_inf {R} [A B]%classical_set_scope _
+Arguments adjacent_sup_inf {R} [A B]%_classical_set_scope _
 adjacent_sup_inf is opaque
 Expands to: Constant mathcomp.analysis.sequences.adjacent_sup_inf
 Declared in library mathcomp.analysis.sequences, line 2858, characters 6-22
@@ -7217,7 +7241,7 @@ lbound
 M = sup A
 
 adjacent_sup_inf_unique is not universe polymorphic
-Arguments adjacent_sup_inf_unique {R} [A B]%classical_set_scope [M] _ _ _
+Arguments adjacent_sup_inf_unique {R} [A B]%_classical_set_scope [M] _ _ _
 adjacent_sup_inf_unique is opaque
 Expands to: Constant mathcomp.analysis.sequences.adjacent_sup_inf_unique
 Declared in library mathcomp.analysis.sequences, line 2870, characters 6-29
@@ -7234,7 +7258,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="cut" class="id"><a name="cut" class="" title="cut : forall {R : realType}, set R -> set R -> Prop
 
 cut is not universe polymorphic
-Arguments cut {R} (L B)%classical_set_scope
+Arguments cut {R} (L B)%_classical_set_scope
 cut is transparent
 Expands to: Constant mathcomp.analysis.sequences.cut
 Declared in library mathcomp.analysis.sequences, line 2878, characters 11-14
@@ -7245,7 +7269,7 @@ Declared in library mathcomp.analysis.sequences, line 2878, characters 11-14
 forall {R : realType} [A B : set R], cut A B -> adjacent_set A B
 
 cut_adjacent is not universe polymorphic
-Arguments cut_adjacent {R} [A B]%classical_set_scope _
+Arguments cut_adjacent {R} [A B]%_classical_set_scope _
 cut_adjacent is opaque
 Expands to: Constant mathcomp.analysis.sequences.cut_adjacent
 Declared in library mathcomp.analysis.sequences, line 2881, characters 6-18
@@ -7293,7 +7317,7 @@ infinite_set E -> bounded_set E -> (limit_point E !=set0)%classic
 
 infinite_bounded_limit_point_nonempty is not universe polymorphic
 Arguments infinite_bounded_limit_point_nonempty {R} 
-  [E]%classical_set_scope _ _
+  [E]%_classical_set_scope _ _
 infinite_bounded_limit_point_nonempty is opaque
 Expands to: Constant
             mathcomp.analysis.sequences.infinite_bounded_limit_point_nonempty
@@ -7369,7 +7393,7 @@ exists x : T,
   exists2 A : set nat, infinite_set A & forall k : nat, A k <-> u_ k = x
 
 finite_range_cst_subsequence is not universe polymorphic
-Arguments finite_range_cst_subsequence {T}%type_scope [u_] _
+Arguments finite_range_cst_subsequence {T}%_type_scope [u_] _
 finite_range_cst_subsequence is opaque
 Expands to: Constant mathcomp.analysis.sequences.finite_range_cst_subsequence
 Declared in library mathcomp.analysis.sequences, line 2979, characters 6-34
@@ -7395,8 +7419,8 @@ exists f : nat -> T,
     & forall n : nat, A (f n)]
 
 infinite_increasing_seq is not universe polymorphic
-Arguments infinite_increasing_seq {d T} [A]%classical_set_scope
-  _%function_scope x0
+Arguments infinite_increasing_seq {d T} [A]%_classical_set_scope
+  _%_function_scope x0
 infinite_increasing_seq is opaque
 Expands to: Constant mathcomp.analysis.sequences.infinite_increasing_seq
 Declared in library mathcomp.analysis.sequences, line 2990, characters 6-29
@@ -7424,8 +7448,8 @@ exists f : nat -> T,
     & forall n : nat, A (f n)]
 
 infinite_increasing_seq_wf is not universe polymorphic
-Arguments infinite_increasing_seq_wf {d T} [A]%classical_set_scope
-  _%function_scope _ x0
+Arguments infinite_increasing_seq_wf {d T} [A]%_classical_set_scope
+  _%_function_scope _ x0
 infinite_increasing_seq_wf is opaque
 Expands to: Constant mathcomp.analysis.sequences.infinite_increasing_seq_wf
 Declared in library mathcomp.analysis.sequences, line 3002, characters 6-32
@@ -7520,8 +7544,8 @@ forall n m : nat,
  `|f base - base| / (1 - q%:num) * q%:num ^+ n)%R
 
 contraction_dist is not universe polymorphic
-Arguments contraction_dist {R X} [U]%classical_set_scope 
-  [f q] ctrf [base] Ubase (n m)%nat_scope
+Arguments contraction_dist {R X} [U]%_classical_set_scope 
+  [f q] ctrf [base] Ubase (n m)%_nat_scope
 contraction_dist is opaque
 Expands to: Constant mathcomp.analysis.sequences.contraction_dist
 Declared in library mathcomp.analysis.sequences, line 3053, characters 6-22
@@ -7570,7 +7594,7 @@ exists2 i : nat,
   ((fun N : nat => [set n | N <= n]) i
    `<=` (fun n : nat => iter n f base) @^-1` t)%classic
 
-Arguments contraction_cvg {R X} [U]%classical_set_scope 
+Arguments contraction_cvg {R X} [U]%_classical_set_scope 
   [f q] ctrf [base] Ubase [t] _
 contraction_cvg is opaque
 Expands to: Constant mathcomp.analysis.sequences.contraction_cvg
@@ -7616,7 +7640,7 @@ closed U ->
 limn (fun n : nat => iter n f base) = f (limn (fun n : nat => iter n f base))
 
 contraction_cvg_fixed is not universe polymorphic
-Arguments contraction_cvg_fixed {R X} [U]%classical_set_scope 
+Arguments contraction_cvg_fixed {R X} [U]%_classical_set_scope 
   [f q] ctrf [base] Ubase _
 contraction_cvg_fixed is opaque
 Expands to: Constant mathcomp.analysis.sequences.contraction_cvg_fixed
@@ -7651,7 +7675,7 @@ is_contraction f ->
 closed U -> (U !=set0)%classic -> exists2 p : X, U p & p = f p
 
 banach_fixed_point is not universe polymorphic
-Arguments banach_fixed_point {R X} [U]%classical_set_scope [f] ctrf _ _
+Arguments banach_fixed_point {R X} [U]%_classical_set_scope [f] ctrf _ _
 banach_fixed_point is opaque
 Expands to: Constant mathcomp.analysis.sequences.banach_fixed_point
 Declared in library mathcomp.analysis.sequences, line 3125, characters 8-26
@@ -7683,7 +7707,7 @@ forall [K : realType] [U : completeNormedModType K] [F : (set U) ^nat],
 forall [O : set U],
 (O !=set0)%classic -> open O -> exists a : U, (O `&` \bigcap_i F i)%classic a
 
-Arguments Baire [K U F] _%function_scope [O] _ _
+Arguments Baire [K U F] _%_function_scope [O] _ _
 Baire is opaque
 Expands to: Constant mathcomp.analysis.sequences.Baire
 Declared in library mathcomp.analysis.sequences, line 3139, characters 8-13
@@ -7777,7 +7801,7 @@ Declared in library mathcomp.analysis.sequences, line 3139, characters 8-13
 forall [K : realType] [V W : normedModType K], (V -> W) -> Prop
 
 bounded_fun_norm is not universe polymorphic
-Arguments bounded_fun_norm [K V W] f%function_scope
+Arguments bounded_fun_norm [K V W] f%_function_scope
 bounded_fun_norm is transparent
 Expands to: Constant mathcomp.analysis.sequences.bounded_fun_norm
 Declared in library mathcomp.analysis.sequences, line 3224, characters 11-27
@@ -7820,7 +7844,7 @@ Declared in library mathcomp.analysis.sequences, line 3228, characters 6-20
 forall [K : realType] [V W : normedModType K], set (V -> W) -> Prop
 
 pointwise_bounded is not universe polymorphic
-Arguments pointwise_bounded [K V W] F%classical_set_scope
+Arguments pointwise_bounded [K V W] F%_classical_set_scope
 pointwise_bounded is transparent
 Expands to: Constant mathcomp.analysis.sequences.pointwise_bounded
 Declared in library mathcomp.analysis.sequences, line 3257, characters 11-28
@@ -7831,7 +7855,7 @@ Declared in library mathcomp.analysis.sequences, line 3257, characters 11-28
 forall [K : realType] [V W : normedModType K], set (V -> W) -> Prop
 
 uniform_bounded is not universe polymorphic
-Arguments uniform_bounded [K V W] F%classical_set_scope
+Arguments uniform_bounded [K V W] F%_classical_set_scope
 uniform_bounded is transparent
 Expands to: Constant mathcomp.analysis.sequences.uniform_bounded
 Declared in library mathcomp.analysis.sequences, line 3260, characters 11-26
@@ -7853,8 +7877,8 @@ pointwise_bounded (K:=K) (V:=V) (W:=W) F ->
 uniform_bounded (K:=K) (V:=V) (W:=W) F
 
 Banach_Steinhauss is not universe polymorphic
-Arguments Banach_Steinhauss [K V W] [F]%classical_set_scope 
-  _%function_scope _ r
+Arguments Banach_Steinhauss [K V W] [F]%_classical_set_scope
+  _%_function_scope _ r
 Banach_Steinhauss is opaque
 Expands to: Constant mathcomp.analysis.sequences.Banach_Steinhauss
 Declared in library mathcomp.analysis.sequences, line 3271, characters 8-25

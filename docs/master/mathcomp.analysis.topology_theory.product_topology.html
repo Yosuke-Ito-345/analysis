@@ -79,6 +79,20 @@
           </ul>
           </details>
           </li>
+<li><details id="mathcomp.analysis.probability_theory"><summary>probability_theory</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.probability_theory.bernoulli_distribution.html">bernoulli_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.beta_distribution.html">beta_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.binomial_distribution.html">binomial_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.exponential_distribution.html">exponential_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.normal_distribution.html">normal_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.poisson_distribution.html">poisson_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.probability.html">probability</a></li>
+<li><a href="mathcomp.analysis.probability_theory.random_variable.html">random_variable</a></li>
+<li><a href="mathcomp.analysis.probability_theory.uniform_distribution.html">uniform_distribution</a></li>
+          </ul>
+          </details>
+          </li>
 <li><details id="mathcomp.analysis.showcase"><summary>showcase</summary>
           <ul>
           <li><a href="mathcomp.analysis.showcase.pnt.html">pnt</a></li>
@@ -92,6 +106,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
 <li><a href="mathcomp.analysis.topology_theory.nat_topology.html">nat_topology</a></li>
@@ -134,7 +149,6 @@
 <li><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></li>
 <li><a href="mathcomp.analysis.numfun.html">numfun</a></li>
 <li><a href="mathcomp.analysis.pi_irrational.html">pi_irrational</a></li>
-<li><a href="mathcomp.analysis.probability.html">probability</a></li>
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
@@ -263,7 +277,7 @@ forall {T U : topologicalType} [p : T * U] [A : set (T * U)],
 (fun p0 : T * U => filter_prod (nbhs p0.1) (nbhs p0.2)) p A -> A p
 
 prod_nbhs_singleton is not universe polymorphic
-Arguments prod_nbhs_singleton {T U} [p] [A]%classical_set_scope _
+Arguments prod_nbhs_singleton {T U} [p] [A]%_classical_set_scope _
 prod_nbhs_singleton is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.product_topology.prod_nbhs_singleton
@@ -283,7 +297,7 @@ forall {T U : topologicalType} [p : T * U] [A : set (T * U)],
   ((fun p0 : T * U => filter_prod (nbhs p0.1) (nbhs p0.2))^~ A)
 
 prod_nbhs_nbhs is not universe polymorphic
-Arguments prod_nbhs_nbhs {T U} [p] [A]%classical_set_scope _
+Arguments prod_nbhs_nbhs {T U} [p] [A]%_classical_set_scope _
 prod_nbhs_nbhs is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.product_topology.prod_nbhs_nbhs
@@ -410,7 +424,7 @@ forall {U V : topologicalType} [A : set (U * V)],
 open A -> open [set x.1 | x in A]%classic
 
 fst_open is not universe polymorphic
-Arguments fst_open {U V} [A]%classical_set_scope _
+Arguments fst_open {U V} [A]%_classical_set_scope _
 fst_open is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.product_topology.fst_open
@@ -431,7 +445,7 @@ forall {U V : topologicalType} [A : set (U * V)],
 open A -> open [set x.2 | x in A]%classic
 
 snd_open is not universe polymorphic
-Arguments snd_open {U V} [A]%classical_set_scope _
+Arguments snd_open {U V} [A]%_classical_set_scope _
 snd_open is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.product_topology.snd_open
@@ -475,7 +489,7 @@ entourage B ->
 prod_ent [set xy | A (xy.1.1, xy.2.1) /\ B (xy.1.2, xy.2.2)]%classic
 
 prod_entP is not universe polymorphic
-Arguments prod_entP {U V} [A B]%classical_set_scope _ _
+Arguments prod_entP {U V} [A B]%_classical_set_scope _ _
 prod_entP is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.product_topology.prod_entP
@@ -524,7 +538,7 @@ prod_ent_refl :
 forall {U V : uniformType} [A : set (U * V * (U * V))],
 prod_ent A -> forall [t : U * V * (U * V)], diagonal t -> A t
 
-Arguments prod_ent_refl {U V} [A]%classical_set_scope _ [t] _
+Arguments prod_ent_refl {U V} [A]%_classical_set_scope _ [t] _
 prod_ent_refl is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.product_topology.prod_ent_refl
@@ -548,7 +562,7 @@ forall {U V : uniformType} [A : set (U * V * (U * V))],
 prod_ent A -> prod_ent A^-1%relation
 
 prod_ent_inv is not universe polymorphic
-Arguments prod_ent_inv {U V} [A]%classical_set_scope _
+Arguments prod_ent_inv {U V} [A]%_classical_set_scope _
 prod_ent_inv is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.product_topology.prod_ent_inv
@@ -571,7 +585,7 @@ exists2 B : set (U * V * (U * V)),
   prod_ent B & ((B \; B)%relation `<=` A)%classic
 
 prod_ent_split is not universe polymorphic
-Arguments prod_ent_split {U V} [A]%classical_set_scope _
+Arguments prod_ent_split {U V} [A]%_classical_set_scope _
 prod_ent_split is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.product_topology.prod_ent_split
@@ -684,7 +698,7 @@ forall {R : numDomainType} {U V : pseudoMetricType R},
 U * V -> R -> U * V -> Prop
 
 prod_ball is not universe polymorphic
-Arguments prod_ball {R U V} x eps%ring_scope y
+Arguments prod_ball {R U V} x eps%_ring_scope y
 prod_ball is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.product_topology.prod_ball
@@ -698,7 +712,7 @@ forall {R : numDomainType} {U V : pseudoMetricType R} (x : U * V) [eps : R],
 (0 < eps)%R -> prod_ball x eps x
 
 prod_ball_center is not universe polymorphic
-Arguments prod_ball_center {R U V} x [eps]%ring_scope _
+Arguments prod_ball_center {R U V} x [eps]%_ring_scope _
 prod_ball_center is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.product_topology.prod_ball_center
@@ -715,7 +729,7 @@ forall {R : numDomainType} {U V : pseudoMetricType R} [x y : U * V] [eps : R],
 prod_ball x eps y -> prod_ball y eps x
 
 prod_ball_sym is not universe polymorphic
-Arguments prod_ball_sym {R U V} [x y] [eps]%ring_scope _
+Arguments prod_ball_sym {R U V} [x y] [eps]%_ring_scope _
 prod_ball_sym is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.product_topology.prod_ball_sym
@@ -733,7 +747,7 @@ forall {R : numDomainType} {U V : pseudoMetricType R}
 prod_ball x e1 y -> prod_ball y e2 z -> prod_ball x (e1 + e2) z
 
 prod_ball_triangle is not universe polymorphic
-Arguments prod_ball_triangle {R U V} [x y z] [e1 e2]%ring_scope _ _
+Arguments prod_ball_triangle {R U V} [x y z] [e1 e2]%_ring_scope _ _
 prod_ball_triangle is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.product_topology.prod_ball_triangle
@@ -881,8 +895,8 @@ forall (f : I -> U) (g : J -> V) (y : U) (z : V),
  (0 < eps)%R -> \near F & G, ball y eps (f F) /\ ball z eps (g G))
 
 cvg_ball2P is not universe polymorphic
-Arguments cvg_ball2P {R U V} {I J}%type_scope {F G FF FG}
-  (f g)%function_scope y z
+Arguments cvg_ball2P {R U V} {I J}%_type_scope {F G FF FG}
+  (f g)%_function_scope y z
 cvg_ball2P is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.product_topology.cvg_ball2P
@@ -920,7 +934,7 @@ F (P `*` Q)%classic ->
 exists a : Datatypes_prod__canonical__topology_structure_Topological,
   (P `*` Q `&` cluster F)%classic a
 
-Arguments compact_setX {U V} [P Q]%classical_set_scope _ _ [F] _ _
+Arguments compact_setX {U V} [P Q]%_classical_set_scope _ _ [F] _ _
 compact_setX is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.product_topology.compact_setX

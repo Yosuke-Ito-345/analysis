@@ -79,6 +79,20 @@
           </ul>
           </details>
           </li>
+<li><details id="mathcomp.analysis.probability_theory"><summary>probability_theory</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.probability_theory.bernoulli_distribution.html">bernoulli_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.beta_distribution.html">beta_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.binomial_distribution.html">binomial_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.exponential_distribution.html">exponential_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.normal_distribution.html">normal_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.poisson_distribution.html">poisson_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.probability.html">probability</a></li>
+<li><a href="mathcomp.analysis.probability_theory.random_variable.html">random_variable</a></li>
+<li><a href="mathcomp.analysis.probability_theory.uniform_distribution.html">uniform_distribution</a></li>
+          </ul>
+          </details>
+          </li>
 <li><details id="mathcomp.analysis.showcase"><summary>showcase</summary>
           <ul>
           <li><a href="mathcomp.analysis.showcase.pnt.html">pnt</a></li>
@@ -92,6 +106,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
 <li><a href="mathcomp.analysis.topology_theory.nat_topology.html">nat_topology</a></li>
@@ -134,7 +149,6 @@
 <li><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></li>
 <li><a href="mathcomp.analysis.numfun.html">numfun</a></li>
 <li><a href="mathcomp.analysis.pi_irrational.html">pi_irrational</a></li>
-<li><a href="mathcomp.analysis.probability.html">probability</a></li>
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
@@ -367,7 +381,7 @@ subset_sigma_subadditive mu == alternative predicate defining
 <span class="vernacular">Definition</span><span class="id"> </span><span id="setC_closed" class="id"><a name="setC_closed" class="" title="setC_closed : forall {T : Type}, set (set T) -> Prop
 
 setC_closed is not universe polymorphic
-Arguments setC_closed {T}%type_scope G%classical_set_scope
+Arguments setC_closed {T}%_type_scope G%_classical_set_scope
 setC_closed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.setC_closed
@@ -377,7 +391,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 155, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="setI_closed" class="id"><a name="setI_closed" class="" title="setI_closed : forall {T : Type}, set (set T) -> Prop
 
 setI_closed is not universe polymorphic
-Arguments setI_closed {T}%type_scope G%classical_set_scope
+Arguments setI_closed {T}%_type_scope G%_classical_set_scope
 setI_closed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.setI_closed
@@ -387,7 +401,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 156, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="setU_closed" class="id"><a name="setU_closed" class="" title="setU_closed : forall {T : Type}, set (set T) -> Prop
 
 setU_closed is not universe polymorphic
-Arguments setU_closed {T}%type_scope G%classical_set_scope
+Arguments setU_closed {T}%_type_scope G%_classical_set_scope
 setU_closed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.setU_closed
@@ -397,7 +411,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 157, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="setSD_closed" class="id"><a name="setSD_closed" class="" title="setSD_closed : forall {T : Type}, set (set T) -> Prop
 
 setSD_closed is not universe polymorphic
-Arguments setSD_closed {T}%type_scope G%classical_set_scope
+Arguments setSD_closed {T}%_type_scope G%_classical_set_scope
 setSD_closed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.setSD_closed
@@ -407,7 +421,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 158, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="setD_closed" class="id"><a name="setD_closed" class="" title="setD_closed : forall {T : Type}, set (set T) -> Prop
 
 setD_closed is not universe polymorphic
-Arguments setD_closed {T}%type_scope G%classical_set_scope
+Arguments setD_closed {T}%_type_scope G%_classical_set_scope
 setD_closed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.setD_closed
@@ -417,7 +431,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 159, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="setY_closed" class="id"><a name="setY_closed" class="" title="setY_closed : forall {T : Type}, set (set T) -> Prop
 
 setY_closed is not universe polymorphic
-Arguments setY_closed {T}%type_scope G%classical_set_scope
+Arguments setY_closed {T}%_type_scope G%_classical_set_scope
 setY_closed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.setY_closed
@@ -428,7 +442,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 160, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="fin_bigcap_closed" class="id"><a name="fin_bigcap_closed" class="" title="fin_bigcap_closed : forall {T : Type}, set (set T) -> Prop
 
 fin_bigcap_closed is not universe polymorphic
-Arguments fin_bigcap_closed {T}%type_scope G%classical_set_scope
+Arguments fin_bigcap_closed {T}%_type_scope G%_classical_set_scope
 fin_bigcap_closed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.fin_bigcap_closed
@@ -441,7 +455,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 162, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="finN0_bigcap_closed" class="id"><a name="finN0_bigcap_closed" class="" title="finN0_bigcap_closed : forall {T : Type}, set (set T) -> Prop
 
 finN0_bigcap_closed is not universe polymorphic
-Arguments finN0_bigcap_closed {T}%type_scope G%classical_set_scope
+Arguments finN0_bigcap_closed {T}%_type_scope G%_classical_set_scope
 finN0_bigcap_closed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.finN0_bigcap_closed
@@ -455,7 +469,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 166, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="fin_bigcup_closed" class="id"><a name="fin_bigcup_closed" class="" title="fin_bigcup_closed : forall {T : Type}, set (set T) -> Prop
 
 fin_bigcup_closed is not universe polymorphic
-Arguments fin_bigcup_closed {T}%type_scope G%classical_set_scope
+Arguments fin_bigcup_closed {T}%_type_scope G%_classical_set_scope
 fin_bigcup_closed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.fin_bigcup_closed
@@ -468,7 +482,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 171, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="semi_setD_closed" class="id"><a name="semi_setD_closed" class="" title="semi_setD_closed : forall {T : Type}, set (set T) -> Prop
 
 semi_setD_closed is not universe polymorphic
-Arguments semi_setD_closed {T}%type_scope G%classical_set_scope
+Arguments semi_setD_closed {T}%_type_scope G%_classical_set_scope
 semi_setD_closed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.semi_setD_closed
@@ -493,7 +507,7 @@ exists D : set (set T),
       (A `\` B)%classic = (\bigcup_(X in D) X)%classic
     & trivIset (T:=T) D id]
 
-Arguments setD_semi_setD_closed {T}%type_scope [G]%classical_set_scope 
+Arguments setD_semi_setD_closed {T}%_type_scope [G]%_classical_set_scope 
   _ [A B] _ _
 setD_semi_setD_closed is opaque
 Expands to: Constant
@@ -512,7 +526,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="ndseq_closed" class="id"><a name="ndseq_closed" class="" title="ndseq_closed : forall {T : Type}, set (set T) -> Prop
 
 ndseq_closed is not universe polymorphic
-Arguments ndseq_closed {T}%type_scope G%classical_set_scope
+Arguments ndseq_closed {T}%_type_scope G%_classical_set_scope
 ndseq_closed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.ndseq_closed
@@ -524,7 +538,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 185, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="niseq_closed" class="id"><a name="niseq_closed" class="" title="niseq_closed : forall {T : Type}, set (set T) -> Prop
 
 niseq_closed is not universe polymorphic
-Arguments niseq_closed {T}%type_scope G%classical_set_scope
+Arguments niseq_closed {T}%_type_scope G%_classical_set_scope
 niseq_closed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.niseq_closed
@@ -536,7 +550,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 188, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="trivIset_closed" class="id"><a name="trivIset_closed" class="" title="trivIset_closed : forall {T : Type}, set (set T) -> Prop
 
 trivIset_closed is not universe polymorphic
-Arguments trivIset_closed {T}%type_scope G%classical_set_scope
+Arguments trivIset_closed {T}%_type_scope G%_classical_set_scope
 trivIset_closed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.trivIset_closed
@@ -549,7 +563,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 191, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="fin_trivIset_closed" class="id"><a name="fin_trivIset_closed" class="" title="fin_trivIset_closed : forall {T : Type}, set (set T) -> Prop
 
 fin_trivIset_closed is not universe polymorphic
-Arguments fin_trivIset_closed {T}%type_scope G%classical_set_scope
+Arguments fin_trivIset_closed {T}%_type_scope G%_classical_set_scope
 fin_trivIset_closed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.fin_trivIset_closed
@@ -562,7 +576,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 195, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="setring" class="id"><a name="setring" class="" title="setring : forall {T : Type}, set (set T) -> Prop
 
 setring is not universe polymorphic
-Arguments setring {T}%type_scope G%classical_set_scope
+Arguments setring {T}%_type_scope G%_classical_set_scope
 setring is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.setring
@@ -573,7 +587,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 199, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="sigma_ring" class="id"><a name="sigma_ring" class="" title="sigma_ring : forall {T : Type}, set (set T) -> Prop
 
 sigma_ring is not universe polymorphic
-Arguments sigma_ring {T}%type_scope G%classical_set_scope
+Arguments sigma_ring {T}%_type_scope G%_classical_set_scope
 sigma_ring is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_ring
@@ -585,7 +599,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 201, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="sigma_algebra" class="id"><a name="sigma_algebra" class="" title="sigma_algebra : forall {T : Type}, set T -> set (set T) -> Prop
 
 sigma_algebra is not universe polymorphic
-Arguments sigma_algebra {T}%type_scope (D G)%classical_set_scope
+Arguments sigma_algebra {T}%_type_scope (D G)%_classical_set_scope
 sigma_algebra is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_algebra
@@ -598,7 +612,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 204, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="dynkin" class="id"><a name="dynkin" class="" title="dynkin : forall {T : Type}, set (set T) -> Prop
 
 dynkin is not universe polymorphic
-Arguments dynkin {T}%type_scope G%classical_set_scope
+Arguments dynkin {T}%_type_scope G%_classical_set_scope
 dynkin is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.dynkin
@@ -612,7 +626,7 @@ French references, e.g., the definition of "classe monotone" on the French wikip
 <span class="vernacular">Definition</span><span class="id"> </span><span id="lambda_system" class="id"><a name="lambda_system" class="" title="lambda_system : forall {T : Type}, set T -> set (set T) -> Prop
 
 lambda_system is not universe polymorphic
-Arguments lambda_system {T}%type_scope (D G)%classical_set_scope
+Arguments lambda_system {T}%_type_scope (D G)%_classical_set_scope
 lambda_system is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.lambda_system
@@ -624,7 +638,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 213, charact
 <span class="vernacular">Definition</span><span class="id"> </span><span id="monotone" class="id"><a name="monotone" class="" title="monotone : forall {T : Type}, set (set T) -> Prop
 
 monotone is not universe polymorphic
-Arguments monotone {T}%type_scope G%classical_set_scope
+Arguments monotone {T}%_type_scope G%_classical_set_scope
 monotone is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.monotone
@@ -642,7 +656,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 216, charact
 forall [T : Type] (D : set T), sigma_ring [set X | (X `<=` D)%classic]
 
 powerset_sigma_ring is not universe polymorphic
-Arguments powerset_sigma_ring [T]%type_scope D%classical_set_scope
+Arguments powerset_sigma_ring [T]%_type_scope D%_classical_set_scope
 powerset_sigma_ring is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.powerset_sigma_ring
@@ -662,7 +676,7 @@ Qed.</div></details>
 forall [T : Type] (D : set T), lambda_system D [set X | (X `<=` D)%classic]
 
 powerset_lambda_system is not universe polymorphic
-Arguments powerset_lambda_system [T]%type_scope D%classical_set_scope
+Arguments powerset_lambda_system [T]%_type_scope D%_classical_set_scope
 powerset_lambda_system is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.powerset_lambda_system
@@ -698,8 +712,8 @@ forall [T : Type] [D : set T] [G : set (set T)],
 (forall A : set T, G A -> (A `<=` D)%classic) -> lambda_system D <<l D, G >>
 
 lambda_system_smallest is not universe polymorphic
-Arguments lambda_system_smallest [T]%type_scope [D G]%classical_set_scope
-  GD%function_scope
+Arguments lambda_system_smallest [T]%_type_scope [D G]%_classical_set_scope
+  GD%_function_scope
 lambda_system_smallest is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.lambda_system_smallest
@@ -724,7 +738,7 @@ forall [T : Type] (G : set (set T)),
 G set0 /\ setU_closed G <-> fin_bigcup_closed G
 
 fin_bigcup_closedP is not universe polymorphic
-Arguments fin_bigcup_closedP [T]%type_scope G%classical_set_scope
+Arguments fin_bigcup_closedP [T]%_type_scope G%_classical_set_scope
 fin_bigcup_closedP is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.fin_bigcup_closedP
@@ -746,7 +760,7 @@ Qed.</div></details>
 forall [T : Type] (G : set (set T)), setI_closed G <-> finN0_bigcap_closed G
 
 finN0_bigcap_closedP is not universe polymorphic
-Arguments finN0_bigcap_closedP [T]%type_scope G%classical_set_scope
+Arguments finN0_bigcap_closedP [T]%_type_scope G%_classical_set_scope
 finN0_bigcap_closedP is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.finN0_bigcap_closedP
@@ -772,7 +786,7 @@ forall [T : Type] (G : set (set T)),
 setD_closed G <-> setI_closed G /\ setSD_closed G
 
 setD_closedP is not universe polymorphic
-Arguments setD_closedP [T]%type_scope G%classical_set_scope
+Arguments setD_closedP [T]%_type_scope G%_classical_set_scope
 setD_closedP is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.setD_closedP
@@ -799,9 +813,9 @@ forall [T : Type] [I : choiceType] [D : set T] [F : I -> set (set T)]
 sigma_algebra D (\bigcap_(i in J) F i)
 
 sigma_algebra_bigcap is not universe polymorphic
-Arguments sigma_algebra_bigcap [T]%type_scope [I] 
-  [D]%classical_set_scope [F]%function_scope [J]%classical_set_scope
-  _%function_scope
+Arguments sigma_algebra_bigcap [T]%_type_scope [I] 
+  [D]%_classical_set_scope [F]%_function_scope [J]%_classical_set_scope
+  _%_function_scope
 sigma_algebra_bigcap is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_algebra_bigcap
@@ -826,8 +840,8 @@ sigma_algebra U C <->
 [/\ C U, setSD_closed C, ndseq_closed C & setI_closed C]
 
 sigma_algebraP is not universe polymorphic
-Arguments sigma_algebraP [T]%type_scope [U C]%classical_set_scope
-  _%function_scope
+Arguments sigma_algebraP [T]%_type_scope [U C]%_classical_set_scope
+  _%_function_scope
 sigma_algebraP is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_algebraP
@@ -876,7 +890,7 @@ Qed.</div></details>
 forall {T : Type} (D : set T) (G : set (set T)), sigma_algebra D <<s D, G >>
 
 smallest_sigma_algebra is not universe polymorphic
-Arguments smallest_sigma_algebra {T}%type_scope (D G)%classical_set_scope
+Arguments smallest_sigma_algebra {T}%_type_scope (D G)%_classical_set_scope
 smallest_sigma_algebra is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.smallest_sigma_algebra
@@ -906,7 +920,7 @@ forall [t : set T],
 forall [i : set (set T)],
 [set M0 | sigma_algebra D M0 /\ G `<=` M0]%classic i -> i t
 
-Arguments sub_sigma_algebra2 {T}%type_scope [D G M]%classical_set_scope 
+Arguments sub_sigma_algebra2 {T}%_type_scope [D G M]%_classical_set_scope 
   _ [t] _ [i] _
 sub_sigma_algebra2 is opaque
 Expands to: Constant
@@ -924,7 +938,7 @@ forall {T : Type} [D : set T] [G : set (set T)],
 sigma_algebra D G -> <<s D, G >>%classic = G
 
 sigma_algebra_id is not universe polymorphic
-Arguments sigma_algebra_id {T}%type_scope [D G]%classical_set_scope _
+Arguments sigma_algebra_id {T}%_type_scope [D G]%_classical_set_scope _
 sigma_algebra_id is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_algebra_id
@@ -947,7 +961,7 @@ G t ->
 forall [i : set (set T)],
 [set M | sigma_algebra D M /\ G `<=` M]%classic i -> i t
 
-Arguments sub_sigma_algebra {T}%type_scope [D G]%classical_set_scope 
+Arguments sub_sigma_algebra {T}%_type_scope [D G]%_classical_set_scope 
   [t] _ [i] _
 sub_sigma_algebra is opaque
 Expands to: Constant
@@ -969,7 +983,7 @@ sigma_algebra0 :
 forall {T : Type} [D : set T] [G i : set (set T)],
 [set M | sigma_algebra D M /\ G `<=` M]%classic i -> i set0
 
-Arguments sigma_algebra0 {T}%type_scope [D G]%classical_set_scope [i] _
+Arguments sigma_algebra0 {T}%_type_scope [D G]%_classical_set_scope [i] _
 sigma_algebra0 is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_algebra0
@@ -993,7 +1007,8 @@ forall {T : Type} [D : set T] [G : set (set T)] [A : set T],
 forall [i : set (set T)],
 [set M | sigma_algebra D M /\ G `<=` M]%classic i -> i (D `\` A)%classic
 
-Arguments sigma_algebraCD {T}%type_scope [D G A]%classical_set_scope _ [i] _
+Arguments sigma_algebraCD {T}%_type_scope [D G A]%_classical_set_scope 
+  _ [i] _
 sigma_algebraCD is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_algebraCD
@@ -1019,8 +1034,8 @@ forall [i : set (set T)],
 [set M | sigma_algebra D M /\ G `<=` M]%classic i ->
 i (\bigcup_i0 A i0)%classic
 
-Arguments sigma_algebra_bigcup {T}%type_scope [D G]%classical_set_scope 
-  [A] _%function_scope [i] _
+Arguments sigma_algebra_bigcup {T}%_type_scope [D G]%_classical_set_scope 
+  [A] _%_function_scope [i] _
 sigma_algebra_bigcup is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_algebra_bigcup
@@ -1043,7 +1058,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 371, charact
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="smallest_setring" class="id"><a name="smallest_setring" class="" title="smallest_setring : forall {T : Type} (G : set (set T)), setring <<r G>>
 
 smallest_setring is not universe polymorphic
-Arguments smallest_setring {T}%type_scope G%classical_set_scope
+Arguments smallest_setring {T}%_type_scope G%_classical_set_scope
 smallest_setring is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.smallest_setring
@@ -1072,7 +1087,8 @@ forall [t : set T],
 <<r M>>%classic t ->
 forall [i : set (set T)], [set M0 | setring M0 /\ G `<=` M0]%classic i -> i t
 
-Arguments sub_setring2 {T}%type_scope [G M]%classical_set_scope _ [t] _ [i] _
+Arguments sub_setring2 {T}%_type_scope [G M]%_classical_set_scope 
+  _ [t] _ [i] _
 sub_setring2 is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sub_setring2
@@ -1088,7 +1104,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 390, charact
 forall {T : Type} [G : set (set T)], setring G -> <<r G>>%classic = G
 
 setring_id is not universe polymorphic
-Arguments setring_id {T}%type_scope [G]%classical_set_scope _
+Arguments setring_id {T}%_type_scope [G]%_classical_set_scope _
 setring_id is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.setring_id
@@ -1109,7 +1125,7 @@ forall {T : Type} [G : set (set T)] [t : set T],
 G t ->
 forall [i : set (set T)], [set M | setring M /\ G `<=` M]%classic i -> i t
 
-Arguments sub_setring {T}%type_scope [G]%classical_set_scope [t] _ [i] _
+Arguments sub_setring {T}%_type_scope [G]%_classical_set_scope [t] _ [i] _
 sub_setring is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sub_setring
@@ -1129,7 +1145,7 @@ setring0 :
 forall {T : Type} [G i : set (set T)],
 [set M | setring M /\ G `<=` M]%classic i -> i set0
 
-Arguments setring0 {T}%type_scope [G]%classical_set_scope [i] _
+Arguments setring0 {T}%_type_scope [G]%_classical_set_scope [i] _
 setring0 is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.setring0
@@ -1152,7 +1168,7 @@ forall {T : Type} [G : set (set T)] [A B : set T],
 forall [i : set (set T)],
 [set M | setring M /\ G `<=` M]%classic i -> i (A `\` B)%classic
 
-Arguments setringD {T}%type_scope [G]%classical_set_scope [A B] _ _ [i] _
+Arguments setringD {T}%_type_scope [G]%_classical_set_scope [A B] _ _ [i] _
 setringD is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.setringD
@@ -1175,7 +1191,7 @@ forall {T : Type} [G : set (set T)] [A B : set T],
 forall [i : set (set T)],
 [set M | setring M /\ G `<=` M]%classic i -> i (A `|` B)%classic
 
-Arguments setringU {T}%type_scope [G]%classical_set_scope [A B] _ _ [i] _
+Arguments setringU {T}%_type_scope [G]%_classical_set_scope [A B] _ _ [i] _
 setringU is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.setringU
@@ -1200,7 +1216,7 @@ forall [i : set (set T)],
 [set M | setring M /\ G `<=` M]%classic i ->
 i (\bigcup_(i0 in D) A_ i0)%classic
 
-Arguments setring_fin_bigcup {T}%type_scope [G]%classical_set_scope 
+Arguments setring_fin_bigcup {T}%_type_scope [G]%_classical_set_scope
   [I D A_] _ _ [i] _
 setring_fin_bigcup is opaque
 Expands to: Constant
@@ -1225,8 +1241,8 @@ forall [T : Type] [G : set (set T)] [D : set T],
 lambda_system D <<s D, G >>
 
 g_sigma_algebra_lambda_system is not universe polymorphic
-Arguments g_sigma_algebra_lambda_system [T]%type_scope
-  [G D]%classical_set_scope _%function_scope
+Arguments g_sigma_algebra_lambda_system [T]%_type_scope
+  [G D]%_classical_set_scope _%_function_scope
 g_sigma_algebra_lambda_system is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.g_sigma_algebra_lambda_system
@@ -1246,7 +1262,7 @@ Qed.</div></details>
 forall [T : Type] (G : set (set T)), sigma_ring <<sr G>>
 
 smallest_sigma_ring is not universe polymorphic
-Arguments smallest_sigma_ring [T]%type_scope G%classical_set_scope
+Arguments smallest_sigma_ring [T]%_type_scope G%_classical_set_scope
 smallest_sigma_ring is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.smallest_sigma_ring
@@ -1266,7 +1282,7 @@ Qed.</div></details>
 forall [T : Type] [G : set (set T)], sigma_ring G -> monotone G
 
 sigma_ring_monotone is not universe polymorphic
-Arguments sigma_ring_monotone [T]%type_scope [G]%classical_set_scope _
+Arguments sigma_ring_monotone [T]%_type_scope [G]%_classical_set_scope _
 sigma_ring_monotone is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_ring_monotone
@@ -1285,7 +1301,7 @@ Qed.</div></details>
 forall [T : Type] (G : set (set T)), monotone <<sr G>>
 
 g_sigma_ring_monotone is not universe polymorphic
-Arguments g_sigma_ring_monotone [T]%type_scope G%classical_set_scope
+Arguments g_sigma_ring_monotone [T]%_type_scope G%_classical_set_scope
 g_sigma_ring_monotone is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.g_sigma_ring_monotone
@@ -1307,7 +1323,8 @@ forall [T : Type] [G : set (set T)] [t : set T],
 G t ->
 forall [i : set (set T)], [set M | sigma_ring M /\ G `<=` M]%classic i -> i t
 
-Arguments sub_g_sigma_ring [T]%type_scope [G]%classical_set_scope [t] _ [i] _
+Arguments sub_g_sigma_ring [T]%_type_scope [G]%_classical_set_scope 
+  [t] _ [i] _
 sub_g_sigma_ring is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sub_g_sigma_ring
@@ -1324,8 +1341,8 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 443, charact
 forall [T : Type] [G : set (set T)], setring G -> monotone G -> sigma_ring G
 
 setring_monotone_sigma_ring is not universe polymorphic
-Arguments setring_monotone_sigma_ring [T]%type_scope 
-  [G]%classical_set_scope _ _
+Arguments setring_monotone_sigma_ring [T]%_type_scope
+  [G]%_classical_set_scope _ _
 setring_monotone_sigma_ring is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.setring_monotone_sigma_ring
@@ -1345,7 +1362,7 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="g_monotone_monotone" class="id"><a name="g_monotone_monotone" class="" title="g_monotone_monotone : forall [T : Type] (G : set (set T)), monotone <<M G>>
 
 g_monotone_monotone is not universe polymorphic
-Arguments g_monotone_monotone [T]%type_scope G%classical_set_scope
+Arguments g_monotone_monotone [T]%_type_scope G%_classical_set_scope
 g_monotone_monotone is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.g_monotone_monotone
@@ -1370,7 +1387,7 @@ Qed.</div></details>
 forall [T : Type] [G : set (set T)], setring G -> setring <<M G>>
 
 g_monotone_setring is not universe polymorphic
-Arguments g_monotone_setring [T]%type_scope [G]%classical_set_scope ringG
+Arguments g_monotone_setring [T]%_type_scope [G]%_classical_set_scope ringG
 g_monotone_setring is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.g_monotone_setring
@@ -1431,8 +1448,8 @@ forall [T : Type] [G : set (set T)],
 setring G -> <<M G>>%classic = <<sr G>>%classic
 
 g_monotone_g_sigma_ring is not universe polymorphic
-Arguments g_monotone_g_sigma_ring [T]%type_scope [G]%classical_set_scope
-  ringG
+Arguments g_monotone_g_sigma_ring [T]%_type_scope 
+  [G]%_classical_set_scope ringG
 g_monotone_g_sigma_ring is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.g_monotone_g_sigma_ring
@@ -1464,8 +1481,8 @@ monotone G ->
 setring R ->
 (R `<=` G)%classic -> forall [t : set T], <<sr R>>%classic t -> G t
 
-Arguments monotone_setring_sub_g_sigma_ring [T]%type_scope
-  [G R]%classical_set_scope _ _ _ [t] _
+Arguments monotone_setring_sub_g_sigma_ring [T]%_type_scope
+  [G R]%_classical_set_scope _ _ _ [t] _
 monotone_setring_sub_g_sigma_ring is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.monotone_setring_sub_g_sigma_ring
@@ -1492,8 +1509,8 @@ lambda_system D <<l D, G >> ->
 <<l D, G >>%classic = <<s D, G >>%classic
 
 smallest_lambda_system is not universe polymorphic
-Arguments smallest_lambda_system [T]%type_scope [G]%classical_set_scope 
-  setIG [D]%classical_set_scope lambdaDG _%function_scope
+Arguments smallest_lambda_system [T]%_type_scope [G]%_classical_set_scope
+  setIG [D]%_classical_set_scope lambdaDG _%_function_scope
 smallest_lambda_system is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.smallest_lambda_system
@@ -1574,8 +1591,8 @@ lambda_system D H ->
 (forall X : set T, <<s D, G >>%classic X -> (X `<=` D)%classic) ->
 forall [t : set T], <<s D, G >>%classic t -> H t
 
-Arguments lambda_system_subset [T]%type_scope [G]%classical_set_scope 
-  setIG [D H]%classical_set_scope DH GH _%function_scope 
+Arguments lambda_system_subset [T]%_type_scope [G]%_classical_set_scope 
+  setIG [D H]%_classical_set_scope DH GH _%_function_scope 
   [t] _
 lambda_system_subset is opaque
 Expands to: Constant
@@ -1603,7 +1620,7 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="dynkinT" class="id"><a name="dynkinT" class="" title="dynkinT : forall [T : Type] [G : set (set T)], dynkin G -> G [set: T]%classic
 
 dynkinT is not universe polymorphic
-Arguments dynkinT [T]%type_scope [G]%classical_set_scope _
+Arguments dynkinT [T]%_type_scope [G]%_classical_set_scope _
 dynkinT is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.dynkinT
@@ -1623,7 +1640,7 @@ dynkinC :
 forall [T : Type] [G : set (set T)],
 dynkin G -> forall [A : set T], G A -> G (~` A)%classic
 
-Arguments dynkinC [T]%type_scope [G]%classical_set_scope _ [A] _
+Arguments dynkinC [T]%_type_scope [G]%_classical_set_scope _ [A] _
 dynkinC is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.dynkinC
@@ -1643,8 +1660,8 @@ trivIset (T:=T) [set: nat] F ->
 (forall n : nat, G (F n)) -> G (\bigcup_k F k)%classic
 
 dynkinU is not universe polymorphic
-Arguments dynkinU [T]%type_scope [G]%classical_set_scope 
-  _ [F] _ _%function_scope
+Arguments dynkinU [T]%_type_scope [G]%_classical_set_scope 
+  _ [F] _ _%_function_scope
 dynkinU is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.dynkinU
@@ -1667,7 +1684,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 612, charact
 forall [T : Type] (G : set (set T)), dynkin G <-> lambda_system [set: T] G
 
 dynkin_lambda_system is not universe polymorphic
-Arguments dynkin_lambda_system [T]%type_scope G%classical_set_scope
+Arguments dynkin_lambda_system [T]%_type_scope G%_classical_set_scope
 dynkin_lambda_system is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.dynkin_lambda_system
@@ -1709,7 +1726,7 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="g_dynkin_dynkin" class="id"><a name="g_dynkin_dynkin" class="" title="g_dynkin_dynkin : forall [T : Type] (G : set (set T)), dynkin <<d G>>
 
 g_dynkin_dynkin is not universe polymorphic
-Arguments g_dynkin_dynkin [T]%type_scope G%classical_set_scope
+Arguments g_dynkin_dynkin [T]%_type_scope G%_classical_set_scope
 g_dynkin_dynkin is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.g_dynkin_dynkin
@@ -1728,7 +1745,7 @@ Qed.</div></details>
 forall [T : Type] [G : set (set T)], sigma_algebra [set: T] G -> dynkin G
 
 sigma_algebra_dynkin is not universe polymorphic
-Arguments sigma_algebra_dynkin [T]%type_scope [G]%classical_set_scope _
+Arguments sigma_algebra_dynkin [T]%_type_scope [G]%_classical_set_scope _
 sigma_algebra_dynkin is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_algebra_dynkin
@@ -1748,8 +1765,8 @@ forall [T : Type] [G : set (set T)],
 dynkin G -> setI_closed G -> sigma_algebra [set: T] G
 
 dynkin_setI_sigma_algebra is not universe polymorphic
-Arguments dynkin_setI_sigma_algebra [T]%type_scope 
-  [G]%classical_set_scope _ _
+Arguments dynkin_setI_sigma_algebra [T]%_type_scope 
+  [G]%_classical_set_scope _ _
 dynkin_setI_sigma_algebra is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.dynkin_setI_sigma_algebra
@@ -1775,8 +1792,8 @@ forall [T : Type] [G : set (set T)],
 setI_closed G -> <<d G>>%classic = <<s G >>%classic
 
 setI_closed_g_dynkin_g_sigma_algebra is not universe polymorphic
-Arguments setI_closed_g_dynkin_g_sigma_algebra [T]%type_scope
-  [G]%classical_set_scope _
+Arguments setI_closed_g_dynkin_g_sigma_algebra [T]%_type_scope
+  [G]%_classical_set_scope _
 setI_closed_g_dynkin_g_sigma_algebra is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.setI_closed_g_dynkin_g_sigma_algebra
@@ -1841,7 +1858,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="strace" class="id"><a name="strace" class="" title="strace : forall [T : Type], set (set T) -> set T -> set (set T)
 
 strace is not universe polymorphic
-Arguments strace [T]%type_scope (G D)%classical_set_scope _
+Arguments strace [T]%_type_scope (G D)%_classical_set_scope _
 strace is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.strace
@@ -1862,8 +1879,8 @@ forall [T : Type] [G C : set (set T)],
 forall [D t : set T],
 strace (T:=T) G D t -> exists2 x : set T, C x & (setI^~ D) x = t
 
-Arguments subset_strace [T]%type_scope [G C]%classical_set_scope 
-  _ [D]%classical_set_scope [t] _
+Arguments subset_strace [T]%_type_scope [G C]%_classical_set_scope 
+  _ [D]%_classical_set_scope [t] _
 subset_strace is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.subset_strace
@@ -1885,7 +1902,7 @@ g_sigma_ring_strace :
 forall [T : Type] [G : set (set T)] [A B : set T],
 <<sr strace (T:=T) G A>>%classic B -> forall [t : T], B t -> A t
 
-Arguments g_sigma_ring_strace [T]%type_scope [G A B]%classical_set_scope 
+Arguments g_sigma_ring_strace [T]%_type_scope [G A B]%_classical_set_scope 
   _ [t] _
 g_sigma_ring_strace is opaque
 Expands to: Constant
@@ -1905,7 +1922,7 @@ forall [T : Type] (G : set (set T)) (A : set T),
 sigma_ring (strace (T:=T) <<sr G>> A)
 
 strace_sigma_ring is not universe polymorphic
-Arguments strace_sigma_ring [T]%type_scope (G A)%classical_set_scope
+Arguments strace_sigma_ring [T]%_type_scope (G A)%_classical_set_scope
 strace_sigma_ring is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.strace_sigma_ring
@@ -1935,7 +1952,7 @@ forall [T : Type] (G : set (set T)) (A : set T),
 strace (T:=T) <<sr G>> A = <<sr strace (T:=T) G A>>%classic
 
 setI_g_sigma_ring is not universe polymorphic
-Arguments setI_g_sigma_ring [T]%type_scope (G A)%classical_set_scope
+Arguments setI_g_sigma_ring [T]%_type_scope (G A)%_classical_set_scope
 setI_g_sigma_ring is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.setI_g_sigma_ring
@@ -2016,8 +2033,8 @@ forall [T : Type] [G : set (set T)] (D : set T),
 sigma_algebra [set: T] G -> sigma_algebra D (strace (T:=T) G D)
 
 sigma_algebra_strace is not universe polymorphic
-Arguments sigma_algebra_strace [T]%type_scope [G]%classical_set_scope
-  D%classical_set_scope _
+Arguments sigma_algebra_strace [T]%_type_scope [G]%_classical_set_scope
+  D%_classical_set_scope _
 sigma_algebra_strace is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_algebra_strace
@@ -2062,8 +2079,8 @@ forall [T1 T2 : Type] [d : measure_display] [T : semiRingOfSetsType d]
 d.-measurable%classic (G x) <-> d.-measurable%classic (curry G x.1 x.2)
 
 measurable_curry is not universe polymorphic
-Arguments measurable_curry [T1 T2]%type_scope [d]%measure_display_scope 
-  [T] G%function_scope x
+Arguments measurable_curry [T1 T2]%_type_scope [d]%_measure_display_scope 
+  [T] G%_function_scope x
 measurable_curry is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_curry
@@ -2144,7 +2161,7 @@ ringOfSetsType d
 
 Builders_1.Builders_1_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments Builders_1.Builders_1_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq
    local_mixin_measurable_structure_isSemiRingOfSets]
@@ -2186,7 +2203,7 @@ ringOfSetsType d
 
 Builders_1.Builders_1_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments Builders_1.Builders_1_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq
    local_mixin_measurable_structure_isSemiRingOfSets]
@@ -2228,7 +2245,7 @@ ringOfSetsType d
 
 Builders_1.Builders_1_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments Builders_1.Builders_1_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq
    local_mixin_measurable_structure_isSemiRingOfSets]
@@ -2270,7 +2287,7 @@ ringOfSetsType d
 
 Builders_1.Builders_1_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments Builders_1.Builders_1_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq
    local_mixin_measurable_structure_isSemiRingOfSets]
@@ -2312,7 +2329,7 @@ ringOfSetsType d
 
 Builders_1.Builders_1_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments Builders_1.Builders_1_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq
    local_mixin_measurable_structure_isSemiRingOfSets]
@@ -2398,7 +2415,7 @@ semiRingOfSetsType d
 Builders_6.Builders_6_T__canonical__measurable_structure_SemiRingOfSets is not universe polymorphic
 Arguments
   Builders_6.Builders_6_T__canonical__measurable_structure_SemiRingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_7
@@ -2447,7 +2464,7 @@ semiRingOfSetsType d
 Builders_6.Builders_6_T__canonical__measurable_structure_SemiRingOfSets is not universe polymorphic
 Arguments
   Builders_6.Builders_6_T__canonical__measurable_structure_SemiRingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_7
@@ -2496,7 +2513,7 @@ semiRingOfSetsType d
 Builders_6.Builders_6_T__canonical__measurable_structure_SemiRingOfSets is not universe polymorphic
 Arguments
   Builders_6.Builders_6_T__canonical__measurable_structure_SemiRingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_7
@@ -2545,7 +2562,7 @@ semiRingOfSetsType d
 Builders_6.Builders_6_T__canonical__measurable_structure_SemiRingOfSets is not universe polymorphic
 Arguments
   Builders_6.Builders_6_T__canonical__measurable_structure_SemiRingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_7
@@ -2594,7 +2611,7 @@ semiRingOfSetsType d
 Builders_6.Builders_6_T__canonical__measurable_structure_SemiRingOfSets is not universe polymorphic
 Arguments
   Builders_6.Builders_6_T__canonical__measurable_structure_SemiRingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_7
@@ -2644,7 +2661,7 @@ sigmaRingType d
 
 Builders_6.Builders_6_T__canonical__measurable_structure_SigmaRing is not universe polymorphic
 Arguments Builders_6.Builders_6_T__canonical__measurable_structure_SigmaRing
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_7
@@ -2692,7 +2709,7 @@ sigmaRingType d
 
 Builders_6.Builders_6_T__canonical__measurable_structure_SigmaRing is not universe polymorphic
 Arguments Builders_6.Builders_6_T__canonical__measurable_structure_SigmaRing
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_7
@@ -2740,7 +2757,7 @@ sigmaRingType d
 
 Builders_6.Builders_6_T__canonical__measurable_structure_SigmaRing is not universe polymorphic
 Arguments Builders_6.Builders_6_T__canonical__measurable_structure_SigmaRing
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_7
@@ -2788,7 +2805,7 @@ sigmaRingType d
 
 Builders_6.Builders_6_T__canonical__measurable_structure_SigmaRing is not universe polymorphic
 Arguments Builders_6.Builders_6_T__canonical__measurable_structure_SigmaRing
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_7
@@ -2836,7 +2853,7 @@ sigmaRingType d
 
 Builders_6.Builders_6_T__canonical__measurable_structure_SigmaRing is not universe polymorphic
 Arguments Builders_6.Builders_6_T__canonical__measurable_structure_SigmaRing
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_7
@@ -2968,8 +2985,8 @@ isRingOfSets.measurable fresh_name_15 A ->
 isRingOfSets.measurable fresh_name_15 B ->
 (let (measurable, _, _, _) := fresh_name_15 in measurable) (A `&` B)%classic
 
-Arguments Builders_14.mI [d]%measure_display_scope 
-  [T]%type_scope
+Arguments Builders_14.mI [d]%_measure_display_scope 
+  [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq fresh_name_15 A B]
   _ _
@@ -3092,8 +3109,8 @@ exists D : set (set T),
       (A `\` B)%classic = (\bigcup_(X in D) X)%classic
     & trivIset (T:=T) D id]
 
-Arguments Builders_14.mD [d]%measure_display_scope 
-  [T]%type_scope
+Arguments Builders_14.mD [d]%_measure_display_scope 
+  [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq fresh_name_15 A B]
   _ _
@@ -3148,7 +3165,7 @@ semiRingOfSetsType d
 Builders_14.Builders_14_T__canonical__measurable_structure_SemiRingOfSets is not universe polymorphic
 Arguments
   Builders_14.Builders_14_T__canonical__measurable_structure_SemiRingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_15
@@ -3197,7 +3214,7 @@ semiRingOfSetsType d
 Builders_14.Builders_14_T__canonical__measurable_structure_SemiRingOfSets is not universe polymorphic
 Arguments
   Builders_14.Builders_14_T__canonical__measurable_structure_SemiRingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_15
@@ -3246,7 +3263,7 @@ semiRingOfSetsType d
 Builders_14.Builders_14_T__canonical__measurable_structure_SemiRingOfSets is not universe polymorphic
 Arguments
   Builders_14.Builders_14_T__canonical__measurable_structure_SemiRingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_15
@@ -3295,7 +3312,7 @@ semiRingOfSetsType d
 Builders_14.Builders_14_T__canonical__measurable_structure_SemiRingOfSets is not universe polymorphic
 Arguments
   Builders_14.Builders_14_T__canonical__measurable_structure_SemiRingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_15
@@ -3345,7 +3362,7 @@ semiRingOfSetsType d
 Builders_14.Builders_14_T__canonical__measurable_structure_SemiRingOfSets is not universe polymorphic
 Arguments
   Builders_14.Builders_14_T__canonical__measurable_structure_SemiRingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_15
@@ -3396,7 +3413,7 @@ ringOfSetsType d
 Builders_14.Builders_14_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_14.Builders_14_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_15
@@ -3445,7 +3462,7 @@ ringOfSetsType d
 Builders_14.Builders_14_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_14.Builders_14_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_15
@@ -3494,7 +3511,7 @@ ringOfSetsType d
 Builders_14.Builders_14_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_14.Builders_14_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_15
@@ -3543,7 +3560,7 @@ ringOfSetsType d
 Builders_14.Builders_14_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_14.Builders_14_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_15
@@ -3592,7 +3609,7 @@ ringOfSetsType d
 Builders_14.Builders_14_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_14.Builders_14_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_15
@@ -3679,7 +3696,7 @@ ringOfSetsType d
 Builders_21.Builders_21_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_21.Builders_21_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_22
@@ -3728,7 +3745,7 @@ ringOfSetsType d
 Builders_21.Builders_21_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_21.Builders_21_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_22
@@ -3777,7 +3794,7 @@ ringOfSetsType d
 Builders_21.Builders_21_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_21.Builders_21_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_22
@@ -3826,7 +3843,7 @@ ringOfSetsType d
 Builders_21.Builders_21_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_21.Builders_21_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_22
@@ -3875,7 +3892,7 @@ ringOfSetsType d
 Builders_21.Builders_21_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_21.Builders_21_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_22
@@ -4002,8 +4019,8 @@ isAlgebraOfSets.measurable fresh_name_28 A ->
 isAlgebraOfSets.measurable fresh_name_28 B ->
 (let (measurable, _, _, _) := fresh_name_28 in measurable) (A `\` B)%classic
 
-Arguments Builders_27.mD [d]%measure_display_scope 
-  [T]%type_scope
+Arguments Builders_27.mD [d]%_measure_display_scope 
+  [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq fresh_name_28 A B]
   _ _
@@ -4060,7 +4077,7 @@ ringOfSetsType d
 Builders_27.Builders_27_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_27.Builders_27_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_28
@@ -4109,7 +4126,7 @@ ringOfSetsType d
 Builders_27.Builders_27_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_27.Builders_27_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_28
@@ -4158,7 +4175,7 @@ ringOfSetsType d
 Builders_27.Builders_27_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_27.Builders_27_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_28
@@ -4207,7 +4224,7 @@ ringOfSetsType d
 Builders_27.Builders_27_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_27.Builders_27_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_28
@@ -4256,7 +4273,7 @@ ringOfSetsType d
 Builders_27.Builders_27_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_27.Builders_27_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_28
@@ -4319,8 +4336,8 @@ forall [d : measure_display] [T : Type]
 isAlgebraOfSets.measurable fresh_name_28 [set: T]%classic
 
 Builders_27.measurableT is not universe polymorphic
-Arguments Builders_27.measurableT [d]%measure_display_scope 
-  [T]%type_scope
+Arguments Builders_27.measurableT [d]%_measure_display_scope 
+  [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_28
@@ -4375,7 +4392,7 @@ algebraOfSetsType d
 Builders_27.Builders_27_T__canonical__measurable_structure_AlgebraOfSets is not universe polymorphic
 Arguments
   Builders_27.Builders_27_T__canonical__measurable_structure_AlgebraOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_28
@@ -4424,7 +4441,7 @@ algebraOfSetsType d
 Builders_27.Builders_27_T__canonical__measurable_structure_AlgebraOfSets is not universe polymorphic
 Arguments
   Builders_27.Builders_27_T__canonical__measurable_structure_AlgebraOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_28
@@ -4473,7 +4490,7 @@ algebraOfSetsType d
 Builders_27.Builders_27_T__canonical__measurable_structure_AlgebraOfSets is not universe polymorphic
 Arguments
   Builders_27.Builders_27_T__canonical__measurable_structure_AlgebraOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_28
@@ -4522,7 +4539,7 @@ algebraOfSetsType d
 Builders_27.Builders_27_T__canonical__measurable_structure_AlgebraOfSets is not universe polymorphic
 Arguments
   Builders_27.Builders_27_T__canonical__measurable_structure_AlgebraOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_28
@@ -4571,7 +4588,7 @@ algebraOfSetsType d
 Builders_27.Builders_27_T__canonical__measurable_structure_AlgebraOfSets is not universe polymorphic
 Arguments
   Builders_27.Builders_27_T__canonical__measurable_structure_AlgebraOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_28
@@ -4647,7 +4664,7 @@ ringOfSetsType d
 Builders_34.Builders_34_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_34.Builders_34_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_35
@@ -4696,7 +4713,7 @@ ringOfSetsType d
 Builders_34.Builders_34_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_34.Builders_34_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_35
@@ -4745,7 +4762,7 @@ ringOfSetsType d
 Builders_34.Builders_34_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_34.Builders_34_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_35
@@ -4794,7 +4811,7 @@ ringOfSetsType d
 Builders_34.Builders_34_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_34.Builders_34_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_35
@@ -4843,7 +4860,7 @@ ringOfSetsType d
 Builders_34.Builders_34_T__canonical__measurable_structure_RingOfSets is not universe polymorphic
 Arguments
   Builders_34.Builders_34_T__canonical__measurable_structure_RingOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_35
@@ -4894,7 +4911,7 @@ algebraOfSetsType d
 Builders_34.Builders_34_T__canonical__measurable_structure_AlgebraOfSets is not universe polymorphic
 Arguments
   Builders_34.Builders_34_T__canonical__measurable_structure_AlgebraOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_35
@@ -4943,7 +4960,7 @@ algebraOfSetsType d
 Builders_34.Builders_34_T__canonical__measurable_structure_AlgebraOfSets is not universe polymorphic
 Arguments
   Builders_34.Builders_34_T__canonical__measurable_structure_AlgebraOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_35
@@ -4992,7 +5009,7 @@ algebraOfSetsType d
 Builders_34.Builders_34_T__canonical__measurable_structure_AlgebraOfSets is not universe polymorphic
 Arguments
   Builders_34.Builders_34_T__canonical__measurable_structure_AlgebraOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_35
@@ -5041,7 +5058,7 @@ algebraOfSetsType d
 Builders_34.Builders_34_T__canonical__measurable_structure_AlgebraOfSets is not universe polymorphic
 Arguments
   Builders_34.Builders_34_T__canonical__measurable_structure_AlgebraOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_35
@@ -5090,7 +5107,7 @@ algebraOfSetsType d
 Builders_34.Builders_34_T__canonical__measurable_structure_AlgebraOfSets is not universe polymorphic
 Arguments
   Builders_34.Builders_34_T__canonical__measurable_structure_AlgebraOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_35
@@ -5220,8 +5237,8 @@ isMeasurable.measurable fresh_name_43 A ->
 isMeasurable.measurable fresh_name_43 B ->
 (let (measurable, _, _, _) := fresh_name_43 in measurable) (A `|` B)%classic
 
-Arguments Builders_42.mU [d]%measure_display_scope 
-  [T]%type_scope
+Arguments Builders_42.mU [d]%_measure_display_scope 
+  [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq fresh_name_43 A B]
   _ _
@@ -5342,8 +5359,8 @@ forall [d : measure_display] [T : Type]
 isMeasurable.measurable fresh_name_43 A ->
 (let (measurable, _, _, _) := fresh_name_43 in measurable) (~` A)%classic
 
-Arguments Builders_42.mC [d]%measure_display_scope 
-  [T]%type_scope
+Arguments Builders_42.mC [d]%_measure_display_scope 
+  [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq fresh_name_43 A]
   _
@@ -5398,7 +5415,7 @@ algebraOfSetsType d
 Builders_42.Builders_42_T__canonical__measurable_structure_AlgebraOfSets is not universe polymorphic
 Arguments
   Builders_42.Builders_42_T__canonical__measurable_structure_AlgebraOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_43
@@ -5447,7 +5464,7 @@ algebraOfSetsType d
 Builders_42.Builders_42_T__canonical__measurable_structure_AlgebraOfSets is not universe polymorphic
 Arguments
   Builders_42.Builders_42_T__canonical__measurable_structure_AlgebraOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_43
@@ -5496,7 +5513,7 @@ algebraOfSetsType d
 Builders_42.Builders_42_T__canonical__measurable_structure_AlgebraOfSets is not universe polymorphic
 Arguments
   Builders_42.Builders_42_T__canonical__measurable_structure_AlgebraOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_43
@@ -5545,7 +5562,7 @@ algebraOfSetsType d
 Builders_42.Builders_42_T__canonical__measurable_structure_AlgebraOfSets is not universe polymorphic
 Arguments
   Builders_42.Builders_42_T__canonical__measurable_structure_AlgebraOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_43
@@ -5594,7 +5611,7 @@ algebraOfSetsType d
 Builders_42.Builders_42_T__canonical__measurable_structure_AlgebraOfSets is not universe polymorphic
 Arguments
   Builders_42.Builders_42_T__canonical__measurable_structure_AlgebraOfSets
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_43
@@ -5646,7 +5663,7 @@ measurableType d
 Builders_42.Builders_42_T__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments
   Builders_42.Builders_42_T__canonical__measurable_structure_Measurable
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_43
@@ -5695,7 +5712,7 @@ measurableType d
 Builders_42.Builders_42_T__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments
   Builders_42.Builders_42_T__canonical__measurable_structure_Measurable
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_43
@@ -5744,7 +5761,7 @@ measurableType d
 Builders_42.Builders_42_T__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments
   Builders_42.Builders_42_T__canonical__measurable_structure_Measurable
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_43
@@ -5793,7 +5810,7 @@ measurableType d
 Builders_42.Builders_42_T__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments
   Builders_42.Builders_42_T__canonical__measurable_structure_Measurable
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_43
@@ -5843,7 +5860,7 @@ measurableType d
 Builders_42.Builders_42_T__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments
   Builders_42.Builders_42_T__canonical__measurable_structure_Measurable
-  [d]%measure_display_scope [T]%type_scope
+  [d]%_measure_display_scope [T]%_type_scope
   [local_mixin_classical_sets_isPointed local_mixin_choice_hasChoice
    local_mixin_eqtype_hasDecEq]
   fresh_name_43
@@ -5870,9 +5887,9 @@ forall [d : measure_display] [T : ringOfSetsType d]
 d.-measurable%classic (\big[setU/set0]_(i <- r | P i) F i)
 
 bigsetU_measurable is not universe polymorphic
-Arguments bigsetU_measurable [d]%measure_display_scope 
-  [T] [I]%type_scope r%seq_scope [P] [F]%function_scope 
-  _%function_scope
+Arguments bigsetU_measurable [d]%_measure_display_scope 
+  [T] [I]%_type_scope r%_seq_scope [P] [F]%_function_scope 
+  _%_function_scope
 bigsetU_measurable is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.bigsetU_measurable
@@ -5894,9 +5911,9 @@ finite_set D ->
 d.-measurable%classic (\bigcup_(i in D) F i)
 
 fin_bigcup_measurable is not universe polymorphic
-Arguments fin_bigcup_measurable [d]%measure_display_scope 
-  [T] [I]%type_scope [D]%classical_set_scope [F]%function_scope 
-  _ _%function_scope
+Arguments fin_bigcup_measurable [d]%_measure_display_scope 
+  [T] [I]%_type_scope [D]%_classical_set_scope [F]%_function_scope 
+  _ _%_function_scope
 fin_bigcup_measurable is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.fin_bigcup_measurable
@@ -5931,7 +5948,7 @@ d.-measurable%classic B ->
       class) in
  measurable) (A `\` B)%classic
 
-Arguments measurableD [d]%measure_display_scope [T A B] _ _
+Arguments measurableD [d]%_measure_display_scope [T A B] _ _
 measurableD is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurableD
@@ -5951,8 +5968,8 @@ forall [d : measure_display] [T : ringOfSetsType d] [F : (set T) ^nat],
 forall n : nat, d.-measurable%classic (seqDU F n)
 
 seqDU_measurable is not universe polymorphic
-Arguments seqDU_measurable [d]%measure_display_scope 
-  [T F] _%function_scope n%nat_scope
+Arguments seqDU_measurable [d]%_measure_display_scope 
+  [T F] _%_function_scope n%_nat_scope
 seqDU_measurable is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.seqDU_measurable
@@ -5976,7 +5993,8 @@ forall [d : measure_display] [T : algebraOfSetsType d] [A : set T],
 d.-measurable%classic A -> d.-measurable%classic (~` A)
 
 measurableC is not universe polymorphic
-Arguments measurableC [d]%measure_display_scope [T] [A]%classical_set_scope _
+Arguments measurableC [d]%_measure_display_scope [T] 
+  [A]%_classical_set_scope _
 measurableC is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurableC
@@ -5995,9 +6013,9 @@ forall [d : measure_display] [T : algebraOfSetsType d]
 d.-measurable%classic (\big[setI/[set: T]%classic]_(i <- r | P i) F i)
 
 bigsetI_measurable is not universe polymorphic
-Arguments bigsetI_measurable [d]%measure_display_scope 
-  [T] [I]%type_scope r%seq_scope [P] [F]%function_scope 
-  _%function_scope
+Arguments bigsetI_measurable [d]%_measure_display_scope 
+  [T] [I]%_type_scope r%_seq_scope [P] [F]%_function_scope 
+  _%_function_scope
 bigsetI_measurable is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.bigsetI_measurable
@@ -6021,9 +6039,9 @@ finite_set D ->
 d.-measurable%classic (\bigcap_(i in D) F i)
 
 fin_bigcap_measurable is not universe polymorphic
-Arguments fin_bigcap_measurable [d]%measure_display_scope 
-  [T] [I]%type_scope [D]%classical_set_scope [F]%function_scope 
-  _ _%function_scope
+Arguments fin_bigcap_measurable [d]%_measure_display_scope 
+  [T] [I]%_type_scope [D]%_classical_set_scope [F]%_function_scope 
+  _ _%_function_scope
 fin_bigcap_measurable is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.fin_bigcap_measurable
@@ -6047,8 +6065,8 @@ d.-measurable%classic A ->
 d.-measurable%classic (A `&` B) -> d.-measurable%classic (A `\` B)
 
 measurableID is not universe polymorphic
-Arguments measurableID [d]%measure_display_scope [T]
-  [A B]%classical_set_scope _ _
+Arguments measurableID [d]%_measure_display_scope 
+  [T] [A B]%_classical_set_scope _ _
 measurableID is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurableID
@@ -6076,8 +6094,8 @@ forall [d : measure_display] [T : sigmaRingType d]
 d.-measurable%classic (\bigcup_(i in P) F i)
 
 bigcup_measurable is not universe polymorphic
-Arguments bigcup_measurable [d]%measure_display_scope 
-  [T F] [P]%classical_set_scope _%function_scope
+Arguments bigcup_measurable [d]%_measure_display_scope 
+  [T F] [P]%_classical_set_scope _%_function_scope
 bigcup_measurable is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.bigcup_measurable
@@ -6100,8 +6118,8 @@ forall [d : measure_display] [T : sigmaRingType d]
 d.-measurable%classic (\bigcap_(i in P) F i)
 
 bigcap_measurable is not universe polymorphic
-Arguments bigcap_measurable [d]%measure_display_scope 
-  [T F] [P]%classical_set_scope _ _%function_scope
+Arguments bigcap_measurable [d]%_measure_display_scope 
+  [T F] [P]%_classical_set_scope _ _%_function_scope
 bigcap_measurable is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.bigcap_measurable
@@ -6123,7 +6141,8 @@ forall [d : measure_display] [T : sigmaRingType d] [F : (set T) ^nat],
 d.-measurable%classic (\bigcap_i F i)
 
 bigcapT_measurable is not universe polymorphic
-Arguments bigcapT_measurable [d]%measure_display_scope [T F] _%function_scope
+Arguments bigcapT_measurable [d]%_measure_display_scope 
+  [T F] _%_function_scope
 bigcapT_measurable is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.bigcapT_measurable
@@ -6153,9 +6172,9 @@ P [set: T]%classic ->
 forall [S : set T], <<s G >>%classic S -> P S
 
 dynkin_induction is not universe polymorphic
-Arguments dynkin_induction [d]%measure_display_scope 
-  {T} [G]%classical_set_scope [P] _ _ _ _ (_ _)%function_scope
-  [S]%classical_set_scope _
+Arguments dynkin_induction [d]%_measure_display_scope 
+  {T} [G]%_classical_set_scope [P] _ _ _ _ (_ _)%_function_scope
+  [S]%_classical_set_scope _
 dynkin_induction is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.dynkin_induction
@@ -6194,8 +6213,8 @@ forall [d : measure_display] [T : sigmaRingType d] [A : set T],
 countable (T:=T) A -> d.-measurable%classic A
 
 countable_measurable is not universe polymorphic
-Arguments countable_measurable [d]%measure_display_scope 
-  [T] [A]%classical_set_scope _%function_scope _
+Arguments countable_measurable [d]%_measure_display_scope 
+  [T] [A]%_classical_set_scope _%_function_scope _
 countable_measurable is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.countable_measurable
@@ -6222,8 +6241,8 @@ d.-measurable%classic D ->
 lambda_system D [set X | d.-measurable%classic X /\ (X `<=` D)%classic]
 
 sigmaRingType_lambda_system is not universe polymorphic
-Arguments sigmaRingType_lambda_system [d]%measure_display_scope 
-  [T] [D]%classical_set_scope _
+Arguments sigmaRingType_lambda_system [d]%_measure_display_scope 
+  [T] [D]%_classical_set_scope _
 sigmaRingType_lambda_system is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigmaRingType_lambda_system
@@ -6254,8 +6273,8 @@ countable (T:=U) [set: U] ->
 d.-measurable%classic (\bigcup_i F i)
 
 countable_bigcupT_measurable is not universe polymorphic
-Arguments countable_bigcupT_measurable [d]%measure_display_scope 
-  [T] [U]%type_scope [F]%function_scope _ _%function_scope
+Arguments countable_bigcupT_measurable [d]%_measure_display_scope 
+  [T] [U]%_type_scope [F]%_function_scope _ _%_function_scope
 countable_bigcupT_measurable is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.countable_bigcupT_measurable
@@ -6279,8 +6298,8 @@ forall [d : measure_display] [T : sigmaRingType d] [F : rat -> set T],
 d.-measurable%classic (\bigcup_i F i)
 
 bigcupT_measurable_rat is not universe polymorphic
-Arguments bigcupT_measurable_rat [d]%measure_display_scope 
-  [T] [F]%function_scope _%function_scope
+Arguments bigcupT_measurable_rat [d]%_measure_display_scope 
+  [T] [F]%_function_scope _%_function_scope
 bigcupT_measurable_rat is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.bigcupT_measurable_rat
@@ -6302,7 +6321,7 @@ forall [d : measure_display] (T : measurableType d),
 sigma_algebra [set: T] d.-measurable
 
 sigma_algebra_measurable is not universe polymorphic
-Arguments sigma_algebra_measurable [d]%measure_display_scope T
+Arguments sigma_algebra_measurable [d]%_measure_display_scope T
 sigma_algebra_measurable is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_algebra_measurable
@@ -6321,8 +6340,8 @@ forall [d : measure_display] [T : measurableType d]
 d.-measurable%classic (\bigcap_(i in P) F i)
 
 bigcap_measurableType is not universe polymorphic
-Arguments bigcap_measurableType [d]%measure_display_scope 
-  [T F] [P]%classical_set_scope _%function_scope
+Arguments bigcap_measurableType [d]%_measure_display_scope 
+  [T F] [P]%_classical_set_scope _%_function_scope
 bigcap_measurableType is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.bigcap_measurableType
@@ -6345,7 +6364,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="discrete_measurable" class="id"><a name="discrete_measurable" class="" title="discrete_measurable : forall {T : Type}, set (set T)
 
 discrete_measurable is not universe polymorphic
-Arguments discrete_measurable {T}%type_scope _
+Arguments discrete_measurable {T}%_type_scope _
 discrete_measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.discrete_measurable
@@ -6356,7 +6375,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 1246, charac
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="discrete_measurable0" class="id"><a name="discrete_measurable0" class="" title="discrete_measurable0 : forall {T : Type}, discrete_measurable set0
 
 discrete_measurable0 is not universe polymorphic
-Arguments discrete_measurable0 {T}%type_scope
+Arguments discrete_measurable0 {T}%_type_scope
 discrete_measurable0 is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.discrete_measurable0
@@ -6373,7 +6392,7 @@ forall {T : Type} [X : set T],
 discrete_measurable X -> discrete_measurable (~` X)%classic
 
 discrete_measurableC is not universe polymorphic
-Arguments discrete_measurableC {T}%type_scope [X]%classical_set_scope _
+Arguments discrete_measurableC {T}%_type_scope [X]%_classical_set_scope _
 discrete_measurableC is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.discrete_measurableC
@@ -6392,7 +6411,7 @@ forall {T : Type} [F : (set T) ^nat],
 discrete_measurable (\bigcup_i F i)%classic
 
 discrete_measurableU is not universe polymorphic
-Arguments discrete_measurableU {T}%type_scope [F] _%function_scope
+Arguments discrete_measurableU {T}%_type_scope [F] _%_function_scope
 discrete_measurableU is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.discrete_measurableU
@@ -6558,7 +6577,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 1269, charac
 <span class="vernacular">Definition</span><span class="id"> </span><span id="sigma_display" class="id"><a name="sigma_display" class="" title="sigma_display : forall {T : Type}, set (set T) -> measure_display
 
 sigma_display is not universe polymorphic
-Arguments sigma_display {T}%type_scope _%classical_set_scope
+Arguments sigma_display {T}%_type_scope _%_classical_set_scope
 sigma_display is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_display
@@ -6573,7 +6592,7 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 1273, charac
 <span class="vernacular">Definition</span><span class="id"> </span><span id="g_sigma_algebraType" class="id"><a name="g_sigma_algebraType" class="" title="g_sigma_algebraType : forall {T : Type}, set (set T) -> Type
 
 g_sigma_algebraType is not universe polymorphic
-Arguments g_sigma_algebraType {T}%type_scope G%classical_set_scope
+Arguments g_sigma_algebraType {T}%_type_scope G%_classical_set_scope
 g_sigma_algebraType is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.g_sigma_algebraType
@@ -6596,7 +6615,7 @@ forall [T : pointedType] [G : set (set T)] [A : set T],
 forall [i : set (set T)],
 [set M | sigma_algebra [set: T] M /\ G `<=` M]%classic i -> i (~` A)%classic
 
-Arguments sigma_algebraC [T] [G A]%classical_set_scope _ [i] _
+Arguments sigma_algebraC [T] [G A]%_classical_set_scope _ [i] _
 sigma_algebraC is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_algebraC
@@ -6614,7 +6633,7 @@ forall [T : pointedType], set (set T) -> pointedType
 measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed is not universe polymorphic
 Arguments
   measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed
-  [T] G%classical_set_scope
+  [T] G%_classical_set_scope
 measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed
@@ -6626,7 +6645,7 @@ forall [T : pointedType], set (set T) -> pointedType
 measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed is not universe polymorphic
 Arguments
   measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed
-  [T] G%classical_set_scope
+  [T] G%_classical_set_scope
 measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed
@@ -6638,7 +6657,7 @@ forall [T : pointedType], set (set T) -> pointedType
 measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed is not universe polymorphic
 Arguments
   measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed
-  [T] G%classical_set_scope
+  [T] G%_classical_set_scope
 measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed
@@ -6650,7 +6669,7 @@ forall [T : pointedType], set (set T) -> pointedType
 measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed is not universe polymorphic
 Arguments
   measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed
-  [T] G%classical_set_scope
+  [T] G%_classical_set_scope
 measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed
@@ -6662,7 +6681,7 @@ forall [T : pointedType], set (set T) -> pointedType
 measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed is not universe polymorphic
 Arguments
   measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed
-  [T] G%classical_set_scope
+  [T] G%_classical_set_scope
 measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_structure_g_sigma_algebraType__canonical__classical_sets_Pointed
@@ -6675,7 +6694,7 @@ forall [T : pointedType] (G : set (set T)), measurableType G.-sigma
 measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments
   measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable
-  [T] G%classical_set_scope
+  [T] G%_classical_set_scope
 measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable
@@ -6687,7 +6706,7 @@ forall [T : pointedType] (G : set (set T)), measurableType G.-sigma
 measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments
   measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable
-  [T] G%classical_set_scope
+  [T] G%_classical_set_scope
 measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable
@@ -6699,7 +6718,7 @@ forall [T : pointedType] (G : set (set T)), measurableType G.-sigma
 measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments
   measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable
-  [T] G%classical_set_scope
+  [T] G%_classical_set_scope
 measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable
@@ -6711,7 +6730,7 @@ forall [T : pointedType] (G : set (set T)), measurableType G.-sigma
 measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments
   measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable
-  [T] G%classical_set_scope
+  [T] G%_classical_set_scope
 measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable
@@ -6723,7 +6742,7 @@ forall [T : pointedType] (G : set (set T)), measurableType G.-sigma
 measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments
   measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable
-  [T] G%classical_set_scope
+  [T] G%_classical_set_scope
 measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_structure_g_sigma_algebraType__canonical__measurable_structure_Measurable
@@ -6745,7 +6764,7 @@ forall [T : pointedType] [G : set (set T)],
 sigma_algebra [set: T] G -> G.-sigma.-measurable%classic = G
 
 measurable_g_measurableTypeE is not universe polymorphic
-Arguments measurable_g_measurableTypeE [T] [G]%classical_set_scope _
+Arguments measurable_g_measurableTypeE [T] [G]%_classical_set_scope _
 measurable_g_measurableTypeE is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_g_measurableTypeE
@@ -6764,8 +6783,8 @@ library mathcomp.analysis.measure_theory.measurable_structure, line 1296, charac
 forall {aT rT : Type}, set aT -> (aT -> rT) -> set_system rT -> set (set aT)
 
 preimage_set_system is not universe polymorphic
-Arguments preimage_set_system {aT rT}%type_scope D%classical_set_scope
-  f%function_scope G _
+Arguments preimage_set_system {aT rT}%_type_scope 
+  D%_classical_set_scope f%_function_scope G _
 preimage_set_system is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.preimage_set_system
@@ -6780,8 +6799,8 @@ forall {aT rT : Type} (D : set aT) (f : aT -> rT),
 preimage_set_system D f set0 = set0
 
 preimage_set_system0 is not universe polymorphic
-Arguments preimage_set_system0 {aT rT}%type_scope 
-  D%classical_set_scope f%function_scope
+Arguments preimage_set_system0 {aT rT}%_type_scope 
+  D%_classical_set_scope f%_function_scope
 preimage_set_system0 is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.preimage_set_system0
@@ -6800,8 +6819,8 @@ forall {aT rT : Type} (D : set aT) (f : aT -> rT),
 (x `|` y)%classic}
 
 preimage_set_systemU is not universe polymorphic
-Arguments preimage_set_systemU {aT rT}%type_scope 
-  D%classical_set_scope f%function_scope x y
+Arguments preimage_set_systemU {aT rT}%_type_scope 
+  D%_classical_set_scope f%_function_scope x y
 preimage_set_systemU is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.preimage_set_systemU
@@ -6821,8 +6840,8 @@ preimage_set_system D (g \o f) F =
 preimage_set_system D f (preimage_set_system [set: bT] g F)
 
 preimage_set_system_comp is not universe polymorphic
-Arguments preimage_set_system_comp {aT bT rT}%type_scope
-  D%classical_set_scope (f g)%function_scope F
+Arguments preimage_set_system_comp {aT bT rT}%_type_scope
+  D%_classical_set_scope (f g)%_function_scope F
 preimage_set_system_comp is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.preimage_set_system_comp
@@ -6845,7 +6864,7 @@ forall {aT : Type} (D : set aT) (F : set (set aT)),
 preimage_set_system D idfun F = [set D `&` x | x in F]%classic
 
 preimage_set_system_id is not universe polymorphic
-Arguments preimage_set_system_id {aT}%type_scope (D F)%classical_set_scope
+Arguments preimage_set_system_id {aT}%_type_scope (D F)%_classical_set_scope
 preimage_set_system_id is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.preimage_set_system_id
@@ -6863,9 +6882,9 @@ forall [aT rT : Type] [G : set (set rT)] (D : set aT) (f : aT -> rT),
 sigma_algebra [set: rT] G -> sigma_algebra D (preimage_set_system D f G)
 
 sigma_algebra_preimage is not universe polymorphic
-Arguments sigma_algebra_preimage [aT rT]%type_scope 
-  [G]%classical_set_scope D%classical_set_scope f%function_scope 
-  _
+Arguments sigma_algebra_preimage [aT rT]%_type_scope 
+  [G]%_classical_set_scope D%_classical_set_scope 
+  f%_function_scope _
 sigma_algebra_preimage is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_algebra_preimage
@@ -6895,8 +6914,8 @@ Qed.</div></details>
 forall [aT rT : Type], set aT -> (aT -> rT) -> set (set aT) -> set (set rT)
 
 image_set_system is not universe polymorphic
-Arguments image_set_system [aT rT]%type_scope D%classical_set_scope
-  f%function_scope G%classical_set_scope _
+Arguments image_set_system [aT rT]%_type_scope D%_classical_set_scope
+  f%_function_scope G%_classical_set_scope _
 image_set_system is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.image_set_system
@@ -6911,8 +6930,9 @@ forall [aT rT : Type] [D : set aT] (f : aT -> rT) [G : set (set aT)],
 sigma_algebra D G -> sigma_algebra [set: rT] (image_set_system D f G)
 
 sigma_algebra_image is not universe polymorphic
-Arguments sigma_algebra_image [aT rT]%type_scope [D]%classical_set_scope
-  f%function_scope [G]%classical_set_scope _
+Arguments sigma_algebra_image [aT rT]%_type_scope 
+  [D]%_classical_set_scope f%_function_scope [G]%_classical_set_scope 
+  _
 sigma_algebra_image is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.sigma_algebra_image
@@ -6941,8 +6961,8 @@ forall [aT : Type] [rT : pointedType] (D : set aT)
 preimage_set_system D f G'.-sigma.-measurable%classic
 
 g_sigma_preimageE is not universe polymorphic
-Arguments g_sigma_preimageE [aT]%type_scope [rT] D%classical_set_scope
-  f%function_scope G'%classical_set_scope
+Arguments g_sigma_preimageE [aT]%_type_scope [rT] 
+  D%_classical_set_scope f%_function_scope G'%_classical_set_scope
 g_sigma_preimageE is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.g_sigma_preimageE
@@ -6993,8 +7013,8 @@ forall {T : Type} {R : numFieldType},
 (set T -> \bar R) -> set T -> (nat -> set T) -> Prop
 
 subset_sigma_subadditive is not universe polymorphic
-Arguments subset_sigma_subadditive {T}%type_scope 
-  {R} mu%function_scope A%classical_set_scope F%function_scope
+Arguments subset_sigma_subadditive {T}%_type_scope 
+  {R} mu%_function_scope A%_classical_set_scope F%_function_scope
 subset_sigma_subadditive is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.subset_sigma_subadditive
@@ -7013,8 +7033,8 @@ finset.trivIset P ->
  \big[op/idx]_(A in P0) \big[op/idx]_(x in A) E0 x) P E
 
 big_trivIset is not universe polymorphic
-Arguments big_trivIset [T] [R]%type_scope [idx op] 
-  P%set_scope [E]%function_scope _
+Arguments big_trivIset [T] [R]%_type_scope [idx op] 
+  P%_set_scope [E]%_function_scope _
 big_trivIset is opaque
 Expands to: Constant mathcomp.boot.finset.big_trivIset
 Declared in library mathcomp.boot.finset, line 2224, characters 6-18
@@ -7057,7 +7077,7 @@ forall {T : Type},
 (forall I : Type, set I -> set (I -> set T)) -> set (set T)
 
 covered_by is not universe polymorphic
-Arguments covered_by {T}%type_scope (C P)%function_scope _
+Arguments covered_by {T}%_type_scope (C P)%_function_scope _
 covered_by is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.covered_by
@@ -7083,8 +7103,8 @@ covered_by C P t ->
 exists (I : Type) (D : set I) (A : I -> set T),
   [/\ C I D, P' I D A & t = (\bigcup_(i in D) A i)%classic]
 
-Arguments covered_bySr {T}%type_scope [C P P']%function_scope
-  _%function_scope [t] _
+Arguments covered_bySr {T}%_type_scope [C P P']%_function_scope
+  _%_function_scope [t] _
 covered_bySr is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.covered_bySr
@@ -7105,8 +7125,8 @@ forall {T : Type} [C : forall I : Type, set (set I)]
 C I D -> P I D A -> covered_by C P (\bigcup_(i in D) A i)%classic
 
 covered_byP is not universe polymorphic
-Arguments covered_byP {T}%type_scope [C P]%function_scope 
-  [I]%type_scope [D]%classical_set_scope [A]%function_scope 
+Arguments covered_byP {T}%_type_scope [C P]%_function_scope 
+  [I]%_type_scope [D]%_classical_set_scope [A]%_function_scope 
   _ _
 covered_byP is opaque
 Expands to: Constant
@@ -7133,8 +7153,8 @@ covered_by (@finite_set) P =
             P nat `I_n A /\ X = \bigcup_(i < n) A i)]%classic
 
 covered_by_finite is not universe polymorphic
-Arguments covered_by_finite {T}%type_scope [P]%function_scope
-  (_ _)%function_scope
+Arguments covered_by_finite {T}%_type_scope [P]%_function_scope
+  (_ _)%_function_scope
 covered_by_finite is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.covered_by_finite
@@ -7169,8 +7189,8 @@ covered_by (fun (T0 : Type) (A : set T0) => countable (T:=T0) A) P =
 [set X | (exists A : nat -> set T, P nat [set: nat] A /\ X = \bigcup_i A i)]%classic
 
 covered_by_countable is not universe polymorphic
-Arguments covered_by_countable {T}%type_scope [P]%function_scope
-  (_ _)%function_scope
+Arguments covered_by_countable {T}%_type_scope [P]%_function_scope
+  (_ _)%_function_scope
 covered_by_countable is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.covered_by_countable
@@ -7209,8 +7229,8 @@ forall [T1 T2 : Type] [d : measure_display] [T : semiRingOfSetsType d]
 d.-measurable%classic (G x.1 x.2) <-> d.-measurable%classic (uncurry G x)
 
 measurable_uncurry is not universe polymorphic
-Arguments measurable_uncurry [T1 T2]%type_scope [d]%measure_display_scope 
-  [T] G%function_scope x
+Arguments measurable_uncurry [T1 T2]%_type_scope [d]%_measure_display_scope
+  [T] G%_function_scope x
 measurable_uncurry is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_uncurry
@@ -7230,8 +7250,9 @@ forall [d1 d2 : measure_display] [T1 : semiRingOfSetsType d1]
 (T -> T1) -> (T -> T2) -> set (set T)
 
 g_sigma_preimageU is not universe polymorphic
-Arguments g_sigma_preimageU [d1 d2]%measure_display_scope 
-  [T1 T2] [T]%type_scope (f1 f2)%function_scope _
+Arguments g_sigma_preimageU [d1 d2]%_measure_display_scope 
+  [T1 T2] [T]%_type_scope (f1 f2)%_function_scope 
+  _
 g_sigma_preimageU is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.g_sigma_preimageU
@@ -7259,9 +7280,9 @@ g_sigma_preimageU (T1:=T1) (T2:=T2) (f1 \o g) (f2 \o g) =
 preimage_set_system [set: T3] g (g_sigma_preimageU (T1:=T1) (T2:=T2) f1 f2)
 
 g_sigma_preimageU_comp is not universe polymorphic
-Arguments g_sigma_preimageU_comp [d1 d2]%measure_display_scope 
-  [T1 T2 T] (f1 f2)%function_scope [T3]%type_scope 
-  g%function_scope
+Arguments g_sigma_preimageU_comp [d1 d2]%_measure_display_scope 
+  [T1 T2 T] (f1 f2)%_function_scope [T3]%_type_scope 
+  g%_function_scope
 g_sigma_preimageU_comp is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.g_sigma_preimageU_comp
@@ -7335,7 +7356,7 @@ Equality.mixin_of (T1 * T2)%type
 
 classical_sets_Pointed__to__eqtype_hasDecEq__112 is not universe polymorphic
 Arguments classical_sets_Pointed__to__eqtype_hasDecEq__112
-  [d1 d2]%measure_display_scope T1 T2
+  [d1 d2]%_measure_display_scope T1 T2
 classical_sets_Pointed__to__eqtype_hasDecEq__112 is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.classical_sets_Pointed__to__eqtype_hasDecEq__112
@@ -7348,7 +7369,7 @@ Equality.mixin_of (T1 * T2)%type
 
 classical_sets_Pointed__to__eqtype_hasDecEq__112 is not universe polymorphic
 Arguments classical_sets_Pointed__to__eqtype_hasDecEq__112
-  [d1 d2]%measure_display_scope T1 T2
+  [d1 d2]%_measure_display_scope T1 T2
 classical_sets_Pointed__to__eqtype_hasDecEq__112 is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.classical_sets_Pointed__to__eqtype_hasDecEq__112
@@ -7361,7 +7382,7 @@ Equality.mixin_of (T1 * T2)%type
 
 classical_sets_Pointed__to__eqtype_hasDecEq__112 is not universe polymorphic
 Arguments classical_sets_Pointed__to__eqtype_hasDecEq__112
-  [d1 d2]%measure_display_scope T1 T2
+  [d1 d2]%_measure_display_scope T1 T2
 classical_sets_Pointed__to__eqtype_hasDecEq__112 is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.classical_sets_Pointed__to__eqtype_hasDecEq__112
@@ -7374,7 +7395,7 @@ Equality.mixin_of (T1 * T2)%type
 
 classical_sets_Pointed__to__eqtype_hasDecEq__112 is not universe polymorphic
 Arguments classical_sets_Pointed__to__eqtype_hasDecEq__112
-  [d1 d2]%measure_display_scope T1 T2
+  [d1 d2]%_measure_display_scope T1 T2
 classical_sets_Pointed__to__eqtype_hasDecEq__112 is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.classical_sets_Pointed__to__eqtype_hasDecEq__112
@@ -7387,7 +7408,7 @@ Equality.mixin_of (T1 * T2)%type
 
 classical_sets_Pointed__to__eqtype_hasDecEq__112 is not universe polymorphic
 Arguments classical_sets_Pointed__to__eqtype_hasDecEq__112
-  [d1 d2]%measure_display_scope T1 T2
+  [d1 d2]%_measure_display_scope T1 T2
 classical_sets_Pointed__to__eqtype_hasDecEq__112 is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.classical_sets_Pointed__to__eqtype_hasDecEq__112
@@ -7401,7 +7422,7 @@ semiRingOfSetsType d2 -> measurableType (d1, d2).-prod
 
 Datatypes_prod__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments Datatypes_prod__canonical__measurable_structure_Measurable
-  [d1 d2]%measure_display_scope T1 T2
+  [d1 d2]%_measure_display_scope T1 T2
 Datatypes_prod__canonical__measurable_structure_Measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.Datatypes_prod__canonical__measurable_structure_Measurable
@@ -7414,7 +7435,7 @@ semiRingOfSetsType d2 -> measurableType (d1, d2).-prod
 
 Datatypes_prod__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments Datatypes_prod__canonical__measurable_structure_Measurable
-  [d1 d2]%measure_display_scope T1 T2
+  [d1 d2]%_measure_display_scope T1 T2
 Datatypes_prod__canonical__measurable_structure_Measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.Datatypes_prod__canonical__measurable_structure_Measurable
@@ -7427,7 +7448,7 @@ semiRingOfSetsType d2 -> measurableType (d1, d2).-prod
 
 Datatypes_prod__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments Datatypes_prod__canonical__measurable_structure_Measurable
-  [d1 d2]%measure_display_scope T1 T2
+  [d1 d2]%_measure_display_scope T1 T2
 Datatypes_prod__canonical__measurable_structure_Measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.Datatypes_prod__canonical__measurable_structure_Measurable
@@ -7440,7 +7461,7 @@ semiRingOfSetsType d2 -> measurableType (d1, d2).-prod
 
 Datatypes_prod__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments Datatypes_prod__canonical__measurable_structure_Measurable
-  [d1 d2]%measure_display_scope T1 T2
+  [d1 d2]%_measure_display_scope T1 T2
 Datatypes_prod__canonical__measurable_structure_Measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.Datatypes_prod__canonical__measurable_structure_Measurable
@@ -7454,7 +7475,7 @@ semiRingOfSetsType d2 -> measurableType (d1, d2).-prod
 
 Datatypes_prod__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments Datatypes_prod__canonical__measurable_structure_Measurable
-  [d1 d2]%measure_display_scope T1 T2
+  [d1 d2]%_measure_display_scope T1 T2
 Datatypes_prod__canonical__measurable_structure_Measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.Datatypes_prod__canonical__measurable_structure_Measurable
@@ -7490,8 +7511,8 @@ forall [i : set (set (T1 * T2))],
   i ->
 i (A `*` B)%classic
 
-Arguments measurableX [d1 d2]%measure_display_scope 
-  [T1 T2] [A B]%classical_set_scope _ _ [i] _
+Arguments measurableX [d1 d2]%_measure_display_scope 
+  [T1 T2] [A B]%_classical_set_scope _ _ [i] _
 measurableX is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurableX
@@ -7524,7 +7545,7 @@ forall [d1 d2 : measure_display] (T1 : algebraOfSetsType d1)
 <<s [set A `*` B | A in d1.-measurable & B in d2.-measurable] >>%classic
 
 measurable_prod_measurableType is not universe polymorphic
-Arguments measurable_prod_measurableType [d1 d2]%measure_display_scope T1 T2
+Arguments measurable_prod_measurableType [d1 d2]%_measure_display_scope T1 T2
 measurable_prod_measurableType is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_prod_measurableType
@@ -7562,8 +7583,8 @@ forall [d1 : measure_display] (T1 : algebraOfSetsType d1)
 <<s [set A `*` B | A in d1.-measurable & B in C2] >>%classic
 
 measurable_prod_g_measurableTypeR is not universe polymorphic
-Arguments measurable_prod_g_measurableTypeR [d1]%measure_display_scope 
-  T1 [T2] [C2]%classical_set_scope setTC2
+Arguments measurable_prod_g_measurableTypeR [d1]%_measure_display_scope 
+  T1 [T2] [C2]%_classical_set_scope setTC2
 measurable_prod_g_measurableTypeR is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_prod_g_measurableTypeR
@@ -7596,7 +7617,7 @@ forall [T1 T2 : pointedType] [C1 : set (set T1)] [C2 : set (set T2)],
 
 measurable_prod_g_measurableType is not universe polymorphic
 Arguments measurable_prod_g_measurableType [T1 T2]
-  [C1 C2]%classical_set_scope setTC1 setTC2
+  [C1 C2]%_classical_set_scope setTC1 setTC2
 measurable_prod_g_measurableType is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measurable_prod_g_measurableType
@@ -7622,8 +7643,8 @@ forall [d : measure_display] [rT : semiRingOfSetsType d]
 ('I_n -> aT -> rT) -> set (set aT)
 
 g_sigma_preimage is not universe polymorphic
-Arguments g_sigma_preimage [d]%measure_display_scope 
-  [rT] [aT]%type_scope [n]%nat_scope f%function_scope 
+Arguments g_sigma_preimage [d]%_measure_display_scope 
+  [rT] [aT]%_type_scope [n]%_nat_scope f%_function_scope 
   _
 g_sigma_preimage is transparent
 Expands to: Constant
@@ -7642,9 +7663,9 @@ g_sigma_preimage (rT:=T1) (fun i : 'I_n => f i \o g) =
 preimage_set_system [set: T2] g (g_sigma_preimage (rT:=T1) f)
 
 g_sigma_preimage_comp is not universe polymorphic
-Arguments g_sigma_preimage_comp [d1]%measure_display_scope 
-  {T1} [n]%nat_scope {T} f%function_scope {T2}%type_scope 
-  g%function_scope
+Arguments g_sigma_preimage_comp [d1]%_measure_display_scope 
+  {T1} [n]%_nat_scope {T} f%_function_scope {T2}%_type_scope
+  g%_function_scope
 g_sigma_preimage_comp is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.g_sigma_preimage_comp
@@ -7674,7 +7695,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="measure_tuple_display" class="id"><a name="measure_tuple_display" class="" title="measure_tuple_display : measure_display -> measure_display
 
 measure_tuple_display is not universe polymorphic
-Arguments measure_tuple_display _%measure_display_scope
+Arguments measure_tuple_display _%_measure_display_scope
 measure_tuple_display is opaque
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.measure_tuple_display
@@ -7717,7 +7738,7 @@ sigmaRingType d -> nat -> measurableType (measure_tuple_display d)
 
 tuple_tuple_of__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments tuple_tuple_of__canonical__measurable_structure_Measurable
-  {d}%measure_display_scope {T} n%nat_scope
+  {d}%_measure_display_scope {T} n%_nat_scope
 tuple_tuple_of__canonical__measurable_structure_Measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.tuple_tuple_of__canonical__measurable_structure_Measurable
@@ -7729,7 +7750,7 @@ sigmaRingType d -> nat -> measurableType (measure_tuple_display d)
 
 tuple_tuple_of__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments tuple_tuple_of__canonical__measurable_structure_Measurable
-  {d}%measure_display_scope {T} n%nat_scope
+  {d}%_measure_display_scope {T} n%_nat_scope
 tuple_tuple_of__canonical__measurable_structure_Measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.tuple_tuple_of__canonical__measurable_structure_Measurable
@@ -7741,7 +7762,7 @@ sigmaRingType d -> nat -> measurableType (measure_tuple_display d)
 
 tuple_tuple_of__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments tuple_tuple_of__canonical__measurable_structure_Measurable
-  {d}%measure_display_scope {T} n%nat_scope
+  {d}%_measure_display_scope {T} n%_nat_scope
 tuple_tuple_of__canonical__measurable_structure_Measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.tuple_tuple_of__canonical__measurable_structure_Measurable
@@ -7753,7 +7774,7 @@ sigmaRingType d -> nat -> measurableType (measure_tuple_display d)
 
 tuple_tuple_of__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments tuple_tuple_of__canonical__measurable_structure_Measurable
-  {d}%measure_display_scope {T} n%nat_scope
+  {d}%_measure_display_scope {T} n%_nat_scope
 tuple_tuple_of__canonical__measurable_structure_Measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.tuple_tuple_of__canonical__measurable_structure_Measurable
@@ -7765,7 +7786,7 @@ sigmaRingType d -> nat -> measurableType (measure_tuple_display d)
 
 tuple_tuple_of__canonical__measurable_structure_Measurable is not universe polymorphic
 Arguments tuple_tuple_of__canonical__measurable_structure_Measurable
-  {d}%measure_display_scope {T} n%nat_scope
+  {d}%_measure_display_scope {T} n%_nat_scope
 tuple_tuple_of__canonical__measurable_structure_Measurable is transparent
 Expands to: Constant
             mathcomp.analysis.measure_theory.measurable_structure.tuple_tuple_of__canonical__measurable_structure_Measurable

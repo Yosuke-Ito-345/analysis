@@ -79,6 +79,20 @@
           </ul>
           </details>
           </li>
+<li><details id="mathcomp.analysis.probability_theory"><summary>probability_theory</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.probability_theory.bernoulli_distribution.html">bernoulli_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.beta_distribution.html">beta_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.binomial_distribution.html">binomial_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.exponential_distribution.html">exponential_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.normal_distribution.html">normal_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.poisson_distribution.html">poisson_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.probability.html">probability</a></li>
+<li><a href="mathcomp.analysis.probability_theory.random_variable.html">random_variable</a></li>
+<li><a href="mathcomp.analysis.probability_theory.uniform_distribution.html">uniform_distribution</a></li>
+          </ul>
+          </details>
+          </li>
 <li><details id="mathcomp.analysis.showcase"><summary>showcase</summary>
           <ul>
           <li><a href="mathcomp.analysis.showcase.pnt.html">pnt</a></li>
@@ -92,6 +106,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
 <li><a href="mathcomp.analysis.topology_theory.nat_topology.html">nat_topology</a></li>
@@ -134,7 +149,6 @@
 <li><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></li>
 <li><a href="mathcomp.analysis.numfun.html">numfun</a></li>
 <li><a href="mathcomp.analysis.pi_irrational.html">pi_irrational</a></li>
-<li><a href="mathcomp.analysis.probability.html">probability</a></li>
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
@@ -261,7 +275,7 @@ forall [T : choiceType] [X : filteredType T] [R : realFieldType],
 (X -> \bar R) -> set (set X) -> \bar R
 
 limf_esup is not universe polymorphic
-Arguments limf_esup [T X R] f%function_scope F%classical_set_scope
+Arguments limf_esup [T X R] f%_function_scope F%_classical_set_scope
 limf_esup is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.limf_esup
@@ -274,7 +288,7 @@ forall [T : choiceType] [X : filteredType T] [R : realFieldType],
 (X -> \bar R) -> set (set X) -> \bar R
 
 limf_einf is not universe polymorphic
-Arguments limf_einf [T X R] f%function_scope F%classical_set_scope
+Arguments limf_einf [T X R] f%_function_scope F%_classical_set_scope
 limf_einf is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.limf_einf
@@ -289,7 +303,7 @@ limf_esup (T:=T) (X:=X) (R:=R) f F =
 ereal_inf (R:=R) [set ereal_sup (R:=R) [set f x | x in V] | V in F]
 
 limf_esupE is not universe polymorphic
-Arguments limf_esupE [T X R] f%function_scope F%classical_set_scope
+Arguments limf_esupE [T X R] f%_function_scope F%_classical_set_scope
 limf_esupE is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.limf_esupE
@@ -309,7 +323,7 @@ limf_einf (T:=T) (X:=X) (R:=R) f F =
 ereal_sup (R:=R) [set ereal_inf (R:=R) [set f x | x in V] | V in F]
 
 limf_einfE is not universe polymorphic
-Arguments limf_einfE [T X R] f%function_scope F%classical_set_scope
+Arguments limf_einfE [T X R] f%_function_scope F%_classical_set_scope
 limf_einfE is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.limf_einfE
@@ -332,7 +346,7 @@ limf_esup (T:=T) (X:=X) (R:=R) (\- f)%E F =
 (- limf_einf (T:=T) (X:=X) (R:=R) f F)%E
 
 limf_esupN is not universe polymorphic
-Arguments limf_esupN [T X R] f%function_scope F%classical_set_scope
+Arguments limf_esupN [T X R] f%_function_scope F%_classical_set_scope
 limf_esupN is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.limf_esupN
@@ -351,7 +365,7 @@ limf_einf (T:=T) (X:=X) (R:=R) (\- f)%E F =
 (- limf_esup (T:=T) (X:=X) (R:=R) f F)%E
 
 limf_einfN is not universe polymorphic
-Arguments limf_einfN [T X R] f%function_scope F%classical_set_scope
+Arguments limf_einfN [T X R] f%_function_scope F%_classical_set_scope
 limf_einfN is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.limf_einfN
@@ -378,8 +392,8 @@ forall [T : choiceType] [X : filteredType T] [R : realType]
 (0%R <= limf_esup (T:=T) (X:=X) (R:=R) f F)%E
 
 limf_esup_ge0 is not universe polymorphic
-Arguments limf_esup_ge0 [T X R] [f]%function_scope 
-  [F]%classical_set_scope _ _%function_scope
+Arguments limf_esup_ge0 [T X R] [f]%_function_scope 
+  [F]%_classical_set_scope _ _%_function_scope
 limf_esup_ge0 is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.limf_esup_ge0
@@ -406,7 +420,7 @@ Qed.</div></details>
 forall {X : topologicalType} {R : numFieldType}, (X -> \bar R) -> Prop
 
 lower_semicontinuous is not universe polymorphic
-Arguments lower_semicontinuous {X R} f%function_scope
+Arguments lower_semicontinuous {X R} f%_function_scope
 lower_semicontinuous is transparent
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.lower_semicontinuous
@@ -421,7 +435,7 @@ lower_semicontinuous f <->
 (forall a : R, open [set x | (a%:E < f x)%E]%classic)
 
 lower_semicontinuousP is not universe polymorphic
-Arguments lower_semicontinuousP {X R} f%function_scope
+Arguments lower_semicontinuousP {X R} f%_function_scope
 lower_semicontinuousP is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.lower_semicontinuousP
@@ -506,7 +520,7 @@ forall f : T -> \bar R,
 (forall A : R, A \is Num.real -> \near F, (A%:E <= f F)%E)
 
 cvgeyPger is not universe polymorphic
-Arguments cvgeyPger {R} {T}%type_scope {F FF} f%function_scope
+Arguments cvgeyPger {R} {T}%_type_scope {F FF} f%_function_scope
 cvgeyPger is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeyPger
@@ -527,7 +541,7 @@ forall f : T -> \bar R,
 (forall A : R, A \is Num.real -> \near F, (A%:E < f F)%E)
 
 cvgeyPgtr is not universe polymorphic
-Arguments cvgeyPgtr {R} {T}%type_scope {F FF} f%function_scope
+Arguments cvgeyPgtr {R} {T}%_type_scope {F FF} f%_function_scope
 cvgeyPgtr is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeyPgtr
@@ -548,7 +562,7 @@ forall f : T -> \bar R,
 (\forall A \near +oo%R, \near F, (A%:E < f F)%E)
 
 cvgeyPgty is not universe polymorphic
-Arguments cvgeyPgty {R} {T}%type_scope {F FF} f%function_scope
+Arguments cvgeyPgty {R} {T}%_type_scope {F FF} f%_function_scope
 cvgeyPgty is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeyPgty
@@ -569,7 +583,7 @@ forall f : T -> \bar R,
 (\forall A \near +oo%R, \near F, (A%:E <= f F)%E)
 
 cvgeyPgey is not universe polymorphic
-Arguments cvgeyPgey {R} {T}%type_scope {F FF} f%function_scope
+Arguments cvgeyPgey {R} {T}%_type_scope {F FF} f%_function_scope
 cvgeyPgey is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeyPgey
@@ -590,7 +604,7 @@ forall f : T -> \bar R,
 (forall A : R, A \is Num.real -> \near F, (f F <= A%:E)%E)
 
 cvgeNyPler is not universe polymorphic
-Arguments cvgeNyPler {R} {T}%type_scope {F FF} f%function_scope
+Arguments cvgeNyPler {R} {T}%_type_scope {F FF} f%_function_scope
 cvgeNyPler is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeNyPler
@@ -611,7 +625,7 @@ forall f : T -> \bar R,
 (forall A : R, A \is Num.real -> \near F, (f F < A%:E)%E)
 
 cvgeNyPltr is not universe polymorphic
-Arguments cvgeNyPltr {R} {T}%type_scope {F FF} f%function_scope
+Arguments cvgeNyPltr {R} {T}%_type_scope {F FF} f%_function_scope
 cvgeNyPltr is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeNyPltr
@@ -632,7 +646,7 @@ forall f : T -> \bar R,
 (\forall A \near -oo%R, \near F, (f F < A%:E)%E)
 
 cvgeNyPltNy is not universe polymorphic
-Arguments cvgeNyPltNy {R} {T}%type_scope {F FF} f%function_scope
+Arguments cvgeNyPltNy {R} {T}%_type_scope {F FF} f%_function_scope
 cvgeNyPltNy is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeNyPltNy
@@ -653,7 +667,7 @@ forall f : T -> \bar R,
 (\forall A \near -oo%R, \near F, (f F <= A%:E)%E)
 
 cvgeNyPleNy is not universe polymorphic
-Arguments cvgeNyPleNy {R} {T}%type_scope {F FF} f%function_scope
+Arguments cvgeNyPleNy {R} {T}%_type_scope {F FF} f%_function_scope
 cvgeNyPleNy is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeNyPleNy
@@ -674,7 +688,7 @@ forall [f : T -> \bar R],
 forall [A : R], A \is Num.real -> \near F, (A%:E <= f F)%E
 
 cvgey_ger is not universe polymorphic
-Arguments cvgey_ger {R} {T}%type_scope {F FF} [f]%function_scope _ [A] _
+Arguments cvgey_ger {R} {T}%_type_scope {F FF} [f]%_function_scope _ [A] _
 cvgey_ger is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgey_ger
@@ -695,7 +709,7 @@ forall [f : T -> \bar R],
 forall [A : R], A \is Num.real -> \near F, (A%:E < f F)%E
 
 cvgey_gtr is not universe polymorphic
-Arguments cvgey_gtr {R} {T}%type_scope {F FF} [f]%function_scope _ [A] _
+Arguments cvgey_gtr {R} {T}%_type_scope {F FF} [f]%_function_scope _ [A] _
 cvgey_gtr is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgey_gtr
@@ -716,7 +730,7 @@ forall [f : T -> \bar R],
 forall [A : R], A \is Num.real -> \near F, (f F <= A%:E)%E
 
 cvgeNy_ler is not universe polymorphic
-Arguments cvgeNy_ler {R} {T}%type_scope {F FF} [f]%function_scope _ [A] _
+Arguments cvgeNy_ler {R} {T}%_type_scope {F FF} [f]%_function_scope _ [A] _
 cvgeNy_ler is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeNy_ler
@@ -737,7 +751,7 @@ forall [f : T -> \bar R],
 forall [A : R], A \is Num.real -> \near F, (f F < A%:E)%E
 
 cvgeNy_ltr is not universe polymorphic
-Arguments cvgeNy_ltr {R} {T}%type_scope {F FF} [f]%function_scope _ [A] _
+Arguments cvgeNy_ltr {R} {T}%_type_scope {F FF} [f]%_function_scope _ [A] _
 cvgeNy_ltr is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeNy_ltr
@@ -758,7 +772,7 @@ forall f : T -> \bar R,
 (f x @[x --> F] --> -oo%E)%classic
 
 cvgNey is not universe polymorphic
-Arguments cvgNey {R} {T}%type_scope {F FF} f%function_scope
+Arguments cvgNey {R} {T}%_type_scope {F FF} f%_function_scope
 cvgNey is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgNey
@@ -780,7 +794,7 @@ forall f : T -> \bar R,
 (f x @[x --> F] --> +oo%E)%classic
 
 cvgNeNy is not universe polymorphic
-Arguments cvgNeNy {R} {T}%type_scope {F FF} f%function_scope
+Arguments cvgNeNy {R} {T}%_type_scope {F FF} f%_function_scope
 cvgNeNy is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgNeNy
@@ -801,7 +815,7 @@ forall u : T -> R,
 (u x @[x --> F] --> +oo%R)%classic
 
 cvgeryP is not universe polymorphic
-Arguments cvgeryP {R} {T}%type_scope {F FF} u%function_scope
+Arguments cvgeryP {R} {T}%_type_scope {F FF} u%_function_scope
 cvgeryP is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeryP
@@ -824,7 +838,7 @@ forall u : T -> R,
 (u x @[x --> F] --> -oo%R)%classic
 
 cvgerNyP is not universe polymorphic
-Arguments cvgerNyP {R} {T}%type_scope {F FF} u%function_scope
+Arguments cvgerNyP {R} {T}%_type_scope {F FF} u%_function_scope
 cvgerNyP is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgerNyP
@@ -854,7 +868,7 @@ forall f : T -> \bar R,
 (forall A : R, \near F, (A%:E <= f F)%E)
 
 cvgeyPge is not universe polymorphic
-Arguments cvgeyPge {R} {T}%type_scope {F FF} f%function_scope
+Arguments cvgeyPge {R} {T}%_type_scope {F FF} f%_function_scope
 cvgeyPge is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeyPge
@@ -875,7 +889,7 @@ forall f : T -> \bar R,
 (forall A : R, \near F, (A%:E < f F)%E)
 
 cvgeyPgt is not universe polymorphic
-Arguments cvgeyPgt {R} {T}%type_scope {F FF} f%function_scope
+Arguments cvgeyPgt {R} {T}%_type_scope {F FF} f%_function_scope
 cvgeyPgt is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeyPgt
@@ -896,7 +910,7 @@ forall f : T -> \bar R,
 (forall A : R, \near F, (f F <= A%:E)%E)
 
 cvgeNyPle is not universe polymorphic
-Arguments cvgeNyPle {R} {T}%type_scope {F FF} f%function_scope
+Arguments cvgeNyPle {R} {T}%_type_scope {F FF} f%_function_scope
 cvgeNyPle is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeNyPle
@@ -917,7 +931,7 @@ forall f : T -> \bar R,
 (forall A : R, \near F, (f F < A%:E)%E)
 
 cvgeNyPlt is not universe polymorphic
-Arguments cvgeNyPlt {R} {T}%type_scope {F FF} f%function_scope
+Arguments cvgeNyPlt {R} {T}%_type_scope {F FF} f%_function_scope
 cvgeNyPlt is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeNyPlt
@@ -937,8 +951,8 @@ forall [f : T -> \bar R],
 (f x @[x --> F] --> +oo%E)%classic -> forall A : R, \near F, (A%:E <= f F)%E
 
 cvgey_ge is not universe polymorphic
-Arguments cvgey_ge {R} {T}%type_scope {F FF} [f]%function_scope 
-  _ A%ring_scope
+Arguments cvgey_ge {R} {T}%_type_scope {F FF} [f]%_function_scope 
+  _ A%_ring_scope
 cvgey_ge is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgey_ge
@@ -957,8 +971,8 @@ forall [f : T -> \bar R],
 (f x @[x --> F] --> +oo%E)%classic -> forall A : R, \near F, (A%:E < f F)%E
 
 cvgey_gt is not universe polymorphic
-Arguments cvgey_gt {R} {T}%type_scope {F FF} [f]%function_scope 
-  _ A%ring_scope
+Arguments cvgey_gt {R} {T}%_type_scope {F FF} [f]%_function_scope 
+  _ A%_ring_scope
 cvgey_gt is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgey_gt
@@ -977,8 +991,8 @@ forall [f : T -> \bar R],
 (f x @[x --> F] --> -oo%E)%classic -> forall A : R, \near F, (f F <= A%:E)%E
 
 cvgeNy_le is not universe polymorphic
-Arguments cvgeNy_le {R} {T}%type_scope {F FF} [f]%function_scope 
-  _ A%ring_scope
+Arguments cvgeNy_le {R} {T}%_type_scope {F FF} [f]%_function_scope 
+  _ A%_ring_scope
 cvgeNy_le is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeNy_le
@@ -997,8 +1011,8 @@ forall [f : T -> \bar R],
 (f x @[x --> F] --> -oo%E)%classic -> forall A : R, \near F, (f F < A%:E)%E
 
 cvgeNy_lt is not universe polymorphic
-Arguments cvgeNy_lt {R} {T}%type_scope {F FF} [f]%function_scope 
-  _ A%ring_scope
+Arguments cvgeNy_lt {R} {T}%_type_scope {F FF} [f]%_function_scope 
+  _ A%_ring_scope
 cvgeNy_lt is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgeNy_lt
@@ -1030,7 +1044,7 @@ exists2 i : R,
   [set e | (0 < e)%R]%classic i &
   (ball_ [eta normr] t i `<=` [set r | (r%:E < y)%E])%classic
 
-Arguments open_ereal_lt [R] [y]%ereal_scope [t] _
+Arguments open_ereal_lt [R] [y]%_ereal_scope [t] _
 open_ereal_lt is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.open_ereal_lt
@@ -1059,7 +1073,7 @@ exists2 i : R,
   [set e | (0 < e)%R]%classic i &
   (ball_ [eta normr] t i `<=` [set r | (y < r%:E)%E])%classic
 
-Arguments open_ereal_gt [R] [y]%ereal_scope [t] _
+Arguments open_ereal_gt [R] [y]%_ereal_scope [t] _
 open_ereal_gt is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.open_ereal_gt
@@ -1081,7 +1095,7 @@ forall [R : realFieldType] [x y : \bar R],
 (x < y)%E -> ereal_nbhs x (fun u : \bar R => (u < y)%E)
 
 open_ereal_lt' is not universe polymorphic
-Arguments open_ereal_lt' [R] [x y]%ereal_scope _
+Arguments open_ereal_lt' [R] [x y]%_ereal_scope _
 open_ereal_lt' is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.open_ereal_lt'
@@ -1104,7 +1118,7 @@ forall [R : realFieldType] [x y : \bar R],
 (y < x)%E -> ereal_nbhs x (fun u : \bar R => (y < u)%E)
 
 open_ereal_gt' is not universe polymorphic
-Arguments open_ereal_gt' [R] [x y]%ereal_scope _
+Arguments open_ereal_gt' [R] [x y]%_ereal_scope _
 open_ereal_gt' is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.open_ereal_gt'
@@ -1140,7 +1154,7 @@ match t with
       (forall y : \bar R, (y < M%:E)%E -> [set y0 | (y0 < x)%E]%classic y)
 end
 
-Arguments open_ereal_lt_ereal [R] [x]%ereal_scope [t] _
+Arguments open_ereal_lt_ereal [R] [x]%_ereal_scope [t] _
 open_ereal_lt_ereal is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.open_ereal_lt_ereal
@@ -1184,7 +1198,7 @@ match t with
       (forall y : \bar R, (y < M%:E)%E -> [set y0 | (x < y0)%E]%classic y)
 end
 
-Arguments open_ereal_gt_ereal [R] [x]%ereal_scope [t] _
+Arguments open_ereal_gt_ereal [R] [x]%_ereal_scope [t] _
 open_ereal_gt_ereal is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.open_ereal_gt_ereal
@@ -1218,7 +1232,7 @@ forall [R : realFieldType] [y : \bar R]
          R],
 closure [set x | (y <= x)%E] t -> (y <= t)%E = true
 
-Arguments closed_ereal_le_ereal [R] [y]%ereal_scope [t] _
+Arguments closed_ereal_le_ereal [R] [y]%_ereal_scope [t] _
 closed_ereal_le_ereal is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.closed_ereal_le_ereal
@@ -1244,7 +1258,7 @@ forall [R : realFieldType] [y : \bar R]
          R],
 closure [set x | (x <= y)%E] t -> (t <= y)%E = true
 
-Arguments closed_ereal_ge_ereal [R] [y]%ereal_scope [t] _
+Arguments closed_ereal_ge_ereal [R] [y]%_ereal_scope [t] _
 closed_ereal_ge_ereal is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.closed_ereal_ge_ereal
@@ -1270,7 +1284,7 @@ forall [R : realFieldType] [r : R] [X : set R],
 nbhs r X -> nbhs r%:E [set r0%:E | r0 in X]%classic
 
 nbhs_image_EFin is not universe polymorphic
-Arguments nbhs_image_EFin [R] [r]%ring_scope [X]%classical_set_scope _
+Arguments nbhs_image_EFin [R] [r]%_ring_scope [X]%_classical_set_scope _
 nbhs_image_EFin is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.nbhs_image_EFin
@@ -1290,7 +1304,7 @@ forall [R : realFieldType] [r : R] [f : R -> R],
 (r < f r)%R -> nbhs r%:E [set y | (y < (f r)%:E)%E]%classic
 
 nbhs_open_ereal_lt is not universe polymorphic
-Arguments nbhs_open_ereal_lt [R] [r]%ring_scope [f]%function_scope _
+Arguments nbhs_open_ereal_lt [R] [r]%_ring_scope [f]%_function_scope _
 nbhs_open_ereal_lt is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.nbhs_open_ereal_lt
@@ -1310,7 +1324,7 @@ forall [R : realFieldType] [r : R] [f : R -> R],
 (f r < r)%R -> nbhs r%:E [set y | ((f r)%:E < y)%E]%classic
 
 nbhs_open_ereal_gt is not universe polymorphic
-Arguments nbhs_open_ereal_gt [R] [r]%ring_scope [f]%function_scope _
+Arguments nbhs_open_ereal_gt [R] [r]%_ring_scope [f]%_function_scope _
 nbhs_open_ereal_gt is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.nbhs_open_ereal_gt
@@ -1329,7 +1343,7 @@ Qed.</div></details>
 forall [R : realFieldType] (r : R), nbhs +oo%E [set y | (r%:E < y)%E]%classic
 
 nbhs_open_ereal_pinfty is not universe polymorphic
-Arguments nbhs_open_ereal_pinfty [R] r%ring_scope
+Arguments nbhs_open_ereal_pinfty [R] r%_ring_scope
 nbhs_open_ereal_pinfty is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.nbhs_open_ereal_pinfty
@@ -1347,7 +1361,7 @@ Qed.</div></details>
 forall [R : realFieldType] (r : R), nbhs -oo%E [set y | (y < r%:E)%E]%classic
 
 nbhs_open_ereal_ninfty is not universe polymorphic
-Arguments nbhs_open_ereal_ninfty [R] r%ring_scope
+Arguments nbhs_open_ereal_ninfty [R] r%_ring_scope
 nbhs_open_ereal_ninfty is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.nbhs_open_ereal_ninfty
@@ -1423,8 +1437,8 @@ forall {R : realFieldType} [f : T -> \bar R] [b : \bar R]
 (f x @[x --> a] --> c)%classic -> (\near a, (b <= f a)%E) -> (b <= c)%E
 
 cvge_to_ge is not universe polymorphic
-Arguments cvge_to_ge {T}%type_scope {a Fa R} [f]%function_scope
-  [b]%ereal_scope [c] _ _
+Arguments cvge_to_ge {T}%_type_scope {a Fa R} [f]%_function_scope
+  [b]%_ereal_scope [c] _ _
 cvge_to_ge is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvge_to_ge
@@ -1445,8 +1459,8 @@ forall {R : realFieldType} [f : T -> \bar R] [b : \bar R]
 (f x @[x --> a] --> c)%classic -> (\near a, (f a <= b)%E) -> (c <= b)%E
 
 cvge_to_le is not universe polymorphic
-Arguments cvge_to_le {T}%type_scope {a Fa R} [f]%function_scope
-  [b]%ereal_scope [c] _ _
+Arguments cvge_to_le {T}%_type_scope {a Fa R} [f]%_function_scope
+  [b]%_ereal_scope [c] _ _
 cvge_to_le is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvge_to_le
@@ -1467,8 +1481,8 @@ cvg (f x @[x --> a])%classic ->
 (\near a, (x <= f a)%E) -> (x <= lim (f x @[x --> a])%classic)%E
 
 lime_ge is not universe polymorphic
-Arguments lime_ge {T}%type_scope {a Fa R} [x]%ereal_scope 
-  [f]%function_scope _ _
+Arguments lime_ge {T}%_type_scope {a Fa R} [x]%_ereal_scope
+  [f]%_function_scope _ _
 lime_ge is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.lime_ge
@@ -1488,8 +1502,8 @@ cvg (f x @[x --> a])%classic ->
 (\near a, (f a <= x)%E) -> (lim (f x @[x --> a])%classic <= x)%E
 
 lime_le is not universe polymorphic
-Arguments lime_le {T}%type_scope {a Fa R} [x]%ereal_scope 
-  [f]%function_scope _ _
+Arguments lime_le {T}%_type_scope {a Fa R} [x]%_ereal_scope
+  [f]%_function_scope _ _
 lime_le is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.lime_le
@@ -1511,7 +1525,7 @@ forall f : T -> nat,
 (f x @[x --> F] --> \oo)%classic
 
 cvgenyP is not universe polymorphic
-Arguments cvgenyP {R} {T}%type_scope {F FF} f%function_scope
+Arguments cvgenyP {R} {T}%_type_scope {F FF} f%_function_scope
 cvgenyP is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.cvgenyP
@@ -1532,7 +1546,7 @@ forall {R : numFieldType} (P : \bar R -> Prop) (x : R),
 (\forall y \near x%:E, P y) <-> (\near x, P x%:E)
 
 nbhs_EFin is not universe polymorphic
-Arguments nbhs_EFin {R} P%function_scope x%ring_scope
+Arguments nbhs_EFin {R} P%_function_scope x%_ring_scope
 nbhs_EFin is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.nbhs_EFin
@@ -1549,7 +1563,7 @@ forall {R : numFieldType} (P : \bar R -> Prop),
 (\forall x \near +oo%E, P x) <-> P +oo%E /\ (\forall x \near +oo%R, P x%:E)
 
 nbhs_ereal_pinfty is not universe polymorphic
-Arguments nbhs_ereal_pinfty {R} P%function_scope
+Arguments nbhs_ereal_pinfty {R} P%_function_scope
 nbhs_ereal_pinfty is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.nbhs_ereal_pinfty
@@ -1569,7 +1583,7 @@ forall {R : numFieldType} (P : \bar R -> Prop),
 (\forall x \near -oo%E, P x) <-> P -oo%E /\ (\forall x \near -oo%R, P x%:E)
 
 nbhs_ereal_ninfty is not universe polymorphic
-Arguments nbhs_ereal_ninfty {R} P%function_scope
+Arguments nbhs_ereal_ninfty {R} P%_function_scope
 nbhs_ereal_ninfty is opaque
 Expands to: Constant
             mathcomp.analysis.normedtype_theory.ereal_normedtype.nbhs_ereal_ninfty

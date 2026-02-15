@@ -79,6 +79,20 @@
           </ul>
           </details>
           </li>
+<li><details id="mathcomp.analysis.probability_theory"><summary>probability_theory</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.probability_theory.bernoulli_distribution.html">bernoulli_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.beta_distribution.html">beta_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.binomial_distribution.html">binomial_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.exponential_distribution.html">exponential_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.normal_distribution.html">normal_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.poisson_distribution.html">poisson_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.probability.html">probability</a></li>
+<li><a href="mathcomp.analysis.probability_theory.random_variable.html">random_variable</a></li>
+<li><a href="mathcomp.analysis.probability_theory.uniform_distribution.html">uniform_distribution</a></li>
+          </ul>
+          </details>
+          </li>
 <li><details id="mathcomp.analysis.showcase"><summary>showcase</summary>
           <ul>
           <li><a href="mathcomp.analysis.showcase.pnt.html">pnt</a></li>
@@ -92,6 +106,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
 <li><a href="mathcomp.analysis.topology_theory.nat_topology.html">nat_topology</a></li>
@@ -134,7 +149,6 @@
 <li><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></li>
 <li><a href="mathcomp.analysis.numfun.html">numfun</a></li>
 <li><a href="mathcomp.analysis.pi_irrational.html">pi_irrational</a></li>
-<li><a href="mathcomp.analysis.probability.html">probability</a></li>
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
@@ -332,7 +346,7 @@ forall [d d' : measure_display] [T : measurableType d]
 d.-measurable%classic [set t | f t [set: T']%classic == k]
 
 kernel_measurable_eq_cst is not universe polymorphic
-Arguments kernel_measurable_eq_cst [d d']%measure_display_scope [T T' R] f k
+Arguments kernel_measurable_eq_cst [d d']%_measure_display_scope [T T' R] f k
 kernel_measurable_eq_cst is opaque
 Expands to: Constant mathcomp.analysis.kernel.kernel_measurable_eq_cst
 Declared in library mathcomp.analysis.kernel, line 116, characters 6-30
@@ -355,7 +369,8 @@ forall [d d' : measure_display] [T : measurableType d]
 d.-measurable%classic [set t | f t [set: T']%classic != k]
 
 kernel_measurable_neq_cst is not universe polymorphic
-Arguments kernel_measurable_neq_cst [d d']%measure_display_scope [T T' R] f k
+Arguments kernel_measurable_neq_cst [d d']%_measure_display_scope 
+  [T T' R] f k
 kernel_measurable_neq_cst is opaque
 Expands to: Constant mathcomp.analysis.kernel.kernel_measurable_neq_cst
 Declared in library mathcomp.analysis.kernel, line 126, characters 6-31
@@ -395,7 +410,7 @@ forall [Y : set Datatypes_bool__canonical__measurable_structure_SigmaRing],
       class) in
  measurable) ([set: T] `&` (fun t : T => f t [set: T'] == k) @^-1` Y)%classic
 
-Arguments kernel_measurable_fun_eq_cst [d d']%measure_display_scope 
+Arguments kernel_measurable_fun_eq_cst [d d']%_measure_display_scope 
   [T T' R] f k _ [Y] _
 kernel_measurable_fun_eq_cst is opaque
 Expands to: Constant mathcomp.analysis.kernel.kernel_measurable_fun_eq_cst
@@ -422,8 +437,8 @@ forall [d d' : measure_display] [T : measurableType d]
 (forall (x : T) (U : set T'), k1 x U = k2 x U) -> k1 = k2
 
 eq_kernel is not universe polymorphic
-Arguments eq_kernel [d d']%measure_display_scope [T T' R k1 k2]
-  _%function_scope
+Arguments eq_kernel [d d']%_measure_display_scope 
+  [T T' R k1 k2] _%_function_scope
 eq_kernel is opaque
 Expands to: Constant mathcomp.analysis.kernel.eq_kernel
 Declared in library mathcomp.analysis.kernel, line 150, characters 6-15
@@ -449,7 +464,7 @@ forall [d d' : measure_display] [X : measurableType d]
 (R.-ker X ~> Y) ^nat -> X -> measure Y R
 
 kseries is not universe polymorphic
-Arguments kseries [d d']%measure_display_scope [X Y R] k x
+Arguments kseries [d d']%_measure_display_scope [X Y R] k x
 kseries is transparent
 Expands to: Constant mathcomp.analysis.kernel.kseries
 Declared in library mathcomp.analysis.kernel, line 164, characters 11-18
@@ -486,8 +501,8 @@ forall
  measurable)
   ([set: X] `&` (fun x : X => kseries (X:=X) (Y:=Y) (R:=R) k x U) @^-1` Y0)%classic
 
-Arguments measurable_fun_kseries [d d']%measure_display_scope 
-  [X Y R] k [U]%classical_set_scope _ _ [Y] _
+Arguments measurable_fun_kseries [d d']%_measure_display_scope 
+  [X Y R] k [U]%_classical_set_scope _ _ [Y] _
 measurable_fun_kseries is opaque
 Expands to: Constant mathcomp.analysis.kernel.measurable_fun_kseries
 Declared in library mathcomp.analysis.kernel, line 166, characters 6-28
@@ -506,7 +521,7 @@ forall [d d' : measure_display] [X : measurableType d]
 
 kernel_kseries__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kseries__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y R] k
+  [d d']%_measure_display_scope [X Y R] k
 kernel_kseries__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kseries__canonical__kernel_Kernel
@@ -518,7 +533,7 @@ forall [d d' : measure_display] [X : measurableType d]
 
 kernel_kseries__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kseries__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y R] k
+  [d d']%_measure_display_scope [X Y R] k
 kernel_kseries__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kseries__canonical__kernel_Kernel
@@ -530,7 +545,7 @@ forall [d d' : measure_display] [X : measurableType d]
 
 kernel_kseries__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kseries__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y R] k
+  [d d']%_measure_display_scope [X Y R] k
 kernel_kseries__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kseries__canonical__kernel_Kernel
@@ -542,7 +557,7 @@ forall [d d' : measure_display] [X : measurableType d]
 
 kernel_kseries__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kseries__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y R] k
+  [d d']%_measure_display_scope [X Y R] k
 kernel_kseries__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kseries__canonical__kernel_Kernel
@@ -565,8 +580,8 @@ measurable_fun (T:=Y)
 \big[+%R/0%R]_(0 <= i <oo) (\int[k i x]_y f y)%E
 
 integral_kseries is not universe polymorphic
-Arguments integral_kseries [d d']%measure_display_scope 
-  [X Y R] k [f]%function_scope x _%function_scope 
+Arguments integral_kseries [d d']%_measure_display_scope 
+  [X Y R] k [f]%_function_scope x _%_function_scope 
   _
 integral_kseries is opaque
 Expands to: Constant mathcomp.analysis.kernel.integral_kseries
@@ -592,8 +607,8 @@ forall [d d' : measure_display] [X : measurableType d]
 (X -> measure Y R) -> Prop
 
 measure_fam_uub is not universe polymorphic
-Arguments measure_fam_uub [d d']%measure_display_scope 
-  [X Y R] k%function_scope
+Arguments measure_fam_uub [d d']%_measure_display_scope 
+  [X Y R] k%_function_scope
 measure_fam_uub is transparent
 Expands to: Constant mathcomp.analysis.kernel.measure_fam_uub
 Declared in library mathcomp.analysis.kernel, line 190, characters 11-26
@@ -607,8 +622,8 @@ measure_fam_uub (X:=X) (Y:=Y) k <->
    forall x : X, (k x [set: Y]%classic < (r%:num)%:E)%E)
 
 measure_fam_uubP is not universe polymorphic
-Arguments measure_fam_uubP [d d']%measure_display_scope 
-  [X Y R] k%function_scope
+Arguments measure_fam_uubP [d d']%_measure_display_scope 
+  [X Y R] k%_function_scope
 measure_fam_uubP is opaque
 Expands to: Constant mathcomp.analysis.kernel.measure_fam_uubP
 Declared in library mathcomp.analysis.kernel, line 192, characters 6-22
@@ -656,8 +671,8 @@ forall [d d' : measure_display] [T : measurableType d]
 (forall (x : T) (U : set T'), k1 x U = k2 x U) -> k1 = k2
 
 eq_sfkernel is not universe polymorphic
-Arguments eq_sfkernel [d d']%measure_display_scope 
-  [T T' R k1 k2] _%function_scope
+Arguments eq_sfkernel [d d']%_measure_display_scope 
+  [T T' R k1 k2] _%_function_scope
 eq_sfkernel is opaque
 Expands to: Constant mathcomp.analysis.kernel.eq_sfkernel
 Declared in library mathcomp.analysis.kernel, line 228, characters 6-17
@@ -682,7 +697,7 @@ forall [d d' : measure_display] [X : measurableType d]
 X -> measure Y R
 
 kzero is not universe polymorphic
-Arguments kzero [d d']%measure_display_scope [X] Y R _
+Arguments kzero [d d']%_measure_display_scope [X] Y R _
 kzero is transparent
 Expands to: Constant mathcomp.analysis.kernel.kzero
 Declared in library mathcomp.analysis.kernel, line 241, characters 11-16
@@ -701,8 +716,8 @@ forall [d d' : measure_display] (X : measurableType d)
 R.-ker X ~> Y
 
 kernel_kzero__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_kzero__canonical__kernel_Kernel [d d']%measure_display_scope
-  X Y R
+Arguments kernel_kzero__canonical__kernel_Kernel
+  [d d']%_measure_display_scope X Y R
 kernel_kzero__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kzero__canonical__kernel_Kernel
@@ -713,8 +728,8 @@ forall [d d' : measure_display] (X : measurableType d)
 R.-ker X ~> Y
 
 kernel_kzero__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_kzero__canonical__kernel_Kernel [d d']%measure_display_scope
-  X Y R
+Arguments kernel_kzero__canonical__kernel_Kernel
+  [d d']%_measure_display_scope X Y R
 kernel_kzero__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kzero__canonical__kernel_Kernel
@@ -725,8 +740,8 @@ forall [d d' : measure_display] (X : measurableType d)
 R.-ker X ~> Y
 
 kernel_kzero__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_kzero__canonical__kernel_Kernel [d d']%measure_display_scope
-  X Y R
+Arguments kernel_kzero__canonical__kernel_Kernel
+  [d d']%_measure_display_scope X Y R
 kernel_kzero__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kzero__canonical__kernel_Kernel
@@ -737,8 +752,8 @@ forall [d d' : measure_display] (X : measurableType d)
 R.-ker X ~> Y
 
 kernel_kzero__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_kzero__canonical__kernel_Kernel [d d']%measure_display_scope
-  X Y R
+Arguments kernel_kzero__canonical__kernel_Kernel
+  [d d']%_measure_display_scope X Y R
 kernel_kzero__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kzero__canonical__kernel_Kernel
@@ -750,8 +765,8 @@ forall [d d' : measure_display] (X : measurableType d)
 R.-ker X ~> Y
 
 kernel_kzero__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_kzero__canonical__kernel_Kernel [d d']%measure_display_scope
-  X Y R
+Arguments kernel_kzero__canonical__kernel_Kernel
+  [d d']%_measure_display_scope X Y R
 kernel_kzero__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kzero__canonical__kernel_Kernel
@@ -764,7 +779,7 @@ forall [d d' : measure_display] (X : measurableType d)
 measure_fam_uub (X:=X) (Y:=Y) (kzero (X:=X) Y R)
 
 kzero_uub is not universe polymorphic
-Arguments kzero_uub [d d']%measure_display_scope X Y R
+Arguments kzero_uub [d d']%_measure_display_scope X Y R
 kzero_uub is opaque
 Expands to: Constant mathcomp.analysis.kernel.kzero_uub
 Declared in library mathcomp.analysis.kernel, line 250, characters 6-15
@@ -875,7 +890,7 @@ R.-sfker X ~> Y
 
 Builders_5.Builders_5_k__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments Builders_5.Builders_5_k__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
@@ -895,7 +910,7 @@ R.-sfker X ~> Y
 
 Builders_5.Builders_5_k__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments Builders_5.Builders_5_k__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
@@ -915,7 +930,7 @@ R.-sfker X ~> Y
 
 Builders_5.Builders_5_k__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments Builders_5.Builders_5_k__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
@@ -935,7 +950,7 @@ R.-sfker X ~> Y
 
 Builders_5.Builders_5_k__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments Builders_5.Builders_5_k__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
@@ -956,7 +971,7 @@ R.-sfker X ~> Y
 
 Builders_5.Builders_5_k__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments Builders_5.Builders_5_k__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
@@ -988,7 +1003,7 @@ R.-sigmafker X ~> Y
 Builders_5.Builders_5_k__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments
   Builders_5.Builders_5_k__canonical__kernel_SigmaFiniteTransitionKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -1009,7 +1024,7 @@ R.-sigmafker X ~> Y
 Builders_5.Builders_5_k__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments
   Builders_5.Builders_5_k__canonical__kernel_SigmaFiniteTransitionKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -1030,7 +1045,7 @@ R.-sigmafker X ~> Y
 Builders_5.Builders_5_k__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments
   Builders_5.Builders_5_k__canonical__kernel_SigmaFiniteTransitionKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -1051,7 +1066,7 @@ R.-sigmafker X ~> Y
 Builders_5.Builders_5_k__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments
   Builders_5.Builders_5_k__canonical__kernel_SigmaFiniteTransitionKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -1073,7 +1088,7 @@ R.-sigmafker X ~> Y
 Builders_5.Builders_5_k__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments
   Builders_5.Builders_5_k__canonical__kernel_SigmaFiniteTransitionKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -1106,7 +1121,7 @@ R.-ftker X ~> Y
 
 Builders_5.Builders_5_k__canonical__kernel_FiniteTransitionKernel is not universe polymorphic
 Arguments Builders_5.Builders_5_k__canonical__kernel_FiniteTransitionKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_FiniteTransitionKernel is transparent
 Expands to: Constant
@@ -1126,7 +1141,7 @@ R.-ftker X ~> Y
 
 Builders_5.Builders_5_k__canonical__kernel_FiniteTransitionKernel is not universe polymorphic
 Arguments Builders_5.Builders_5_k__canonical__kernel_FiniteTransitionKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_FiniteTransitionKernel is transparent
 Expands to: Constant
@@ -1146,7 +1161,7 @@ R.-ftker X ~> Y
 
 Builders_5.Builders_5_k__canonical__kernel_FiniteTransitionKernel is not universe polymorphic
 Arguments Builders_5.Builders_5_k__canonical__kernel_FiniteTransitionKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_FiniteTransitionKernel is transparent
 Expands to: Constant
@@ -1166,7 +1181,7 @@ R.-ftker X ~> Y
 
 Builders_5.Builders_5_k__canonical__kernel_FiniteTransitionKernel is not universe polymorphic
 Arguments Builders_5.Builders_5_k__canonical__kernel_FiniteTransitionKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_FiniteTransitionKernel is transparent
 Expands to: Constant
@@ -1187,7 +1202,7 @@ R.-ftker X ~> Y
 
 Builders_5.Builders_5_k__canonical__kernel_FiniteTransitionKernel is not universe polymorphic
 Arguments Builders_5.Builders_5_k__canonical__kernel_FiniteTransitionKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_FiniteTransitionKernel is transparent
 Expands to: Constant
@@ -1209,7 +1224,7 @@ R.-fker X ~> Y
 
 Builders_5.Builders_5_k__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments Builders_5.Builders_5_k__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
@@ -1229,7 +1244,7 @@ R.-fker X ~> Y
 
 Builders_5.Builders_5_k__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments Builders_5.Builders_5_k__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
@@ -1249,7 +1264,7 @@ R.-fker X ~> Y
 
 Builders_5.Builders_5_k__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments Builders_5.Builders_5_k__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
@@ -1269,7 +1284,7 @@ R.-fker X ~> Y
 
 Builders_5.Builders_5_k__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments Builders_5.Builders_5_k__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
@@ -1290,7 +1305,7 @@ R.-fker X ~> Y
 
 Builders_5.Builders_5_k__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments Builders_5.Builders_5_k__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_6
 Builders_5.Builders_5_k__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
@@ -1321,8 +1336,8 @@ forall [d d' : measure_display] [X : measurableType d]
 R.-sfker X ~> Y -> nat -> R.-ker X ~> Y
 
 kernel_s__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_s__canonical__kernel_Kernel [d d']%measure_display_scope
-  [X Y R] k n%nat_scope
+Arguments kernel_s__canonical__kernel_Kernel [d d']%_measure_display_scope
+  [X Y R] k n%_nat_scope
 kernel_s__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_s__canonical__kernel_Kernel
@@ -1333,8 +1348,8 @@ forall [d d' : measure_display] [X : measurableType d]
 R.-sfker X ~> Y -> nat -> R.-ker X ~> Y
 
 kernel_s__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_s__canonical__kernel_Kernel [d d']%measure_display_scope
-  [X Y R] k n%nat_scope
+Arguments kernel_s__canonical__kernel_Kernel [d d']%_measure_display_scope
+  [X Y R] k n%_nat_scope
 kernel_s__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_s__canonical__kernel_Kernel
@@ -1345,8 +1360,8 @@ forall [d d' : measure_display] [X : measurableType d]
 R.-sfker X ~> Y -> nat -> R.-ker X ~> Y
 
 kernel_s__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_s__canonical__kernel_Kernel [d d']%measure_display_scope
-  [X Y R] k n%nat_scope
+Arguments kernel_s__canonical__kernel_Kernel [d d']%_measure_display_scope
+  [X Y R] k n%_nat_scope
 kernel_s__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_s__canonical__kernel_Kernel
@@ -1357,8 +1372,8 @@ forall [d d' : measure_display] [X : measurableType d]
 R.-sfker X ~> Y -> nat -> R.-ker X ~> Y
 
 kernel_s__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_s__canonical__kernel_Kernel [d d']%measure_display_scope
-  [X Y R] k n%nat_scope
+Arguments kernel_s__canonical__kernel_Kernel [d d']%_measure_display_scope
+  [X Y R] k n%_nat_scope
 kernel_s__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_s__canonical__kernel_Kernel
@@ -1369,8 +1384,8 @@ forall [d d' : measure_display] [X : measurableType d]
 R.-sfker X ~> Y -> nat -> R.-ker X ~> Y
 
 kernel_s__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_s__canonical__kernel_Kernel [d d']%measure_display_scope
-  [X Y R] k n%nat_scope
+Arguments kernel_s__canonical__kernel_Kernel [d d']%_measure_display_scope
+  [X Y R] k n%_nat_scope
 kernel_s__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_s__canonical__kernel_Kernel
@@ -1381,8 +1396,8 @@ forall [d d' : measure_display] [X : measurableType d]
 R.-sfker X ~> Y -> nat -> R.-ker X ~> Y
 
 kernel_s__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_s__canonical__kernel_Kernel [d d']%measure_display_scope
-  [X Y R] k n%nat_scope
+Arguments kernel_s__canonical__kernel_Kernel [d d']%_measure_display_scope
+  [X Y R] k n%_nat_scope
 kernel_s__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_s__canonical__kernel_Kernel
@@ -1402,7 +1417,7 @@ R.-sfker X ~> Y -> nat -> R.-fker X ~> Y
 
 kernel_s__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_s__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] k n%nat_scope
+  [d d']%_measure_display_scope [X Y R] k n%_nat_scope
 kernel_s__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_s__canonical__kernel_FiniteKernel
@@ -1414,7 +1429,7 @@ R.-sfker X ~> Y -> nat -> R.-fker X ~> Y
 
 kernel_s__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_s__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] k n%nat_scope
+  [d d']%_measure_display_scope [X Y R] k n%_nat_scope
 kernel_s__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_s__canonical__kernel_FiniteKernel
@@ -1426,7 +1441,7 @@ R.-sfker X ~> Y -> nat -> R.-fker X ~> Y
 
 kernel_s__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_s__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] k n%nat_scope
+  [d d']%_measure_display_scope [X Y R] k n%_nat_scope
 kernel_s__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_s__canonical__kernel_FiniteKernel
@@ -1438,7 +1453,7 @@ R.-sfker X ~> Y -> nat -> R.-fker X ~> Y
 
 kernel_s__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_s__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] k n%nat_scope
+  [d d']%_measure_display_scope [X Y R] k n%_nat_scope
 kernel_s__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_s__canonical__kernel_FiniteKernel
@@ -1450,7 +1465,7 @@ R.-sfker X ~> Y -> nat -> R.-fker X ~> Y
 
 kernel_s__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_s__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] k n%nat_scope
+  [d d']%_measure_display_scope [X Y R] k n%_nat_scope
 kernel_s__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_s__canonical__kernel_FiniteKernel
@@ -1462,7 +1477,7 @@ R.-sfker X ~> Y -> nat -> R.-fker X ~> Y
 
 kernel_s__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_s__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] k n%nat_scope
+  [d d']%_measure_display_scope [X Y R] k n%_nat_scope
 kernel_s__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_s__canonical__kernel_FiniteKernel
@@ -1478,7 +1493,7 @@ exists s : (R.-fker X ~> Y) ^nat,
   k x U = kseries (X:=X) (Y:=Y) (R:=R) (fun x0 : nat => s x0) x U
 
 sfinite_kernel is not universe polymorphic
-Arguments sfinite_kernel [d d']%measure_display_scope [X Y R] k
+Arguments sfinite_kernel [d d']%_measure_display_scope [X Y R] k
 sfinite_kernel is opaque
 Expands to: Constant mathcomp.analysis.kernel.sfinite_kernel
 Declared in library mathcomp.analysis.kernel, line 390, characters 6-20
@@ -1498,7 +1513,7 @@ forall [d d' : measure_display] [Z : measurableType d]
 sfinite_measure (T:=X) (R:=R) (k z)
 
 sfinite_kernel_measure is not universe polymorphic
-Arguments sfinite_kernel_measure [d d']%measure_display_scope [Z X R] k z
+Arguments sfinite_kernel_measure [d d']%_measure_display_scope [Z X R] k z
 sfinite_kernel_measure is opaque
 Expands to: Constant mathcomp.analysis.kernel.sfinite_kernel_measure
 Declared in library mathcomp.analysis.kernel, line 396, characters 6-28
@@ -1522,7 +1537,7 @@ R.-fker X ~> Y
 
 kernel_kzero__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kzero__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope X Y R
+  [d d']%_measure_display_scope X Y R
 kernel_kzero__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kzero__canonical__kernel_FiniteKernel
@@ -1534,7 +1549,7 @@ R.-fker X ~> Y
 
 kernel_kzero__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kzero__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope X Y R
+  [d d']%_measure_display_scope X Y R
 kernel_kzero__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kzero__canonical__kernel_FiniteKernel
@@ -1546,7 +1561,7 @@ R.-fker X ~> Y
 
 kernel_kzero__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kzero__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope X Y R
+  [d d']%_measure_display_scope X Y R
 kernel_kzero__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kzero__canonical__kernel_FiniteKernel
@@ -1559,7 +1574,7 @@ R.-fker X ~> Y
 
 kernel_kzero__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kzero__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope X Y R
+  [d d']%_measure_display_scope X Y R
 kernel_kzero__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kzero__canonical__kernel_FiniteKernel
@@ -1571,7 +1586,7 @@ R.-fker X ~> Y
 
 kernel_kzero__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kzero__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope X Y R
+  [d d']%_measure_display_scope X Y R
 kernel_kzero__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kzero__canonical__kernel_FiniteKernel
@@ -1583,7 +1598,7 @@ R.-fker X ~> Y
 
 kernel_kzero__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kzero__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope X Y R
+  [d d']%_measure_display_scope X Y R
 kernel_kzero__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kzero__canonical__kernel_FiniteKernel
@@ -1595,7 +1610,7 @@ R.-fker X ~> Y
 
 kernel_kzero__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kzero__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope X Y R
+  [d d']%_measure_display_scope X Y R
 kernel_kzero__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kzero__canonical__kernel_FiniteKernel
@@ -1607,7 +1622,7 @@ R.-fker X ~> Y
 
 kernel_kzero__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kzero__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope X Y R
+  [d d']%_measure_display_scope X Y R
 kernel_kzero__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kzero__canonical__kernel_FiniteKernel
@@ -1638,8 +1653,8 @@ Kernel_isSFinite.phant_axioms (m:=local_mixin_kernel_isKernel) id_phant
 Kernel_isSFinite_subdef d d' X Y R k
 
 Builders_43.sfinite_subdef is not universe polymorphic
-Arguments Builders_43.sfinite_subdef [d d']%measure_display_scope 
-  [X Y R] [k]%function_scope [local_mixin_kernel_isKernel] 
+Arguments Builders_43.sfinite_subdef [d d']%_measure_display_scope 
+  [X Y R] [k]%_function_scope [local_mixin_kernel_isKernel] 
   fresh_name_44
 Builders_43.sfinite_subdef is opaque
 Expands to: Constant mathcomp.analysis.kernel.Builders_43.sfinite_subdef
@@ -1666,7 +1681,7 @@ R.-sfker X ~> Y
 
 Builders_43.Builders_43_k__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments Builders_43.Builders_43_k__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_44
 Builders_43.Builders_43_k__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
@@ -1686,7 +1701,7 @@ R.-sfker X ~> Y
 
 Builders_43.Builders_43_k__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments Builders_43.Builders_43_k__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_44
 Builders_43.Builders_43_k__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
@@ -1706,7 +1721,7 @@ R.-sfker X ~> Y
 
 Builders_43.Builders_43_k__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments Builders_43.Builders_43_k__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_44
 Builders_43.Builders_43_k__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
@@ -1726,7 +1741,7 @@ R.-sfker X ~> Y
 
 Builders_43.Builders_43_k__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments Builders_43.Builders_43_k__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_44
 Builders_43.Builders_43_k__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
@@ -1746,7 +1761,7 @@ R.-sfker X ~> Y
 
 Builders_43.Builders_43_k__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments Builders_43.Builders_43_k__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_44
 Builders_43.Builders_43_k__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
@@ -1793,7 +1808,7 @@ forall [d d' : measure_display] [X : measurableType d]
 
 kernel_kseries__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments kernel_kseries__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] k
+  [d d']%_measure_display_scope [X Y R] k
 kernel_kseries__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kseries__canonical__kernel_SFiniteKernel
@@ -1805,7 +1820,7 @@ forall [d d' : measure_display] [X : measurableType d]
 
 kernel_kseries__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments kernel_kseries__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] k
+  [d d']%_measure_display_scope [X Y R] k
 kernel_kseries__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kseries__canonical__kernel_SFiniteKernel
@@ -1817,7 +1832,7 @@ forall [d d' : measure_display] [X : measurableType d]
 
 kernel_kseries__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments kernel_kseries__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] k
+  [d d']%_measure_display_scope [X Y R] k
 kernel_kseries__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kseries__canonical__kernel_SFiniteKernel
@@ -1829,7 +1844,7 @@ forall [d d' : measure_display] [X : measurableType d]
 
 kernel_kseries__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments kernel_kseries__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] k
+  [d d']%_measure_display_scope [X Y R] k
 kernel_kseries__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kseries__canonical__kernel_SFiniteKernel
@@ -1869,7 +1884,8 @@ forall [d d' : measure_display] [X : measurableType d]
 (forall x : X, (k x [set: Y]%classic <= 1)%E)
 
 sprob_kernelP is not universe polymorphic
-Arguments sprob_kernelP [d d']%measure_display_scope [X Y R] k%function_scope
+Arguments sprob_kernelP [d d']%_measure_display_scope 
+  [X Y R] k%_function_scope
 sprob_kernelP is opaque
 Expands to: Constant mathcomp.analysis.kernel.sprob_kernelP
 Declared in library mathcomp.analysis.kernel, line 487, characters 6-19
@@ -1891,7 +1907,7 @@ forall [d d' : measure_display] [X : measurableType d]
 (k x [set: Y]%classic <= 1)%E
 
 sprob_kernel_le1 is not universe polymorphic
-Arguments sprob_kernel_le1 [d d']%measure_display_scope [X Y R] k x
+Arguments sprob_kernel_le1 [d d']%_measure_display_scope [X Y R] k x
 sprob_kernel_le1 is opaque
 Expands to: Constant mathcomp.analysis.kernel.sprob_kernel_le1
 Declared in library mathcomp.analysis.kernel, line 496, characters 6-22
@@ -1934,7 +1950,7 @@ R.-fker X ~> Y
 
 Builders_50.Builders_50_k__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments Builders_50.Builders_50_k__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_51
 Builders_50.Builders_50_k__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
@@ -1955,7 +1971,7 @@ R.-fker X ~> Y
 
 Builders_50.Builders_50_k__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments Builders_50.Builders_50_k__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_51
 Builders_50.Builders_50_k__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
@@ -1976,7 +1992,7 @@ R.-fker X ~> Y
 
 Builders_50.Builders_50_k__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments Builders_50.Builders_50_k__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_51
 Builders_50.Builders_50_k__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
@@ -1997,7 +2013,7 @@ R.-fker X ~> Y
 
 Builders_50.Builders_50_k__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments Builders_50.Builders_50_k__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_51
 Builders_50.Builders_50_k__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
@@ -2018,7 +2034,7 @@ R.-fker X ~> Y
 
 Builders_50.Builders_50_k__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments Builders_50.Builders_50_k__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_51
 Builders_50.Builders_50_k__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
@@ -2041,7 +2057,7 @@ R.-spker X ~> Y
 
 Builders_50.Builders_50_k__canonical__kernel_SubProbabilityKernel is not universe polymorphic
 Arguments Builders_50.Builders_50_k__canonical__kernel_SubProbabilityKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_51
 Builders_50.Builders_50_k__canonical__kernel_SubProbabilityKernel is transparent
 Expands to: Constant
@@ -2062,7 +2078,7 @@ R.-spker X ~> Y
 
 Builders_50.Builders_50_k__canonical__kernel_SubProbabilityKernel is not universe polymorphic
 Arguments Builders_50.Builders_50_k__canonical__kernel_SubProbabilityKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_51
 Builders_50.Builders_50_k__canonical__kernel_SubProbabilityKernel is transparent
 Expands to: Constant
@@ -2083,7 +2099,7 @@ R.-spker X ~> Y
 
 Builders_50.Builders_50_k__canonical__kernel_SubProbabilityKernel is not universe polymorphic
 Arguments Builders_50.Builders_50_k__canonical__kernel_SubProbabilityKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_51
 Builders_50.Builders_50_k__canonical__kernel_SubProbabilityKernel is transparent
 Expands to: Constant
@@ -2104,7 +2120,7 @@ R.-spker X ~> Y
 
 Builders_50.Builders_50_k__canonical__kernel_SubProbabilityKernel is not universe polymorphic
 Arguments Builders_50.Builders_50_k__canonical__kernel_SubProbabilityKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_51
 Builders_50.Builders_50_k__canonical__kernel_SubProbabilityKernel is transparent
 Expands to: Constant
@@ -2126,7 +2142,7 @@ R.-spker X ~> Y
 
 Builders_50.Builders_50_k__canonical__kernel_SubProbabilityKernel is not universe polymorphic
 Arguments Builders_50.Builders_50_k__canonical__kernel_SubProbabilityKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_51
 Builders_50.Builders_50_k__canonical__kernel_SubProbabilityKernel is transparent
 Expands to: Constant
@@ -2190,7 +2206,7 @@ R.-sigmafker X ~> Y
 Builders_60.Builders_60_k__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments
   Builders_60.Builders_60_k__canonical__kernel_SigmaFiniteTransitionKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_61
 Builders_60.Builders_60_k__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -2211,7 +2227,7 @@ R.-sigmafker X ~> Y
 Builders_60.Builders_60_k__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments
   Builders_60.Builders_60_k__canonical__kernel_SigmaFiniteTransitionKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_61
 Builders_60.Builders_60_k__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -2232,7 +2248,7 @@ R.-sigmafker X ~> Y
 Builders_60.Builders_60_k__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments
   Builders_60.Builders_60_k__canonical__kernel_SigmaFiniteTransitionKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_61
 Builders_60.Builders_60_k__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -2253,7 +2269,7 @@ R.-sigmafker X ~> Y
 Builders_60.Builders_60_k__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments
   Builders_60.Builders_60_k__canonical__kernel_SigmaFiniteTransitionKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_61
 Builders_60.Builders_60_k__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -2274,7 +2290,7 @@ R.-sigmafker X ~> Y
 Builders_60.Builders_60_k__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments
   Builders_60.Builders_60_k__canonical__kernel_SigmaFiniteTransitionKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_61
 Builders_60.Builders_60_k__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -2296,7 +2312,7 @@ R.-pker X ~> Y
 
 Builders_60.Builders_60_k__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments Builders_60.Builders_60_k__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_61
 Builders_60.Builders_60_k__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
@@ -2316,7 +2332,7 @@ R.-pker X ~> Y
 
 Builders_60.Builders_60_k__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments Builders_60.Builders_60_k__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_61
 Builders_60.Builders_60_k__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
@@ -2336,7 +2352,7 @@ R.-pker X ~> Y
 
 Builders_60.Builders_60_k__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments Builders_60.Builders_60_k__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_61
 Builders_60.Builders_60_k__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
@@ -2356,7 +2372,7 @@ R.-pker X ~> Y
 
 Builders_60.Builders_60_k__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments Builders_60.Builders_60_k__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_61
 Builders_60.Builders_60_k__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
@@ -2377,7 +2393,7 @@ R.-pker X ~> Y
 
 Builders_60.Builders_60_k__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments Builders_60.Builders_60_k__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] [k]%function_scope
+  [d d']%_measure_display_scope [X Y R] [k]%_function_scope
   [local_mixin_kernel_isKernel] fresh_name_61
 Builders_60.Builders_60_k__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
@@ -2401,7 +2417,7 @@ forall [d d' : measure_display] [X : measurableType d]
   (x : X) [U : set Y],
 d'.-measurable%classic U -> (k x U \is a fin_num) = true
 
-Arguments finite_kernel_measure [d d']%measure_display_scope 
+Arguments finite_kernel_measure [d d']%_measure_display_scope 
   [X Y R] k x [U] _
 finite_kernel_measure is opaque
 Expands to: Constant mathcomp.analysis.kernel.finite_kernel_measure
@@ -2431,7 +2447,7 @@ forall [D : set Y], d'.-measurable%classic D -> X -> measure Y R
 
 kernel_kD__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kD__canonical__measure_function_Measure
-  [d d']%measure_display_scope [X Y R] k [D]%classical_set_scope 
+  [d d']%_measure_display_scope [X Y R] k [D]%_classical_set_scope 
   mD x
 kernel_kD__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -2445,7 +2461,7 @@ forall [D : set Y], d'.-measurable%classic D -> X -> measure Y R
 
 kernel_kD__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kD__canonical__measure_function_Measure
-  [d d']%measure_display_scope [X Y R] k [D]%classical_set_scope 
+  [d d']%_measure_display_scope [X Y R] k [D]%_classical_set_scope 
   mD x
 kernel_kD__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -2459,7 +2475,7 @@ forall [D : set Y], d'.-measurable%classic D -> X -> measure Y R
 
 kernel_kD__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kD__canonical__measure_function_Measure
-  [d d']%measure_display_scope [X Y R] k [D]%classical_set_scope 
+  [d d']%_measure_display_scope [X Y R] k [D]%_classical_set_scope 
   mD x
 kernel_kD__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -2473,7 +2489,7 @@ forall [D : set Y], d'.-measurable%classic D -> X -> measure Y R
 
 kernel_kD__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kD__canonical__measure_function_Measure
-  [d d']%measure_display_scope [X Y R] k [D]%classical_set_scope 
+  [d d']%_measure_display_scope [X Y R] k [D]%_classical_set_scope 
   mD x
 kernel_kD__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -2487,7 +2503,7 @@ forall [D : set Y], d'.-measurable%classic D -> X -> measure Y R
 
 kernel_kD__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kD__canonical__measure_function_Measure
-  [d d']%measure_display_scope [X Y R] k [D]%classical_set_scope 
+  [d d']%_measure_display_scope [X Y R] k [D]%_classical_set_scope 
   mD x
 kernel_kD__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -2501,7 +2517,7 @@ forall [D : set Y], d'.-measurable%classic D -> X -> measure Y R
 
 kernel_kD__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kD__canonical__measure_function_Measure
-  [d d']%measure_display_scope [X Y R] k [D]%classical_set_scope 
+  [d d']%_measure_display_scope [X Y R] k [D]%_classical_set_scope 
   mD x
 kernel_kD__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -2563,9 +2579,9 @@ measurable_fun (T:=X)
   ((fun (A : set (X * Y)) (x : X) =>
     (fun x0 : X => mrestr (T:=Y) (R:=R) (D:=D) (k x0) mD) x (xsection A x)) t)
 
-Arguments measurable_prod_subset_xsection_kernel [d d']%measure_display_scope
-  [X Y R k] [D]%classical_set_scope [mD] _%function_scope 
-  [t] _
+Arguments measurable_prod_subset_xsection_kernel
+  [d d']%_measure_display_scope [X Y R k] [D]%_classical_set_scope 
+  [mD] _%_function_scope [t] _
 measurable_prod_subset_xsection_kernel is opaque
 Expands to: Constant
             mathcomp.analysis.kernel.measurable_prod_subset_xsection_kernel
@@ -2646,8 +2662,8 @@ forall
   ([set: X]
    `&` (fun (A0 : set (X * Y)) (x : X) => k x (xsection A0 x)) A @^-1` Y0)%classic
 
-Arguments measurable_fun_xsection_finite_kernel [d d']%measure_display_scope
-  [X Y R] k [A]%classical_set_scope _ _ [Y] _
+Arguments measurable_fun_xsection_finite_kernel [d d']%_measure_display_scope
+  [X Y R] k [A]%_classical_set_scope _ _ [Y] _
 measurable_fun_xsection_finite_kernel is opaque
 Expands to: Constant
             mathcomp.analysis.kernel.measurable_fun_xsection_finite_kernel
@@ -2692,8 +2708,8 @@ measurable_fun (T:=X)
   [set: X] (fun x : X => (\int[l x]_y k (x, y))%E)
 
 measurable_fun_xsection_integral is not universe polymorphic
-Arguments measurable_fun_xsection_integral {d d'}%measure_display_scope
-  {X Y R} (k l)%function_scope k_ ndk_ (k_k _)%function_scope 
+Arguments measurable_fun_xsection_integral {d d'}%_measure_display_scope
+  {X Y R} (k l)%_function_scope k_ ndk_ (k_k _)%_function_scope 
   _ Y _
 measurable_fun_xsection_integral is opaque
 Expands to: Constant
@@ -2776,8 +2792,8 @@ measurable_fun (T:=X)
   [set: X] (fun x : X => (\int[l x]_y k (x, y))%E)
 
 measurable_fun_integral_finite_kernel is not universe polymorphic
-Arguments measurable_fun_integral_finite_kernel {d d'}%measure_display_scope
-  {X Y R} k%function_scope l k0%function_scope mk 
+Arguments measurable_fun_integral_finite_kernel {d d'}%_measure_display_scope
+  {X Y R} k%_function_scope l k0%_function_scope mk 
   _ Y _
 measurable_fun_integral_finite_kernel is opaque
 Expands to: Constant
@@ -2814,9 +2830,9 @@ measurable_fun (T:=X)
   [set: X] (fun x : X => (\int[l x]_y k (x, y))%E)
 
 measurable_fun_integral_sfinite_kernel is not universe polymorphic
-Arguments measurable_fun_integral_sfinite_kernel {d d'}%measure_display_scope
-  {X Y R} k%function_scope l k0%function_scope mk 
-  _ Y _
+Arguments measurable_fun_integral_sfinite_kernel
+  {d d'}%_measure_display_scope {X Y R} k%_function_scope 
+  l k0%_function_scope mk _ Y _
 measurable_fun_integral_sfinite_kernel is opaque
 Expands to: Constant
             mathcomp.analysis.kernel.measurable_fun_integral_sfinite_kernel
@@ -2855,7 +2871,8 @@ forall {d d' : measure_display} {X : measurableType d}
 measurable_fun (T:=X) (U:=Y) [set: X] f -> X -> measure Y R
 
 kdirac is not universe polymorphic
-Arguments kdirac {d d'}%measure_display_scope {X Y R} {f}%function_scope mf x
+Arguments kdirac {d d'}%_measure_display_scope {X Y R} 
+  {f}%_function_scope mf x
 kdirac is transparent
 Expands to: Constant mathcomp.analysis.kernel.kdirac
 Declared in library mathcomp.analysis.kernel, line 760, characters 11-17
@@ -2880,7 +2897,7 @@ measurable_fun (T:=X) (U:=Y) [set: X] f -> R.-ker X ~> Y
 
 kernel_kdirac__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kdirac__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y] R [f]%function_scope 
+  [d d']%_measure_display_scope [X Y] R [f]%_function_scope 
   mf
 kernel_kdirac__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -2893,7 +2910,7 @@ measurable_fun (T:=X) (U:=Y) [set: X] f -> R.-ker X ~> Y
 
 kernel_kdirac__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kdirac__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y] R [f]%function_scope 
+  [d d']%_measure_display_scope [X Y] R [f]%_function_scope 
   mf
 kernel_kdirac__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -2906,7 +2923,7 @@ measurable_fun (T:=X) (U:=Y) [set: X] f -> R.-ker X ~> Y
 
 kernel_kdirac__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kdirac__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y] R [f]%function_scope 
+  [d d']%_measure_display_scope [X Y] R [f]%_function_scope 
   mf
 kernel_kdirac__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -2919,7 +2936,7 @@ measurable_fun (T:=X) (U:=Y) [set: X] f -> R.-ker X ~> Y
 
 kernel_kdirac__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kdirac__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y] R [f]%function_scope 
+  [d d']%_measure_display_scope [X Y] R [f]%_function_scope 
   mf
 kernel_kdirac__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -2932,7 +2949,7 @@ measurable_fun (T:=X) (U:=Y) [set: X] f -> R.-ker X ~> Y
 
 kernel_kdirac__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kdirac__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y] R [f]%function_scope 
+  [d d']%_measure_display_scope [X Y] R [f]%_function_scope 
   mf
 kernel_kdirac__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -2954,7 +2971,7 @@ measurable_fun (T:=X) (U:=Y) [set: X] f -> R.-pker X ~> Y
 
 kernel_kdirac__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_kdirac__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y] R [f]%function_scope 
+  [d d']%_measure_display_scope [X Y] R [f]%_function_scope 
   mf
 kernel_kdirac__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
@@ -2967,7 +2984,7 @@ measurable_fun (T:=X) (U:=Y) [set: X] f -> R.-pker X ~> Y
 
 kernel_kdirac__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_kdirac__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y] R [f]%function_scope 
+  [d d']%_measure_display_scope [X Y] R [f]%_function_scope 
   mf
 kernel_kdirac__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
@@ -2980,7 +2997,7 @@ measurable_fun (T:=X) (U:=Y) [set: X] f -> R.-pker X ~> Y
 
 kernel_kdirac__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_kdirac__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y] R [f]%function_scope 
+  [d d']%_measure_display_scope [X Y] R [f]%_function_scope 
   mf
 kernel_kdirac__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
@@ -2993,7 +3010,7 @@ measurable_fun (T:=X) (U:=Y) [set: X] f -> R.-pker X ~> Y
 
 kernel_kdirac__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_kdirac__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y] R [f]%function_scope 
+  [d d']%_measure_display_scope [X Y] R [f]%_function_scope 
   mf
 kernel_kdirac__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
@@ -3006,7 +3023,7 @@ measurable_fun (T:=X) (U:=Y) [set: X] f -> R.-pker X ~> Y
 
 kernel_kdirac__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_kdirac__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y] R [f]%function_scope 
+  [d d']%_measure_display_scope [X Y] R [f]%_function_scope 
   mf
 kernel_kdirac__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
@@ -3028,8 +3045,8 @@ forall [d d' : measure_display] [X : measurableType d]
 measurable_fun (T:=X) (U:=pprobability Y R) [set: X] P -> X -> measure Y R
 
 kprobability is not universe polymorphic
-Arguments kprobability [d d']%measure_display_scope 
-  [X Y R] [P]%function_scope mP _
+Arguments kprobability [d d']%_measure_display_scope 
+  [X Y R] [P]%_function_scope mP _
 kprobability is transparent
 Expands to: Constant mathcomp.analysis.kernel.kprobability
 Declared in library mathcomp.analysis.kernel, line 788, characters 11-23
@@ -3059,7 +3076,7 @@ measurable_fun (T:=X) (U:=pprobability Y R) [set: X] P -> R.-ker X ~> Y
 
 kernel_kprobability__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kprobability__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y R] [P]%function_scope 
+  [d d']%_measure_display_scope [X Y R] [P]%_function_scope 
   mP
 kernel_kprobability__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -3072,7 +3089,7 @@ measurable_fun (T:=X) (U:=pprobability Y R) [set: X] P -> R.-ker X ~> Y
 
 kernel_kprobability__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kprobability__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y R] [P]%function_scope 
+  [d d']%_measure_display_scope [X Y R] [P]%_function_scope 
   mP
 kernel_kprobability__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -3085,7 +3102,7 @@ measurable_fun (T:=X) (U:=pprobability Y R) [set: X] P -> R.-ker X ~> Y
 
 kernel_kprobability__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kprobability__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y R] [P]%function_scope 
+  [d d']%_measure_display_scope [X Y R] [P]%_function_scope 
   mP
 kernel_kprobability__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -3098,7 +3115,7 @@ measurable_fun (T:=X) (U:=pprobability Y R) [set: X] P -> R.-ker X ~> Y
 
 kernel_kprobability__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kprobability__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y R] [P]%function_scope 
+  [d d']%_measure_display_scope [X Y R] [P]%_function_scope 
   mP
 kernel_kprobability__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -3112,7 +3129,7 @@ measurable_fun (T:=X) (U:=pprobability Y R) [set: X] P -> R.-ker X ~> Y
 
 kernel_kprobability__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kprobability__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y R] [P]%function_scope 
+  [d d']%_measure_display_scope [X Y R] [P]%_function_scope 
   mP
 kernel_kprobability__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -3133,7 +3150,7 @@ measurable_fun (T:=X) (U:=pprobability Y R) [set: X] P -> R.-pker X ~> Y
 
 kernel_kprobability__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_kprobability__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] [P]%function_scope 
+  [d d']%_measure_display_scope [X Y R] [P]%_function_scope 
   mP
 kernel_kprobability__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
@@ -3146,7 +3163,7 @@ measurable_fun (T:=X) (U:=pprobability Y R) [set: X] P -> R.-pker X ~> Y
 
 kernel_kprobability__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_kprobability__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] [P]%function_scope 
+  [d d']%_measure_display_scope [X Y R] [P]%_function_scope 
   mP
 kernel_kprobability__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
@@ -3159,7 +3176,7 @@ measurable_fun (T:=X) (U:=pprobability Y R) [set: X] P -> R.-pker X ~> Y
 
 kernel_kprobability__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_kprobability__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] [P]%function_scope 
+  [d d']%_measure_display_scope [X Y R] [P]%_function_scope 
   mP
 kernel_kprobability__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
@@ -3172,7 +3189,7 @@ measurable_fun (T:=X) (U:=pprobability Y R) [set: X] P -> R.-pker X ~> Y
 
 kernel_kprobability__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_kprobability__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] [P]%function_scope 
+  [d d']%_measure_display_scope [X Y R] [P]%_function_scope 
   mP
 kernel_kprobability__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
@@ -3186,7 +3203,7 @@ measurable_fun (T:=X) (U:=pprobability Y R) [set: X] P -> R.-pker X ~> Y
 
 kernel_kprobability__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_kprobability__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] [P]%function_scope 
+  [d d']%_measure_display_scope [X Y R] [P]%_function_scope 
   mP
 kernel_kprobability__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
@@ -3206,7 +3223,7 @@ forall [d d' : measure_display] [X : measurableType d]
 R.-ker X ~> Y -> R.-ker X ~> Y -> X -> measure Y R
 
 kadd is not universe polymorphic
-Arguments kadd [d d']%measure_display_scope [X Y R] k1 k2 x
+Arguments kadd [d d']%_measure_display_scope [X Y R] k1 k2 x
 kadd is transparent
 Expands to: Constant mathcomp.analysis.kernel.kadd
 Declared in library mathcomp.analysis.kernel, line 820, characters 11-15
@@ -3229,7 +3246,7 @@ forall [d d' : measure_display] [X : measurableType d]
 R.-ker X ~> Y -> R.-ker X ~> Y -> R.-ker X ~> Y
 
 kernel_kadd__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_kadd__canonical__kernel_Kernel [d d']%measure_display_scope
+Arguments kernel_kadd__canonical__kernel_Kernel [d d']%_measure_display_scope
   [X Y R] k1 k2
 kernel_kadd__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -3241,7 +3258,7 @@ forall [d d' : measure_display] [X : measurableType d]
 R.-ker X ~> Y -> R.-ker X ~> Y -> R.-ker X ~> Y
 
 kernel_kadd__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_kadd__canonical__kernel_Kernel [d d']%measure_display_scope
+Arguments kernel_kadd__canonical__kernel_Kernel [d d']%_measure_display_scope
   [X Y R] k1 k2
 kernel_kadd__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -3253,7 +3270,7 @@ forall [d d' : measure_display] [X : measurableType d]
 R.-ker X ~> Y -> R.-ker X ~> Y -> R.-ker X ~> Y
 
 kernel_kadd__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_kadd__canonical__kernel_Kernel [d d']%measure_display_scope
+Arguments kernel_kadd__canonical__kernel_Kernel [d d']%_measure_display_scope
   [X Y R] k1 k2
 kernel_kadd__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -3265,7 +3282,7 @@ forall [d d' : measure_display] [X : measurableType d]
 R.-ker X ~> Y -> R.-ker X ~> Y -> R.-ker X ~> Y
 
 kernel_kadd__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_kadd__canonical__kernel_Kernel [d d']%measure_display_scope
+Arguments kernel_kadd__canonical__kernel_Kernel [d d']%_measure_display_scope
   [X Y R] k1 k2
 kernel_kadd__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -3278,7 +3295,7 @@ forall [d d' : measure_display] [X : measurableType d]
 R.-ker X ~> Y -> R.-ker X ~> Y -> R.-ker X ~> Y
 
 kernel_kadd__canonical__kernel_Kernel is not universe polymorphic
-Arguments kernel_kadd__canonical__kernel_Kernel [d d']%measure_display_scope
+Arguments kernel_kadd__canonical__kernel_Kernel [d d']%_measure_display_scope
   [X Y R] k1 k2
 kernel_kadd__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -3319,7 +3336,7 @@ R.-sfker X ~> Y -> R.-sfker X ~> Y -> R.-sfker X ~> Y
 
 kernel_kadd__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments kernel_kadd__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] k1 k2
+  [d d']%_measure_display_scope [X Y R] k1 k2
 kernel_kadd__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kadd__canonical__kernel_SFiniteKernel
@@ -3331,7 +3348,7 @@ R.-sfker X ~> Y -> R.-sfker X ~> Y -> R.-sfker X ~> Y
 
 kernel_kadd__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments kernel_kadd__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] k1 k2
+  [d d']%_measure_display_scope [X Y R] k1 k2
 kernel_kadd__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kadd__canonical__kernel_SFiniteKernel
@@ -3343,7 +3360,7 @@ R.-sfker X ~> Y -> R.-sfker X ~> Y -> R.-sfker X ~> Y
 
 kernel_kadd__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments kernel_kadd__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] k1 k2
+  [d d']%_measure_display_scope [X Y R] k1 k2
 kernel_kadd__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kadd__canonical__kernel_SFiniteKernel
@@ -3355,7 +3372,7 @@ R.-sfker X ~> Y -> R.-sfker X ~> Y -> R.-sfker X ~> Y
 
 kernel_kadd__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments kernel_kadd__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] k1 k2
+  [d d']%_measure_display_scope [X Y R] k1 k2
 kernel_kadd__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kadd__canonical__kernel_SFiniteKernel
@@ -3367,7 +3384,7 @@ R.-sfker X ~> Y -> R.-sfker X ~> Y -> R.-sfker X ~> Y
 
 kernel_kadd__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments kernel_kadd__canonical__kernel_SFiniteKernel
-  [d d']%measure_display_scope [X Y R] k1 k2
+  [d d']%_measure_display_scope [X Y R] k1 k2
 kernel_kadd__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kadd__canonical__kernel_SFiniteKernel
@@ -3398,7 +3415,7 @@ R.-fker X ~> Y -> R.-fker X ~> Y -> R.-fker X ~> Y
 
 kernel_kadd__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kadd__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] k1 k2
+  [d d']%_measure_display_scope [X Y R] k1 k2
 kernel_kadd__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kadd__canonical__kernel_FiniteKernel
@@ -3410,7 +3427,7 @@ R.-fker X ~> Y -> R.-fker X ~> Y -> R.-fker X ~> Y
 
 kernel_kadd__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kadd__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] k1 k2
+  [d d']%_measure_display_scope [X Y R] k1 k2
 kernel_kadd__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kadd__canonical__kernel_FiniteKernel
@@ -3422,7 +3439,7 @@ R.-fker X ~> Y -> R.-fker X ~> Y -> R.-fker X ~> Y
 
 kernel_kadd__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kadd__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] k1 k2
+  [d d']%_measure_display_scope [X Y R] k1 k2
 kernel_kadd__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kadd__canonical__kernel_FiniteKernel
@@ -3434,7 +3451,7 @@ R.-fker X ~> Y -> R.-fker X ~> Y -> R.-fker X ~> Y
 
 kernel_kadd__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kadd__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] k1 k2
+  [d d']%_measure_display_scope [X Y R] k1 k2
 kernel_kadd__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kadd__canonical__kernel_FiniteKernel
@@ -3446,7 +3463,7 @@ R.-fker X ~> Y -> R.-fker X ~> Y -> R.-fker X ~> Y
 
 kernel_kadd__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kadd__canonical__kernel_FiniteKernel
-  [d d']%measure_display_scope [X Y R] k1 k2
+  [d d']%_measure_display_scope [X Y R] k1 k2
 kernel_kadd__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kadd__canonical__kernel_FiniteKernel
@@ -3466,7 +3483,7 @@ forall [d d' : measure_display] [X : measurableType d]
 R.-ker X ~> Y -> probability Y R -> X -> measure Y R
 
 knormalize is not universe polymorphic
-Arguments knormalize [d d']%measure_display_scope [X Y R] f P _
+Arguments knormalize [d d']%_measure_display_scope [X Y R] f P _
 knormalize is transparent
 Expands to: Constant mathcomp.analysis.kernel.knormalize
 Declared in library mathcomp.analysis.kernel, line 884, characters 11-21
@@ -3512,7 +3529,7 @@ R.-ker X ~> Y -> probability Y R -> R.-ker X ~> Y
 
 kernel_knormalize__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_knormalize__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y R] f P
+  [d d']%_measure_display_scope [X Y R] f P
 kernel_knormalize__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_knormalize__canonical__kernel_Kernel
@@ -3524,7 +3541,7 @@ R.-ker X ~> Y -> probability Y R -> R.-ker X ~> Y
 
 kernel_knormalize__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_knormalize__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y R] f P
+  [d d']%_measure_display_scope [X Y R] f P
 kernel_knormalize__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_knormalize__canonical__kernel_Kernel
@@ -3536,7 +3553,7 @@ R.-ker X ~> Y -> probability Y R -> R.-ker X ~> Y
 
 kernel_knormalize__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_knormalize__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y R] f P
+  [d d']%_measure_display_scope [X Y R] f P
 kernel_knormalize__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_knormalize__canonical__kernel_Kernel
@@ -3548,7 +3565,7 @@ R.-ker X ~> Y -> probability Y R -> R.-ker X ~> Y
 
 kernel_knormalize__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_knormalize__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y R] f P
+  [d d']%_measure_display_scope [X Y R] f P
 kernel_knormalize__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_knormalize__canonical__kernel_Kernel
@@ -3560,7 +3577,7 @@ R.-ker X ~> Y -> probability Y R -> R.-ker X ~> Y
 
 kernel_knormalize__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_knormalize__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y R] f P
+  [d d']%_measure_display_scope [X Y R] f P
 kernel_knormalize__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_knormalize__canonical__kernel_Kernel
@@ -3572,7 +3589,7 @@ R.-ker X ~> Y -> probability Y R -> R.-ker X ~> Y
 
 kernel_knormalize__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_knormalize__canonical__kernel_Kernel
-  [d d']%measure_display_scope [X Y R] f P
+  [d d']%_measure_display_scope [X Y R] f P
 kernel_knormalize__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_knormalize__canonical__kernel_Kernel
@@ -3593,7 +3610,7 @@ R.-ker X ~> Y -> probability Y R -> R.-pker X ~> Y
 
 kernel_knormalize__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_knormalize__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] f P
+  [d d']%_measure_display_scope [X Y R] f P
 kernel_knormalize__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_knormalize__canonical__kernel_ProbabilityKernel
@@ -3605,7 +3622,7 @@ R.-ker X ~> Y -> probability Y R -> R.-pker X ~> Y
 
 kernel_knormalize__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_knormalize__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] f P
+  [d d']%_measure_display_scope [X Y R] f P
 kernel_knormalize__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_knormalize__canonical__kernel_ProbabilityKernel
@@ -3617,7 +3634,7 @@ R.-ker X ~> Y -> probability Y R -> R.-pker X ~> Y
 
 kernel_knormalize__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_knormalize__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] f P
+  [d d']%_measure_display_scope [X Y R] f P
 kernel_knormalize__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_knormalize__canonical__kernel_ProbabilityKernel
@@ -3629,7 +3646,7 @@ R.-ker X ~> Y -> probability Y R -> R.-pker X ~> Y
 
 kernel_knormalize__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_knormalize__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] f P
+  [d d']%_measure_display_scope [X Y R] f P
 kernel_knormalize__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_knormalize__canonical__kernel_ProbabilityKernel
@@ -3641,7 +3658,7 @@ R.-ker X ~> Y -> probability Y R -> R.-pker X ~> Y
 
 kernel_knormalize__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_knormalize__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] f P
+  [d d']%_measure_display_scope [X Y R] f P
 kernel_knormalize__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_knormalize__canonical__kernel_ProbabilityKernel
@@ -3653,7 +3670,7 @@ R.-ker X ~> Y -> probability Y R -> R.-pker X ~> Y
 
 kernel_knormalize__canonical__kernel_ProbabilityKernel is not universe polymorphic
 Arguments kernel_knormalize__canonical__kernel_ProbabilityKernel
-  [d d']%measure_display_scope [X Y R] f P
+  [d d']%_measure_display_scope [X Y R] f P
 kernel_knormalize__canonical__kernel_ProbabilityKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_knormalize__canonical__kernel_ProbabilityKernel
@@ -3686,7 +3703,7 @@ forall [Y0 : set (pprobability Y R)],
   ([set: X]
    `&` (fun x : X => mnormalize (k x) point : pprobability Y R) @^-1` Y0)%classic
 
-Arguments measurable_fun_mnormalize [d d']%measure_display_scope 
+Arguments measurable_fun_mnormalize [d d']%_measure_display_scope 
   [X Y R] k _ [Y] _
 measurable_fun_mnormalize is opaque
 Expands to: Constant mathcomp.analysis.kernel.measurable_fun_mnormalize
@@ -3739,8 +3756,8 @@ GRing.BaseAddMagma.sort
   constructive_ereal_extended__canonical__Algebra_BaseAddMagma
 
 kcomp is not universe polymorphic
-Arguments kcomp [d1 d2 d3]%measure_display_scope [X Y Z R]
-  (l k)%function_scope x U%classical_set_scope
+Arguments kcomp [d1 d2 d3]%_measure_display_scope 
+  [X Y Z R] (l k)%_function_scope x U%_classical_set_scope
 kcomp is transparent
 Expands to: Constant mathcomp.analysis.kernel.kcomp
 Declared in library mathcomp.analysis.kernel, line 964, characters 11-16
@@ -3788,7 +3805,8 @@ R.-ker X ~> Y -> R.-ker X * Y ~> Z -> X -> measure Z R
 
 kernel_kcomp__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kcomp__canonical__measure_function_Measure
-  [d1 d2 d3]%measure_display_scope [X Y Z R] l k x
+  [d1 d2 d3]%_measure_display_scope [X Y Z R] l k 
+  x
 kernel_kcomp__canonical__measure_function_Measure is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kcomp__canonical__measure_function_Measure
@@ -3801,7 +3819,8 @@ R.-ker X ~> Y -> R.-ker X * Y ~> Z -> X -> measure Z R
 
 kernel_kcomp__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kcomp__canonical__measure_function_Measure
-  [d1 d2 d3]%measure_display_scope [X Y Z R] l k x
+  [d1 d2 d3]%_measure_display_scope [X Y Z R] l k 
+  x
 kernel_kcomp__canonical__measure_function_Measure is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kcomp__canonical__measure_function_Measure
@@ -3814,7 +3833,8 @@ R.-ker X ~> Y -> R.-ker X * Y ~> Z -> X -> measure Z R
 
 kernel_kcomp__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kcomp__canonical__measure_function_Measure
-  [d1 d2 d3]%measure_display_scope [X Y Z R] l k x
+  [d1 d2 d3]%_measure_display_scope [X Y Z R] l k 
+  x
 kernel_kcomp__canonical__measure_function_Measure is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kcomp__canonical__measure_function_Measure
@@ -3827,7 +3847,8 @@ R.-ker X ~> Y -> R.-ker X * Y ~> Z -> X -> measure Z R
 
 kernel_kcomp__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kcomp__canonical__measure_function_Measure
-  [d1 d2 d3]%measure_display_scope [X Y Z R] l k x
+  [d1 d2 d3]%_measure_display_scope [X Y Z R] l k 
+  x
 kernel_kcomp__canonical__measure_function_Measure is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kcomp__canonical__measure_function_Measure
@@ -3840,7 +3861,8 @@ R.-ker X ~> Y -> R.-ker X * Y ~> Z -> X -> measure Z R
 
 kernel_kcomp__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kcomp__canonical__measure_function_Measure
-  [d1 d2 d3]%measure_display_scope [X Y Z R] l k x
+  [d1 d2 d3]%_measure_display_scope [X Y Z R] l k 
+  x
 kernel_kcomp__canonical__measure_function_Measure is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kcomp__canonical__measure_function_Measure
@@ -3853,7 +3875,8 @@ R.-ker X ~> Y -> R.-ker X * Y ~> Z -> X -> measure Z R
 
 kernel_kcomp__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kcomp__canonical__measure_function_Measure
-  [d1 d2 d3]%measure_display_scope [X Y Z R] l k x
+  [d1 d2 d3]%_measure_display_scope [X Y Z R] l k 
+  x
 kernel_kcomp__canonical__measure_function_Measure is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_kcomp__canonical__measure_function_Measure
@@ -3868,7 +3891,7 @@ forall [d1 d2 d3 : measure_display] [X : measurableType d1]
 R.-ker X ~> Y -> R.-ker X * Y ~> Z -> X -> measure Z R
 
 mkcomp is not universe polymorphic
-Arguments mkcomp [d1 d2 d3]%measure_display_scope [X Y Z R] l k _
+Arguments mkcomp [d1 d2 d3]%_measure_display_scope [X Y Z R] l k _
 mkcomp is transparent
 Expands to: Constant mathcomp.analysis.kernel.mkcomp
 Declared in library mathcomp.analysis.kernel, line 996, characters 11-17
@@ -3918,7 +3941,7 @@ forall
  measurable) ([set: X] `&` (fun x : X => (l \; k)%E x U) @^-1` Y0)%classic
 
 Arguments KCOMP_FINITE_KERNEL.measurable_fun_kcomp_finite
-  [d d' d3]%measure_display_scope [X Y Z R] l k [U]%classical_set_scope 
+  [d d' d3]%_measure_display_scope [X Y Z R] l k [U]%_classical_set_scope 
   _ _ [Y] _
 KCOMP_FINITE_KERNEL.measurable_fun_kcomp_finite is opaque
 Expands to: Constant
@@ -3941,7 +3964,7 @@ R.-fker X ~> Y -> R.-ker X * Y ~> Z -> R.-ker X ~> Z
 
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is not universe polymorphic
 Arguments KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
@@ -3954,7 +3977,7 @@ R.-fker X ~> Y -> R.-ker X * Y ~> Z -> R.-ker X ~> Z
 
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is not universe polymorphic
 Arguments KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
@@ -3967,7 +3990,7 @@ R.-fker X ~> Y -> R.-ker X * Y ~> Z -> R.-ker X ~> Z
 
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is not universe polymorphic
 Arguments KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
@@ -3980,7 +4003,7 @@ R.-fker X ~> Y -> R.-ker X * Y ~> Z -> R.-ker X ~> Z
 
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is not universe polymorphic
 Arguments KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
@@ -4017,7 +4040,7 @@ R.-fker X ~> Y -> R.-fker X * Y ~> Z -> R.-fker X ~> Z
 
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel
@@ -4030,7 +4053,7 @@ R.-fker X ~> Y -> R.-fker X * Y ~> Z -> R.-fker X ~> Z
 
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel
@@ -4043,7 +4066,7 @@ R.-fker X ~> Y -> R.-fker X * Y ~> Z -> R.-fker X ~> Z
 
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel
@@ -4056,7 +4079,7 @@ R.-fker X ~> Y -> R.-fker X * Y ~> Z -> R.-fker X ~> Z
 
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_FINITE_KERNEL.kernel_mkcomp__canonical__kernel_FiniteKernel
@@ -4084,7 +4107,7 @@ exists k_ : (R.-fker X ~> Z) ^nat,
   (l \; k)%E x U = kseries (X:=X) (Y:=Z) (R:=R) (fun x0 : nat => k_ x0) x U
 
 mkcomp_sfinite is not universe polymorphic
-Arguments mkcomp_sfinite [d d' d3]%measure_display_scope [X Y Z R] l k
+Arguments mkcomp_sfinite [d d' d3]%_measure_display_scope [X Y Z R] l k
 mkcomp_sfinite is opaque
 Expands to: Constant mathcomp.analysis.kernel.mkcomp_sfinite
 Declared in library mathcomp.analysis.kernel, line 1053, characters 6-20
@@ -4149,8 +4172,8 @@ forall
       class) in
  measurable) ([set: X] `&` (fun x : X => (l \; k)%E x U) @^-1` Y0)%classic
 
-Arguments measurable_fun_mkcomp_sfinite [d d' d3]%measure_display_scope
-  [X Y Z R] l k [U]%classical_set_scope _ _ [Y] _
+Arguments measurable_fun_mkcomp_sfinite [d d' d3]%_measure_display_scope
+  [X Y Z R] l k [U]%_classical_set_scope _ _ [Y] _
 measurable_fun_mkcomp_sfinite is opaque
 Expands to: Constant mathcomp.analysis.kernel.measurable_fun_mkcomp_sfinite
 Declared in library mathcomp.analysis.kernel, line 1080, characters 6-35
@@ -4179,7 +4202,7 @@ R.-sfker X ~> Y -> R.-sfker X * Y ~> Z -> R.-ker X ~> Z
 
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is not universe polymorphic
 Arguments KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
@@ -4192,7 +4215,7 @@ R.-sfker X ~> Y -> R.-sfker X * Y ~> Z -> R.-ker X ~> Z
 
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is not universe polymorphic
 Arguments KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
@@ -4205,7 +4228,7 @@ R.-sfker X ~> Y -> R.-sfker X * Y ~> Z -> R.-ker X ~> Z
 
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is not universe polymorphic
 Arguments KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
@@ -4218,7 +4241,7 @@ R.-sfker X ~> Y -> R.-sfker X * Y ~> Z -> R.-ker X ~> Z
 
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is not universe polymorphic
 Arguments KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_Kernel
@@ -4234,7 +4257,7 @@ R.-sfker X ~> Y -> R.-sfker X * Y ~> Z -> R.-sfker X ~> Z
 
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel
@@ -4248,7 +4271,7 @@ R.-sfker X ~> Y -> R.-sfker X * Y ~> Z -> R.-sfker X ~> Z
 
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel
@@ -4261,7 +4284,7 @@ R.-sfker X ~> Y -> R.-sfker X * Y ~> Z -> R.-sfker X ~> Z
 
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel
@@ -4274,7 +4297,7 @@ R.-sfker X ~> Y -> R.-sfker X * Y ~> Z -> R.-sfker X ~> Z
 
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel
@@ -4287,7 +4310,7 @@ R.-sfker X ~> Y -> R.-sfker X * Y ~> Z -> R.-sfker X ~> Z
 
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel is not universe polymorphic
 Arguments KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel
-  [d d' d3]%measure_display_scope [X Y Z R] l k
+  [d d' d3]%_measure_display_scope [X Y Z R] l k
 KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.KCOMP_SFINITE_KERNEL.kernel_mkcomp__canonical__kernel_SFiniteKernel
@@ -4322,7 +4345,7 @@ forall [d d' : measure_display] (X : measurableType d)
 
 kernel_k_2__canonical__numfun_NonNegFun is not universe polymorphic
 Arguments kernel_k_2__canonical__numfun_NonNegFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__numfun_NonNegFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__numfun_NonNegFun
@@ -4334,7 +4357,7 @@ forall [d d' : measure_display] (X : measurableType d)
 
 kernel_k_2__canonical__numfun_NonNegFun is not universe polymorphic
 Arguments kernel_k_2__canonical__numfun_NonNegFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__numfun_NonNegFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__numfun_NonNegFun
@@ -4346,7 +4369,7 @@ forall [d d' : measure_display] (X : measurableType d)
 
 kernel_k_2__canonical__numfun_NonNegFun is not universe polymorphic
 Arguments kernel_k_2__canonical__numfun_NonNegFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__numfun_NonNegFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__numfun_NonNegFun
@@ -4358,7 +4381,7 @@ forall [d d' : measure_display] (X : measurableType d)
 
 kernel_k_2__canonical__numfun_NonNegFun is not universe polymorphic
 Arguments kernel_k_2__canonical__numfun_NonNegFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__numfun_NonNegFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__numfun_NonNegFun
@@ -4370,7 +4393,7 @@ forall [d d' : measure_display] (X : measurableType d)
 
 kernel_k_2__canonical__numfun_NonNegFun is not universe polymorphic
 Arguments kernel_k_2__canonical__numfun_NonNegFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__numfun_NonNegFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__numfun_NonNegFun
@@ -4382,7 +4405,7 @@ forall [d d' : measure_display] (X : measurableType d)
 
 kernel_k_2__canonical__numfun_NonNegFun is not universe polymorphic
 Arguments kernel_k_2__canonical__numfun_NonNegFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__numfun_NonNegFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__numfun_NonNegFun
@@ -4405,7 +4428,7 @@ Real_sort__canonical__measurable_structure_SigmaRing R}
 
 kernel_k_2__canonical__measurable_function_MeasurableFun is not universe polymorphic
 Arguments kernel_k_2__canonical__measurable_function_MeasurableFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__measurable_function_MeasurableFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__measurable_function_MeasurableFun
@@ -4420,7 +4443,7 @@ Real_sort__canonical__measurable_structure_SigmaRing R}
 
 kernel_k_2__canonical__measurable_function_MeasurableFun is not universe polymorphic
 Arguments kernel_k_2__canonical__measurable_function_MeasurableFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__measurable_function_MeasurableFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__measurable_function_MeasurableFun
@@ -4435,7 +4458,7 @@ Real_sort__canonical__measurable_structure_SigmaRing R}
 
 kernel_k_2__canonical__measurable_function_MeasurableFun is not universe polymorphic
 Arguments kernel_k_2__canonical__measurable_function_MeasurableFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__measurable_function_MeasurableFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__measurable_function_MeasurableFun
@@ -4450,7 +4473,7 @@ Real_sort__canonical__measurable_structure_SigmaRing R}
 
 kernel_k_2__canonical__measurable_function_MeasurableFun is not universe polymorphic
 Arguments kernel_k_2__canonical__measurable_function_MeasurableFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__measurable_function_MeasurableFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__measurable_function_MeasurableFun
@@ -4465,7 +4488,7 @@ Real_sort__canonical__measurable_structure_SigmaRing R}
 
 kernel_k_2__canonical__measurable_function_MeasurableFun is not universe polymorphic
 Arguments kernel_k_2__canonical__measurable_function_MeasurableFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__measurable_function_MeasurableFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__measurable_function_MeasurableFun
@@ -4480,7 +4503,7 @@ Real_sort__canonical__measurable_structure_SigmaRing R}
 
 kernel_k_2__canonical__measurable_function_MeasurableFun is not universe polymorphic
 Arguments kernel_k_2__canonical__measurable_function_MeasurableFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__measurable_function_MeasurableFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__measurable_function_MeasurableFun
@@ -4505,7 +4528,7 @@ nat ->
 
 kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun is not universe polymorphic
 Arguments kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun
@@ -4519,7 +4542,7 @@ nat ->
 
 kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun is not universe polymorphic
 Arguments kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun
@@ -4533,7 +4556,7 @@ nat ->
 
 kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun is not universe polymorphic
 Arguments kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun
@@ -4547,7 +4570,7 @@ nat ->
 
 kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun is not universe polymorphic
 Arguments kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun
@@ -4561,7 +4584,7 @@ nat ->
 
 kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun is not universe polymorphic
 Arguments kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun
@@ -4575,7 +4598,7 @@ nat ->
 
 kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun is not universe polymorphic
 Arguments kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun
-  [d d']%measure_display_scope X [Y R] k_ n%nat_scope
+  [d d']%_measure_display_scope X [Y R] k_ n%_nat_scope
 kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun is transparent
 Expands to: Constant
             mathcomp.analysis.kernel.kernel_k_2__canonical__HBNNSimple_NonNegSimpleFun
@@ -4631,9 +4654,9 @@ forall
  measurable)
   ([set: X] `&` (fun x : X => (\int[l x]_z k z)%E) @^-1` Y0)%classic
 
-Arguments measurable_fun_preimage_integral [d d']%measure_display_scope
-  [X Y R] [k]%function_scope [k_] ndk_ k_k%function_scope 
-  [l]%function_scope _%function_scope _ [Y] _
+Arguments measurable_fun_preimage_integral [d d']%_measure_display_scope
+  [X Y R] [k]%_function_scope [k_] ndk_ k_k%_function_scope
+  [l]%_function_scope _%_function_scope _ [Y] _
 measurable_fun_preimage_integral is opaque
 Expands to: Constant
             mathcomp.analysis.kernel.measurable_fun_preimage_integral
@@ -4712,9 +4735,9 @@ forall
  measurable)
   ([set: X] `&` (fun x : X => (\int[l x]_y k y)%E) @^-1` Y0)%classic
 
-Arguments measurable_fun_integral_kernel [d d']%measure_display_scope 
-  [X Y R] [l]%function_scope ml%function_scope [k]%function_scope
-  k0%function_scope mk _ [Y] _
+Arguments measurable_fun_integral_kernel [d d']%_measure_display_scope
+  [X Y R] [l]%_function_scope ml%_function_scope [k]%_function_scope
+  k0%_function_scope mk _ [Y] _
 measurable_fun_integral_kernel is opaque
 Expands to: Constant mathcomp.analysis.kernel.measurable_fun_integral_kernel
 Declared in library mathcomp.analysis.kernel, line 1155, characters 6-36
@@ -4808,8 +4831,8 @@ measurable_fun (T:=Z)
 (\int[l x]_y \int[k (x, y)]_z f z)%E
 
 integral_kcomp is not universe polymorphic
-Arguments integral_kcomp [d d2 d3]%measure_display_scope 
-  [X Y Z R] l k x [f]%function_scope _%function_scope 
+Arguments integral_kcomp [d d2 d3]%_measure_display_scope 
+  [X Y Z R] l k x [f]%_function_scope _%_function_scope 
   _
 integral_kcomp is opaque
 Expands to: Constant mathcomp.analysis.kernel.integral_kcomp
@@ -4861,8 +4884,8 @@ forall {d1 d2 : measure_display} {T1 : measurableType d1}
 (T1 -> measure T2 R) -> (T1 * T2 -> \bar R) -> T1 -> \bar R
 
 kfcomp is not universe polymorphic
-Arguments kfcomp {d1 d2}%measure_display_scope {T1 T2 R} 
-  (k f)%function_scope _
+Arguments kfcomp {d1 d2}%_measure_display_scope {T1 T2 R}
+  (k f)%_function_scope _
 kfcomp is transparent
 Expands to: Constant mathcomp.analysis.kernel.kfcomp
 Declared in library mathcomp.analysis.kernel, line 1267, characters 11-17
@@ -4876,7 +4899,7 @@ forall {d1 d2 : measure_display} {T1 : measurableType d1}
 kfcomp k (EFin \o cst 1%R) = (fun x : T1 => k x [set: T2]%classic)
 
 kfcompk1 is not universe polymorphic
-Arguments kfcompk1 {d1 d2}%measure_display_scope {T1 T2 R} k%function_scope
+Arguments kfcompk1 {d1 d2}%_measure_display_scope {T1 T2 R} k%_function_scope
 kfcompk1 is opaque
 Expands to: Constant mathcomp.analysis.kernel.kfcompk1
 Declared in library mathcomp.analysis.kernel, line 1273, characters 6-14
@@ -4897,8 +4920,8 @@ forall {d1 d2 : measure_display} {T1 : measurableType d1}
 kfcomp k (EFin \o (\1_A)%R) = (fun x : T1 => k x (xsection A x))
 
 kfcompkindic is not universe polymorphic
-Arguments kfcompkindic {d1 d2}%measure_display_scope 
-  {T1 T2 R} k%function_scope [A]%classical_set_scope 
+Arguments kfcompkindic {d1 d2}%_measure_display_scope 
+  {T1 T2 R} k%_function_scope [A]%_classical_set_scope 
   _
 kfcompkindic is opaque
 Expands to: Constant mathcomp.analysis.kernel.kfcompkindic
@@ -5057,8 +5080,8 @@ forall
       class) in
  measurable) ([set: T1] `&` kfcomp k f @^-1` Y)%classic
 
-Arguments measurable_kfcomp [d1 d2]%measure_display_scope 
-  [T1 T2 R] k [f]%function_scope _ _%function_scope 
+Arguments measurable_kfcomp [d1 d2]%_measure_display_scope 
+  [T1 T2 R] k [f]%_function_scope _ _%_function_scope 
   _ [Y] _
 measurable_kfcomp is opaque
 Expands to: Constant mathcomp.analysis.kernel.measurable_kfcomp
@@ -5152,8 +5175,8 @@ GRing.BaseAddMagma.sort
   constructive_ereal_extended__canonical__Algebra_BaseAddMagma
 
 kproduct is not universe polymorphic
-Arguments kproduct [d0 d1 d2]%measure_display_scope 
-  [T0 T1 T2] {R} (k1 k2)%function_scope x A%classical_set_scope
+Arguments kproduct [d0 d1 d2]%_measure_display_scope 
+  [T0 T1 T2] {R} (k1 k2)%_function_scope x A%_classical_set_scope
 kproduct is transparent
 Expands to: Constant mathcomp.analysis.kernel.kproduct
 Declared in library mathcomp.analysis.kernel, line 1454, characters 11-19
@@ -5224,8 +5247,8 @@ forall [d0 d1 d2 : measure_display] [T0 : measurableType d0]
 (T0 -> measure T1 R) -> (T1 -> measure T2 R) -> T0 -> set (T1 * T2) -> \bar R
 
 kproduct_snd is not universe polymorphic
-Arguments kproduct_snd [d0 d1 d2]%measure_display_scope 
-  [T0 T1 T2] {R} (k1 k2)%function_scope _ _%classical_set_scope
+Arguments kproduct_snd [d0 d1 d2]%_measure_display_scope 
+  [T0 T1 T2] {R} (k1 k2)%_function_scope _ _%_classical_set_scope
 kproduct_snd is transparent
 Expands to: Constant mathcomp.analysis.kernel.kproduct_snd
 Declared in library mathcomp.analysis.kernel, line 1505, characters 11-23
@@ -5271,9 +5294,9 @@ forall
  measurable)
   ([set: T0] `&` (kproduct (T0:=T0) (T1:=T1) (T2:=T2) k1 k2)^~ A @^-1` Y)%classic
 
-Arguments measurable_kproduct [d0 d1 d2]%measure_display_scope 
-  [T0 T1 T2] {R} k1 k2 [A]%classical_set_scope _ _ 
-  [Y] _
+Arguments measurable_kproduct [d0 d1 d2]%_measure_display_scope 
+  [T0 T1 T2] {R} k1 k2 [A]%_classical_set_scope _ 
+  _ [Y] _
 measurable_kproduct is opaque
 Expands to: Constant mathcomp.analysis.kernel.measurable_kproduct
 Declared in library mathcomp.analysis.kernel, line 1511, characters 8-27
@@ -5325,7 +5348,7 @@ exists2 i : nat,
              kproduct (T0:=T0) (T1:=T1) (T2:=T2) k1 k2 x (F i0))%R) @^-1`
         t)%classic
 
-Arguments semi_sigma_additive_kproduct [d0 d1 d2]%measure_display_scope
+Arguments semi_sigma_additive_kproduct [d0 d1 d2]%_measure_display_scope
   [T0 T1 T2] {R} [k1 k2 x F] _ _ _ [t] _
 semi_sigma_additive_kproduct is opaque
 Expands to: Constant mathcomp.analysis.kernel.semi_sigma_additive_kproduct
@@ -5392,7 +5415,7 @@ measure
 
 kernel_kproduct__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kproduct__canonical__measure_function_Measure
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2 x
 kernel_kproduct__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -5410,7 +5433,7 @@ measure
 
 kernel_kproduct__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kproduct__canonical__measure_function_Measure
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2 x
 kernel_kproduct__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -5428,7 +5451,7 @@ measure
 
 kernel_kproduct__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kproduct__canonical__measure_function_Measure
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2 x
 kernel_kproduct__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -5446,7 +5469,7 @@ measure
 
 kernel_kproduct__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kproduct__canonical__measure_function_Measure
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2 x
 kernel_kproduct__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -5464,7 +5487,7 @@ measure
 
 kernel_kproduct__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kproduct__canonical__measure_function_Measure
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2 x
 kernel_kproduct__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -5482,7 +5505,7 @@ measure
 
 kernel_kproduct__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kproduct__canonical__measure_function_Measure
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2 x
 kernel_kproduct__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -5499,7 +5522,7 @@ forall [d0 d1 d2 : measure_display] [T0 : measurableType d0]
 R.-ftker T0 ~> T1 -> R.-ftker T0 * T1 ~> T2 -> T0 -> measure (T1 * T2)%type R
 
 mkproduct is not universe polymorphic
-Arguments mkproduct [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} k1 k2 _
+Arguments mkproduct [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} k1 k2 _
 mkproduct is transparent
 Expands to: Constant mathcomp.analysis.kernel.mkproduct
 Declared in library mathcomp.analysis.kernel, line 1567, characters 11-20
@@ -5518,7 +5541,7 @@ R.-ker T0 ~> Datatypes_prod__canonical__measurable_structure_Measurable T1 T2
 
 kernel_mkproduct__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_mkproduct__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2 R] k1 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2 R] k1 
   k2
 kernel_mkproduct__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -5534,7 +5557,7 @@ R.-ker T0 ~> Datatypes_prod__canonical__measurable_structure_Measurable T1 T2
 
 kernel_mkproduct__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_mkproduct__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2 R] k1 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2 R] k1 
   k2
 kernel_mkproduct__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -5550,7 +5573,7 @@ R.-ker T0 ~> Datatypes_prod__canonical__measurable_structure_Measurable T1 T2
 
 kernel_mkproduct__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_mkproduct__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2 R] k1 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2 R] k1 
   k2
 kernel_mkproduct__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -5566,7 +5589,7 @@ R.-ker T0 ~> Datatypes_prod__canonical__measurable_structure_Measurable T1 T2
 
 kernel_mkproduct__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_mkproduct__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2 R] k1 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2 R] k1 
   k2
 kernel_mkproduct__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -5582,7 +5605,7 @@ R.-ker T0 ~> Datatypes_prod__canonical__measurable_structure_Measurable T1 T2
 
 kernel_mkproduct__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_mkproduct__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2 R] k1 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2 R] k1 
   k2
 kernel_mkproduct__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -5598,7 +5621,7 @@ R.-ker T0 ~> Datatypes_prod__canonical__measurable_structure_Measurable T1 T2
 
 kernel_mkproduct__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_mkproduct__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2 R] k1 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2 R] k1 
   k2
 kernel_mkproduct__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -5614,7 +5637,7 @@ R.-ker T0 ~> Datatypes_prod__canonical__measurable_structure_Measurable T1 T2
 
 kernel_mkproduct__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_mkproduct__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2 R] k1 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2 R] k1 
   k2
 kernel_mkproduct__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -5630,7 +5653,7 @@ R.-ker T0 ~> Datatypes_prod__canonical__measurable_structure_Measurable T1 T2
 
 kernel_mkproduct__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_mkproduct__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2 R] k1 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2 R] k1 
   k2
 kernel_mkproduct__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -5646,7 +5669,7 @@ R.-ker T0 ~> Datatypes_prod__canonical__measurable_structure_Measurable T1 T2
 
 kernel_mkproduct__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_mkproduct__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2 R] k1 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2 R] k1 
   k2
 kernel_mkproduct__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -5673,7 +5696,7 @@ sigma_finite
   (R:=R) [set: T1 * T2] (mkproduct k1 k2 x)
 
 sigma_finite_mkproduct is not universe polymorphic
-Arguments sigma_finite_mkproduct [d0 d1 d2]%measure_display_scope 
+Arguments sigma_finite_mkproduct [d0 d1 d2]%_measure_display_scope 
   [T0 T1 T2] {R} k1 k2 x
 sigma_finite_mkproduct is opaque
 Expands to: Constant mathcomp.analysis.kernel.sigma_finite_mkproduct
@@ -5729,7 +5752,7 @@ R.-sigmafker T0 ~> Datatypes_prod__canonical__measurable_structure_Measurable
 
 kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -5746,7 +5769,7 @@ R.-sigmafker T0 ~> Datatypes_prod__canonical__measurable_structure_Measurable
 
 kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -5763,7 +5786,7 @@ R.-sigmafker T0 ~> Datatypes_prod__canonical__measurable_structure_Measurable
 
 kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -5780,7 +5803,7 @@ R.-sigmafker T0 ~> Datatypes_prod__canonical__measurable_structure_Measurable
 
 kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -5797,7 +5820,7 @@ R.-sigmafker T0 ~> Datatypes_prod__canonical__measurable_structure_Measurable
 
 kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -5814,7 +5837,7 @@ R.-sigmafker T0 ~> Datatypes_prod__canonical__measurable_structure_Measurable
 
 kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkproduct__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -5839,8 +5862,8 @@ forall [d0 d1 d2 : measure_display] [T0 : measurableType d0]
 (T0 -> measure T1 R) -> (T1 -> measure T2 R) -> T0 -> set T2 -> \bar R
 
 kcomp_noparam is not universe polymorphic
-Arguments kcomp_noparam [d0 d1 d2]%measure_display_scope 
-  [T0 T1 T2] {R} (k1 k2)%function_scope x A%classical_set_scope
+Arguments kcomp_noparam [d0 d1 d2]%_measure_display_scope 
+  [T0 T1 T2] {R} (k1 k2)%_function_scope x A%_classical_set_scope
 kcomp_noparam is transparent
 Expands to: Constant mathcomp.analysis.kernel.kcomp_noparam
 Declared in library mathcomp.analysis.kernel, line 1637, characters 11-24
@@ -5880,7 +5903,7 @@ R.-ker Datatypes_prod__canonical__measurable_structure_Measurable T0 T1 ~> T2
 
 kernel_kernel_snd__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kernel_snd__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope T0 [T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope T0 [T1 T2] {R} 
   k
 kernel_kernel_snd__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -5895,7 +5918,7 @@ R.-ker Datatypes_prod__canonical__measurable_structure_Measurable T0 T1 ~> T2
 
 kernel_kernel_snd__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kernel_snd__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope T0 [T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope T0 [T1 T2] {R} 
   k
 kernel_kernel_snd__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -5910,7 +5933,7 @@ R.-ker Datatypes_prod__canonical__measurable_structure_Measurable T0 T1 ~> T2
 
 kernel_kernel_snd__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kernel_snd__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope T0 [T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope T0 [T1 T2] {R} 
   k
 kernel_kernel_snd__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -5925,7 +5948,7 @@ R.-ker Datatypes_prod__canonical__measurable_structure_Measurable T0 T1 ~> T2
 
 kernel_kernel_snd__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kernel_snd__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope T0 [T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope T0 [T1 T2] {R} 
   k
 kernel_kernel_snd__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -5941,7 +5964,7 @@ R.-ker Datatypes_prod__canonical__measurable_structure_Measurable T0 T1 ~> T2
 
 kernel_kernel_snd__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_kernel_snd__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope T0 [T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope T0 [T1 T2] {R} 
   k
 kernel_kernel_snd__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -5967,7 +5990,7 @@ R.-fker Datatypes_prod__canonical__measurable_structure_Measurable T0 T1 ~> T2
 
 kernel_kernel_snd__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kernel_snd__canonical__kernel_FiniteKernel
-  [d0 d1 d2]%measure_display_scope T0 [T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope T0 [T1 T2] {R} 
   k
 kernel_kernel_snd__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
@@ -5982,7 +6005,7 @@ R.-fker Datatypes_prod__canonical__measurable_structure_Measurable T0 T1 ~> T2
 
 kernel_kernel_snd__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kernel_snd__canonical__kernel_FiniteKernel
-  [d0 d1 d2]%measure_display_scope T0 [T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope T0 [T1 T2] {R} 
   k
 kernel_kernel_snd__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
@@ -5997,7 +6020,7 @@ R.-fker Datatypes_prod__canonical__measurable_structure_Measurable T0 T1 ~> T2
 
 kernel_kernel_snd__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kernel_snd__canonical__kernel_FiniteKernel
-  [d0 d1 d2]%measure_display_scope T0 [T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope T0 [T1 T2] {R} 
   k
 kernel_kernel_snd__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
@@ -6012,7 +6035,7 @@ R.-fker Datatypes_prod__canonical__measurable_structure_Measurable T0 T1 ~> T2
 
 kernel_kernel_snd__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kernel_snd__canonical__kernel_FiniteKernel
-  [d0 d1 d2]%measure_display_scope T0 [T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope T0 [T1 T2] {R} 
   k
 kernel_kernel_snd__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
@@ -6028,7 +6051,7 @@ R.-fker Datatypes_prod__canonical__measurable_structure_Measurable T0 T1 ~> T2
 
 kernel_kernel_snd__canonical__kernel_FiniteKernel is not universe polymorphic
 Arguments kernel_kernel_snd__canonical__kernel_FiniteKernel
-  [d0 d1 d2]%measure_display_scope T0 [T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope T0 [T1 T2] {R} 
   k
 kernel_kernel_snd__canonical__kernel_FiniteKernel is transparent
 Expands to: Constant
@@ -6053,7 +6076,7 @@ R.-spker Datatypes_prod__canonical__measurable_structure_Measurable T0 T1 ~> T2
 
 kernel_kernel_snd__canonical__kernel_SubProbabilityKernel is not universe polymorphic
 Arguments kernel_kernel_snd__canonical__kernel_SubProbabilityKernel
-  [d0 d1 d2]%measure_display_scope T0 [T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope T0 [T1 T2] {R} 
   k
 kernel_kernel_snd__canonical__kernel_SubProbabilityKernel is transparent
 Expands to: Constant
@@ -6068,7 +6091,7 @@ R.-spker Datatypes_prod__canonical__measurable_structure_Measurable T0 T1 ~> T2
 
 kernel_kernel_snd__canonical__kernel_SubProbabilityKernel is not universe polymorphic
 Arguments kernel_kernel_snd__canonical__kernel_SubProbabilityKernel
-  [d0 d1 d2]%measure_display_scope T0 [T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope T0 [T1 T2] {R} 
   k
 kernel_kernel_snd__canonical__kernel_SubProbabilityKernel is transparent
 Expands to: Constant
@@ -6083,7 +6106,7 @@ R.-spker Datatypes_prod__canonical__measurable_structure_Measurable T0 T1 ~> T2
 
 kernel_kernel_snd__canonical__kernel_SubProbabilityKernel is not universe polymorphic
 Arguments kernel_kernel_snd__canonical__kernel_SubProbabilityKernel
-  [d0 d1 d2]%measure_display_scope T0 [T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope T0 [T1 T2] {R} 
   k
 kernel_kernel_snd__canonical__kernel_SubProbabilityKernel is transparent
 Expands to: Constant
@@ -6098,7 +6121,7 @@ R.-spker Datatypes_prod__canonical__measurable_structure_Measurable T0 T1 ~> T2
 
 kernel_kernel_snd__canonical__kernel_SubProbabilityKernel is not universe polymorphic
 Arguments kernel_kernel_snd__canonical__kernel_SubProbabilityKernel
-  [d0 d1 d2]%measure_display_scope T0 [T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope T0 [T1 T2] {R} 
   k
 kernel_kernel_snd__canonical__kernel_SubProbabilityKernel is transparent
 Expands to: Constant
@@ -6113,7 +6136,7 @@ R.-spker Datatypes_prod__canonical__measurable_structure_Measurable T0 T1 ~> T2
 
 kernel_kernel_snd__canonical__kernel_SubProbabilityKernel is not universe polymorphic
 Arguments kernel_kernel_snd__canonical__kernel_SubProbabilityKernel
-  [d0 d1 d2]%measure_display_scope T0 [T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope T0 [T1 T2] {R} 
   k
 kernel_kernel_snd__canonical__kernel_SubProbabilityKernel is transparent
 Expands to: Constant
@@ -6144,8 +6167,8 @@ kcomp_noparam (T0:=T0) (T1:=T1) (T2:=T2) k1 k2 x A =
 kproduct_snd (T0:=T0) (T1:=T1) (T2:=T2) k1 k2 x (snd @^-1` A)
 
 kcomp_noparamE is not universe polymorphic
-Arguments kcomp_noparamE [d0 d1 d2]%measure_display_scope 
-  [T0 T1 T2] {R} (k1 k2)%function_scope x [A]%classical_set_scope 
+Arguments kcomp_noparamE [d0 d1 d2]%_measure_display_scope 
+  [T0 T1 T2] {R} (k1 k2)%_function_scope x [A]%_classical_set_scope 
   _
 kcomp_noparamE is opaque
 Expands to: Constant mathcomp.analysis.kernel.kcomp_noparamE
@@ -6216,7 +6239,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> T0 -> measure T2 R
 
 kernel_kcomp_noparam__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kcomp_noparam__canonical__measure_function_Measure
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2 x
 kernel_kcomp_noparam__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -6230,7 +6253,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> T0 -> measure T2 R
 
 kernel_kcomp_noparam__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kcomp_noparam__canonical__measure_function_Measure
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2 x
 kernel_kcomp_noparam__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -6244,7 +6267,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> T0 -> measure T2 R
 
 kernel_kcomp_noparam__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kcomp_noparam__canonical__measure_function_Measure
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2 x
 kernel_kcomp_noparam__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -6258,7 +6281,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> T0 -> measure T2 R
 
 kernel_kcomp_noparam__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kcomp_noparam__canonical__measure_function_Measure
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2 x
 kernel_kcomp_noparam__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -6272,7 +6295,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> T0 -> measure T2 R
 
 kernel_kcomp_noparam__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kcomp_noparam__canonical__measure_function_Measure
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2 x
 kernel_kcomp_noparam__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -6286,7 +6309,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> T0 -> measure T2 R
 
 kernel_kcomp_noparam__canonical__measure_function_Measure is not universe polymorphic
 Arguments kernel_kcomp_noparam__canonical__measure_function_Measure
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2 x
 kernel_kcomp_noparam__canonical__measure_function_Measure is transparent
 Expands to: Constant
@@ -6302,7 +6325,7 @@ forall [d0 d1 d2 : measure_display] [T0 : measurableType d0]
 R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> T0 -> measure T2 R
 
 mkcomp_noparam is not universe polymorphic
-Arguments mkcomp_noparam [d0 d1 d2]%measure_display_scope 
+Arguments mkcomp_noparam [d0 d1 d2]%_measure_display_scope 
   [T0 T1 T2] {R} k1 k2 _
 mkcomp_noparam is transparent
 Expands to: Constant mathcomp.analysis.kernel.mkcomp_noparam
@@ -6331,7 +6354,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> R.-ker T0 ~> T2
 
 kernel_mkcomp_noparam__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_mkcomp_noparam__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkcomp_noparam__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -6345,7 +6368,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> R.-ker T0 ~> T2
 
 kernel_mkcomp_noparam__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_mkcomp_noparam__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkcomp_noparam__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -6359,7 +6382,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> R.-ker T0 ~> T2
 
 kernel_mkcomp_noparam__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_mkcomp_noparam__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkcomp_noparam__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -6373,7 +6396,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> R.-ker T0 ~> T2
 
 kernel_mkcomp_noparam__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_mkcomp_noparam__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkcomp_noparam__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -6387,7 +6410,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> R.-ker T0 ~> T2
 
 kernel_mkcomp_noparam__canonical__kernel_Kernel is not universe polymorphic
 Arguments kernel_mkcomp_noparam__canonical__kernel_Kernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkcomp_noparam__canonical__kernel_Kernel is transparent
 Expands to: Constant
@@ -6411,7 +6434,7 @@ forall [d0 d1 d2 : measure_display] [T0 : measurableType d0]
 (mkcomp_noparam k1 k2 x [set: T2]%classic <= 1)%E
 
 sprob_mkcomp_noparam is not universe polymorphic
-Arguments sprob_mkcomp_noparam [d0 d1 d2]%measure_display_scope 
+Arguments sprob_mkcomp_noparam [d0 d1 d2]%_measure_display_scope 
   [T0 T1 T2] {R} k1 k2 x
 sprob_mkcomp_noparam is opaque
 Expands to: Constant mathcomp.analysis.kernel.sprob_mkcomp_noparam
@@ -6451,7 +6474,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> R.-sigmafker T0 ~> T2
 kernel_mkcomp_noparam__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments
   kernel_mkcomp_noparam__canonical__kernel_SigmaFiniteTransitionKernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkcomp_noparam__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -6466,7 +6489,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> R.-sigmafker T0 ~> T2
 kernel_mkcomp_noparam__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments
   kernel_mkcomp_noparam__canonical__kernel_SigmaFiniteTransitionKernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkcomp_noparam__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -6481,7 +6504,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> R.-sigmafker T0 ~> T2
 kernel_mkcomp_noparam__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments
   kernel_mkcomp_noparam__canonical__kernel_SigmaFiniteTransitionKernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkcomp_noparam__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -6496,7 +6519,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> R.-sigmafker T0 ~> T2
 kernel_mkcomp_noparam__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments
   kernel_mkcomp_noparam__canonical__kernel_SigmaFiniteTransitionKernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkcomp_noparam__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant
@@ -6511,7 +6534,7 @@ R.-spker T0 ~> T1 -> R.-spker T1 ~> T2 -> R.-sigmafker T0 ~> T2
 kernel_mkcomp_noparam__canonical__kernel_SigmaFiniteTransitionKernel is not universe polymorphic
 Arguments
   kernel_mkcomp_noparam__canonical__kernel_SigmaFiniteTransitionKernel
-  [d0 d1 d2]%measure_display_scope [T0 T1 T2] {R} 
+  [d0 d1 d2]%_measure_display_scope [T0 T1 T2] {R} 
   k1 k2
 kernel_mkcomp_noparam__canonical__kernel_SigmaFiniteTransitionKernel is transparent
 Expands to: Constant

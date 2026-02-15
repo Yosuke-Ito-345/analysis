@@ -79,6 +79,20 @@
           </ul>
           </details>
           </li>
+<li><details id="mathcomp.analysis.probability_theory"><summary>probability_theory</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.probability_theory.bernoulli_distribution.html">bernoulli_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.beta_distribution.html">beta_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.binomial_distribution.html">binomial_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.exponential_distribution.html">exponential_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.normal_distribution.html">normal_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.poisson_distribution.html">poisson_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.probability.html">probability</a></li>
+<li><a href="mathcomp.analysis.probability_theory.random_variable.html">random_variable</a></li>
+<li><a href="mathcomp.analysis.probability_theory.uniform_distribution.html">uniform_distribution</a></li>
+          </ul>
+          </details>
+          </li>
 <li><details id="mathcomp.analysis.showcase"><summary>showcase</summary>
           <ul>
           <li><a href="mathcomp.analysis.showcase.pnt.html">pnt</a></li>
@@ -92,6 +106,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
 <li><a href="mathcomp.analysis.topology_theory.nat_topology.html">nat_topology</a></li>
@@ -134,7 +149,6 @@
 <li><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></li>
 <li><a href="mathcomp.analysis.numfun.html">numfun</a></li>
 <li><a href="mathcomp.analysis.pi_irrational.html">pi_irrational</a></li>
-<li><a href="mathcomp.analysis.probability.html">probability</a></li>
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
@@ -274,7 +288,7 @@ forall [T : Type] (F : nat -> set T),
 (\bigcup_i [set x%:E | x in F i])%classic
 
 EFin_bigcup is not universe polymorphic
-Arguments EFin_bigcup [T]%type_scope F%function_scope
+Arguments EFin_bigcup [T]%_type_scope F%_function_scope
 EFin_bigcup is opaque
 Expands to: Constant mathcomp.analysis.ereal.EFin_bigcup
 Declared in library mathcomp.analysis.ereal, line 64, characters 6-17
@@ -293,7 +307,7 @@ forall [T : Type] (A : set T),
 (~` [set x%:E | x in A] `\` [set -oo%E; +oo%E])%classic
 
 EFin_setC is not universe polymorphic
-Arguments EFin_setC [T]%type_scope A%classical_set_scope
+Arguments EFin_setC [T]%_type_scope A%_classical_set_scope
 EFin_setC is opaque
 Expands to: Constant mathcomp.analysis.ereal.EFin_setC
 Declared in library mathcomp.analysis.ereal, line 71, characters 6-15
@@ -361,8 +375,8 @@ forall {R : numDomainType} [T : Type] [h : R -> \bar R] (f g : T -> R),
 h \o (f \+ g)%R = (h \o f \+ (h \o g))%E
 
 compreDr is not universe polymorphic
-Arguments compreDr {R} [T]%type_scope [h]%function_scope 
-  (f g)%function_scope _
+Arguments compreDr {R} [T]%_type_scope [h]%_function_scope
+  (f g)%_function_scope _
 compreDr is opaque
 Expands to: Constant mathcomp.analysis.ereal.compreDr
 Declared in library mathcomp.analysis.ereal, line 106, characters 6-14
@@ -379,7 +393,7 @@ forall {R : numDomainType} [T : Type] [h : R -> \bar R] (f : T -> R),
 {morph h : x / (- x)%R >-> (- x)%E} -> h \o (\- f)%R = (\- (h \o f))%E
 
 compreN is not universe polymorphic
-Arguments compreN {R} [T]%type_scope [h]%function_scope f%function_scope _
+Arguments compreN {R} [T]%_type_scope [h]%_function_scope f%_function_scope _
 compreN is opaque
 Expands to: Constant mathcomp.analysis.ereal.compreN
 Declared in library mathcomp.analysis.ereal, line 111, characters 6-13
@@ -397,8 +411,8 @@ forall {R : numDomainType} [T : Type] [h : R -> \bar R] (f g : T -> R),
 h \o (f \- g)%R = (h \o f \- (h \o g))%E
 
 compreBr is not universe polymorphic
-Arguments compreBr {R} [T]%type_scope [h]%function_scope 
-  (f g)%function_scope _
+Arguments compreBr {R} [T]%_type_scope [h]%_function_scope
+  (f g)%_function_scope _
 compreBr is opaque
 Expands to: Constant mathcomp.analysis.ereal.compreBr
 Declared in library mathcomp.analysis.ereal, line 116, characters 6-14
@@ -416,8 +430,8 @@ forall {R : numDomainType} [T : Type] [h : R -> \bar R] (f : T -> R) (k : R),
 h \o (k \o* f)%R = (fun t : T => (h k * h (f t))%E)
 
 compre_scale is not universe polymorphic
-Arguments compre_scale {R} [T]%type_scope [h]%function_scope 
-  f%function_scope k%ring_scope _
+Arguments compre_scale {R} [T]%_type_scope [h]%_function_scope
+  f%_function_scope k%_ring_scope _
 compre_scale is opaque
 Expands to: Constant mathcomp.analysis.ereal.compre_scale
 Declared in library mathcomp.analysis.ereal, line 121, characters 6-18
@@ -456,7 +470,7 @@ forall {R : numDomainType} (A B : set \bar R),
 ([set (- x)%E | x in A] `<=` [set (- x)%E | x in B])%classic
 
 oppe_subset is not universe polymorphic
-Arguments oppe_subset {R} (A B)%classical_set_scope
+Arguments oppe_subset {R} (A B)%_classical_set_scope
 oppe_subset is opaque
 Expands to: Constant mathcomp.analysis.ereal.oppe_subset
 Declared in library mathcomp.analysis.ereal, line 137, characters 6-17
@@ -475,8 +489,8 @@ forall {R : numDomainType} [I : choiceType] [P : set I] [F : I -> \bar R],
 (forall i : I, P i -> (0%R <= F i)%E) -> (0%R <= (\sum_(i \in P) F i)%R)%E
 
 fsume_ge0 is not universe polymorphic
-Arguments fsume_ge0 {R} [I] [P]%classical_set_scope 
-  [F]%function_scope _%function_scope
+Arguments fsume_ge0 {R} [I] [P]%_classical_set_scope 
+  [F]%_function_scope _%_function_scope
 fsume_ge0 is opaque
 Expands to: Constant mathcomp.analysis.ereal.fsume_ge0
 Declared in library mathcomp.analysis.ereal, line 145, characters 6-15
@@ -494,8 +508,8 @@ forall {R : numDomainType} [I : choiceType] [P : set I] [F : I -> \bar R],
 (forall t : I, P t -> (F t <= 0%R)%E) -> ((\sum_(i \in P) F i)%R <= 0%R)%E
 
 fsume_le0 is not universe polymorphic
-Arguments fsume_le0 {R} [I] [P]%classical_set_scope 
-  [F]%function_scope _%function_scope
+Arguments fsume_le0 {R} [I] [P]%_classical_set_scope 
+  [F]%_function_scope _%_function_scope
 fsume_le0 is opaque
 Expands to: Constant mathcomp.analysis.ereal.fsume_le0
 Declared in library mathcomp.analysis.ereal, line 152, characters 6-15
@@ -513,7 +527,7 @@ forall {R : numDomainType} [I : choiceType] [A : set I] (F : I -> R),
 finite_set A -> (\sum_(i \in A) (F i)%:E)%R = (\sum_(i \in A) F i)%:E
 
 fsumEFin is not universe polymorphic
-Arguments fsumEFin {R} [I] [A]%classical_set_scope F%function_scope _
+Arguments fsumEFin {R} [I] [A]%_classical_set_scope F%_function_scope _
 fsumEFin is opaque
 Expands to: Constant mathcomp.analysis.ereal.fsumEFin
 Declared in library mathcomp.analysis.ereal, line 159, characters 6-14
@@ -546,8 +560,8 @@ y \in [set x%:E | x in A]%classic ->
 (fun x0 y0 : \bar R => is_true (x0 <= y0)%E) x y ->
 (er_map f x <= er_map f y)%E = true
 
-Arguments le_er_map_in {R} [A]%classical_set_scope 
-  [f]%function_scope _ [x y] _ _ _
+Arguments le_er_map_in {R} [A]%_classical_set_scope 
+  [f]%_function_scope _ [x y] _ _ _
 le_er_map_in is opaque
 Expands to: Constant mathcomp.analysis.ereal.le_er_map_in
 Declared in library mathcomp.analysis.ereal, line 169, characters 6-18
@@ -566,7 +580,7 @@ forall {R : realDomainType} [I : choiceType] [P : set I] [F : I -> \bar R],
 (0%R < (\sum_(i \in P) F i)%R)%E -> exists2 i : I, P i & (0%R < F i)%E
 
 fsume_gt0 is not universe polymorphic
-Arguments fsume_gt0 {R} [I] [P]%classical_set_scope [F]%function_scope _
+Arguments fsume_gt0 {R} [I] [P]%_classical_set_scope [F]%_function_scope _
 fsume_gt0 is opaque
 Expands to: Constant mathcomp.analysis.ereal.fsume_gt0
 Declared in library mathcomp.analysis.ereal, line 177, characters 6-15
@@ -584,7 +598,7 @@ forall {R : realDomainType} [I : choiceType] [P : set I] [F : I -> \bar R],
 ((\sum_(i \in P) F i)%R < 0%R)%E -> exists2 i : I, P i & (F i < 0%R)%E
 
 fsume_lt0 is not universe polymorphic
-Arguments fsume_lt0 {R} [I] [P]%classical_set_scope [F]%function_scope _
+Arguments fsume_lt0 {R} [I] [P]%_classical_set_scope [F]%_function_scope _
 fsume_lt0 is opaque
 Expands to: Constant mathcomp.analysis.ereal.fsume_lt0
 Declared in library mathcomp.analysis.ereal, line 184, characters 6-15
@@ -604,8 +618,8 @@ finite_set P ->
 (\sum_(i \in P) F i)%R = 0%R -> forall [i : I], P i -> F i = 0%R
 
 pfsume_eq0 is not universe polymorphic
-Arguments pfsume_eq0 {R} [I] [P]%classical_set_scope 
-  [F]%function_scope _ _%function_scope _ [i] _
+Arguments pfsume_eq0 {R} [I] [P]%_classical_set_scope 
+  [F]%_function_scope _ _%_function_scope _ [i] _
 pfsume_eq0 is opaque
 Expands to: Constant mathcomp.analysis.ereal.pfsume_eq0
 Declared in library mathcomp.analysis.ereal, line 191, characters 6-16
@@ -630,8 +644,8 @@ finite_set B ->
 ((\sum_(t \in A) f t)%R <= (\sum_(t \in B) f t)%R)%E
 
 lee_fsum_nneg_subset is not universe polymorphic
-Arguments lee_fsum_nneg_subset {R} [T] [A B]%classical_set_scope
-  [f]%function_scope _ _ _ _
+Arguments lee_fsum_nneg_subset {R} [T] [A B]%_classical_set_scope
+  [f]%_function_scope _ _ _ _
 lee_fsum_nneg_subset is opaque
 Expands to: Constant mathcomp.analysis.ereal.lee_fsum_nneg_subset
 Declared in library mathcomp.analysis.ereal, line 201, characters 6-26
@@ -654,8 +668,8 @@ finite_set I ->
 ((\sum_(i \in I) a i)%R <= (\sum_(i \in I) b i)%R)%E
 
 lee_fsum is not universe polymorphic
-Arguments lee_fsum [R T] [I]%classical_set_scope [a b]%function_scope 
-  _ _%function_scope
+Arguments lee_fsum [R T] [I]%_classical_set_scope 
+  [a b]%_function_scope _ _%_function_scope
 lee_fsum is opaque
 Expands to: Constant mathcomp.analysis.ereal.lee_fsum
 Declared in library mathcomp.analysis.ereal, line 211, characters 6-14
@@ -677,8 +691,8 @@ forall {R : realDomainType} [T : choiceType] (x : \bar R)
 (x * (\sum_(i \in P) F i)%R)%E = (\sum_(i \in P) (x * F i)%E)%R
 
 ge0_mule_fsumr is not universe polymorphic
-Arguments ge0_mule_fsumr {R} [T] x%ereal_scope [F]%function_scope
-  P%classical_set_scope _%function_scope
+Arguments ge0_mule_fsumr {R} [T] x%_ereal_scope [F]%_function_scope
+  P%_classical_set_scope _%_function_scope
 ge0_mule_fsumr is opaque
 Expands to: Constant mathcomp.analysis.ereal.ge0_mule_fsumr
 Declared in library mathcomp.analysis.ereal, line 220, characters 6-20
@@ -704,8 +718,8 @@ forall {R : realDomainType} [T : choiceType] (x : \bar R)
 ((\sum_(i \in P) F i)%R * x)%E = (\sum_(i \in P) (F i * x)%E)%R
 
 ge0_mule_fsuml is not universe polymorphic
-Arguments ge0_mule_fsuml {R} [T] x%ereal_scope [F]%function_scope
-  P%classical_set_scope _%function_scope
+Arguments ge0_mule_fsuml {R} [T] x%_ereal_scope [F]%_function_scope
+  P%_classical_set_scope _%_function_scope
 ge0_mule_fsuml is opaque
 Expands to: Constant mathcomp.analysis.ereal.ge0_mule_fsuml
 Declared in library mathcomp.analysis.ereal, line 233, characters 6-20
@@ -739,7 +753,7 @@ finite_support 0%R P (\- F)%E = finite_support 0%R P F
 
 DualAddTheoryNumDomain.finite_supportNe is not universe polymorphic
 Arguments DualAddTheoryNumDomain.finite_supportNe 
-  {R} [I] P%classical_set_scope F%function_scope
+  {R} [I] P%_classical_set_scope F%_function_scope
 DualAddTheoryNumDomain.finite_supportNe is opaque
 Expands to: Constant
             mathcomp.analysis.ereal.DualAddTheoryNumDomain.finite_supportNe
@@ -759,7 +773,7 @@ forall {R : numDomainType} [I : choiceType] (P : set I) (F : I -> \bar R),
 
 DualAddTheoryNumDomain.dual_fsumeE is not universe polymorphic
 Arguments DualAddTheoryNumDomain.dual_fsumeE {R} [I] 
-  P%classical_set_scope F%function_scope
+  P%_classical_set_scope F%_function_scope
 DualAddTheoryNumDomain.dual_fsumeE is opaque
 Expands to: Constant
             mathcomp.analysis.ereal.DualAddTheoryNumDomain.dual_fsumeE
@@ -782,7 +796,7 @@ forall {R : numDomainType} [I : choiceType] [P : set I] [F : I -> \bar^d R],
 
 DualAddTheoryNumDomain.dfsume_ge0 is not universe polymorphic
 Arguments DualAddTheoryNumDomain.dfsume_ge0 {R} [I] 
-  [P]%classical_set_scope [F]%function_scope _%function_scope
+  [P]%_classical_set_scope [F]%_function_scope _%_function_scope
 DualAddTheoryNumDomain.dfsume_ge0 is opaque
 Expands to: Constant
             mathcomp.analysis.ereal.DualAddTheoryNumDomain.dfsume_ge0
@@ -802,7 +816,7 @@ forall {R : numDomainType} [I : choiceType] [P : set I] [F : I -> \bar R],
 
 DualAddTheoryNumDomain.dfsume_le0 is not universe polymorphic
 Arguments DualAddTheoryNumDomain.dfsume_le0 {R} [I] 
-  [P]%classical_set_scope [F]%function_scope _%function_scope
+  [P]%_classical_set_scope [F]%_function_scope _%_function_scope
 DualAddTheoryNumDomain.dfsume_le0 is opaque
 Expands to: Constant
             mathcomp.analysis.ereal.DualAddTheoryNumDomain.dfsume_le0
@@ -833,7 +847,7 @@ forall {R : realDomainType} [I : choiceType] [P : set I] [F : I -> \bar^d R],
 
 DualAddTheoryNumDomain.dfsume_gt0 is not universe polymorphic
 Arguments DualAddTheoryNumDomain.dfsume_gt0 {R} [I] 
-  [P]%classical_set_scope [F]%function_scope _
+  [P]%_classical_set_scope [F]%_function_scope _
 DualAddTheoryNumDomain.dfsume_gt0 is opaque
 Expands to: Constant
             mathcomp.analysis.ereal.DualAddTheoryNumDomain.dfsume_gt0
@@ -853,7 +867,7 @@ forall {R : realDomainType} [I : choiceType] [P : set I] [F : I -> \bar^d R],
 
 DualAddTheoryNumDomain.dfsume_lt0 is not universe polymorphic
 Arguments DualAddTheoryNumDomain.dfsume_lt0 {R} [I] 
-  [P]%classical_set_scope [F]%function_scope _
+  [P]%_classical_set_scope [F]%_function_scope _
 DualAddTheoryNumDomain.dfsume_lt0 is opaque
 Expands to: Constant
             mathcomp.analysis.ereal.DualAddTheoryNumDomain.dfsume_lt0
@@ -875,7 +889,7 @@ finite_set P ->
 
 DualAddTheoryNumDomain.pdfsume_eq0 is not universe polymorphic
 Arguments DualAddTheoryNumDomain.pdfsume_eq0 {R} [I] 
-  [P]%classical_set_scope [F]%function_scope _ _%function_scope 
+  [P]%_classical_set_scope [F]%_function_scope _ _%_function_scope 
   _ [i] _
 DualAddTheoryNumDomain.pdfsume_eq0 is opaque
 Expands to: Constant
@@ -901,8 +915,8 @@ forall {R : realDomainType} [T : choiceType] (x : \bar^d R)
 
 DualAddTheoryNumDomain.le0_mule_dfsumr is not universe polymorphic
 Arguments DualAddTheoryNumDomain.le0_mule_dfsumr {R} 
-  [T] x%ereal_dual_scope [F]%function_scope P%classical_set_scope
-  _%function_scope
+  [T] x%_ereal_dual_scope [F]%_function_scope P%_classical_set_scope
+  _%_function_scope
 DualAddTheoryNumDomain.le0_mule_dfsumr is opaque
 Expands to: Constant
             mathcomp.analysis.ereal.DualAddTheoryNumDomain.le0_mule_dfsumr
@@ -926,8 +940,8 @@ forall {R : realDomainType} [T : choiceType] (x : \bar^d R)
 
 DualAddTheoryNumDomain.le0_mule_dfsuml is not universe polymorphic
 Arguments DualAddTheoryNumDomain.le0_mule_dfsuml {R} 
-  [T] x%ereal_dual_scope [F]%function_scope P%classical_set_scope
-  _%function_scope
+  [T] x%_ereal_dual_scope [F]%_function_scope P%_classical_set_scope
+  _%_function_scope
 DualAddTheoryNumDomain.le0_mule_dfsuml is opaque
 Expands to: Constant
             mathcomp.analysis.ereal.DualAddTheoryNumDomain.le0_mule_dfsuml
@@ -1011,7 +1025,7 @@ forall {aT : pointedType} (D : set aT) {R : numDomainType} (f : aT -> \bar R),
 f = (f \_ (~` D) \+ f \_ D)%E
 
 funID is not universe polymorphic
-Arguments funID {aT} D%classical_set_scope {R} f%function_scope
+Arguments funID {aT} D%_classical_set_scope {R} f%_function_scope
 funID is opaque
 Expands to: Constant mathcomp.analysis.ereal.funID
 Declared in library mathcomp.analysis.ereal, line 348, characters 6-11
@@ -1059,7 +1073,7 @@ forall [R : realFieldType] [S : set \bar R]
   [x : constructive_ereal_extended__canonical__Order_POrder],
 S x -> (x <= +oo)%E = true
 
-Arguments ereal_ub_pinfty [R] [S]%classical_set_scope [x] _
+Arguments ereal_ub_pinfty [R] [S]%_classical_set_scope [x] _
 ereal_ub_pinfty is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_ub_pinfty
 Declared in library mathcomp.analysis.ereal, line 366, characters 6-21
@@ -1075,7 +1089,7 @@ ubound (T:=constructive_ereal_extended__canonical__Order_POrder) S -oo%E ->
 S = set0 \/ S = [set -oo%E]%classic
 
 ereal_ub_ninfty is not universe polymorphic
-Arguments ereal_ub_ninfty [R] [S]%classical_set_scope _
+Arguments ereal_ub_ninfty [R] [S]%_classical_set_scope _
 ereal_ub_ninfty is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_ub_ninfty
 Declared in library mathcomp.analysis.ereal, line 369, characters 6-21
@@ -1150,7 +1164,7 @@ supremum (T:=constructive_ereal_extended__canonical__Order_POrder) x0 S =
 +oo%E
 
 supremum_pinfty is not universe polymorphic
-Arguments supremum_pinfty [R] [S]%classical_set_scope x0%ereal_scope _
+Arguments supremum_pinfty [R] [S]%_classical_set_scope x0%_ereal_scope _
 supremum_pinfty is opaque
 Expands to: Constant mathcomp.analysis.ereal.supremum_pinfty
 Declared in library mathcomp.analysis.ereal, line 392, characters 6-21
@@ -1172,7 +1186,7 @@ forall [R : realFieldType],
 set \bar R -> constructive_ereal_extended__canonical__Order_POrder
 
 ereal_sup is not universe polymorphic
-Arguments ereal_sup [R] S%classical_set_scope
+Arguments ereal_sup [R] S%_classical_set_scope
 ereal_sup is transparent
 Expands to: Constant mathcomp.analysis.ereal.ereal_sup
 Declared in library mathcomp.analysis.ereal, line 403, characters 11-20
@@ -1181,7 +1195,7 @@ Declared in library mathcomp.analysis.ereal, line 403, characters 11-20
 <span class="vernacular">Definition</span><span class="id"> </span><span id="ereal_inf" class="id"><a name="ereal_inf" class="" title="ereal_inf : forall [R : realFieldType], set \bar R -> \bar R
 
 ereal_inf is not universe polymorphic
-Arguments ereal_inf [R] S%classical_set_scope
+Arguments ereal_inf [R] S%_classical_set_scope
 ereal_inf is transparent
 Expands to: Constant mathcomp.analysis.ereal.ereal_inf
 Declared in library mathcomp.analysis.ereal, line 405, characters 11-20
@@ -1217,7 +1231,7 @@ Declared in library mathcomp.analysis.ereal, line 409, characters 6-16
 forall [R : realFieldType] (x : \bar R), ereal_sup (R:=R) [set x] = x
 
 ereal_sup1 is not universe polymorphic
-Arguments ereal_sup1 [R] x%ereal_scope
+Arguments ereal_sup1 [R] x%_ereal_scope
 ereal_sup1 is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_sup1
 Declared in library mathcomp.analysis.ereal, line 412, characters 6-16
@@ -1257,7 +1271,7 @@ Declared in library mathcomp.analysis.ereal, line 417, characters 6-16
 forall [R : realFieldType] (x : \bar R), ereal_inf (R:=R) [set x] = x
 
 ereal_inf1 is not universe polymorphic
-Arguments ereal_inf1 [R] x%ereal_scope
+Arguments ereal_inf1 [R] x%_ereal_scope
 ereal_inf1 is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_inf1
 Declared in library mathcomp.analysis.ereal, line 420, characters 6-16
@@ -1274,7 +1288,7 @@ ubound (T:=constructive_ereal_extended__canonical__Order_POrder) S M ->
 (ereal_sup (R:=R) S <= M)%E
 
 ge_ereal_sup is not universe polymorphic
-Arguments ge_ereal_sup [R] [S]%classical_set_scope [M] _
+Arguments ge_ereal_sup [R] [S]%_classical_set_scope [M] _
 ge_ereal_sup is opaque
 Expands to: Constant mathcomp.analysis.ereal.ge_ereal_sup
 Declared in library mathcomp.analysis.ereal, line 423, characters 6-18
@@ -1293,7 +1307,7 @@ lbound (T:=constructive_ereal_extended__canonical__Order_POrder) S M ->
 (M <= ereal_inf (R:=R) S)%E
 
 le_ereal_inf_tmp is not universe polymorphic
-Arguments le_ereal_inf_tmp [R] [S]%classical_set_scope [M] _
+Arguments le_ereal_inf_tmp [R] [S]%_classical_set_scope [M] _
 le_ereal_inf_tmp is opaque
 Expands to: Constant mathcomp.analysis.ereal.le_ereal_inf_tmp
 Declared in library mathcomp.analysis.ereal, line 429, characters 6-22
@@ -1312,8 +1326,8 @@ ereal_sup (R:=R) S0 \is a fin_num ->
 exists2 x : \bar R, S0 x & (ereal_sup (R:=R) S0 - e%:E < x)%E
 
 ub_ereal_sup_adherent is not universe polymorphic
-Arguments ub_ereal_sup_adherent [R] [S]%classical_set_scope 
-  [e]%ring_scope _ _
+Arguments ub_ereal_sup_adherent [R] [S]%_classical_set_scope 
+  [e]%_ring_scope _ _
 ub_ereal_sup_adherent is opaque
 Expands to: Constant mathcomp.analysis.ereal.ub_ereal_sup_adherent
 Declared in library mathcomp.analysis.ereal, line 435, characters 6-27
@@ -1335,8 +1349,8 @@ ereal_inf (R:=R) S0 \is a fin_num ->
 exists2 x : \bar R, S0 x & (x < ereal_inf (R:=R) S0 + e%:E)%E
 
 lb_ereal_inf_adherent is not universe polymorphic
-Arguments lb_ereal_inf_adherent [R] [S]%classical_set_scope 
-  [e]%ring_scope _ _
+Arguments lb_ereal_inf_adherent [R] [S]%_classical_set_scope 
+  [e]%_ring_scope _ _
 lb_ereal_inf_adherent is opaque
 Expands to: Constant mathcomp.analysis.ereal.lb_ereal_inf_adherent
 Declared in library mathcomp.analysis.ereal, line 444, characters 6-27
@@ -1355,7 +1369,7 @@ forall [R : realFieldType] [S : set \bar R] [x : \bar R],
 (x < ereal_sup (R:=R) S)%E -> exists2 y : \bar R, S y & (x < y)%E
 
 ereal_sup_gt is not universe polymorphic
-Arguments ereal_sup_gt [R] [S]%classical_set_scope [x]%ereal_scope _
+Arguments ereal_sup_gt [R] [S]%_classical_set_scope [x]%_ereal_scope _
 ereal_sup_gt is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_sup_gt
 Declared in library mathcomp.analysis.ereal, line 452, characters 6-18
@@ -1372,7 +1386,7 @@ forall [R : realFieldType] [S : set \bar R] [x : \bar R],
 (ereal_inf (R:=R) S < x)%E -> exists2 y : \bar R, S y & (y < x)%E
 
 ereal_inf_lt is not universe polymorphic
-Arguments ereal_inf_lt [R] [S]%classical_set_scope [x]%ereal_scope _
+Arguments ereal_inf_lt [R] [S]%_classical_set_scope [x]%_ereal_scope _
 ereal_inf_lt is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_inf_lt
 Declared in library mathcomp.analysis.ereal, line 458, characters 6-18
@@ -1389,7 +1403,7 @@ forall [R : realFieldType] (S : set \bar R),
 ereal_inf (R:=R) S = (- ereal_sup (R:=R) [set - x | x in S])%E
 
 ereal_infEN is not universe polymorphic
-Arguments ereal_infEN [R] S%classical_set_scope
+Arguments ereal_infEN [R] S%_classical_set_scope
 ereal_infEN is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_infEN
 Declared in library mathcomp.analysis.ereal, line 464, characters 6-17
@@ -1404,7 +1418,7 @@ forall [R : realFieldType] (S : set \bar R),
 ereal_sup (R:=R) [set (- x)%E | x in S] = (- ereal_inf (R:=R) S)%E
 
 ereal_supN is not universe polymorphic
-Arguments ereal_supN [R] S%classical_set_scope
+Arguments ereal_supN [R] S%_classical_set_scope
 ereal_supN is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_supN
 Declared in library mathcomp.analysis.ereal, line 467, characters 6-16
@@ -1419,7 +1433,7 @@ forall [R : realFieldType] (S : set \bar R),
 ereal_inf (R:=R) [set (- x)%E | x in S] = (- ereal_sup (R:=R) S)%E
 
 ereal_infN is not universe polymorphic
-Arguments ereal_infN [R] S%classical_set_scope
+Arguments ereal_infN [R] S%_classical_set_scope
 ereal_infN is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_infN
 Declared in library mathcomp.analysis.ereal, line 470, characters 6-16
@@ -1436,7 +1450,7 @@ forall [R : realFieldType] (S : set \bar R),
 ereal_sup (R:=R) S = (- ereal_inf (R:=R) [set - x | x in S])%E
 
 ereal_supEN is not universe polymorphic
-Arguments ereal_supEN [R] S%classical_set_scope
+Arguments ereal_supEN [R] S%_classical_set_scope
 ereal_supEN is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_supEN
 Declared in library mathcomp.analysis.ereal, line 476, characters 6-17
@@ -1463,7 +1477,7 @@ forall [R : realType] (S : set \bar R),
 (supremums (T:=constructive_ereal_extended__canonical__Order_POrder) S !=set0)%classic
 
 ereal_supremums_neq0 is not universe polymorphic
-Arguments ereal_supremums_neq0 [R] S%classical_set_scope
+Arguments ereal_supremums_neq0 [R] S%_classical_set_scope
 ereal_supremums_neq0 is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_supremums_neq0
 Declared in library mathcomp.analysis.ereal, line 494, characters 6-26
@@ -1517,7 +1531,7 @@ forall [R : realType] [S : set \bar R]
   [x : constructive_ereal_extended__canonical__Order_POrder],
 S x -> (x <= ereal_sup (R:=R) S)%E = true
 
-Arguments ereal_sup_ubound [R] [S]%classical_set_scope [x] _
+Arguments ereal_sup_ubound [R] [S]%_classical_set_scope [x] _
 ereal_sup_ubound is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_sup_ubound
 Declared in library mathcomp.analysis.ereal, line 530, characters 6-22
@@ -1535,7 +1549,7 @@ Qed.</div></details>
 forall [R : realType] [S : set \bar R], S +oo%E -> ereal_sup (R:=R) S = +oo%E
 
 ereal_supy is not universe polymorphic
-Arguments ereal_supy [R] [S]%classical_set_scope _
+Arguments ereal_supy [R] [S]%_classical_set_scope _
 ereal_supy is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_supy
 Declared in library mathcomp.analysis.ereal, line 538, characters 6-16
@@ -1551,7 +1565,7 @@ forall [R : realType] [S : set \bar R] [x : \bar R],
 (exists2 y : \bar R, S y & (x <= y)%E) -> (x <= ereal_sup (R:=R) S)%E
 
 le_ereal_sup_tmp is not universe polymorphic
-Arguments le_ereal_sup_tmp [R] [S]%classical_set_scope [x]%ereal_scope _
+Arguments le_ereal_sup_tmp [R] [S]%_classical_set_scope [x]%_ereal_scope _
 le_ereal_sup_tmp is opaque
 Expands to: Constant mathcomp.analysis.ereal.le_ereal_sup_tmp
 Declared in library mathcomp.analysis.ereal, line 543, characters 6-22
@@ -1566,7 +1580,7 @@ forall [R : realType] (S : set \bar R),
 ereal_sup (R:=R) S = -oo%E <-> (S `<=` [set -oo%E])%classic
 
 ereal_sup_ninfty is not universe polymorphic
-Arguments ereal_sup_ninfty [R] S%classical_set_scope
+Arguments ereal_sup_ninfty [R] S%_classical_set_scope
 ereal_sup_ninfty is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_sup_ninfty
 Declared in library mathcomp.analysis.ereal, line 546, characters 6-22
@@ -1591,7 +1605,7 @@ forall [R : realType] [S : set \bar R]
   [x : constructive_ereal_extended__canonical__Order_POrder],
 S x -> (ereal_inf (R:=R) S <= x)%E = true
 
-Arguments ereal_inf_lbound [R] [S]%classical_set_scope [x] _
+Arguments ereal_inf_lbound [R] [S]%_classical_set_scope [x] _
 ereal_inf_lbound is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_inf_lbound
 Declared in library mathcomp.analysis.ereal, line 553, characters 6-22
@@ -1607,7 +1621,7 @@ forall [R : realType] [S : set \bar R] [x : \bar R],
 (exists2 y : \bar R, S y & (y <= x)%E) -> (ereal_inf (R:=R) S <= x)%E
 
 ge_ereal_inf is not universe polymorphic
-Arguments ge_ereal_inf [R] [S]%classical_set_scope [x]%ereal_scope _
+Arguments ge_ereal_inf [R] [S]%_classical_set_scope [x]%_ereal_scope _
 ge_ereal_inf is opaque
 Expands to: Constant mathcomp.analysis.ereal.ge_ereal_inf
 Declared in library mathcomp.analysis.ereal, line 558, characters 6-18
@@ -1622,7 +1636,7 @@ forall [R : realType] (S : set \bar R),
 ereal_inf (R:=R) S = +oo%E <-> (S `<=` [set +oo%E])%classic
 
 ereal_inf_pinfty is not universe polymorphic
-Arguments ereal_inf_pinfty [R] S%classical_set_scope
+Arguments ereal_inf_pinfty [R] S%_classical_set_scope
 ereal_inf_pinfty is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_inf_pinfty
 Declared in library mathcomp.analysis.ereal, line 561, characters 6-22
@@ -1684,7 +1698,7 @@ forall [R : realType] [A : set R],
 (A !=set0)%classic -> ereal_sup (R:=R) [set x%:E | x in A] = +oo%E
 
 hasNub_ereal_sup is not universe polymorphic
-Arguments hasNub_ereal_sup [R] [A]%classical_set_scope _ _
+Arguments hasNub_ereal_sup [R] [A]%_classical_set_scope _ _
 hasNub_ereal_sup is opaque
 Expands to: Constant mathcomp.analysis.ereal.hasNub_ereal_sup
 Declared in library mathcomp.analysis.ereal, line 574, characters 6-22
@@ -1708,7 +1722,7 @@ has_ubound (T:=R) A ->
 (A !=set0)%classic -> ereal_sup (R:=R) [set x%:E | x in A] = (sup A)%:E
 
 ereal_sup_EFin is not universe polymorphic
-Arguments ereal_sup_EFin [R] [A]%classical_set_scope _ _
+Arguments ereal_sup_EFin [R] [A]%_classical_set_scope _ _
 ereal_sup_EFin is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_sup_EFin
 Declared in library mathcomp.analysis.ereal, line 586, characters 6-20
@@ -1737,7 +1751,7 @@ has_lbound (T:=R) A ->
 (A !=set0)%classic -> ereal_inf (R:=R) [set x%:E | x in A] = (inf A)%:E
 
 ereal_inf_EFin is not universe polymorphic
-Arguments ereal_inf_EFin [R] [A]%classical_set_scope _ _
+Arguments ereal_inf_EFin [R] [A]%_classical_set_scope _ _
 ereal_inf_EFin is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_inf_EFin
 Declared in library mathcomp.analysis.ereal, line 603, characters 6-20
@@ -1756,7 +1770,7 @@ forall {R : realType} {S : set \bar R} {x : \bar R},
 reflect (forall y : \bar R, S y -> (y <= x)%E) (ereal_sup (R:=R) S <= x)%E
 
 ereal_supP is not universe polymorphic
-Arguments ereal_supP {R} {S}%classical_set_scope {x}%ereal_scope
+Arguments ereal_supP {R} {S}%_classical_set_scope {x}%_ereal_scope
 ereal_supP is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_supP
 Declared in library mathcomp.analysis.ereal, line 611, characters 6-16
@@ -1776,7 +1790,7 @@ forall {R : realType} {S : set \bar R} {x : \bar R},
 reflect (forall y : \bar R, S y -> (x <= y)%E) (x <= ereal_inf (R:=R) S)%E
 
 ereal_infP is not universe polymorphic
-Arguments ereal_infP {R} {S}%classical_set_scope {x}%ereal_scope
+Arguments ereal_infP {R} {S}%_classical_set_scope {x}%_ereal_scope
 ereal_infP is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_infP
 Declared in library mathcomp.analysis.ereal, line 620, characters 6-16
@@ -1795,7 +1809,7 @@ forall {R : realType} {S : set \bar R} {x : \bar R},
 reflect (exists2 y : \bar R, S y & (x < y)%E) (x < ereal_sup (R:=R) S)%E
 
 ereal_sup_gtP is not universe polymorphic
-Arguments ereal_sup_gtP {R} {S}%classical_set_scope {x}%ereal_scope
+Arguments ereal_sup_gtP {R} {S}%_classical_set_scope {x}%_ereal_scope
 ereal_sup_gtP is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_sup_gtP
 Declared in library mathcomp.analysis.ereal, line 628, characters 6-19
@@ -1813,7 +1827,7 @@ forall {R : realType} {S : set \bar R} {x : \bar R},
 reflect (exists2 y : \bar R, S y & (y < x)%E) (ereal_inf (R:=R) S < x)%E
 
 ereal_inf_ltP is not universe polymorphic
-Arguments ereal_inf_ltP {R} {S}%classical_set_scope {x}%ereal_scope
+Arguments ereal_inf_ltP {R} {S}%_classical_set_scope {x}%_ereal_scope
 ereal_inf_ltP is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_inf_ltP
 Declared in library mathcomp.analysis.ereal, line 635, characters 6-19
@@ -1832,7 +1846,7 @@ S (ereal_inf (R:=R) S) ->
 reflect (exists2 y : \bar R, S y & (y <= x)%E) (ereal_inf (R:=R) S <= x)%E
 
 ereal_inf_leP is not universe polymorphic
-Arguments ereal_inf_leP {R} {S}%classical_set_scope {x}%ereal_scope _
+Arguments ereal_inf_leP {R} {S}%_classical_set_scope {x}%_ereal_scope _
 ereal_inf_leP is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_inf_leP
 Declared in library mathcomp.analysis.ereal, line 642, characters 6-19
@@ -1851,7 +1865,7 @@ S (ereal_sup (R:=R) S) ->
 reflect (exists2 y : \bar R, S y & (x <= y)%E) (x <= ereal_sup (R:=R) S)%E
 
 ereal_sup_geP is not universe polymorphic
-Arguments ereal_sup_geP {R} {S}%classical_set_scope {x}%ereal_scope _
+Arguments ereal_sup_geP {R} {S}%_classical_set_scope {x}%_ereal_scope _
 ereal_sup_geP is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_sup_geP
 Declared in library mathcomp.analysis.ereal, line 649, characters 6-19
@@ -1869,7 +1883,8 @@ forall [R : realType] [S : set \bar R] (e : R),
 ereal_inf (R:=R) S = -oo%E -> exists2 x : \bar R, S x & (x < e%:E)%E
 
 lb_ereal_infNy_adherent is not universe polymorphic
-Arguments lb_ereal_infNy_adherent [R] [S]%classical_set_scope e%ring_scope _
+Arguments lb_ereal_infNy_adherent [R] [S]%_classical_set_scope 
+  e%_ring_scope _
 lb_ereal_infNy_adherent is opaque
 Expands to: Constant mathcomp.analysis.ereal.lb_ereal_infNy_adherent
 Declared in library mathcomp.analysis.ereal, line 656, characters 6-29
@@ -1939,8 +1954,8 @@ forall {R : realFieldType} [T : Type] (x : \bar R) [A : set T],
 A != set0 -> ereal_sup (R:=R) [set cst x x0 | x0 in A] = x
 
 ereal_sup_cst is not universe polymorphic
-Arguments ereal_sup_cst {R} [T]%type_scope x%ereal_scope
-  [A]%classical_set_scope _
+Arguments ereal_sup_cst {R} [T]%_type_scope x%_ereal_scope
+  [A]%_classical_set_scope _
 ereal_sup_cst is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_sup_cst
 Declared in library mathcomp.analysis.ereal, line 696, characters 6-19
@@ -1955,8 +1970,8 @@ forall {R : realFieldType} [T : Type] (x : \bar R) [A : set T],
 A != set0 -> ereal_inf (R:=R) [set cst x x0 | x0 in A] = x
 
 ereal_inf_cst is not universe polymorphic
-Arguments ereal_inf_cst {R} [T]%type_scope x%ereal_scope
-  [A]%classical_set_scope _
+Arguments ereal_inf_cst {R} [T]%_type_scope x%_ereal_scope
+  [A]%_classical_set_scope _
 ereal_inf_cst is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_inf_cst
 Declared in library mathcomp.analysis.ereal, line 699, characters 6-19
@@ -1979,7 +1994,7 @@ forall {R : realType} (X : set \bar R) [r : R],
 ereal_sup (R:=R) [set (r%:E * x)%E | x in X] = (r%:E * ereal_sup (R:=R) X)%E
 
 ereal_sup_pZl is not universe polymorphic
-Arguments ereal_sup_pZl {R} X%classical_set_scope [r]%ring_scope _
+Arguments ereal_sup_pZl {R} X%_classical_set_scope [r]%_ring_scope _
 ereal_sup_pZl is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_sup_pZl
 Declared in library mathcomp.analysis.ereal, line 709, characters 6-19
@@ -2005,7 +2020,7 @@ X != set0 ->
 ereal_sup (R:=R) [set (r%:E * x)%E | x in X] = (r%:E * ereal_sup (R:=R) X)%E
 
 ereal_supZl is not universe polymorphic
-Arguments ereal_supZl {R} [X]%classical_set_scope [r]%ring_scope _ _
+Arguments ereal_supZl {R} [X]%_classical_set_scope [r]%_ring_scope _ _
 ereal_supZl is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_supZl
 Declared in library mathcomp.analysis.ereal, line 722, characters 6-17
@@ -2024,7 +2039,7 @@ forall {R : realType} (X : set \bar R) [r : R],
 ereal_inf (R:=R) [set (r%:E * x)%E | x in X] = (r%:E * ereal_inf (R:=R) X)%E
 
 ereal_inf_pZl is not universe polymorphic
-Arguments ereal_inf_pZl {R} X%classical_set_scope [r]%ring_scope _
+Arguments ereal_inf_pZl {R} X%_classical_set_scope [r]%_ring_scope _
 ereal_inf_pZl is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_inf_pZl
 Declared in library mathcomp.analysis.ereal, line 729, characters 6-19
@@ -2044,7 +2059,7 @@ X != set0 ->
 ereal_sup (R:=R) [set (r%:E * x)%E | x in X] = (r%:E * ereal_sup (R:=R) X)%E
 
 ereal_infZl is not universe polymorphic
-Arguments ereal_infZl {R} [X]%classical_set_scope [r]%ring_scope _ _
+Arguments ereal_infZl {R} [X]%_classical_set_scope [r]%_ring_scope _ _
 ereal_infZl is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_infZl
 Declared in library mathcomp.analysis.ereal, line 736, characters 6-17
@@ -2064,8 +2079,8 @@ forall [T : Type] [R : numDomainType] (f : T -> \bar R) (D : set T),
 (abse \o f) \_ D = abse \o f \_ D
 
 restrict_abse is not universe polymorphic
-Arguments restrict_abse [T]%type_scope [R] f%function_scope
-  D%classical_set_scope
+Arguments restrict_abse [T]%_type_scope [R] f%_function_scope
+  D%_classical_set_scope
 restrict_abse is opaque
 Expands to: Constant mathcomp.analysis.ereal.restrict_abse
 Declared in library mathcomp.analysis.ereal, line 745, characters 6-19
@@ -2082,8 +2097,8 @@ forall [T : Type] [R : numFieldType] (f : T -> R) (D : set T),
 (EFin \o f) \_ D = EFin \o f \_ D
 
 restrict_EFin is not universe polymorphic
-Arguments restrict_EFin [T]%type_scope [R] f%function_scope
-  D%classical_set_scope
+Arguments restrict_EFin [T]%_type_scope [R] f%_function_scope
+  D%_classical_set_scope
 restrict_EFin is opaque
 Expands to: Constant mathcomp.analysis.ereal.restrict_EFin
 Declared in library mathcomp.analysis.ereal, line 751, characters 6-19
@@ -2103,7 +2118,7 @@ let r := Itv.real1 IntItv.keep_nonpos i in
 Itv.spec ext_num_sem r (ereal_sup (R:=R) [set x%:num%R | x in S])
 
 ext_num_spec_ereal_sup is not universe polymorphic
-Arguments ext_num_spec_ereal_sup {R} [i] S%function_scope
+Arguments ext_num_spec_ereal_sup {R} [i] S%_function_scope
 ext_num_spec_ereal_sup is opaque
 Expands to: Constant mathcomp.analysis.ereal.ext_num_spec_ereal_sup
 Declared in library mathcomp.analysis.ereal, line 758, characters 6-28
@@ -2131,7 +2146,7 @@ forall {R : realFieldType} [i : Itv.t],
 Itv.def ext_num_sem (Itv.real1 IntItv.keep_nonpos i)
 
 ereal_sup_inum is not universe polymorphic
-Arguments ereal_sup_inum {R} [i] S%function_scope
+Arguments ereal_sup_inum {R} [i] S%_function_scope
 ereal_sup_inum is transparent
 Expands to: Constant mathcomp.analysis.ereal.ereal_sup_inum
 Declared in library mathcomp.analysis.ereal, line 774, characters 10-24
@@ -2144,7 +2159,7 @@ let r := Itv.real1 IntItv.keep_nonneg i in
 Itv.spec ext_num_sem r (ereal_inf (R:=R) [set x%:num%R | x in S])
 
 ext_num_spec_ereal_inf is not universe polymorphic
-Arguments ext_num_spec_ereal_inf {R} [i] S%function_scope
+Arguments ext_num_spec_ereal_inf {R} [i] S%_function_scope
 ext_num_spec_ereal_inf is opaque
 Expands to: Constant mathcomp.analysis.ereal.ext_num_spec_ereal_inf
 Declared in library mathcomp.analysis.ereal, line 777, characters 6-28
@@ -2170,7 +2185,7 @@ forall {R : realFieldType} [i : Itv.t],
 Itv.def ext_num_sem (Itv.real1 IntItv.keep_nonneg i)
 
 ereal_inf_inum is not universe polymorphic
-Arguments ereal_inf_inum {R} [i] S%function_scope
+Arguments ereal_inf_inum {R} [i] S%_function_scope
 ereal_inf_inum is transparent
 Expands to: Constant mathcomp.analysis.ereal.ereal_inf_inum
 Declared in library mathcomp.analysis.ereal, line 791, characters 10-24
@@ -2187,7 +2202,7 @@ Declared in library mathcomp.analysis.ereal, line 791, characters 10-24
 <span class="vernacular">Definition</span><span class="id"> </span><span id="ereal_dnbhs" class="id"><a name="ereal_dnbhs" class="" title="ereal_dnbhs : forall {R : numFieldType}, \bar R -> set_system \bar R
 
 ereal_dnbhs is not universe polymorphic
-Arguments ereal_dnbhs {R} x%ereal_scope _
+Arguments ereal_dnbhs {R} x%_ereal_scope _
 ereal_dnbhs is transparent
 Expands to: Constant mathcomp.analysis.ereal.ereal_dnbhs
 Declared in library mathcomp.analysis.ereal, line 801, characters 11-22
@@ -2200,7 +2215,7 @@ Declared in library mathcomp.analysis.ereal, line 801, characters 11-22
 <span class="vernacular">Definition</span><span class="id"> </span><span id="ereal_nbhs" class="id"><a name="ereal_nbhs" class="" title="ereal_nbhs : forall {R : numFieldType}, \bar R -> set_system \bar R
 
 ereal_nbhs is not universe polymorphic
-Arguments ereal_nbhs {R} x%ereal_scope _
+Arguments ereal_nbhs {R} x%_ereal_scope _
 ereal_nbhs is transparent
 Expands to: Constant mathcomp.analysis.ereal.ereal_nbhs
 Declared in library mathcomp.analysis.ereal, line 807, characters 11-21
@@ -2362,7 +2377,7 @@ forall [R : numFieldType] [r : R],
 r \is Num.real -> \forall x \near +oo%E, (r%:E < x)%E
 
 ereal_nbhs_pinfty_gt is not universe polymorphic
-Arguments ereal_nbhs_pinfty_gt [R] [r]%ring_scope _
+Arguments ereal_nbhs_pinfty_gt [R] [r]%_ring_scope _
 ereal_nbhs_pinfty_gt is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_nbhs_pinfty_gt
 Declared in library mathcomp.analysis.ereal, line 906, characters 6-26
@@ -2377,7 +2392,7 @@ forall [R : numFieldType] [r : R],
 r \is Num.real -> \forall x \near +oo%E, (r%:E <= x)%E
 
 ereal_nbhs_pinfty_ge is not universe polymorphic
-Arguments ereal_nbhs_pinfty_ge [R] [r]%ring_scope _
+Arguments ereal_nbhs_pinfty_ge [R] [r]%_ring_scope _
 ereal_nbhs_pinfty_ge is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_nbhs_pinfty_ge
 Declared in library mathcomp.analysis.ereal, line 909, characters 6-26
@@ -2392,7 +2407,7 @@ forall [R : numFieldType] [r : R],
 r \is Num.real -> \forall x \near -oo%E, (x < r%:E)%E
 
 ereal_nbhs_ninfty_lt is not universe polymorphic
-Arguments ereal_nbhs_ninfty_lt [R] [r]%ring_scope _
+Arguments ereal_nbhs_ninfty_lt [R] [r]%_ring_scope _
 ereal_nbhs_ninfty_lt is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_nbhs_ninfty_lt
 Declared in library mathcomp.analysis.ereal, line 912, characters 6-26
@@ -2407,7 +2422,7 @@ forall [R : numFieldType] [r : R],
 r \is Num.real -> \forall x \near -oo%E, (x <= r%:E)%E
 
 ereal_nbhs_ninfty_le is not universe polymorphic
-Arguments ereal_nbhs_ninfty_le [R] [r]%ring_scope _
+Arguments ereal_nbhs_ninfty_le [R] [r]%_ring_scope _
 ereal_nbhs_ninfty_le is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_nbhs_ninfty_le
 Declared in library mathcomp.analysis.ereal, line 915, characters 6-26
@@ -2459,7 +2474,8 @@ forall [R : realFieldType] [p : \bar R] [A : set \bar R],
 ereal_nbhs p A -> A p
 
 ereal_nbhs_singleton is not universe polymorphic
-Arguments ereal_nbhs_singleton [R] [p]%ereal_scope [A]%classical_set_scope _
+Arguments ereal_nbhs_singleton [R] [p]%_ereal_scope 
+  [A]%_classical_set_scope _
 ereal_nbhs_singleton is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_nbhs_singleton
 Declared in library mathcomp.analysis.ereal, line 935, characters 6-26
@@ -2477,7 +2493,7 @@ forall [R : realFieldType] [p : \bar R] [A : set \bar R],
 ereal_nbhs p A -> ereal_nbhs p (ereal_nbhs^~ A)
 
 ereal_nbhs_nbhs is not universe polymorphic
-Arguments ereal_nbhs_nbhs [R] [p]%ereal_scope [A]%classical_set_scope _
+Arguments ereal_nbhs_nbhs [R] [p]%_ereal_scope [A]%_classical_set_scope _
 ereal_nbhs_nbhs is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_nbhs_nbhs
 Declared in library mathcomp.analysis.ereal, line 942, characters 6-21
@@ -2528,7 +2544,7 @@ forall [R : realFieldType] (x : \bar R),
 nbhs (- x)%E = [set [set (- x)%E | x in A] | A in nbhs x]%classic
 
 nbhsNe is not universe polymorphic
-Arguments nbhsNe [R] x%ereal_scope
+Arguments nbhsNe [R] x%_ereal_scope
 nbhsNe is opaque
 Expands to: Constant mathcomp.analysis.ereal.nbhsNe
 Declared in library mathcomp.analysis.ereal, line 982, characters 6-12
@@ -2571,7 +2587,7 @@ forall [R : realFieldType] [z : \bar R] [A : set \bar R],
 nbhs (- z)%E [set (- x)%E | x in A]%classic -> nbhs z A
 
 nbhsNKe is not universe polymorphic
-Arguments nbhsNKe [R] [z]%ereal_scope [A]%classical_set_scope _
+Arguments nbhsNKe [R] [z]%_ereal_scope [A]%_classical_set_scope _
 nbhsNKe is opaque
 Expands to: Constant mathcomp.analysis.ereal.nbhsNKe
 Declared in library mathcomp.analysis.ereal, line 1014, characters 6-13
@@ -2643,7 +2659,7 @@ forall [R : realFieldType] (S : set \bar R),
 [set (- x)%R | x in [set contract (R:=R) x | x in S]]%classic
 
 contract_imageN is not universe polymorphic
-Arguments contract_imageN [R] S%classical_set_scope
+Arguments contract_imageN [R] S%_classical_set_scope
 contract_imageN is opaque
 Expands to: Constant mathcomp.analysis.ereal.contract_imageN
 Declared in library mathcomp.analysis.ereal, line 1043, characters 6-21
@@ -2772,7 +2788,7 @@ forall [R : realFieldType] (x : \bar R),
 (contract (R:=R) x == 0%R) = (x == 0%R)
 
 contract_eq0 is not universe polymorphic
-Arguments contract_eq0 [R] x%ereal_scope
+Arguments contract_eq0 [R] x%_ereal_scope
 contract_eq0 is opaque
 Expands to: Constant mathcomp.analysis.ereal.contract_eq0
 Declared in library mathcomp.analysis.ereal, line 1069, characters 6-18
@@ -2787,7 +2803,7 @@ forall [R : realFieldType] (x : \bar R),
 (contract (R:=R) x == (-1)%R) = (x == -oo%E)
 
 contract_eqN1 is not universe polymorphic
-Arguments contract_eqN1 [R] x%ereal_scope
+Arguments contract_eqN1 [R] x%_ereal_scope
 contract_eqN1 is opaque
 Expands to: Constant mathcomp.analysis.ereal.contract_eqN1
 Declared in library mathcomp.analysis.ereal, line 1072, characters 6-19
@@ -2802,7 +2818,7 @@ forall [R : realFieldType] (x : \bar R),
 (contract (R:=R) x == 1%R) = (x == +oo%E)
 
 contract_eq1 is not universe polymorphic
-Arguments contract_eq1 [R] x%ereal_scope
+Arguments contract_eq1 [R] x%_ereal_scope
 contract_eq1 is opaque
 Expands to: Constant mathcomp.analysis.ereal.contract_eq1
 Declared in library mathcomp.analysis.ereal, line 1075, characters 6-18
@@ -2824,7 +2840,7 @@ forall [R : realType] [S : set \bar R],
 (S !=set0)%classic -> (`|sup [set contract (R:=R) x | x in S]| <= 1)%R
 
 sup_contract_le1 is not universe polymorphic
-Arguments sup_contract_le1 [R] [S]%classical_set_scope _
+Arguments sup_contract_le1 [R] [S]%_classical_set_scope _
 sup_contract_le1 is opaque
 Expands to: Constant mathcomp.analysis.ereal.sup_contract_le1
 Declared in library mathcomp.analysis.ereal, line 1085, characters 6-22
@@ -2847,7 +2863,7 @@ forall [R : realType] [S : set \bar R],
 contract (R:=R) (ereal_sup (R:=R) S) = sup [set contract (R:=R) x | x in S]
 
 contract_sup is not universe polymorphic
-Arguments contract_sup [R] [S]%classical_set_scope _
+Arguments contract_sup [R] [S]%_classical_set_scope _
 contract_sup is opaque
 Expands to: Constant mathcomp.analysis.ereal.contract_sup
 Declared in library mathcomp.analysis.ereal, line 1096, characters 6-18
@@ -2889,7 +2905,7 @@ forall [R : realType] [S : set \bar R],
 contract (R:=R) (ereal_inf (R:=R) S) = inf [set contract (R:=R) x | x in S]
 
 contract_inf is not universe polymorphic
-Arguments contract_inf [R] [S]%classical_set_scope _
+Arguments contract_inf [R] [S]%_classical_set_scope _
 contract_inf is opaque
 Expands to: Constant mathcomp.analysis.ereal.contract_inf
 Declared in library mathcomp.analysis.ereal, line 1126, characters 6-18
@@ -2923,7 +2939,7 @@ forall [t : \bar R],
 (fun y0 : \bar R => is_true (ereal_ball x x0 y0)) t ->
 ereal_ball x y t = true
 
-Arguments le_ereal_ball [R] [x]%ereal_scope [x y] _ [t] _
+Arguments le_ereal_ball [R] [x]%_ereal_scope [x y] _ [t] _
 le_ereal_ball is opaque
 Expands to: Constant mathcomp.analysis.ereal.le_ereal_ball
 Declared in library mathcomp.analysis.ereal, line 1139, characters 6-19
@@ -2939,7 +2955,7 @@ forall [R : realFieldType] {e : {posnum R}%R} [r : R],
 (expand (R:=R) (1 - e%:num) < r%:E)%E -> ereal_ball +oo e%:num r%:E
 
 expand_ereal_ball_pinfty is not universe polymorphic
-Arguments expand_ereal_ball_pinfty [R] {e} [r]%ring_scope _ _
+Arguments expand_ereal_ball_pinfty [R] {e} [r]%_ring_scope _ _
 expand_ereal_ball_pinfty is opaque
 Expands to: Constant mathcomp.analysis.ereal.expand_ereal_ball_pinfty
 Declared in library mathcomp.analysis.ereal, line 1142, characters 6-30
@@ -2960,7 +2976,7 @@ forall [R : realFieldType] [r r' : R] [e : {posnum R}%R],
 (1 <= (contract (R:=R) r%:E + e%:num)%E)%R -> ereal_ball r%:E e%:num r'%:E
 
 contract_ereal_ball_fin_le is not universe polymorphic
-Arguments contract_ereal_ball_fin_le [R] [r r']%ring_scope [e] _ _
+Arguments contract_ereal_ball_fin_le [R] [r r']%_ring_scope [e] _ _
 contract_ereal_ball_fin_le is opaque
 Expands to: Constant mathcomp.analysis.ereal.contract_ereal_ball_fin_le
 Declared in library mathcomp.analysis.ereal, line 1151, characters 6-32
@@ -2981,7 +2997,7 @@ forall [R : realFieldType] [r r' : R] [e : {posnum R}%R],
 (contract (R:=R) r%:E - e%:num <= -1)%R -> ereal_ball r%:E e%:num r'%:E
 
 contract_ereal_ball_fin_lt is not universe polymorphic
-Arguments contract_ereal_ball_fin_lt [R] [r r']%ring_scope [e] _ _
+Arguments contract_ereal_ball_fin_lt [R] [r r']%_ring_scope [e] _ _
 contract_ereal_ball_fin_lt is opaque
 Expands to: Constant mathcomp.analysis.ereal.contract_ereal_ball_fin_lt
 Declared in library mathcomp.analysis.ereal, line 1160, characters 6-32
@@ -3003,7 +3019,7 @@ forall [R : realFieldType] [r' r : R] [e : {posnum R}%R],
 (`|contract (R:=R) r%:E - e%:num| < 1)%R -> ereal_ball r%:E e%:num r'%:E
 
 expand_ereal_ball_fin_lt is not universe polymorphic
-Arguments expand_ereal_ball_fin_lt [R] [r' r]%ring_scope [e] _ _ _
+Arguments expand_ereal_ball_fin_lt [R] [r' r]%_ring_scope [e] _ _ _
 expand_ereal_ball_fin_lt is opaque
 Expands to: Constant mathcomp.analysis.ereal.expand_ereal_ball_fin_lt
 Declared in library mathcomp.analysis.ereal, line 1169, characters 6-30
@@ -3026,7 +3042,7 @@ ball r e' r' ->
 (`|contract (R:=R) r%:E - e%:num| < 1)%R -> ereal_ball r%:E e%:num r'%:E
 
 ball_ereal_ball_fin_lt is not universe polymorphic
-Arguments ball_ereal_ball_fin_lt [R] [r r']%ring_scope [e] _ _ _
+Arguments ball_ereal_ball_fin_lt [R] [r r']%_ring_scope [e] _ _ _
 ball_ereal_ball_fin_lt is opaque
 Expands to: Constant mathcomp.analysis.ereal.ball_ereal_ball_fin_lt
 Declared in library mathcomp.analysis.ereal, line 1178, characters 6-28
@@ -3053,7 +3069,7 @@ ball r e' r' ->
 (`|(contract (R:=R) r%:E + e%:num)%E| < 1)%R -> ereal_ball r%:E e%:num r'%:E
 
 ball_ereal_ball_fin_le is not universe polymorphic
-Arguments ball_ereal_ball_fin_le [R] [r r']%ring_scope [e] _ _ _
+Arguments ball_ereal_ball_fin_le [R] [r r']%_ring_scope [e] _ _ _
 ball_ereal_ball_fin_le is opaque
 Expands to: Constant mathcomp.analysis.ereal.ball_ereal_ball_fin_le
 Declared in library mathcomp.analysis.ereal, line 1191, characters 6-28
@@ -3080,7 +3096,7 @@ forall [R : realFieldType] [A : set \bar R] [e : {posnum R}%R],
 ((fun y : \bar R => ereal_ball +oo e%:num y) `<=` A)%classic -> nbhs +oo%E A
 
 nbhs_oo_up_e1 is not universe polymorphic
-Arguments nbhs_oo_up_e1 [R] [A]%classical_set_scope [e] _ _
+Arguments nbhs_oo_up_e1 [R] [A]%_classical_set_scope [e] _ _
 nbhs_oo_up_e1 is opaque
 Expands to: Constant mathcomp.analysis.ereal.nbhs_oo_up_e1
 Declared in library mathcomp.analysis.ereal, line 1206, characters 6-19
@@ -3104,7 +3120,7 @@ forall [R : realFieldType] [A : set \bar R] [e : {posnum R}%R],
 ((fun y : \bar R => ereal_ball -oo e%:num y) `<=` A)%classic -> nbhs -oo%E A
 
 nbhs_oo_down_e1 is not universe polymorphic
-Arguments nbhs_oo_down_e1 [R] [A]%classical_set_scope [e] _ _
+Arguments nbhs_oo_down_e1 [R] [A]%_classical_set_scope [e] _ _
 nbhs_oo_down_e1 is opaque
 Expands to: Constant mathcomp.analysis.ereal.nbhs_oo_down_e1
 Declared in library mathcomp.analysis.ereal, line 1218, characters 6-21
@@ -3127,7 +3143,7 @@ forall [R : realFieldType] [A : set \bar R] [e : {posnum R}%R],
 ((fun y : \bar R => ereal_ball +oo e%:num y) `<=` A)%classic -> nbhs +oo%E A
 
 nbhs_oo_up_1e is not universe polymorphic
-Arguments nbhs_oo_up_1e [R] [A]%classical_set_scope [e] _ _
+Arguments nbhs_oo_up_1e [R] [A]%_classical_set_scope [e] _ _
 nbhs_oo_up_1e is opaque
 Expands to: Constant mathcomp.analysis.ereal.nbhs_oo_up_1e
 Declared in library mathcomp.analysis.ereal, line 1229, characters 6-19
@@ -3156,7 +3172,7 @@ forall [R : realFieldType] [A : set \bar R] [e : {posnum R}%R],
 ((fun y : \bar R => ereal_ball -oo e%:num y) `<=` A)%classic -> nbhs -oo%E A
 
 nbhs_oo_down_1e is not universe polymorphic
-Arguments nbhs_oo_down_1e [R] [A]%classical_set_scope [e] _ _
+Arguments nbhs_oo_down_1e [R] [A]%_classical_set_scope [e] _ _
 nbhs_oo_down_1e is opaque
 Expands to: Constant mathcomp.analysis.ereal.nbhs_oo_down_1e
 Declared in library mathcomp.analysis.ereal, line 1246, characters 6-21
@@ -3185,8 +3201,8 @@ forall [R : realFieldType] [r : R] [e : {posnum R}%R] [A : set \bar R],
 (1 <= (contract (R:=R) r%:E + e%:num)%E)%R -> nbhs r%:E A
 
 nbhs_fin_out_above is not universe polymorphic
-Arguments nbhs_fin_out_above [R] [r]%ring_scope [e] 
-  [A]%classical_set_scope _ _ _
+Arguments nbhs_fin_out_above [R] [r]%_ring_scope [e] 
+  [A]%_classical_set_scope _ _ _
 nbhs_fin_out_above is opaque
 Expands to: Constant mathcomp.analysis.ereal.nbhs_fin_out_above
 Declared in library mathcomp.analysis.ereal, line 1262, characters 6-24
@@ -3219,8 +3235,8 @@ forall [R : realFieldType] [r : R] [e : {posnum R}%R] [A : set \bar R],
 ((contract (R:=R) r%:E + e%:num)%E < 1)%R -> nbhs r%:E A
 
 nbhs_fin_out_below is not universe polymorphic
-Arguments nbhs_fin_out_below [R] [r]%ring_scope [e] 
-  [A]%classical_set_scope _ _ _
+Arguments nbhs_fin_out_below [R] [r]%_ring_scope [e] 
+  [A]%_classical_set_scope _ _ _
 nbhs_fin_out_below is opaque
 Expands to: Constant mathcomp.analysis.ereal.nbhs_fin_out_below
 Declared in library mathcomp.analysis.ereal, line 1282, characters 6-24
@@ -3252,8 +3268,8 @@ forall [R : realFieldType] [r : R] [e : {posnum R}%R] [A : set \bar R],
 (1 < (contract (R:=R) r%:E + e%:num)%E)%R -> nbhs r%:E A
 
 nbhs_fin_out_above_below is not universe polymorphic
-Arguments nbhs_fin_out_above_below [R] [r]%ring_scope 
-  [e] [A]%classical_set_scope _ _ _
+Arguments nbhs_fin_out_above_below [R] [r]%_ring_scope 
+  [e] [A]%_classical_set_scope _ _ _
 nbhs_fin_out_above_below is opaque
 Expands to: Constant mathcomp.analysis.ereal.nbhs_fin_out_above_below
 Declared in library mathcomp.analysis.ereal, line 1301, characters 6-30
@@ -3281,7 +3297,7 @@ forall [R : realFieldType] [r : R] [e : {posnum R}%R] [A : set \bar R],
 ((fun y : \bar R => ereal_ball r%:E e%:num y) `<=` A)%classic -> nbhs r%:E A
 
 nbhs_fin_inbound is not universe polymorphic
-Arguments nbhs_fin_inbound [R] [r]%ring_scope [e] [A]%classical_set_scope _
+Arguments nbhs_fin_inbound [R] [r]%_ring_scope [e] [A]%_classical_set_scope _
 nbhs_fin_inbound is opaque
 Expands to: Constant mathcomp.analysis.ereal.nbhs_fin_inbound
 Declared in library mathcomp.analysis.ereal, line 1318, characters 6-22
@@ -3548,8 +3564,8 @@ forall [R : realFieldType] [P : R -> Prop] [r : R] [a b : \bar R],
 (forall y : R, (a < y%:E)%E -> (y%:E < b)%E -> P y) -> nbhs r P
 
 nbhs_interval is not universe polymorphic
-Arguments nbhs_interval [R] [P]%function_scope [r]%ring_scope
-  [a b]%ereal_scope _ _ _%function_scope
+Arguments nbhs_interval [R] [P]%_function_scope [r]%_ring_scope
+  [a b]%_ereal_scope _ _ _%_function_scope
 nbhs_interval is opaque
 Expands to: Constant mathcomp.analysis.ereal.nbhs_interval
 Declared in library mathcomp.analysis.ereal, line 1505, characters 6-19
@@ -3587,7 +3603,7 @@ match x with
     exists M : R, M \is Num.real /\ (forall y : \bar R, (y < M%:E)%E -> t y)
 end
 
-Arguments ereal_dnbhs_le [R] [x]%ereal_scope [t] _
+Arguments ereal_dnbhs_le [R] [x]%_ereal_scope [t] _
 ereal_dnbhs_le is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_dnbhs_le
 Declared in library mathcomp.analysis.ereal, line 1515, characters 6-20
@@ -3623,7 +3639,7 @@ exists2 i : R,
                    R =>
           t r0%:E) t0))%classic
 
-Arguments ereal_dnbhs_le_finite [R] [r]%ring_scope [t] _
+Arguments ereal_dnbhs_le_finite [R] [r]%_ring_scope [t] _
 ereal_dnbhs_le_finite is opaque
 Expands to: Constant mathcomp.analysis.ereal.ereal_dnbhs_le_finite
 Declared in library mathcomp.analysis.ereal, line 1522, characters 6-27
@@ -3638,7 +3654,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="ereal_loc_seq" class="id"><a name="ereal_loc_seq" class="" title="ereal_loc_seq : forall [R : numDomainType], \bar R -> nat -> \bar R
 
 ereal_loc_seq is not universe polymorphic
-Arguments ereal_loc_seq [R] x%ereal_scope n%nat_scope
+Arguments ereal_loc_seq [R] x%_ereal_scope n%_nat_scope
 ereal_loc_seq is transparent
 Expands to: Constant mathcomp.analysis.ereal.ereal_loc_seq
 Declared in library mathcomp.analysis.ereal, line 1528, characters 11-24
@@ -3662,7 +3678,7 @@ exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i `<=` ereal_loc_seq (R:=R) x @^-1` t)%classic
 
-Arguments cvg_ereal_loc_seq [R] [x]%ereal_scope [t] _
+Arguments cvg_ereal_loc_seq [R] [x]%_ereal_scope [t] _
 cvg_ereal_loc_seq is opaque
 Expands to: Constant mathcomp.analysis.ereal.cvg_ereal_loc_seq
 Declared in library mathcomp.analysis.ereal, line 1535, characters 6-23

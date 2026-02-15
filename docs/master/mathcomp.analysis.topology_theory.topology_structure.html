@@ -79,6 +79,20 @@
           </ul>
           </details>
           </li>
+<li><details id="mathcomp.analysis.probability_theory"><summary>probability_theory</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.probability_theory.bernoulli_distribution.html">bernoulli_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.beta_distribution.html">beta_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.binomial_distribution.html">binomial_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.exponential_distribution.html">exponential_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.normal_distribution.html">normal_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.poisson_distribution.html">poisson_distribution</a></li>
+<li><a href="mathcomp.analysis.probability_theory.probability.html">probability</a></li>
+<li><a href="mathcomp.analysis.probability_theory.random_variable.html">random_variable</a></li>
+<li><a href="mathcomp.analysis.probability_theory.uniform_distribution.html">uniform_distribution</a></li>
+          </ul>
+          </details>
+          </li>
 <li><details id="mathcomp.analysis.showcase"><summary>showcase</summary>
           <ul>
           <li><a href="mathcomp.analysis.showcase.pnt.html">pnt</a></li>
@@ -92,6 +106,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
 <li><a href="mathcomp.analysis.topology_theory.nat_topology.html">nat_topology</a></li>
@@ -134,7 +149,6 @@
 <li><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></li>
 <li><a href="mathcomp.analysis.numfun.html">numfun</a></li>
 <li><a href="mathcomp.analysis.pi_irrational.html">pi_irrational</a></li>
-<li><a href="mathcomp.analysis.probability.html">probability</a></li>
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
@@ -328,7 +342,7 @@ by extending the hierarchy.
 <span class="vernacular">Definition</span><span class="id"> </span><span id="open_nbhs" class="id"><a name="open_nbhs" class="" title="open_nbhs : forall {T : topologicalType}, T -> set T -> Prop
 
 open_nbhs is not universe polymorphic
-Arguments open_nbhs {T} p A%classical_set_scope
+Arguments open_nbhs {T} p A%_classical_set_scope
 open_nbhs is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.open_nbhs
@@ -339,7 +353,7 @@ library mathcomp.analysis.topology_theory.topology_structure, line 116, characte
 <span class="vernacular">Definition</span><span class="id"> </span><span id="basis" class="id"><a name="basis" class="" title="basis : forall {T : topologicalType}, set (set T) -> Prop
 
 basis is not universe polymorphic
-Arguments basis {T} B%classical_set_scope
+Arguments basis {T} B%_classical_set_scope
 basis is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.basis
@@ -417,7 +431,7 @@ forall {T : topologicalType} (p : T) (A : set T),
 open_nbhs p A = (open A /\ nbhs p A)
 
 open_nbhsE is not universe polymorphic
-Arguments open_nbhsE {T} p A%classical_set_scope
+Arguments open_nbhsE {T} p A%_classical_set_scope
 open_nbhsE is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.open_nbhsE
@@ -434,7 +448,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="interior" class="id"><a name="interior" class="" title="interior : forall {T : topologicalType}, set T -> T -> Prop
 
 interior is not universe polymorphic
-Arguments interior {T} A%classical_set_scope x
+Arguments interior {T} A%_classical_set_scope x
 interior is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.interior
@@ -452,7 +466,7 @@ Expanded type for implicit arguments
 interior_subset :
 forall {T : topologicalType} [A : set T] [t : T], A°%classic t -> A t
 
-Arguments interior_subset {T} [A]%classical_set_scope [t] _
+Arguments interior_subset {T} [A]%_classical_set_scope [t] _
 interior_subset is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.interior_subset
@@ -484,7 +498,7 @@ library mathcomp.analysis.topology_theory.topology_structure, line 154, characte
 forall {T : topologicalType} [p : T] [A : set T], nbhs p A -> A p
 
 nbhs_singleton is not universe polymorphic
-Arguments nbhs_singleton {T} [p] [A]%classical_set_scope _
+Arguments nbhs_singleton {T} [p] [A]%_classical_set_scope _
 nbhs_singleton is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.nbhs_singleton
@@ -501,7 +515,7 @@ forall {T : topologicalType} [p : T] [A : set T],
 nbhs p A -> nbhs p A°%classic
 
 nbhs_interior is not universe polymorphic
-Arguments nbhs_interior {T} [p] [A]%classical_set_scope _
+Arguments nbhs_interior {T} [p] [A]%_classical_set_scope _
 nbhs_interior is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.nbhs_interior
@@ -550,7 +564,7 @@ forall {T : topologicalType} [A B : set T],
 open A -> open B -> open (A `&` B)%classic
 
 openI is not universe polymorphic
-Arguments openI {T} [A B]%classical_set_scope _ _
+Arguments openI {T} [A B]%_classical_set_scope _ _
 openI is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.openI
@@ -569,8 +583,8 @@ forall {T : topologicalType} [I : Type] [D : set I] [f : I -> set T],
 (forall i : I, D i -> open (f i)) -> open (\bigcup_(i in D) f i)%classic
 
 bigcup_open is not universe polymorphic
-Arguments bigcup_open {T} [I]%type_scope [D]%classical_set_scope
-  [f]%function_scope _%function_scope
+Arguments bigcup_open {T} [I]%_type_scope [D]%_classical_set_scope
+  [f]%_function_scope _%_function_scope
 bigcup_open is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.bigcup_open
@@ -590,7 +604,7 @@ forall {T : topologicalType} [A B : set T],
 open A -> open B -> open (A `|` B)%classic
 
 openU is not universe polymorphic
-Arguments openU {T} [A B]%classical_set_scope _ _
+Arguments openU {T} [A B]%_classical_set_scope _ _
 openU is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.openU
@@ -608,7 +622,7 @@ forall {T : topologicalType} [A : set T] (B : set T),
 open A -> (A `<=` B)%classic = (A `<=` B°)%classic
 
 open_subsetE is not universe polymorphic
-Arguments open_subsetE {T} [A]%classical_set_scope B%classical_set_scope _
+Arguments open_subsetE {T} [A]%_classical_set_scope B%_classical_set_scope _
 open_subsetE is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.open_subsetE
@@ -626,7 +640,7 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="open_interior" class="id"><a name="open_interior" class="" title="open_interior : forall {T : topologicalType} (A : set T), open A°%classic
 
 open_interior is not universe polymorphic
-Arguments open_interior {T} A%classical_set_scope
+Arguments open_interior {T} A%_classical_set_scope
 open_interior is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.open_interior
@@ -655,8 +669,8 @@ forall {T : topologicalType} [I : Type] [D : set I] [f : I -> set T] [t : T],
       class) in
  nbhs) t (\bigcup_(i in D) f i)%classic
 
-Arguments interior_bigcup {T} [I]%type_scope [D]%classical_set_scope
-  [f]%function_scope [t] _
+Arguments interior_bigcup {T} [I]%_type_scope [D]%_classical_set_scope
+  [f]%_function_scope [t] _
 interior_bigcup is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.interior_bigcup
@@ -691,7 +705,7 @@ forall {T : topologicalType} [p : T] [A B : set T],
 open_nbhs p A -> open_nbhs p B -> open_nbhs p (A `&` B)
 
 open_nbhsI is not universe polymorphic
-Arguments open_nbhsI {T} [p] [A B]%classical_set_scope _ _
+Arguments open_nbhsI {T} [p] [A B]%_classical_set_scope _ _
 open_nbhsI is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.open_nbhsI
@@ -708,7 +722,7 @@ library mathcomp.analysis.topology_theory.topology_structure, line 213, characte
 forall {T : topologicalType} [p : T] [A : set T], open_nbhs p A -> nbhs p A
 
 open_nbhs_nbhs is not universe polymorphic
-Arguments open_nbhs_nbhs {T} [p] [A]%classical_set_scope _
+Arguments open_nbhs_nbhs {T} [p] [A]%_classical_set_scope _
 open_nbhs_nbhs is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.open_nbhs_nbhs
@@ -725,7 +739,7 @@ forall {T : topologicalType} (A B : set T),
 (A `&` B)°%classic = (A° `&` B°)%classic
 
 interiorI is not universe polymorphic
-Arguments interiorI {T} (A B)%classical_set_scope
+Arguments interiorI {T} (A B)%_classical_set_scope
 interiorI is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.interiorI
@@ -761,7 +775,7 @@ x \in S ->
       class) in
  nbhs) x P
 
-Arguments open_in_nearW {T} [P]%function_scope [S]%classical_set_scope 
+Arguments open_in_nearW {T} [P]%_function_scope [S]%_classical_set_scope 
   _ _ [x] _
 open_in_nearW is opaque
 Expands to: Constant
@@ -805,7 +819,7 @@ forall [S T : topologicalType] (f : S -> T),
 continuous f <-> (forall A : set T, open A -> open (f @^-1` A)%classic)
 
 continuousP is not universe polymorphic
-Arguments continuousP [S T] f%function_scope
+Arguments continuousP [S T] f%_function_scope
 continuousP is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.continuousP
@@ -840,7 +854,7 @@ nbhs ((g \o f) x) t ->
       class) in
  nbhs) x ((g \o f) @^-1` t)%classic
 
-Arguments continuous_comp [R S T] [f g]%function_scope [x] _ _ [t] _
+Arguments continuous_comp [R S T] [f g]%_function_scope [x] _ _ [t] _
 continuous_comp is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.continuous_comp
@@ -859,7 +873,7 @@ forall {T U : topologicalType} [f : T -> U] [D : set U],
 {in (f @^-1` D)%classic, continuous f} -> open D -> open (f @^-1` D)%classic
 
 open_comp is not universe polymorphic
-Arguments open_comp {T U} [f]%function_scope [D]%classical_set_scope _ _
+Arguments open_comp {T U} [f]%_function_scope [D]%_classical_set_scope _ _
 open_comp is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.open_comp
@@ -887,7 +901,7 @@ forall {T U : topologicalType} [F : set_system T] [x : T] [f : T -> U],
 (F --> x)%classic ->
 forall [t : set U], nbhs (f x) t -> F (f @^-1` t)%classic
 
-Arguments cvg_fmap {T U} [F x] [f]%function_scope _ _ [t] _
+Arguments cvg_fmap {T U} [F x] [f]%_function_scope _ _ [t] _
 cvg_fmap is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.cvg_fmap
@@ -906,7 +920,7 @@ forall [T : topologicalType] [x : T] [P : set T],
 (\near x, P x) -> \near x, \near x, P x
 
 near_join is not universe polymorphic
-Arguments near_join [T x] [P]%classical_set_scope _
+Arguments near_join [T x] [P]%_classical_set_scope _
 near_join is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.near_join
@@ -924,7 +938,7 @@ forall [T : topologicalType] [P Q : set T] [x : T],
 (\near x, (\near x, P x) -> Q x) -> (\near x, P x) -> \near x, Q x
 
 near_bind is not universe polymorphic
-Arguments near_bind [T] [P Q]%classical_set_scope [x] _ _
+Arguments near_bind [T] [P Q]%_classical_set_scope [x] _ _
 near_bind is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.near_bind
@@ -957,8 +971,8 @@ forall [f : T -> V] [h : V -> U] [a : V],
 (f x @[x --> F] --> a)%classic ->
 forall [t : set U], nbhs (h a) t -> F ((h \o f) @^-1` t)%classic
 
-Arguments continuous_cvg {T}%type_scope {V U} [F] 
-  FF [f h]%function_scope [a] _ _ [t] _
+Arguments continuous_cvg {T}%_type_scope {V U} [F] 
+  FF [f h]%_function_scope [a] _ _ [t] _
 continuous_cvg is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.continuous_cvg
@@ -995,8 +1009,9 @@ forall [t : set U],
 nbhs (lim ((h \o f) x @[x --> F])%classic) t ->
 F ([eta h \o f] @^-1` t)%classic
 
-Arguments continuous_is_cvg {T}%type_scope {V U} [F] 
-  FF [f h]%function_scope _%function_scope _ [t] _
+Arguments continuous_is_cvg {T}%_type_scope {V U} 
+  [F] FF [f h]%_function_scope _%_function_scope _ 
+  [t] _
 continuous_is_cvg is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.continuous_is_cvg
@@ -1034,8 +1049,8 @@ forall [f : T -> V] [g : T -> W] [h : V -> W -> U] [a : V] [b : W],
 forall [t : set U],
 nbhs (h a b) t -> F ((fun x : T => h (f x) (g x)) @^-1` t)%classic
 
-Arguments continuous2_cvg {T}%type_scope {V W U} [F] 
-  FF [f g h]%function_scope [a b] _ _ _ [t] _
+Arguments continuous2_cvg {T}%_type_scope {V W U} 
+  [F] FF [f g h]%_function_scope [a b] _ _ _ [t] _
 continuous2_cvg is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.continuous2_cvg
@@ -1059,7 +1074,7 @@ forall {T : Type} {U : topologicalType} (l : U) {f : T -> U}
 Filter F -> (\near F, f F = l) -> (f x @[x --> F] --> l)%classic
 
 cvg_near_cst is not universe polymorphic
-Arguments cvg_near_cst {T}%type_scope {U} l {f}%function_scope {F FF} _ t _
+Arguments cvg_near_cst {T}%_type_scope {U} l {f}%_function_scope {F FF} _ t _
 cvg_near_cst is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.cvg_near_cst
@@ -1082,7 +1097,7 @@ forall {T : Type} {U : ptopologicalType} (l : U) {f : T -> U}
 Filter F -> (\near F, f F = l) -> cvg (f x @[x --> F])%classic
 
 is_cvg_near_cst is not universe polymorphic
-Arguments is_cvg_near_cst {T}%type_scope {U} l {f}%function_scope 
+Arguments is_cvg_near_cst {T}%_type_scope {U} l {f}%_function_scope 
   {F FF} _ t _
 is_cvg_near_cst is opaque
 Expands to: Constant
@@ -1103,7 +1118,7 @@ forall {T U : topologicalType} (l : U) [f : T -> U] [x : T],
 (\near x, f x = l) -> {for x, continuous f}
 
 near_cst_continuous is not universe polymorphic
-Arguments near_cst_continuous {T U} l [f]%function_scope [x] _ t _
+Arguments near_cst_continuous {T U} l [f]%_function_scope [x] _ t _
 near_cst_continuous is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.near_cst_continuous
@@ -1125,7 +1140,7 @@ forall {U : topologicalType} (x : U) {T : Type} {F : set_system T},
 Filter F -> (x @[_ --> F] --> x)%classic
 
 cvg_cst is not universe polymorphic
-Arguments cvg_cst {U} x {T}%type_scope {F FF} t _
+Arguments cvg_cst {U} x {T}%_type_scope {F FF} t _
 cvg_cst is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.cvg_cst
@@ -1146,7 +1161,7 @@ forall {U : ptopologicalType} (x : U) {T : Type} {F : set_system T},
 Filter F -> cvg (x @[_ --> F])%classic
 
 is_cvg_cst is not universe polymorphic
-Arguments is_cvg_cst {U} x {T}%type_scope {F FF} t _
+Arguments is_cvg_cst {U} x {T}%_type_scope {F FF} t _
 is_cvg_cst is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.is_cvg_cst
@@ -1209,7 +1224,7 @@ globally A t ->
       class) in
  nbhs) x (fun t0 : T => A t0 -> t t0)
 
-Arguments within_nbhsW {T} [A]%classical_set_scope [x] _ [t] _
+Arguments within_nbhsW {T} [A]%_classical_set_scope [x] _ [t] _
 within_nbhsW is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.within_nbhsW
@@ -1227,7 +1242,7 @@ forall {T : topologicalType} [A : set T] [P : set_system T -> Prop],
 phantom Prop (P (globally A)) -> Prop
 
 locally_of is not universe polymorphic
-Arguments locally_of {T} [A]%classical_set_scope [P]%function_scope _
+Arguments locally_of {T} [A]%_classical_set_scope [P]%_function_scope _
 locally_of is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.locally_of
@@ -1242,7 +1257,7 @@ forall {T : topologicalType} [A : set T] [x : T],
 A°%classic x -> within A (nbhs x) = nbhs x
 
 within_interior is not universe polymorphic
-Arguments within_interior {T} [A]%classical_set_scope [x] _
+Arguments within_interior {T} [A]%_classical_set_scope [x] _
 within_interior is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.within_interior
@@ -1272,7 +1287,7 @@ Filter F ->
 (A `<=` B)%classic ->
 forall [t : set T], within B F t -> F (fun t0 : T => A t0 -> t t0)
 
-Arguments within_subset {T} [A B]%classical_set_scope [F] _ _ [t] _
+Arguments within_subset {T} [A B]%_classical_set_scope [F] _ _ [t] _
 within_subset is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.within_subset
@@ -1292,7 +1307,7 @@ Filter F ->
 within A F = [set U | (exists2 V : set T, F V & U `&` A = V `&` A)]%classic
 
 withinE is not universe polymorphic
-Arguments withinE {T} A%classical_set_scope [F] _
+Arguments withinE {T} A%_classical_set_scope [F] _
 withinE is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.withinE
@@ -1328,8 +1343,8 @@ forall [t : set S],
 nbhs (g x @[x --> within A F])%classic t ->
 F (fun t0 : T => A t0 -> (f @^-1` t)%classic t0)
 
-Arguments fmap_within_eq {T} [A]%classical_set_scope 
-  {S} [F] [f g]%function_scope _ _ [t] _
+Arguments fmap_within_eq {T} [A]%_classical_set_scope 
+  {S} [F] [f g]%_function_scope _ _ [t] _
 fmap_within_eq is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.fmap_within_eq
@@ -1365,9 +1380,9 @@ hasChoice.axioms_ T ->
 Equality.mixin_of T -> isFiltered.axioms_ T T -> set (set T)
 
 Builders_1.open_of_nbhs is not universe polymorphic
-Arguments Builders_1.open_of_nbhs [T]%type_scope local_mixin_choice_hasChoice
-  local_mixin_eqtype_hasDecEq local_mixin_filter_isFiltered 
-  _
+Arguments Builders_1.open_of_nbhs [T]%_type_scope
+  local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  local_mixin_filter_isFiltered _
 Builders_1.open_of_nbhs is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.Builders_1.open_of_nbhs
@@ -1431,7 +1446,7 @@ topologicalType
 
 Builders_1.Builders_1_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments Builders_1.Builders_1_T__canonical__topology_structure_Topological
-  [T]%type_scope
+  [T]%_type_scope
   [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
    local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
   fresh_name_2
@@ -1478,7 +1493,7 @@ topologicalType
 
 Builders_1.Builders_1_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments Builders_1.Builders_1_T__canonical__topology_structure_Topological
-  [T]%type_scope
+  [T]%_type_scope
   [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
    local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
   fresh_name_2
@@ -1525,7 +1540,7 @@ topologicalType
 
 Builders_1.Builders_1_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments Builders_1.Builders_1_T__canonical__topology_structure_Topological
-  [T]%type_scope
+  [T]%_type_scope
   [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
    local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
   fresh_name_2
@@ -1572,7 +1587,7 @@ topologicalType
 
 Builders_1.Builders_1_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments Builders_1.Builders_1_T__canonical__topology_structure_Topological
-  [T]%type_scope
+  [T]%_type_scope
   [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
    local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
   fresh_name_2
@@ -1619,7 +1634,7 @@ topologicalType
 
 Builders_1.Builders_1_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments Builders_1.Builders_1_T__canonical__topology_structure_Topological
-  [T]%type_scope
+  [T]%_type_scope
   [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
    local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
   fresh_name_2
@@ -1638,7 +1653,7 @@ library mathcomp.analysis.topology_theory.topology_structure, line 445, characte
 <span class="vernacular">Definition</span><span class="id"> </span><span id="nbhs_of_open" class="id"><a name="nbhs_of_open" class="" title="nbhs_of_open : forall [T : Type], set_system T -> T -> set T -> Prop
 
 nbhs_of_open is not universe polymorphic
-Arguments nbhs_of_open [T]%type_scope op p A%classical_set_scope
+Arguments nbhs_of_open [T]%_type_scope op p A%_classical_set_scope
 nbhs_of_open is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.nbhs_of_open
@@ -1680,7 +1695,7 @@ nbhsType
 
 Builders_6.Builders_6_T__canonical__filter_Nbhs is not universe polymorphic
 Arguments Builders_6.Builders_6_T__canonical__filter_Nbhs 
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_7
 Builders_6.Builders_6_T__canonical__filter_Nbhs is transparent
 Expands to: Constant
@@ -1710,7 +1725,7 @@ nbhsType
 
 Builders_6.Builders_6_T__canonical__filter_Nbhs is not universe polymorphic
 Arguments Builders_6.Builders_6_T__canonical__filter_Nbhs 
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_7
 Builders_6.Builders_6_T__canonical__filter_Nbhs is transparent
 Expands to: Constant
@@ -1740,7 +1755,7 @@ nbhsType
 
 Builders_6.Builders_6_T__canonical__filter_Nbhs is not universe polymorphic
 Arguments Builders_6.Builders_6_T__canonical__filter_Nbhs 
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_7
 Builders_6.Builders_6_T__canonical__filter_Nbhs is transparent
 Expands to: Constant
@@ -1770,7 +1785,7 @@ nbhsType
 
 Builders_6.Builders_6_T__canonical__filter_Nbhs is not universe polymorphic
 Arguments Builders_6.Builders_6_T__canonical__filter_Nbhs 
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_7
 Builders_6.Builders_6_T__canonical__filter_Nbhs is transparent
 Expands to: Constant
@@ -1800,7 +1815,7 @@ nbhsType
 
 Builders_6.Builders_6_T__canonical__filter_Nbhs is not universe polymorphic
 Arguments Builders_6.Builders_6_T__canonical__filter_Nbhs 
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_7
 Builders_6.Builders_6_T__canonical__filter_Nbhs is transparent
 Expands to: Constant
@@ -1865,7 +1880,7 @@ topologicalType
 
 Builders_6.Builders_6_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments Builders_6.Builders_6_T__canonical__topology_structure_Topological
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_7
 Builders_6.Builders_6_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
@@ -1895,7 +1910,7 @@ topologicalType
 
 Builders_6.Builders_6_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments Builders_6.Builders_6_T__canonical__topology_structure_Topological
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_7
 Builders_6.Builders_6_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
@@ -1925,7 +1940,7 @@ topologicalType
 
 Builders_6.Builders_6_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments Builders_6.Builders_6_T__canonical__topology_structure_Topological
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_7
 Builders_6.Builders_6_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
@@ -1955,7 +1970,7 @@ topologicalType
 
 Builders_6.Builders_6_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments Builders_6.Builders_6_T__canonical__topology_structure_Topological
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_7
 Builders_6.Builders_6_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
@@ -1985,7 +2000,7 @@ topologicalType
 
 Builders_6.Builders_6_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments Builders_6.Builders_6_T__canonical__topology_structure_Topological
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_7
 Builders_6.Builders_6_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
@@ -2032,7 +2047,7 @@ isBaseTopological.phant_axioms (m:=local_mixin_choice_hasChoice)
 set (set T)
 
 Builders_14.open_from is not universe polymorphic
-Arguments Builders_14.open_from [T]%type_scope
+Arguments Builders_14.open_from [T]%_type_scope
   [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq] 
   fresh_name_15 _
 Builders_14.open_from is transparent
@@ -2114,7 +2129,7 @@ topologicalType
 Builders_14.Builders_14_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments
   Builders_14.Builders_14_T__canonical__topology_structure_Topological
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_15
 Builders_14.Builders_14_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
@@ -2145,7 +2160,7 @@ topologicalType
 Builders_14.Builders_14_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments
   Builders_14.Builders_14_T__canonical__topology_structure_Topological
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_15
 Builders_14.Builders_14_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
@@ -2176,7 +2191,7 @@ topologicalType
 Builders_14.Builders_14_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments
   Builders_14.Builders_14_T__canonical__topology_structure_Topological
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_15
 Builders_14.Builders_14_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
@@ -2207,7 +2222,7 @@ topologicalType
 Builders_14.Builders_14_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments
   Builders_14.Builders_14_T__canonical__topology_structure_Topological
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_15
 Builders_14.Builders_14_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
@@ -2238,7 +2253,7 @@ topologicalType
 Builders_14.Builders_14_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments
   Builders_14.Builders_14_T__canonical__topology_structure_Topological
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_15
 Builders_14.Builders_14_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
@@ -2307,7 +2322,7 @@ topologicalType
 Builders_21.Builders_21_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments
   Builders_21.Builders_21_T__canonical__topology_structure_Topological
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_22
 Builders_21.Builders_21_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
@@ -2338,7 +2353,7 @@ topologicalType
 Builders_21.Builders_21_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments
   Builders_21.Builders_21_T__canonical__topology_structure_Topological
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_22
 Builders_21.Builders_21_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
@@ -2369,7 +2384,7 @@ topologicalType
 Builders_21.Builders_21_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments
   Builders_21.Builders_21_T__canonical__topology_structure_Topological
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_22
 Builders_21.Builders_21_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
@@ -2400,7 +2415,7 @@ topologicalType
 Builders_21.Builders_21_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments
   Builders_21.Builders_21_T__canonical__topology_structure_Topological
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_22
 Builders_21.Builders_21_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
@@ -2431,7 +2446,7 @@ topologicalType
 Builders_21.Builders_21_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments
   Builders_21.Builders_21_T__canonical__topology_structure_Topological
-  [T]%type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
+  [T]%_type_scope [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq]
   fresh_name_22
 Builders_21.Builders_21_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
@@ -2553,7 +2568,7 @@ forall [T U : Type] [f : T -> U] [F G : set_system T],
 (G `=>` F)%classic ->
 forall [t : set U], (f x @[x --> F])%classic t -> G (f @^-1` t)%classic
 
-Arguments cvg_fmap2 [T U]%type_scope [f]%function_scope [F G] _ [t] _
+Arguments cvg_fmap2 [T U]%_type_scope [f]%_function_scope [F G] _ [t] _
 cvg_fmap2 is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.cvg_fmap2
@@ -2582,8 +2597,8 @@ forall [G : set_system U] (D : set T),
 forall [t : set U],
 nbhs G t -> F (fun t0 : T => D t0 -> (f @^-1` t)%classic t0)
 
-Arguments cvg_within_filter {T U}%type_scope {f}%function_scope 
-  [F] {FF} [G] D%classical_set_scope _ [t] _
+Arguments cvg_within_filter {T U}%_type_scope {f}%_function_scope 
+  [F] {FF} [G] D%_classical_set_scope _ [t] _
 cvg_within_filter is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.cvg_within_filter
@@ -2613,8 +2628,8 @@ forall [t : set U],
 nbhs (lim (f x @[x --> within D F])%classic) t ->
 F (fun t0 : T => D t0 -> (f @^-1` t)%classic t0)
 
-Arguments cvg_app_within {T}%type_scope {U} [f]%function_scope 
-  [F] [D]%classical_set_scope _ _ [t] _
+Arguments cvg_app_within {T}%_type_scope {U} [f]%_function_scope 
+  [F] [D]%_classical_set_scope _ _ [t] _
 cvg_app_within is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.cvg_app_within
@@ -2683,7 +2698,7 @@ forall {T : topologicalType} (A : set T),
 topology_structure.closure A = [set p | globally A `#` nbhs p]%classic
 
 closureEnbhs is not universe polymorphic
-Arguments closureEnbhs {T} A%classical_set_scope
+Arguments closureEnbhs {T} A%_classical_set_scope
 closureEnbhs is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closureEnbhs
@@ -2700,7 +2715,7 @@ forall {T : topologicalType} (A : set T),
 topology_structure.closure A = [set p | globally A `#` open_nbhs p]%classic
 
 closureEonbhs is not universe polymorphic
-Arguments closureEonbhs {T} A%classical_set_scope
+Arguments closureEonbhs {T} A%_classical_set_scope
 closureEonbhs is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closureEonbhs
@@ -2731,7 +2746,7 @@ forall {T : topologicalType} [A : set T],
 topology_structure.closure A = set0 -> A = set0
 
 closure_eq0 is not universe polymorphic
-Arguments closure_eq0 {T} [A]%classical_set_scope _
+Arguments closure_eq0 {T} [A]%_classical_set_scope _
 closure_eq0 is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closure_eq0
@@ -2756,7 +2771,7 @@ forall {T : topologicalType} [A B : set T] [t : T],
 topology_structure.closure (A `&` B) t ->
 topology_structure.closure A t /\ topology_structure.closure B t
 
-Arguments closureI {T} [A B]%classical_set_scope [t] _
+Arguments closureI {T} [A B]%_classical_set_scope [t] _
 closureI is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closureI
@@ -2771,7 +2786,7 @@ library mathcomp.analysis.topology_theory.topology_structure, line 670, characte
 <span class="vernacular">Definition</span><span class="id"> </span><span id="limit_point" class="id"><a name="limit_point" class="" title="limit_point : forall {T : topologicalType}, (T -> Prop) -> set T
 
 limit_point is not universe polymorphic
-Arguments limit_point {T} E%function_scope _
+Arguments limit_point {T} E%_function_scope _
 limit_point is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.limit_point
@@ -2785,7 +2800,7 @@ forall {T : topologicalType} (E : T -> Prop),
 limit_point E = [set p | globally (E `\ p) `#` nbhs p]%classic
 
 limit_pointEnbhs is not universe polymorphic
-Arguments limit_pointEnbhs {T} E%function_scope
+Arguments limit_pointEnbhs {T} E%_function_scope
 limit_pointEnbhs is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.limit_pointEnbhs
@@ -2806,7 +2821,7 @@ forall {T : topologicalType} (E : T -> Prop),
 limit_point E = [set p | globally (E `\ p) `#` open_nbhs p]%classic
 
 limit_pointEonbhs is not universe polymorphic
-Arguments limit_pointEonbhs {T} E%function_scope
+Arguments limit_pointEonbhs {T} E%_function_scope
 limit_pointEonbhs is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.limit_pointEonbhs
@@ -2830,7 +2845,7 @@ forall {T : topologicalType} [E : T -> Prop] [t : T],
 limit_point E t ->
 forall [B : set T], nbhs t B -> exists a : T, (E `&` B)%classic a
 
-Arguments subset_limit_point {T} [E]%function_scope [t] _ [B] _
+Arguments subset_limit_point {T} [E]%_function_scope [t] _ [B] _
 subset_limit_point is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.subset_limit_point
@@ -2845,7 +2860,7 @@ library mathcomp.analysis.topology_theory.topology_structure, line 688, characte
 <span class="vernacular">Definition</span><span class="id"> </span><span id="isolated" class="id"><a name="isolated" class="" title="isolated : forall {T : topologicalType}, set T -> T -> Prop
 
 isolated is not universe polymorphic
-Arguments isolated {T} A%classical_set_scope x
+Arguments isolated {T} A%_classical_set_scope x
 isolated is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.isolated
@@ -2862,7 +2877,7 @@ Expanded type for implicit arguments
 isolatedS :
 forall {T : topologicalType} [A : set T] [t : T], isolated A t -> A t
 
-Arguments isolatedS {T} [A]%classical_set_scope [t] _
+Arguments isolatedS {T} [A]%_classical_set_scope [t] _
 isolatedS is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.isolatedS
@@ -2879,7 +2894,7 @@ forall {T : topologicalType} (A : set T),
 [disjoint isolated A & limit_point A]%classic
 
 disjoint_isolated_limit_point is not universe polymorphic
-Arguments disjoint_isolated_limit_point {T} A%classical_set_scope
+Arguments disjoint_isolated_limit_point {T} A%_classical_set_scope
 disjoint_isolated_limit_point is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.disjoint_isolated_limit_point
@@ -2902,7 +2917,7 @@ forall {T : topologicalType} (A : set T),
 topology_structure.closure A = (isolated A `|` limit_point A)%classic
 
 closure_isolated_limit_point is not universe polymorphic
-Arguments closure_isolated_limit_point {T} A%classical_set_scope
+Arguments closure_isolated_limit_point {T} A%_classical_set_scope
 closure_isolated_limit_point is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closure_isolated_limit_point
@@ -2931,7 +2946,7 @@ forall {T : topologicalType} (E : set T),
 topology_structure.closure E = (E `|` limit_point E)%classic
 
 __deprecated__closure_limit_point is not universe polymorphic
-Arguments __deprecated__closure_limit_point {T} E%classical_set_scope
+Arguments __deprecated__closure_limit_point {T} E%_classical_set_scope
 __deprecated__closure_limit_point is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.__deprecated__closure_limit_point
@@ -2961,7 +2976,7 @@ open_closedC :
 forall {T : topologicalType} [D : set T],
 open D -> forall [t : T], topology_structure.closure (~` D) t -> D t -> False
 
-Arguments open_closedC {T} [D]%classical_set_scope _ [t] _ _
+Arguments open_closedC {T} [D]%_classical_set_scope _ [t] _ _
 open_closedC is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.open_closedC
@@ -2987,8 +3002,9 @@ forall [t : T],
 topology_structure.closure (\bigcap_(i in D) f i) t ->
 forall [i : I], D i -> f i t
 
-Arguments closed_bigI {T} {I}%type_scope [D]%classical_set_scope
-  [f]%function_scope _%function_scope [t] _ [i] _
+Arguments closed_bigI {T} {I}%_type_scope [D]%_classical_set_scope
+  [f]%_function_scope _%_function_scope [t] _ [i] 
+  _
 closed_bigI is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closed_bigI
@@ -3016,7 +3032,7 @@ topology_structure.closed D ->
 topology_structure.closed E ->
 forall [t : T], topology_structure.closure (D `&` E) t -> D t /\ E t
 
-Arguments closedI {T} [D E]%classical_set_scope _ _ [t] _
+Arguments closedI {T} [D E]%_classical_set_scope _ _ [t] _
 closedI is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closedI
@@ -3102,7 +3118,7 @@ forall {T : topologicalType} [D : set T],
 topology_structure.closed D -> open (~` D)%classic
 
 closed_openC is not universe polymorphic
-Arguments closed_openC {T} [D]%classical_set_scope _
+Arguments closed_openC {T} [D]%_classical_set_scope _
 closed_openC is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closed_openC
@@ -3121,7 +3137,7 @@ forall {T : topologicalType} (D : set T),
 topology_structure.closed (~` D) = open D
 
 closedC is not universe polymorphic
-Arguments closedC {T} D%classical_set_scope
+Arguments closedC {T} D%_classical_set_scope
 closedC is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closedC
@@ -3139,7 +3155,7 @@ forall {T : topologicalType} (D : set T),
 open (~` D)%classic = topology_structure.closed D
 
 openC is not universe polymorphic
-Arguments openC {T} D%classical_set_scope
+Arguments openC {T} D%_classical_set_scope
 openC is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.openC
@@ -3162,7 +3178,7 @@ forall {T : topologicalType} [A : set T] [t : T],
 topology_structure.closure (topology_structure.closure A) t ->
 forall [B : set T], nbhs t B -> exists a : T, (A `&` B)%classic a
 
-Arguments closed_closure {T} [A]%classical_set_scope [t] _ [B] _
+Arguments closed_closure {T} [A]%_classical_set_scope [t] _ [B] _
 closed_closure is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closed_closure
@@ -3191,7 +3207,7 @@ forall {T U : topologicalType} [f : T -> U] [D : set U],
 topology_structure.closed D ->
 forall [t : T], topology_structure.closure (f @^-1` D) t -> D (f t)
 
-Arguments closed_comp {T U} [f]%function_scope [D]%classical_set_scope 
+Arguments closed_comp {T U} [f]%_function_scope [D]%_classical_set_scope 
   _ _ [t] _
 closed_comp is opaque
 Expands to: Constant
@@ -3218,8 +3234,8 @@ topology_structure.closed A ->
 (\near F, A (u_ F)) -> forall l : V, (u_ x @[x --> F] --> l)%classic -> A l
 
 closed_cvg is not universe polymorphic
-Arguments closed_cvg {T}%type_scope {V F FF} {u_}%function_scope
-  A%function_scope _ _ l _
+Arguments closed_cvg {T}%_type_scope {V F FF} {u_}%_function_scope
+  A%_function_scope _ _ l _
 closed_cvg is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closed_cvg
@@ -3244,7 +3260,7 @@ continuous f <->
  topology_structure.closed A -> topology_structure.closed (f @^-1` A))
 
 continuous_closedP is not universe polymorphic
-Arguments continuous_closedP [S T] f%function_scope
+Arguments continuous_closedP [S T] f%_function_scope
 continuous_closedP is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.continuous_closedP
@@ -3273,7 +3289,7 @@ topology_structure.closed D ->
 topology_structure.closed E ->
 forall [t : T], topology_structure.closure (D `|` E) t -> D t \/ E t
 
-Arguments closedU [T] [D E]%classical_set_scope _ _ [t] _
+Arguments closedU [T] [D E]%_classical_set_scope _ _ [t] _
 closedU is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closedU
@@ -3300,8 +3316,8 @@ forall [t : T],
 topology_structure.closure (\big[setU/set0]_(x <- s) F x) t ->
 (\big[setU/set0]_(x <- s) F x) t
 
-Arguments closed_bigsetU [T I] [s]%seq_scope [F]%function_scope
-  _%function_scope [t] _
+Arguments closed_bigsetU [T I] [s]%_seq_scope [F]%_function_scope
+  _%_function_scope [t] _
 closed_bigsetU is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closed_bigsetU
@@ -3333,8 +3349,8 @@ forall [t : T],
 topology_structure.closure (\bigcup_(i in A) F i) t ->
 exists2 i : I, A i & [eta F] i t
 
-Arguments closed_bigcup [T I] [A]%classical_set_scope 
-  [F]%function_scope _ _%function_scope [t] _
+Arguments closed_bigcup [T I] [A]%_classical_set_scope 
+  [F]%_function_scope _ _%_function_scope [t] _
 closed_bigcup is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closed_bigcup
@@ -3369,7 +3385,7 @@ forall [t : T],
 topology_structure.closure A t ->
 forall [B0 : set T], nbhs t B0 -> exists a : T, (B `&` B0)%classic a
 
-Arguments closure_subset [T] [A B]%classical_set_scope _ [t] _ [B] _
+Arguments closure_subset [T] [A B]%_classical_set_scope _ [t] _ [B] _
 closure_subset is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closure_subset
@@ -3386,7 +3402,7 @@ forall [T : topologicalType] (A : set T),
 topology_structure.closure A = smallest topology_structure.closed A
 
 closureE is not universe polymorphic
-Arguments closureE [T] A%classical_set_scope
+Arguments closureE [T] A%_classical_set_scope
 closureE is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closureE
@@ -3405,7 +3421,7 @@ forall [T : topologicalType] (E : set T),
 topology_structure.closed E <-> E = topology_structure.closure E
 
 closure_id is not universe polymorphic
-Arguments closure_id [T] E%classical_set_scope
+Arguments closure_id [T] E%_classical_set_scope
 closure_id is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closure_id
@@ -3427,7 +3443,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="regopen" class="id"><a name="regopen" class="" title="regopen : forall [T : topologicalType], set T -> Prop
 
 regopen is not universe polymorphic
-Arguments regopen [T] A%classical_set_scope
+Arguments regopen [T] A%_classical_set_scope
 regopen is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.regopen
@@ -3438,7 +3454,7 @@ library mathcomp.analysis.topology_theory.topology_structure, line 862, characte
 <span class="vernacular">Definition</span><span class="id"> </span><span id="regclosed" class="id"><a name="regclosed" class="" title="regclosed : forall [T : topologicalType], set T -> Prop
 
 regclosed is not universe polymorphic
-Arguments regclosed [T] A%classical_set_scope
+Arguments regclosed [T] A%_classical_set_scope
 regclosed is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.regclosed
@@ -3457,7 +3473,7 @@ forall [T : topologicalType] (A : set T),
 (~` A)°%classic = (~` topology_structure.closure A)%classic
 
 interiorC is not universe polymorphic
-Arguments interiorC [T] A%classical_set_scope
+Arguments interiorC [T] A%_classical_set_scope
 interiorC is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.interiorC
@@ -3481,7 +3497,7 @@ forall [T : topologicalType] (A : set T),
 topology_structure.closure (~` A) = (~` A°)%classic
 
 closure_setC is not universe polymorphic
-Arguments closure_setC [T] A%classical_set_scope
+Arguments closure_setC [T] A%_classical_set_scope
 closure_setC is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closure_setC
@@ -3497,7 +3513,7 @@ library mathcomp.analysis.topology_theory.topology_structure, line 884, characte
 forall [T : topologicalType] (A : set T), open A <-> A°%classic = A
 
 interior_id is not universe polymorphic
-Arguments interior_id [T] A%classical_set_scope
+Arguments interior_id [T] A%_classical_set_scope
 interior_id is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.interior_id
@@ -3578,7 +3594,7 @@ topology_structure.closure (A `|` B) =
 (topology_structure.closure A `|` topology_structure.closure B)%classic
 
 closureU is not universe polymorphic
-Arguments closureU [T] (A B)%classical_set_scope
+Arguments closureU [T] (A B)%_classical_set_scope
 closureU is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closureU
@@ -3605,7 +3621,7 @@ forall [T : topologicalType] [A B : set T] [t : T],
       class) in
  nbhs) t (A `|` B)%classic
 
-Arguments interiorU [T] [A B]%classical_set_scope [t] _
+Arguments interiorU [T] [A B]%_classical_set_scope [t] _
 interiorU is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.interiorU
@@ -3624,7 +3640,7 @@ topology_structure.closure A =
 (\bigcap_(x in [set C | topology_structure.closed C /\ A `<=` C]) x)%classic
 
 closureEbigcap is not universe polymorphic
-Arguments closureEbigcap [T] A%classical_set_scope
+Arguments closureEbigcap [T] A%_classical_set_scope
 closureEbigcap is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closureEbigcap
@@ -3642,7 +3658,7 @@ forall [T : topologicalType] (A : set T),
 A°%classic = (\bigcup_(x in [set U | open U /\ U `<=` A]) x)%classic
 
 interiorEbigcup is not universe polymorphic
-Arguments interiorEbigcup [T] A%classical_set_scope
+Arguments interiorEbigcup [T] A%_classical_set_scope
 interiorEbigcup is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.interiorEbigcup
@@ -3665,7 +3681,7 @@ forall [T : topologicalType] [A : set T],
 topology_structure.closed A -> regopen (T:=T) A°
 
 interior_closed_regopen is not universe polymorphic
-Arguments interior_closed_regopen [T] [A]%classical_set_scope _
+Arguments interior_closed_regopen [T] [A]%_classical_set_scope _
 interior_closed_regopen is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.interior_closed_regopen
@@ -3692,7 +3708,7 @@ forall [T : topologicalType] [A : set T],
 open A -> regclosed (T:=T) (topology_structure.closure A)
 
 closure_open_regclosed is not universe polymorphic
-Arguments closure_open_regclosed [T] [A]%classical_set_scope _
+Arguments closure_open_regclosed [T] [A]%_classical_set_scope _
 closure_open_regclosed is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closure_open_regclosed
@@ -3749,7 +3765,7 @@ forall [T : topologicalType] (E : set T),
 (\bigcup_(x in [set U | open U /\ U `<=` ~` E]) x)%classic
 
 closureC_deprecated is not universe polymorphic
-Arguments closureC_deprecated [T] E%classical_set_scope
+Arguments closureC_deprecated [T] E%_classical_set_scope
 closureC_deprecated is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.closureC_deprecated
@@ -3767,7 +3783,7 @@ library mathcomp.analysis.topology_theory.topology_structure, line 955, characte
 <span class="vernacular">Definition</span><span class="id"> </span><span id="dense" class="id"><a name="dense" class="" title="dense : forall [T : topologicalType], set T -> Prop
 
 dense is not universe polymorphic
-Arguments dense [T] S%classical_set_scope
+Arguments dense [T] S%_classical_set_scope
 dense is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.dense
@@ -3782,7 +3798,7 @@ forall [T : topologicalType] [S : set T],
 exists O : set T, (exists x : T, open_nbhs x O) /\ (O `&` S)%classic = set0
 
 denseNE is not universe polymorphic
-Arguments denseNE [T] [S]%classical_set_scope _
+Arguments denseNE [T] [S]%_classical_set_scope _
 denseNE is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.denseNE
@@ -3812,7 +3828,7 @@ dense (T:=T) B ->
 forall [O : set T],
 (O !=set0)%classic -> open O -> exists a : T, (O `&` (A `&` B))%classic a
 
-Arguments denseI [T] [A B]%classical_set_scope _ _ _ [O] _ _
+Arguments denseI [T] [A B]%_classical_set_scope _ _ _ [O] _ _
 denseI is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.denseI
@@ -3854,7 +3870,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="clopen" class="id"><a name="clopen" class="" title="clopen : forall {T : topologicalType}, set T -> Prop
 
 clopen is not universe polymorphic
-Arguments clopen {T} A%classical_set_scope
+Arguments clopen {T} A%_classical_set_scope
 clopen is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.clopen
@@ -3867,7 +3883,7 @@ forall {T : topologicalType} [A B : set T],
 clopen A -> clopen B -> clopen (A `&` B)
 
 clopenI is not universe polymorphic
-Arguments clopenI {T} [A B]%classical_set_scope _ _
+Arguments clopenI {T} [A B]%_classical_set_scope _ _
 clopenI is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.clopenI
@@ -3884,7 +3900,7 @@ forall {T : topologicalType} [A B : set T],
 clopen A -> clopen B -> clopen (A `|` B)
 
 clopenU is not universe polymorphic
-Arguments clopenU {T} [A B]%classical_set_scope _ _
+Arguments clopenU {T} [A B]%_classical_set_scope _ _
 clopenU is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.clopenU
@@ -3900,7 +3916,7 @@ library mathcomp.analysis.topology_theory.topology_structure, line 997, characte
 forall {T : topologicalType} [A : set T], set T -> clopen A -> clopen (~` A)
 
 clopenC is not universe polymorphic
-Arguments clopenC {T} [A]%classical_set_scope B%classical_set_scope _
+Arguments clopenC {T} [A]%_classical_set_scope B%_classical_set_scope _
 clopenC is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.clopenC
@@ -3947,8 +3963,8 @@ forall {T U : topologicalType} [f : T -> U] [A : set U],
 clopen A -> continuous f -> clopen (f @^-1` A)
 
 clopen_comp is not universe polymorphic
-Arguments clopen_comp {T U} [f]%function_scope [A]%classical_set_scope 
-  _ _%function_scope
+Arguments clopen_comp {T U} [f]%_function_scope [A]%_classical_set_scope 
+  _ _%_function_scope
 clopen_comp is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.clopen_comp
@@ -4142,7 +4158,7 @@ Qed.</div></details>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="mkcts" class="id"><a name="mkcts" class="" title="mkcts : forall {X Y : nbhsType} [f : X -> Y], continuous f -> X -> Y
 
 mkcts is not universe polymorphic
-Arguments mkcts {X Y} [f]%function_scope f_cts%function_scope _
+Arguments mkcts {X Y} [f]%_function_scope f_cts%_function_scope _
 mkcts is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.mkcts
@@ -4155,7 +4171,7 @@ forall [X Y : nbhsType] [f : X -> Y], continuous f -> continuousType X Y
 
 topology_structure_mkcts__canonical__topology_structure_Continuous is not universe polymorphic
 Arguments topology_structure_mkcts__canonical__topology_structure_Continuous
-  [X Y] [f]%function_scope f_cts%function_scope
+  [X Y] [f]%_function_scope f_cts%_function_scope
 topology_structure_mkcts__canonical__topology_structure_Continuous is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.topology_structure_mkcts__canonical__topology_structure_Continuous
@@ -4166,7 +4182,7 @@ forall [X Y : nbhsType] [f : X -> Y], continuous f -> continuousType X Y
 
 topology_structure_mkcts__canonical__topology_structure_Continuous is not universe polymorphic
 Arguments topology_structure_mkcts__canonical__topology_structure_Continuous
-  [X Y] [f]%function_scope f_cts%function_scope
+  [X Y] [f]%_function_scope f_cts%_function_scope
 topology_structure_mkcts__canonical__topology_structure_Continuous is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.topology_structure_mkcts__canonical__topology_structure_Continuous
@@ -4177,7 +4193,7 @@ forall [X Y : nbhsType] [f : X -> Y], continuous f -> continuousType X Y
 
 topology_structure_mkcts__canonical__topology_structure_Continuous is not universe polymorphic
 Arguments topology_structure_mkcts__canonical__topology_structure_Continuous
-  [X Y] [f]%function_scope f_cts%function_scope
+  [X Y] [f]%_function_scope f_cts%_function_scope
 topology_structure_mkcts__canonical__topology_structure_Continuous is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.topology_structure_mkcts__canonical__topology_structure_Continuous
@@ -4188,7 +4204,7 @@ forall [X Y : nbhsType] [f : X -> Y], continuous f -> continuousType X Y
 
 topology_structure_mkcts__canonical__topology_structure_Continuous is not universe polymorphic
 Arguments topology_structure_mkcts__canonical__topology_structure_Continuous
-  [X Y] [f]%function_scope f_cts%function_scope
+  [X Y] [f]%_function_scope f_cts%_function_scope
 topology_structure_mkcts__canonical__topology_structure_Continuous is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.topology_structure_mkcts__canonical__topology_structure_Continuous
@@ -4199,7 +4215,7 @@ forall [X Y : nbhsType] [f : X -> Y], continuous f -> continuousType X Y
 
 topology_structure_mkcts__canonical__topology_structure_Continuous is not universe polymorphic
 Arguments topology_structure_mkcts__canonical__topology_structure_Continuous
-  [X Y] [f]%function_scope f_cts%function_scope
+  [X Y] [f]%_function_scope f_cts%_function_scope
 topology_structure_mkcts__canonical__topology_structure_Continuous is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.topology_structure_mkcts__canonical__topology_structure_Continuous
@@ -4210,7 +4226,7 @@ forall [X Y : nbhsType] [f : X -> Y], continuous f -> continuousType X Y
 
 topology_structure_mkcts__canonical__topology_structure_Continuous is not universe polymorphic
 Arguments topology_structure_mkcts__canonical__topology_structure_Continuous
-  [X Y] [f]%function_scope f_cts%function_scope
+  [X Y] [f]%_function_scope f_cts%_function_scope
 topology_structure_mkcts__canonical__topology_structure_Continuous is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.topology_structure_mkcts__canonical__topology_structure_Continuous
@@ -4221,7 +4237,7 @@ forall [X Y : nbhsType] [f : X -> Y], continuous f -> continuousType X Y
 
 topology_structure_mkcts__canonical__topology_structure_Continuous is not universe polymorphic
 Arguments topology_structure_mkcts__canonical__topology_structure_Continuous
-  [X Y] [f]%function_scope f_cts%function_scope
+  [X Y] [f]%_function_scope f_cts%_function_scope
 topology_structure_mkcts__canonical__topology_structure_Continuous is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.topology_structure.topology_structure_mkcts__canonical__topology_structure_Continuous
