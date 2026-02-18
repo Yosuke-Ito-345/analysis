@@ -46,6 +46,7 @@ From mathcomp Require Export lebesgue_stieltjes_measure.
 (*          indic_mfun mD := mindic mD                                        *)
 (*         scale_mfun k f := k \o* f                                          *)
 (*           max_mfun f g := f \max g                                         *)
+(*           min_mfun f g := f \min g                                         *)
 (* ```                                                                        *)
 (******************************************************************************)
 

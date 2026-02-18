@@ -687,7 +687,7 @@ transitivity (- 'E_P[Y]).
     by apply: eq_integral => x _; rewrite opprK.
   by rewrite lee_tofin//; exact: Y_ge0.
 transitivity (- \int[mu]_(s in `]-oo, 0%R]) P [set x | (- s <= Y x)%R]).
-  rewrite ge0_expectation_prob_ge ?ge0_integral_oppr//.
+  rewrite ge0_expectation_prob_ge ?ge0_integral_pushforwardN//.
   by apply: (eq_measurable_fun (fun r:R => (fine (P [set x | (r <= Y x)%R]))%:E))
      => [r _|]; [rewrite fineK ?fin_num_measure | apply/measurable_EFinP].
 transitivity (- \int[mu]_(s in `]-oo, 0%R] `\ 0%R) P [set x | (- s <= Y x)%R]).

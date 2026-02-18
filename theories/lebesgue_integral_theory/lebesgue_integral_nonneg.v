@@ -574,7 +574,7 @@ Context {R : realType}.
 
 Let mu : {measure set _ -> \bar R} := @lebesgue_measure R.
 
-Lemma lebesgue_measure_oppr A (mA : measurable A) :
+Lemma lebesgue_measureN A (mA : measurable A) :
   pushforward(T2 := measurableTypeR R) mu -%R A = mu A.
 Proof.
 apply /esym/lebesgue_stieltjes_measure_unique => //= _ [[a b]] _ <-.
@@ -588,12 +588,12 @@ have [ab | ba] := (ltP a b).
 - by rewrite set_itv_ge ?wlength0// bnd_simp -leNgt.
 Qed.
 
-Lemma ge0_integral_oppr (f : R -> \bar R)
+Lemma ge0_integral_pushforwardN (f : R -> \bar R)
   (mf : measurable_fun setT f) (ge0 : forall r, 0 <= f r) :
   \int[mu]_(r in `[0%R, +oo[) f r = \int[mu]_(r in `]-oo, 0%R]) f (- r)%R.
 Proof.
 rewrite (eq_measure_integral (pushforward(T2 := measurableTypeR R) mu -%R))
-  => [| A mA /=]; rewrite ?lebesgue_measure_oppr//.
+  => [| A mA /=]; rewrite ?lebesgue_measureN//.
 rewrite ge0_integral_pushforward //; last exact: measurable_funS mf.
 by congr integral; apply: eq_set => r/=; rewrite !in_itv/= oppr_ge0 andbT.
 Qed.
