@@ -636,7 +636,7 @@ rewrite [X in measurable X](_ : _ = fgts @^-1` [set true]).
 by apply: eq_set => r; rewrite in_itv/= s_ge0.
 Qed.
 
-Lemma ge0_expectation_prob_ge (X : {RV P >-> R}) : (forall x, 0 <= X x)%R ->
+Let ge0_expectation_prob_ge (X : {RV P >-> R}) : (forall x, 0 <= X x)%R ->
   'E_P[X] = \int[mu]_(r in `[0%R, +oo[) P [set x | (r <= X x)%R].
 Proof.
 have gtpre r : [set x | (r < X x)%R] = X @^-1` `]r, +oo[.
