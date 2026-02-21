@@ -572,30 +572,25 @@ Section change_of_variable.
 Open Scope ereal_scope.
 Context {R : realType}.
 
-Let mu : {measure set _ -> \bar R} := @lebesgue_measure R.
+Local Notation mu := lebesgue_measure.
 
-Lemma lebesgue_measureN A (mA : measurable A) :
-  pushforward(T2 := measurableTypeR R) mu -%R A = mu A.
+Lemma lebesgue_measureN (A : set R) : measurable A ->
+  pushforward mu (-%R : _ -> measurableTypeR R) A = mu A.
 Proof.
-apply /esym/lebesgue_stieltjes_measure_unique => //= _ [[a b]] _ <-.
-rewrite /lebesgue_stieltjes_measure/measure_extension.
-rewrite measurable_mu_extE /pushforward/preimage/=; last exact: is_ocitv.
-have ->: [set r | (-r)%R \in `]a, b]] = `[(-b)%R, (-a)%R[%classic.
-  by apply: eq_set => r; rewrite oppr_itvoc.
-rewrite lebesgue_measure_itv/= lte_fin ltrN2.
-have [ab | ba] := (ltP a b).
-- by rewrite wlength_itv_bnd ?ltW// opprK EFinD addeC.
-- by rewrite set_itv_ge ?wlength0// bnd_simp -leNgt.
+move=> mA; apply/esym/lebesgue_measure_unique => //= _ [[a b]] _ <-.
+rewrite /pushforward opp_preimage_itvbndbnd/= !lebesgue_measure_itv/=.
+by rewrite !lte_fin ltrN2 opprK addrC.
 Qed.
 
-Lemma ge0_integral_pushforwardN (f : R -> \bar R)
-  (mf : measurable_fun setT f) (ge0 : forall r, 0 <= f r) :
+Lemma ge0_integral_pushforwardN (f : R -> \bar R) :
+  measurable_fun [set: R] f -> (forall r, 0 <= f r) ->
   \int[mu]_(r in `[0%R, +oo[) f r = \int[mu]_(r in `]-oo, 0%R]) f (- r)%R.
 Proof.
-rewrite (eq_measure_integral (pushforward(T2 := measurableTypeR R) mu -%R))
-  => [| A mA /=]; rewrite ?lebesgue_measureN//.
-rewrite ge0_integral_pushforward //; last exact: measurable_funS mf.
-by congr integral; apply: eq_set => r/=; rewrite !in_itv/= oppr_ge0 andbT.
+move=> mf f0; rewrite (_ : `]-oo, 0%R]%classic =
+    (-%R : _ -> measurableTypeR R) @^-1` `[0%R, +oo[); last first.
+  by rewrite opp_preimage_itvbndy oppr0.
+rewrite -ge0_integral_pushforward//=; last exact: measurable_funS mf.
+by apply: eq_measure_integral => //= A mA AS; exact/esym/lebesgue_measureN.
 Qed.
 
 End change_of_variable.

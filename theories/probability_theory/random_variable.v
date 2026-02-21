@@ -202,37 +202,35 @@ Qed.
 End pmf_measurable.
 
 Section lebesgue_integral_pmf.
+Local Open Scope ereal_scope.
 Context d (T : measurableType d) (R : realType)
   (P : probability T R) (X : {RV P >-> R}).
-Local Open Scope ereal_scope.
 
-Lemma lebesgue_integral_pmf :
-  \int[lebesgue_measure]_r (pmf X r)%:E = 0.
+Local Notation mu := lebesgue_measure.
+
+Lemma lebesgue_integral_pmf : \int[mu]_r (pmf X r)%:E = 0.
 Proof.
-pose mu := @lebesgue_measure R.
-pose pmfP := [set r | (0 < pmf X r)%R].
-pose pmf0 := [set r | (0 = pmf X r)%R].
+pose pmfP := [set r | 0 < pmf X r]%R.
+pose pmf0 := [set r | 0 = pmf X r]%R.
 have Upmf : pmfP `|` pmf0 = setT.
   rewrite -subTset => r /= _.
   by case: (ltrgt0P (pmf X r)); [left | rewrite ltNge fine_ge0 | right].
 have Ipmf : [disjoint pmfP & pmf0].
   rewrite disj_set2E; apply/eqP.
-  by rewrite -subset0 setIC /pmfP/pmf0 => r /= [] ->; rewrite ltxx.
-have pmf0NP : pmf0 = ~`pmfP.
+  by rewrite -subset0 setIC /pmfP /pmf0 => r /= [] ->; rewrite ltxx.
+have pmf0NP : pmf0 = ~` pmfP.
   rewrite /pmf0 /pmfP seteqP; split=> r /= => [-> | /negP]; rewrite ?ltxx//.
-  by rewrite -real_leNgt//= => pmfN; apply: le_anti; rewrite pmfN fine_ge0.
-have cpmfP : countable pmfP by exact: pmf_gt0_countable.
+  by rewrite lt_neqAle pmf_ge0 andbT negbK => /eqP.
+have cpmfP : countable pmfP := pmf_gt0_countable X.
 have mpmfP : measurable pmfP by exact: countable_measurable.
-have mupmfP : mu pmfP = 0 by exact: countable_lebesgue_measure0.
 have mpmf : measurable_fun setT (fun r => (pmf X r)%:E).
   by apply/measurable_EFinP; exact: pmf_measurable.
-transitivity
-  (\int[mu]_(r in pmfP) (pmf X r)%:E + \int[mu]_(r in pmf0) (pmf X r)%:E).
-  by rewrite -ge0_integral_setU ?Upmf// ?pmf0NP => [| r _];
-    [exact: measurableC | exact: fine_ge0].
-rewrite (_ : \int[mu]_(r in pmf0) (pmf X r)%:E = 0) ?addr0;
-  last by apply: integral0_eq => r <-.
-by apply: null_set_integral; [| exact: (measurable_funS(E:=setT)) |].
+rewrite -Upmf ge0_integral_setU ?Upmf//=; last 2 first.
+  by rewrite pmf0NP; exact: measurableC.
+  by move=> x _; rewrite lee_fin pmf_ge0.
+rewrite [X in _ + X]integral0_eq ?addr0; last by move=> r <-.
+apply: null_set_integral => //=; first exact: measurable_funTS.
+exact: countable_lebesgue_measure0.
 Qed.
 
 End lebesgue_integral_pmf.
@@ -252,13 +250,12 @@ Lemma cdf_le1 r : cdf X r <= 1. Proof. exact: probability_le1. Qed.
 Lemma cdf_nondecreasing : nondecreasing_fun (cdf X).
 Proof. by move=> r s rs; rewrite le_measure ?inE//; exact: subitvPr. Qed.
 
-Lemma cdf_measurable : measurable_fun setT (cdf X).
+Lemma cdf_measurable : measurable_fun [set: R] (cdf X).
 Proof.
-suff : measurable_fun setT (fine \o (cdf X)) => [/measurable_EFinP |].
-  apply: eq_measurable_fun => r _.
-  by rewrite /comp fineK; last exact: fin_num_measure.
-apply: nondecreasing_measurable => // r s rs.
-by apply: fine_le; [rewrite fin_num_measure .. | exact: cdf_nondecreasing].
+suff: measurable_fun setT (fine \o cdf X) => [/measurable_EFinP |].
+  by apply: eq_measurable_fun => r _/=; rewrite fineK// fin_num_measure.
+apply: nondecreasing_measurable => //= r s rs.
+by rewrite fine_le ?fin_num_measure// cdf_nondecreasing.
 Qed.
 
 Lemma cvg_cdfy1 : cdf X @ +oo%R --> 1.
@@ -451,11 +448,11 @@ Proof. by rewrite -(cdf_ccdf_1 r) addeK ?fin_num_measure. Qed.
 Lemma ccdf_nonincreasing : nonincreasing_fun (ccdf X).
 Proof. by move=> r s rs; rewrite le_measure ?inE//; exact: subitvPl. Qed.
 
-Lemma ccdf_measurable : measurable_fun setT (ccdf X).
+Lemma ccdf_measurable : measurable_fun [set: R] (ccdf X).
 Proof.
 apply: (eq_measurable_fun (fun r => 1 - cdf X r)) => [r _|].
   by rewrite ccdf_1_cdf.
-by apply: emeasurable_funB; last exact: cdf_measurable.
+by apply: emeasurable_funB => //; exact: cdf_measurable.
 Qed.
 
 Lemma cvg_ccdfy0 : ccdf X @ +oo%R --> 0.
@@ -637,69 +634,63 @@ by apply: eq_set => r; rewrite in_itv/= s_ge0.
 Qed.
 
 Let ge0_expectation_prob_ge (X : {RV P >-> R}) : (forall x, 0 <= X x)%R ->
-  'E_P[X] = \int[mu]_(r in `[0%R, +oo[) P [set x | (r <= X x)%R].
+  'E_P[X] = \int[mu]_(r in `[0%R, +oo[) P (X @^-1` `[r, +oo[).
 Proof.
-have gtpre r : [set x | (r < X x)%R] = X @^-1` `]r, +oo[.
-  by apply: eq_set => x/=; rewrite in_itv andbT.
-have mPeqr : measurable_fun setT (fun r => P [set x | X x = r]).
-  apply: (eq_measurable_fun (EFin \o (pmf X))) => [r |].
-    by rewrite /comp fineK ?fin_num_measure.
+have mPeqr : measurable_fun setT (fun r => P (X @^-1` [set r])).
+  apply: (eq_measurable_fun (EFin \o pmf X)) => [r/= _|].
+    by rewrite fineK// fin_num_measure.
   by apply/measurable_EFinP; exact: pmf_measurable.
-have mPgtr : measurable_fun setT (fun r:R => P [set x | (r < X x)%R]).
-  apply: (eq_measurable_fun (ccdf X)) => [r _|]; rewrite ?gtpre//.
+have mPgtr : measurable_fun setT (fun r : R => P (X @^-1` `]r, +oo[)).
   exact: ccdf_measurable.
 move=> X_ge0; rewrite ge0_expectation_ccdf//.
 transitivity
-  (\int[mu]_(r in `[0%R, +oo[) (P [set x | X x = r] + P [set x | (r < X x)%R])).
-  rewrite ge0_integralD//=; [| exact: measurable_funTS ..].
-  rewrite (_ : \int[mu]_(r in `[0%R, +oo[) P [set x | X x = r] = 0).
-    by rewrite add0e; apply: eq_integral => r; rewrite gtpre.
-  rewrite -(lebesgue_integral_pmf X) integral_mkcond; apply: eq_integral => r _.
-  rewrite patchE; case/asboolP: (r \in `[0%R, +oo[) => [r_ge0 | r_lt0].
+    (\int[mu]_(r in `[0%R, +oo[) (P (X @^-1` [set r]) + P (X @^-1` `]r, +oo[))).
+  rewrite ge0_integralD//=; [|exact: measurable_funTS..].
+  rewrite [X in _ = X + _](_ : _ = 0) ?add0e; first exact: eq_integral.
+  rewrite -(lebesgue_integral_pmf X) integral_mkcond/=.
+  apply: eq_integral => /= r _.
+  rewrite patchE; have [r_ge0 | r_lt0] := boolP (r \in `[0%R, +oo[).
   - by rewrite ifT ?inE// fineK ?fin_num_measure.
-  - rewrite ifF; [rewrite fineK ?fin_num_measure// | exact: asboolF].
-    suff ->: X @^-1` [set r] = set0; first by rewrite measure0.
-    rewrite -nonemptyPn; apply: contra_not r_lt0.
+  - rewrite mem_setE (negbTE r_lt0) fineK ?fin_num_measure//.
+    rewrite (_ : _ @^-1` _ = set0) ?measure0//.
+    rewrite -nonemptyPn; apply: contraNnot r_lt0.
     by case=> x <-; rewrite in_itv/= andbT.
-apply: eq_integral =>/= r _; rewrite -measureU.
-- congr (P _); rewrite seteqP; split=> x/=; first by case=> [->//|]; exact: ltW.
-  by rewrite le_eqVlt; case/orP => [/eqP|]; [left | right].
-- by rewrite (_ : [set x | X x = r] = X @^-1` [set r]).
-- by rewrite gtpre; exact: (measurable_funPTI X).
-- by rewrite -subset0 => x []/= ->; rewrite ltxx.
+apply: eq_integral =>/= r _; rewrite -measureU//.
+- by rewrite -preimage_setU setU1itv.
+- exact: measurable_funPTI.
+- by rewrite -preimage_setI -subset0 => x/= [->]; rewrite in_itv/= ltxx.
 Qed.
 
 Lemma le0_expectation_cdf (X : {RV P >-> R}) : (forall x, X x <= 0)%R ->
   'E_P[X] = - \int[mu]_(r in `]-oo, 0%R[) cdf X r.
 Proof.
 pose Y : {RV P >-> R} := (- X)%R.
-pose fPleY r := fine (P [set x | (r <= Y x)%R]).
-have mgeY r : d.-measurable [set x | (r <= Y x)%R].
-  by rewrite -(setTI (mkset _)); exact: measurable_fun_le.
+pose fPleY r := fine (P (Y @^-1` `[r, +oo[)).
+have mgeY r : d.-measurable (Y @^-1` `[r, +oo[) by exact: measurable_funPTI.
 have mfPleY : measurable_fun setT fPleY.
   apply: nonincreasing_measurable => // r s rs.
-  apply: fine_le; rewrite ?fin_num_measure//.
-  by apply: le_measure; rewrite ?inE// => x /=; exact: (le_trans rs).
+  rewrite fine_le ?fin_num_measure ?le_measure ?inE//.
+  by apply: preimage_subset; apply: subset_itvr; rewrite bnd_simp.
 move=> X_le0.
 have Y_ge0 x : (0 <= Y x)%R by rewrite oppr_ge0/=.
 transitivity (- 'E_P[Y]).
-  rewrite !expectation_def -integral_ge0N/= => [| x].
+  rewrite !expectation_def /Y -integral_ge0N/= => [|x _].
     by apply: eq_integral => x _; rewrite opprK.
-  by rewrite lee_tofin//; exact: Y_ge0.
-transitivity (- \int[mu]_(s in `]-oo, 0%R]) P [set x | (- s <= Y x)%R]).
+  by rewrite lee_fin/= oppr_ge0.
+transitivity (- \int[mu]_(s in `]-oo, 0%R]) P (Y @^-1` `[(- s)%R, +oo[)).
   rewrite ge0_expectation_prob_ge ?ge0_integral_pushforwardN//.
-  by apply: (eq_measurable_fun (fun r:R => (fine (P [set x | (r <= Y x)%R]))%:E))
+  by apply: (eq_measurable_fun (fun r:R => (fine (P (Y @^-1` `[r, +oo[ )))%:E))
      => [r _|]; [rewrite fineK ?fin_num_measure | apply/measurable_EFinP].
-transitivity (- \int[mu]_(s in `]-oo, 0%R] `\ 0%R) P [set x | (- s <= Y x)%R]).
-  congr oppe.
+transitivity (- \int[mu]_(s in `]-oo, 0%R] `\ 0%R) P (Y @^-1` `[(- s)%R, +oo[)).
+  congr -%E.
   under[LHS] eq_integral => s _ do
-    rewrite -(@fineK _ (P [set x | (- s <= Y x)%R])) ?fin_num_measure//.
+    rewrite -(@fineK _ (P (Y @^-1` `[(- s)%R, +oo[))) ?fin_num_measure//.
   under[RHS] eq_integral => s _ do
-    rewrite -(@fineK _ (P [set x | (- s <= Y x)%R])) ?fin_num_measure//.
+    rewrite -(@fineK _ (P (Y @^-1` `[(- s)%R, +oo[))) ?fin_num_measure//.
   rewrite integral_setD1_EFin//; first exact: measurableD.
-  by apply: measurable_funTS; exact: (measurableT_comp mfPleY).
-rewrite setDitv1r; congr oppe; apply: eq_integral => r _.
-by congr (P _); apply: eq_set => x; rewrite lerN2.
+  exact/measurable_funTS/(measurableT_comp mfPleY).
+rewrite setDitv1r; congr -%E; apply: eq_integral => r _.
+by rewrite (@comp_preimage _ _ _ _ _ -%R)/= opp_preimage_itvbndy/= opprK.
 Qed.
 
 End tail_expectation_formula.

@@ -1176,14 +1176,14 @@ Definition indic_mfun (D : set aT) (mD : measurable D) : {mfun aT >-> rT} :=
 HB.instance Definition _ k f := MeasurableFun.copy (k \o* f) (f * cst k).
 Definition scale_mfun k f : {mfun aT >-> rT} := k \o* f.
 
-Lemma max_mfun_subproof f g : @isMeasurableFun d _ aT rT (f \max g).
+Let max_mfun_subproof f g : @isMeasurableFun d _ aT rT (f \max g).
 Proof. by split; apply: measurable_maxr. Qed.
 
 HB.instance Definition _ f g := max_mfun_subproof f g.
 
 Definition max_mfun f g : {mfun aT >-> _} := f \max g.
 
-Lemma min_mfun_subproof f g : @isMeasurableFun d _ aT rT (f \min g).
+Let min_mfun_subproof f g : @isMeasurableFun d _ aT rT (f \min g).
 Proof. by split; apply: measurable_minr. Qed.
 
 HB.instance Definition _ f g := min_mfun_subproof f g.
