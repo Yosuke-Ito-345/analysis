@@ -137,8 +137,7 @@ Proof. by move=> mf intf; rewrite integral_pushforward. Qed.
 End transfer_probability.
 
 Section pmf_definition.
-Context {d} {T : measurableType d} {R : realType}.
-Variables (P : probability T R).
+Context {d} {T : measurableType d} {R : realType} (P : probability T R).
 
 Definition pmf (X : {RV P >-> R}) (r : R) : R := fine (P (X @^-1` [set r])).
 
