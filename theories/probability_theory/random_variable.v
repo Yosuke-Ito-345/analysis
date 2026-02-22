@@ -626,9 +626,8 @@ apply: eq_integral => s; rewrite /D inE/= in_itv/= andbT => s_ge0.
 rewrite integral_indic//=.
   rewrite /ccdf setIT set_itvoy; congr distribution.
   by apply/funext => r/=; rewrite in_itv/= s_ge0.
-pose fgts (r : R) := (s < r)%R.
-have : measurable_fun setT fgts by exact: measurable_fun_ltr.
-rewrite [X in measurable X](_ : _ = fgts @^-1` [set true]).
+have : measurable_fun setT (<%R s) by exact: measurable_fun_ltr.
+rewrite [X in measurable X](_ : _ = (<%R s) @^-1` [set true]).
   by move=> /(_ measurableT [set true]); rewrite setTI; exact.
 by apply: eq_set => r; rewrite in_itv/= s_ge0.
 Qed.
@@ -648,7 +647,7 @@ transitivity
   rewrite ge0_integralD//=; [|exact: measurable_funTS..].
   rewrite [X in _ = X + _](_ : _ = 0) ?add0e; first exact: eq_integral.
   rewrite -(lebesgue_integral_pmf X) integral_mkcond/=.
-  apply: eq_integral => /= r _.
+  apply: (@eq_integral _ (measurableTypeR R) _ mu setT) => /= r _.
   rewrite patchE; have [r_ge0 | r_lt0] := boolP (r \in `[0%R, +oo[).
   - by rewrite ifT ?inE// fineK ?fin_num_measure.
   - rewrite mem_setE (negbTE r_lt0) fineK ?fin_num_measure//.
