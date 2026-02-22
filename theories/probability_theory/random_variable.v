@@ -644,10 +644,10 @@ have mPgtr : measurable_fun setT (fun r : R => P (X @^-1` `]r, +oo[)).
 move=> X_ge0; rewrite ge0_expectation_ccdf//.
 transitivity
     (\int[mu]_(r in `[0%R, +oo[) (P (X @^-1` [set r]) + P (X @^-1` `]r, +oo[))).
-  rewrite ge0_integralD//=; [|exact: measurable_funTS..].
+  rewrite ge0_integralD//; [|exact: measurable_funTS..].
   rewrite [X in _ = X + _](_ : _ = 0) ?add0e; first exact: eq_integral.
-  rewrite -(lebesgue_integral_pmf X) integral_mkcond/=.
-  apply: (@eq_integral _ (measurableTypeR R) _ mu setT) => /= r _.
+  rewrite -(lebesgue_integral_pmf X) integral_mkcond.
+  apply: eq_integral => /= r _.
   rewrite patchE; have [r_ge0 | r_lt0] := boolP (r \in `[0%R, +oo[).
   - by rewrite ifT ?inE// fineK ?fin_num_measure.
   - rewrite mem_setE (negbTE r_lt0) fineK ?fin_num_measure//.
@@ -681,13 +681,11 @@ transitivity (- \int[mu]_(s in `]-oo, 0%R]) P (Y @^-1` `[(- s)%R, +oo[)).
   by apply: (eq_measurable_fun (fun r:R => (fine (P (Y @^-1` `[r, +oo[ )))%:E))
      => [r _|]; [rewrite fineK ?fin_num_measure | apply/measurable_EFinP].
 transitivity (- \int[mu]_(s in `]-oo, 0%R] `\ 0%R) P (Y @^-1` `[(- s)%R, +oo[)).
-  congr -%E.
-  under[LHS] eq_integral => s _ do
-    rewrite -(@fineK _ (P (Y @^-1` `[(- s)%R, +oo[))) ?fin_num_measure//.
-  under[RHS] eq_integral => s _ do
-    rewrite -(@fineK _ (P (Y @^-1` `[(- s)%R, +oo[))) ?fin_num_measure//.
-  rewrite integral_setD1_EFin//; first exact: measurableD.
-  exact/measurable_funTS/(measurableT_comp mfPleY).
+  congr -%E; rewrite setDitv1r integral_itv_bndo_bndc//=.
+  apply/measurable_funTS => /=.
+  under eq_fun => s
+    do rewrite -(@fineK _ (P (Y @^-1` `[(- s)%R, +oo[))) ?fin_num_measure//.
+  exact/measurableT_comp/(measurableT_comp mfPleY).
 rewrite setDitv1r; congr -%E; apply: eq_integral => r _.
 by rewrite (@comp_preimage _ _ _ _ _ -%R)/= opp_preimage_itvbndy/= opprK.
 Qed.
