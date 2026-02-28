@@ -171,6 +171,7 @@
 <li><details id="mathcomp.classical"><summary>classical</summary>
           <ul>
           <li><a href="mathcomp.classical.all_classical.html">all_classical</a></li>
+<li><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></li>
 <li><a href="mathcomp.classical.boolp.html">boolp</a></li>
 <li><a href="mathcomp.classical.cardinality.html">cardinality</a></li>
 <li><a href="mathcomp.classical.classical_orders.html">classical_orders</a></li>
@@ -226,7 +227,7 @@
       <p><a href="./index.html">Top</a></p>
       <h1 class="title">Module mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation</h1>
 <span class="vernacular">From</span><span class="id"> HB</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for HB.structures">structures</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.ssreflect.all_ssreflect.html">all_ssreflect</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html">ssralg</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.ssrnum.html">ssrnum</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssrint.html">ssrint</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval.html">interval</a></span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.finmap.finmap">finmap</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html">ssralg</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.ssrnum.html">ssrnum</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssrint.html">ssrint</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval.html">interval</a></span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.finmap.finmap">finmap</a></span>.<br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.archimedean.html">archimedean</a></span>.<br/>
 <span class="id">#[warning=</span><span class="id">&quot;-warn-library-file-internal-analysis&quot;</span><span class="id">]</span><br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.unstable.html">unstable</a></span>.<br/>
@@ -1042,7 +1043,7 @@ cardinality_FImFun__to__cardinality_FiniteImage is transparent
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.simple_functions.cardinality_FImFun__to__cardinality_FiniteImage
 Declared in
-library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 144, characters 0-72
+library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 143, characters 0-72
 ">HB</a></span></span></span>.<span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_2" class="id"><span id="approximation_sfun.hb_instance_1.x" class="id"><a name="cardinality_FImFun__to__cardinality_FiniteImage" class="" title="cardinality_FImFun__to__cardinality_FiniteImage :
 forall {d : measure_display} {aT : measurableType d} {rT : realType} (x : rT),
 FiniteImage.axioms_ aT rT (cst x)
@@ -1054,7 +1055,7 @@ cardinality_FImFun__to__cardinality_FiniteImage is transparent
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.simple_functions.cardinality_FImFun__to__cardinality_FiniteImage
 Declared in
-library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 144, characters 0-72
+library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 143, characters 0-72
 ">instance</a></span></span></span><span class="vernacular"> Definition</span><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_2" class="id"><span id="approximation_sfun.hb_instance_1.x" class="id"><a name="cardinality_FImFun__to__cardinality_FiniteImage" class="" title="cardinality_FImFun__to__cardinality_FiniteImage :
 forall {d : measure_display} {aT : measurableType d} {rT : realType} (x : rT),
 FiniteImage.axioms_ aT rT (cst x)
@@ -1066,7 +1067,7 @@ cardinality_FImFun__to__cardinality_FiniteImage is transparent
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.simple_functions.cardinality_FImFun__to__cardinality_FiniteImage
 Declared in
-library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 144, characters 0-72
+library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 143, characters 0-72
 "> _</a></span></span></span><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_2" class="id"><span id="approximation_sfun.hb_instance_1.x" class="id"><a name="cardinality_FImFun__to__cardinality_FiniteImage" class="" title="cardinality_FImFun__to__cardinality_FiniteImage :
 forall {d : measure_display} {aT : measurableType d} {rT : realType} (x : rT),
 FiniteImage.axioms_ aT rT (cst x)
@@ -1078,7 +1079,7 @@ cardinality_FImFun__to__cardinality_FiniteImage is transparent
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.simple_functions.cardinality_FImFun__to__cardinality_FiniteImage
 Declared in
-library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 144, characters 0-72
+library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 143, characters 0-72
 "> x</a></span></span></span><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_2" class="id"><span id="approximation_sfun.hb_instance_1.x" class="id"><a name="cardinality_FImFun__to__cardinality_FiniteImage" class="" title="cardinality_FImFun__to__cardinality_FiniteImage :
 forall {d : measure_display} {aT : measurableType d} {rT : realType} (x : rT),
 FiniteImage.axioms_ aT rT (cst x)
@@ -1090,7 +1091,7 @@ cardinality_FImFun__to__cardinality_FiniteImage is transparent
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.simple_functions.cardinality_FImFun__to__cardinality_FiniteImage
 Declared in
-library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 144, characters 0-72
+library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 143, characters 0-72
 "> :</a></span></span></span><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_2" class="id"><span id="approximation_sfun.hb_instance_1.x" class="id"><a name="cardinality_FImFun__to__cardinality_FiniteImage" class="" title="cardinality_FImFun__to__cardinality_FiniteImage :
 forall {d : measure_display} {aT : measurableType d} {rT : realType} (x : rT),
 FiniteImage.axioms_ aT rT (cst x)
@@ -1102,7 +1103,7 @@ cardinality_FImFun__to__cardinality_FiniteImage is transparent
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.simple_functions.cardinality_FImFun__to__cardinality_FiniteImage
 Declared in
-library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 144, characters 0-72
+library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 143, characters 0-72
 "> @FImFun</a></span></span></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html#approximation_sfun.T">T</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html#approximation_sfun.R">R</a></span> (<span class="id"><a href="mathcomp.classical.functions.html#cst">cst</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html#x:109">x</a></span>)<span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.cardinality.html#FImFun.on">FImFun</a></span>.<span class="id"><a href="mathcomp.classical.cardinality.html#FImFun.on">on</a></span> (<span class="id"><a href="mathcomp.classical.functions.html#cst">cst</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html#x:109">x</a></span>).<br/>
 <br/>
 <span class="vernacular">Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.simple_functions.html#HBNNSimple">HBNNSimple</a></span>.<br/>
@@ -1119,7 +1120,7 @@ numfun_NonNegFun__to__numfun_isNonNegFun is transparent
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.simple_functions.numfun_NonNegFun__to__numfun_isNonNegFun
 Declared in
-library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 284, characters 0-111
+library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 279, characters 0-111
 ">HB</a></span></span></span>.<span id="numfun_NonNegFun__to__numfun_isNonNegFun" class="id"><span id="HB_unnamed_factory_5" class="id"><span id="approximation_sfun.hb_instance_4.x" class="id"><a name="numfun_NonNegFun__to__numfun_isNonNegFun" class="" title="numfun_NonNegFun__to__numfun_isNonNegFun :
 forall [d : measure_display] [T : measurableType d] 
   (R : realType) [D : set T] (mD : d.-measurable%classic D),
@@ -1133,7 +1134,7 @@ numfun_NonNegFun__to__numfun_isNonNegFun is transparent
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.simple_functions.numfun_NonNegFun__to__numfun_isNonNegFun
 Declared in
-library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 284, characters 0-111
+library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 279, characters 0-111
 ">instance</a></span></span></span><span class="vernacular"> Definition</span><span id="numfun_NonNegFun__to__numfun_isNonNegFun" class="id"><span id="HB_unnamed_factory_5" class="id"><span id="approximation_sfun.hb_instance_4.x" class="id"><a name="numfun_NonNegFun__to__numfun_isNonNegFun" class="" title="numfun_NonNegFun__to__numfun_isNonNegFun :
 forall [d : measure_display] [T : measurableType d] 
   (R : realType) [D : set T] (mD : d.-measurable%classic D),
@@ -1147,7 +1148,7 @@ numfun_NonNegFun__to__numfun_isNonNegFun is transparent
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.simple_functions.numfun_NonNegFun__to__numfun_isNonNegFun
 Declared in
-library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 284, characters 0-111
+library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 279, characters 0-111
 "> _</a></span></span></span><span id="numfun_NonNegFun__to__numfun_isNonNegFun" class="id"><span id="HB_unnamed_factory_5" class="id"><span id="approximation_sfun.hb_instance_4.x" class="id"><a name="numfun_NonNegFun__to__numfun_isNonNegFun" class="" title="numfun_NonNegFun__to__numfun_isNonNegFun :
 forall [d : measure_display] [T : measurableType d] 
   (R : realType) [D : set T] (mD : d.-measurable%classic D),
@@ -1161,7 +1162,7 @@ numfun_NonNegFun__to__numfun_isNonNegFun is transparent
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.simple_functions.numfun_NonNegFun__to__numfun_isNonNegFun
 Declared in
-library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 284, characters 0-111
+library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 279, characters 0-111
 "> x</a></span></span></span><span id="numfun_NonNegFun__to__numfun_isNonNegFun" class="id"><span id="HB_unnamed_factory_5" class="id"><span id="approximation_sfun.hb_instance_4.x" class="id"><a name="numfun_NonNegFun__to__numfun_isNonNegFun" class="" title="numfun_NonNegFun__to__numfun_isNonNegFun :
 forall [d : measure_display] [T : measurableType d] 
   (R : realType) [D : set T] (mD : d.-measurable%classic D),
@@ -1175,7 +1176,7 @@ numfun_NonNegFun__to__numfun_isNonNegFun is transparent
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.simple_functions.numfun_NonNegFun__to__numfun_isNonNegFun
 Declared in
-library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 284, characters 0-111
+library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 279, characters 0-111
 "> :</a></span></span></span><span id="numfun_NonNegFun__to__numfun_isNonNegFun" class="id"><span id="HB_unnamed_factory_5" class="id"><span id="approximation_sfun.hb_instance_4.x" class="id"><a name="numfun_NonNegFun__to__numfun_isNonNegFun" class="" title="numfun_NonNegFun__to__numfun_isNonNegFun :
 forall [d : measure_display] [T : measurableType d] 
   (R : realType) [D : set T] (mD : d.-measurable%classic D),
@@ -1189,7 +1190,7 @@ numfun_NonNegFun__to__numfun_isNonNegFun is transparent
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.simple_functions.numfun_NonNegFun__to__numfun_isNonNegFun
 Declared in
-library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 284, characters 0-111
+library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 279, characters 0-111
 "> @NonNegFun</a></span></span></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html#approximation_sfun.T">T</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html#approximation_sfun.R">R</a></span> (<span class="id"><a href="mathcomp.classical.functions.html#cst">cst</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html#x:110">x</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html#1c0324eabc1cbd2d8f3ac221154b0692">%:num</a></span>)<span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.numfun.html#NonNegFun.on">NonNegFun</a></span>.<span class="id"><a href="mathcomp.analysis.numfun.html#NonNegFun.on">on</a></span> (<span class="id"><a href="mathcomp.classical.functions.html#cst">cst</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html#x:110">x</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html#1c0324eabc1cbd2d8f3ac221154b0692">%:num</a></span>).<br/>
 <br/>
