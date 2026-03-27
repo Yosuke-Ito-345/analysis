@@ -74,6 +74,7 @@
 <li><a href="mathcomp.analysis.normedtype_theory.normedtype.html">normedtype</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html">num_normedtype</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html">pseudometric_normed_Zmodule</a></li>
+<li><a href="mathcomp.analysis.normedtype_theory.tvs.html">tvs</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.urysohn.html">urysohn</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.vitali_lemma.html">vitali_lemma</a></li>
           </ul>
@@ -106,6 +107,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.function_spaces.html">function_spaces</a></li>
 <li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
@@ -139,7 +141,6 @@
 <li><a href="mathcomp.analysis.esum.html">esum</a></li>
 <li><a href="mathcomp.analysis.exp.html">exp</a></li>
 <li><a href="mathcomp.analysis.ftc.html">ftc</a></li>
-<li><a href="mathcomp.analysis.function_spaces.html">function_spaces</a></li>
 <li><a href="mathcomp.analysis.gauss_integral.html">gauss_integral</a></li>
 <li><a href="mathcomp.analysis.hoelder.html">hoelder</a></li>
 <li><a href="mathcomp.analysis.kernel.html">kernel</a></li>
@@ -152,7 +153,6 @@
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
-<li><a href="mathcomp.analysis.tvs.html">tvs</a></li>
           </ul>
           </details>
           </li>
@@ -249,6 +249,7 @@
 ```
 </div>
 <br/>
+<span class="gallina-kwd">Set</span><span class="id"> SsrOldRewriteGoalsOrder</span>.  <br/>
 <span class="gallina-kwd">Set</span><span class="vernacular"> Implicit</span><span class="vernacular"> Arguments</span>.<br/>
 <span class="vernacular">Unset</span><span class="vernacular"> Strict</span><span class="vernacular"> Implicit</span>.<br/>
 <span class="vernacular">Unset</span><span class="vernacular"> Printing</span><span class="vernacular"> Implicit</span><span class="vernacular"> Defensive</span>.<br/>
@@ -285,7 +286,7 @@ metric_sym is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.metric_sym
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 51, characters 6-16
+library mathcomp.analysis.topology_theory.metric_structure, line 52, characters 6-16
 ">metric_sym</a></span><span class="id"> </span><span id="x:21" class="id"><a name="x:21" class="">x</a></span><span class="id"> </span><span id="y:22" class="id"><a name="y:22" class="">y</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metric_lemmas.dist">dist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:21">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:22">y</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metric_lemmas.dist">dist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:22">y</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:21">x</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -306,7 +307,7 @@ mdistxx is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.mdistxx
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 60, characters 6-13
+library mathcomp.analysis.topology_theory.metric_structure, line 61, characters 6-13
 ">mdistxx</a></span><span class="id"> </span><span id="x:23" class="id"><a name="x:23" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metric_lemmas.dist">dist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:23">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:23">x</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id">0</span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -326,7 +327,7 @@ mdist_gt0 is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.mdist_gt0
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 67, characters 6-15
+library mathcomp.analysis.topology_theory.metric_structure, line 68, characters 6-15
 ">mdist_gt0</a></span><span class="id"> </span><span id="x:24" class="id"><a name="x:24" class="">x</a></span><span class="id"> </span><span id="y:25" class="id"><a name="y:25" class="">y</a></span><span class="id"> :</span> (<span class="id">0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metric_lemmas.dist">dist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:24">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:25">y</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:24">x</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#c385a484ee9d1b4e0615924561a9b75e"> !=</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#c385a484ee9d1b4e0615924561a9b75e"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:25">y</a></span>).<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -346,7 +347,7 @@ metric_triangle is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.metric_triangle
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 74, characters 6-21
+library mathcomp.analysis.topology_theory.metric_structure, line 75, characters 6-21
 ">metric_triangle</a></span><span class="id"> </span><span id="x:26" class="id"><a name="x:26" class="">x</a></span><span class="id"> </span><span id="y:27" class="id"><a name="y:27" class="">y</a></span><span class="id"> </span><span id="z:28" class="id"><a name="z:28" class="">z</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metric_lemmas.dist">dist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:26">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#z:28">z</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metric_lemmas.dist">dist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:26">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:27">y</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#c7f78cf1f6a5e4f664654f7d671ca752"> +</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#c7f78cf1f6a5e4f664654f7d671ca752"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metric_lemmas.dist">dist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:27">y</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#z:28">z</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -363,15 +364,16 @@ forall {R : realFieldType} [T : metricType R], hausdorff_space T
 metric_hausdorff is not universe polymorphic
 Expanded type for implicit arguments
 metric_hausdorff :
-forall {R : realFieldType} [T : metricType R] [p q : T],
-cluster (nbhs p) q -> p = q
+forall {R : realFieldType} [T : metricType R]
+  [p q : topology_structure.Topological.sort T],
+cluster (filter.nbhs p) q -> p = q
 
 Arguments metric_hausdorff {R} [T p q] _
 metric_hausdorff is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.metric_hausdorff
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 82, characters 6-22
+library mathcomp.analysis.topology_theory.metric_structure, line 83, characters 6-22
 ">metric_hausdorff</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.separation_axioms.html#hausdorff_space">hausdorff_space</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metric_lemmas.T">T</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -399,9 +401,9 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Let</span><span class="id"> </span><span id="Builders_1.Builders_1.ball" class="id"><a name="Builders_1.Builders_1.ball" class="">ball</a></span> (<span id="x:50" class="id"><a name="x:50" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.M">M</a></span>)<span class="id"> </span><span id="e:51" class="id"><a name="e:51" class="">e</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.M">M</a></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9">[set</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9"> </a></span><span id="y:52" class="id"><a name="y:52" class="">y</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9"> |</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.mdist">mdist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:50">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:52">y</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#e:51">e</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9">]</a></span>.<br/>
 <br/>
-<span class="vernacular">Let</span><span class="id"> </span><span id="Builders_1.Builders_1.ent" class="id"><a name="Builders_1.Builders_1.ent" class="">ent</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.M">M</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"> *</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.M">M</a></span>)<span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#entourage_">entourage_</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.ball">ball</a></span>.<br/>
+<span class="vernacular">Let</span><span class="id"> </span><span id="Builders_1.Builders_1.ent" class="id"><a name="Builders_1.Builders_1.ent" class="">ent</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.M">M</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"> *</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.M">M</a></span>)<span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#entourage_">entourage_</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.ball">ball</a></span>.<br/>
 <br/>
-<span class="vernacular">Let</span><span class="id"> </span><span id="Builders_1.Builders_1.nbhs" class="id"><a name="Builders_1.Builders_1.nbhs" class="">nbhs</a></span> (<span id="x:53" class="id"><a name="x:53" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.M">M</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.M">M</a></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#nbhs_">nbhs_</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.ent">ent</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:53">x</a></span>.<br/>
+<span class="vernacular">Let</span><span class="id"> </span><span id="Builders_1.Builders_1.nbhs" class="id"><a name="Builders_1.Builders_1.nbhs" class="">nbhs</a></span> (<span id="x:53" class="id"><a name="x:53" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.M">M</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.M">M</a></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#nbhs_">nbhs_</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.ent">ent</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:53">x</a></span>.<br/>
 <br/>
 <span class="vernacular">Let</span><span class="id"> </span><span id="Builders_1.Builders_1.nbhsE" class="id"><a name="Builders_1.Builders_1.nbhsE" class="">nbhsE</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.nbhs">nbhs</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#nbhs_">nbhs_</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.ent">ent</a></span><br/>
 <details>
@@ -413,7 +415,8 @@ Qed.</div></details>
 forall [M : Type],
 hasChoice.axioms_ M ->
 Equality.mixin_of M ->
-selfFiltered.axioms_ M -> isFiltered.axioms_ M M -> nbhsType
+filter.selfFiltered.axioms_ M ->
+filter.isFiltered.axioms_ M M -> filter.Nbhs.type
 
 Builders_1.Builders_1_M__canonical__filter_Nbhs is not universe polymorphic
 Arguments Builders_1.Builders_1_M__canonical__filter_Nbhs 
@@ -423,12 +426,13 @@ Builders_1.Builders_1_M__canonical__filter_Nbhs is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.pseudometric_structure.Builders_1.Builders_1_M__canonical__filter_Nbhs
 Declared in
-library mathcomp.analysis.topology_theory.pseudometric_structure, line 96, characters 0-50
+library mathcomp.analysis.topology_theory.pseudometric_structure, line 97, characters 0-50
 ">HB</a></span></span></span></span></span>.<span id="Builders_1.Builders_1_M__canonical__filter_Nbhs" class="id"><span id="Builders_1.Builders_1_M__canonical__filter_Filtered" class="id"><span id="Builders_1.metric_structure_isMetric__to__filter_isFiltered" class="id"><span id="Builders_1.metric_structure_isMetric__to__filter_selfFiltered" class="id"><span id="Builders_1.HB_unnamed_factory_3" class="id"><a name="Builders_1.Builders_1_M__canonical__filter_Nbhs" class="" title="Builders_1.Builders_1_M__canonical__filter_Nbhs :
 forall [M : Type],
 hasChoice.axioms_ M ->
 Equality.mixin_of M ->
-selfFiltered.axioms_ M -> isFiltered.axioms_ M M -> nbhsType
+filter.selfFiltered.axioms_ M ->
+filter.isFiltered.axioms_ M M -> filter.Nbhs.type
 
 Builders_1.Builders_1_M__canonical__filter_Nbhs is not universe polymorphic
 Arguments Builders_1.Builders_1_M__canonical__filter_Nbhs 
@@ -438,12 +442,13 @@ Builders_1.Builders_1_M__canonical__filter_Nbhs is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.pseudometric_structure.Builders_1.Builders_1_M__canonical__filter_Nbhs
 Declared in
-library mathcomp.analysis.topology_theory.pseudometric_structure, line 96, characters 0-50
+library mathcomp.analysis.topology_theory.pseudometric_structure, line 97, characters 0-50
 ">instance</a></span></span></span></span></span><span class="vernacular"> Definition</span><span id="Builders_1.Builders_1_M__canonical__filter_Nbhs" class="id"><span id="Builders_1.Builders_1_M__canonical__filter_Filtered" class="id"><span id="Builders_1.metric_structure_isMetric__to__filter_isFiltered" class="id"><span id="Builders_1.metric_structure_isMetric__to__filter_selfFiltered" class="id"><span id="Builders_1.HB_unnamed_factory_3" class="id"><a name="Builders_1.Builders_1_M__canonical__filter_Nbhs" class="" title="Builders_1.Builders_1_M__canonical__filter_Nbhs :
 forall [M : Type],
 hasChoice.axioms_ M ->
 Equality.mixin_of M ->
-selfFiltered.axioms_ M -> isFiltered.axioms_ M M -> nbhsType
+filter.selfFiltered.axioms_ M ->
+filter.isFiltered.axioms_ M M -> filter.Nbhs.type
 
 Builders_1.Builders_1_M__canonical__filter_Nbhs is not universe polymorphic
 Arguments Builders_1.Builders_1_M__canonical__filter_Nbhs 
@@ -453,12 +458,13 @@ Builders_1.Builders_1_M__canonical__filter_Nbhs is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.pseudometric_structure.Builders_1.Builders_1_M__canonical__filter_Nbhs
 Declared in
-library mathcomp.analysis.topology_theory.pseudometric_structure, line 96, characters 0-50
+library mathcomp.analysis.topology_theory.pseudometric_structure, line 97, characters 0-50
 "> _</a></span></span></span></span></span><span id="Builders_1.Builders_1_M__canonical__filter_Nbhs" class="id"><span id="Builders_1.Builders_1_M__canonical__filter_Filtered" class="id"><span id="Builders_1.metric_structure_isMetric__to__filter_isFiltered" class="id"><span id="Builders_1.metric_structure_isMetric__to__filter_selfFiltered" class="id"><span id="Builders_1.HB_unnamed_factory_3" class="id"><a name="Builders_1.Builders_1_M__canonical__filter_Nbhs" class="" title="Builders_1.Builders_1_M__canonical__filter_Nbhs :
 forall [M : Type],
 hasChoice.axioms_ M ->
 Equality.mixin_of M ->
-selfFiltered.axioms_ M -> isFiltered.axioms_ M M -> nbhsType
+filter.selfFiltered.axioms_ M ->
+filter.isFiltered.axioms_ M M -> filter.Nbhs.type
 
 Builders_1.Builders_1_M__canonical__filter_Nbhs is not universe polymorphic
 Arguments Builders_1.Builders_1_M__canonical__filter_Nbhs 
@@ -468,12 +474,13 @@ Builders_1.Builders_1_M__canonical__filter_Nbhs is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.pseudometric_structure.Builders_1.Builders_1_M__canonical__filter_Nbhs
 Declared in
-library mathcomp.analysis.topology_theory.pseudometric_structure, line 96, characters 0-50
+library mathcomp.analysis.topology_theory.pseudometric_structure, line 97, characters 0-50
 "> :=</a></span></span></span></span></span><span id="Builders_1.Builders_1_M__canonical__filter_Nbhs" class="id"><span id="Builders_1.Builders_1_M__canonical__filter_Filtered" class="id"><span id="Builders_1.metric_structure_isMetric__to__filter_isFiltered" class="id"><span id="Builders_1.metric_structure_isMetric__to__filter_selfFiltered" class="id"><span id="Builders_1.HB_unnamed_factory_3" class="id"><a name="Builders_1.Builders_1_M__canonical__filter_Nbhs" class="" title="Builders_1.Builders_1_M__canonical__filter_Nbhs :
 forall [M : Type],
 hasChoice.axioms_ M ->
 Equality.mixin_of M ->
-selfFiltered.axioms_ M -> isFiltered.axioms_ M M -> nbhsType
+filter.selfFiltered.axioms_ M ->
+filter.isFiltered.axioms_ M M -> filter.Nbhs.type
 
 Builders_1.Builders_1_M__canonical__filter_Nbhs is not universe polymorphic
 Arguments Builders_1.Builders_1_M__canonical__filter_Nbhs 
@@ -483,7 +490,7 @@ Builders_1.Builders_1_M__canonical__filter_Nbhs is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.pseudometric_structure.Builders_1.Builders_1_M__canonical__filter_Nbhs
 Declared in
-library mathcomp.analysis.topology_theory.pseudometric_structure, line 96, characters 0-50
+library mathcomp.analysis.topology_theory.pseudometric_structure, line 97, characters 0-50
 "> hasNbhs</a></span></span></span></span></span>.<span class="id"><a href="mathcomp.classical.filter.html#hasNbhs.Build">Build</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.M">M</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.nbhs">nbhs</a></span>.<br/>
 <br/>
 <span class="vernacular">Let</span><span class="id"> </span><span id="Builders_1.Builders_1.ball_center" class="id"><a name="Builders_1.Builders_1.ball_center" class="">ball_center</a></span><span class="id"> </span><span id="x:54" class="id"><a name="x:54" class="">x</a></span> (<span id="e:55" class="id"><a name="e:55" class="">e</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.K">K</a></span>)<span class="id"> :</span><span class="id"> 0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#e:55">e</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.ball">ball</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:54">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#e:55">e</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:54">x</a></span>.<br/>
@@ -516,8 +523,8 @@ Qed.</div></details>
 forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
-  [local_mixin_filter_selfFiltered : selfFiltered.axioms_ M]
-  [local_mixin_filter_isFiltered : isFiltered.axioms_ M M],
+  [local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ M]
+  [local_mixin_filter_isFiltered : filter.isFiltered.axioms_ M M],
 Nbhs_isPseudoMetric.phant_axioms R (m:=local_mixin_choice_hasChoice)
   (m0:=local_mixin_eqtype_hasDecEq) (m1:=local_mixin_filter_selfFiltered)
   (m2:=local_mixin_filter_isFiltered) id_phant
@@ -526,10 +533,11 @@ Nbhs_isPseudoMetric.phant_axioms R (m:=local_mixin_choice_hasChoice)
         local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   id_phant
   (c:={|
-        Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-        Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-        Nbhs.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-        Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+        filter.Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        filter.Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        filter.Nbhs.filter_selfFiltered_mixin :=
+          local_mixin_filter_selfFiltered;
+        filter.Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
       |})
   id_phant (m3:=local_mixin_choice_hasChoice) id_phant
   (m4:=local_mixin_eqtype_hasDecEq) id_phant
@@ -540,9 +548,11 @@ Nbhs_isPseudoMetric.phant_axioms R (m:=local_mixin_choice_hasChoice)
          local_mixin_filter_isFiltered)
   id_phant
   (c0:={|
-         Filtered.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-         Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-         Filtered.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+         filter.Filtered.choice_hasChoice_mixin :=
+           local_mixin_choice_hasChoice;
+         filter.Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         filter.Filtered.filter_isFiltered_mixin :=
+           local_mixin_filter_isFiltered
        |})
   id_phant (m7:=local_mixin_choice_hasChoice) id_phant
   (m8:=local_mixin_eqtype_hasDecEq) id_phant
@@ -560,13 +570,13 @@ Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric is trans
 Expands to: Constant
             mathcomp.analysis.topology_theory.pseudometric_structure.Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.pseudometric_structure, line 142, characters 0-109
+library mathcomp.analysis.topology_theory.pseudometric_structure, line 143, characters 0-109
 ">HB</a></span></span></span></span></span></span></span>.<span id="Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric" class="id"><span id="Builders_1.Builders_1_M__canonical__uniform_structure_Uniform" class="id"><span id="Builders_1.Builders_1_M__canonical__topology_structure_Topological" class="id"><span id="Builders_1.metric_structure_isMetric__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="Builders_1.metric_structure_isMetric__to__topology_structure_Nbhs_isTopological" class="id"><span id="Builders_1.metric_structure_isMetric__to__pseudometric_structure_Uniform_isPseudoMetric" class="id"><span id="Builders_1.HB_unnamed_factory_6" class="id"><a name="Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric" class="" title="Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric :
 forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
-  [local_mixin_filter_selfFiltered : selfFiltered.axioms_ M]
-  [local_mixin_filter_isFiltered : isFiltered.axioms_ M M],
+  [local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ M]
+  [local_mixin_filter_isFiltered : filter.isFiltered.axioms_ M M],
 Nbhs_isPseudoMetric.phant_axioms R (m:=local_mixin_choice_hasChoice)
   (m0:=local_mixin_eqtype_hasDecEq) (m1:=local_mixin_filter_selfFiltered)
   (m2:=local_mixin_filter_isFiltered) id_phant
@@ -575,10 +585,11 @@ Nbhs_isPseudoMetric.phant_axioms R (m:=local_mixin_choice_hasChoice)
         local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   id_phant
   (c:={|
-        Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-        Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-        Nbhs.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-        Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+        filter.Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        filter.Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        filter.Nbhs.filter_selfFiltered_mixin :=
+          local_mixin_filter_selfFiltered;
+        filter.Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
       |})
   id_phant (m3:=local_mixin_choice_hasChoice) id_phant
   (m4:=local_mixin_eqtype_hasDecEq) id_phant
@@ -589,9 +600,11 @@ Nbhs_isPseudoMetric.phant_axioms R (m:=local_mixin_choice_hasChoice)
          local_mixin_filter_isFiltered)
   id_phant
   (c0:={|
-         Filtered.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-         Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-         Filtered.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+         filter.Filtered.choice_hasChoice_mixin :=
+           local_mixin_choice_hasChoice;
+         filter.Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         filter.Filtered.filter_isFiltered_mixin :=
+           local_mixin_filter_isFiltered
        |})
   id_phant (m7:=local_mixin_choice_hasChoice) id_phant
   (m8:=local_mixin_eqtype_hasDecEq) id_phant
@@ -609,13 +622,13 @@ Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric is trans
 Expands to: Constant
             mathcomp.analysis.topology_theory.pseudometric_structure.Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.pseudometric_structure, line 142, characters 0-109
+library mathcomp.analysis.topology_theory.pseudometric_structure, line 143, characters 0-109
 ">instance</a></span></span></span></span></span></span></span><span class="vernacular"> Definition</span><span id="Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric" class="id"><span id="Builders_1.Builders_1_M__canonical__uniform_structure_Uniform" class="id"><span id="Builders_1.Builders_1_M__canonical__topology_structure_Topological" class="id"><span id="Builders_1.metric_structure_isMetric__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="Builders_1.metric_structure_isMetric__to__topology_structure_Nbhs_isTopological" class="id"><span id="Builders_1.metric_structure_isMetric__to__pseudometric_structure_Uniform_isPseudoMetric" class="id"><span id="Builders_1.HB_unnamed_factory_6" class="id"><a name="Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric" class="" title="Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric :
 forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
-  [local_mixin_filter_selfFiltered : selfFiltered.axioms_ M]
-  [local_mixin_filter_isFiltered : isFiltered.axioms_ M M],
+  [local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ M]
+  [local_mixin_filter_isFiltered : filter.isFiltered.axioms_ M M],
 Nbhs_isPseudoMetric.phant_axioms R (m:=local_mixin_choice_hasChoice)
   (m0:=local_mixin_eqtype_hasDecEq) (m1:=local_mixin_filter_selfFiltered)
   (m2:=local_mixin_filter_isFiltered) id_phant
@@ -624,10 +637,11 @@ Nbhs_isPseudoMetric.phant_axioms R (m:=local_mixin_choice_hasChoice)
         local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   id_phant
   (c:={|
-        Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-        Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-        Nbhs.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-        Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+        filter.Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        filter.Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        filter.Nbhs.filter_selfFiltered_mixin :=
+          local_mixin_filter_selfFiltered;
+        filter.Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
       |})
   id_phant (m3:=local_mixin_choice_hasChoice) id_phant
   (m4:=local_mixin_eqtype_hasDecEq) id_phant
@@ -638,9 +652,11 @@ Nbhs_isPseudoMetric.phant_axioms R (m:=local_mixin_choice_hasChoice)
          local_mixin_filter_isFiltered)
   id_phant
   (c0:={|
-         Filtered.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-         Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-         Filtered.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+         filter.Filtered.choice_hasChoice_mixin :=
+           local_mixin_choice_hasChoice;
+         filter.Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         filter.Filtered.filter_isFiltered_mixin :=
+           local_mixin_filter_isFiltered
        |})
   id_phant (m7:=local_mixin_choice_hasChoice) id_phant
   (m8:=local_mixin_eqtype_hasDecEq) id_phant
@@ -658,13 +674,13 @@ Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric is trans
 Expands to: Constant
             mathcomp.analysis.topology_theory.pseudometric_structure.Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.pseudometric_structure, line 142, characters 0-109
+library mathcomp.analysis.topology_theory.pseudometric_structure, line 143, characters 0-109
 "> _</a></span></span></span></span></span></span></span><span id="Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric" class="id"><span id="Builders_1.Builders_1_M__canonical__uniform_structure_Uniform" class="id"><span id="Builders_1.Builders_1_M__canonical__topology_structure_Topological" class="id"><span id="Builders_1.metric_structure_isMetric__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="Builders_1.metric_structure_isMetric__to__topology_structure_Nbhs_isTopological" class="id"><span id="Builders_1.metric_structure_isMetric__to__pseudometric_structure_Uniform_isPseudoMetric" class="id"><span id="Builders_1.HB_unnamed_factory_6" class="id"><a name="Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric" class="" title="Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric :
 forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
-  [local_mixin_filter_selfFiltered : selfFiltered.axioms_ M]
-  [local_mixin_filter_isFiltered : isFiltered.axioms_ M M],
+  [local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ M]
+  [local_mixin_filter_isFiltered : filter.isFiltered.axioms_ M M],
 Nbhs_isPseudoMetric.phant_axioms R (m:=local_mixin_choice_hasChoice)
   (m0:=local_mixin_eqtype_hasDecEq) (m1:=local_mixin_filter_selfFiltered)
   (m2:=local_mixin_filter_isFiltered) id_phant
@@ -673,10 +689,11 @@ Nbhs_isPseudoMetric.phant_axioms R (m:=local_mixin_choice_hasChoice)
         local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   id_phant
   (c:={|
-        Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-        Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-        Nbhs.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-        Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+        filter.Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        filter.Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        filter.Nbhs.filter_selfFiltered_mixin :=
+          local_mixin_filter_selfFiltered;
+        filter.Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
       |})
   id_phant (m3:=local_mixin_choice_hasChoice) id_phant
   (m4:=local_mixin_eqtype_hasDecEq) id_phant
@@ -687,9 +704,11 @@ Nbhs_isPseudoMetric.phant_axioms R (m:=local_mixin_choice_hasChoice)
          local_mixin_filter_isFiltered)
   id_phant
   (c0:={|
-         Filtered.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-         Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-         Filtered.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+         filter.Filtered.choice_hasChoice_mixin :=
+           local_mixin_choice_hasChoice;
+         filter.Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         filter.Filtered.filter_isFiltered_mixin :=
+           local_mixin_filter_isFiltered
        |})
   id_phant (m7:=local_mixin_choice_hasChoice) id_phant
   (m8:=local_mixin_eqtype_hasDecEq) id_phant
@@ -707,13 +726,13 @@ Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric is trans
 Expands to: Constant
             mathcomp.analysis.topology_theory.pseudometric_structure.Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.pseudometric_structure, line 142, characters 0-109
+library mathcomp.analysis.topology_theory.pseudometric_structure, line 143, characters 0-109
 "> :=</a></span></span></span></span></span></span></span><span id="Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric" class="id"><span id="Builders_1.Builders_1_M__canonical__uniform_structure_Uniform" class="id"><span id="Builders_1.Builders_1_M__canonical__topology_structure_Topological" class="id"><span id="Builders_1.metric_structure_isMetric__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="Builders_1.metric_structure_isMetric__to__topology_structure_Nbhs_isTopological" class="id"><span id="Builders_1.metric_structure_isMetric__to__pseudometric_structure_Uniform_isPseudoMetric" class="id"><span id="Builders_1.HB_unnamed_factory_6" class="id"><a name="Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric" class="" title="Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric :
 forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
-  [local_mixin_filter_selfFiltered : selfFiltered.axioms_ M]
-  [local_mixin_filter_isFiltered : isFiltered.axioms_ M M],
+  [local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ M]
+  [local_mixin_filter_isFiltered : filter.isFiltered.axioms_ M M],
 Nbhs_isPseudoMetric.phant_axioms R (m:=local_mixin_choice_hasChoice)
   (m0:=local_mixin_eqtype_hasDecEq) (m1:=local_mixin_filter_selfFiltered)
   (m2:=local_mixin_filter_isFiltered) id_phant
@@ -722,10 +741,11 @@ Nbhs_isPseudoMetric.phant_axioms R (m:=local_mixin_choice_hasChoice)
         local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   id_phant
   (c:={|
-        Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-        Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-        Nbhs.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-        Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+        filter.Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        filter.Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        filter.Nbhs.filter_selfFiltered_mixin :=
+          local_mixin_filter_selfFiltered;
+        filter.Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
       |})
   id_phant (m3:=local_mixin_choice_hasChoice) id_phant
   (m4:=local_mixin_eqtype_hasDecEq) id_phant
@@ -736,9 +756,11 @@ Nbhs_isPseudoMetric.phant_axioms R (m:=local_mixin_choice_hasChoice)
          local_mixin_filter_isFiltered)
   id_phant
   (c0:={|
-         Filtered.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-         Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-         Filtered.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+         filter.Filtered.choice_hasChoice_mixin :=
+           local_mixin_choice_hasChoice;
+         filter.Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         filter.Filtered.filter_isFiltered_mixin :=
+           local_mixin_filter_isFiltered
        |})
   id_phant (m7:=local_mixin_choice_hasChoice) id_phant
   (m8:=local_mixin_eqtype_hasDecEq) id_phant
@@ -756,7 +778,7 @@ Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric is trans
 Expands to: Constant
             mathcomp.analysis.topology_theory.pseudometric_structure.Builders_1.Builders_1_M__canonical__pseudometric_structure_PseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.pseudometric_structure, line 142, characters 0-109
+library mathcomp.analysis.topology_theory.pseudometric_structure, line 143, characters 0-109
 "> @Nbhs_isPseudoMetric</a></span></span></span></span></span></span></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#Nbhs_isPseudoMetric.Build">Build</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.K">K</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.M">M</a></span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.ent">ent</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.nbhsE">nbhsE</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.ball">ball</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.ball_center">ball_center</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.ball_sym">ball_sym</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.ball_triangle">ball_triangle</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.entourageE">entourageE</a></span>.<br/>
 <br/>
@@ -805,7 +827,7 @@ Builders_1.Builders_1_M__canonical__metric_structure_Metric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.Builders_1.Builders_1_M__canonical__metric_structure_Metric
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 140, characters 0-100
+library mathcomp.analysis.topology_theory.metric_structure, line 141, characters 0-100
 ">HB</a></span></span>.<span id="Builders_1.Builders_1_M__canonical__metric_structure_Metric" class="id"><span id="Builders_1.HB_unnamed_factory_10" class="id"><a name="Builders_1.Builders_1_M__canonical__metric_structure_Metric" class="" title="Builders_1.Builders_1_M__canonical__metric_structure_Metric :
 forall [K : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
@@ -837,7 +859,7 @@ Builders_1.Builders_1_M__canonical__metric_structure_Metric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.Builders_1.Builders_1_M__canonical__metric_structure_Metric
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 140, characters 0-100
+library mathcomp.analysis.topology_theory.metric_structure, line 141, characters 0-100
 ">instance</a></span></span><span class="vernacular"> Definition</span><span id="Builders_1.Builders_1_M__canonical__metric_structure_Metric" class="id"><span id="Builders_1.HB_unnamed_factory_10" class="id"><a name="Builders_1.Builders_1_M__canonical__metric_structure_Metric" class="" title="Builders_1.Builders_1_M__canonical__metric_structure_Metric :
 forall [K : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
@@ -869,7 +891,7 @@ Builders_1.Builders_1_M__canonical__metric_structure_Metric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.Builders_1.Builders_1_M__canonical__metric_structure_Metric
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 140, characters 0-100
+library mathcomp.analysis.topology_theory.metric_structure, line 141, characters 0-100
 "> _</a></span></span><span id="Builders_1.Builders_1_M__canonical__metric_structure_Metric" class="id"><span id="Builders_1.HB_unnamed_factory_10" class="id"><a name="Builders_1.Builders_1_M__canonical__metric_structure_Metric" class="" title="Builders_1.Builders_1_M__canonical__metric_structure_Metric :
 forall [K : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
@@ -901,7 +923,7 @@ Builders_1.Builders_1_M__canonical__metric_structure_Metric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.Builders_1.Builders_1_M__canonical__metric_structure_Metric
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 140, characters 0-100
+library mathcomp.analysis.topology_theory.metric_structure, line 141, characters 0-100
 "> :=</a></span></span><span id="Builders_1.Builders_1_M__canonical__metric_structure_Metric" class="id"><span id="Builders_1.HB_unnamed_factory_10" class="id"><a name="Builders_1.Builders_1_M__canonical__metric_structure_Metric" class="" title="Builders_1.Builders_1_M__canonical__metric_structure_Metric :
 forall [K : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
@@ -933,7 +955,7 @@ Builders_1.Builders_1_M__canonical__metric_structure_Metric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.Builders_1.Builders_1_M__canonical__metric_structure_Metric
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 140, characters 0-100
+library mathcomp.analysis.topology_theory.metric_structure, line 141, characters 0-100
 "> PseudoMetric_isMetric</a></span></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#PseudoMetric_isMetric.Build">Build</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.K">K</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.M">M</a></span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.mdist_ge0">mdist_ge0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.mdist_positivity">mdist_positivity</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Builders_1.Builders_1.ballEmdist">ballEmdist</a></span>.<br/>
 <br/>
@@ -972,7 +994,7 @@ GRing_regular__canonical__metric_structure_Metric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.GRing_regular__canonical__metric_structure_Metric
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 160, characters 0-106
+library mathcomp.analysis.topology_theory.metric_structure, line 161, characters 0-106
 ">HB</a></span></span>.<span id="GRing_regular__canonical__metric_structure_Metric" class="id"><span id="HB_unnamed_factory_13" class="id"><a name="GRing_regular__canonical__metric_structure_Metric" class="" title="GRing_regular__canonical__metric_structure_Metric :
 forall {R : numFieldType}, metricType R
 
@@ -982,7 +1004,7 @@ GRing_regular__canonical__metric_structure_Metric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.GRing_regular__canonical__metric_structure_Metric
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 160, characters 0-106
+library mathcomp.analysis.topology_theory.metric_structure, line 161, characters 0-106
 ">instance</a></span></span><span class="vernacular"> Definition</span><span id="GRing_regular__canonical__metric_structure_Metric" class="id"><span id="HB_unnamed_factory_13" class="id"><a name="GRing_regular__canonical__metric_structure_Metric" class="" title="GRing_regular__canonical__metric_structure_Metric :
 forall {R : numFieldType}, metricType R
 
@@ -992,7 +1014,7 @@ GRing_regular__canonical__metric_structure_Metric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.GRing_regular__canonical__metric_structure_Metric
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 160, characters 0-106
+library mathcomp.analysis.topology_theory.metric_structure, line 161, characters 0-106
 "> _</a></span></span><span id="GRing_regular__canonical__metric_structure_Metric" class="id"><span id="HB_unnamed_factory_13" class="id"><a name="GRing_regular__canonical__metric_structure_Metric" class="" title="GRing_regular__canonical__metric_structure_Metric :
 forall {R : numFieldType}, metricType R
 
@@ -1002,7 +1024,7 @@ GRing_regular__canonical__metric_structure_Metric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.GRing_regular__canonical__metric_structure_Metric
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 160, characters 0-106
+library mathcomp.analysis.topology_theory.metric_structure, line 161, characters 0-106
 "> :=</a></span></span><br/>
 &nbsp;&nbsp;<span id="GRing_regular__canonical__metric_structure_Metric" class="id"><span id="HB_unnamed_factory_13" class="id"><a name="GRing_regular__canonical__metric_structure_Metric" class="" title="GRing_regular__canonical__metric_structure_Metric :
 forall {R : numFieldType}, metricType R
@@ -1013,7 +1035,7 @@ GRing_regular__canonical__metric_structure_Metric is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.GRing_regular__canonical__metric_structure_Metric
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 160, characters 0-106
+library mathcomp.analysis.topology_theory.metric_structure, line 161, characters 0-106
 ">@PseudoMetric_isMetric</a></span></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Build">Build</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#numFieldType_metric.R">R</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#numFieldType_metric.R">R</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#32d8c90f413029fb5c0e82f0559cd7ef">^o</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#numFieldType_metric.dist">dist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#numFieldType_metric.dist_ge0">dist_ge0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#numFieldType_metric.dist_positivity">dist_positivity</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#numFieldType_metric.ballEmdist">ballEmdist</a></span>.<br/>
 <br/>
 <span class="vernacular">End</span><span class="id"> numFieldType_metric</span>.<br/>
@@ -1034,7 +1056,7 @@ metricType_numDomainType.ball_mdistE is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.metricType_numDomainType.ball_mdistE
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 176, characters 6-17
+library mathcomp.analysis.topology_theory.metric_structure, line 177, characters 6-17
 ">ball_mdistE</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.ball_mdist">ball_mdist</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#ball">ball</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -1046,7 +1068,7 @@ library mathcomp.analysis.topology_theory.metric_structure, line 176, characters
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="metricType_numDomainType.nbhs_nbhs_mdist" class="id"><a name="metricType_numDomainType.nbhs_nbhs_mdist" class="" title="metricType_numDomainType.nbhs_nbhs_mdist :
 forall {K : numDomainType} {V : metricType K},
 nbhs_ball_ (fun (x : V) (d : K) => [set y | (mdist x y < d)%R]%classic) =
-nbhs
+filter.nbhs
 
 metricType_numDomainType.nbhs_nbhs_mdist is not universe polymorphic
 Arguments metricType_numDomainType.nbhs_nbhs_mdist {K V}
@@ -1054,7 +1076,7 @@ metricType_numDomainType.nbhs_nbhs_mdist is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.metricType_numDomainType.nbhs_nbhs_mdist
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 181, characters 6-21
+library mathcomp.analysis.topology_theory.metric_structure, line 182, characters 6-21
 ">nbhs_nbhs_mdist</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.nbhs_mdist">nbhs_mdist</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#nbhs">nbhs</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -1066,8 +1088,9 @@ library mathcomp.analysis.topology_theory.metric_structure, line 181, characters
 Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="metricType_numDomainType.nbhs_mdistP" class="id"><a name="metricType_numDomainType.nbhs_mdistP" class="" title="metricType_numDomainType.nbhs_mdistP :
-forall {K : numDomainType} {V : metricType K} (x : V) (P : V -> Prop),
-(\near x, P x) <->
+forall {K : numDomainType} {V : metricType K} (x : filter.Filtered.sort V)
+  (P : V -> Prop),
+filter.prop_near1 x (P:=P) (inPhantom (forall x0 : V, P x0)) <->
 nbhs_ball_ (fun (x0 : V) (d : K) => [set y | (mdist x0 y < d)%R]%classic) x P
 
 metricType_numDomainType.nbhs_mdistP is not universe polymorphic
@@ -1076,7 +1099,7 @@ metricType_numDomainType.nbhs_mdistP is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.metricType_numDomainType.nbhs_mdistP
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 189, characters 6-17
+library mathcomp.analysis.topology_theory.metric_structure, line 190, characters 6-17
 ">nbhs_mdistP</a></span><span class="id"> </span><span id="x:84" class="id"><a name="x:84" class="">x</a></span> (<span id="P:85" class="id"><a name="P:85" class="">P</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="gallina-kwd"> Prop</span>)<span class="id"> :</span> (<span class="id"><a href="mathcomp.classical.filter.html#3a790c7390ef97f6a108c0787d66de4c">\near</a></span><span class="id"><a href="mathcomp.classical.filter.html#3a790c7390ef97f6a108c0787d66de4c"> </a></span><span id="x:88" class="id"><span id="x:87" class="id"><span id="x:86" class="id"><a name="x:88" class="">x</a></span></span></span><span class="id"><a href="mathcomp.classical.filter.html#3a790c7390ef97f6a108c0787d66de4c">,</a></span><span class="id"><a href="mathcomp.classical.filter.html#3a790c7390ef97f6a108c0787d66de4c"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#P:85">P</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:88">x</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"> &lt;-&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.nbhs_mdist">nbhs_mdist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:84">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#P:85">P</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -1085,9 +1108,9 @@ library mathcomp.analysis.topology_theory.metric_structure, line 189, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="metricType_numDomainType.filter_from_mdist_nbhs" class="id"><a name="metricType_numDomainType.filter_from_mdist_nbhs" class="" title="metricType_numDomainType.filter_from_mdist_nbhs :
 forall {K : numDomainType} {V : metricType K} (y : V),
-filter_from (fun i : K => (0 < i)%R)
+filter.filter_from (fun i : K => (0 < i)%R)
   (fun (i : K) (y' : V) => (mdist y y' < i)%R) =
-nbhs y
+filter.nbhs y
 
 metricType_numDomainType.filter_from_mdist_nbhs is not universe polymorphic
 Arguments metricType_numDomainType.filter_from_mdist_nbhs {K V} y
@@ -1095,7 +1118,7 @@ metricType_numDomainType.filter_from_mdist_nbhs is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.metricType_numDomainType.filter_from_mdist_nbhs
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 192, characters 6-28
+library mathcomp.analysis.topology_theory.metric_structure, line 193, characters 6-28
 ">filter_from_mdist_nbhs</a></span> (<span id="y:89" class="id"><a name="y:89" class="">y</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>)<span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.classical.filter.html#filter_from">filter_from</a></span> (<span class="gallina-kwd">fun</span><span class="id"> </span><span id="i:92" class="id"><a name="i:92" class="">i</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.K">K</a></span><span class="id"> =&gt;</span><span class="id"> 0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#i:92">i</a></span>) (<span class="gallina-kwd">fun</span> (<span id="i:90" class="id"><a name="i:90" class="">i</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.K">K</a></span>) (<span id="y':91" class="id"><a name="y':91" class="">y'</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>)<span class="id"> =&gt;</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#mdist">mdist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:89">y</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y':91">y'</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#i:90">i</a></span>)<br/>
 &nbsp;&nbsp;<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a">=</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#nbhs">nbhs</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:89">y</a></span>.<br/>
@@ -1111,13 +1134,15 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="metricType_numDomainType.fcvgrPdist_lt" class="id"><a name="metricType_numDomainType.fcvgrPdist_lt" class="" title="metricType_numDomainType.fcvgrPdist_lt :
 forall {K : numDomainType} {V : metricType K} {F : set_system V},
-Filter F ->
+filter.Filter F ->
 forall y : V,
-(F --> y)%classic <->
+filter.cvg_to (filter.nbhs F) (filter.nbhs y) <->
 (forall
    eps : join_Num_POrderedZmodule_between_Algebra_BaseAddUMagma_and_Order_Preorder
            K,
- (0 < eps)%R -> \near F, (mdist y F < eps)%R)
+ (0 < eps)%R ->
+ filter.prop_near1 F (P:=fun y' : V => (mdist y y' < eps)%R)
+   (inPhantom (forall y' : V, (mdist y y' < eps)%R)))
 
 metricType_numDomainType.fcvgrPdist_lt is not universe polymorphic
 Arguments metricType_numDomainType.fcvgrPdist_lt {K V F FF} y
@@ -1125,8 +1150,8 @@ metricType_numDomainType.fcvgrPdist_lt is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.metricType_numDomainType.fcvgrPdist_lt
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 203, characters 6-19
-">fcvgrPdist_lt</a></span><span class="id"> {</span><span id="F:93" class="id"><a name="F:93" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:94" class="id"><a name="FF:94" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:93">F</a></span><span class="id">}</span> (<span id="y:95" class="id"><a name="y:95" class="">y</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>)<span class="id"> :</span><br/>
+library mathcomp.analysis.topology_theory.metric_structure, line 204, characters 6-19
+">fcvgrPdist_lt</a></span><span class="id"> {</span><span id="F:93" class="id"><a name="F:93" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:94" class="id"><a name="FF:94" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:93">F</a></span><span class="id">}</span> (<span id="y:95" class="id"><a name="y:95" class="">y</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>)<span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:93">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:95">y</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"> &lt;-&gt;</a></span><span class="gallina-kwd"> forall</span><span class="id"> </span><span id="eps:96" class="id"><a name="eps:96" class="">eps</a></span><span class="id">,</span><span class="id"> 0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#eps:96">eps</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">\forall</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span id="y':97" class="id"><a name="y':97" class="">y'</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> \near</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:93">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">,</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#mdist">mdist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:95">y</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y':97">y'</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#eps:96">eps</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -1135,13 +1160,15 @@ library mathcomp.analysis.topology_theory.metric_structure, line 203, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="metricType_numDomainType.cvgrPdist_lt" class="id"><a name="metricType_numDomainType.cvgrPdist_lt" class="" title="metricType_numDomainType.cvgrPdist_lt :
 forall {K : numDomainType} {V : metricType K} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall (f : T -> V) (y : V),
-(f x @[x --> F] --> y)%classic <->
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F))) (filter.nbhs y) <->
 (forall
    eps : join_Num_POrderedZmodule_between_Algebra_BaseAddUMagma_and_Order_Preorder
            K,
- (0 < eps)%R -> \near F, (mdist y (f F) < eps)%R)
+ (0 < eps)%R ->
+ filter.prop_near1 F (P:=fun t : T => (mdist y (f t) < eps)%R)
+   (inPhantom (forall t : T, (mdist y (f t) < eps)%R)))
 
 metricType_numDomainType.cvgrPdist_lt is not universe polymorphic
 Arguments metricType_numDomainType.cvgrPdist_lt {K V} 
@@ -1150,8 +1177,8 @@ metricType_numDomainType.cvgrPdist_lt is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.metricType_numDomainType.cvgrPdist_lt
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 207, characters 6-18
-">cvgrPdist_lt</a></span><span class="id"> {</span><span id="T:98" class="id"><a name="T:98" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="F:99" class="id"><a name="F:99" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:98">T</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:100" class="id"><a name="FF:100" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:99">F</a></span><span class="id">}</span> (<span id="f:101" class="id"><a name="f:101" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:98">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>) (<span id="y:102" class="id"><a name="y:102" class="">y</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>)<span class="id"> :</span><br/>
+library mathcomp.analysis.topology_theory.metric_structure, line 208, characters 6-18
+">cvgrPdist_lt</a></span><span class="id"> {</span><span id="T:98" class="id"><a name="T:98" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="F:99" class="id"><a name="F:99" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:98">T</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:100" class="id"><a name="FF:100" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:99">F</a></span><span class="id">}</span> (<span id="f:101" class="id"><a name="f:101" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:98">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>) (<span id="y:102" class="id"><a name="y:102" class="">y</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>)<span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#f:101">f</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> @</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:99">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:102">y</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"> &lt;-&gt;</a></span><span class="gallina-kwd"> forall</span><span class="id"> </span><span id="eps:103" class="id"><a name="eps:103" class="">eps</a></span><span class="id">,</span><span class="id"> 0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#eps:103">eps</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">\forall</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span id="t:104" class="id"><a name="t:104" class="">t</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> \near</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:99">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">,</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#mdist">mdist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:102">y</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#f:101">f</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#t:104">t</a></span>)<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#eps:103">eps</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -1160,13 +1187,15 @@ library mathcomp.analysis.topology_theory.metric_structure, line 207, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="metricType_numDomainType.cvgr_dist_lt" class="id"><a name="metricType_numDomainType.cvgr_dist_lt" class="" title="metricType_numDomainType.cvgr_dist_lt :
 forall {K : numDomainType} {V : metricType K} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall [f : T -> V] [y : V],
-(f x @[x --> F] --> y)%classic ->
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F))) (filter.nbhs y) ->
 forall
   [eps : join_Num_POrderedZmodule_between_Algebra_BaseAddUMagma_and_Order_Preorder
            K],
-(0 < eps)%R -> \near F, (mdist y (f F) < eps)%R
+(0 < eps)%R ->
+filter.prop_near1 F (P:=fun t : T => (mdist y (f t) < eps)%R)
+  (inPhantom (forall t : T, (mdist y (f t) < eps)%R))
 
 metricType_numDomainType.cvgr_dist_lt is not universe polymorphic
 Arguments metricType_numDomainType.cvgr_dist_lt {K V} 
@@ -1176,8 +1205,8 @@ metricType_numDomainType.cvgr_dist_lt is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.metricType_numDomainType.cvgr_dist_lt
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 211, characters 6-18
-">cvgr_dist_lt</a></span><span class="id"> {</span><span id="T:105" class="id"><a name="T:105" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="F:106" class="id"><a name="F:106" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:105">T</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:107" class="id"><a name="FF:107" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:106">F</a></span><span class="id">}</span> (<span id="f:108" class="id"><a name="f:108" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:105">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>) (<span id="y:109" class="id"><a name="y:109" class="">y</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>)<span class="id"> :</span><br/>
+library mathcomp.analysis.topology_theory.metric_structure, line 212, characters 6-18
+">cvgr_dist_lt</a></span><span class="id"> {</span><span id="T:105" class="id"><a name="T:105" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="F:106" class="id"><a name="F:106" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:105">T</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:107" class="id"><a name="FF:107" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:106">F</a></span><span class="id">}</span> (<span id="f:108" class="id"><a name="f:108" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:105">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>) (<span id="y:109" class="id"><a name="y:109" class="">y</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>)<span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#f:108">f</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> @</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:106">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:109">y</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="gallina-kwd"> forall</span><span class="id"> </span><span id="eps:110" class="id"><a name="eps:110" class="">eps</a></span><span class="id">,</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#eps:110">eps</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&gt;'_x"> &gt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&gt;'_x"> </a></span><span class="id">0</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">\forall</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span id="t:111" class="id"><a name="t:111" class="">t</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> \near</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:106">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">,</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#mdist">mdist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:109">y</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#f:108">f</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#t:111">t</a></span>)<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#eps:110">eps</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -1186,13 +1215,15 @@ library mathcomp.analysis.topology_theory.metric_structure, line 211, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="metricType_numDomainType.cvgr_dist_le" class="id"><a name="metricType_numDomainType.cvgr_dist_le" class="" title="metricType_numDomainType.cvgr_dist_le :
 forall {K : numDomainType} {V : metricType K} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall [f : T -> V] [y : V],
-(f x @[x --> F] --> y)%classic ->
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F))) (filter.nbhs y) ->
 forall
   [eps : join_Num_POrderedZmodule_between_Algebra_BaseAddUMagma_and_Order_Preorder
            K],
-(0 < eps)%R -> \near F, (mdist y (f F) <= eps)%R
+(0 < eps)%R ->
+filter.prop_near1 F (P:=fun t : T => (mdist y (f t) <= eps)%R)
+  (inPhantom (forall t : T, (mdist y (f t) <= eps)%R))
 
 metricType_numDomainType.cvgr_dist_le is not universe polymorphic
 Arguments metricType_numDomainType.cvgr_dist_le {K V} 
@@ -1202,8 +1233,8 @@ metricType_numDomainType.cvgr_dist_le is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.metricType_numDomainType.cvgr_dist_le
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 215, characters 6-18
-">cvgr_dist_le</a></span><span class="id"> {</span><span id="T:112" class="id"><a name="T:112" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="F:113" class="id"><a name="F:113" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:112">T</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:114" class="id"><a name="FF:114" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:113">F</a></span><span class="id">}</span> (<span id="f:115" class="id"><a name="f:115" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:112">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>) (<span id="y:116" class="id"><a name="y:116" class="">y</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>)<span class="id"> :</span><br/>
+library mathcomp.analysis.topology_theory.metric_structure, line 216, characters 6-18
+">cvgr_dist_le</a></span><span class="id"> {</span><span id="T:112" class="id"><a name="T:112" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="F:113" class="id"><a name="F:113" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:112">T</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:114" class="id"><a name="FF:114" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:113">F</a></span><span class="id">}</span> (<span id="f:115" class="id"><a name="f:115" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:112">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>) (<span id="y:116" class="id"><a name="y:116" class="">y</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.metricType_numDomainType.V">V</a></span>)<span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#f:115">f</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> @</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:113">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:116">y</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="gallina-kwd"> forall</span><span class="id"> </span><span id="eps:117" class="id"><a name="eps:117" class="">eps</a></span><span class="id">,</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#eps:117">eps</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&gt;'_x"> &gt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&gt;'_x"> </a></span><span class="id">0</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">\forall</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span id="t:118" class="id"><a name="t:118" class="">t</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> \near</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:113">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">,</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#mdist">mdist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:116">y</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#f:115">f</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#t:118">t</a></span>)<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#eps:117">eps</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -1217,9 +1248,12 @@ library mathcomp.analysis.topology_theory.metric_structure, line 215, characters
 <span class="vernacular">Variables</span> (<span id="metricType_numDomainType.at_left_right_metricType.R" class="id"><a name="metricType_numDomainType.at_left_right_metricType.R" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.NumField.Exports.numFieldType">numFieldType</a></span>) (<span id="metricType_numDomainType.at_left_right_metricType.V" class="id"><a name="metricType_numDomainType.at_left_right_metricType.V" class="">V</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#Metric.Exports.metricType">metricType</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#R:120">R</a></span>).<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="metricType_numDomainType.nbhsr0P" class="id"><a name="metricType_numDomainType.nbhsr0P" class="" title="metricType_numDomainType.nbhsr0P :
-forall [R : numFieldType] [V : metricType R] (P : set V) (x : V),
-(\near x, P x) <->
-(\forall e \near (0^'+)%classic, forall y : V, (mdist x y <= e)%R -> P y)
+forall [R : numFieldType] [V : metricType R] (P : set V)
+  (x : filter.Filtered.sort V),
+filter.prop_near1 x (P:=P) (inPhantom (forall y : V, P y)) <->
+filter.prop_near1 (0^'+)%classic
+  (P:=fun e : R => forall y : V, (mdist x y <= e)%R -> P y)
+  (inPhantom (forall (e : R) (y : V), (mdist x y <= e)%R -> P y))
 
 metricType_numDomainType.nbhsr0P is not universe polymorphic
 Arguments metricType_numDomainType.nbhsr0P [R V] P%_classical_set_scope x
@@ -1227,7 +1261,7 @@ metricType_numDomainType.nbhsr0P is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.metricType_numDomainType.nbhsr0P
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 232, characters 6-13
+library mathcomp.analysis.topology_theory.metric_structure, line 233, characters 6-13
 ">nbhsr0P</a></span> (<span id="P:123" class="id"><a name="P:123" class="">P</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.at_left_right_metricType.V">V</a></span>)<span class="id"> </span><span id="x:124" class="id"><a name="x:124" class="">x</a></span><span class="id"> :</span><br/>
 &nbsp;&nbsp;(<span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">\forall</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span id="y:125" class="id"><a name="y:125" class="">y</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> \near</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:124">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">,</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#P:123">P</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:125">y</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"> &lt;-&gt;</a></span><br/>
 &nbsp;&nbsp;(<span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">\forall</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span id="e:126" class="id"><a name="e:126" class="">e</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> \near</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id">0</span><span class="id"><a href="mathcomp.analysis.topology_theory.num_topology.html#02fa8d8231c69eb0b6a7453874088890">^'+</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">,</a></span><span class="gallina-kwd"> forall</span><span class="id"> </span><span id="y:127" class="id"><a name="y:127" class="">y</a></span><span class="id">,</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#mdist">mdist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:124">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:127">y</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#e:126">e</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#P:123">P</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:127">y</a></span>).<br/>
@@ -1250,7 +1284,7 @@ library mathcomp.analysis.topology_theory.metric_structure, line 232, characters
 <span class="gallina-kwd">by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.ltW">ltW</a></span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Let</span><span class="id"> </span><span id="metricType_numDomainType.at_left_right_metricType.cvgrP" class="id"><a name="metricType_numDomainType.at_left_right_metricType.cvgrP" class="">cvgrP</a></span><span class="id"> {</span><span id="F:128" class="id"><a name="F:128" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.at_left_right_metricType.V">V</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:129" class="id"><a name="FF:129" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:128">F</a></span><span class="id">}</span> (<span id="y:130" class="id"><a name="y:130" class="">y</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.at_left_right_metricType.V">V</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1">[&lt;-&gt;</a></span><br/>
+<span class="vernacular">Let</span><span class="id"> </span><span id="metricType_numDomainType.at_left_right_metricType.cvgrP" class="id"><a name="metricType_numDomainType.at_left_right_metricType.cvgrP" class="">cvgrP</a></span><span class="id"> {</span><span id="F:128" class="id"><a name="F:128" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.at_left_right_metricType.V">V</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:129" class="id"><a name="FF:129" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:128">F</a></span><span class="id">}</span> (<span id="y:130" class="id"><a name="y:130" class="">y</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.at_left_right_metricType.V">V</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1">[&lt;-&gt;</a></span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:128">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:130">y</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1">;</a></span><br/>
 &nbsp;&nbsp;<span class="gallina-kwd">forall</span><span class="id"> </span><span id="eps:131" class="id"><a name="eps:131" class="">eps</a></span><span class="id">,</span><span class="id"> 0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#eps:131">eps</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">\forall</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span id="t:132" class="id"><a name="t:132" class="">t</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> \near</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:128">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">,</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#mdist">mdist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:130">y</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#t:132">t</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#eps:131">eps</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1">;</a></span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">\forall</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span id="eps:133" class="id"><a name="eps:133" class="">eps</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> \near</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id">0</span><span class="id"><a href="mathcomp.analysis.topology_theory.num_topology.html#02fa8d8231c69eb0b6a7453874088890">^'+</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">,</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">\forall</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span id="t:134" class="id"><a name="t:134" class="">t</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> \near</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:128">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">,</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#mdist">mdist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:130">y</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#t:134">t</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#eps:133">eps</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1">;</a></span><br/>
@@ -1270,13 +1304,15 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="metricType_numDomainType.cvgrPdist_le" class="id"><a name="metricType_numDomainType.cvgrPdist_le" class="" title="metricType_numDomainType.cvgrPdist_le :
 forall [R : numFieldType] [V : metricType R] {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall (f : T -> V) (y : V),
-(f x @[x --> F] --> y)%classic <->
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F))) (filter.nbhs y) <->
 (forall
    eps : join_Num_POrderedZmodule_between_Algebra_BaseAddUMagma_and_Order_Preorder
            R,
- (0 < eps)%R -> \near F, (mdist y (f F) <= eps)%R)
+ (0 < eps)%R ->
+ filter.prop_near1 F (P:=fun t : T => (mdist y (f t) <= eps)%R)
+   (inPhantom (forall t : T, (mdist y (f t) <= eps)%R)))
 
 metricType_numDomainType.cvgrPdist_le is not universe polymorphic
 Arguments metricType_numDomainType.cvgrPdist_le [R V] 
@@ -1285,8 +1321,8 @@ metricType_numDomainType.cvgrPdist_le is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.metricType_numDomainType.cvgrPdist_le
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 268, characters 6-18
-">cvgrPdist_le</a></span><span class="id"> {</span><span id="T:137" class="id"><a name="T:137" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="F:138" class="id"><a name="F:138" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:137">T</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:139" class="id"><a name="FF:139" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:138">F</a></span><span class="id">}</span> (<span id="f:140" class="id"><a name="f:140" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:137">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.at_left_right_metricType.V">V</a></span>) (<span id="y:141" class="id"><a name="y:141" class="">y</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.at_left_right_metricType.V">V</a></span>)<span class="id"> :</span><br/>
+library mathcomp.analysis.topology_theory.metric_structure, line 269, characters 6-18
+">cvgrPdist_le</a></span><span class="id"> {</span><span id="T:137" class="id"><a name="T:137" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="F:138" class="id"><a name="F:138" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:137">T</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:139" class="id"><a name="FF:139" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:138">F</a></span><span class="id">}</span> (<span id="f:140" class="id"><a name="f:140" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#T:137">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.at_left_right_metricType.V">V</a></span>) (<span id="y:141" class="id"><a name="y:141" class="">y</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType.at_left_right_metricType.V">V</a></span>)<span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#f:140">f</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> @</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:138">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:141">y</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"> &lt;-&gt;</a></span><span class="gallina-kwd"> forall</span><span class="id"> </span><span id="eps:142" class="id"><a name="eps:142" class="">eps</a></span><span class="id">,</span><span class="id"> 0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#eps:142">eps</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">\forall</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span id="t:143" class="id"><a name="t:143" class="">t</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> \near</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#F:138">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">,</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#mdist">mdist</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#y:141">y</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#f:140">f</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#t:143">t</a></span>)<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#eps:142">eps</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -1304,9 +1340,16 @@ library mathcomp.analysis.topology_theory.metric_structure, line 268, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvg_nbhsP" class="id"><a name="cvg_nbhsP" class="" title="cvg_nbhsP :
 forall [R : realType] [V : metricType R] (f : V -> V) (p l : V),
-(f x @[x --> p] --> l)%classic <->
+filter.cvg_to (filter.nbhs (filter.fmap [eta f] (filter.nbhs p)))
+  (filter.nbhs l) <->
 (forall u : nat -> V,
- (u n @[n --> \oo] --> p)%classic -> (f (u n) @[n --> \oo] --> l)%classic)
+ filter.cvg_to
+   (filter.nbhs (filter.fmap [eta u] (filter.nbhs filter.eventually)))
+   (filter.nbhs p) ->
+ filter.cvg_to
+   (filter.nbhs
+      (filter.fmap (fun n : nat => f (u n)) (filter.nbhs filter.eventually)))
+   (filter.nbhs l))
 
 cvg_nbhsP is not universe polymorphic
 Arguments cvg_nbhsP [R V] f%_function_scope p l
@@ -1314,7 +1357,7 @@ cvg_nbhsP is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.metric_structure.cvg_nbhsP
 Declared in
-library mathcomp.analysis.topology_theory.metric_structure, line 281, characters 6-15
+library mathcomp.analysis.topology_theory.metric_structure, line 282, characters 6-15
 ">cvg_nbhsP</a></span> (<span id="f:148" class="id"><a name="f:148" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#cvg_nbhsP.V">V</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#cvg_nbhsP.V">V</a></span>) (<span id="p:149" class="id"><a name="p:149" class="">p</a></span><span class="id"> </span><span id="l:150" class="id"><a name="l:150" class="">l</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#cvg_nbhsP.V">V</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#f:148">f</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:151">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> @[</a></span><span id="x:151" class="id"><a name="x:151" class="">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#p:149">p</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f">]</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#l:150">l</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"> &lt;-&gt;</a></span><br/>
 &nbsp;&nbsp;(<span class="gallina-kwd">forall</span><span class="id"> </span><span id="u:152" class="id"><a name="u:152" class="">u</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#nat">nat</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#cvg_nbhsP.V">V</a></span><span class="id">,</span> (<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#u:152">u</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#n:153">n</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> @[</a></span><span id="n:153" class="id"><a name="n:153" class="">n</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#228a5fbd8d7ef28f21231bccff88d0b0">\oo</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f">]</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#p:149">p</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#f:148">f</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#u:152">u</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#n:154">n</a></span>)<span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> @[</a></span><span id="n:154" class="id"><a name="n:154" class="">n</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#228a5fbd8d7ef28f21231bccff88d0b0">\oo</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f">]</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#l:150">l</a></span>).<br/>
 <details>
@@ -1352,6 +1395,81 @@ library mathcomp.analysis.topology_theory.metric_structure, line 281, characters
 <span class="id">Unshelve</span>. <span class="id">all:</span><span class="id"> end_near</span>. Qed.</div></details>
 <br/>
 <span class="vernacular">End</span><span class="id"> cvg_nbhsP</span>.<br/>
+<br/>
+<span class="vernacular">Section</span><span class="id"> cvg_at_right_left_dnbhs</span>.<br/>
+<span class="vernacular">Variables</span> (<span id="cvg_at_right_left_dnbhs.R" class="id"><a name="cvg_at_right_left_dnbhs.R" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.RealField.Exports.realFieldType">realFieldType</a></span>) (<span id="cvg_at_right_left_dnbhs.T" class="id"><a name="cvg_at_right_left_dnbhs.T" class="">T</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType">metricType</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#R:165">R</a></span>).<br/>
+<br/>
+<span class="vernacular">Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#metricType_numDomainType">metricType_numDomainType</a></span>.<br/>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="cvg_at_right_left_dnbhs" class="id"><a name="cvg_at_right_left_dnbhs" class="" title="cvg_at_right_left_dnbhs :
+forall [R : realFieldType] [T : metricType R] [f : R -> T] [p : R] [l : T],
+filter.cvg_to
+  (filter.nbhs (filter.fmap [eta f] (filter.nbhs (p^'+)%classic)))
+  (filter.nbhs l) ->
+filter.cvg_to
+  (filter.nbhs (filter.fmap [eta f] (filter.nbhs (p^'-)%classic)))
+  (filter.nbhs l) ->
+filter.cvg_to
+  (filter.nbhs
+     (filter.fmap [eta f] (filter.nbhs (topology_structure.dnbhs p))))
+  (filter.nbhs l)
+
+cvg_at_right_left_dnbhs is not universe polymorphic
+Expanded type for implicit arguments
+cvg_at_right_left_dnbhs :
+forall [R : realFieldType] [T : metricType R] [f : R -> T] [p : R] [l : T],
+filter.cvg_to
+  (filter.nbhs (filter.fmap [eta f] (filter.nbhs (p^'+)%classic)))
+  (filter.nbhs l) ->
+filter.cvg_to
+  (filter.nbhs (filter.fmap [eta f] (filter.nbhs (p^'-)%classic)))
+  (filter.nbhs l) ->
+forall [t : set T],
+filter.nbhs l t ->
+exists2 i : R,
+  [set e | (0 < e)%R]%classic i &
+  (ball_ [eta normr] p i
+   `<=` (fun
+           t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
+                  (numFieldTopology.RealField_sort__canonical__topology_structure_Topological
+                     R) =>
+         (fun
+            y : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
+                  (numFieldTopology.RealField_sort__canonical__topology_structure_Topological
+                     R) =>
+          is_true (y != p)) t0 ->
+         ([eta f] @^-1` t) t0))%classic
+
+Arguments cvg_at_right_left_dnbhs [R T] [f]%_function_scope 
+  [p]%_ring_scope [l] _ _ [t] _
+cvg_at_right_left_dnbhs is opaque
+Expands to: Constant
+            mathcomp.analysis.topology_theory.metric_structure.cvg_at_right_left_dnbhs
+Declared in
+library mathcomp.analysis.topology_theory.metric_structure, line 323, characters 6-29
+">cvg_at_right_left_dnbhs</a></span> (<span id="f:168" class="id"><a name="f:168" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#cvg_at_right_left_dnbhs.R">R</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#cvg_at_right_left_dnbhs.T">T</a></span>) (<span id="p:169" class="id"><a name="p:169" class="">p</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#cvg_at_right_left_dnbhs.R">R</a></span>) (<span id="l:170" class="id"><a name="l:170" class="">l</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#cvg_at_right_left_dnbhs.T">T</a></span>)<span class="id"> :</span><br/>
+&nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#f:168">f</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:171">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> @[</a></span><span id="x:171" class="id"><a name="x:171" class="">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#p:169">p</a></span><span class="id"><a href="mathcomp.analysis.topology_theory.num_topology.html#02fa8d8231c69eb0b6a7453874088890">^'+</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f">]</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#l:170">l</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#f:168">f</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:172">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> @[</a></span><span id="x:172" class="id"><a name="x:172" class="">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#p:169">p</a></span><span class="id"><a href="mathcomp.analysis.topology_theory.num_topology.html#253655bc7004844973900ce149423402">^'-</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f">]</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#l:170">l</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><br/>
+&nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#f:168">f</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#x:173">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> @[</a></span><span id="x:173" class="id"><a name="x:173" class="">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#p:169">p</a></span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#f8c5a58f3e97f5207acd97345df460ee">^'</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f">]</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#l:170">l</a></span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id">move=&gt;</span><span class="id"> /</span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#cvgrPdist_le">cvgrPdist_le</a></span><span class="id"> fppl</span><span class="id"> /</span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#cvgrPdist_le">cvgrPdist_le</a></span><span class="id"> fpnl;</span><span class="id"> apply/</span><span class="id"><a href="mathcomp.analysis.topology_theory.metric_structure.html#cvgrPdist_le">cvgrPdist_le</a></span><span class="id"> =&gt;</span><span class="id"> e</span><span class="id"> e0</span>.<br/>
+<span class="id">have</span><span class="id"> {fppl}[a</span><span class="id"> /=</span><span class="id"> a0</span><span class="id"> fppl]</span><span class="id"> :=</span><span class="id"> fppl</span> (<span class="id"><a href="mathcomp.analysis.topology_theory.num_topology.html#at_right_proper_filter">at_right_proper_filter</a></span><span class="id"> p</span>)<span class="id"> _</span><span class="id"> e0</span>.<br/>
+<span class="id">have</span><span class="id"> {fpnl}[b</span><span class="id"> /=</span><span class="id"> b0</span><span class="id"> fpnl]</span><span class="id"> :=</span><span class="id"> fpnl</span> (<span class="id"><a href="mathcomp.analysis.topology_theory.num_topology.html#at_left_proper_filter">at_left_proper_filter</a></span><span class="id"> p</span>)<span class="id"> _</span><span class="id"> e0</span>.<br/>
+<span class="id">near=&gt;</span><span class="id"> t</span>.<br/>
+<span class="id">have</span><span class="id"> :</span><span class="id"> t</span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#c385a484ee9d1b4e0615924561a9b75e"> !=</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#c385a484ee9d1b4e0615924561a9b75e"> </a></span><span class="id">p</span><span class="gallina-kwd"> by</span><span class="id"> near:</span><span class="id"> t;</span><span class="id"> exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#nbhs_dnbhs_neq">nbhs_dnbhs_neq</a></span>.<br/>
+<span class="id">rewrite</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.TotalTheory.neq_lt">neq_lt</a></span><span class="id"> =&gt;</span><span class="id"> /</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#orP">orP</a></span><span class="id">[tp|pt]</span>.<br/>
+<span class="id">-</span><span class="id"> apply:</span><span class="id"> fpnl</span><span class="id"> =&gt;</span><span class="id"> //=;</span><span class="id"> near:</span><span class="id"> t</span>.<br/>
+&nbsp;&nbsp;<span class="gallina-kwd">exists</span> (<span class="id">b</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#69c431a9c94f6f30a655bd7ddb59037b"> /</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#69c431a9c94f6f30a655bd7ddb59037b"> </a></span><span class="id">2</span>)<span class="id"> =&gt;</span><span class="id"> //=;</span><span class="id"> first</span><span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.divr_gt0">divr_gt0</a></span>.<br/>
+&nbsp;&nbsp;<span class="id">move=&gt;</span><span class="id"> z/=</span><span class="id"> +</span><span class="id"> _</span><span class="id"> =&gt;</span><span class="id"> /</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.lt_le_trans">lt_le_trans</a></span><span class="id">;</span><span class="id"> apply</span>.<br/>
+&nbsp;&nbsp;<span class="gallina-kwd">by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.Theory.ler_pdivrMr">ler_pdivrMr</a></span><span class="id">//</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.ler_pMr">ler_pMr</a></span><span class="id">//</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.ler1n">ler1n</a></span>.<br/>
+<span class="id">-</span><span class="id"> apply:</span><span class="id"> fppl</span><span class="id"> =&gt;//=;</span><span class="id"> near:</span><span class="id"> t</span>.<br/>
+&nbsp;&nbsp;<span class="gallina-kwd">exists</span> (<span class="id">a</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#69c431a9c94f6f30a655bd7ddb59037b"> /</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#69c431a9c94f6f30a655bd7ddb59037b"> </a></span><span class="id">2</span>)<span class="id"> =&gt;</span><span class="id"> //=;</span><span class="id"> first</span><span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.divr_gt0">divr_gt0</a></span>.<br/>
+&nbsp;&nbsp;<span class="id">move=&gt;</span><span class="id"> z/=</span><span class="id"> +</span><span class="id"> _</span><span class="id"> =&gt;</span><span class="id"> /</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.lt_le_trans">lt_le_trans</a></span><span class="id">;</span><span class="id"> apply</span>.<br/>
+&nbsp;&nbsp;<span class="gallina-kwd">by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.Theory.ler_pdivrMr">ler_pdivrMr</a></span><span class="id">//</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.ler_pMr">ler_pMr</a></span><span class="id">//</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.ler1n">ler1n</a></span>.<br/>
+<span class="id">Unshelve</span>. <span class="id">all:</span><span class="gallina-kwd"> by</span><span class="id"> end_near</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">End</span><span class="id"> cvg_at_right_left_dnbhs</span>.<br/>
 
       <div class="footer"><hr/>Generated by <a href="https://github.com/affeldt-aist/rocqnavi/">rocqnavi</a></div>
     </div>

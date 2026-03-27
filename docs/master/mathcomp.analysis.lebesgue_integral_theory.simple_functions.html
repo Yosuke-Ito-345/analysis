@@ -74,6 +74,7 @@
 <li><a href="mathcomp.analysis.normedtype_theory.normedtype.html">normedtype</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html">num_normedtype</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html">pseudometric_normed_Zmodule</a></li>
+<li><a href="mathcomp.analysis.normedtype_theory.tvs.html">tvs</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.urysohn.html">urysohn</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.vitali_lemma.html">vitali_lemma</a></li>
           </ul>
@@ -106,6 +107,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.function_spaces.html">function_spaces</a></li>
 <li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
@@ -139,7 +141,6 @@
 <li><a href="mathcomp.analysis.esum.html">esum</a></li>
 <li><a href="mathcomp.analysis.exp.html">exp</a></li>
 <li><a href="mathcomp.analysis.ftc.html">ftc</a></li>
-<li><a href="mathcomp.analysis.function_spaces.html">function_spaces</a></li>
 <li><a href="mathcomp.analysis.gauss_integral.html">gauss_integral</a></li>
 <li><a href="mathcomp.analysis.hoelder.html">hoelder</a></li>
 <li><a href="mathcomp.analysis.kernel.html">kernel</a></li>
@@ -152,7 +153,6 @@
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
-<li><a href="mathcomp.analysis.tvs.html">tvs</a></li>
           </ul>
           </details>
           </li>
@@ -227,13 +227,12 @@
       <p><a href="./index.html">Top</a></p>
       <h1 class="title">Module mathcomp.analysis.lebesgue_integral_theory.simple_functions</h1>
 <span class="vernacular">From</span><span class="id"> HB</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for HB.structures">structures</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html">ssralg</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.ssrnum.html">ssrnum</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssrint.html">ssrint</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval.html">interval</a></span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.finmap.finmap">finmap</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.archimedean.html">archimedean</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html">ssralg</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.ssrnum.html">ssrnum</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssrint.html">ssrint</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval.html">interval</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html">interval_inference</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.archimedean.html">archimedean</a></span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.finmap.finmap">finmap</a></span>.<br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.mathcomp_extra.html">mathcomp_extra</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.boolp.html">boolp</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html">classical_sets</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.functions.html">functions</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.cardinality.html">cardinality</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html">reals</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.fsbigop.html">fsbigop</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html">interval_inference</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.ereal.html">ereal</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology.html">topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.tvs.html">tvs</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.normedtype.html">normedtype</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.sequences.html">sequences</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.real_interval.html">real_interval</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.esum.html">esum</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure.html">measure</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_measure.html">lebesgue_measure</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html">numfun</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.realfun.html">realfun</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.function_spaces.html">function_spaces</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.cardinality.html">cardinality</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html">reals</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.fsbigop.html">fsbigop</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.ereal.html">ereal</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology.html">topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.tvs.html">tvs</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.normedtype.html">normedtype</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.sequences.html">sequences</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.real_interval.html">real_interval</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.esum.html">esum</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure.html">measure</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_measure.html">lebesgue_measure</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html">numfun</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.realfun.html">realfun</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
 # Simple functions
@@ -287,6 +286,7 @@ Detailed contents:
 <span class="vernacular">Reserved</span><span class="vernacular"> Notation</span> <span class="id">&quot;[ 'sfun' 'of' f ]&quot;</span><br/>
 &nbsp;&nbsp;(<span class="gallina-kwd">at</span><span class="id"> level</span><span class="id"> 0,</span><span class="id"> format</span> <span class="id">&quot;[ 'sfun'  'of'  f ]&quot;</span>).<br/>
 <br/>
+<span class="gallina-kwd">Set</span><span class="id"> SsrOldRewriteGoalsOrder</span>.  <br/>
 <span class="gallina-kwd">Set</span><span class="vernacular"> Implicit</span><span class="vernacular"> Arguments</span>.<br/>
 <span class="vernacular">Unset</span><span class="vernacular"> Strict</span><span class="vernacular"> Implicit</span>.<br/>
 <span class="vernacular">Unset</span><span class="vernacular"> Printing</span><span class="vernacular"> Implicit</span><span class="vernacular"> Defensive</span>.<br/>
@@ -931,7 +931,7 @@ library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 147, c
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="fctD" class="id"><a name="fctD" class="" title="fctD :
 forall [T : pointedType] [K : pzRingType] (f g : T -> K),
-(f + g)%E = (f \+ g)%R
+(f + g)%R = (f \+ g)%R
 
 fctD is not universe polymorphic
 Arguments fctD [T K] (f g)%_function_scope
@@ -997,7 +997,7 @@ library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 158, c
 <span class="vernacular">Arguments</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.functions.html#cst">cst</a></span><span class="id"> _</span><span class="id"> _</span><span class="id"> _</span><span class="id"> _</span><span class="id"> /</span>.<br/>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="fctWE" class="id"><a name="fctWE" class="" title="fctWE :
 (forall (T : pointedType) (K : pzRingType) (f g : T -> K),
- (f + g)%E = (f \+ g)%R) *
+ (f + g)%R = (f \+ g)%R) *
 (forall (T : pointedType) (K : pzRingType) (f : T -> K), (- f)%R = (\- f)%R) *
 (forall (T : pointedType) (K : pzRingType) (f g : T -> K),
  (f * g)%R = (f \* g)%R) *
@@ -1220,7 +1220,7 @@ library mathcomp.analysis.lebesgue_integral_theory.simple_functions, line 183, c
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="sfunD" class="id"><a name="sfunD" class="" title="sfunD :
 forall [d : measure_display] [aT : measurableType d] 
   [rT : realType] (f g : {sfun aT >-> rT}),
-(f + g)%E =1 (f \+ g)%R
+(f + g)%R =1 (f \+ g)%R
 
 sfunD is not universe polymorphic
 Arguments sfunD [d]%_measure_display_scope [aT rT] f g x

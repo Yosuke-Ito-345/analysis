@@ -74,6 +74,7 @@
 <li><a href="mathcomp.analysis.normedtype_theory.normedtype.html">normedtype</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html">num_normedtype</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html">pseudometric_normed_Zmodule</a></li>
+<li><a href="mathcomp.analysis.normedtype_theory.tvs.html">tvs</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.urysohn.html">urysohn</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.vitali_lemma.html">vitali_lemma</a></li>
           </ul>
@@ -106,6 +107,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.function_spaces.html">function_spaces</a></li>
 <li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
@@ -139,7 +141,6 @@
 <li><a href="mathcomp.analysis.esum.html">esum</a></li>
 <li><a href="mathcomp.analysis.exp.html">exp</a></li>
 <li><a href="mathcomp.analysis.ftc.html">ftc</a></li>
-<li><a href="mathcomp.analysis.function_spaces.html">function_spaces</a></li>
 <li><a href="mathcomp.analysis.gauss_integral.html">gauss_integral</a></li>
 <li><a href="mathcomp.analysis.hoelder.html">hoelder</a></li>
 <li><a href="mathcomp.analysis.kernel.html">kernel</a></li>
@@ -152,7 +153,6 @@
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
-<li><a href="mathcomp.analysis.tvs.html">tvs</a></li>
           </ul>
           </details>
           </li>
@@ -226,14 +226,13 @@
     <div class="content">
       <p><a href="./index.html">Top</a></p>
       <h1 class="title">Module mathcomp.analysis.normedtype_theory.num_normedtype</h1>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.finmap.finmap">finmap</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html">ssralg</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.ssrnum.html">ssrnum</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssrint.html">ssrint</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval.html">interval</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.archimedean.html">archimedean</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.rat.html">rat</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.finmap.finmap">finmap</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html">ssralg</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.ssrnum.html">ssrnum</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssrint.html">ssrint</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval.html">interval</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html">interval_inference</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.archimedean.html">archimedean</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.rat.html">rat</a></span>.<br/>
 <span class="id">#[warning=</span><span class="id">&quot;-warn-library-file-internal-analysis&quot;</span><span class="id">]</span><br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.unstable.html">unstable</a></span>.<br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.mathcomp_extra.html">mathcomp_extra</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.boolp.html">boolp</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html">classical_sets</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.functions.html">functions</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.cardinality.html">cardinality</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.set_interval.html">set_interval</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html">interval_inference</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html">reals</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology.html">topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.function_spaces.html">function_spaces</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.real_interval.html">real_interval</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.prodnormedzmodule.html">prodnormedzmodule</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.tvs.html">tvs</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.cardinality.html">cardinality</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.set_interval.html">set_interval</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html">reals</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.real_interval.html">real_interval</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology.html">topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.prodnormedzmodule.html">prodnormedzmodule</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
 # Preliminaries for norm-related notions
@@ -273,6 +272,7 @@ modules in this directory.
 <span class="vernacular">Reserved</span><span class="vernacular"> Notation</span> <span class="id">&quot;+oo_ R&quot;</span> (<span class="gallina-kwd">at</span><span class="id"> level</span><span class="id"> 3,</span><span class="id"> left</span><span class="id"> associativity,</span><span class="id"> format</span> <span class="id">&quot;+oo_ R&quot;</span>).<br/>
 <span class="vernacular">Reserved</span><span class="vernacular"> Notation</span> <span class="id">&quot;-oo_ R&quot;</span> (<span class="gallina-kwd">at</span><span class="id"> level</span><span class="id"> 3,</span><span class="id"> left</span><span class="id"> associativity,</span><span class="id"> format</span> <span class="id">&quot;-oo_ R&quot;</span>).<br/>
 <br/>
+<span class="gallina-kwd">Set</span><span class="id"> SsrOldRewriteGoalsOrder</span>.  <br/>
 <span class="gallina-kwd">Set</span><span class="vernacular"> Implicit</span><span class="vernacular"> Arguments</span>.<br/>
 <span class="vernacular">Unset</span><span class="vernacular"> Strict</span><span class="vernacular"> Implicit</span>.<br/>
 <span class="vernacular">Unset</span><span class="vernacular"> Printing</span><span class="vernacular"> Implicit</span><span class="vernacular"> Defensive</span>.<br/>
@@ -582,9 +582,10 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="bigcup_ballT" class="id"><a name="bigcup_ballT" class="" title="bigcup_ballT :
 forall {R : realType},
-(\bigcup_n ball (0%R : R) n%:R)%classic =
-[set: numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
-        R]%classic
+(\bigcup_n pseudometric_structure.ball (0%R : R) n%:R)%classic =
+[set: pseudometric_structure.PseudoMetric.sort
+        (num_topology.numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
+           R)]%classic
 
 bigcup_ballT is not universe polymorphic
 Arguments bigcup_ballT {R}
@@ -605,9 +606,13 @@ Qed.</div></details>
 <span class="vernacular">Context</span><span class="id"> {</span><span id="nbhs_pseudoMetricType.R" class="id"><a name="nbhs_pseudoMetricType.R" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.NumDomain.Exports.numDomainType">numDomainType</a></span><span class="id">}</span><span class="id"> {</span><span id="nbhs_pseudoMetricType.T" class="id"><a name="nbhs_pseudoMetricType.T" class="">T</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#PseudoMetric.Exports.pseudoMetricType">pseudoMetricType</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#R:67">R</a></span><span class="id">}</span>.<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ex_ball_sig" class="id"><a name="ex_ball_sig" class="" title="ex_ball_sig :
-forall {R : numDomainType} {T : pseudoMetricType R} [x : T] [P : set T],
-~ (forall eps : {posnum R}%R, ~ (ball x eps%:num `<=` ~` P)%classic) ->
-{d : {posnum R}%R | (ball x d%:num `<=` ~` P)%classic}
+forall {R : numDomainType} {T : pseudometric_structure.PseudoMetric.type R}
+  [x : pseudometric_structure.PseudoMetric.sort T]
+  [P : set (pseudometric_structure.PseudoMetric.sort T)],
+~
+(forall eps : {posnum R}%R,
+ ~ (pseudometric_structure.ball x eps%:num `<=` ~` P)%classic) ->
+{d : {posnum R}%R | (pseudometric_structure.ball x d%:num `<=` ~` P)%classic}
 
 ex_ball_sig is not universe polymorphic
 Arguments ex_ball_sig {R T} [x] [P]%_classical_set_scope _
@@ -629,9 +634,13 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 174, characters
 Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhsC" class="id"><a name="nbhsC" class="" title="nbhsC :
-forall {R : numDomainType} {T : pseudoMetricType R} [x : T] [P : set T],
-~ (forall eps : {posnum R}%R, ~ (ball x eps%:num `<=` ~` P)%classic) ->
-nbhs x (~` P)%classic
+forall {R : numDomainType} {T : pseudometric_structure.PseudoMetric.type R}
+  [x : pseudometric_structure.PseudoMetric.sort T]
+  [P : set (pseudometric_structure.PseudoMetric.sort T)],
+~
+(forall eps : {posnum R}%R,
+ ~ (pseudometric_structure.ball x eps%:num `<=` ~` P)%classic) ->
+filter.nbhs x (~` P)%classic
 
 nbhsC is not universe polymorphic
 Arguments nbhsC {R T} [x] [P]%_classical_set_scope _
@@ -648,9 +657,11 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 184, characters
 <span class="gallina-kwd"> by</span><span class="id"> move=&gt;</span><span class="id"> /</span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#ex_ball_sig">ex_ball_sig</a></span><span class="id"> [e]</span><span class="id"> ?;</span><span class="id"> apply/</span><span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#nbhs_ballP">nbhs_ballP</a></span><span class="id">;</span><span class="gallina-kwd"> exists</span><span class="id"> e</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html#1c0324eabc1cbd2d8f3ac221154b0692">%:num</a></span><span class="id"> =&gt;</span><span class="id"> /=</span>. Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhsC_ball" class="id"><a name="nbhsC_ball" class="" title="nbhsC_ball :
-forall {R : numDomainType} {T : pseudoMetricType R} [x : T] [P : set T],
-nbhs x (~` P)%classic ->
-{d : {posnum R}%R | (ball x d%:num `<=` ~` P)%classic}
+forall {R : numDomainType} {T : pseudometric_structure.PseudoMetric.type R}
+  [x : pseudometric_structure.PseudoMetric.sort T]
+  [P : set (pseudometric_structure.PseudoMetric.sort T)],
+filter.nbhs x (~` P)%classic ->
+{d : {posnum R}%R | (pseudometric_structure.ball x d%:num `<=` ~` P)%classic}
 
 nbhsC_ball is not universe polymorphic
 Arguments nbhsC_ball {R T} [x] [P]%_classical_set_scope _
@@ -669,8 +680,13 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 189, characters
 Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_ex" class="id"><a name="nbhs_ex" class="" title="nbhs_ex :
-forall {R : numDomainType} {T : pseudoMetricType R} [x : T] [P : T -> Prop],
-nbhs x P -> {d : {posnum R}%R | forall y : T, ball x d%:num y -> P y}
+forall {R : numDomainType} {T : pseudometric_structure.PseudoMetric.type R}
+  [x : pseudometric_structure.PseudoMetric.sort T]
+  [P : pseudometric_structure.PseudoMetric.sort T -> Prop],
+filter.nbhs x P ->
+{d : {posnum R}%R
+| forall y : pseudometric_structure.PseudoMetric.sort T,
+  pseudometric_structure.ball x d%:num y -> P y}
 
 nbhs_ex is not universe polymorphic
 Arguments nbhs_ex {R T} [x] [P]%_function_scope _
@@ -715,7 +731,7 @@ Expands to: Constant
             mathcomp.analysis.normedtype_theory.num_normedtype.pinfty_nbhs
 Declared in
 library mathcomp.analysis.normedtype_theory.num_normedtype, line 219, characters 11-22
-">pinfty_nbhs</a></span> (<span id="R:88" class="id"><a name="R:88" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.NumField.Exports.numFieldType">numFieldType</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#R:88">R</a></span><span class="id"> :=</span><br/>
+">pinfty_nbhs</a></span> (<span id="R:88" class="id"><a name="R:88" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.NumField.Exports.numFieldType">numFieldType</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#R:88">R</a></span><span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="gallina-kwd">fun</span><span class="id"> </span><span id="P:89" class="id"><a name="P:89" class="">P</a></span><span class="id"> =&gt;</span><span class="gallina-kwd"> exists</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"> </a></span><span id="M:90" class="id"><a name="M:90" class="">M</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#M:90">M</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#c94c2df86ca03f22f8f8b739cd7e1e88"> \is</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#c94c2df86ca03f22f8f8b739cd7e1e88"> </a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.real">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.real">real</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"> /\</a></span><span class="gallina-kwd"> forall</span><span class="id"> </span><span id="x:91" class="id"><a name="x:91" class="">x</a></span><span class="id">,</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#M:90">M</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#x:91">x</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#P:89">P</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#x:91">x</a></span>.<br/>
 <span class="vernacular">Arguments</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#pinfty_nbhs">pinfty_nbhs</a></span><span class="id"> R</span><span class="id"> :</span><span class="id"> clear</span><span class="id"> implicits</span>.<br/>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="ninfty_nbhs" class="id"><a name="ninfty_nbhs" class="" title="ninfty_nbhs : forall R : numFieldType, set_system R
@@ -727,7 +743,7 @@ Expands to: Constant
             mathcomp.analysis.normedtype_theory.num_normedtype.ninfty_nbhs
 Declared in
 library mathcomp.analysis.normedtype_theory.num_normedtype, line 222, characters 11-22
-">ninfty_nbhs</a></span> (<span id="R:92" class="id"><a name="R:92" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.NumField.Exports.numFieldType">numFieldType</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#R:92">R</a></span><span class="id"> :=</span><br/>
+">ninfty_nbhs</a></span> (<span id="R:92" class="id"><a name="R:92" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.NumField.Exports.numFieldType">numFieldType</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#R:92">R</a></span><span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="gallina-kwd">fun</span><span class="id"> </span><span id="P:93" class="id"><a name="P:93" class="">P</a></span><span class="id"> =&gt;</span><span class="gallina-kwd"> exists</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"> </a></span><span id="M:94" class="id"><a name="M:94" class="">M</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#M:94">M</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#c94c2df86ca03f22f8f8b739cd7e1e88"> \is</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#c94c2df86ca03f22f8f8b739cd7e1e88"> </a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.real">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.real">real</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"> /\</a></span><span class="gallina-kwd"> forall</span><span class="id"> </span><span id="x:95" class="id"><a name="x:95" class="">x</a></span><span class="id">,</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#x:95">x</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#M:94">M</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#P:93">P</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#x:95">x</a></span>.<br/>
 <span class="vernacular">Arguments</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#ninfty_nbhs">ninfty_nbhs</a></span><span class="id"> R</span><span class="id"> :</span><span class="id"> clear</span><span class="id"> implicits</span>.<br/>
 <br/>
@@ -738,7 +754,8 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 222, characters
 <span class="vernacular">Notation</span> <span id="::ring_scope:'-oo'" class="id"><a name="::ring_scope:'-oo'" class="">&quot;-oo&quot;</a></span><span class="id"> :=</span> (<span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#ninfty_nbhs">ninfty_nbhs</a></span><span class="id"> _</span>)<span class="id"> :</span><span class="id"> ring_scope</span>.<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ninftyN" class="id"><a name="ninftyN" class="" title="ninftyN :
-forall {R : numFieldType}, (((- x)%R : R) @[x --> -oo%R])%classic = +oo%R
+forall {R : numFieldType},
+filter.fmap (fun x : R => (- x)%R : R) (filter.nbhs -oo%R) = +oo%R
 
 ninftyN is not universe polymorphic
 Arguments ninftyN {R}
@@ -758,7 +775,8 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 232, characters
 Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ninfty" class="id"><a name="ninfty" class="" title="ninfty :
-forall {R : numFieldType}, (((- x)%R : R) @[x --> +oo%R])%classic = -oo%R
+forall {R : numFieldType},
+filter.fmap (fun x : R => (- x)%R : R) (filter.nbhs +oo%R) = -oo%R
 
 ninfty is not universe polymorphic
 Arguments ninfty {R}
@@ -810,7 +828,9 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_pinfty_gt" class="id"><a name="nbhs_pinfty_gt" class="" title="nbhs_pinfty_gt :
 forall {R : numFieldType} [r : R],
-r \is Num.real -> \forall x \near +oo%R, (r < x)%R
+r \is Num.real ->
+filter.prop_near1 +oo%R (P:=fun x : R => (r < x)%R)
+  (inPhantom (forall x : R, (r < x)%R))
 
 nbhs_pinfty_gt is not universe polymorphic
 Arguments nbhs_pinfty_gt {R} [r]%_ring_scope _
@@ -827,7 +847,9 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 275, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_pinfty_ge" class="id"><a name="nbhs_pinfty_ge" class="" title="nbhs_pinfty_ge :
 forall {R : numFieldType} [r : R],
-r \is Num.real -> \forall x \near +oo%R, (r <= x)%R
+r \is Num.real ->
+filter.prop_near1 +oo%R (P:=fun x : R => (r <= x)%R)
+  (inPhantom (forall x : R, (r <= x)%R))
 
 nbhs_pinfty_ge is not universe polymorphic
 Arguments nbhs_pinfty_ge {R} [r]%_ring_scope _
@@ -844,7 +866,9 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 278, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_ninfty_lt" class="id"><a name="nbhs_ninfty_lt" class="" title="nbhs_ninfty_lt :
 forall {R : numFieldType} [r : R],
-r \is Num.real -> \forall x \near -oo%R, (x < r)%R
+r \is Num.real ->
+filter.prop_near1 -oo%R (P:=fun x : R => (x < r)%R)
+  (inPhantom (forall x : R, (x < r)%R))
 
 nbhs_ninfty_lt is not universe polymorphic
 Arguments nbhs_ninfty_lt {R} [r]%_ring_scope _
@@ -861,7 +885,9 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 281, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_ninfty_le" class="id"><a name="nbhs_ninfty_le" class="" title="nbhs_ninfty_le :
 forall {R : numFieldType} [r : R],
-r \is Num.real -> \forall x \near -oo%R, (x <= r)%R
+r \is Num.real ->
+filter.prop_near1 -oo%R (P:=fun x : R => (x <= r)%R)
+  (inPhantom (forall x : R, (x <= r)%R))
 
 nbhs_ninfty_le is not universe polymorphic
 Arguments nbhs_ninfty_le {R} [r]%_ring_scope _
@@ -877,7 +903,9 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 284, characters
 <span class="gallina-kwd"> by</span><span class="gallina-kwd"> exists</span><span class="id"> r;</span><span class="id"> split</span><span class="id"> =&gt;</span><span class="id"> //</span><span class="id"> ?;</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.ltW">ltW</a></span>. Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_pinfty_real" class="id"><a name="nbhs_pinfty_real" class="" title="nbhs_pinfty_real :
-forall {R : numFieldType}, \forall x \near +oo%R, x \is Num.real
+forall {R : numFieldType},
+filter.prop_near1 +oo%R (P:=fun x : R => x \is Num.real)
+  (inPhantom (forall x : R, x \is Num.real))
 
 nbhs_pinfty_real is not universe polymorphic
 Arguments nbhs_pinfty_real {R}
@@ -893,7 +921,9 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 287, characters
 <span class="gallina-kwd"> by</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#filterS">filterS</a></span> (<span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#nbhs_pinfty_gt">nbhs_pinfty_gt</a></span> (<span class="id">@</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.real0">real0</a></span><span class="id"> _</span>))<span class="id">;</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.gtr0_real">gtr0_real</a></span>. Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_ninfty_real" class="id"><a name="nbhs_ninfty_real" class="" title="nbhs_ninfty_real :
-forall {R : numFieldType}, \forall x \near -oo%R, x \is Num.real
+forall {R : numFieldType},
+filter.prop_near1 -oo%R (P:=fun x : R => x \is Num.real)
+  (inPhantom (forall x : R, x \is Num.real))
 
 nbhs_ninfty_real is not universe polymorphic
 Arguments nbhs_ninfty_real {R}
@@ -911,7 +941,8 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 290, characters
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="pinfty_ex_gt" class="id"><a name="pinfty_ex_gt" class="" title="pinfty_ex_gt :
 forall {R : numFieldType} [m : R] [A : set R],
 m \is Num.real ->
-(\forall k \near +oo%R, A k) -> exists2 M : R, (m < M)%R & A M
+filter.prop_near1 +oo%R (P:=A) (inPhantom (forall k : R, A k)) ->
+exists2 M : R, (m < M)%R & A M
 
 pinfty_ex_gt is not universe polymorphic
 Arguments pinfty_ex_gt {R} [m]%_ring_scope [A]%_classical_set_scope _ _
@@ -932,7 +963,8 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 293, characters
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="pinfty_ex_ge" class="id"><a name="pinfty_ex_ge" class="" title="pinfty_ex_ge :
 forall {R : numFieldType} [m : R] [A : set R],
 m \is Num.real ->
-(\forall k \near +oo%R, A k) -> exists2 M : R, (m <= M)%R & A M
+filter.prop_near1 +oo%R (P:=A) (inPhantom (forall k : R, A k)) ->
+exists2 M : R, (m <= M)%R & A M
 
 pinfty_ex_ge is not universe polymorphic
 Arguments pinfty_ex_ge {R} [m]%_ring_scope [A]%_classical_set_scope _ _
@@ -952,7 +984,7 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 300, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="pinfty_ex_gt0" class="id"><a name="pinfty_ex_gt0" class="" title="pinfty_ex_gt0 :
 forall {R : numFieldType} [A : set R],
-(\forall k \near +oo%R, A k) ->
+filter.prop_near1 +oo%R (P:=A) (inPhantom (forall k : R, A k)) ->
 exists2
   M : join_Num_POrderedZmodule_between_Algebra_BaseAddUMagma_and_Order_Preorder
         R,
@@ -974,7 +1006,9 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 307, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="near_pinfty_div2" class="id"><a name="near_pinfty_div2" class="" title="near_pinfty_div2 :
 forall {R : numFieldType} [A : set R],
-(\forall k \near +oo%R, A k) -> \forall k \near +oo%R, A (k / 2)%R
+filter.prop_near1 +oo%R (P:=A) (inPhantom (forall k : R, A k)) ->
+filter.prop_near1 +oo%R (P:=fun k : R => A (k / 2)%R)
+  (inPhantom (forall k : R, A (k / 2)%R))
 
 near_pinfty_div2 is not universe polymorphic
 Arguments near_pinfty_div2 {R} [A]%_classical_set_scope _
@@ -994,7 +1028,8 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="not_near_inftyP" class="id"><a name="not_near_inftyP" class="" title="not_near_inftyP :
 forall {R : numFieldType} (P : pred R),
-~ (\forall x \near +oo%R, P x) <->
+~
+filter.prop_near1 +oo%R (P:=fun x : R => P x) (inPhantom (forall x : R, P x)) <->
 (forall M : R, M \is Num.real -> exists2 x : R, (M < x)%R & ~ P x)
 
 not_near_inftyP is not universe polymorphic
@@ -1016,7 +1051,8 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="not_near_ninftyP" class="id"><a name="not_near_ninftyP" class="" title="not_near_ninftyP :
 forall {R : numFieldType} (P : pred R),
-~ (\forall x \near -oo%R, P x) <->
+~
+filter.prop_near1 -oo%R (P:=fun x : R => P x) (inPhantom (forall x : R, P x)) <->
 (forall M : R, M \is Num.real -> exists2 x : R, (x < M)%R & ~ P x)
 
 not_near_ninftyP is not universe polymorphic
@@ -1054,7 +1090,7 @@ Qed.</div></details>
 <span class="vernacular">Section</span><span class="id"> cvg_infty_numField</span>.<br/>
 <span class="vernacular">Context</span><span class="id"> {</span><span id="cvg_infty_numField.R" class="id"><a name="cvg_infty_numField.R" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.NumField.Exports.numFieldType">numFieldType</a></span><span class="id">}</span>.<br/>
 <br/>
-<span class="vernacular">Let</span><span class="id"> </span><span id="cvg_infty_numField.cvgryPnum" class="id"><a name="cvg_infty_numField.cvgryPnum" class="">cvgryPnum</a></span><span class="id"> {</span><span id="F:139" class="id"><a name="F:139" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#cvg_infty_numField.R">R</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:140" class="id"><a name="FF:140" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:139">F</a></span><span class="id">}</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1">[&lt;-&gt;</a></span><br/>
+<span class="vernacular">Let</span><span class="id"> </span><span id="cvg_infty_numField.cvgryPnum" class="id"><a name="cvg_infty_numField.cvgryPnum" class="">cvgryPnum</a></span><span class="id"> {</span><span id="F:139" class="id"><a name="F:139" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#cvg_infty_numField.R">R</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:140" class="id"><a name="FF:140" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:139">F</a></span><span class="id">}</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1">[&lt;-&gt;</a></span><br/>
 <span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:139">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#423d7544dbaa8438f698fe5437adc41f">+oo</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1">;</a></span><br/>
 <span class="gallina-kwd"> forall</span><span class="id"> </span><span id="A:141" class="id"><a name="A:141" class="">A</a></span><span class="id">,</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#A:141">A</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#c94c2df86ca03f22f8f8b739cd7e1e88"> \is</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#c94c2df86ca03f22f8f8b739cd7e1e88"> </a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.real">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.real">real</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">\forall</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span id="x:142" class="id"><a name="x:142" class="">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> \near</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:139">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">,</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#A:141">A</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#x:142">x</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1">;</a></span><br/>
 <span class="gallina-kwd"> forall</span><span class="id"> </span><span id="A:143" class="id"><a name="A:143" class="">A</a></span><span class="id">,</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#A:143">A</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#c94c2df86ca03f22f8f8b739cd7e1e88"> \is</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#c94c2df86ca03f22f8f8b739cd7e1e88"> </a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.real">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.real">real</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">\forall</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span id="x:144" class="id"><a name="x:144" class="">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> \near</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:139">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">,</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#A:143">A</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#x:144">x</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1">;</a></span><br/>
@@ -1072,7 +1108,7 @@ Qed.</div></details>
 <span class="gallina-kwd">by</span><span class="id"> near</span><span class="id"> do</span><span class="id"> [apply:</span><span class="id"> Px;</span><span class="id"> apply:</span> (<span class="id">@</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.lt_le_trans">lt_le_trans</a></span><span class="id"> _</span><span class="id"> _</span><span class="id"> B</span>)<span class="id"> =&gt;</span><span class="id"> //];</span><span class="id"> apply:</span><span class="id"> AF</span>.<br/>
 <span class="id">Unshelve</span>. <span class="id">all:</span><span class="gallina-kwd"> by</span><span class="id"> end_near</span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Let</span><span class="id"> </span><span id="cvg_infty_numField.cvgrNyPnum" class="id"><a name="cvg_infty_numField.cvgrNyPnum" class="">cvgrNyPnum</a></span><span class="id"> {</span><span id="F:149" class="id"><a name="F:149" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#cvg_infty_numField.R">R</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:150" class="id"><a name="FF:150" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:149">F</a></span><span class="id">}</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1">[&lt;-&gt;</a></span><br/>
+<span class="vernacular">Let</span><span class="id"> </span><span id="cvg_infty_numField.cvgrNyPnum" class="id"><a name="cvg_infty_numField.cvgrNyPnum" class="">cvgrNyPnum</a></span><span class="id"> {</span><span id="F:149" class="id"><a name="F:149" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#cvg_infty_numField.R">R</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:150" class="id"><a name="FF:150" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:149">F</a></span><span class="id">}</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1">[&lt;-&gt;</a></span><br/>
 <span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:149">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#::ring_scope:'-oo'">-oo</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1">;</a></span><br/>
 <span class="gallina-kwd"> forall</span><span class="id"> </span><span id="A:151" class="id"><a name="A:151" class="">A</a></span><span class="id">,</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#A:151">A</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#c94c2df86ca03f22f8f8b739cd7e1e88"> \is</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#c94c2df86ca03f22f8f8b739cd7e1e88"> </a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.real">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.real">real</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">\forall</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span id="x:152" class="id"><a name="x:152" class="">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> \near</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:149">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">,</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#A:151">A</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#a3446a989be902579d41cbac1597f4cf"> &gt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#a3446a989be902579d41cbac1597f4cf"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#x:152">x</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1">;</a></span><br/>
 <span class="gallina-kwd"> forall</span><span class="id"> </span><span id="A:153" class="id"><a name="A:153" class="">A</a></span><span class="id">,</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#A:153">A</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#c94c2df86ca03f22f8f8b739cd7e1e88"> \is</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#c94c2df86ca03f22f8f8b739cd7e1e88"> </a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.real">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.real">real</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">\forall</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span id="x:154" class="id"><a name="x:154" class="">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> \near</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:149">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f">,</a></span><span class="id"><a href="mathcomp.classical.filter.html#be9d045413b70f39126ce7af3de2a77f"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#A:153">A</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&gt;'_x"> &gt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#x:154">x</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#a3088764e59abfd113df52de1a8d59b1">;</a></span><br/>
@@ -1090,15 +1126,19 @@ Qed.</div></details>
 <span class="gallina-kwd">by</span><span class="id"> near</span><span class="id"> do</span><span class="id"> [apply:</span><span class="id"> Px;</span><span class="id"> apply:</span> (<span class="id">@</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.le_lt_trans">le_lt_trans</a></span><span class="id"> _</span><span class="id"> _</span><span class="id"> B</span>)<span class="id"> =&gt;</span><span class="id"> //];</span><span class="id"> apply:</span><span class="id"> AF</span>.<br/>
 <span class="id">Unshelve</span>. <span class="id">all:</span><span class="id"> end_near</span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Context</span><span class="id"> {</span><span id="cvg_infty_numField.T" class="id"><a name="cvg_infty_numField.T" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="cvg_infty_numField.F" class="id"><a name="cvg_infty_numField.F" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:159">T</a></span><span class="id">}</span><span class="id"> {</span><span id="cvg_infty_numField.FF" class="id"><a name="cvg_infty_numField.FF" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:160">F</a></span><span class="id">}</span>.<br/>
+<span class="vernacular">Context</span><span class="id"> {</span><span id="cvg_infty_numField.T" class="id"><a name="cvg_infty_numField.T" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="cvg_infty_numField.F" class="id"><a name="cvg_infty_numField.F" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:159">T</a></span><span class="id">}</span><span class="id"> {</span><span id="cvg_infty_numField.FF" class="id"><a name="cvg_infty_numField.FF" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:160">F</a></span><span class="id">}</span>.<br/>
 <span class="vernacular">Implicit</span><span class="id"> Types</span><span class="id"> f</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#cvg_infty_numField.T">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#cvg_infty_numField.R">R</a></span>.<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgryPger" class="id"><a name="cvgryPger" class="" title="cvgryPger :
 forall {R : numFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall f : T -> R,
-(f x @[x --> F] --> +oo%R)%classic <->
-(forall A : R, A \is Num.real -> \near F, (A <= f F)%R)
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs +oo%R) <->
+(forall A : R,
+ A \is Num.real ->
+ filter.prop_near1 F (P:=fun x : T => (A <= f x)%R)
+   (inPhantom (forall x : T, (A <= f x)%R)))
 
 cvgryPger is not universe polymorphic
 Arguments cvgryPger {R} {T}%_type_scope {F FF} f%_function_scope
@@ -1116,10 +1156,14 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 387, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgryPgtr" class="id"><a name="cvgryPgtr" class="" title="cvgryPgtr :
 forall {R : numFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall f : T -> R,
-(f x @[x --> F] --> +oo%R)%classic <->
-(forall A : R, A \is Num.real -> \near F, (A < f F)%R)
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs +oo%R) <->
+(forall A : R,
+ A \is Num.real ->
+ filter.prop_near1 F (P:=fun x : T => (A < f x)%R)
+   (inPhantom (forall x : T, (A < f x)%R)))
 
 cvgryPgtr is not universe polymorphic
 Arguments cvgryPgtr {R} {T}%_type_scope {F FF} f%_function_scope
@@ -1137,10 +1181,18 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 391, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgryPgty" class="id"><a name="cvgryPgty" class="" title="cvgryPgty :
 forall {R : numFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall f : T -> R,
-(f x @[x --> F] --> +oo%R)%classic <->
-(\forall A \near +oo%R, \near F, (A < f F)%R)
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs +oo%R) <->
+filter.prop_near1 +oo%R
+  (P:=fun A : R =>
+      filter.prop_near1 F (P:=fun x : T => (A < f x)%R)
+        (inPhantom (forall x : T, (A < f x)%R)))
+  (inPhantom
+     (forall A : R,
+      filter.prop_near1 F (P:=fun x : T => (A < f x)%R)
+        (inPhantom (forall x : T, (A < f x)%R))))
 
 cvgryPgty is not universe polymorphic
 Arguments cvgryPgty {R} {T}%_type_scope {F FF} f%_function_scope
@@ -1158,10 +1210,18 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 395, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgryPgey" class="id"><a name="cvgryPgey" class="" title="cvgryPgey :
 forall {R : numFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall f : T -> R,
-(f x @[x --> F] --> +oo%R)%classic <->
-(\forall A \near +oo%R, \near F, (A <= f F)%R)
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs +oo%R) <->
+filter.prop_near1 +oo%R
+  (P:=fun A : R =>
+      filter.prop_near1 F (P:=fun x : T => (A <= f x)%R)
+        (inPhantom (forall x : T, (A <= f x)%R)))
+  (inPhantom
+     (forall A : R,
+      filter.prop_near1 F (P:=fun x : T => (A <= f x)%R)
+        (inPhantom (forall x : T, (A <= f x)%R))))
 
 cvgryPgey is not universe polymorphic
 Arguments cvgryPgey {R} {T}%_type_scope {F FF} f%_function_scope
@@ -1179,10 +1239,14 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 399, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgrNyPler" class="id"><a name="cvgrNyPler" class="" title="cvgrNyPler :
 forall {R : numFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall f : T -> R,
-(f x @[x --> F] --> -oo%R)%classic <->
-(forall A : R, A \is Num.real -> \near F, (f F <= A)%R)
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs -oo%R) <->
+(forall A : R,
+ A \is Num.real ->
+ filter.prop_near1 F (P:=fun x : T => (f x <= A)%R)
+   (inPhantom (forall x : T, (f x <= A)%R)))
 
 cvgrNyPler is not universe polymorphic
 Arguments cvgrNyPler {R} {T}%_type_scope {F FF} f%_function_scope
@@ -1200,10 +1264,14 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 403, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgrNyPltr" class="id"><a name="cvgrNyPltr" class="" title="cvgrNyPltr :
 forall {R : numFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall f : T -> R,
-(f x @[x --> F] --> -oo%R)%classic <->
-(forall A : R, A \is Num.real -> \near F, (f F < A)%R)
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs -oo%R) <->
+(forall A : R,
+ A \is Num.real ->
+ filter.prop_near1 F (P:=fun x : T => (f x < A)%R)
+   (inPhantom (forall x : T, (f x < A)%R)))
 
 cvgrNyPltr is not universe polymorphic
 Arguments cvgrNyPltr {R} {T}%_type_scope {F FF} f%_function_scope
@@ -1221,10 +1289,18 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 407, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgrNyPltNy" class="id"><a name="cvgrNyPltNy" class="" title="cvgrNyPltNy :
 forall {R : numFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall f : T -> R,
-(f x @[x --> F] --> -oo%R)%classic <->
-(\forall A \near -oo%R, \near F, (f F < A)%R)
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs -oo%R) <->
+filter.prop_near1 -oo%R
+  (P:=fun A : R =>
+      filter.prop_near1 F (P:=fun x : T => (f x < A)%R)
+        (inPhantom (forall x : T, (f x < A)%R)))
+  (inPhantom
+     (forall A : R,
+      filter.prop_near1 F (P:=fun x : T => (f x < A)%R)
+        (inPhantom (forall x : T, (f x < A)%R))))
 
 cvgrNyPltNy is not universe polymorphic
 Arguments cvgrNyPltNy {R} {T}%_type_scope {F FF} f%_function_scope
@@ -1242,10 +1318,18 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 411, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgrNyPleNy" class="id"><a name="cvgrNyPleNy" class="" title="cvgrNyPleNy :
 forall {R : numFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall f : T -> R,
-(f x @[x --> F] --> -oo%R)%classic <->
-(\forall A \near -oo%R, \near F, (f F <= A)%R)
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs -oo%R) <->
+filter.prop_near1 -oo%R
+  (P:=fun A : R =>
+      filter.prop_near1 F (P:=fun x : T => (f x <= A)%R)
+        (inPhantom (forall x : T, (f x <= A)%R)))
+  (inPhantom
+     (forall A : R,
+      filter.prop_near1 F (P:=fun x : T => (f x <= A)%R)
+        (inPhantom (forall x : T, (f x <= A)%R))))
 
 cvgrNyPleNy is not universe polymorphic
 Arguments cvgrNyPleNy {R} {T}%_type_scope {F FF} f%_function_scope
@@ -1263,10 +1347,14 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 415, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgry_ger" class="id"><a name="cvgry_ger" class="" title="cvgry_ger :
 forall {R : numFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall [f : T -> R],
-(f x @[x --> F] --> +oo%R)%classic ->
-forall [A : R], A \is Num.real -> \near F, (A <= f F)%R
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs +oo%R) ->
+forall [A : R],
+A \is Num.real ->
+filter.prop_near1 F (P:=fun x : T => (A <= f x)%R)
+  (inPhantom (forall x : T, (A <= f x)%R))
 
 cvgry_ger is not universe polymorphic
 Arguments cvgry_ger {R} {T}%_type_scope {F FF} [f]%_function_scope _ [A] _
@@ -1284,10 +1372,14 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 419, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgry_gtr" class="id"><a name="cvgry_gtr" class="" title="cvgry_gtr :
 forall {R : numFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall [f : T -> R],
-(f x @[x --> F] --> +oo%R)%classic ->
-forall [A : R], A \is Num.real -> \near F, (A < f F)%R
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs +oo%R) ->
+forall [A : R],
+A \is Num.real ->
+filter.prop_near1 F (P:=fun x : T => (A < f x)%R)
+  (inPhantom (forall x : T, (A < f x)%R))
 
 cvgry_gtr is not universe polymorphic
 Arguments cvgry_gtr {R} {T}%_type_scope {F FF} [f]%_function_scope _ [A] _
@@ -1305,10 +1397,14 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 423, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgrNy_ler" class="id"><a name="cvgrNy_ler" class="" title="cvgrNy_ler :
 forall {R : numFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall [f : T -> R],
-(f x @[x --> F] --> -oo%R)%classic ->
-forall [A : R], A \is Num.real -> \near F, (f F <= A)%R
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs -oo%R) ->
+forall [A : R],
+A \is Num.real ->
+filter.prop_near1 F (P:=fun x : T => (f x <= A)%R)
+  (inPhantom (forall x : T, (f x <= A)%R))
 
 cvgrNy_ler is not universe polymorphic
 Arguments cvgrNy_ler {R} {T}%_type_scope {F FF} [f]%_function_scope _ [A] _
@@ -1326,10 +1422,14 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 427, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgrNy_ltr" class="id"><a name="cvgrNy_ltr" class="" title="cvgrNy_ltr :
 forall {R : numFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall [f : T -> R],
-(f x @[x --> F] --> -oo%R)%classic ->
-forall [A : R], A \is Num.real -> \near F, (f F < A)%R
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs -oo%R) ->
+forall [A : R],
+A \is Num.real ->
+filter.prop_near1 F (P:=fun x : T => (f x < A)%R)
+  (inPhantom (forall x : T, (f x < A)%R))
 
 cvgrNy_ltr is not universe polymorphic
 Arguments cvgrNy_ltr {R} {T}%_type_scope {F FF} [f]%_function_scope _ [A] _
@@ -1347,10 +1447,12 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 431, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgNry" class="id"><a name="cvgNry" class="" title="cvgNry :
 forall {R : numFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall f : T -> R,
-((- f)%R x @[x --> F] --> +oo%R)%classic <->
-(f x @[x --> F] --> -oo%R)%classic
+filter.cvg_to (filter.nbhs (filter.fmap (- f)%R (filter.nbhs F)))
+  (filter.nbhs +oo%R) <->
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs -oo%R)
 
 cvgNry is not universe polymorphic
 Arguments cvgNry {R} {T}%_type_scope {F FF} f%_function_scope
@@ -1369,10 +1471,12 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 435, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgNrNy" class="id"><a name="cvgNrNy" class="" title="cvgNrNy :
 forall {R : numFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall f : T -> R,
-((- f)%R x @[x --> F] --> -oo%R)%classic <->
-(f x @[x --> F] --> +oo%R)%classic
+filter.cvg_to (filter.nbhs (filter.fmap (- f)%R (filter.nbhs F)))
+  (filter.nbhs -oo%R) <->
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs +oo%R)
 
 cvgNrNy is not universe polymorphic
 Arguments cvgNrNy {R} {T}%_type_scope {F FF} f%_function_scope
@@ -1391,13 +1495,17 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 441, characters
 <br/>
 <span class="vernacular">Section</span><span class="id"> cvg_infty_realField</span>.<br/>
 <span class="vernacular">Context</span><span class="id"> {</span><span id="cvg_infty_realField.R" class="id"><a name="cvg_infty_realField.R" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.RealField.Exports.realFieldType">realFieldType</a></span><span class="id">}</span>.<br/>
-<span class="vernacular">Context</span><span class="id"> {</span><span id="cvg_infty_realField.T" class="id"><a name="cvg_infty_realField.T" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="cvg_infty_realField.F" class="id"><a name="cvg_infty_realField.F" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:201">T</a></span><span class="id">}</span><span class="id"> {</span><span id="cvg_infty_realField.FF" class="id"><a name="cvg_infty_realField.FF" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:202">F</a></span><span class="id">}</span> (<span id="cvg_infty_realField.f" class="id"><a name="cvg_infty_realField.f" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:201">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#cvg_infty_realField.R">R</a></span>).<br/>
+<span class="vernacular">Context</span><span class="id"> {</span><span id="cvg_infty_realField.T" class="id"><a name="cvg_infty_realField.T" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="cvg_infty_realField.F" class="id"><a name="cvg_infty_realField.F" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:201">T</a></span><span class="id">}</span><span class="id"> {</span><span id="cvg_infty_realField.FF" class="id"><a name="cvg_infty_realField.FF" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:202">F</a></span><span class="id">}</span> (<span id="cvg_infty_realField.f" class="id"><a name="cvg_infty_realField.f" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:201">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#cvg_infty_realField.R">R</a></span>).<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgryPge" class="id"><a name="cvgryPge" class="" title="cvgryPge :
 forall {R : realFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall f : T -> R,
-(f x @[x --> F] --> +oo%R)%classic <-> (forall A : R, \near F, (A <= f F)%R)
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs +oo%R) <->
+(forall A : R,
+ filter.prop_near1 F (P:=fun x : T => (A <= f x)%R)
+   (inPhantom (forall x : T, (A <= f x)%R)))
 
 cvgryPge is not universe polymorphic
 Arguments cvgryPge {R} {T}%_type_scope {F FF} f%_function_scope
@@ -1415,9 +1523,13 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgryPgt" class="id"><a name="cvgryPgt" class="" title="cvgryPgt :
 forall {R : realFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall f : T -> R,
-(f x @[x --> F] --> +oo%R)%classic <-> (forall A : R, \near F, (A < f F)%R)
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs +oo%R) <->
+(forall A : R,
+ filter.prop_near1 F (P:=fun x : T => (A < f x)%R)
+   (inPhantom (forall x : T, (A < f x)%R)))
 
 cvgryPgt is not universe polymorphic
 Arguments cvgryPgt {R} {T}%_type_scope {F FF} f%_function_scope
@@ -1435,9 +1547,13 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgrNyPle" class="id"><a name="cvgrNyPle" class="" title="cvgrNyPle :
 forall {R : realFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall f : T -> R,
-(f x @[x --> F] --> -oo%R)%classic <-> (forall A : R, \near F, (f F <= A)%R)
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs -oo%R) <->
+(forall A : R,
+ filter.prop_near1 F (P:=fun x : T => (f x <= A)%R)
+   (inPhantom (forall x : T, (f x <= A)%R)))
 
 cvgrNyPle is not universe polymorphic
 Arguments cvgrNyPle {R} {T}%_type_scope {F FF} f%_function_scope
@@ -1455,9 +1571,13 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgrNyPlt" class="id"><a name="cvgrNyPlt" class="" title="cvgrNyPlt :
 forall {R : realFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall f : T -> R,
-(f x @[x --> F] --> -oo%R)%classic <-> (forall A : R, \near F, (f F < A)%R)
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs -oo%R) <->
+(forall A : R,
+ filter.prop_near1 F (P:=fun x : T => (f x < A)%R)
+   (inPhantom (forall x : T, (f x < A)%R)))
 
 cvgrNyPlt is not universe polymorphic
 Arguments cvgrNyPlt {R} {T}%_type_scope {F FF} f%_function_scope
@@ -1475,9 +1595,13 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgry_ge" class="id"><a name="cvgry_ge" class="" title="cvgry_ge :
 forall {R : realFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall [f : T -> R],
-(f x @[x --> F] --> +oo%R)%classic -> forall A : R, \near F, (A <= f F)%R
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs +oo%R) ->
+forall A : R,
+filter.prop_near1 F (P:=fun x : T => (A <= f x)%R)
+  (inPhantom (forall x : T, (A <= f x)%R))
 
 cvgry_ge is not universe polymorphic
 Arguments cvgry_ge {R} {T}%_type_scope {F FF} [f]%_function_scope _ A
@@ -1494,9 +1618,13 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 470, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgry_gt" class="id"><a name="cvgry_gt" class="" title="cvgry_gt :
 forall {R : realFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall [f : T -> R],
-(f x @[x --> F] --> +oo%R)%classic -> forall A : R, \near F, (A < f F)%R
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs +oo%R) ->
+forall A : R,
+filter.prop_near1 F (P:=fun x : T => (A < f x)%R)
+  (inPhantom (forall x : T, (A < f x)%R))
 
 cvgry_gt is not universe polymorphic
 Arguments cvgry_gt {R} {T}%_type_scope {F FF} [f]%_function_scope _ A
@@ -1513,9 +1641,13 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 473, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgrNy_le" class="id"><a name="cvgrNy_le" class="" title="cvgrNy_le :
 forall {R : realFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall [f : T -> R],
-(f x @[x --> F] --> -oo%R)%classic -> forall A : R, \near F, (f F <= A)%R
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs -oo%R) ->
+forall A : R,
+filter.prop_near1 F (P:=fun x : T => (f x <= A)%R)
+  (inPhantom (forall x : T, (f x <= A)%R))
 
 cvgrNy_le is not universe polymorphic
 Arguments cvgrNy_le {R} {T}%_type_scope {F FF} [f]%_function_scope _ A
@@ -1532,9 +1664,13 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 476, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgrNy_lt" class="id"><a name="cvgrNy_lt" class="" title="cvgrNy_lt :
 forall {R : realFieldType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall [f : T -> R],
-(f x @[x --> F] --> -oo%R)%classic -> forall A : R, \near F, (f F < A)%R
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs -oo%R) ->
+forall A : R,
+filter.prop_near1 F (P:=fun x : T => (f x < A)%R)
+  (inPhantom (forall x : T, (f x < A)%R))
 
 cvgrNy_lt is not universe polymorphic
 Arguments cvgrNy_lt {R} {T}%_type_scope {F FF} [f]%_function_scope _ A
@@ -1553,13 +1689,16 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 479, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgr_expr2" class="id"><a name="cvgr_expr2" class="" title="cvgr_expr2 :
 forall {R : realFieldType},
-(((x ^+ 2)%R : R) @[x --> +oo%R] --> +oo%R)%classic
+filter.cvg_to
+  (filter.nbhs
+     (filter.fmap (fun x : R => (x ^+ 2)%R : R) (filter.nbhs +oo%R)))
+  (filter.nbhs +oo%R)
 
 cvgr_expr2 is not universe polymorphic
 Expanded type for implicit arguments
 cvgr_expr2 :
 forall {R : realFieldType} [t : set R],
-nbhs +oo%R t ->
+filter.nbhs +oo%R t ->
 exists M : R,
   M \is Num.real /\
   (forall x : R,
@@ -1579,13 +1718,17 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 484, characters
 <span class="id">Unshelve</span>. <span class="id">all:</span><span class="id"> end_near</span>. Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgr_idn" class="id"><a name="cvgr_idn" class="" title="cvgr_idn :
-forall {R : realType}, ((n%:R%R : R) @[n --> \oo] --> +oo%R)%classic
+forall {R : realType},
+filter.cvg_to
+  (filter.nbhs
+     (filter.fmap (fun n : nat => n%:R%R : R) (filter.nbhs filter.eventually)))
+  (filter.nbhs +oo%R)
 
 cvgr_idn is not universe polymorphic
 Expanded type for implicit arguments
 cvgr_idn :
 forall {R : realType} [t : set R],
-nbhs +oo%R t ->
+filter.nbhs +oo%R t ->
 exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i
@@ -1606,10 +1749,13 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 489, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgrnyP" class="id"><a name="cvgrnyP" class="" title="cvgrnyP :
 forall {R : realType} {T : Type} {F : set_system T},
-Filter F ->
+filter.Filter F ->
 forall f : T -> nat,
-(((f n)%:R%R : R) @[n --> F] --> +oo%R)%classic <->
-(f x @[x --> F] --> \oo)%classic
+filter.cvg_to
+  (filter.nbhs (filter.fmap (fun n : T => (f n)%:R%R : R) (filter.nbhs F)))
+  (filter.nbhs +oo%R) <->
+filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F)))
+  (filter.nbhs filter.eventually)
 
 cvgrnyP is not universe polymorphic
 Arguments cvgrnyP {R} {T}%_type_scope {F FF} f%_function_scope
@@ -1618,7 +1764,7 @@ Expands to: Constant
             mathcomp.analysis.normedtype_theory.num_normedtype.cvgrnyP
 Declared in
 library mathcomp.analysis.normedtype_theory.num_normedtype, line 494, characters 6-13
-">cvgrnyP</a></span><span class="id"> {</span><span id="R:225" class="id"><a name="R:225" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html#Real.Exports.realType">realType</a></span><span class="id">}</span><span class="id"> {</span><span id="T:226" class="id"><a name="T:226" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="F:227" class="id"><a name="F:227" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:226">T</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:228" class="id"><a name="FF:228" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:227">F</a></span><span class="id">}</span> (<span id="f:229" class="id"><a name="f:229" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:226">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#nat">nat</a></span>)<span class="id"> :</span><br/>
+">cvgrnyP</a></span><span class="id"> {</span><span id="R:225" class="id"><a name="R:225" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html#Real.Exports.realType">realType</a></span><span class="id">}</span><span class="id"> {</span><span id="T:226" class="id"><a name="T:226" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="F:227" class="id"><a name="F:227" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:226">T</a></span><span class="id">}</span><span class="id"> {</span><span id="FF:228" class="id"><a name="FF:228" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:227">F</a></span><span class="id">}</span> (<span id="f:229" class="id"><a name="f:229" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:226">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#nat">nat</a></span>)<span class="id"> :</span><br/>
 &nbsp;&nbsp;&nbsp;(((<span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#f:229">f</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#n:230">n</a></span>)<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#6411ed08724033ae48d2865f0380d533">%:R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#R:225">R</a></span>)<span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> @[</a></span><span id="n:230" class="id"><a name="n:230" class="">n</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:227">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f">]</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#423d7544dbaa8438f698fe5437adc41f">+oo</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"> &lt;-&gt;</a></span> (<span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#f:229">f</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> @</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:227">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#228a5fbd8d7ef28f21231bccff88d0b0">\oo</a></span>).<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -1631,28 +1777,32 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 494, characters
 <span class="id">Unshelve</span>. <span class="id">all:</span><span class="gallina-kwd"> by</span><span class="id"> end_near</span>. Qed.</div></details>
 <br/>
 <span class="vernacular">Section</span><span class="id"> gt0_cvg</span>.<br/>
-<span class="vernacular">Context</span><span class="id"> {</span><span id="gt0_cvg.R" class="id"><a name="gt0_cvg.R" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.RealField.Exports.realFieldType">realFieldType</a></span><span class="id">}</span><span class="id"> {</span><span id="gt0_cvg.F" class="id"><a name="gt0_cvg.F" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#R:231">R</a></span><span class="id">}</span><span class="id"> {</span><span id="gt0_cvg.FF" class="id"><a name="gt0_cvg.FF" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:232">F</a></span><span class="id">}</span>.<br/>
+<span class="vernacular">Context</span><span class="id"> {</span><span id="gt0_cvg.R" class="id"><a name="gt0_cvg.R" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.RealField.Exports.realFieldType">realFieldType</a></span><span class="id">}</span><span class="id"> {</span><span id="gt0_cvg.F" class="id"><a name="gt0_cvg.F" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#R:231">R</a></span><span class="id">}</span><span class="id"> {</span><span id="gt0_cvg.FF" class="id"><a name="gt0_cvg.FF" class="">FF</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#F:232">F</a></span><span class="id">}</span>.<br/>
 <span class="vernacular">Variables</span> (<span id="gt0_cvg.M" class="id"><a name="gt0_cvg.M" class="">M</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#gt0_cvg.R">R</a></span>) (<span id="gt0_cvg.f" class="id"><a name="gt0_cvg.f" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#gt0_cvg.R">R</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#gt0_cvg.R">R</a></span>).<br/>
 <span class="vernacular">Hypothesis</span><span class="id"> </span><span id="gt0_cvg.M0" class="id"><a name="gt0_cvg.M0" class="">M0</a></span><span class="id"> :</span><span class="id"> 0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#gt0_cvg.M">M</a></span>.<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="gt0_cvgMlNy" class="id"><a name="gt0_cvgMlNy" class="" title="gt0_cvgMlNy :
 forall {R : realFieldType} {F : set_system R},
-Filter F ->
+filter.Filter F ->
 forall [M : R] [f : R -> R],
 (0 < M)%R ->
-(f r @[r --> F] --> -oo%R)%classic ->
-((f r * M)%R @[r --> F] --> -oo%R)%classic
+filter.cvg_to (filter.nbhs (filter.fmap [eta f] (filter.nbhs F)))
+  (filter.nbhs -oo%R) ->
+filter.cvg_to
+  (filter.nbhs (filter.fmap (fun r : R => (f r * M)%R) (filter.nbhs F)))
+  (filter.nbhs -oo%R)
 
 gt0_cvgMlNy is not universe polymorphic
 Expanded type for implicit arguments
 gt0_cvgMlNy :
 forall {R : realFieldType} {F : set_system R},
-Filter F ->
+filter.Filter F ->
 forall [M : R] [f : R -> R],
 (0 < M)%R ->
-(f r @[r --> F] --> -oo%R)%classic ->
+filter.cvg_to (filter.nbhs (filter.fmap [eta f] (filter.nbhs F)))
+  (filter.nbhs -oo%R) ->
 forall [t : set R],
-nbhs -oo%R t -> F ((fun r : R => (f r * M)%R) @^-1` t)%classic
+filter.nbhs -oo%R t -> F ((fun r : R => (f r * M)%R) @^-1` t)%classic
 
 Arguments gt0_cvgMlNy {R F FF} [M]%_ring_scope [f]%_function_scope M0 _ [t] _
 gt0_cvgMlNy is opaque
@@ -1670,22 +1820,26 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="gt0_cvgMrNy" class="id"><a name="gt0_cvgMrNy" class="" title="gt0_cvgMrNy :
 forall {R : realFieldType} {F : set_system R},
-Filter F ->
+filter.Filter F ->
 forall [M : R] [f : R -> R],
 (0 < M)%R ->
-(f r @[r --> F] --> -oo%R)%classic ->
-((M * f r)%R @[r --> F] --> -oo%R)%classic
+filter.cvg_to (filter.nbhs (filter.fmap [eta f] (filter.nbhs F)))
+  (filter.nbhs -oo%R) ->
+filter.cvg_to
+  (filter.nbhs (filter.fmap (fun r : R => (M * f r)%R) (filter.nbhs F)))
+  (filter.nbhs -oo%R)
 
 gt0_cvgMrNy is not universe polymorphic
 Expanded type for implicit arguments
 gt0_cvgMrNy :
 forall {R : realFieldType} {F : set_system R},
-Filter F ->
+filter.Filter F ->
 forall [M : R] [f : R -> R],
 (0 < M)%R ->
-(f r @[r --> F] --> -oo%R)%classic ->
+filter.cvg_to (filter.nbhs (filter.fmap [eta f] (filter.nbhs F)))
+  (filter.nbhs -oo%R) ->
 forall [t : set R],
-nbhs -oo%R t -> F ((fun r : R => (M * f r)%R) @^-1` t)%classic
+filter.nbhs -oo%R t -> F ((fun r : R => (M * f r)%R) @^-1` t)%classic
 
 Arguments gt0_cvgMrNy {R F FF} [M]%_ring_scope [f]%_function_scope M0 _ [t] _
 gt0_cvgMrNy is opaque
@@ -1701,22 +1855,26 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 515, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="gt0_cvgMly" class="id"><a name="gt0_cvgMly" class="" title="gt0_cvgMly :
 forall {R : realFieldType} {F : set_system R},
-Filter F ->
+filter.Filter F ->
 forall [M : R] [f : R -> R],
 (0 < M)%R ->
-(f r @[r --> F] --> +oo%R)%classic ->
-((f r * M)%R @[r --> F] --> +oo%R)%classic
+filter.cvg_to (filter.nbhs (filter.fmap [eta f] (filter.nbhs F)))
+  (filter.nbhs +oo%R) ->
+filter.cvg_to
+  (filter.nbhs (filter.fmap (fun r : R => (f r * M)%R) (filter.nbhs F)))
+  (filter.nbhs +oo%R)
 
 gt0_cvgMly is not universe polymorphic
 Expanded type for implicit arguments
 gt0_cvgMly :
 forall {R : realFieldType} {F : set_system R},
-Filter F ->
+filter.Filter F ->
 forall [M : R] [f : R -> R],
 (0 < M)%R ->
-(f r @[r --> F] --> +oo%R)%classic ->
+filter.cvg_to (filter.nbhs (filter.fmap [eta f] (filter.nbhs F)))
+  (filter.nbhs +oo%R) ->
 forall [t : set R],
-nbhs +oo%R t -> F ((fun r : R => (f r * M)%R) @^-1` t)%classic
+filter.nbhs +oo%R t -> F ((fun r : R => (f r * M)%R) @^-1` t)%classic
 
 Arguments gt0_cvgMly {R F FF} [M]%_ring_scope [f]%_function_scope M0 _ [t] _
 gt0_cvgMly is opaque
@@ -1734,22 +1892,26 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="gt0_cvgMry" class="id"><a name="gt0_cvgMry" class="" title="gt0_cvgMry :
 forall {R : realFieldType} {F : set_system R},
-Filter F ->
+filter.Filter F ->
 forall [M : R] [f : R -> R],
 (0 < M)%R ->
-(f r @[r --> F] --> +oo%R)%classic ->
-((M * f r)%R @[r --> F] --> +oo%R)%classic
+filter.cvg_to (filter.nbhs (filter.fmap [eta f] (filter.nbhs F)))
+  (filter.nbhs +oo%R) ->
+filter.cvg_to
+  (filter.nbhs (filter.fmap (fun r : R => (M * f r)%R) (filter.nbhs F)))
+  (filter.nbhs +oo%R)
 
 gt0_cvgMry is not universe polymorphic
 Expanded type for implicit arguments
 gt0_cvgMry :
 forall {R : realFieldType} {F : set_system R},
-Filter F ->
+filter.Filter F ->
 forall [M : R] [f : R -> R],
 (0 < M)%R ->
-(f r @[r --> F] --> +oo%R)%classic ->
+filter.cvg_to (filter.nbhs (filter.fmap [eta f] (filter.nbhs F)))
+  (filter.nbhs +oo%R) ->
 forall [t : set R],
-nbhs +oo%R t -> F ((fun r : R => (M * f r)%R) @^-1` t)%classic
+filter.nbhs +oo%R t -> F ((fun r : R => (M * f r)%R) @^-1` t)%classic
 
 Arguments gt0_cvgMry {R F FF} [M]%_ring_scope [f]%_function_scope M0 _ [t] _
 gt0_cvgMry is opaque
@@ -1766,10 +1928,14 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 524, characters
 <span class="vernacular">End</span><span class="id"> gt0_cvg</span>.<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgNy_compNP" class="id"><a name="cvgNy_compNP" class="" title="cvgNy_compNP :
-forall {T : topologicalType} {R : numFieldType} (f : R -> T)
-  (l : set_system T),
-(f x @[x --> -oo%R] --> l)%classic <->
-((f \o -%R%R) x @[x --> +oo%R] --> l)%classic
+forall {T : topology_structure.Topological.type} {R : numFieldType}
+  (f : R -> topology_structure.Topological.sort T)
+  (l : set_system (topology_structure.Topological.sort T)),
+filter.cvg_to (filter.nbhs (filter.fmap [eta f] (filter.nbhs -oo%R)))
+  (filter.nbhs l) <->
+filter.cvg_to
+  (filter.nbhs (filter.fmap [eta f \o -%R%R] (filter.nbhs +oo%R)))
+  (filter.nbhs l)
 
 cvgNy_compNP is not universe polymorphic
 Arguments cvgNy_compNP {T R} f%_function_scope l
@@ -1779,7 +1945,7 @@ Expands to: Constant
 Declared in
 library mathcomp.analysis.normedtype_theory.num_normedtype, line 529, characters 6-18
 ">cvgNy_compNP</a></span><span class="id"> {</span><span id="T:248" class="id"><a name="T:248" class="">T</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#Topological.Exports.topologicalType">topologicalType</a></span><span class="id">}</span><span class="id"> {</span><span id="R:249" class="id"><a name="R:249" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.NumField.Exports.numFieldType">numFieldType</a></span><span class="id">}</span> (<span id="f:250" class="id"><a name="f:250" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#R:249">R</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:248">T</a></span>)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;(<span id="l:251" class="id"><a name="l:251" class="">l</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:248">T</a></span>)<span class="id"> :</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span id="l:251" class="id"><a name="l:251" class="">l</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:248">T</a></span>)<span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#f:250">f</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#x:252">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> @[</a></span><span id="x:252" class="id"><a name="x:252" class="">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#::ring_scope:'-oo'">-oo</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f">]</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#l:251">l</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"> &lt;-&gt;</a></span> (<span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#f:250">f</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#687e14754dadb7c0b04f27d8f71d2638"> \o</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#687e14754dadb7c0b04f27d8f71d2638"> </a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#a8ac36d488c8d5cdcfec5adcde894e5f">-%R</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#687e14754dadb7c0b04f27d8f71d2638"> x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> @[</a></span><span id="x:253" class="id"><a name="x:253" class="">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#423d7544dbaa8438f698fe5437adc41f">+oo</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f">]</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#l:251">l</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -1791,10 +1957,14 @@ Qed.</div></details>
 <span class="vernacular">Notation</span><span class="id"> </span><span id="cvgyNP" class="id"><a name="cvgyNP" class="">cvgyNP</a></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#cvgNy_compNP">cvgNy_compNP</a></span> (<span class="id">only</span><span class="id"> parsing</span>).<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvgy_compNP" class="id"><a name="cvgy_compNP" class="" title="cvgy_compNP :
-forall {T : topologicalType} {R : numFieldType} (f : R -> T)
-  (l : set_system T),
-(f x @[x --> +oo%R] --> l)%classic <->
-((f \o -%R%R) x @[x --> -oo%R] --> l)%classic
+forall {T : topology_structure.Topological.type} {R : numFieldType}
+  (f : R -> topology_structure.Topological.sort T)
+  (l : set_system (topology_structure.Topological.sort T)),
+filter.cvg_to (filter.nbhs (filter.fmap [eta f] (filter.nbhs +oo%R)))
+  (filter.nbhs l) <->
+filter.cvg_to
+  (filter.nbhs (filter.fmap [eta f \o -%R%R] (filter.nbhs -oo%R)))
+  (filter.nbhs l)
 
 cvgy_compNP is not universe polymorphic
 Arguments cvgy_compNP {T R} f%_function_scope l
@@ -1804,7 +1974,7 @@ Expands to: Constant
 Declared in
 library mathcomp.analysis.normedtype_theory.num_normedtype, line 539, characters 6-17
 ">cvgy_compNP</a></span><span class="id"> {</span><span id="T:256" class="id"><a name="T:256" class="">T</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#Topological.Exports.topologicalType">topologicalType</a></span><span class="id">}</span><span class="id"> {</span><span id="R:257" class="id"><a name="R:257" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.NumField.Exports.numFieldType">numFieldType</a></span><span class="id">}</span> (<span id="f:258" class="id"><a name="f:258" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#R:257">R</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:256">T</a></span>)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;(<span id="l:259" class="id"><a name="l:259" class="">l</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:256">T</a></span>)<span class="id"> :</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span id="l:259" class="id"><a name="l:259" class="">l</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#T:256">T</a></span>)<span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#f:258">f</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#x:260">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> @[</a></span><span id="x:260" class="id"><a name="x:260" class="">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#423d7544dbaa8438f698fe5437adc41f">+oo</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f">]</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#l:259">l</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"> &lt;-&gt;</a></span> (<span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#f:258">f</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#687e14754dadb7c0b04f27d8f71d2638"> \o</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#687e14754dadb7c0b04f27d8f71d2638"> </a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#a8ac36d488c8d5cdcfec5adcde894e5f">-%R</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#687e14754dadb7c0b04f27d8f71d2638"> x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> @[</a></span><span id="x:261" class="id"><a name="x:261" class="">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#::ring_scope:'-oo'">-oo</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f">]</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#l:259">l</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -1820,7 +1990,8 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="decreasing_itvNyo_bigcup" class="id"><a name="decreasing_itvNyo_bigcup" class="" title="decreasing_itvNyo_bigcup :
 forall {R : realType} [F : R -> R] [a : R],
 {in `[a, +oo[%R &, {homo F : x y /~ (x < y)%R}} ->
-(F x @[x --> +oo%R] --> -oo%R)%classic ->
+filter.cvg_to (filter.nbhs (filter.fmap [eta F] (filter.nbhs +oo%R)))
+  (filter.nbhs -oo%R) ->
 `]-oo, F a[%classic = (\bigcup_i `]F (a + i.+1%:R)%R, F a[)%classic
 
 decreasing_itvNyo_bigcup is not universe polymorphic
@@ -1882,7 +2053,8 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="increasing_itvNyo_bigcup" class="id"><a name="increasing_itvNyo_bigcup" class="" title="increasing_itvNyo_bigcup :
 forall {R : realType} [F : R -> R] [a : R],
 {in `]-oo, a]%R &, {homo F : x y / (x < y)%R}} ->
-(F x @[x --> -oo%R] --> -oo%R)%classic ->
+filter.cvg_to (filter.nbhs (filter.fmap [eta F] (filter.nbhs -oo%R)))
+  (filter.nbhs -oo%R) ->
 `]-oo, F a]%classic = (\bigcup_i `]F (a - i.+1%:R)%R, F a])%classic
 
 increasing_itvNyo_bigcup is not universe polymorphic
@@ -1948,7 +2120,8 @@ Qed.</div></details>
 <span class="vernacular">Implicit</span><span class="id"> Types</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#open_closed_sets.R">R</a></span>.<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="open_lt" class="id"><a name="open_lt" class="" title="open_lt :
-forall {R : realFieldType} [y : R], open [set x | (x < y)%R]%classic
+forall {R : realFieldType} [y : R],
+topology_structure.open [set x | (x < y)%R]%classic
 
 open_lt is not universe polymorphic
 Expanded type for implicit arguments
@@ -1957,7 +2130,7 @@ forall {R : realFieldType} [y : R] [t : R^o],
 [set x | (x < y)%R]%classic t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] t i `<=` [set x | (x < y)%R])%classic
+  (pseudometric_structure.ball_ [eta normr] t i `<=` [set x | (x < y)%R])%classic
 
 Arguments open_lt {R} [y]%_ring_scope [t] _
 open_lt is opaque
@@ -1975,7 +2148,8 @@ Qed.</div></details>
 <span class="vernacular">Hint</span><span class="id"> Resolve</span><span class="id"> open_lt</span><span class="id"> :</span><span class="id"> core</span>.<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="open_gt" class="id"><a name="open_gt" class="" title="open_gt :
-forall {R : realFieldType} [y : R], open [set x | (y < x)%R]%classic
+forall {R : realFieldType} [y : R],
+topology_structure.open [set x | (y < x)%R]%classic
 
 open_gt is not universe polymorphic
 Expanded type for implicit arguments
@@ -1984,7 +2158,7 @@ forall {R : realFieldType} [y : R] [t : R^o],
 [set x | (y < x)%R]%classic t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] t i `<=` [set x | (y < x)%R])%classic
+  (pseudometric_structure.ball_ [eta normr] t i `<=` [set x | (y < x)%R])%classic
 
 Arguments open_gt {R} [y]%_ring_scope [t] _
 open_gt is opaque
@@ -2001,7 +2175,9 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 626, characters
 Qed.</div></details>
 <span class="vernacular">Hint</span><span class="id"> Resolve</span><span class="id"> open_gt</span><span class="id"> :</span><span class="id"> core</span>.<br/>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="open_neq" class="id"><a name="open_neq" class="" title="open_neq : forall {R : realFieldType} [y : R], open [set x | x != y]%classic
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="open_neq" class="id"><a name="open_neq" class="" title="open_neq :
+forall {R : realFieldType} [y : R],
+topology_structure.open [set x | x != y]%classic
 
 open_neq is not universe polymorphic
 Expanded type for implicit arguments
@@ -2010,7 +2186,7 @@ forall {R : realFieldType} [y : R] [t : R^o],
 [set x | x != y]%classic t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] t i `<=` [set x | x != y])%classic
+  (pseudometric_structure.ball_ [eta normr] t i `<=` [set x | x != y])%classic
 
 Arguments open_neq {R} [y]%_ring_scope [t] _
 open_neq is opaque
@@ -2029,7 +2205,8 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="interval_open" class="id"><a name="interval_open" class="" title="interval_open :
 forall {R : realFieldType} [a b : itv_bound R],
 ~~ unstable.bound_side (T:=R) true a ->
-~~ unstable.bound_side (T:=R) false b -> open [set` Interval a b]%classic
+~~ unstable.bound_side (T:=R) false b ->
+topology_structure.open [set` Interval a b]%classic
 
 interval_open is not universe polymorphic
 Expanded type for implicit arguments
@@ -2041,7 +2218,7 @@ forall [t : R^o],
 [set` Interval a b]%classic t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] t i `<=` [set` Interval a b])%classic
+  (pseudometric_structure.ball_ [eta normr] t i `<=` [set` Interval a b])%classic
 
 Arguments interval_open {R} [a b] _ _ [t] _
 interval_open is opaque
@@ -2064,16 +2241,19 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 639, characters
 <span class="id">-</span><span class="gallina-kwd"> by</span><span class="id"> rewrite</span> (_<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#mkset">mkset</a></span><span class="id"> _</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#setT">setT</a></span>)<span class="id">;</span><span class="id"> [exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#openT">openT</a></span><span class="id"> |</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.boolp.html#predeqE">predeqE</a></span><span class="id">]</span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="closed_le" class="id"><a name="closed_le" class="" title="closed_le : forall {R : realFieldType} [y : R], closed [set x | (x <= y)%R]
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="closed_le" class="id"><a name="closed_le" class="" title="closed_le :
+forall {R : realFieldType} [y : R],
+topology_structure.closed [set x | (x <= y)%R]
 
 closed_le is not universe polymorphic
 Expanded type for implicit arguments
 closed_le :
 forall {R : realFieldType} [y : R]
-  [t : join_order_topology_POrderedTopological_between_Order_Preorder_and_topology_structure_Topological
-         (numFieldTopology.RealField_sort__canonical__order_topology_POrderedTopological
-            R)],
-closure [set x | (x <= y)%R] t -> (t <= y)%R = true
+  [t : topology_structure.Topological.sort
+         (order_topology.POrderedTopological.Exports.join_order_topology_POrderedTopological_between_Order_Preorder_and_topology_structure_Topological
+            (num_topology.numFieldTopology.RealField_sort__canonical__order_topology_POrderedTopological
+               R))],
+topology_structure.closure [set x | (x <= y)%R] t -> (t <= y)%R = true
 
 Arguments closed_le {R} [y]%_ring_scope [t] _
 closed_le is opaque
@@ -2089,16 +2269,19 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 654, characters
 <span class="gallina-kwd">by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.boolp.html#predeqE">predeqE</a></span><span class="id"> =&gt;</span><span class="id"> x</span><span class="id"> /=;</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.TotalTheory.leNgt">leNgt</a></span><span class="id">;</span><span class="id"> split</span><span class="id"> =&gt;</span><span class="id"> /</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#negP">negP</a></span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="closed_ge" class="id"><a name="closed_ge" class="" title="closed_ge : forall {R : realFieldType} [y : R], closed [set x | (y <= x)%R]
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="closed_ge" class="id"><a name="closed_ge" class="" title="closed_ge :
+forall {R : realFieldType} [y : R],
+topology_structure.closed [set x | (y <= x)%R]
 
 closed_ge is not universe polymorphic
 Expanded type for implicit arguments
 closed_ge :
 forall {R : realFieldType} [y : R]
-  [t : join_order_topology_POrderedTopological_between_Order_Preorder_and_topology_structure_Topological
-         (numFieldTopology.RealField_sort__canonical__order_topology_POrderedTopological
-            R)],
-closure [set x | (y <= x)%R] t -> (y <= t)%R = true
+  [t : topology_structure.Topological.sort
+         (order_topology.POrderedTopological.Exports.join_order_topology_POrderedTopological_between_Order_Preorder_and_topology_structure_Topological
+            (num_topology.numFieldTopology.RealField_sort__canonical__order_topology_POrderedTopological
+               R))],
+topology_structure.closure [set x | (y <= x)%R] t -> (y <= t)%R = true
 
 Arguments closed_ge {R} [y]%_ring_scope [t] _
 closed_ge is opaque
@@ -2114,15 +2297,17 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 660, characters
 <span class="gallina-kwd">by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.boolp.html#predeqE">predeqE</a></span><span class="id"> =&gt;</span><span class="id"> x</span><span class="id"> /=;</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.TotalTheory.leNgt">leNgt</a></span><span class="id">;</span><span class="id"> split</span><span class="id"> =&gt;</span><span class="id"> /</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#negP">negP</a></span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="closed_eq" class="id"><a name="closed_eq" class="" title="closed_eq : forall {R : realFieldType} [y : R], closed [set x | x = y]
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="closed_eq" class="id"><a name="closed_eq" class="" title="closed_eq :
+forall {R : realFieldType} [y : R], topology_structure.closed [set x | x = y]
 
 closed_eq is not universe polymorphic
 Expanded type for implicit arguments
 closed_eq :
 forall {R : realFieldType} [y : R]
-  [t : numFieldTopology.RealField_sort__canonical__topology_structure_Topological
-         R],
-closure [set x | x = y] t -> t = y
+  [t : topology_structure.Topological.sort
+         (num_topology.numFieldTopology.RealField_sort__canonical__topology_structure_Topological
+            R)],
+topology_structure.closure [set x | x = y] t -> t = y
 
 Arguments closed_eq {R} [y]%_ring_scope [t] _
 closed_eq is opaque
@@ -2142,7 +2327,8 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="interval_closed" class="id"><a name="interval_closed" class="" title="interval_closed :
 forall {R : realFieldType} [a b : itv_bound R],
 ~~ unstable.bound_side (T:=R) false a ->
-~~ unstable.bound_side (T:=R) true b -> closed [set` Interval a b]
+~~ unstable.bound_side (T:=R) true b ->
+topology_structure.closed [set` Interval a b]
 
 interval_closed is not universe polymorphic
 Expanded type for implicit arguments
@@ -2150,8 +2336,12 @@ interval_closed :
 forall {R : realFieldType} [a b : itv_bound R],
 ~~ unstable.bound_side (T:=R) false a ->
 ~~ unstable.bound_side (T:=R) true b ->
-forall [t : GRing_regular__canonical__topology_structure_Topological R],
-closure [set` Interval a b] t -> (t \in Interval a b) = true
+forall
+  [t : topology_structure.Topological.sort
+         (num_topology.GRing_regular__canonical__topology_structure_Topological
+            R)],
+topology_structure.closure [set` Interval a b] t ->
+(t \in Interval a b) = true
 
 Arguments interval_closed {R} [a b] _ _ [t] _
 interval_closed is opaque
@@ -2188,8 +2378,12 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="near_in_itvoo" class="id"><a name="near_in_itvoo" class="" title="near_in_itvoo :
 forall {R : realFieldType} [a b : R],
 {in `]a, b[%R,
-  forall y : numFieldTopology.RealField_sort__canonical__filter_Filtered R,
-  \near y, y \in `]a, b[%R}
+  forall
+    y : filter.Filtered.sort
+          (num_topology.numFieldTopology.RealField_sort__canonical__filter_Filtered
+             R),
+  filter.prop_near1 y (P:=fun z : R => z \in `]a, b[%R)
+    (inPhantom (forall z : R, z \in `]a, b[%R))}
 
 near_in_itvoo is not universe polymorphic
 Expanded type for implicit arguments
@@ -2198,7 +2392,8 @@ forall {R : realFieldType} [a b x : R],
 x \in `]a, b[%R ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i `<=` (fun z : R => z \in `]a, b[%R))%classic
+  (pseudometric_structure.ball_ [eta normr] x i
+   `<=` (fun z : R => z \in `]a, b[%R))%classic
 
 Arguments near_in_itvoo {R} [a b]%_ring_scope [x] _
 near_in_itvoo is opaque
@@ -2216,8 +2411,12 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 697, characters
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="near_in_itvoy" class="id"><a name="near_in_itvoy" class="" title="near_in_itvoy :
 forall {R : realFieldType} [a : R],
 {in `]a, +oo[%R,
-  forall y : numFieldTopology.RealField_sort__canonical__filter_Filtered R,
-  \near y, y \in `]a, +oo[%R}
+  forall
+    y : filter.Filtered.sort
+          (num_topology.numFieldTopology.RealField_sort__canonical__filter_Filtered
+             R),
+  filter.prop_near1 y (P:=fun z : R => z \in `]a, +oo[%R)
+    (inPhantom (forall z : R, z \in `]a, +oo[%R))}
 
 near_in_itvoy is not universe polymorphic
 Expanded type for implicit arguments
@@ -2226,7 +2425,8 @@ forall {R : realFieldType} [a x : R],
 x \in `]a, +oo[%R ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i `<=` (fun z : R => z \in `]a, +oo[%R))%classic
+  (pseudometric_structure.ball_ [eta normr] x i
+   `<=` (fun z : R => z \in `]a, +oo[%R))%classic
 
 Arguments near_in_itvoy {R} [a]%_ring_scope [x] _
 near_in_itvoy is opaque
@@ -2244,8 +2444,12 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 701, characters
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="near_in_itvNyo" class="id"><a name="near_in_itvNyo" class="" title="near_in_itvNyo :
 forall {R : realFieldType} [b : R],
 {in `]-oo, b[%R,
-  forall y : numFieldTopology.RealField_sort__canonical__filter_Filtered R,
-  \near y, y \in `]-oo, b[%R}
+  forall
+    y : filter.Filtered.sort
+          (num_topology.numFieldTopology.RealField_sort__canonical__filter_Filtered
+             R),
+  filter.prop_near1 y (P:=fun z : R => z \in `]-oo, b[%R)
+    (inPhantom (forall z : R, z \in `]-oo, b[%R))}
 
 near_in_itvNyo is not universe polymorphic
 Expanded type for implicit arguments
@@ -2254,7 +2458,8 @@ forall {R : realFieldType} [b x : R],
 x \in `]-oo, b[%R ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i `<=` (fun z : R => z \in `]-oo, b[%R))%classic
+  (pseudometric_structure.ball_ [eta normr] x i
+   `<=` (fun z : R => z \in `]-oo, b[%R))%classic
 
 Arguments near_in_itvNyo {R} [b]%_ring_scope [x] _
 near_in_itvNyo is opaque
@@ -2276,7 +2481,8 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 705, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_infty_gtr" class="id"><a name="nbhs_infty_gtr" class="" title="nbhs_infty_gtr :
 forall {R : archiRealFieldType} (r : R),
-\forall n \near \oo%classic, (r < n%:R)%R
+filter.prop_near1 filter.eventually (P:=fun n : nat => (r < n%:R)%R)
+  (inPhantom (forall n : nat, (r < n%:R)%R))
 
 nbhs_infty_gtr is not universe polymorphic
 Arguments nbhs_infty_gtr {R} r%_ring_scope
@@ -2296,7 +2502,9 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="near_infty_natSinv_lt" class="id"><a name="near_infty_natSinv_lt" class="" title="near_infty_natSinv_lt :
 forall [R : archiRealFieldType] (e : {posnum R}%R),
-\forall n \near \oo%classic, (n.+1%:R^-1 < e%:num)%R
+filter.prop_near1 filter.eventually
+  (P:=fun n : nat => (n.+1%:R^-1 < e%:num)%R)
+  (inPhantom (forall n : nat, (n.+1%:R^-1 < e%:num)%R))
 
 near_infty_natSinv_lt is not universe polymorphic
 Arguments near_infty_natSinv_lt [R] e
@@ -2316,7 +2524,9 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 721, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="near_infty_natSinv_expn_lt" class="id"><a name="near_infty_natSinv_expn_lt" class="" title="near_infty_natSinv_expn_lt :
 forall [R : archiRealFieldType] (e : {posnum R}%R),
-\forall n \near \oo%classic, (1 / 2 ^+ n < e%:num)%R
+filter.prop_near1 filter.eventually
+  (P:=fun n : nat => (1 / 2 ^+ n < e%:num)%R)
+  (inPhantom (forall n : nat, (1 / 2 ^+ n < e%:num)%R))
 
 near_infty_natSinv_expn_lt is not universe polymorphic
 Arguments near_infty_natSinv_expn_lt [R] e
@@ -2466,7 +2676,8 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 783, characters
 <span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> /</span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#bigcup_ointsub">bigcup_ointsub</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#open_union_rat.ointsub_rat0">ointsub_rat0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#bigcup_set0">bigcup_set0</a></span>. Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="open_bigcup_ointsub" class="id"><a name="open_bigcup_ointsub" class="" title="open_bigcup_ointsub :
-forall [R : realType] [U : set R] [q : rat], open (bigcup_ointsub (R:=R) U q)
+forall [R : realType] [U : set R] [q : rat],
+topology_structure.open (bigcup_ointsub (R:=R) U q)
 
 open_bigcup_ointsub is not universe polymorphic
 Expanded type for implicit arguments
@@ -2475,7 +2686,8 @@ forall [R : realType] [U : set R] [q : rat] [t : R^o],
 bigcup_ointsub (R:=R) U q t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] t i `<=` bigcup_ointsub (R:=R) U q)%classic
+  (pseudometric_structure.ball_ [eta normr] t i
+   `<=` bigcup_ointsub (R:=R) U q)%classic
 
 Arguments open_bigcup_ointsub [R] [U]%_classical_set_scope 
   [q]%_ring_scope [t] _
@@ -2505,7 +2717,8 @@ forall [z : R],
 exists2 i : set R,
   (fun (U0 : set R) (q0 : rat) =>
    [set A | (fun A0 U1 : set R =>
-             [/\ open A0, is_interval (R:=R) A0 & A0 `<=` U1]) A U0 /\
+             [/\ topology_structure.open A0, is_interval (R:=R) A0
+               & A0 `<=` U1]) A U0 /\
             A (ratr q0)]%classic)
     U q i &
   id i z
@@ -2552,7 +2765,7 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 797, characters
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="bigcup_ointsub_sup" class="id"><a name="bigcup_ointsub_sup" class="" title="bigcup_ointsub_sup :
 forall [R : realType] [U : set R] [q : rat] [A : set R],
-open A ->
+topology_structure.open A ->
 is_interval (R:=R) A ->
 (A `<=` U)%classic ->
 A (ratr q) -> (A `<=` bigcup_ointsub (R:=R) U q)%classic
@@ -2561,7 +2774,7 @@ bigcup_ointsub_sup is not universe polymorphic
 Expanded type for implicit arguments
 bigcup_ointsub_sup :
 forall [R : realType] [U : set R] [q : rat] [A : set R],
-open A ->
+topology_structure.open A ->
 is_interval (R:=R) A ->
 (A `<=` U)%classic ->
 A (ratr q) ->
@@ -2570,7 +2783,8 @@ A t ->
 exists2 i : set R,
   (fun (U0 : set R) (q0 : rat) =>
    [set A0 | (fun A1 U1 : set R =>
-              [/\ open A1, is_interval (R:=R) A1 & A1 `<=` U1]) A0 U0 /\
+              [/\ topology_structure.open A1, is_interval (R:=R) A1
+                & A1 `<=` U1]) A0 U0 /\
              A0 (ratr q0)]%classic)
     U q i &
   id i t
@@ -2612,7 +2826,7 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 805, characters
   disjoint open intervals</div>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="open_bigcup_rat" class="id"><a name="open_bigcup_rat" class="" title="open_bigcup_rat :
 forall [R : realType] [U : set R],
-open U ->
+topology_structure.open U ->
 U = (\bigcup_(q in [set q | ratr q \in U]) bigcup_ointsub (R:=R) U q)%classic
 
 open_bigcup_rat is not universe polymorphic
@@ -2650,7 +2864,9 @@ Qed.</div></details>
 <span class="vernacular">Section</span><span class="id"> ball_realFieldType</span>.<br/>
 <span class="vernacular">Variables</span> (<span id="ball_realFieldType.R" class="id"><a name="ball_realFieldType.R" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.RealField.Exports.realFieldType">realFieldType</a></span>).<br/>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="ball0" class="id"><a name="ball0" class="" title="ball0 : forall [R : realFieldType] (a r : R), ball a r = set0 <-> (r <= 0)%R
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="ball0" class="id"><a name="ball0" class="" title="ball0 :
+forall [R : realFieldType] (a r : R),
+pseudometric_structure.ball a r = set0 <-> (r <= 0)%R
 
 ball0 is not universe polymorphic
 Arguments ball0 [R] (a r)%_ring_scope
@@ -2678,7 +2894,8 @@ Qed.</div></details>
 forall [R : realType] [X : set R],
 is_interval (R:=R) X ->
 ~ has_lbound (T:=R) X ->
-has_ubound (T:=R) X -> X°%classic = [set r | (r < sup X)%R]%classic
+has_ubound (T:=R) X ->
+topology_structure.interior X = [set r | (r < sup X)%R]%classic
 
 interval_left_unbounded_interior is not universe polymorphic
 Arguments interval_left_unbounded_interior [R] [X]%_classical_set_scope _ _ _
@@ -2704,7 +2921,8 @@ Qed.</div></details>
 forall [R : realType] [X : set R],
 is_interval (R:=R) X ->
 has_lbound (T:=R) X ->
-~ has_ubound (T:=R) X -> X°%classic = [set r | (inf X < r)%R]%classic
+~ has_ubound (T:=R) X ->
+topology_structure.interior X = [set r | (inf X < r)%R]%classic
 
 interval_right_unbounded_interior is not universe polymorphic
 Arguments interval_right_unbounded_interior [R] [X]%_classical_set_scope 
@@ -2731,7 +2949,8 @@ Qed.</div></details>
 forall [R : realType] [X : set R],
 is_interval (R:=R) X ->
 has_lbound (T:=R) X ->
-has_ubound (T:=R) X -> X°%classic = [set r | (inf X < r < sup X)%R]%classic
+has_ubound (T:=R) X ->
+topology_structure.interior X = [set r | (inf X < r < sup X)%R]%classic
 
 interval_bounded_interior is not universe polymorphic
 Arguments interval_bounded_interior [R] [X]%_classical_set_scope _ _ _
@@ -2760,7 +2979,8 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 872, characters
 <span class="gallina-kwd">by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#GRing.Theory.subKr">subKr</a></span><span class="id"> =&gt;</span><span class="id"> rf;</span><span class="id"> apply:</span> (<span class="id">iX</span><span class="id"> e</span><span class="id"> f</span>)<span class="id">;</span><span class="id"> rewrite</span><span class="id"> ?</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.ltW">ltW</a></span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="interior_set1" class="id"><a name="interior_set1" class="" title="interior_set1 : forall [R : realType] (a : R), [set a]°%classic = set0
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="interior_set1" class="id"><a name="interior_set1" class="" title="interior_set1 :
+forall [R : realType] (a : R), topology_structure.interior [set a] = set0
 
 interior_set1 is not universe polymorphic
 Arguments interior_set1 [R] a%_ring_scope
@@ -2783,7 +3003,8 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="interior_itv_bnd" class="id"><a name="interior_itv_bnd" class="" title="interior_itv_bnd :
 forall [R : realType] (x y : R) (a b : bool),
-[set` Interval (BSide a x) (BSide b y)]°%classic = `]x, y[%classic
+topology_structure.interior [set` Interval (BSide a x) (BSide b y)] =
+`]x, y[%classic
 
 interior_itv_bnd is not universe polymorphic
 Arguments interior_itv_bnd [R] (x y)%_ring_scope (a b)%_bool_scope
@@ -2811,7 +3032,8 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="interior_itv_bndy" class="id"><a name="interior_itv_bndy" class="" title="interior_itv_bndy :
 forall [R : realType] (x : R) (b : bool),
-[set` Interval (BSide b x) +oo%O]°%classic = `]x, +oo[%classic
+topology_structure.interior [set` Interval (BSide b x) +oo%O] =
+`]x, +oo[%classic
 
 interior_itv_bndy is not universe polymorphic
 Arguments interior_itv_bndy [R] x%_ring_scope b%_bool_scope
@@ -2834,7 +3056,8 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="interior_itv_Nybnd" class="id"><a name="interior_itv_Nybnd" class="" title="interior_itv_Nybnd :
 forall [R : realType] (y : R) (b : bool),
-[set` Interval -oo%O (BSide b y)]°%classic = `]-oo, y[%classic
+topology_structure.interior [set` Interval -oo%O (BSide b y)] =
+`]-oo, y[%classic
 
 interior_itv_Nybnd is not universe polymorphic
 Arguments interior_itv_Nybnd [R] y%_ring_scope b%_bool_scope
@@ -2856,7 +3079,8 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 925, characters
 Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="interior_itv_Nyy" class="id"><a name="interior_itv_Nyy" class="" title="interior_itv_Nyy :
-forall R : realType, `]-oo, +oo[°%classic = `]-oo, +oo[%classic
+forall R : realType,
+topology_structure.interior `]-oo, +oo[ = `]-oo, +oo[%classic
 
 interior_itv_Nyy is not universe polymorphic
 Arguments interior_itv_Nyy R
@@ -2875,12 +3099,15 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 935, characters
 <span class="vernacular">Definition</span><span class="id"> </span><span id="interior_itv" class="id"><a name="interior_itv" class="" title="interior_itv :
 forall R : realType,
 (forall (x y : R) (a b : bool),
- [set` Interval (BSide a x) (BSide b y)]°%classic = `]x, y[%classic) *
+ topology_structure.interior [set` Interval (BSide a x) (BSide b y)] =
+ `]x, y[%classic) *
 (forall (x : R) (b : bool),
- [set` Interval (BSide b x) +oo%O]°%classic = `]x, +oo[%classic) *
+ topology_structure.interior [set` Interval (BSide b x) +oo%O] =
+ `]x, +oo[%classic) *
 (forall (y : R) (b : bool),
- [set` Interval -oo%O (BSide b y)]°%classic = `]-oo, y[%classic) *
-(`]-oo, +oo[°%classic = `]-oo, +oo[%classic)
+ topology_structure.interior [set` Interval -oo%O (BSide b y)] =
+ `]-oo, y[%classic) *
+(topology_structure.interior `]-oo, +oo[ = `]-oo, +oo[%classic)
 
 interior_itv is not universe polymorphic
 Arguments interior_itv R

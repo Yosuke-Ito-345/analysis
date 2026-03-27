@@ -74,6 +74,7 @@
 <li><a href="mathcomp.analysis.normedtype_theory.normedtype.html">normedtype</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html">num_normedtype</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html">pseudometric_normed_Zmodule</a></li>
+<li><a href="mathcomp.analysis.normedtype_theory.tvs.html">tvs</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.urysohn.html">urysohn</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.vitali_lemma.html">vitali_lemma</a></li>
           </ul>
@@ -106,6 +107,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.function_spaces.html">function_spaces</a></li>
 <li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
@@ -139,7 +141,6 @@
 <li><a href="mathcomp.analysis.esum.html">esum</a></li>
 <li><a href="mathcomp.analysis.exp.html">exp</a></li>
 <li><a href="mathcomp.analysis.ftc.html">ftc</a></li>
-<li><a href="mathcomp.analysis.function_spaces.html">function_spaces</a></li>
 <li><a href="mathcomp.analysis.gauss_integral.html">gauss_integral</a></li>
 <li><a href="mathcomp.analysis.hoelder.html">hoelder</a></li>
 <li><a href="mathcomp.analysis.kernel.html">kernel</a></li>
@@ -152,7 +153,6 @@
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
-<li><a href="mathcomp.analysis.tvs.html">tvs</a></li>
           </ul>
           </details>
           </li>
@@ -227,18 +227,16 @@
       <p><a href="./index.html">Top</a></p>
       <h1 class="title">Module mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence</h1>
 <span class="vernacular">From</span><span class="id"> HB</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for HB.structures">structures</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html">ssralg</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.ssrnum.html">ssrnum</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssrint.html">ssrint</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval.html">interval</a></span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.finmap.finmap">finmap</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.archimedean.html">archimedean</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html">ssralg</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.ssrnum.html">ssrnum</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssrint.html">ssrint</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval.html">interval</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html">interval_inference</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.archimedean.html">archimedean</a></span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.finmap.finmap">finmap</a></span>.<br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.mathcomp_extra.html">mathcomp_extra</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.boolp.html">boolp</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html">classical_sets</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.functions.html">functions</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.cardinality.html">cardinality</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html">reals</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.fsbigop.html">fsbigop</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html">interval_inference</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.ereal.html">ereal</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology.html">topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.tvs.html">tvs</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.normedtype.html">normedtype</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.sequences.html">sequences</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.real_interval.html">real_interval</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.function_spaces.html">function_spaces</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.esum.html">esum</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure.html">measure</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_measure.html">lebesgue_measure</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html">numfun</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.realfun.html">realfun</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.simple_functions.html">simple_functions</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html">measurable_fun_approximation</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.cardinality.html">cardinality</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html">reals</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.fsbigop.html">fsbigop</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.ereal.html">ereal</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology.html">topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.tvs.html">tvs</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.normedtype.html">normedtype</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.sequences.html">sequences</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.real_interval.html">real_interval</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.esum.html">esum</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure.html">measure</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_measure.html">lebesgue_measure</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html">numfun</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.realfun.html">realfun</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.simple_functions.html">simple_functions</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html">measurable_fun_approximation</a></span>.<br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html">lebesgue_integral_definition</a></span>.<br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_monotone_convergence.html">lebesgue_integral_monotone_convergence</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_nonneg.html">lebesgue_integral_nonneg</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integrable.html">lebesgue_integrable</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_nonneg.html">lebesgue_integral_nonneg</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integrable.html">lebesgue_integrable</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
 # Dominated Convergence Theorem for the Lebesgue Integral
@@ -251,6 +249,7 @@ Main reference:
 
 </div>
 <br/>
+<span class="gallina-kwd">Set</span><span class="id"> SsrOldRewriteGoalsOrder</span>.  <br/>
 <span class="gallina-kwd">Set</span><span class="vernacular"> Implicit</span><span class="vernacular"> Arguments</span>.<br/>
 <span class="vernacular">Unset</span><span class="vernacular"> Strict</span><span class="vernacular"> Implicit</span>.<br/>
 <span class="vernacular">Unset</span><span class="vernacular"> Printing</span><span class="vernacular"> Implicit</span><span class="vernacular"> Defensive</span>.<br/>
@@ -402,11 +401,19 @@ forall [f_ : (T -> \bar R) ^nat] [f g : T -> \bar R],
    (U:=constructive_ereal_extended__canonical__measurable_structure_SigmaRing
          R)
    D (f_ n)) ->
-(forall x : T, D x -> (f_ x0 x @[x0 --> \oo] --> f x)%classic) ->
+(forall x : T,
+ D x ->
+ filter.cvg_to
+   (filter.nbhs (filter.fmap (f_^~ x) (filter.nbhs filter.eventually)))
+   (filter.nbhs (f x))) ->
 (forall x : T, D x -> g x \is a fin_num) ->
 mu.-integrable D g ->
 (forall (n : nat) (x : T), D x -> (`|f_ n x| <= g x)%E) ->
-((\int[mu]_(x in D) f_ n x)%E @[n \oo] --> (\int[mu]_(x in D) f x)%E)%classic
+filter.cvg_to
+  (filter.nbhs
+     (filter.fmap (fun n : nat => (\int[mu]_(x in D) f_ n x)%E)
+        filter.eventually))
+  (filter.nbhs (\int[mu]_(x in D) f x)%E)
 
 dominated_cvg is not universe polymorphic
 Expanded type for implicit arguments
@@ -420,15 +427,16 @@ forall [f_ : (T -> \bar R) ^nat] [f g : T -> \bar R],
    (U:=constructive_ereal_extended__canonical__measurable_structure_SigmaRing
          R)
    D (f_ n)) ->
-(forall x : T, D x -> (f_ x0 x @[x0 --> \oo] --> f x)%classic) ->
+(forall x : T,
+ D x ->
+ filter.cvg_to
+   (filter.nbhs (filter.fmap (f_^~ x) (filter.nbhs filter.eventually)))
+   (filter.nbhs (f x))) ->
 (forall x : T, D x -> g x \is a fin_num) ->
 mu.-integrable D g ->
 (forall (n : nat) (x : T), D x -> (`|f_ n x| <= g x)%E) ->
-forall
-  [t : set
-         (GRing.BaseAddMagma.sort
-            constructive_ereal_extended__canonical__Algebra_BaseAddMagma)],
-nbhs (\int[mu]_(x in D) f x)%E t ->
+forall [t : set (GRing.BaseAddMagma.sort \bar R)],
+filter.nbhs (\int[mu]_(x in D) f x)%E t ->
 exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i
@@ -442,7 +450,7 @@ dominated_cvg is opaque
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.dominated_cvg
 Declared in
-library mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence, line 147, characters 6-19
+library mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence, line 146, characters 6-19
 ">dominated_cvg</a></span><span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3">\int[</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_lemma.mu">mu</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3">]_</a></span>(<span id="x:74" class="id"><a name="x:74" class="">x</a></span><span class="gallina-kwd"> in</span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3"> </a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_lemma.D">D</a></span>)<span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3"> </a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_lemma.f_">f_</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#n:73">n</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#x:74">x</a></span><span class="id"><a href="mathcomp.classical.filter.html#96ebe1e290228c2bd5904c3ec35d6f07"> @[</a></span><span id="n:73" class="id"><a name="n:73" class="">n</a></span><span class="id"><a href="mathcomp.classical.filter.html#96ebe1e290228c2bd5904c3ec35d6f07"> \oo]</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3">\int[</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_lemma.mu">mu</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3">]_</a></span>(<span id="x:75" class="id"><a name="x:75" class="">x</a></span><span class="gallina-kwd"> in</span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3"> </a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_lemma.D">D</a></span>)<span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3"> </a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_lemma.f">f</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#x:75">x</a></span>.<br/>
 <details>
@@ -494,15 +502,26 @@ measurable_fun (T:=T)
   (U:=constructive_ereal_extended__canonical__measurable_structure_SigmaRing
         R)
   D f ->
-(\forall x \ae mu, D x -> (f_ x0 x @[x0 --> \oo] --> f x)%classic) ->
+(\forall x \ae mu, D x ->
+                   filter.cvg_to
+                     (filter.nbhs
+                        (filter.fmap (f_^~ x) (filter.nbhs filter.eventually)))
+                     (filter.nbhs (f x))) ->
 mu.-integrable D g ->
 (\forall x \ae mu, forall n : nat, D x -> (`|f_ n x| <= g x)%E) ->
 [/\ mu.-integrable D f,
-    ([sequence (\int[mu]_(x in D)
-                   (fun (n0 : nat) (x0 : T) => `|f_ n0 x0 - f x0|) n x)%E]_n%R
-       x @[x --> \oo] --> 0%R)%classic
-  & ([sequence (\int[mu]_(x in D) f_ n x)%E]_n%R x @[x --> \oo] --> 
-     (\int[mu]_(x in D) f x)%E)%classic]
+    filter.cvg_to
+      (filter.nbhs
+         (filter.fmap
+            [sequence (\int[mu]_(x in D)
+                          (fun (n0 : nat) (x0 : T) => `|f_ n0 x0 - f x0|) n x)%E]_n%R
+            (filter.nbhs filter.eventually)))
+      (filter.nbhs 0%R)
+  & filter.cvg_to
+      (filter.nbhs
+         (filter.fmap [sequence (\int[mu]_(x in D) f_ n x)%E]_n%R
+            (filter.nbhs filter.eventually)))
+      (filter.nbhs (\int[mu]_(x in D) f x)%E)]
 
 dominated_convergence is not universe polymorphic
 Arguments dominated_convergence [d]%_measure_display_scope 
@@ -512,7 +531,7 @@ dominated_convergence is opaque
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.dominated_convergence
 Declared in
-library mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence, line 182, characters 8-29
+library mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence, line 181, characters 8-29
 ">dominated_convergence</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#d7e433f5d2fe56f5b712860a9ff2a681">[/\</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#d7e433f5d2fe56f5b712860a9ff2a681"> </a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_theorem.mu">mu</a></span>.<span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integrable.html#::type_scope:x_'.-integrable'">-integrable</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integrable.html#::type_scope:x_'.-integrable'"> D</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_theorem.f">f</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#d7e433f5d2fe56f5b712860a9ff2a681">,</a></span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.sequences.html#2c0dce88808fbe490e9af47ca46d6b65">[sequence</a></span><span class="id"><a href="mathcomp.analysis.sequences.html#2c0dce88808fbe490e9af47ca46d6b65"> </a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3">\int[</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_theorem.mu">mu</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3">]_</a></span>(<span id="x:119" class="id"><a name="x:119" class="">x</a></span><span class="gallina-kwd"> in</span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3"> </a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_theorem.D">D</a></span>) (<span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_theorem.g_">g_</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#n:118">n</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#x:119">x</a></span>)<span class="id"><a href="mathcomp.analysis.sequences.html#2c0dce88808fbe490e9af47ca46d6b65">]_</a></span><span id="n:118" class="id"><a name="n:118" class="">n</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> @</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#228a5fbd8d7ef28f21231bccff88d0b0">\oo</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id">0</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#d7e433f5d2fe56f5b712860a9ff2a681"> &amp;</a></span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.sequences.html#2c0dce88808fbe490e9af47ca46d6b65">[sequence</a></span><span class="id"><a href="mathcomp.analysis.sequences.html#2c0dce88808fbe490e9af47ca46d6b65"> </a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3">\int[</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_theorem.mu">mu</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3">]_</a></span>(<span id="x:121" class="id"><a name="x:121" class="">x</a></span><span class="gallina-kwd"> in</span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3"> </a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_theorem.D">D</a></span>) (<span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_theorem.f_">f_</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#n:120">n</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#x:121">x</a></span>)<span class="id"><a href="mathcomp.analysis.sequences.html#2c0dce88808fbe490e9af47ca46d6b65">]_</a></span><span id="n:120" class="id"><a name="n:120" class="">n</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> @</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#228a5fbd8d7ef28f21231bccff88d0b0">\oo</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3">\int[</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_theorem.mu">mu</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3">]_</a></span>(<span id="x:122" class="id"><a name="x:122" class="">x</a></span><span class="gallina-kwd"> in</span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_definition.html#871f2882c0e95b3d1e1d20f0a4fbdef3"> </a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_theorem.D">D</a></span>) (<span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#dominated_convergence_theorem.f">f</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#x:122">x</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#d7e433f5d2fe56f5b712860a9ff2a681"> ]</a></span>.<br/>
@@ -631,8 +650,17 @@ exists g_ : {sfun T >-> R} ^nat,
   [/\ forall n : nat, mu.-integrable E (EFin \o g_ n),
       forall x : T,
       E x ->
-      ((EFin \o (fun x0 : nat => g_ x0 x)) x0 @[x0 --> \oo] --> f x)%classic
-    & ((\int[mu]_(z in E) `|f z - (g_ n z)%:E|)%E @[n --> \oo] --> 0%R)%classic]
+      filter.cvg_to
+        (filter.nbhs
+           (filter.fmap (EFin \o (fun x0 : nat => g_ x0 x))
+              (filter.nbhs filter.eventually)))
+        (filter.nbhs (f x))
+    & filter.cvg_to
+        (filter.nbhs
+           (filter.fmap
+              (fun n : nat => (\int[mu]_(z in E) `|f z - (g_ n z)%:E|)%E)
+              (filter.nbhs filter.eventually)))
+        (filter.nbhs 0%R)]
 
 approximation_sfun_integrable is not universe polymorphic
 Arguments approximation_sfun_integrable [d]%_measure_display_scope 
@@ -642,7 +670,7 @@ approximation_sfun_integrable is opaque
 Expands to: Constant
             mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.approximation_sfun_integrable
 Declared in
-library mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence, line 286, characters 6-35
+library mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence, line 285, characters 6-35
 ">approximation_sfun_integrable</a></span> (<span id="f:153" class="id"><a name="f:153" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#simple_density_L1.T">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#4c9ddfb63ff52527d9adecfde4a667c3">\bar</a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#4c9ddfb63ff52527d9adecfde4a667c3"> </a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#simple_density_L1.R">R</a></span>)<span class="id">:</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#simple_density_L1.mu">mu</a></span>.<span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integrable.html#::type_scope:x_'.-integrable'">-integrable</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integrable.html#::type_scope:x_'.-integrable'"> E</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#f:153">f</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><br/>
 &nbsp;&nbsp;<span class="gallina-kwd">exists</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"> </a></span><span id="g_:154" class="id"><a name="g_:154" class="">g_</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.simple_functions.html#a31aeb01649360da8ee808c8c37b97eb">{sfun</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.simple_functions.html#a31aeb01649360da8ee808c8c37b97eb"> </a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#simple_density_L1.T">T</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.simple_functions.html#a31aeb01649360da8ee808c8c37b97eb"> &gt;-&gt;</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.simple_functions.html#a31aeb01649360da8ee808c8c37b97eb"> </a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_dominated_convergence.html#simple_density_L1.R">R</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.simple_functions.html#a31aeb01649360da8ee808c8c37b97eb">}</a></span><span class="id"><a href="mathcomp.analysis.sequences.html#0bbe80633d78a4f277dbfba268ab7c04">^nat</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54">,</a></span><br/>

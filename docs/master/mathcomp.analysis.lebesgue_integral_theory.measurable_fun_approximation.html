@@ -74,6 +74,7 @@
 <li><a href="mathcomp.analysis.normedtype_theory.normedtype.html">normedtype</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html">num_normedtype</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html">pseudometric_normed_Zmodule</a></li>
+<li><a href="mathcomp.analysis.normedtype_theory.tvs.html">tvs</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.urysohn.html">urysohn</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.vitali_lemma.html">vitali_lemma</a></li>
           </ul>
@@ -106,6 +107,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.function_spaces.html">function_spaces</a></li>
 <li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
@@ -139,7 +141,6 @@
 <li><a href="mathcomp.analysis.esum.html">esum</a></li>
 <li><a href="mathcomp.analysis.exp.html">exp</a></li>
 <li><a href="mathcomp.analysis.ftc.html">ftc</a></li>
-<li><a href="mathcomp.analysis.function_spaces.html">function_spaces</a></li>
 <li><a href="mathcomp.analysis.gauss_integral.html">gauss_integral</a></li>
 <li><a href="mathcomp.analysis.hoelder.html">hoelder</a></li>
 <li><a href="mathcomp.analysis.kernel.html">kernel</a></li>
@@ -152,7 +153,6 @@
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
-<li><a href="mathcomp.analysis.tvs.html">tvs</a></li>
           </ul>
           </details>
           </li>
@@ -227,16 +227,15 @@
       <p><a href="./index.html">Top</a></p>
       <h1 class="title">Module mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation</h1>
 <span class="vernacular">From</span><span class="id"> HB</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for HB.structures">structures</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html">ssralg</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.ssrnum.html">ssrnum</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssrint.html">ssrint</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval.html">interval</a></span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.finmap.finmap">finmap</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.archimedean.html">archimedean</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html">ssralg</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.ssrnum.html">ssrnum</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssrint.html">ssrint</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval.html">interval</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html">interval_inference</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.archimedean.html">archimedean</a></span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.finmap.finmap">finmap</a></span>.<br/>
 <span class="id">#[warning=</span><span class="id">&quot;-warn-library-file-internal-analysis&quot;</span><span class="id">]</span><br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.unstable.html">unstable</a></span>.<br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.mathcomp_extra.html">mathcomp_extra</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.boolp.html">boolp</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html">classical_sets</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.functions.html">functions</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.cardinality.html">cardinality</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html">reals</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.fsbigop.html">fsbigop</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html">interval_inference</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology.html">topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.ereal.html">ereal</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.tvs.html">tvs</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.normedtype.html">normedtype</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.sequences.html">sequences</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.real_interval.html">real_interval</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.function_spaces.html">function_spaces</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.esum.html">esum</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure.html">measure</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.cardinality.html">cardinality</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html">reals</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.fsbigop.html">fsbigop</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology.html">topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.ereal.html">ereal</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.tvs.html">tvs</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.normedtype.html">normedtype</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.sequences.html">sequences</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.real_interval.html">real_interval</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.esum.html">esum</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure.html">measure</a></span>.<br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_measure.html">lebesgue_measure</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html">numfun</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.realfun.html">realfun</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.exp.html">exp</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.simple_functions.html">simple_functions</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measurable_realfun.html">measurable_realfun</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.simple_functions.html">simple_functions</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
 # Approximation theorem for measurable functions
@@ -259,6 +258,7 @@ Main reference:
 
 </div>
 <br/>
+<span class="gallina-kwd">Set</span><span class="id"> SsrOldRewriteGoalsOrder</span>.  <br/>
 <span class="gallina-kwd">Set</span><span class="vernacular"> Implicit</span><span class="vernacular"> Arguments</span>.<br/>
 <span class="vernacular">Unset</span><span class="vernacular"> Strict</span><span class="vernacular"> Implicit</span>.<br/>
 <span class="vernacular">Unset</span><span class="vernacular"> Printing</span><span class="vernacular"> Implicit</span><span class="vernacular"> Defensive</span>.<br/>
@@ -661,7 +661,11 @@ forall [d : measure_display] [T : measurableType d]
 (forall x0 : T, D x0 -> (0%R <= f x0)%E) ->
 D x ->
 (f x < +oo)%E ->
-(approx (T:=T) (R:=R) D f x0 x @[x0 --> \oo] --> fine (f x))%classic
+filter.cvg_to
+  (filter.nbhs
+     (filter.fmap ((approx (T:=T) (R:=R) D f)^~ x)
+        (filter.nbhs filter.eventually)))
+  (filter.nbhs (fine (f x)))
 
 cvg_approx is not universe polymorphic
 Expanded type for implicit arguments
@@ -672,7 +676,7 @@ forall [d : measure_display] [T : measurableType d]
 D x ->
 (f x < +oo)%E ->
 forall [t : set R],
-nbhs (fine (f x)) t ->
+filter.nbhs (fine (f x)) t ->
 exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i
@@ -750,7 +754,17 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="dvg_approx" class="id"><a name="dvg_approx" class="" title="dvg_approx :
 forall [d : measure_display] [T : measurableType d] 
   [R : realType] [D : set T] [f : T -> \bar R] [x : T],
-D x -> f x = +oo%E -> ~ cvgn ((approx (T:=T) (R:=R) D f)^~ x : nat -> R^o)
+D x ->
+f x = +oo%E ->
+~
+filter.cvg_to
+  (filter.nbhs
+     (filter.fmap ((approx (T:=T) (R:=R) D f)^~ x : nat -> R^o)
+        (filter.nbhs filter.eventually)))
+  (filter.nbhs
+     (filter.lim
+        (filter.fmap ((approx (T:=T) (R:=R) D f)^~ x : nat -> R^o)
+           (filter.nbhs filter.eventually))))
 
 dvg_approx is not universe polymorphic
 Arguments dvg_approx [d]%_measure_display_scope [T R]
@@ -781,7 +795,11 @@ forall [d : measure_display] [T : measurableType d]
 (forall x : T, D x -> (0%R <= f x)%E) ->
 forall [x : T],
 D x ->
-((EFin \o (approx (T:=T) (R:=R) D f)^~ x) x0 @[x0 --> \oo] --> f x)%classic
+filter.cvg_to
+  (filter.nbhs
+     (filter.fmap (EFin \o (approx (T:=T) (R:=R) D f)^~ x)
+        (filter.nbhs filter.eventually)))
+  (filter.nbhs (f x))
 
 ecvg_approx is not universe polymorphic
 Expanded type for implicit arguments
@@ -792,7 +810,7 @@ forall [d : measure_display] [T : measurableType d]
 forall [x : T],
 D x ->
 forall [t : set \bar R],
-nbhs (f x) t ->
+filter.nbhs (f x) t ->
 exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i
@@ -897,9 +915,14 @@ forall [d : measure_display] [T : measurableType d]
 (forall x : T, D x -> (0%R <= f x)%E) ->
 forall [x : T],
 D x ->
-((EFin \o
-    (fun x0 : nat => nnsfun_approx (T:=T) (R:=R) (D:=D) mD (f:=f) mf x0 x))
-   x0 @[x0 --> \oo] --> f x)%classic
+filter.cvg_to
+  (filter.nbhs
+     (filter.fmap
+        (EFin \o
+           (fun x0 : nat =>
+            nnsfun_approx (T:=T) (R:=R) (D:=D) mD (f:=f) mf x0 x))
+        (filter.nbhs filter.eventually)))
+  (filter.nbhs (f x))
 
 cvg_nnsfun_approx is not universe polymorphic
 Expanded type for implicit arguments
@@ -915,7 +938,7 @@ forall [d : measure_display] [T : measurableType d]
 forall [x : T],
 D x ->
 forall [t : set \bar R],
-nbhs (f x) t ->
+filter.nbhs (f x) t ->
 exists2 i : nat,
   [set: nat]%classic i &
   ((fun N : nat => [set n | N <= n]) i
@@ -1004,7 +1027,11 @@ exists g : {nnsfun T >-> R} ^nat,
   n <= m >-> (n <= m)%O} /\
   (forall x : T,
    D x ->
-   ((EFin \o (fun x0 : nat => g x0 x)) x0 @[x0 --> \oo] --> f x)%classic)
+   filter.cvg_to
+     (filter.nbhs
+        (filter.fmap (EFin \o (fun x0 : nat => g x0 x))
+           (filter.nbhs filter.eventually)))
+     (filter.nbhs (f x)))
 
 approximation is not universe polymorphic
 Arguments approximation [d]%_measure_display_scope 
@@ -1205,7 +1232,11 @@ measurable_fun (T:=T)
 exists g : {sfun T >-> R} ^nat,
   forall x : T,
   D x ->
-  ((EFin \o (fun x0 : nat => g x0 x)) x0 @[x0 --> \oo] --> f x)%classic
+  filter.cvg_to
+    (filter.nbhs
+       (filter.fmap (EFin \o (fun x0 : nat => g x0 x))
+          (filter.nbhs filter.eventually)))
+    (filter.nbhs (f x))
 
 approximation_sfun is not universe polymorphic
 Arguments approximation_sfun [d]%_measure_display_scope 
@@ -1468,7 +1499,7 @@ forall [d : measure_display] [T : measurableType d]
 measurable_fun (T:=T)
   (U:=constructive_ereal_extended__canonical__measurable_structure_SigmaRing
         R)
-  D (fun x : T => \big[+%R/0%R]_(0 <= i <oo | i \in P) h i x)
+  D (fun x : T => \big[+%E/0%R]_(0 <= i <oo | i \in P) h i x)
 
 ge0_emeasurable_sum is not universe polymorphic
 Expanded type for implicit arguments
@@ -1495,7 +1526,7 @@ forall
         T in
       class) in
  measurable)
-  (D `&` (fun x : T => \big[+%R/0%R]_(0 <= i <oo | i \in P) h i x) @^-1` Y)%classic
+  (D `&` (fun x : T => \big[+%E/0%R]_(0 <= i <oo | i \in P) h i x) @^-1` Y)%classic
 
 Arguments ge0_emeasurable_sum [d]%_measure_display_scope 
   [T R] [D]%_classical_set_scope [h]%_function_scope 
@@ -1544,7 +1575,7 @@ measurable_fun (T:=T)
 measurable_fun (T:=T)
   (U:=constructive_ereal_extended__canonical__measurable_structure_SigmaRing
         R)
-  D (f \- g)%E
+  D (fun x : T => ((f x : \bar R) - g x)%E)
 
 emeasurable_funB is not universe polymorphic
 Expanded type for implicit arguments
@@ -1570,7 +1601,7 @@ forall
      (let (sort, class) as record return (Measurable.axioms_ d record) :=
         T in
       class) in
- measurable) (D `&` (f \- g)%E @^-1` Y)%classic
+ measurable) (D `&` (fun x : T => ((f x : \bar R) - g x)%E) @^-1` Y)%classic
 
 Arguments emeasurable_funB [d]%_measure_display_scope 
   [T R] [D]%_classical_set_scope [f g]%_function_scope 
@@ -2366,7 +2397,7 @@ Qed.</div></details>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="gallina-kwd">by</span><span class="id"> move=&gt;</span><span class="id"> k</span><span class="id"> /=;</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#measurableD">measurableD</a></span><span class="id"> =&gt;</span><span class="id"> //;</span><span class="id"> apply:</span><span class="id"> mgK</span>.<br/>
 &nbsp;&nbsp;<span class="id">apply:</span> (<span class="id">@</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.le_trans">le_trans</a></span><span class="id"> _</span><span class="id"> _</span>(<span class="id"><a href="mathcomp.analysis.sequences.html#acaaf5f54a6a8a222320424b6e0ccad5">\sum_</a></span>(<span id="k:352" class="id"><span id="k:351" class="id"><span id="k:350" class="id"><span id="k:349" class="id"><span id="k:348" class="id"><span id="k:347" class="id"><a name="k:352" class="">k</a></span></span></span></span></span></span><span class="id"><a href="mathcomp.analysis.sequences.html#acaaf5f54a6a8a222320424b6e0ccad5"> &lt;oo</a></span>) (<span class="id">e2n</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html#k:347">k</a></span>)<span class="id"><a href="mathcomp.reals.constructive_ereal.html#bc34d0712444fb7fddc80987d6cdcb61">%:E</a></span>))<span class="id">;</span><span class="id"> last</span><span class="id"> exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.sequences.html#epsilon_trick0">epsilon_trick0</a></span>.<br/>
 &nbsp;&nbsp;<span class="gallina-kwd">by</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.sequences.html#lee_nneseries">lee_nneseries</a></span><span class="id"> =&gt;</span><span class="id"> //</span><span class="id"> k</span><span class="id"> _;</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.ltW">ltW</a></span><span class="id">;</span><span class="id"> have</span><span class="id"> []</span><span class="id"> :=</span><span class="id"> gKP</span><span class="id"> k</span>.<br/>
-<span class="id">apply:</span> (<span class="id">@</span><span class="id"><a href="mathcomp.analysis.function_spaces.html#uniform_limit_continuous_subspace">uniform_limit_continuous_subspace</a></span><span class="id"> _</span><span class="id"> _</span><span class="id"> _</span> (<span class="id">g_</span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> @</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#228a5fbd8d7ef28f21231bccff88d0b0">\oo</a></span>))<span class="id"> =&gt;</span><span class="id"> //</span>.<br/>
+<span class="id">apply:</span> (<span class="id">@</span><span class="id"><a href="mathcomp.analysis.topology_theory.function_spaces.html#uniform_limit_continuous_subspace">uniform_limit_continuous_subspace</a></span><span class="id"> _</span><span class="id"> _</span><span class="id"> _</span> (<span class="id">g_</span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> @</a></span><span class="id"><a href="mathcomp.classical.filter.html#cd15f258bbfe5f8dd5d2f871f9f5a736"> </a></span><span class="id"><a href="mathcomp.classical.filter.html#228a5fbd8d7ef28f21231bccff88d0b0">\oo</a></span>))<span class="id"> =&gt;</span><span class="id"> //</span>.<br/>
 <span class="id">near_simpl;</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#nearW">nearW</a></span><span class="id"> =&gt;</span><span class="id"> //</span><span class="id"> n;</span><span class="id"> apply:</span> (<span class="id">@</span><span class="id"><a href="mathcomp.analysis.topology_theory.subspace_topology.html#continuous_subspaceW">continuous_subspaceW</a></span><span class="id"> _</span><span class="id"> _</span><span class="id"> _</span> (<span class="id">gK</span><span class="id"> n</span>)).<br/>
 &nbsp;&nbsp;<span class="gallina-kwd">by</span><span class="id"> move=&gt;</span><span class="id"> z</span><span class="id"> [+</span><span class="id"> _];</span><span class="id"> apply</span>.<br/>
 <span class="gallina-kwd">by</span><span class="id"> have</span><span class="id"> []</span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Specif.html#projT2">projT2</a></span> (<span class="id"><a href="mathcomp.classical.boolp.html#cid">cid</a></span> (<span class="id">gK'</span><span class="id"> n</span>)).<br/>
@@ -2382,11 +2413,21 @@ measurable_fun (T:=Real_sort__canonical__measurable_structure_SigmaRing rT)
   (U:=Real_sort__canonical__measurable_structure_SigmaRing rT) A f ->
 exists
   K : set
-        (numFieldTopology.Real_sort__canonical__topology_structure_Topological
-           rT),
-  [/\ compact K, (K `<=` A)%classic,
+        (topology_structure.Topological.sort
+           (num_topology.numFieldTopology.Real_sort__canonical__topology_structure_Topological
+              rT)),
+  [/\ compact.compact K, (K `<=` A)%classic,
       (lebesgue_measure (A `\` K)%classic < eps%:E)%E
-    & {within K, continuous f}%classic]
+    & forall
+        x : filter.Nbhs.sort
+              (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+                 K),
+      filter.continuous_at
+        (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+              K)
+        (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
+              rT)
+        x (subspace_topology.from_subspace K f)]
 
 measurable_almost_continuous is not universe polymorphic
 Arguments measurable_almost_continuous [rT] [A]%_classical_set_scope 

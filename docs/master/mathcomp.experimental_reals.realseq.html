@@ -74,6 +74,7 @@
 <li><a href="mathcomp.analysis.normedtype_theory.normedtype.html">normedtype</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html">num_normedtype</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html">pseudometric_normed_Zmodule</a></li>
+<li><a href="mathcomp.analysis.normedtype_theory.tvs.html">tvs</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.urysohn.html">urysohn</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.vitali_lemma.html">vitali_lemma</a></li>
           </ul>
@@ -106,6 +107,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.function_spaces.html">function_spaces</a></li>
 <li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
@@ -139,7 +141,6 @@
 <li><a href="mathcomp.analysis.esum.html">esum</a></li>
 <li><a href="mathcomp.analysis.exp.html">exp</a></li>
 <li><a href="mathcomp.analysis.ftc.html">ftc</a></li>
-<li><a href="mathcomp.analysis.function_spaces.html">function_spaces</a></li>
 <li><a href="mathcomp.analysis.gauss_integral.html">gauss_integral</a></li>
 <li><a href="mathcomp.analysis.hoelder.html">hoelder</a></li>
 <li><a href="mathcomp.analysis.kernel.html">kernel</a></li>
@@ -152,7 +153,6 @@
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
-<li><a href="mathcomp.analysis.tvs.html">tvs</a></li>
           </ul>
           </details>
           </li>
@@ -236,7 +236,7 @@
 <span class="gallina-kwd">Set</span><span class="vernacular"> Implicit</span><span class="vernacular"> Arguments</span>.<br/>
 <span class="vernacular">Unset</span><span class="vernacular"> Strict</span><span class="vernacular"> Implicit</span>.<br/>
 <span class="vernacular">Unset</span><span class="vernacular"> Printing</span><span class="vernacular"> Implicit</span><span class="vernacular"> Defensive</span>.<br/>
-<span class="vernacular">Unset</span><span class="id"> SsrOldRewriteGoalsOrder</span>.<br/>
+<span class="vernacular">Unset</span><span class="id"> SsrOldRewriteGoalsOrder</span>.  <br/>
 <br/>
 <span class="vernacular">Import</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.TTheory">Order</a></span>.<span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.TTheory">TTheory</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#GRing.Theory">GRing</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#GRing.Theory">Theory</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.archimedean.html#Num.Theory">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.archimedean.html#Num.Theory">Theory</a></span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.bigenough.bigenough#BigEnough">BigEnough</a></span>.<br/>
 <br/>
@@ -463,7 +463,7 @@ library mathcomp.experimental_reals.realseq, line 107, characters 6-18
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
 <span class="id">case:</span><span class="id"> l1</span><span class="id"> l2</span><span class="id"> =&gt;</span><span class="id"> [l1||]</span><span class="id"> [l2||]</span><span class="id"> //=</span><span class="id"> lt_l12;</span><span class="id"> last</span><span class="id"> first</span>.<br/>
-<span class="id">+</span><span class="gallina-kwd"> exists</span> (<span class="id"><a href="mathcomp.experimental_reals.realseq.html#NNInf">NNInf</a></span><span class="id"> 0</span>)<span class="id">,</span> (<span class="id"><a href="mathcomp.experimental_reals.realseq.html#NPInf">NPInf</a></span><span class="id"> 1</span>)<span class="id"> =&gt;</span><span class="id"> x</span><span class="id"> y;</span><span class="id"> rewrite</span><span class="id"> !</span><span class="id"><a href="NOTFOUND the module url for mathcomp.finmap.finmap#inE">inE</a></span><span class="id"> =&gt;</span><span class="id"> lt1</span><span class="id"> lt2</span>.<br/>
+<span class="id">+</span><span class="gallina-kwd"> exists</span> (<span class="id"><a href="mathcomp.experimental_reals.realseq.html#NNInf">NNInf</a></span><span class="id"> 0</span>)<span class="id">,</span> (<span class="id"><a href="mathcomp.experimental_reals.realseq.html#NPInf">NPInf</a></span><span class="id"> 1</span>)<span class="id"> =&gt;</span><span class="id"> x</span><span class="id"> y;</span><span class="id"> rewrite</span><span class="id"> !</span><span class="id"><a href="NOTFOUND the module url for mathcomp.finmap.finmap#inE">inE</a></span><span class="id"> =&gt;</span><span class="id"> lt1</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.bigenough.bigenough#BigEnough.closed">lt2</a></span>.<br/>
 &nbsp;&nbsp;<span class="gallina-kwd">by</span><span class="id"> apply/</span>(<span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.lt_trans">lt_trans</a></span><span class="id"> lt1</span>)<span class="id">/</span>(<span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.lt_trans">lt_trans</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.ltr01">ltr01</a></span>).<br/>
 <span class="id">+</span><span class="gallina-kwd"> exists</span> (<span class="id"><a href="mathcomp.experimental_reals.realseq.html#NNInf">NNInf</a></span> (<span class="id">l2</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#::ring_scope:x_'-'_x">-</a></span><span class="id">1</span>))<span class="id">,</span> (<span class="id"><a href="mathcomp.experimental_reals.realseq.html#B1">B1</a></span><span class="id"> l2</span>)<span class="id"> =&gt;</span><span class="id"> x</span><span class="id"> y;</span><span class="id"> rewrite</span><span class="id"> !</span><span class="id"><a href="NOTFOUND the module url for mathcomp.finmap.finmap#inE">inE</a></span>.<br/>
 &nbsp;&nbsp;<span class="id">rewrite</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.ltr_norml">ltr_norml</a></span><span class="id"> [-1</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id">_]</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.ltrBrDl">ltrBrDl</a></span>.<br/>
@@ -768,7 +768,7 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ncvgD" class="id"><a name="ncvgD" class="" title="ncvgD :
 forall [R : realType] [u v : nat -> R] [lu lv : R],
 ncvg (R:=R) u lu%:E ->
-ncvg (R:=R) v lv%:E -> ncvg (R:=R) (u \+ v)%R ((lu + lv)%E)%:E
+ncvg (R:=R) v lv%:E -> ncvg (R:=R) (u \+ v)%R (lu + lv)%:E
 
 ncvgD is not universe polymorphic
 Arguments ncvgD [R] [u v]%_function_scope [lu lv]%_ring_scope _ _ v

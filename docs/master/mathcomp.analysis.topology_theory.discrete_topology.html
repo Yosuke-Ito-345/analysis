@@ -74,6 +74,7 @@
 <li><a href="mathcomp.analysis.normedtype_theory.normedtype.html">normedtype</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html">num_normedtype</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html">pseudometric_normed_Zmodule</a></li>
+<li><a href="mathcomp.analysis.normedtype_theory.tvs.html">tvs</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.urysohn.html">urysohn</a></li>
 <li><a href="mathcomp.analysis.normedtype_theory.vitali_lemma.html">vitali_lemma</a></li>
           </ul>
@@ -106,6 +107,7 @@
 <li><a href="mathcomp.analysis.topology_theory.compact.html">compact</a></li>
 <li><a href="mathcomp.analysis.topology_theory.connected.html">connected</a></li>
 <li><a href="mathcomp.analysis.topology_theory.discrete_topology.html">discrete_topology</a></li>
+<li><a href="mathcomp.analysis.topology_theory.function_spaces.html">function_spaces</a></li>
 <li><a href="mathcomp.analysis.topology_theory.initial_topology.html">initial_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.matrix_topology.html">matrix_topology</a></li>
 <li><a href="mathcomp.analysis.topology_theory.metric_structure.html">metric_structure</a></li>
@@ -139,7 +141,6 @@
 <li><a href="mathcomp.analysis.esum.html">esum</a></li>
 <li><a href="mathcomp.analysis.exp.html">exp</a></li>
 <li><a href="mathcomp.analysis.ftc.html">ftc</a></li>
-<li><a href="mathcomp.analysis.function_spaces.html">function_spaces</a></li>
 <li><a href="mathcomp.analysis.gauss_integral.html">gauss_integral</a></li>
 <li><a href="mathcomp.analysis.hoelder.html">hoelder</a></li>
 <li><a href="mathcomp.analysis.kernel.html">kernel</a></li>
@@ -152,7 +153,6 @@
 <li><a href="mathcomp.analysis.realfun.html">realfun</a></li>
 <li><a href="mathcomp.analysis.sequences.html">sequences</a></li>
 <li><a href="mathcomp.analysis.trigo.html">trigo</a></li>
-<li><a href="mathcomp.analysis.tvs.html">tvs</a></li>
           </ul>
           </details>
           </li>
@@ -252,6 +252,9 @@ pdiscreteOrderTopologicalType == pointed, ordered, and discrete
                                  topology, uniformity, and pseudometric
 ```
 </div>
+<br/>
+<span class="gallina-kwd">Set</span><span class="id"> SsrOldRewriteGoalsOrder</span>.  <br/>
+<br/>
 <span class="vernacular">Import</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.TTheory">Order</a></span>.<span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.TTheory">TTheory</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#GRing.Theory">GRing</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#GRing.Theory">Theory</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.archimedean.html#Num.Def">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.archimedean.html#Num.Def">Def</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.archimedean.html#Num.Theory">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.archimedean.html#Num.Theory">Theory</a></span>.<br/>
 <br/>
 <span class="vernacular">Local</span><span class="vernacular"> Open</span><span class="vernacular"> Scope</span><span class="id"> classical_set_scope</span>.<br/>
@@ -272,7 +275,7 @@ discrete_ent is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_ent
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 39, characters 11-23
+library mathcomp.analysis.topology_theory.discrete_topology, line 42, characters 11-23
 ">discrete_ent</a></span><span class="id"> {</span><span id="T:6" class="id"><a name="T:6" class="">T</a></span><span class="id">}</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span> (<span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#T:6">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"> *</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#T:6">T</a></span>))<span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.classical.filter.html#globally">globally</a></span> (<span class="id"><a href="mathcomp.classical.classical_sets.html#range">range</a></span> (<span class="gallina-kwd">fun</span><span class="id"> </span><span id="x:7" class="id"><a name="x:7" class="">x</a></span><span class="id"> =&gt;</span> (<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#x:7">x</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#x:7">x</a></span>))).<br/>
 <br/>
@@ -290,7 +293,7 @@ discrete_ball is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_ball
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 48, characters 11-24
+library mathcomp.analysis.topology_theory.discrete_topology, line 51, characters 11-24
 ">discrete_ball</a></span><span class="id"> {</span><span id="R:11" class="id"><a name="R:11" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.NumDomain.Exports.numDomainType">numDomainType</a></span><span class="id">}</span><span class="id"> {</span><span id="T:12" class="id"><a name="T:12" class="">T</a></span><span class="id">}</span> (<span id="x:13" class="id"><a name="x:13" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#T:12">T</a></span>) (<span id="eps:14" class="id"><a name="eps:14" class="">eps</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#R:11">R</a></span>)<span class="id"> </span><span id="y:15" class="id"><a name="y:15" class="">y</a></span><span class="id"> :</span><span class="gallina-kwd"> Prop</span><span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#x:13">x</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#y:15">y</a></span>.<br/>
 <br/>
@@ -348,240 +351,220 @@ library mathcomp.analysis.topology_theory.discrete_topology, line 48, characters
 <span class="gallina-kwd"> by</span><span class="id"> move=&gt;</span><span class="id"> ?;</span><span class="id"> rewrite</span><span class="id"> {1}</span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_1.nbhs_principalE">nbhs_principalE</a></span><span class="id">;</span><span class="id"> apply/</span><span class="id"><a href="mathcomp.classical.filter.html#principal_filterP">principal_filterP</a></span>. Qed.</div></details>
 <br/>
 <span id="Builders_1.Builders_1_T__canonical__topology_structure_Topological" class="id"><span id="Builders_1.discrete_topology_Discrete_ofNbhs__to__topology_structure_Nbhs_isTopological" class="id"><span id="Builders_1.HB_unnamed_factory_3" class="id"><a name="Builders_1.Builders_1_T__canonical__topology_structure_Topological" class="" title="Builders_1.Builders_1_T__canonical__topology_structure_Topological :
-forall [T : Type] [local_mixin_choice_hasChoice : hasChoice.axioms_ T]
-  [local_mixin_eqtype_hasDecEq : Equality.mixin_of T]
-  [local_mixin_filter_selfFiltered : selfFiltered.axioms_ T]
-  [local_mixin_filter_isFiltered : isFiltered.axioms_ T T],
-Nbhs_isNbhsTopological.phant_axioms (m:=local_mixin_choice_hasChoice)
-  (m0:=local_mixin_eqtype_hasDecEq) (m1:=local_mixin_filter_selfFiltered)
-  (m2:=local_mixin_filter_isFiltered) id_phant
-  (s:=Builders_1.Builders_1_T__canonical__filter_Nbhs
-        local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-        local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
+forall (T : Type) (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
+  (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T),
+Discrete_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
+  local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+  local_mixin_filter_isFiltered T id_phant
+  (Builders_1.Builders_1_T__canonical__filter_Nbhs T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   id_phant
-  (c:={|
-        Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-        Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-        Nbhs.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-        Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
-      |})
-  id_phant (m3:=local_mixin_choice_hasChoice) id_phant
-  (m4:=local_mixin_eqtype_hasDecEq) id_phant
-  (m5:=local_mixin_filter_selfFiltered) id_phant
-  (m6:=local_mixin_filter_isFiltered) id_phant id_phant id_phant
-  (s0:=Builders_1.Builders_1_T__canonical__filter_Filtered
-         local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-         local_mixin_filter_isFiltered)
+  {|
+    filter.Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+    filter.Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+    filter.Nbhs.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+    filter.Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+  |} id_phant local_mixin_choice_hasChoice id_phant
+  local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
+  id_phant local_mixin_filter_isFiltered id_phant id_phant T T id_phant
+  (Builders_1.Builders_1_T__canonical__filter_Filtered T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_isFiltered)
   id_phant
-  (c0:={|
-         Filtered.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-         Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-         Filtered.filter_isFiltered_mixin := local_mixin_filter_isFiltered
-       |})
-  id_phant (m7:=local_mixin_choice_hasChoice) id_phant
-  (m8:=local_mixin_eqtype_hasDecEq) id_phant
-  (m9:=local_mixin_filter_isFiltered) id_phant id_phant ->
-topologicalType
+  {|
+    filter.Filtered.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+    filter.Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+    filter.Filtered.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+  |} id_phant local_mixin_choice_hasChoice id_phant
+  local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_isFiltered id_phant
+  id_phant ->
+topology_structure.Topological.type
 
 Builders_1.Builders_1_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments Builders_1.Builders_1_T__canonical__topology_structure_Topological
-  [T]%_type_scope
-  [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-   local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+  T%_type_scope local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  local_mixin_filter_selfFiltered local_mixin_filter_isFiltered 
   fresh_name_2
 Builders_1.Builders_1_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
-            mathcomp.analysis.topology_theory.topology_structure.Builders_1.Builders_1_T__canonical__topology_structure_Topological
+            mathcomp.analysis.topology_theory.discrete_topology.Builders_1.Builders_1_T__canonical__topology_structure_Topological
 Declared in
-library mathcomp.analysis.topology_theory.topology_structure, line 445, characters 0-99
+library mathcomp.analysis.topology_theory.discrete_topology, line 95, characters 0-129
 ">HB</a></span></span></span>.<span id="Builders_1.Builders_1_T__canonical__topology_structure_Topological" class="id"><span id="Builders_1.discrete_topology_Discrete_ofNbhs__to__topology_structure_Nbhs_isTopological" class="id"><span id="Builders_1.HB_unnamed_factory_3" class="id"><a name="Builders_1.Builders_1_T__canonical__topology_structure_Topological" class="" title="Builders_1.Builders_1_T__canonical__topology_structure_Topological :
-forall [T : Type] [local_mixin_choice_hasChoice : hasChoice.axioms_ T]
-  [local_mixin_eqtype_hasDecEq : Equality.mixin_of T]
-  [local_mixin_filter_selfFiltered : selfFiltered.axioms_ T]
-  [local_mixin_filter_isFiltered : isFiltered.axioms_ T T],
-Nbhs_isNbhsTopological.phant_axioms (m:=local_mixin_choice_hasChoice)
-  (m0:=local_mixin_eqtype_hasDecEq) (m1:=local_mixin_filter_selfFiltered)
-  (m2:=local_mixin_filter_isFiltered) id_phant
-  (s:=Builders_1.Builders_1_T__canonical__filter_Nbhs
-        local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-        local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
+forall (T : Type) (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
+  (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T),
+Discrete_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
+  local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+  local_mixin_filter_isFiltered T id_phant
+  (Builders_1.Builders_1_T__canonical__filter_Nbhs T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   id_phant
-  (c:={|
-        Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-        Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-        Nbhs.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-        Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
-      |})
-  id_phant (m3:=local_mixin_choice_hasChoice) id_phant
-  (m4:=local_mixin_eqtype_hasDecEq) id_phant
-  (m5:=local_mixin_filter_selfFiltered) id_phant
-  (m6:=local_mixin_filter_isFiltered) id_phant id_phant id_phant
-  (s0:=Builders_1.Builders_1_T__canonical__filter_Filtered
-         local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-         local_mixin_filter_isFiltered)
+  {|
+    filter.Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+    filter.Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+    filter.Nbhs.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+    filter.Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+  |} id_phant local_mixin_choice_hasChoice id_phant
+  local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
+  id_phant local_mixin_filter_isFiltered id_phant id_phant T T id_phant
+  (Builders_1.Builders_1_T__canonical__filter_Filtered T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_isFiltered)
   id_phant
-  (c0:={|
-         Filtered.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-         Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-         Filtered.filter_isFiltered_mixin := local_mixin_filter_isFiltered
-       |})
-  id_phant (m7:=local_mixin_choice_hasChoice) id_phant
-  (m8:=local_mixin_eqtype_hasDecEq) id_phant
-  (m9:=local_mixin_filter_isFiltered) id_phant id_phant ->
-topologicalType
+  {|
+    filter.Filtered.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+    filter.Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+    filter.Filtered.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+  |} id_phant local_mixin_choice_hasChoice id_phant
+  local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_isFiltered id_phant
+  id_phant ->
+topology_structure.Topological.type
 
 Builders_1.Builders_1_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments Builders_1.Builders_1_T__canonical__topology_structure_Topological
-  [T]%_type_scope
-  [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-   local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+  T%_type_scope local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  local_mixin_filter_selfFiltered local_mixin_filter_isFiltered 
   fresh_name_2
 Builders_1.Builders_1_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
-            mathcomp.analysis.topology_theory.topology_structure.Builders_1.Builders_1_T__canonical__topology_structure_Topological
+            mathcomp.analysis.topology_theory.discrete_topology.Builders_1.Builders_1_T__canonical__topology_structure_Topological
 Declared in
-library mathcomp.analysis.topology_theory.topology_structure, line 445, characters 0-99
+library mathcomp.analysis.topology_theory.discrete_topology, line 95, characters 0-129
 ">instance</a></span></span></span><span class="vernacular"> Definition</span><span id="Builders_1.Builders_1_T__canonical__topology_structure_Topological" class="id"><span id="Builders_1.discrete_topology_Discrete_ofNbhs__to__topology_structure_Nbhs_isTopological" class="id"><span id="Builders_1.HB_unnamed_factory_3" class="id"><a name="Builders_1.Builders_1_T__canonical__topology_structure_Topological" class="" title="Builders_1.Builders_1_T__canonical__topology_structure_Topological :
-forall [T : Type] [local_mixin_choice_hasChoice : hasChoice.axioms_ T]
-  [local_mixin_eqtype_hasDecEq : Equality.mixin_of T]
-  [local_mixin_filter_selfFiltered : selfFiltered.axioms_ T]
-  [local_mixin_filter_isFiltered : isFiltered.axioms_ T T],
-Nbhs_isNbhsTopological.phant_axioms (m:=local_mixin_choice_hasChoice)
-  (m0:=local_mixin_eqtype_hasDecEq) (m1:=local_mixin_filter_selfFiltered)
-  (m2:=local_mixin_filter_isFiltered) id_phant
-  (s:=Builders_1.Builders_1_T__canonical__filter_Nbhs
-        local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-        local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
+forall (T : Type) (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
+  (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T),
+Discrete_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
+  local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+  local_mixin_filter_isFiltered T id_phant
+  (Builders_1.Builders_1_T__canonical__filter_Nbhs T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   id_phant
-  (c:={|
-        Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-        Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-        Nbhs.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-        Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
-      |})
-  id_phant (m3:=local_mixin_choice_hasChoice) id_phant
-  (m4:=local_mixin_eqtype_hasDecEq) id_phant
-  (m5:=local_mixin_filter_selfFiltered) id_phant
-  (m6:=local_mixin_filter_isFiltered) id_phant id_phant id_phant
-  (s0:=Builders_1.Builders_1_T__canonical__filter_Filtered
-         local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-         local_mixin_filter_isFiltered)
+  {|
+    filter.Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+    filter.Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+    filter.Nbhs.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+    filter.Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+  |} id_phant local_mixin_choice_hasChoice id_phant
+  local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
+  id_phant local_mixin_filter_isFiltered id_phant id_phant T T id_phant
+  (Builders_1.Builders_1_T__canonical__filter_Filtered T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_isFiltered)
   id_phant
-  (c0:={|
-         Filtered.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-         Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-         Filtered.filter_isFiltered_mixin := local_mixin_filter_isFiltered
-       |})
-  id_phant (m7:=local_mixin_choice_hasChoice) id_phant
-  (m8:=local_mixin_eqtype_hasDecEq) id_phant
-  (m9:=local_mixin_filter_isFiltered) id_phant id_phant ->
-topologicalType
+  {|
+    filter.Filtered.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+    filter.Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+    filter.Filtered.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+  |} id_phant local_mixin_choice_hasChoice id_phant
+  local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_isFiltered id_phant
+  id_phant ->
+topology_structure.Topological.type
 
 Builders_1.Builders_1_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments Builders_1.Builders_1_T__canonical__topology_structure_Topological
-  [T]%_type_scope
-  [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-   local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+  T%_type_scope local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  local_mixin_filter_selfFiltered local_mixin_filter_isFiltered 
   fresh_name_2
 Builders_1.Builders_1_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
-            mathcomp.analysis.topology_theory.topology_structure.Builders_1.Builders_1_T__canonical__topology_structure_Topological
+            mathcomp.analysis.topology_theory.discrete_topology.Builders_1.Builders_1_T__canonical__topology_structure_Topological
 Declared in
-library mathcomp.analysis.topology_theory.topology_structure, line 445, characters 0-99
+library mathcomp.analysis.topology_theory.discrete_topology, line 95, characters 0-129
 "> _</a></span></span></span><span id="Builders_1.Builders_1_T__canonical__topology_structure_Topological" class="id"><span id="Builders_1.discrete_topology_Discrete_ofNbhs__to__topology_structure_Nbhs_isTopological" class="id"><span id="Builders_1.HB_unnamed_factory_3" class="id"><a name="Builders_1.Builders_1_T__canonical__topology_structure_Topological" class="" title="Builders_1.Builders_1_T__canonical__topology_structure_Topological :
-forall [T : Type] [local_mixin_choice_hasChoice : hasChoice.axioms_ T]
-  [local_mixin_eqtype_hasDecEq : Equality.mixin_of T]
-  [local_mixin_filter_selfFiltered : selfFiltered.axioms_ T]
-  [local_mixin_filter_isFiltered : isFiltered.axioms_ T T],
-Nbhs_isNbhsTopological.phant_axioms (m:=local_mixin_choice_hasChoice)
-  (m0:=local_mixin_eqtype_hasDecEq) (m1:=local_mixin_filter_selfFiltered)
-  (m2:=local_mixin_filter_isFiltered) id_phant
-  (s:=Builders_1.Builders_1_T__canonical__filter_Nbhs
-        local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-        local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
+forall (T : Type) (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
+  (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T),
+Discrete_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
+  local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+  local_mixin_filter_isFiltered T id_phant
+  (Builders_1.Builders_1_T__canonical__filter_Nbhs T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   id_phant
-  (c:={|
-        Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-        Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-        Nbhs.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-        Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
-      |})
-  id_phant (m3:=local_mixin_choice_hasChoice) id_phant
-  (m4:=local_mixin_eqtype_hasDecEq) id_phant
-  (m5:=local_mixin_filter_selfFiltered) id_phant
-  (m6:=local_mixin_filter_isFiltered) id_phant id_phant id_phant
-  (s0:=Builders_1.Builders_1_T__canonical__filter_Filtered
-         local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-         local_mixin_filter_isFiltered)
+  {|
+    filter.Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+    filter.Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+    filter.Nbhs.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+    filter.Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+  |} id_phant local_mixin_choice_hasChoice id_phant
+  local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
+  id_phant local_mixin_filter_isFiltered id_phant id_phant T T id_phant
+  (Builders_1.Builders_1_T__canonical__filter_Filtered T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_isFiltered)
   id_phant
-  (c0:={|
-         Filtered.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-         Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-         Filtered.filter_isFiltered_mixin := local_mixin_filter_isFiltered
-       |})
-  id_phant (m7:=local_mixin_choice_hasChoice) id_phant
-  (m8:=local_mixin_eqtype_hasDecEq) id_phant
-  (m9:=local_mixin_filter_isFiltered) id_phant id_phant ->
-topologicalType
+  {|
+    filter.Filtered.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+    filter.Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+    filter.Filtered.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+  |} id_phant local_mixin_choice_hasChoice id_phant
+  local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_isFiltered id_phant
+  id_phant ->
+topology_structure.Topological.type
 
 Builders_1.Builders_1_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments Builders_1.Builders_1_T__canonical__topology_structure_Topological
-  [T]%_type_scope
-  [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-   local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+  T%_type_scope local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  local_mixin_filter_selfFiltered local_mixin_filter_isFiltered 
   fresh_name_2
 Builders_1.Builders_1_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
-            mathcomp.analysis.topology_theory.topology_structure.Builders_1.Builders_1_T__canonical__topology_structure_Topological
+            mathcomp.analysis.topology_theory.discrete_topology.Builders_1.Builders_1_T__canonical__topology_structure_Topological
 Declared in
-library mathcomp.analysis.topology_theory.topology_structure, line 445, characters 0-99
+library mathcomp.analysis.topology_theory.discrete_topology, line 95, characters 0-129
 "> :=</a></span></span></span><span id="Builders_1.Builders_1_T__canonical__topology_structure_Topological" class="id"><span id="Builders_1.discrete_topology_Discrete_ofNbhs__to__topology_structure_Nbhs_isTopological" class="id"><span id="Builders_1.HB_unnamed_factory_3" class="id"><a name="Builders_1.Builders_1_T__canonical__topology_structure_Topological" class="" title="Builders_1.Builders_1_T__canonical__topology_structure_Topological :
-forall [T : Type] [local_mixin_choice_hasChoice : hasChoice.axioms_ T]
-  [local_mixin_eqtype_hasDecEq : Equality.mixin_of T]
-  [local_mixin_filter_selfFiltered : selfFiltered.axioms_ T]
-  [local_mixin_filter_isFiltered : isFiltered.axioms_ T T],
-Nbhs_isNbhsTopological.phant_axioms (m:=local_mixin_choice_hasChoice)
-  (m0:=local_mixin_eqtype_hasDecEq) (m1:=local_mixin_filter_selfFiltered)
-  (m2:=local_mixin_filter_isFiltered) id_phant
-  (s:=Builders_1.Builders_1_T__canonical__filter_Nbhs
-        local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-        local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
+forall (T : Type) (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
+  (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T),
+Discrete_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
+  local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+  local_mixin_filter_isFiltered T id_phant
+  (Builders_1.Builders_1_T__canonical__filter_Nbhs T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   id_phant
-  (c:={|
-        Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-        Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-        Nbhs.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-        Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
-      |})
-  id_phant (m3:=local_mixin_choice_hasChoice) id_phant
-  (m4:=local_mixin_eqtype_hasDecEq) id_phant
-  (m5:=local_mixin_filter_selfFiltered) id_phant
-  (m6:=local_mixin_filter_isFiltered) id_phant id_phant id_phant
-  (s0:=Builders_1.Builders_1_T__canonical__filter_Filtered
-         local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-         local_mixin_filter_isFiltered)
+  {|
+    filter.Nbhs.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+    filter.Nbhs.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+    filter.Nbhs.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+    filter.Nbhs.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+  |} id_phant local_mixin_choice_hasChoice id_phant
+  local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
+  id_phant local_mixin_filter_isFiltered id_phant id_phant T T id_phant
+  (Builders_1.Builders_1_T__canonical__filter_Filtered T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_isFiltered)
   id_phant
-  (c0:={|
-         Filtered.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-         Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-         Filtered.filter_isFiltered_mixin := local_mixin_filter_isFiltered
-       |})
-  id_phant (m7:=local_mixin_choice_hasChoice) id_phant
-  (m8:=local_mixin_eqtype_hasDecEq) id_phant
-  (m9:=local_mixin_filter_isFiltered) id_phant id_phant ->
-topologicalType
+  {|
+    filter.Filtered.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+    filter.Filtered.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+    filter.Filtered.filter_isFiltered_mixin := local_mixin_filter_isFiltered
+  |} id_phant local_mixin_choice_hasChoice id_phant
+  local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_isFiltered id_phant
+  id_phant ->
+topology_structure.Topological.type
 
 Builders_1.Builders_1_T__canonical__topology_structure_Topological is not universe polymorphic
 Arguments Builders_1.Builders_1_T__canonical__topology_structure_Topological
-  [T]%_type_scope
-  [local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-   local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+  T%_type_scope local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  local_mixin_filter_selfFiltered local_mixin_filter_isFiltered 
   fresh_name_2
 Builders_1.Builders_1_T__canonical__topology_structure_Topological is transparent
 Expands to: Constant
-            mathcomp.analysis.topology_theory.topology_structure.Builders_1.Builders_1_T__canonical__topology_structure_Topological
+            mathcomp.analysis.topology_theory.discrete_topology.Builders_1.Builders_1_T__canonical__topology_structure_Topological
 Declared in
-library mathcomp.analysis.topology_theory.topology_structure, line 445, characters 0-99
+library mathcomp.analysis.topology_theory.discrete_topology, line 95, characters 0-129
 "> @Nbhs_isNbhsTopological</a></span></span></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#Nbhs_isNbhsTopological.Build">Build</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_1.Builders_1.T">T</a></span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_1.principal_nbhs_filter">principal_nbhs_filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_1.principal_nbhs_singleton">principal_nbhs_singleton</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_1.principal_nbhs_nbhs">principal_nbhs_nbhs</a></span>.<br/>
 <br/>
@@ -641,16 +624,16 @@ Qed.</div></details>
 <span id="Builders_6.Builders_6_T__canonical__uniform_structure_Uniform" class="id"><span id="Builders_6.discrete_topology_DiscreteUniform_ofNbhs__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="Builders_6.HB_unnamed_factory_8" class="id"><a name="Builders_6.Builders_6_T__canonical__uniform_structure_Uniform" class="" title="Builders_6.Builders_6_T__canonical__uniform_structure_Uniform :
 forall (T : Type) (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_discrete_topology_Discrete_ofNbhs : 
    Discrete_ofNbhs.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered),
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered),
 DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
   local_mixin_filter_isFiltered local_mixin_discrete_topology_Discrete_ofNbhs
@@ -671,17 +654,21 @@ DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
   id_phant local_mixin_filter_isFiltered id_phant
   local_mixin_discrete_topology_Discrete_ofNbhs id_phant id_phant T id_phant
-  (discrete_topology.Builders_6.Builders_6_T__canonical__topology_structure_Topological
-     T local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  (Builders_6.Builders_6_T__canonical__topology_structure_Topological T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
      local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   {|
-    Topological.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-    Topological.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-    Topological.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-    Topological.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
-    Topological.topology_structure_Nbhs_isTopological_mixin :=
+    topology_structure.Topological.choice_hasChoice_mixin :=
+      local_mixin_choice_hasChoice;
+    topology_structure.Topological.eqtype_hasDecEq_mixin :=
+      local_mixin_eqtype_hasDecEq;
+    topology_structure.Topological.filter_selfFiltered_mixin :=
+      local_mixin_filter_selfFiltered;
+    topology_structure.Topological.filter_isFiltered_mixin :=
+      local_mixin_filter_isFiltered;
+    topology_structure.Topological.topology_structure_Nbhs_isTopological_mixin :=
       local_mixin_topology_structure_Nbhs_isTopological
   |} id_phant local_mixin_choice_hasChoice id_phant
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
@@ -700,20 +687,20 @@ Builders_6.Builders_6_T__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_6.Builders_6_T__canonical__uniform_structure_Uniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 131, characters 0-207
+library mathcomp.analysis.topology_theory.discrete_topology, line 134, characters 0-207
 ">HB</a></span></span></span>.<span id="Builders_6.Builders_6_T__canonical__uniform_structure_Uniform" class="id"><span id="Builders_6.discrete_topology_DiscreteUniform_ofNbhs__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="Builders_6.HB_unnamed_factory_8" class="id"><a name="Builders_6.Builders_6_T__canonical__uniform_structure_Uniform" class="" title="Builders_6.Builders_6_T__canonical__uniform_structure_Uniform :
 forall (T : Type) (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_discrete_topology_Discrete_ofNbhs : 
    Discrete_ofNbhs.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered),
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered),
 DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
   local_mixin_filter_isFiltered local_mixin_discrete_topology_Discrete_ofNbhs
@@ -734,17 +721,21 @@ DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
   id_phant local_mixin_filter_isFiltered id_phant
   local_mixin_discrete_topology_Discrete_ofNbhs id_phant id_phant T id_phant
-  (discrete_topology.Builders_6.Builders_6_T__canonical__topology_structure_Topological
-     T local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  (Builders_6.Builders_6_T__canonical__topology_structure_Topological T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
      local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   {|
-    Topological.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-    Topological.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-    Topological.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-    Topological.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
-    Topological.topology_structure_Nbhs_isTopological_mixin :=
+    topology_structure.Topological.choice_hasChoice_mixin :=
+      local_mixin_choice_hasChoice;
+    topology_structure.Topological.eqtype_hasDecEq_mixin :=
+      local_mixin_eqtype_hasDecEq;
+    topology_structure.Topological.filter_selfFiltered_mixin :=
+      local_mixin_filter_selfFiltered;
+    topology_structure.Topological.filter_isFiltered_mixin :=
+      local_mixin_filter_isFiltered;
+    topology_structure.Topological.topology_structure_Nbhs_isTopological_mixin :=
       local_mixin_topology_structure_Nbhs_isTopological
   |} id_phant local_mixin_choice_hasChoice id_phant
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
@@ -763,20 +754,20 @@ Builders_6.Builders_6_T__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_6.Builders_6_T__canonical__uniform_structure_Uniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 131, characters 0-207
+library mathcomp.analysis.topology_theory.discrete_topology, line 134, characters 0-207
 ">instance</a></span></span></span><span class="vernacular"> Definition</span><span id="Builders_6.Builders_6_T__canonical__uniform_structure_Uniform" class="id"><span id="Builders_6.discrete_topology_DiscreteUniform_ofNbhs__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="Builders_6.HB_unnamed_factory_8" class="id"><a name="Builders_6.Builders_6_T__canonical__uniform_structure_Uniform" class="" title="Builders_6.Builders_6_T__canonical__uniform_structure_Uniform :
 forall (T : Type) (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_discrete_topology_Discrete_ofNbhs : 
    Discrete_ofNbhs.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered),
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered),
 DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
   local_mixin_filter_isFiltered local_mixin_discrete_topology_Discrete_ofNbhs
@@ -797,17 +788,21 @@ DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
   id_phant local_mixin_filter_isFiltered id_phant
   local_mixin_discrete_topology_Discrete_ofNbhs id_phant id_phant T id_phant
-  (discrete_topology.Builders_6.Builders_6_T__canonical__topology_structure_Topological
-     T local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  (Builders_6.Builders_6_T__canonical__topology_structure_Topological T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
      local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   {|
-    Topological.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-    Topological.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-    Topological.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-    Topological.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
-    Topological.topology_structure_Nbhs_isTopological_mixin :=
+    topology_structure.Topological.choice_hasChoice_mixin :=
+      local_mixin_choice_hasChoice;
+    topology_structure.Topological.eqtype_hasDecEq_mixin :=
+      local_mixin_eqtype_hasDecEq;
+    topology_structure.Topological.filter_selfFiltered_mixin :=
+      local_mixin_filter_selfFiltered;
+    topology_structure.Topological.filter_isFiltered_mixin :=
+      local_mixin_filter_isFiltered;
+    topology_structure.Topological.topology_structure_Nbhs_isTopological_mixin :=
       local_mixin_topology_structure_Nbhs_isTopological
   |} id_phant local_mixin_choice_hasChoice id_phant
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
@@ -826,20 +821,20 @@ Builders_6.Builders_6_T__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_6.Builders_6_T__canonical__uniform_structure_Uniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 131, characters 0-207
+library mathcomp.analysis.topology_theory.discrete_topology, line 134, characters 0-207
 "> _</a></span></span></span><span id="Builders_6.Builders_6_T__canonical__uniform_structure_Uniform" class="id"><span id="Builders_6.discrete_topology_DiscreteUniform_ofNbhs__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="Builders_6.HB_unnamed_factory_8" class="id"><a name="Builders_6.Builders_6_T__canonical__uniform_structure_Uniform" class="" title="Builders_6.Builders_6_T__canonical__uniform_structure_Uniform :
 forall (T : Type) (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_discrete_topology_Discrete_ofNbhs : 
    Discrete_ofNbhs.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered),
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered),
 DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
   local_mixin_filter_isFiltered local_mixin_discrete_topology_Discrete_ofNbhs
@@ -860,17 +855,21 @@ DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
   id_phant local_mixin_filter_isFiltered id_phant
   local_mixin_discrete_topology_Discrete_ofNbhs id_phant id_phant T id_phant
-  (discrete_topology.Builders_6.Builders_6_T__canonical__topology_structure_Topological
-     T local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  (Builders_6.Builders_6_T__canonical__topology_structure_Topological T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
      local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   {|
-    Topological.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-    Topological.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-    Topological.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-    Topological.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
-    Topological.topology_structure_Nbhs_isTopological_mixin :=
+    topology_structure.Topological.choice_hasChoice_mixin :=
+      local_mixin_choice_hasChoice;
+    topology_structure.Topological.eqtype_hasDecEq_mixin :=
+      local_mixin_eqtype_hasDecEq;
+    topology_structure.Topological.filter_selfFiltered_mixin :=
+      local_mixin_filter_selfFiltered;
+    topology_structure.Topological.filter_isFiltered_mixin :=
+      local_mixin_filter_isFiltered;
+    topology_structure.Topological.topology_structure_Nbhs_isTopological_mixin :=
       local_mixin_topology_structure_Nbhs_isTopological
   |} id_phant local_mixin_choice_hasChoice id_phant
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
@@ -889,20 +888,20 @@ Builders_6.Builders_6_T__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_6.Builders_6_T__canonical__uniform_structure_Uniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 131, characters 0-207
+library mathcomp.analysis.topology_theory.discrete_topology, line 134, characters 0-207
 "> :=</a></span></span></span><span id="Builders_6.Builders_6_T__canonical__uniform_structure_Uniform" class="id"><span id="Builders_6.discrete_topology_DiscreteUniform_ofNbhs__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="Builders_6.HB_unnamed_factory_8" class="id"><a name="Builders_6.Builders_6_T__canonical__uniform_structure_Uniform" class="" title="Builders_6.Builders_6_T__canonical__uniform_structure_Uniform :
 forall (T : Type) (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_discrete_topology_Discrete_ofNbhs : 
    Discrete_ofNbhs.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered),
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered),
 DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
   local_mixin_filter_isFiltered local_mixin_discrete_topology_Discrete_ofNbhs
@@ -923,17 +922,21 @@ DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
   id_phant local_mixin_filter_isFiltered id_phant
   local_mixin_discrete_topology_Discrete_ofNbhs id_phant id_phant T id_phant
-  (discrete_topology.Builders_6.Builders_6_T__canonical__topology_structure_Topological
-     T local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  (Builders_6.Builders_6_T__canonical__topology_structure_Topological T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
      local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   {|
-    Topological.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-    Topological.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-    Topological.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-    Topological.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
-    Topological.topology_structure_Nbhs_isTopological_mixin :=
+    topology_structure.Topological.choice_hasChoice_mixin :=
+      local_mixin_choice_hasChoice;
+    topology_structure.Topological.eqtype_hasDecEq_mixin :=
+      local_mixin_eqtype_hasDecEq;
+    topology_structure.Topological.filter_selfFiltered_mixin :=
+      local_mixin_filter_selfFiltered;
+    topology_structure.Topological.filter_isFiltered_mixin :=
+      local_mixin_filter_isFiltered;
+    topology_structure.Topological.topology_structure_Nbhs_isTopological_mixin :=
       local_mixin_topology_structure_Nbhs_isTopological
   |} id_phant local_mixin_choice_hasChoice id_phant
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
@@ -952,7 +955,7 @@ Builders_6.Builders_6_T__canonical__uniform_structure_Uniform is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_6.Builders_6_T__canonical__uniform_structure_Uniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 131, characters 0-207
+library mathcomp.analysis.topology_theory.discrete_topology, line 134, characters 0-207
 "> @Nbhs_isUniform</a></span></span></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#Nbhs_isUniform.Build">Build</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_6.Builders_6.T">T</a></span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_ent">discrete_ent</a></span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_6.discrete_entourage_filter">discrete_entourage_filter</a></span><br/>
@@ -964,16 +967,16 @@ library mathcomp.analysis.topology_theory.discrete_topology, line 131, character
 <span id="Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform" class="id"><span id="Builders_6.HB_unnamed_factory_10" class="id"><a name="Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform" class="" title="Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform :
 forall (T : Type) (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_discrete_topology_Discrete_ofNbhs : 
    Discrete_ofNbhs.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered),
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered),
 DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
   local_mixin_filter_isFiltered local_mixin_discrete_topology_Discrete_ofNbhs
@@ -994,17 +997,21 @@ DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
   id_phant local_mixin_filter_isFiltered id_phant
   local_mixin_discrete_topology_Discrete_ofNbhs id_phant id_phant T id_phant
-  (discrete_topology.Builders_6.Builders_6_T__canonical__topology_structure_Topological
-     T local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  (Builders_6.Builders_6_T__canonical__topology_structure_Topological T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
      local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   {|
-    Topological.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-    Topological.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-    Topological.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-    Topological.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
-    Topological.topology_structure_Nbhs_isTopological_mixin :=
+    topology_structure.Topological.choice_hasChoice_mixin :=
+      local_mixin_choice_hasChoice;
+    topology_structure.Topological.eqtype_hasDecEq_mixin :=
+      local_mixin_eqtype_hasDecEq;
+    topology_structure.Topological.filter_selfFiltered_mixin :=
+      local_mixin_filter_selfFiltered;
+    topology_structure.Topological.filter_isFiltered_mixin :=
+      local_mixin_filter_isFiltered;
+    topology_structure.Topological.topology_structure_Nbhs_isTopological_mixin :=
       local_mixin_topology_structure_Nbhs_isTopological
   |} id_phant local_mixin_choice_hasChoice id_phant
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
@@ -1024,20 +1031,20 @@ Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform is transpa
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 139, characters 0-62
+library mathcomp.analysis.topology_theory.discrete_topology, line 142, characters 0-62
 ">HB</a></span></span>.<span id="Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform" class="id"><span id="Builders_6.HB_unnamed_factory_10" class="id"><a name="Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform" class="" title="Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform :
 forall (T : Type) (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_discrete_topology_Discrete_ofNbhs : 
    Discrete_ofNbhs.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered),
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered),
 DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
   local_mixin_filter_isFiltered local_mixin_discrete_topology_Discrete_ofNbhs
@@ -1058,17 +1065,21 @@ DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
   id_phant local_mixin_filter_isFiltered id_phant
   local_mixin_discrete_topology_Discrete_ofNbhs id_phant id_phant T id_phant
-  (discrete_topology.Builders_6.Builders_6_T__canonical__topology_structure_Topological
-     T local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  (Builders_6.Builders_6_T__canonical__topology_structure_Topological T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
      local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   {|
-    Topological.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-    Topological.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-    Topological.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-    Topological.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
-    Topological.topology_structure_Nbhs_isTopological_mixin :=
+    topology_structure.Topological.choice_hasChoice_mixin :=
+      local_mixin_choice_hasChoice;
+    topology_structure.Topological.eqtype_hasDecEq_mixin :=
+      local_mixin_eqtype_hasDecEq;
+    topology_structure.Topological.filter_selfFiltered_mixin :=
+      local_mixin_filter_selfFiltered;
+    topology_structure.Topological.filter_isFiltered_mixin :=
+      local_mixin_filter_isFiltered;
+    topology_structure.Topological.topology_structure_Nbhs_isTopological_mixin :=
       local_mixin_topology_structure_Nbhs_isTopological
   |} id_phant local_mixin_choice_hasChoice id_phant
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
@@ -1088,20 +1099,20 @@ Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform is transpa
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 139, characters 0-62
+library mathcomp.analysis.topology_theory.discrete_topology, line 142, characters 0-62
 ">instance</a></span></span><span class="vernacular"> Definition</span><span id="Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform" class="id"><span id="Builders_6.HB_unnamed_factory_10" class="id"><a name="Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform" class="" title="Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform :
 forall (T : Type) (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_discrete_topology_Discrete_ofNbhs : 
    Discrete_ofNbhs.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered),
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered),
 DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
   local_mixin_filter_isFiltered local_mixin_discrete_topology_Discrete_ofNbhs
@@ -1122,17 +1133,21 @@ DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
   id_phant local_mixin_filter_isFiltered id_phant
   local_mixin_discrete_topology_Discrete_ofNbhs id_phant id_phant T id_phant
-  (discrete_topology.Builders_6.Builders_6_T__canonical__topology_structure_Topological
-     T local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  (Builders_6.Builders_6_T__canonical__topology_structure_Topological T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
      local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   {|
-    Topological.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-    Topological.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-    Topological.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-    Topological.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
-    Topological.topology_structure_Nbhs_isTopological_mixin :=
+    topology_structure.Topological.choice_hasChoice_mixin :=
+      local_mixin_choice_hasChoice;
+    topology_structure.Topological.eqtype_hasDecEq_mixin :=
+      local_mixin_eqtype_hasDecEq;
+    topology_structure.Topological.filter_selfFiltered_mixin :=
+      local_mixin_filter_selfFiltered;
+    topology_structure.Topological.filter_isFiltered_mixin :=
+      local_mixin_filter_isFiltered;
+    topology_structure.Topological.topology_structure_Nbhs_isTopological_mixin :=
       local_mixin_topology_structure_Nbhs_isTopological
   |} id_phant local_mixin_choice_hasChoice id_phant
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
@@ -1152,20 +1167,20 @@ Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform is transpa
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 139, characters 0-62
+library mathcomp.analysis.topology_theory.discrete_topology, line 142, characters 0-62
 "> _</a></span></span><span id="Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform" class="id"><span id="Builders_6.HB_unnamed_factory_10" class="id"><a name="Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform" class="" title="Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform :
 forall (T : Type) (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_discrete_topology_Discrete_ofNbhs : 
    Discrete_ofNbhs.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered),
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered),
 DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
   local_mixin_filter_isFiltered local_mixin_discrete_topology_Discrete_ofNbhs
@@ -1186,17 +1201,21 @@ DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
   id_phant local_mixin_filter_isFiltered id_phant
   local_mixin_discrete_topology_Discrete_ofNbhs id_phant id_phant T id_phant
-  (discrete_topology.Builders_6.Builders_6_T__canonical__topology_structure_Topological
-     T local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  (Builders_6.Builders_6_T__canonical__topology_structure_Topological T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
      local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   {|
-    Topological.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-    Topological.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-    Topological.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-    Topological.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
-    Topological.topology_structure_Nbhs_isTopological_mixin :=
+    topology_structure.Topological.choice_hasChoice_mixin :=
+      local_mixin_choice_hasChoice;
+    topology_structure.Topological.eqtype_hasDecEq_mixin :=
+      local_mixin_eqtype_hasDecEq;
+    topology_structure.Topological.filter_selfFiltered_mixin :=
+      local_mixin_filter_selfFiltered;
+    topology_structure.Topological.filter_isFiltered_mixin :=
+      local_mixin_filter_isFiltered;
+    topology_structure.Topological.topology_structure_Nbhs_isTopological_mixin :=
       local_mixin_topology_structure_Nbhs_isTopological
   |} id_phant local_mixin_choice_hasChoice id_phant
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
@@ -1216,20 +1235,20 @@ Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform is transpa
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 139, characters 0-62
+library mathcomp.analysis.topology_theory.discrete_topology, line 142, characters 0-62
 "> :=</a></span></span><span id="Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform" class="id"><span id="Builders_6.HB_unnamed_factory_10" class="id"><a name="Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform" class="" title="Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform :
 forall (T : Type) (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_discrete_topology_Discrete_ofNbhs : 
    Discrete_ofNbhs.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered),
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered),
 DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
   local_mixin_filter_isFiltered local_mixin_discrete_topology_Discrete_ofNbhs
@@ -1250,17 +1269,21 @@ DiscreteUniform_ofNbhs.phant_axioms T local_mixin_choice_hasChoice
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
   id_phant local_mixin_filter_isFiltered id_phant
   local_mixin_discrete_topology_Discrete_ofNbhs id_phant id_phant T id_phant
-  (discrete_topology.Builders_6.Builders_6_T__canonical__topology_structure_Topological
-     T local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+  (Builders_6.Builders_6_T__canonical__topology_structure_Topological T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
      local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   {|
-    Topological.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-    Topological.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-    Topological.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-    Topological.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
-    Topological.topology_structure_Nbhs_isTopological_mixin :=
+    topology_structure.Topological.choice_hasChoice_mixin :=
+      local_mixin_choice_hasChoice;
+    topology_structure.Topological.eqtype_hasDecEq_mixin :=
+      local_mixin_eqtype_hasDecEq;
+    topology_structure.Topological.filter_selfFiltered_mixin :=
+      local_mixin_filter_selfFiltered;
+    topology_structure.Topological.filter_isFiltered_mixin :=
+      local_mixin_filter_isFiltered;
+    topology_structure.Topological.topology_structure_Nbhs_isTopological_mixin :=
       local_mixin_topology_structure_Nbhs_isTopological
   |} id_phant local_mixin_choice_hasChoice id_phant
   local_mixin_eqtype_hasDecEq id_phant local_mixin_filter_selfFiltered
@@ -1280,7 +1303,7 @@ Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform is transpa
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_6.Builders_6_T__canonical__discrete_topology_DiscreteUniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 139, characters 0-62
+library mathcomp.analysis.topology_theory.discrete_topology, line 142, characters 0-62
 "> @Discrete_ofUniform</a></span></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Discrete_ofUniform.Build">Build</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_6.Builders_6.T">T</a></span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#erefl">erefl</a></span>.<br/>
 <br/>
 <span id="Builders_6.Builders_Export_12" class="id"><a name="Builders_6.Builders_Export_12" class="">HB</a></span>.<span class="gallina-kwd">end</span>.<br/>
@@ -1328,8 +1351,8 @@ Qed.</div></details>
 forall (R : numDomainType) (T : Type)
   (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
    Nbhs_isUniform_mixin.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1339,9 +1362,9 @@ forall (R : numDomainType) (T : Type)
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered)
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   (local_mixin_discrete_topology_Discrete_ofUniform : 
    Discrete_ofUniform.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1400,13 +1423,13 @@ Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric is tra
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 167, characters 0-175
+library mathcomp.analysis.topology_theory.discrete_topology, line 170, characters 0-175
 ">HB</a></span></span>.<span id="Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric" class="id"><span id="Builders_13.HB_unnamed_factory_15" class="id"><a name="Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric" class="" title="Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric :
 forall (R : numDomainType) (T : Type)
   (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
    Nbhs_isUniform_mixin.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1416,9 +1439,9 @@ forall (R : numDomainType) (T : Type)
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered)
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   (local_mixin_discrete_topology_Discrete_ofUniform : 
    Discrete_ofUniform.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1477,13 +1500,13 @@ Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric is tra
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 167, characters 0-175
+library mathcomp.analysis.topology_theory.discrete_topology, line 170, characters 0-175
 ">instance</a></span></span><span class="vernacular"> Definition</span><span id="Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric" class="id"><span id="Builders_13.HB_unnamed_factory_15" class="id"><a name="Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric" class="" title="Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric :
 forall (R : numDomainType) (T : Type)
   (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
    Nbhs_isUniform_mixin.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1493,9 +1516,9 @@ forall (R : numDomainType) (T : Type)
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered)
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   (local_mixin_discrete_topology_Discrete_ofUniform : 
    Discrete_ofUniform.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1554,13 +1577,13 @@ Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric is tra
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 167, characters 0-175
+library mathcomp.analysis.topology_theory.discrete_topology, line 170, characters 0-175
 "> _</a></span></span><span id="Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric" class="id"><span id="Builders_13.HB_unnamed_factory_15" class="id"><a name="Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric" class="" title="Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric :
 forall (R : numDomainType) (T : Type)
   (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
    Nbhs_isUniform_mixin.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1570,9 +1593,9 @@ forall (R : numDomainType) (T : Type)
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered)
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   (local_mixin_discrete_topology_Discrete_ofUniform : 
    Discrete_ofUniform.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1631,14 +1654,14 @@ Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric is tra
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 167, characters 0-175
+library mathcomp.analysis.topology_theory.discrete_topology, line 170, characters 0-175
 "> :=</a></span></span><br/>
 &nbsp;&nbsp;<span id="Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric" class="id"><span id="Builders_13.HB_unnamed_factory_15" class="id"><a name="Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric" class="" title="Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric :
 forall (R : numDomainType) (T : Type)
   (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
    Nbhs_isUniform_mixin.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1648,9 +1671,9 @@ forall (R : numDomainType) (T : Type)
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered)
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   (local_mixin_discrete_topology_Discrete_ofUniform : 
    Discrete_ofUniform.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1709,7 +1732,7 @@ Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric is tra
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_13.Builders_13_T__canonical__pseudometric_structure_PseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 167, characters 0-175
+library mathcomp.analysis.topology_theory.discrete_topology, line 170, characters 0-175
 ">@Uniform_isPseudoMetric</a></span></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#Uniform_isPseudoMetric.Build">Build</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_13.Builders_13.R">R</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_13.Builders_13.T">T</a></span> (<span class="id">@</span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_ball">discrete_ball</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_13.Builders_13.R">R</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_13.Builders_13.T">T</a></span>)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_13.discrete_ball_center">discrete_ball_center</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_13.discrete_ball_sym">discrete_ball_sym</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_13.discrete_ball_triangle">discrete_ball_triangle</a></span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_13.discrete_entourageE">discrete_entourageE</a></span>.<br/>
@@ -1725,8 +1748,8 @@ library mathcomp.analysis.topology_theory.discrete_topology, line 167, character
 forall (R : numDomainType) (T : Type)
   (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
    Nbhs_isUniform_mixin.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1736,9 +1759,9 @@ forall (R : numDomainType) (T : Type)
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered)
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   (local_mixin_discrete_topology_Discrete_ofUniform : 
    Discrete_ofUniform.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1797,13 +1820,13 @@ Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric is 
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 175, characters 0-78
+library mathcomp.analysis.topology_theory.discrete_topology, line 178, characters 0-78
 ">HB</a></span></span>.<span id="Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric" class="id"><span id="Builders_13.HB_unnamed_factory_17" class="id"><a name="Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric" class="" title="Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric :
 forall (R : numDomainType) (T : Type)
   (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
    Nbhs_isUniform_mixin.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1813,9 +1836,9 @@ forall (R : numDomainType) (T : Type)
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered)
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   (local_mixin_discrete_topology_Discrete_ofUniform : 
    Discrete_ofUniform.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1874,13 +1897,13 @@ Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric is 
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 175, characters 0-78
+library mathcomp.analysis.topology_theory.discrete_topology, line 178, characters 0-78
 ">instance</a></span></span><span class="vernacular"> Definition</span><span id="Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric" class="id"><span id="Builders_13.HB_unnamed_factory_17" class="id"><a name="Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric" class="" title="Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric :
 forall (R : numDomainType) (T : Type)
   (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
    Nbhs_isUniform_mixin.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1890,9 +1913,9 @@ forall (R : numDomainType) (T : Type)
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered)
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   (local_mixin_discrete_topology_Discrete_ofUniform : 
    Discrete_ofUniform.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1951,13 +1974,13 @@ Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric is 
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 175, characters 0-78
+library mathcomp.analysis.topology_theory.discrete_topology, line 178, characters 0-78
 "> _</a></span></span><span id="Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric" class="id"><span id="Builders_13.HB_unnamed_factory_17" class="id"><a name="Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric" class="" title="Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric :
 forall (R : numDomainType) (T : Type)
   (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
    Nbhs_isUniform_mixin.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -1967,9 +1990,9 @@ forall (R : numDomainType) (T : Type)
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered)
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   (local_mixin_discrete_topology_Discrete_ofUniform : 
    Discrete_ofUniform.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -2028,13 +2051,13 @@ Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric is 
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 175, characters 0-78
+library mathcomp.analysis.topology_theory.discrete_topology, line 178, characters 0-78
 "> :=</a></span></span><span id="Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric" class="id"><span id="Builders_13.HB_unnamed_factory_17" class="id"><a name="Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric" class="" title="Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric :
 forall (R : numDomainType) (T : Type)
   (local_mixin_choice_hasChoice : hasChoice.axioms_ T)
   (local_mixin_eqtype_hasDecEq : Equality.mixin_of T)
-  (local_mixin_filter_selfFiltered : selfFiltered.axioms_ T)
-  (local_mixin_filter_isFiltered : isFiltered.axioms_ T T)
+  (local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T)
+  (local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T)
   (local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
    Nbhs_isUniform_mixin.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -2044,9 +2067,9 @@ forall (R : numDomainType) (T : Type)
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
      local_mixin_filter_isFiltered)
   (local_mixin_topology_structure_Nbhs_isTopological : 
-   Nbhs_isTopological.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered)
+   topology_structure.Nbhs_isTopological.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered)
   (local_mixin_discrete_topology_Discrete_ofUniform : 
    Discrete_ofUniform.axioms_ T local_mixin_choice_hasChoice
      local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
@@ -2105,7 +2128,7 @@ Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric is 
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.Builders_13.Builders_13_T__canonical__discrete_topology_DiscretePseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 175, characters 0-78
+library mathcomp.analysis.topology_theory.discrete_topology, line 178, characters 0-78
 "> @Discrete_ofPseudometric</a></span></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Discrete_ofPseudometric.Build">Build</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_13.Builders_13.R">R</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_13.Builders_13.T">T</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Builders_13.discrete_ballE">discrete_ballE</a></span>.<br/>
 <br/>
 <span id="Builders_13.Builders_Export_19" class="id"><a name="Builders_13.Builders_Export_19" class="">HB</a></span>.<span class="gallina-kwd">end</span>.<br/>
@@ -2118,7 +2141,7 @@ discrete_topology is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 179, characters 11-28
+library mathcomp.analysis.topology_theory.discrete_topology, line 182, characters 11-28
 ">discrete_topology</a></span> (<span id="T:72" class="id"><a name="T:72" class="">T</a></span><span class="id"> :</span><span class="gallina-kwd"> Type</span>)<span class="id"> :</span><span class="gallina-kwd"> Type</span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#T:72">T</a></span>.<br/>
 <br/>
 <span id="discrete_topology_discrete_topology__canonical__choice_Choice" class="id"><span id="HB_unnamed_mixin_25" class="id"><span id="discrete_topology_discrete_topology__canonical__eqtype_Equality" class="id"><span id="HB_unnamed_mixin_24" class="id"><span id="choice_Choice__to__eqtype_hasDecEq" class="id"><span id="choice_Choice__to__choice_hasChoice" class="id"><span id="HB_unnamed_factory_21" class="id"><span id="hb_instance_20.T" class="id"><a name="discrete_topology_discrete_topology__canonical__choice_Choice" class="" title="discrete_topology_discrete_topology__canonical__choice_Choice :
@@ -2130,7 +2153,7 @@ discrete_topology_discrete_topology__canonical__choice_Choice is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__choice_Choice
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 181, characters 0-83
+library mathcomp.analysis.topology_theory.discrete_topology, line 184, characters 0-83
 ">HB</a></span></span></span></span></span></span></span></span>.<span id="discrete_topology_discrete_topology__canonical__choice_Choice" class="id"><span id="HB_unnamed_mixin_25" class="id"><span id="discrete_topology_discrete_topology__canonical__eqtype_Equality" class="id"><span id="HB_unnamed_mixin_24" class="id"><span id="choice_Choice__to__eqtype_hasDecEq" class="id"><span id="choice_Choice__to__choice_hasChoice" class="id"><span id="HB_unnamed_factory_21" class="id"><span id="hb_instance_20.T" class="id"><a name="discrete_topology_discrete_topology__canonical__choice_Choice" class="" title="discrete_topology_discrete_topology__canonical__choice_Choice :
 choiceType -> choiceType
 
@@ -2140,7 +2163,7 @@ discrete_topology_discrete_topology__canonical__choice_Choice is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__choice_Choice
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 181, characters 0-83
+library mathcomp.analysis.topology_theory.discrete_topology, line 184, characters 0-83
 ">instance</a></span></span></span></span></span></span></span></span><span class="vernacular"> Definition</span><span id="discrete_topology_discrete_topology__canonical__choice_Choice" class="id"><span id="HB_unnamed_mixin_25" class="id"><span id="discrete_topology_discrete_topology__canonical__eqtype_Equality" class="id"><span id="HB_unnamed_mixin_24" class="id"><span id="choice_Choice__to__eqtype_hasDecEq" class="id"><span id="choice_Choice__to__choice_hasChoice" class="id"><span id="HB_unnamed_factory_21" class="id"><span id="hb_instance_20.T" class="id"><a name="discrete_topology_discrete_topology__canonical__choice_Choice" class="" title="discrete_topology_discrete_topology__canonical__choice_Choice :
 choiceType -> choiceType
 
@@ -2150,7 +2173,7 @@ discrete_topology_discrete_topology__canonical__choice_Choice is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__choice_Choice
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 181, characters 0-83
+library mathcomp.analysis.topology_theory.discrete_topology, line 184, characters 0-83
 "> _</a></span></span></span></span></span></span></span></span> (<span id="discrete_topology_discrete_topology__canonical__choice_Choice" class="id"><span id="HB_unnamed_mixin_25" class="id"><span id="discrete_topology_discrete_topology__canonical__eqtype_Equality" class="id"><span id="HB_unnamed_mixin_24" class="id"><span id="choice_Choice__to__eqtype_hasDecEq" class="id"><span id="choice_Choice__to__choice_hasChoice" class="id"><span id="HB_unnamed_factory_21" class="id"><span id="hb_instance_20.T" class="id"><a name="discrete_topology_discrete_topology__canonical__choice_Choice" class="" title="discrete_topology_discrete_topology__canonical__choice_Choice :
 choiceType -> choiceType
 
@@ -2160,7 +2183,7 @@ discrete_topology_discrete_topology__canonical__choice_Choice is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__choice_Choice
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 181, characters 0-83
+library mathcomp.analysis.topology_theory.discrete_topology, line 184, characters 0-83
 ">T</a></span></span></span></span></span></span></span></span><span id="discrete_topology_discrete_topology__canonical__choice_Choice" class="id"><span id="HB_unnamed_mixin_25" class="id"><span id="discrete_topology_discrete_topology__canonical__eqtype_Equality" class="id"><span id="HB_unnamed_mixin_24" class="id"><span id="choice_Choice__to__eqtype_hasDecEq" class="id"><span id="choice_Choice__to__choice_hasChoice" class="id"><span id="HB_unnamed_factory_21" class="id"><span id="hb_instance_20.T" class="id"><a name="discrete_topology_discrete_topology__canonical__choice_Choice" class="" title="discrete_topology_discrete_topology__canonical__choice_Choice :
 choiceType -> choiceType
 
@@ -2170,7 +2193,7 @@ discrete_topology_discrete_topology__canonical__choice_Choice is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__choice_Choice
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 181, characters 0-83
+library mathcomp.analysis.topology_theory.discrete_topology, line 184, characters 0-83
 "> :</a></span></span></span></span></span></span></span></span><span id="discrete_topology_discrete_topology__canonical__choice_Choice" class="id"><span id="HB_unnamed_mixin_25" class="id"><span id="discrete_topology_discrete_topology__canonical__eqtype_Equality" class="id"><span id="HB_unnamed_mixin_24" class="id"><span id="choice_Choice__to__eqtype_hasDecEq" class="id"><span id="choice_Choice__to__choice_hasChoice" class="id"><span id="HB_unnamed_factory_21" class="id"><span id="hb_instance_20.T" class="id"><a name="discrete_topology_discrete_topology__canonical__choice_Choice" class="" title="discrete_topology_discrete_topology__canonical__choice_Choice :
 choiceType -> choiceType
 
@@ -2180,7 +2203,7 @@ discrete_topology_discrete_topology__canonical__choice_Choice is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__choice_Choice
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 181, characters 0-83
+library mathcomp.analysis.topology_theory.discrete_topology, line 184, characters 0-83
 "> choiceType</a></span></span></span></span></span></span></span></span>)<span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="NOTFOUND the module url for mathcomp.boot.choice#Choice.copy">Choice</a></span>.<span class="id"><a href="NOTFOUND the module url for mathcomp.boot.choice#Choice.copy">copy</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_topology">discrete_topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#T:73">T</a></span>)<span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#T:73">T</a></span>.<br/>
 <span id="discrete_topology_discrete_topology__canonical__classical_sets_Pointed" class="id"><span id="HB_unnamed_mixin_31" class="id"><span id="classical_sets_Pointed__to__eqtype_hasDecEq" class="id"><span id="classical_sets_Pointed__to__choice_hasChoice" class="id"><span id="classical_sets_Pointed__to__classical_sets_isPointed" class="id"><span id="HB_unnamed_factory_27" class="id"><span id="hb_instance_26.T" class="id"><a name="discrete_topology_discrete_topology__canonical__classical_sets_Pointed" class="" title="discrete_topology_discrete_topology__canonical__classical_sets_Pointed :
@@ -2194,7 +2217,7 @@ discrete_topology_discrete_topology__canonical__classical_sets_Pointed is transp
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__classical_sets_Pointed
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 183, characters 0-81
+library mathcomp.analysis.topology_theory.discrete_topology, line 186, characters 0-81
 ">HB</a></span></span></span></span></span></span></span>.<span id="discrete_topology_discrete_topology__canonical__classical_sets_Pointed" class="id"><span id="HB_unnamed_mixin_31" class="id"><span id="classical_sets_Pointed__to__eqtype_hasDecEq" class="id"><span id="classical_sets_Pointed__to__choice_hasChoice" class="id"><span id="classical_sets_Pointed__to__classical_sets_isPointed" class="id"><span id="HB_unnamed_factory_27" class="id"><span id="hb_instance_26.T" class="id"><a name="discrete_topology_discrete_topology__canonical__classical_sets_Pointed" class="" title="discrete_topology_discrete_topology__canonical__classical_sets_Pointed :
 pointedType -> pointedType
 
@@ -2206,7 +2229,7 @@ discrete_topology_discrete_topology__canonical__classical_sets_Pointed is transp
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__classical_sets_Pointed
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 183, characters 0-81
+library mathcomp.analysis.topology_theory.discrete_topology, line 186, characters 0-81
 ">instance</a></span></span></span></span></span></span></span><span class="vernacular"> Definition</span><span id="discrete_topology_discrete_topology__canonical__classical_sets_Pointed" class="id"><span id="HB_unnamed_mixin_31" class="id"><span id="classical_sets_Pointed__to__eqtype_hasDecEq" class="id"><span id="classical_sets_Pointed__to__choice_hasChoice" class="id"><span id="classical_sets_Pointed__to__classical_sets_isPointed" class="id"><span id="HB_unnamed_factory_27" class="id"><span id="hb_instance_26.T" class="id"><a name="discrete_topology_discrete_topology__canonical__classical_sets_Pointed" class="" title="discrete_topology_discrete_topology__canonical__classical_sets_Pointed :
 pointedType -> pointedType
 
@@ -2218,7 +2241,7 @@ discrete_topology_discrete_topology__canonical__classical_sets_Pointed is transp
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__classical_sets_Pointed
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 183, characters 0-81
+library mathcomp.analysis.topology_theory.discrete_topology, line 186, characters 0-81
 "> _</a></span></span></span></span></span></span></span> (<span id="discrete_topology_discrete_topology__canonical__classical_sets_Pointed" class="id"><span id="HB_unnamed_mixin_31" class="id"><span id="classical_sets_Pointed__to__eqtype_hasDecEq" class="id"><span id="classical_sets_Pointed__to__choice_hasChoice" class="id"><span id="classical_sets_Pointed__to__classical_sets_isPointed" class="id"><span id="HB_unnamed_factory_27" class="id"><span id="hb_instance_26.T" class="id"><a name="discrete_topology_discrete_topology__canonical__classical_sets_Pointed" class="" title="discrete_topology_discrete_topology__canonical__classical_sets_Pointed :
 pointedType -> pointedType
 
@@ -2230,7 +2253,7 @@ discrete_topology_discrete_topology__canonical__classical_sets_Pointed is transp
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__classical_sets_Pointed
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 183, characters 0-81
+library mathcomp.analysis.topology_theory.discrete_topology, line 186, characters 0-81
 ">T</a></span></span></span></span></span></span></span><span id="discrete_topology_discrete_topology__canonical__classical_sets_Pointed" class="id"><span id="HB_unnamed_mixin_31" class="id"><span id="classical_sets_Pointed__to__eqtype_hasDecEq" class="id"><span id="classical_sets_Pointed__to__choice_hasChoice" class="id"><span id="classical_sets_Pointed__to__classical_sets_isPointed" class="id"><span id="HB_unnamed_factory_27" class="id"><span id="hb_instance_26.T" class="id"><a name="discrete_topology_discrete_topology__canonical__classical_sets_Pointed" class="" title="discrete_topology_discrete_topology__canonical__classical_sets_Pointed :
 pointedType -> pointedType
 
@@ -2242,7 +2265,7 @@ discrete_topology_discrete_topology__canonical__classical_sets_Pointed is transp
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__classical_sets_Pointed
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 183, characters 0-81
+library mathcomp.analysis.topology_theory.discrete_topology, line 186, characters 0-81
 "> :</a></span></span></span></span></span></span></span><span id="discrete_topology_discrete_topology__canonical__classical_sets_Pointed" class="id"><span id="HB_unnamed_mixin_31" class="id"><span id="classical_sets_Pointed__to__eqtype_hasDecEq" class="id"><span id="classical_sets_Pointed__to__choice_hasChoice" class="id"><span id="classical_sets_Pointed__to__classical_sets_isPointed" class="id"><span id="HB_unnamed_factory_27" class="id"><span id="hb_instance_26.T" class="id"><a name="discrete_topology_discrete_topology__canonical__classical_sets_Pointed" class="" title="discrete_topology_discrete_topology__canonical__classical_sets_Pointed :
 pointedType -> pointedType
 
@@ -2254,11 +2277,11 @@ discrete_topology_discrete_topology__canonical__classical_sets_Pointed is transp
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__classical_sets_Pointed
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 183, characters 0-81
+library mathcomp.analysis.topology_theory.discrete_topology, line 186, characters 0-81
 "> pointedType</a></span></span></span></span></span></span></span>)<span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.classical.classical_sets.html#Pointed.on">Pointed</a></span>.<span class="id"><a href="mathcomp.classical.classical_sets.html#Pointed.on">on</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_topology">discrete_topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#T:74">T</a></span>).<br/>
 <span id="discrete_topology_discrete_topology__canonical__filter_Nbhs" class="id"><span id="HB_unnamed_mixin_37" class="id"><span id="discrete_topology_discrete_topology__canonical__filter_Filtered" class="id"><span id="HB_unnamed_mixin_36" class="id"><span id="filter_hasNbhs__to__filter_isFiltered" class="id"><span id="filter_hasNbhs__to__filter_selfFiltered" class="id"><span id="HB_unnamed_factory_33" class="id"><span id="hb_instance_32.T" class="id"><a name="discrete_topology_discrete_topology__canonical__filter_Nbhs" class="" title="discrete_topology_discrete_topology__canonical__filter_Nbhs :
-choiceType -> nbhsType
+choiceType -> filter.Nbhs.type
 
 discrete_topology_discrete_topology__canonical__filter_Nbhs is not universe polymorphic
 Arguments discrete_topology_discrete_topology__canonical__filter_Nbhs T
@@ -2266,9 +2289,9 @@ discrete_topology_discrete_topology__canonical__filter_Nbhs is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__filter_Nbhs
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 185, characters 0-100
+library mathcomp.analysis.topology_theory.discrete_topology, line 188, characters 0-100
 ">HB</a></span></span></span></span></span></span></span></span>.<span id="discrete_topology_discrete_topology__canonical__filter_Nbhs" class="id"><span id="HB_unnamed_mixin_37" class="id"><span id="discrete_topology_discrete_topology__canonical__filter_Filtered" class="id"><span id="HB_unnamed_mixin_36" class="id"><span id="filter_hasNbhs__to__filter_isFiltered" class="id"><span id="filter_hasNbhs__to__filter_selfFiltered" class="id"><span id="HB_unnamed_factory_33" class="id"><span id="hb_instance_32.T" class="id"><a name="discrete_topology_discrete_topology__canonical__filter_Nbhs" class="" title="discrete_topology_discrete_topology__canonical__filter_Nbhs :
-choiceType -> nbhsType
+choiceType -> filter.Nbhs.type
 
 discrete_topology_discrete_topology__canonical__filter_Nbhs is not universe polymorphic
 Arguments discrete_topology_discrete_topology__canonical__filter_Nbhs T
@@ -2276,9 +2299,9 @@ discrete_topology_discrete_topology__canonical__filter_Nbhs is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__filter_Nbhs
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 185, characters 0-100
+library mathcomp.analysis.topology_theory.discrete_topology, line 188, characters 0-100
 ">instance</a></span></span></span></span></span></span></span></span><span class="vernacular"> Definition</span><span id="discrete_topology_discrete_topology__canonical__filter_Nbhs" class="id"><span id="HB_unnamed_mixin_37" class="id"><span id="discrete_topology_discrete_topology__canonical__filter_Filtered" class="id"><span id="HB_unnamed_mixin_36" class="id"><span id="filter_hasNbhs__to__filter_isFiltered" class="id"><span id="filter_hasNbhs__to__filter_selfFiltered" class="id"><span id="HB_unnamed_factory_33" class="id"><span id="hb_instance_32.T" class="id"><a name="discrete_topology_discrete_topology__canonical__filter_Nbhs" class="" title="discrete_topology_discrete_topology__canonical__filter_Nbhs :
-choiceType -> nbhsType
+choiceType -> filter.Nbhs.type
 
 discrete_topology_discrete_topology__canonical__filter_Nbhs is not universe polymorphic
 Arguments discrete_topology_discrete_topology__canonical__filter_Nbhs T
@@ -2286,9 +2309,9 @@ discrete_topology_discrete_topology__canonical__filter_Nbhs is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__filter_Nbhs
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 185, characters 0-100
+library mathcomp.analysis.topology_theory.discrete_topology, line 188, characters 0-100
 "> _</a></span></span></span></span></span></span></span></span> (<span id="discrete_topology_discrete_topology__canonical__filter_Nbhs" class="id"><span id="HB_unnamed_mixin_37" class="id"><span id="discrete_topology_discrete_topology__canonical__filter_Filtered" class="id"><span id="HB_unnamed_mixin_36" class="id"><span id="filter_hasNbhs__to__filter_isFiltered" class="id"><span id="filter_hasNbhs__to__filter_selfFiltered" class="id"><span id="HB_unnamed_factory_33" class="id"><span id="hb_instance_32.T" class="id"><a name="discrete_topology_discrete_topology__canonical__filter_Nbhs" class="" title="discrete_topology_discrete_topology__canonical__filter_Nbhs :
-choiceType -> nbhsType
+choiceType -> filter.Nbhs.type
 
 discrete_topology_discrete_topology__canonical__filter_Nbhs is not universe polymorphic
 Arguments discrete_topology_discrete_topology__canonical__filter_Nbhs T
@@ -2296,9 +2319,9 @@ discrete_topology_discrete_topology__canonical__filter_Nbhs is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__filter_Nbhs
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 185, characters 0-100
+library mathcomp.analysis.topology_theory.discrete_topology, line 188, characters 0-100
 ">T</a></span></span></span></span></span></span></span></span><span id="discrete_topology_discrete_topology__canonical__filter_Nbhs" class="id"><span id="HB_unnamed_mixin_37" class="id"><span id="discrete_topology_discrete_topology__canonical__filter_Filtered" class="id"><span id="HB_unnamed_mixin_36" class="id"><span id="filter_hasNbhs__to__filter_isFiltered" class="id"><span id="filter_hasNbhs__to__filter_selfFiltered" class="id"><span id="HB_unnamed_factory_33" class="id"><span id="hb_instance_32.T" class="id"><a name="discrete_topology_discrete_topology__canonical__filter_Nbhs" class="" title="discrete_topology_discrete_topology__canonical__filter_Nbhs :
-choiceType -> nbhsType
+choiceType -> filter.Nbhs.type
 
 discrete_topology_discrete_topology__canonical__filter_Nbhs is not universe polymorphic
 Arguments discrete_topology_discrete_topology__canonical__filter_Nbhs T
@@ -2306,9 +2329,9 @@ discrete_topology_discrete_topology__canonical__filter_Nbhs is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__filter_Nbhs
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 185, characters 0-100
+library mathcomp.analysis.topology_theory.discrete_topology, line 188, characters 0-100
 "> :</a></span></span></span></span></span></span></span></span><span id="discrete_topology_discrete_topology__canonical__filter_Nbhs" class="id"><span id="HB_unnamed_mixin_37" class="id"><span id="discrete_topology_discrete_topology__canonical__filter_Filtered" class="id"><span id="HB_unnamed_mixin_36" class="id"><span id="filter_hasNbhs__to__filter_isFiltered" class="id"><span id="filter_hasNbhs__to__filter_selfFiltered" class="id"><span id="HB_unnamed_factory_33" class="id"><span id="hb_instance_32.T" class="id"><a name="discrete_topology_discrete_topology__canonical__filter_Nbhs" class="" title="discrete_topology_discrete_topology__canonical__filter_Nbhs :
-choiceType -> nbhsType
+choiceType -> filter.Nbhs.type
 
 discrete_topology_discrete_topology__canonical__filter_Nbhs is not universe polymorphic
 Arguments discrete_topology_discrete_topology__canonical__filter_Nbhs T
@@ -2316,7 +2339,7 @@ discrete_topology_discrete_topology__canonical__filter_Nbhs is transparent
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__filter_Nbhs
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 185, characters 0-100
+library mathcomp.analysis.topology_theory.discrete_topology, line 188, characters 0-100
 "> choiceType</a></span></span></span></span></span></span></span></span>)<span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.classical.filter.html#hasNbhs.Build">hasNbhs</a></span>.<span class="id"><a href="mathcomp.classical.filter.html#hasNbhs.Build">Build</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_topology">discrete_topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#T:75">T</a></span>)<span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#principal_filter">principal_filter</a></span>.<br/>
 <span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology" class="id"><span id="discrete_topology_discrete_topology__canonical__topology_structure_Topological" class="id"><span id="HB_unnamed_mixin_42" class="id"><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteNbhs" class="id"><span id="discrete_topology_Discrete_ofNbhs__to__topology_structure_Nbhs_isTopological" class="id"><span id="HB_unnamed_factory_39" class="id"><span id="hb_instance_38.T" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology :
@@ -2330,7 +2353,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopolo
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 187, characters 0-97
+library mathcomp.analysis.topology_theory.discrete_topology, line 190, characters 0-97
 ">HB</a></span></span></span></span></span></span></span>.<span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology" class="id"><span id="discrete_topology_discrete_topology__canonical__topology_structure_Topological" class="id"><span id="HB_unnamed_mixin_42" class="id"><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteNbhs" class="id"><span id="discrete_topology_Discrete_ofNbhs__to__topology_structure_Nbhs_isTopological" class="id"><span id="HB_unnamed_factory_39" class="id"><span id="hb_instance_38.T" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology :
 choiceType -> discreteTopologicalType
 
@@ -2342,7 +2365,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopolo
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 187, characters 0-97
+library mathcomp.analysis.topology_theory.discrete_topology, line 190, characters 0-97
 ">instance</a></span></span></span></span></span></span></span><span class="vernacular"> Definition</span><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology" class="id"><span id="discrete_topology_discrete_topology__canonical__topology_structure_Topological" class="id"><span id="HB_unnamed_mixin_42" class="id"><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteNbhs" class="id"><span id="discrete_topology_Discrete_ofNbhs__to__topology_structure_Nbhs_isTopological" class="id"><span id="HB_unnamed_factory_39" class="id"><span id="hb_instance_38.T" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology :
 choiceType -> discreteTopologicalType
 
@@ -2354,7 +2377,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopolo
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 187, characters 0-97
+library mathcomp.analysis.topology_theory.discrete_topology, line 190, characters 0-97
 "> _</a></span></span></span></span></span></span></span> (<span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology" class="id"><span id="discrete_topology_discrete_topology__canonical__topology_structure_Topological" class="id"><span id="HB_unnamed_mixin_42" class="id"><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteNbhs" class="id"><span id="discrete_topology_Discrete_ofNbhs__to__topology_structure_Nbhs_isTopological" class="id"><span id="HB_unnamed_factory_39" class="id"><span id="hb_instance_38.T" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology :
 choiceType -> discreteTopologicalType
 
@@ -2366,7 +2389,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopolo
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 187, characters 0-97
+library mathcomp.analysis.topology_theory.discrete_topology, line 190, characters 0-97
 ">T</a></span></span></span></span></span></span></span><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology" class="id"><span id="discrete_topology_discrete_topology__canonical__topology_structure_Topological" class="id"><span id="HB_unnamed_mixin_42" class="id"><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteNbhs" class="id"><span id="discrete_topology_Discrete_ofNbhs__to__topology_structure_Nbhs_isTopological" class="id"><span id="HB_unnamed_factory_39" class="id"><span id="hb_instance_38.T" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology :
 choiceType -> discreteTopologicalType
 
@@ -2378,7 +2401,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopolo
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 187, characters 0-97
+library mathcomp.analysis.topology_theory.discrete_topology, line 190, characters 0-97
 "> :</a></span></span></span></span></span></span></span><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology" class="id"><span id="discrete_topology_discrete_topology__canonical__topology_structure_Topological" class="id"><span id="HB_unnamed_mixin_42" class="id"><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteNbhs" class="id"><span id="discrete_topology_Discrete_ofNbhs__to__topology_structure_Nbhs_isTopological" class="id"><span id="HB_unnamed_factory_39" class="id"><span id="hb_instance_38.T" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology :
 choiceType -> discreteTopologicalType
 
@@ -2390,7 +2413,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopolo
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteTopology
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 187, characters 0-97
+library mathcomp.analysis.topology_theory.discrete_topology, line 190, characters 0-97
 "> choiceType</a></span></span></span></span></span></span></span>)<span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Build">Discrete_ofNbhs</a></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Build">Build</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_topology">discrete_topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#T:76">T</a></span>)<span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#erefl">erefl</a></span>.<br/>
 <span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform" class="id"><span id="HB_unnamed_mixin_48" class="id"><span id="discrete_topology_discrete_topology__canonical__uniform_structure_Uniform" class="id"><span id="HB_unnamed_mixin_47" class="id"><span id="discrete_topology_DiscreteUniform_ofNbhs__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="discrete_topology_DiscreteUniform_ofNbhs__to__discrete_topology_Discrete_ofUniform" class="id"><span id="HB_unnamed_factory_44" class="id"><span id="hb_instance_43.T" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform :
@@ -2404,7 +2427,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUnifor
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 189, characters 0-98
+library mathcomp.analysis.topology_theory.discrete_topology, line 192, characters 0-98
 ">HB</a></span></span></span></span></span></span></span></span>.<span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform" class="id"><span id="HB_unnamed_mixin_48" class="id"><span id="discrete_topology_discrete_topology__canonical__uniform_structure_Uniform" class="id"><span id="HB_unnamed_mixin_47" class="id"><span id="discrete_topology_DiscreteUniform_ofNbhs__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="discrete_topology_DiscreteUniform_ofNbhs__to__discrete_topology_Discrete_ofUniform" class="id"><span id="HB_unnamed_factory_44" class="id"><span id="hb_instance_43.T" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform :
 choiceType -> discreteUniformType
 
@@ -2416,7 +2439,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUnifor
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 189, characters 0-98
+library mathcomp.analysis.topology_theory.discrete_topology, line 192, characters 0-98
 ">instance</a></span></span></span></span></span></span></span></span><span class="vernacular"> Definition</span><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform" class="id"><span id="HB_unnamed_mixin_48" class="id"><span id="discrete_topology_discrete_topology__canonical__uniform_structure_Uniform" class="id"><span id="HB_unnamed_mixin_47" class="id"><span id="discrete_topology_DiscreteUniform_ofNbhs__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="discrete_topology_DiscreteUniform_ofNbhs__to__discrete_topology_Discrete_ofUniform" class="id"><span id="HB_unnamed_factory_44" class="id"><span id="hb_instance_43.T" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform :
 choiceType -> discreteUniformType
 
@@ -2428,7 +2451,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUnifor
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 189, characters 0-98
+library mathcomp.analysis.topology_theory.discrete_topology, line 192, characters 0-98
 "> _</a></span></span></span></span></span></span></span></span> (<span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform" class="id"><span id="HB_unnamed_mixin_48" class="id"><span id="discrete_topology_discrete_topology__canonical__uniform_structure_Uniform" class="id"><span id="HB_unnamed_mixin_47" class="id"><span id="discrete_topology_DiscreteUniform_ofNbhs__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="discrete_topology_DiscreteUniform_ofNbhs__to__discrete_topology_Discrete_ofUniform" class="id"><span id="HB_unnamed_factory_44" class="id"><span id="hb_instance_43.T" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform :
 choiceType -> discreteUniformType
 
@@ -2440,7 +2463,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUnifor
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 189, characters 0-98
+library mathcomp.analysis.topology_theory.discrete_topology, line 192, characters 0-98
 ">T</a></span></span></span></span></span></span></span></span><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform" class="id"><span id="HB_unnamed_mixin_48" class="id"><span id="discrete_topology_discrete_topology__canonical__uniform_structure_Uniform" class="id"><span id="HB_unnamed_mixin_47" class="id"><span id="discrete_topology_DiscreteUniform_ofNbhs__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="discrete_topology_DiscreteUniform_ofNbhs__to__discrete_topology_Discrete_ofUniform" class="id"><span id="HB_unnamed_factory_44" class="id"><span id="hb_instance_43.T" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform :
 choiceType -> discreteUniformType
 
@@ -2452,7 +2475,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUnifor
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 189, characters 0-98
+library mathcomp.analysis.topology_theory.discrete_topology, line 192, characters 0-98
 "> :</a></span></span></span></span></span></span></span></span><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform" class="id"><span id="HB_unnamed_mixin_48" class="id"><span id="discrete_topology_discrete_topology__canonical__uniform_structure_Uniform" class="id"><span id="HB_unnamed_mixin_47" class="id"><span id="discrete_topology_DiscreteUniform_ofNbhs__to__uniform_structure_Nbhs_isUniform_mixin" class="id"><span id="discrete_topology_DiscreteUniform_ofNbhs__to__discrete_topology_Discrete_ofUniform" class="id"><span id="HB_unnamed_factory_44" class="id"><span id="hb_instance_43.T" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform :
 choiceType -> discreteUniformType
 
@@ -2464,7 +2487,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUnifor
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscreteUniform
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 189, characters 0-98
+library mathcomp.analysis.topology_theory.discrete_topology, line 192, characters 0-98
 "> choiceType</a></span></span></span></span></span></span></span></span>)<span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Build">DiscreteUniform_ofNbhs</a></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Build">Build</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_topology">discrete_topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#T:77">T</a></span>).<br/>
 <span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric" class="id"><span id="HB_unnamed_mixin_54" class="id"><span id="discrete_topology_discrete_topology__canonical__pseudometric_structure_PseudoMetric" class="id"><span id="HB_unnamed_mixin_53" class="id"><span id="discrete_topology_DiscretePseudoMetric_ofUniform__to__pseudometric_structure_Uniform_isPseudoMetric" class="id"><span id="discrete_topology_DiscretePseudoMetric_ofUniform__to__discrete_topology_Discrete_ofPseudometric" class="id"><span id="HB_unnamed_factory_50" class="id"><span id="hb_instance_49.T" class="id"><span id="hb_instance_49.R" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric :
@@ -2478,7 +2501,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudo
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 191, characters 0-129
+library mathcomp.analysis.topology_theory.discrete_topology, line 194, characters 0-129
 ">HB</a></span></span></span></span></span></span></span></span></span>.<span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric" class="id"><span id="HB_unnamed_mixin_54" class="id"><span id="discrete_topology_discrete_topology__canonical__pseudometric_structure_PseudoMetric" class="id"><span id="HB_unnamed_mixin_53" class="id"><span id="discrete_topology_DiscretePseudoMetric_ofUniform__to__pseudometric_structure_Uniform_isPseudoMetric" class="id"><span id="discrete_topology_DiscretePseudoMetric_ofUniform__to__discrete_topology_Discrete_ofPseudometric" class="id"><span id="HB_unnamed_factory_50" class="id"><span id="hb_instance_49.T" class="id"><span id="hb_instance_49.R" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric :
 forall R : numDomainType, choiceType -> discretePseudoMetricType R
 
@@ -2490,7 +2513,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudo
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 191, characters 0-129
+library mathcomp.analysis.topology_theory.discrete_topology, line 194, characters 0-129
 ">instance</a></span></span></span></span></span></span></span></span></span><span class="vernacular"> Definition</span><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric" class="id"><span id="HB_unnamed_mixin_54" class="id"><span id="discrete_topology_discrete_topology__canonical__pseudometric_structure_PseudoMetric" class="id"><span id="HB_unnamed_mixin_53" class="id"><span id="discrete_topology_DiscretePseudoMetric_ofUniform__to__pseudometric_structure_Uniform_isPseudoMetric" class="id"><span id="discrete_topology_DiscretePseudoMetric_ofUniform__to__discrete_topology_Discrete_ofPseudometric" class="id"><span id="HB_unnamed_factory_50" class="id"><span id="hb_instance_49.T" class="id"><span id="hb_instance_49.R" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric :
 forall R : numDomainType, choiceType -> discretePseudoMetricType R
 
@@ -2502,7 +2525,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudo
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 191, characters 0-129
+library mathcomp.analysis.topology_theory.discrete_topology, line 194, characters 0-129
 "> _</a></span></span></span></span></span></span></span></span></span><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric" class="id"><span id="HB_unnamed_mixin_54" class="id"><span id="discrete_topology_discrete_topology__canonical__pseudometric_structure_PseudoMetric" class="id"><span id="HB_unnamed_mixin_53" class="id"><span id="discrete_topology_DiscretePseudoMetric_ofUniform__to__pseudometric_structure_Uniform_isPseudoMetric" class="id"><span id="discrete_topology_DiscretePseudoMetric_ofUniform__to__discrete_topology_Discrete_ofPseudometric" class="id"><span id="HB_unnamed_factory_50" class="id"><span id="hb_instance_49.T" class="id"><span id="hb_instance_49.R" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric :
 forall R : numDomainType, choiceType -> discretePseudoMetricType R
 
@@ -2514,7 +2537,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudo
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 191, characters 0-129
+library mathcomp.analysis.topology_theory.discrete_topology, line 194, characters 0-129
 "> {R</a></span></span></span></span></span></span></span></span></span><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric" class="id"><span id="HB_unnamed_mixin_54" class="id"><span id="discrete_topology_discrete_topology__canonical__pseudometric_structure_PseudoMetric" class="id"><span id="HB_unnamed_mixin_53" class="id"><span id="discrete_topology_DiscretePseudoMetric_ofUniform__to__pseudometric_structure_Uniform_isPseudoMetric" class="id"><span id="discrete_topology_DiscretePseudoMetric_ofUniform__to__discrete_topology_Discrete_ofPseudometric" class="id"><span id="HB_unnamed_factory_50" class="id"><span id="hb_instance_49.T" class="id"><span id="hb_instance_49.R" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric :
 forall R : numDomainType, choiceType -> discretePseudoMetricType R
 
@@ -2526,7 +2549,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudo
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 191, characters 0-129
+library mathcomp.analysis.topology_theory.discrete_topology, line 194, characters 0-129
 "> :</a></span></span></span></span></span></span></span></span></span><span id="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric" class="id"><span id="HB_unnamed_mixin_54" class="id"><span id="discrete_topology_discrete_topology__canonical__pseudometric_structure_PseudoMetric" class="id"><span id="HB_unnamed_mixin_53" class="id"><span id="discrete_topology_DiscretePseudoMetric_ofUniform__to__pseudometric_structure_Uniform_isPseudoMetric" class="id"><span id="discrete_topology_DiscretePseudoMetric_ofUniform__to__discrete_topology_Discrete_ofPseudometric" class="id"><span id="HB_unnamed_factory_50" class="id"><span id="hb_instance_49.T" class="id"><span id="hb_instance_49.R" class="id"><a name="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric" class="" title="discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric :
 forall R : numDomainType, choiceType -> discretePseudoMetricType R
 
@@ -2538,7 +2561,7 @@ discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudo
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_topology_discrete_topology__canonical__discrete_topology_DiscretePseudoMetric
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 191, characters 0-129
+library mathcomp.analysis.topology_theory.discrete_topology, line 194, characters 0-129
 "> numDomainType}</a></span></span></span></span></span></span></span></span></span> (<span class="id">T</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.choice#Choice.Exports.choiceType">choiceType</a></span>)<span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id">@</span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Build">DiscretePseudoMetric_ofUniform</a></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#Build">Build</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#R:78">R</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_topology">discrete_topology</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#T:79">T</a></span>).<br/>
 <br/>
@@ -2546,7 +2569,8 @@ library mathcomp.analysis.topology_theory.discrete_topology, line 191, character
 <br/>
 <span class="vernacular">Context</span><span class="id"> {</span><span id="discrete_topology.X" class="id"><a name="discrete_topology.X" class="">X</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discreteTopologicalType">discreteTopologicalType</a></span><span class="id">}</span>.<br/>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="discrete_open" class="id"><a name="discrete_open" class="" title="discrete_open : forall {X : discreteTopologicalType} (A : set X), open A
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="discrete_open" class="id"><a name="discrete_open" class="" title="discrete_open :
+forall {X : discreteTopologicalType} (A : set X), topology_structure.open A
 
 discrete_open is not universe polymorphic
 Arguments discrete_open {X} A%_classical_set_scope
@@ -2554,7 +2578,7 @@ discrete_open is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_open
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 198, characters 6-19
+library mathcomp.analysis.topology_theory.discrete_topology, line 201, characters 6-19
 ">discrete_open</a></span> (<span id="A:81" class="id"><a name="A:81" class="">A</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_topology.X">X</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#open">open</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#A:81">A</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -2564,7 +2588,7 @@ library mathcomp.analysis.topology_theory.discrete_topology, line 198, character
 Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="discrete_set1" class="id"><a name="discrete_set1" class="" title="discrete_set1 :
-forall {X : discreteTopologicalType} (x : X), nbhs x [set x]%classic
+forall {X : discreteTopologicalType} (x : X), filter.nbhs x [set x]%classic
 
 discrete_set1 is not universe polymorphic
 Arguments discrete_set1 {X} x
@@ -2572,14 +2596,15 @@ discrete_set1 is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_set1
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 204, characters 6-19
+library mathcomp.analysis.topology_theory.discrete_topology, line 207, characters 6-19
 ">discrete_set1</a></span> (<span id="x:82" class="id"><a name="x:82" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_topology.X">X</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#nbhs">nbhs</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#x:82">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#29c78c22490f2dae838b1b504eb858a2">[set</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#29c78c22490f2dae838b1b504eb858a2"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#x:82">x</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#29c78c22490f2dae838b1b504eb858a2">]</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#open_nbhs_nbhs">open_nbhs_nbhs</a></span><span class="id">;</span><span class="id"> split</span><span class="id"> =&gt;</span><span class="id"> //;</span><span class="id"> exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_open">discrete_open</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="discrete_closed" class="id"><a name="discrete_closed" class="" title="discrete_closed : forall {X : discreteTopologicalType} (A : set X), closed A
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="discrete_closed" class="id"><a name="discrete_closed" class="" title="discrete_closed :
+forall {X : discreteTopologicalType} (A : set X), topology_structure.closed A
 
 discrete_closed is not universe polymorphic
 Arguments discrete_closed {X} A%_classical_set_scope t _
@@ -2587,7 +2612,7 @@ discrete_closed is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_closed
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 207, characters 6-21
+library mathcomp.analysis.topology_theory.discrete_topology, line 210, characters 6-21
 ">discrete_closed</a></span> (<span id="A:83" class="id"><a name="A:83" class="">A</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_topology.X">X</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#closed">closed</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#A:83">A</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -2596,7 +2621,8 @@ library mathcomp.analysis.topology_theory.discrete_topology, line 207, character
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="discrete_cvg" class="id"><a name="discrete_cvg" class="" title="discrete_cvg :
 forall {X : discreteTopologicalType} (F : set_system X) (x : X),
-Filter F -> (F --> x)%classic <-> F [set x]%classic
+filter.Filter F ->
+filter.cvg_to (filter.nbhs F) (filter.nbhs x) <-> F [set x]%classic
 
 discrete_cvg is not universe polymorphic
 Arguments discrete_cvg {X} F x _
@@ -2604,8 +2630,8 @@ discrete_cvg is opaque
 Expands to: Constant
             mathcomp.analysis.topology_theory.discrete_topology.discrete_cvg
 Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 210, characters 6-18
-">discrete_cvg</a></span> (<span id="F:84" class="id"><a name="F:84" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_topology.X">X</a></span>) (<span id="x:85" class="id"><a name="x:85" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_topology.X">X</a></span>)<span class="id"> :</span><br/>
+library mathcomp.analysis.topology_theory.discrete_topology, line 213, characters 6-18
+">discrete_cvg</a></span> (<span id="F:84" class="id"><a name="F:84" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_topology.X">X</a></span>) (<span id="x:85" class="id"><a name="x:85" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#discrete_topology.X">X</a></span>)<span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#F:84">F</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#F:84">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#x:85">x</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"> &lt;-&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#F:84">F</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#29c78c22490f2dae838b1b504eb858a2">[set</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#29c78c22490f2dae838b1b504eb858a2"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.discrete_topology.html#x:85">x</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#29c78c22490f2dae838b1b504eb858a2">]</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
