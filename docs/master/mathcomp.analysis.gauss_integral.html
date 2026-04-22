@@ -295,7 +295,10 @@ library mathcomp.analysis.gauss_integral, line 35, characters 6-19
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvg_gauss_fun" class="id"><a name="cvg_gauss_fun" class="" title="cvg_gauss_fun :
 forall {R : realType},
-filter.cvg_to (filter.nbhs (filter.fmap [eta gauss_fun] (filter.nbhs +oo%R)))
+filter.cvg_to
+  (filter.nbhs
+     (filter.fmap [eta gauss_fun]
+        (filter.nbhs (num_normedtype.pinfty_nbhs R))))
   (filter.nbhs (0%R : R))
 
 cvg_gauss_fun is not universe polymorphic
@@ -363,24 +366,27 @@ library mathcomp.analysis.gauss_integral, line 44, characters 6-26
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="continuous_gauss_fun" class="id"><a name="continuous_gauss_fun" class="" title="continuous_gauss_fun :
 forall {R : realType}
   [x : filter.Nbhs.sort
-         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
+         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
 filter.continuous_at
-  (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-  (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x gauss_fun
+  (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+  (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+  gauss_fun
 
 continuous_gauss_fun is not universe polymorphic
 Expanded type for implicit arguments
 continuous_gauss_fun :
 forall {R : realType}
   [x : filter.Nbhs.sort
-         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
+         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
   [t : set
          (filter.Nbhs.sort
-            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
+            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
+               R))],
 filter.nbhs (gauss_fun x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i `<=` gauss_fun @^-1` t)%classic
+  (pseudometric_structure.ball_ [eta Num.Def.normr] x i
+   `<=` gauss_fun @^-1` t)%classic
 
 Arguments continuous_gauss_fun {R} [x t] _
 continuous_gauss_fun is opaque
@@ -760,7 +766,7 @@ filter.cvg_to
   (filter.nbhs
      (filter.fmap
         (fun x : R => (gauss_integral_proof.integral0_gauss x ^+ 2)%R)
-        (filter.nbhs +oo%R)))
+        (filter.nbhs (num_normedtype.pinfty_nbhs R))))
   (filter.nbhs (pi / 4)%R)
 
 gauss_integral_proof.cvg_integral0_gauss_sqr is not universe polymorphic

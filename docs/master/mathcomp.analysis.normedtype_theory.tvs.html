@@ -2519,9 +2519,9 @@ forall [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -2554,17 +2554,13 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
         local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c:={|
-        uniform_structure.Uniform.choice_hasChoice_mixin :=
-          local_mixin_choice_hasChoice;
-        uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-          local_mixin_eqtype_hasDecEq;
-        uniform_structure.Uniform.filter_selfFiltered_mixin :=
-          local_mixin_filter_selfFiltered;
-        uniform_structure.Uniform.filter_isFiltered_mixin :=
-          local_mixin_filter_isFiltered;
-        uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+        Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+        Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+        Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
           local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-        uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+        Uniform.topology_structure_Nbhs_isTopological_mixin :=
           local_mixin_topology_structure_Nbhs_isTopological
       |})
   id_phant id_phant id_phant id_phant id_phant
@@ -2652,7 +2648,7 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
        |})
   id_phant id_phant id_phant id_phant id_phant
   (m42:=local_mixin_Algebra_AddMagma_isAddSemigroup) id_phant id_phant ->
-uniform_structure.unif_continuous
+unif_continuous
   (U:=Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
         local_mixin_uniform_structure_Nbhs_isUniform_mixin
         local_mixin_topology_structure_Nbhs_isTopological)
@@ -2670,9 +2666,9 @@ forall [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -2705,17 +2701,13 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
         local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c:={|
-        uniform_structure.Uniform.choice_hasChoice_mixin :=
-          local_mixin_choice_hasChoice;
-        uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-          local_mixin_eqtype_hasDecEq;
-        uniform_structure.Uniform.filter_selfFiltered_mixin :=
-          local_mixin_filter_selfFiltered;
-        uniform_structure.Uniform.filter_isFiltered_mixin :=
-          local_mixin_filter_isFiltered;
-        uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+        Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+        Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+        Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
           local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-        uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+        Uniform.topology_structure_Nbhs_isTopological_mixin :=
           local_mixin_topology_structure_Nbhs_isTopological
       |})
   id_phant id_phant id_phant id_phant id_phant
@@ -2805,27 +2797,23 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
   (m42:=local_mixin_Algebra_AddMagma_isAddSemigroup) id_phant id_phant ->
 forall
   [t : set
-         (uniform_structure.Uniform.sort
-            (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-               local_mixin_uniform_structure_Nbhs_isUniform_mixin
-               local_mixin_topology_structure_Nbhs_isTopological) *
-          uniform_structure.Uniform.sort
-            (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-               local_mixin_uniform_structure_Nbhs_isUniform_mixin
-               local_mixin_topology_structure_Nbhs_isTopological))],
-filter.nbhs uniform_structure.entourage t ->
+         (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+            local_mixin_uniform_structure_Nbhs_isUniform_mixin
+            local_mixin_topology_structure_Nbhs_isTopological *
+          Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+            local_mixin_uniform_structure_Nbhs_isUniform_mixin
+            local_mixin_topology_structure_Nbhs_isTopological)],
+filter.nbhs entourage t ->
 (let (entourage, _, _, _, _, _) :=
    local_mixin_uniform_structure_Nbhs_isUniform_mixin in
  entourage)
   ((fun
-      xy : uniform_structure.Uniform.sort
-             (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-                local_mixin_uniform_structure_Nbhs_isUniform_mixin
-                local_mixin_topology_structure_Nbhs_isTopological) *
-           uniform_structure.Uniform.sort
-             (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-                local_mixin_uniform_structure_Nbhs_isUniform_mixin
-                local_mixin_topology_structure_Nbhs_isTopological) =>
+      xy : Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+             local_mixin_uniform_structure_Nbhs_isUniform_mixin
+             local_mixin_topology_structure_Nbhs_isTopological *
+           Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+             local_mixin_uniform_structure_Nbhs_isUniform_mixin
+             local_mixin_topology_structure_Nbhs_isTopological =>
     ((-%R%R : M -> M) xy.1, (-%R%R : M -> M) xy.2)) @^-1`
    t)%classic
 
@@ -2868,9 +2856,9 @@ forall [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -2903,17 +2891,13 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
         local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c:={|
-        uniform_structure.Uniform.choice_hasChoice_mixin :=
-          local_mixin_choice_hasChoice;
-        uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-          local_mixin_eqtype_hasDecEq;
-        uniform_structure.Uniform.filter_selfFiltered_mixin :=
-          local_mixin_filter_selfFiltered;
-        uniform_structure.Uniform.filter_isFiltered_mixin :=
-          local_mixin_filter_isFiltered;
-        uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+        Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+        Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+        Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
           local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-        uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+        Uniform.topology_structure_Nbhs_isTopological_mixin :=
           local_mixin_topology_structure_Nbhs_isTopological
       |})
   id_phant id_phant id_phant id_phant id_phant
@@ -3001,8 +2985,7 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
        |})
   id_phant id_phant id_phant id_phant id_phant
   (m42:=local_mixin_Algebra_AddMagma_isAddSemigroup) id_phant id_phant ->
-uniform_structure.unif_continuous
-  (U:=product_topology.Datatypes_prod__canonical__uniform_structure_Uniform)
+unif_continuous (U:=Datatypes_prod__canonical__uniform_structure_Uniform)
   (V:=join_pseudometric_normed_Zmodule_PreUniformNmodule_between_Algebra_BaseAddMagma_and_uniform_structure_Uniform
         (Builders_15.Builders_15_M__canonical__pseudometric_normed_Zmodule_PreUniformNmodule
            local_mixin_uniform_structure_Nbhs_isUniform_mixin
@@ -3020,9 +3003,9 @@ forall [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -3055,17 +3038,13 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
         local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c:={|
-        uniform_structure.Uniform.choice_hasChoice_mixin :=
-          local_mixin_choice_hasChoice;
-        uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-          local_mixin_eqtype_hasDecEq;
-        uniform_structure.Uniform.filter_selfFiltered_mixin :=
-          local_mixin_filter_selfFiltered;
-        uniform_structure.Uniform.filter_isFiltered_mixin :=
-          local_mixin_filter_isFiltered;
-        uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+        Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+        Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+        Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
           local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-        uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+        Uniform.topology_structure_Nbhs_isTopological_mixin :=
           local_mixin_topology_structure_Nbhs_isTopological
       |})
   id_phant id_phant id_phant id_phant id_phant
@@ -3155,86 +3134,70 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
   (m42:=local_mixin_Algebra_AddMagma_isAddSemigroup) id_phant id_phant ->
 forall
   [t : set
-         (uniform_structure.Uniform.sort
-            (join_pseudometric_normed_Zmodule_PreUniformNmodule_between_Algebra_BaseAddMagma_and_uniform_structure_Uniform
-               (Builders_15.Builders_15_M__canonical__pseudometric_normed_Zmodule_PreUniformNmodule
-                  local_mixin_uniform_structure_Nbhs_isUniform_mixin
-                  local_mixin_topology_structure_Nbhs_isTopological
-                  local_mixin_Algebra_BaseAddUMagma_isAddUMagma
-                  local_mixin_Algebra_AddMagma_isAddSemigroup)) *
-          uniform_structure.Uniform.sort
-            (join_pseudometric_normed_Zmodule_PreUniformNmodule_between_Algebra_BaseAddMagma_and_uniform_structure_Uniform
-               (Builders_15.Builders_15_M__canonical__pseudometric_normed_Zmodule_PreUniformNmodule
-                  local_mixin_uniform_structure_Nbhs_isUniform_mixin
-                  local_mixin_topology_structure_Nbhs_isTopological
-                  local_mixin_Algebra_BaseAddUMagma_isAddUMagma
-                  local_mixin_Algebra_AddMagma_isAddSemigroup)))],
-filter.nbhs uniform_structure.entourage t ->
+         (join_pseudometric_normed_Zmodule_PreUniformNmodule_between_Algebra_BaseAddMagma_and_uniform_structure_Uniform
+            (Builders_15.Builders_15_M__canonical__pseudometric_normed_Zmodule_PreUniformNmodule
+               local_mixin_uniform_structure_Nbhs_isUniform_mixin
+               local_mixin_topology_structure_Nbhs_isTopological
+               local_mixin_Algebra_BaseAddUMagma_isAddUMagma
+               local_mixin_Algebra_AddMagma_isAddSemigroup) *
+          join_pseudometric_normed_Zmodule_PreUniformNmodule_between_Algebra_BaseAddMagma_and_uniform_structure_Uniform
+            (Builders_15.Builders_15_M__canonical__pseudometric_normed_Zmodule_PreUniformNmodule
+               local_mixin_uniform_structure_Nbhs_isUniform_mixin
+               local_mixin_topology_structure_Nbhs_isTopological
+               local_mixin_Algebra_BaseAddUMagma_isAddUMagma
+               local_mixin_Algebra_AddMagma_isAddSemigroup))],
+filter.nbhs entourage t ->
 exists2
   i : set
-        (uniform_structure.Uniform.sort
-           (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-              local_mixin_uniform_structure_Nbhs_isUniform_mixin
-              local_mixin_topology_structure_Nbhs_isTopological) *
-         uniform_structure.Uniform.sort
-           (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-              local_mixin_uniform_structure_Nbhs_isUniform_mixin
-              local_mixin_topology_structure_Nbhs_isTopological)) *
+        (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+           local_mixin_uniform_structure_Nbhs_isUniform_mixin
+           local_mixin_topology_structure_Nbhs_isTopological *
+         Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+           local_mixin_uniform_structure_Nbhs_isUniform_mixin
+           local_mixin_topology_structure_Nbhs_isTopological) *
       set
-        (uniform_structure.Uniform.sort
-           (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-              local_mixin_uniform_structure_Nbhs_isUniform_mixin
-              local_mixin_topology_structure_Nbhs_isTopological) *
-         uniform_structure.Uniform.sort
-           (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-              local_mixin_uniform_structure_Nbhs_isUniform_mixin
-              local_mixin_topology_structure_Nbhs_isTopological)),
+        (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+           local_mixin_uniform_structure_Nbhs_isUniform_mixin
+           local_mixin_topology_structure_Nbhs_isTopological *
+         Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+           local_mixin_uniform_structure_Nbhs_isUniform_mixin
+           local_mixin_topology_structure_Nbhs_isTopological),
   (fun
      P : set
-           (uniform_structure.Uniform.sort
-              (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-                 local_mixin_uniform_structure_Nbhs_isUniform_mixin
-                 local_mixin_topology_structure_Nbhs_isTopological) *
-            uniform_structure.Uniform.sort
-              (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-                 local_mixin_uniform_structure_Nbhs_isUniform_mixin
-                 local_mixin_topology_structure_Nbhs_isTopological)) *
+           (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+              local_mixin_uniform_structure_Nbhs_isUniform_mixin
+              local_mixin_topology_structure_Nbhs_isTopological *
+            Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+              local_mixin_uniform_structure_Nbhs_isUniform_mixin
+              local_mixin_topology_structure_Nbhs_isTopological) *
          set
-           (uniform_structure.Uniform.sort
-              (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-                 local_mixin_uniform_structure_Nbhs_isUniform_mixin
-                 local_mixin_topology_structure_Nbhs_isTopological) *
-            uniform_structure.Uniform.sort
-              (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-                 local_mixin_uniform_structure_Nbhs_isUniform_mixin
-                 local_mixin_topology_structure_Nbhs_isTopological)) =>
-   uniform_structure.entourage P.1 /\ uniform_structure.entourage P.2) i &
+           (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+              local_mixin_uniform_structure_Nbhs_isUniform_mixin
+              local_mixin_topology_structure_Nbhs_isTopological *
+            Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+              local_mixin_uniform_structure_Nbhs_isUniform_mixin
+              local_mixin_topology_structure_Nbhs_isTopological) =>
+   entourage P.1 /\ entourage P.2) i &
   ((fun
       P : set
-            (uniform_structure.Uniform.sort
-               (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-                  local_mixin_uniform_structure_Nbhs_isUniform_mixin
-                  local_mixin_topology_structure_Nbhs_isTopological) *
-             uniform_structure.Uniform.sort
-               (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-                  local_mixin_uniform_structure_Nbhs_isUniform_mixin
-                  local_mixin_topology_structure_Nbhs_isTopological)) *
+            (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+               local_mixin_uniform_structure_Nbhs_isUniform_mixin
+               local_mixin_topology_structure_Nbhs_isTopological *
+             Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+               local_mixin_uniform_structure_Nbhs_isUniform_mixin
+               local_mixin_topology_structure_Nbhs_isTopological) *
           set
-            (uniform_structure.Uniform.sort
-               (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-                  local_mixin_uniform_structure_Nbhs_isUniform_mixin
-                  local_mixin_topology_structure_Nbhs_isTopological) *
-             uniform_structure.Uniform.sort
-               (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
-                  local_mixin_uniform_structure_Nbhs_isUniform_mixin
-                  local_mixin_topology_structure_Nbhs_isTopological)) =>
+            (Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+               local_mixin_uniform_structure_Nbhs_isUniform_mixin
+               local_mixin_topology_structure_Nbhs_isTopological *
+             Builders_15.Builders_15_M__canonical__uniform_structure_Uniform
+               local_mixin_uniform_structure_Nbhs_isUniform_mixin
+               local_mixin_topology_structure_Nbhs_isTopological) =>
     P.1 `*` P.2) i
    `<=` [set (xy.1.1, xy.2.1, (xy.1.2, xy.2.2))
            | xy in (fun
-                      xy : uniform_structure.Uniform.sort
-                             product_topology.Datatypes_prod__canonical__uniform_structure_Uniform *
-                           uniform_structure.Uniform.sort
-                             product_topology.Datatypes_prod__canonical__uniform_structure_Uniform =>
+                      xy : Datatypes_prod__canonical__uniform_structure_Uniform *
+                           Datatypes_prod__canonical__uniform_structure_Uniform =>
                     ((fun x : M * M => (x.1 + x.2)%R) xy.1,
                      (fun x : M * M => (x.1 + x.2)%R) xy.2)) @^-1`
                    t])%classic
@@ -3282,9 +3245,9 @@ forall [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -3317,17 +3280,13 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
         local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c:={|
-        uniform_structure.Uniform.choice_hasChoice_mixin :=
-          local_mixin_choice_hasChoice;
-        uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-          local_mixin_eqtype_hasDecEq;
-        uniform_structure.Uniform.filter_selfFiltered_mixin :=
-          local_mixin_filter_selfFiltered;
-        uniform_structure.Uniform.filter_isFiltered_mixin :=
-          local_mixin_filter_isFiltered;
-        uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+        Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+        Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+        Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
           local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-        uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+        Uniform.topology_structure_Nbhs_isTopological_mixin :=
           local_mixin_topology_structure_Nbhs_isTopological
       |})
   id_phant id_phant id_phant id_phant id_phant
@@ -3443,9 +3402,9 @@ forall [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -3478,17 +3437,13 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
         local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c:={|
-        uniform_structure.Uniform.choice_hasChoice_mixin :=
-          local_mixin_choice_hasChoice;
-        uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-          local_mixin_eqtype_hasDecEq;
-        uniform_structure.Uniform.filter_selfFiltered_mixin :=
-          local_mixin_filter_selfFiltered;
-        uniform_structure.Uniform.filter_isFiltered_mixin :=
-          local_mixin_filter_isFiltered;
-        uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+        Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+        Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+        Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
           local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-        uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+        Uniform.topology_structure_Nbhs_isTopological_mixin :=
           local_mixin_topology_structure_Nbhs_isTopological
       |})
   id_phant id_phant id_phant id_phant id_phant
@@ -3604,9 +3559,9 @@ forall [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -3639,17 +3594,13 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
         local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c:={|
-        uniform_structure.Uniform.choice_hasChoice_mixin :=
-          local_mixin_choice_hasChoice;
-        uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-          local_mixin_eqtype_hasDecEq;
-        uniform_structure.Uniform.filter_selfFiltered_mixin :=
-          local_mixin_filter_selfFiltered;
-        uniform_structure.Uniform.filter_isFiltered_mixin :=
-          local_mixin_filter_isFiltered;
-        uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+        Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+        Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+        Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
           local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-        uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+        Uniform.topology_structure_Nbhs_isTopological_mixin :=
           local_mixin_topology_structure_Nbhs_isTopological
       |})
   id_phant id_phant id_phant id_phant id_phant
@@ -3765,9 +3716,9 @@ forall [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -3800,17 +3751,13 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
         local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c:={|
-        uniform_structure.Uniform.choice_hasChoice_mixin :=
-          local_mixin_choice_hasChoice;
-        uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-          local_mixin_eqtype_hasDecEq;
-        uniform_structure.Uniform.filter_selfFiltered_mixin :=
-          local_mixin_filter_selfFiltered;
-        uniform_structure.Uniform.filter_isFiltered_mixin :=
-          local_mixin_filter_isFiltered;
-        uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+        Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+        Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+        Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
           local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-        uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+        Uniform.topology_structure_Nbhs_isTopological_mixin :=
           local_mixin_topology_structure_Nbhs_isTopological
       |})
   id_phant id_phant id_phant id_phant id_phant
@@ -3928,9 +3875,9 @@ forall [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -3963,17 +3910,13 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
         local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c:={|
-        uniform_structure.Uniform.choice_hasChoice_mixin :=
-          local_mixin_choice_hasChoice;
-        uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-          local_mixin_eqtype_hasDecEq;
-        uniform_structure.Uniform.filter_selfFiltered_mixin :=
-          local_mixin_filter_selfFiltered;
-        uniform_structure.Uniform.filter_isFiltered_mixin :=
-          local_mixin_filter_isFiltered;
-        uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+        Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+        Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+        Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
           local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-        uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+        Uniform.topology_structure_Nbhs_isTopological_mixin :=
           local_mixin_topology_structure_Nbhs_isTopological
       |})
   id_phant id_phant id_phant id_phant id_phant
@@ -4089,9 +4032,9 @@ forall [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -4124,17 +4067,13 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
         local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c:={|
-        uniform_structure.Uniform.choice_hasChoice_mixin :=
-          local_mixin_choice_hasChoice;
-        uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-          local_mixin_eqtype_hasDecEq;
-        uniform_structure.Uniform.filter_selfFiltered_mixin :=
-          local_mixin_filter_selfFiltered;
-        uniform_structure.Uniform.filter_isFiltered_mixin :=
-          local_mixin_filter_isFiltered;
-        uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+        Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+        Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+        Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
           local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-        uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+        Uniform.topology_structure_Nbhs_isTopological_mixin :=
           local_mixin_topology_structure_Nbhs_isTopological
       |})
   id_phant id_phant id_phant id_phant id_phant
@@ -4250,9 +4189,9 @@ forall [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -4285,17 +4224,13 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
         local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c:={|
-        uniform_structure.Uniform.choice_hasChoice_mixin :=
-          local_mixin_choice_hasChoice;
-        uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-          local_mixin_eqtype_hasDecEq;
-        uniform_structure.Uniform.filter_selfFiltered_mixin :=
-          local_mixin_filter_selfFiltered;
-        uniform_structure.Uniform.filter_isFiltered_mixin :=
-          local_mixin_filter_isFiltered;
-        uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+        Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+        Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+        Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
           local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-        uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+        Uniform.topology_structure_Nbhs_isTopological_mixin :=
           local_mixin_topology_structure_Nbhs_isTopological
       |})
   id_phant id_phant id_phant id_phant id_phant
@@ -4411,9 +4346,9 @@ forall [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -4446,17 +4381,13 @@ PreUniformNmodule_isUniformZmodule.phant_axioms
         local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c:={|
-        uniform_structure.Uniform.choice_hasChoice_mixin :=
-          local_mixin_choice_hasChoice;
-        uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-          local_mixin_eqtype_hasDecEq;
-        uniform_structure.Uniform.filter_selfFiltered_mixin :=
-          local_mixin_filter_selfFiltered;
-        uniform_structure.Uniform.filter_isFiltered_mixin :=
-          local_mixin_filter_isFiltered;
-        uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+        Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+        Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+        Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+        Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+        Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
           local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-        uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+        Uniform.topology_structure_Nbhs_isTopological_mixin :=
           local_mixin_topology_structure_Nbhs_isTopological
       |})
   id_phant id_phant id_phant id_phant id_phant
@@ -4575,8 +4506,7 @@ library mathcomp.analysis.normedtype_theory.tvs, line 241, characters 0-90
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="sub_unif_continuous" class="id"><a name="sub_unif_continuous" class="" title="sub_unif_continuous :
 forall [M : UniformZmodule.type],
-uniform_structure.unif_continuous
-  (U:=product_topology.Datatypes_prod__canonical__uniform_structure_Uniform)
+unif_continuous (U:=Datatypes_prod__canonical__uniform_structure_Uniform)
   (V:=join_pseudometric_normed_Zmodule_PreUniformNmodule_between_Algebra_BaseAddMagma_and_uniform_structure_Uniform
         M)
   (fun x : M * M => (x.1 - x.2)%R)
@@ -4586,40 +4516,18 @@ Expanded type for implicit arguments
 sub_unif_continuous :
 forall [M : UniformZmodule.type]
   [t : set
-         (uniform_structure.Uniform.sort
-            (join_pseudometric_normed_Zmodule_PreUniformNmodule_between_Algebra_BaseAddMagma_and_uniform_structure_Uniform
-               M) *
-          uniform_structure.Uniform.sort
-            (join_pseudometric_normed_Zmodule_PreUniformNmodule_between_Algebra_BaseAddMagma_and_uniform_structure_Uniform
-               M))],
-filter.nbhs uniform_structure.entourage t ->
-exists2
-  i : set
-        (uniform_structure.Uniform.sort M * uniform_structure.Uniform.sort M) *
-      set
-        (uniform_structure.Uniform.sort M * uniform_structure.Uniform.sort M),
-  (fun
-     P : set
-           (uniform_structure.Uniform.sort M *
-            uniform_structure.Uniform.sort M) *
-         set
-           (uniform_structure.Uniform.sort M *
-            uniform_structure.Uniform.sort M) =>
-   uniform_structure.entourage P.1 /\ uniform_structure.entourage P.2) i &
-  ((fun
-      P : set
-            (uniform_structure.Uniform.sort M *
-             uniform_structure.Uniform.sort M) *
-          set
-            (uniform_structure.Uniform.sort M *
-             uniform_structure.Uniform.sort M) =>
-    P.1 `*` P.2) i
+         (join_pseudometric_normed_Zmodule_PreUniformNmodule_between_Algebra_BaseAddMagma_and_uniform_structure_Uniform
+            M *
+          join_pseudometric_normed_Zmodule_PreUniformNmodule_between_Algebra_BaseAddMagma_and_uniform_structure_Uniform
+            M)],
+filter.nbhs entourage t ->
+exists2 i : set (M * M) * set (M * M),
+  (fun P : set (M * M) * set (M * M) => entourage P.1 /\ entourage P.2) i &
+  ((fun P : set (M * M) * set (M * M) => P.1 `*` P.2) i
    `<=` [set (xy.1.1, xy.2.1, (xy.1.2, xy.2.2))
            | xy in (fun
-                      xy : uniform_structure.Uniform.sort
-                             product_topology.Datatypes_prod__canonical__uniform_structure_Uniform *
-                           uniform_structure.Uniform.sort
-                             product_topology.Datatypes_prod__canonical__uniform_structure_Uniform =>
+                      xy : Datatypes_prod__canonical__uniform_structure_Uniform *
+                           Datatypes_prod__canonical__uniform_structure_Uniform =>
                     ((fun x : M * M => (x.1 - x.2)%R) xy.1,
                      (fun x : M * M => (x.1 - x.2)%R) xy.2)) @^-1`
                    t])%classic
@@ -4686,9 +4594,9 @@ forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -4743,17 +4651,13 @@ UniformNmodule_isUniformLmodule.phant_axioms (R:=R)
          local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c0:={|
-         uniform_structure.Uniform.choice_hasChoice_mixin :=
-           local_mixin_choice_hasChoice;
-         uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-           local_mixin_eqtype_hasDecEq;
-         uniform_structure.Uniform.filter_selfFiltered_mixin :=
-           local_mixin_filter_selfFiltered;
-         uniform_structure.Uniform.filter_isFiltered_mixin :=
-           local_mixin_filter_isFiltered;
-         uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+         Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+         Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+         Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+         Uniform.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological
        |})
   id_phant id_phant id_phant id_phant id_phant
@@ -4800,7 +4704,7 @@ UniformNmodule_isUniformLmodule.phant_axioms (R:=R)
        |})
   id_phant id_phant id_phant id_phant id_phant id_phant id_phant id_phant
   (m40:=local_mixin_GRing_Nmodule_isLSemiModule) id_phant id_phant ->
-uniform_structure.unif_continuous
+unif_continuous
   (U:=Builders_22.Builders_22_M__canonical__uniform_structure_Uniform
         local_mixin_uniform_structure_Nbhs_isUniform_mixin
         local_mixin_topology_structure_Nbhs_isTopological)
@@ -4829,9 +4733,9 @@ forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -4886,17 +4790,13 @@ UniformNmodule_isUniformLmodule.phant_axioms (R:=R)
          local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c0:={|
-         uniform_structure.Uniform.choice_hasChoice_mixin :=
-           local_mixin_choice_hasChoice;
-         uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-           local_mixin_eqtype_hasDecEq;
-         uniform_structure.Uniform.filter_selfFiltered_mixin :=
-           local_mixin_filter_selfFiltered;
-         uniform_structure.Uniform.filter_isFiltered_mixin :=
-           local_mixin_filter_isFiltered;
-         uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+         Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+         Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+         Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+         Uniform.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological
        |})
   id_phant id_phant id_phant id_phant id_phant
@@ -4945,27 +4845,23 @@ UniformNmodule_isUniformLmodule.phant_axioms (R:=R)
   (m40:=local_mixin_GRing_Nmodule_isLSemiModule) id_phant id_phant ->
 forall
   [t : set
-         (uniform_structure.Uniform.sort
-            (Builders_22.Builders_22_M__canonical__uniform_structure_Uniform
-               local_mixin_uniform_structure_Nbhs_isUniform_mixin
-               local_mixin_topology_structure_Nbhs_isTopological) *
-          uniform_structure.Uniform.sort
-            (Builders_22.Builders_22_M__canonical__uniform_structure_Uniform
-               local_mixin_uniform_structure_Nbhs_isUniform_mixin
-               local_mixin_topology_structure_Nbhs_isTopological))],
-filter.nbhs uniform_structure.entourage t ->
+         (Builders_22.Builders_22_M__canonical__uniform_structure_Uniform
+            local_mixin_uniform_structure_Nbhs_isUniform_mixin
+            local_mixin_topology_structure_Nbhs_isTopological *
+          Builders_22.Builders_22_M__canonical__uniform_structure_Uniform
+            local_mixin_uniform_structure_Nbhs_isUniform_mixin
+            local_mixin_topology_structure_Nbhs_isTopological)],
+filter.nbhs entourage t ->
 (let (entourage, _, _, _, _, _) :=
    local_mixin_uniform_structure_Nbhs_isUniform_mixin in
  entourage)
   ((fun
-      xy : uniform_structure.Uniform.sort
-             (Builders_22.Builders_22_M__canonical__uniform_structure_Uniform
-                local_mixin_uniform_structure_Nbhs_isUniform_mixin
-                local_mixin_topology_structure_Nbhs_isTopological) *
-           uniform_structure.Uniform.sort
-             (Builders_22.Builders_22_M__canonical__uniform_structure_Uniform
-                local_mixin_uniform_structure_Nbhs_isUniform_mixin
-                local_mixin_topology_structure_Nbhs_isTopological) =>
+      xy : Builders_22.Builders_22_M__canonical__uniform_structure_Uniform
+             local_mixin_uniform_structure_Nbhs_isUniform_mixin
+             local_mixin_topology_structure_Nbhs_isTopological *
+           Builders_22.Builders_22_M__canonical__uniform_structure_Uniform
+             local_mixin_uniform_structure_Nbhs_isUniform_mixin
+             local_mixin_topology_structure_Nbhs_isTopological =>
     ((-%R%R : M -> M) xy.1, (-%R%R : M -> M) xy.2)) @^-1`
    t)%classic
 
@@ -5023,9 +4919,9 @@ forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -5080,17 +4976,13 @@ UniformNmodule_isUniformLmodule.phant_axioms (R:=R)
          local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c0:={|
-         uniform_structure.Uniform.choice_hasChoice_mixin :=
-           local_mixin_choice_hasChoice;
-         uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-           local_mixin_eqtype_hasDecEq;
-         uniform_structure.Uniform.filter_selfFiltered_mixin :=
-           local_mixin_filter_selfFiltered;
-         uniform_structure.Uniform.filter_isFiltered_mixin :=
-           local_mixin_filter_isFiltered;
-         uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+         Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+         Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+         Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+         Uniform.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological
        |})
   id_phant id_phant id_phant id_phant id_phant
@@ -5185,9 +5077,9 @@ forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -5242,17 +5134,13 @@ UniformNmodule_isUniformLmodule.phant_axioms (R:=R)
          local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c0:={|
-         uniform_structure.Uniform.choice_hasChoice_mixin :=
-           local_mixin_choice_hasChoice;
-         uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-           local_mixin_eqtype_hasDecEq;
-         uniform_structure.Uniform.filter_selfFiltered_mixin :=
-           local_mixin_filter_selfFiltered;
-         uniform_structure.Uniform.filter_isFiltered_mixin :=
-           local_mixin_filter_isFiltered;
-         uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+         Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+         Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+         Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+         Uniform.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological
        |})
   id_phant id_phant id_phant id_phant id_phant
@@ -5347,9 +5235,9 @@ forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -5404,17 +5292,13 @@ UniformNmodule_isUniformLmodule.phant_axioms (R:=R)
          local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c0:={|
-         uniform_structure.Uniform.choice_hasChoice_mixin :=
-           local_mixin_choice_hasChoice;
-         uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-           local_mixin_eqtype_hasDecEq;
-         uniform_structure.Uniform.filter_selfFiltered_mixin :=
-           local_mixin_filter_selfFiltered;
-         uniform_structure.Uniform.filter_isFiltered_mixin :=
-           local_mixin_filter_isFiltered;
-         uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+         Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+         Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+         Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+         Uniform.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological
        |})
   id_phant id_phant id_phant id_phant id_phant
@@ -5510,9 +5394,9 @@ forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -5567,17 +5451,13 @@ UniformNmodule_isUniformLmodule.phant_axioms (R:=R)
          local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c0:={|
-         uniform_structure.Uniform.choice_hasChoice_mixin :=
-           local_mixin_choice_hasChoice;
-         uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-           local_mixin_eqtype_hasDecEq;
-         uniform_structure.Uniform.filter_selfFiltered_mixin :=
-           local_mixin_filter_selfFiltered;
-         uniform_structure.Uniform.filter_isFiltered_mixin :=
-           local_mixin_filter_isFiltered;
-         uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+         Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+         Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+         Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+         Uniform.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological
        |})
   id_phant id_phant id_phant id_phant id_phant
@@ -5672,9 +5552,9 @@ forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -5729,17 +5609,13 @@ UniformNmodule_isUniformLmodule.phant_axioms (R:=R)
          local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c0:={|
-         uniform_structure.Uniform.choice_hasChoice_mixin :=
-           local_mixin_choice_hasChoice;
-         uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-           local_mixin_eqtype_hasDecEq;
-         uniform_structure.Uniform.filter_selfFiltered_mixin :=
-           local_mixin_filter_selfFiltered;
-         uniform_structure.Uniform.filter_isFiltered_mixin :=
-           local_mixin_filter_isFiltered;
-         uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+         Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+         Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+         Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+         Uniform.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological
        |})
   id_phant id_phant id_phant id_phant id_phant
@@ -5834,9 +5710,9 @@ forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -5891,17 +5767,13 @@ UniformNmodule_isUniformLmodule.phant_axioms (R:=R)
          local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c0:={|
-         uniform_structure.Uniform.choice_hasChoice_mixin :=
-           local_mixin_choice_hasChoice;
-         uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-           local_mixin_eqtype_hasDecEq;
-         uniform_structure.Uniform.filter_selfFiltered_mixin :=
-           local_mixin_filter_selfFiltered;
-         uniform_structure.Uniform.filter_isFiltered_mixin :=
-           local_mixin_filter_isFiltered;
-         uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+         Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+         Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+         Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+         Uniform.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological
        |})
   id_phant id_phant id_phant id_phant id_phant
@@ -5996,9 +5868,9 @@ forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -6053,17 +5925,13 @@ UniformNmodule_isUniformLmodule.phant_axioms (R:=R)
          local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c0:={|
-         uniform_structure.Uniform.choice_hasChoice_mixin :=
-           local_mixin_choice_hasChoice;
-         uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-           local_mixin_eqtype_hasDecEq;
-         uniform_structure.Uniform.filter_selfFiltered_mixin :=
-           local_mixin_filter_selfFiltered;
-         uniform_structure.Uniform.filter_isFiltered_mixin :=
-           local_mixin_filter_isFiltered;
-         uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+         Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+         Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+         Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+         Uniform.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological
        |})
   id_phant id_phant id_phant id_phant id_phant
@@ -6160,9 +6028,9 @@ forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -6217,17 +6085,13 @@ UniformNmodule_isUniformLmodule.phant_axioms (R:=R)
          local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c0:={|
-         uniform_structure.Uniform.choice_hasChoice_mixin :=
-           local_mixin_choice_hasChoice;
-         uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-           local_mixin_eqtype_hasDecEq;
-         uniform_structure.Uniform.filter_selfFiltered_mixin :=
-           local_mixin_filter_selfFiltered;
-         uniform_structure.Uniform.filter_isFiltered_mixin :=
-           local_mixin_filter_isFiltered;
-         uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+         Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+         Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+         Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+         Uniform.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological
        |})
   id_phant id_phant id_phant id_phant id_phant
@@ -6323,9 +6187,9 @@ forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -6380,17 +6244,13 @@ UniformNmodule_isUniformLmodule.phant_axioms (R:=R)
          local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c0:={|
-         uniform_structure.Uniform.choice_hasChoice_mixin :=
-           local_mixin_choice_hasChoice;
-         uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-           local_mixin_eqtype_hasDecEq;
-         uniform_structure.Uniform.filter_selfFiltered_mixin :=
-           local_mixin_filter_selfFiltered;
-         uniform_structure.Uniform.filter_isFiltered_mixin :=
-           local_mixin_filter_isFiltered;
-         uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+         Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+         Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+         Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+         Uniform.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological
        |})
   id_phant id_phant id_phant id_phant id_phant
@@ -6486,9 +6346,9 @@ forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -6543,17 +6403,13 @@ UniformNmodule_isUniformLmodule.phant_axioms (R:=R)
          local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c0:={|
-         uniform_structure.Uniform.choice_hasChoice_mixin :=
-           local_mixin_choice_hasChoice;
-         uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-           local_mixin_eqtype_hasDecEq;
-         uniform_structure.Uniform.filter_selfFiltered_mixin :=
-           local_mixin_filter_selfFiltered;
-         uniform_structure.Uniform.filter_isFiltered_mixin :=
-           local_mixin_filter_isFiltered;
-         uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+         Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+         Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+         Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+         Uniform.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological
        |})
   id_phant id_phant id_phant id_phant id_phant
@@ -6649,9 +6505,9 @@ forall [R : numFieldType] [M : Type]
   [local_mixin_choice_hasChoice : hasChoice.axioms_ M]
   [local_mixin_eqtype_hasDecEq : Equality.mixin_of M]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   uniform_structure.Nbhs_isUniform_mixin.axioms_ M
-     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
-     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
+   Nbhs_isUniform_mixin.axioms_ M local_mixin_choice_hasChoice
+     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
+     local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ M
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
@@ -6706,17 +6562,13 @@ UniformNmodule_isUniformLmodule.phant_axioms (R:=R)
          local_mixin_topology_structure_Nbhs_isTopological)
   id_phant
   (c0:={|
-         uniform_structure.Uniform.choice_hasChoice_mixin :=
-           local_mixin_choice_hasChoice;
-         uniform_structure.Uniform.eqtype_hasDecEq_mixin :=
-           local_mixin_eqtype_hasDecEq;
-         uniform_structure.Uniform.filter_selfFiltered_mixin :=
-           local_mixin_filter_selfFiltered;
-         uniform_structure.Uniform.filter_isFiltered_mixin :=
-           local_mixin_filter_isFiltered;
-         uniform_structure.Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         Uniform.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
+         Uniform.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
+         Uniform.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
+         Uniform.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
+         Uniform.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         uniform_structure.Uniform.topology_structure_Nbhs_isTopological_mixin :=
+         Uniform.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological
        |})
   id_phant id_phant id_phant id_phant id_phant
@@ -6817,10 +6669,10 @@ forall [R : numDomainType] [E : preTopologicalLmodType R] [U : set E],
 (forall
    x : filter.Nbhs.sort
          (filter.Datatypes_prod__canonical__filter_Nbhs
-            (num_topology.GRing_regular__canonical__filter_Nbhs R) E),
+            (GRing_regular__canonical__filter_Nbhs R) E),
  filter.continuous_at
    (T:=filter.Datatypes_prod__canonical__filter_Nbhs
-         (num_topology.GRing_regular__canonical__filter_Nbhs R) E)
+         (GRing_regular__canonical__filter_Nbhs R) E)
    (U:=join_tvs_NbhsLmodule_between_GRing_LSemiModule_and_filter_Nbhs E) x
    (fun z : R^o * E => (z.1 *: z.2)%R)) ->
 forall [x : E],
@@ -6849,10 +6701,10 @@ forall [R : numDomainType] [E : preTopologicalLmodType R] [U : set E],
 (forall
    x : filter.Nbhs.sort
          (filter.Datatypes_prod__canonical__filter_Nbhs
-            (num_topology.GRing_regular__canonical__filter_Nbhs R) E),
+            (GRing_regular__canonical__filter_Nbhs R) E),
  filter.continuous_at
    (T:=filter.Datatypes_prod__canonical__filter_Nbhs
-         (num_topology.GRing_regular__canonical__filter_Nbhs R) E)
+         (GRing_regular__canonical__filter_Nbhs R) E)
    (U:=join_tvs_NbhsLmodule_between_GRing_LSemiModule_and_filter_Nbhs E) x
    (fun z : R^o * E => (z.1 *: z.2)%R)) ->
 filter.nbhs 0%R U -> filter.nbhs 0%R [set (- x)%R | x in U]%classic

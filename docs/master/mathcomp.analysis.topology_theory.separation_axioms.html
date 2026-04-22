@@ -714,7 +714,7 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="subspace_hausdorff" class="id"><a name="subspace_hausdorff" class="" title="subspace_hausdorff :
 forall {T : topology_structure.Topological.type}
   [A : set (topology_structure.Topological.sort T)],
-hausdorff_space T -> hausdorff_space (subspace_topology.subspace A)
+hausdorff_space T -> hausdorff_space (subspace A)
 
 subspace_hausdorff is not universe polymorphic
 Expanded type for implicit arguments
@@ -722,8 +722,7 @@ subspace_hausdorff :
 forall {T : topology_structure.Topological.type}
   [A : set (topology_structure.Topological.sort T)],
 hausdorff_space T ->
-forall
-  [p q : topology_structure.Topological.sort (subspace_topology.subspace A)],
+forall [p q : topology_structure.Topological.sort (subspace A)],
 cluster (filter.nbhs p) q -> p = q
 
 Arguments subspace_hausdorff {T} [A]%_classical_set_scope _ [p q] _

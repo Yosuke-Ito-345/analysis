@@ -1204,14 +1204,14 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="finite_compact" class="id"><a name="finite_compact" class="" title="finite_compact :
 forall {X : topology_structure.Topological.type}
   [A : set (topology_structure.Topological.sort X)],
-finite_set A -> compact A
+cardinality.finite_set A -> compact A
 
 finite_compact is not universe polymorphic
 Expanded type for implicit arguments
 finite_compact :
 forall {X : topology_structure.Topological.type}
   [A : set (topology_structure.Topological.sort X)],
-finite_set A ->
+cardinality.finite_set A ->
 forall [F : set_system (topology_structure.Topological.sort X)],
 filter.ProperFilter F ->
 F A ->
@@ -1236,7 +1236,7 @@ Qed.</div></details>
 forall {T : topology_structure.PointedTopological.type},
 compact [set: topology_structure.PointedTopological.sort T] ->
 topology_structure.second_countable ->
-countable
+cardinality.countable
   (T:=set
         (topology_structure.Topological.sort
            (topology_structure.PointedTopological.Exports.topology_structure_PointedTopological__to__topology_structure_Topological

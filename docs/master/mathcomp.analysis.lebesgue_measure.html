@@ -2336,8 +2336,7 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="lebesgue_measure_ball" class="id"><a name="lebesgue_measure_ball" class="" title="lebesgue_measure_ball :
 forall [R : realType] (x : R) [r : R],
-(0 <= r)%R ->
-lebesgue_measure (pseudometric_structure.ball x r) = (r *+ 2)%:E
+(0 <= r)%R -> lebesgue_measure (ball x r) = (r *+ 2)%:E
 
 lebesgue_measure_ball is not universe polymorphic
 Arguments lebesgue_measure_ball [R] x%_ring_scope [r]%_ring_scope _
@@ -2361,7 +2360,7 @@ forall [R : realType] (x : R) [r : R],
 (0 <= r)%R ->
 lebesgue_measure
   (closed_ball
-     (V:=num_topology.numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
+     (V:=numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
            R)
      x r) =
 (r *+ 2)%:E
@@ -2393,7 +2392,7 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="compact_finite_measure" class="id"><a name="compact_finite_measure" class="" title="compact_finite_measure :
 forall [rT : realType] [A : set (measurableTypeR rT)],
-compact.compact A -> (lebesgue_measure A < +oo)%E
+compact A -> (lebesgue_measure A < +oo)%E
 
 compact_finite_measure is not universe polymorphic
 Arguments compact_finite_measure [rT] [A]%_classical_set_scope _
@@ -2452,7 +2451,7 @@ forall {R : realType} (A : set R) [e : R],
 exists
   U : set
         (topology_structure.Topological.sort
-           (num_topology.numFieldTopology.Real_sort__canonical__topology_structure_Topological
+           (numFieldTopology.Real_sort__canonical__topology_structure_Topological
               R)),
   [/\ topology_structure.open U, (A `<=` U)%classic
     & (lebesgue_measure U <= (wlength idfun)^*%mu A + e%:E)%E]
@@ -2716,7 +2715,7 @@ forall {R : realType} [D : set R] [eps : R],
 (lebesgue_measure D < +oo)%E ->
 (0 < eps)%R ->
 exists V : set R,
-  [/\ compact.compact V, (V `<=` D)%classic
+  [/\ compact V, (V `<=` D)%classic
     & (lebesgue_measure (D `\` V)%classic < eps%:E)%E]
 
 lebesgue_regularity_inner is not universe polymorphic
@@ -2797,8 +2796,7 @@ forall {R : realType} [D : set R],
 'measurable%classic D ->
 lebesgue_measure D =
 ereal.ereal_sup (R:=R)
-  [set lebesgue_measure K
-     | K in [set K | compact.compact K /\ (K `<=` D)%classic]]
+  [set lebesgue_measure K | K in [set K | compact K /\ (K `<=` D)%classic]]
 
 lebesgue_regularity_inner_sup is not universe polymorphic
 Arguments lebesgue_regularity_inner_sup {R} [D]%_classical_set_scope _
@@ -2872,7 +2870,7 @@ exists D : set nat,
   [/\ countable (T:=nat) D, (D `<=` V)%classic,
       trivIset
         (T:=topology_structure.Topological.sort
-              (num_topology.numFieldTopology.Real_sort__canonical__topology_structure_Topological
+              (numFieldTopology.Real_sort__canonical__topology_structure_Topological
                  R))
         D (topology_structure.closure \o B)
     & lebesgue_measure
@@ -3245,7 +3243,7 @@ exists G' : {fset nat},
   [/\ ([set` G'] `<=` F)%classic,
       trivIset
         (T:=topology_structure.Topological.sort
-              (num_topology.numFieldTopology.Real_sort__canonical__topology_structure_Topological
+              (numFieldTopology.Real_sort__canonical__topology_structure_Topological
                  R))
         [set` G'] (topology_structure.closure \o B)
     & ((wlength idfun)^*%mu

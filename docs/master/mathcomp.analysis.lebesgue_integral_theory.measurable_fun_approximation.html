@@ -2414,20 +2414,11 @@ measurable_fun (T:=Real_sort__canonical__measurable_structure_SigmaRing rT)
 exists
   K : set
         (topology_structure.Topological.sort
-           (num_topology.numFieldTopology.Real_sort__canonical__topology_structure_Topological
+           (numFieldTopology.Real_sort__canonical__topology_structure_Topological
               rT)),
-  [/\ compact.compact K, (K `<=` A)%classic,
+  [/\ compact K, (K `<=` A)%classic,
       (lebesgue_measure (A `\` K)%classic < eps%:E)%E
-    & forall
-        x : filter.Nbhs.sort
-              (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-                 K),
-      filter.continuous_at
-        (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-              K)
-        (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
-              rT)
-        x (subspace_topology.from_subspace K f)]
+    & {within K, continuous f}%classic]
 
 measurable_almost_continuous is not universe polymorphic
 Arguments measurable_almost_continuous [rT] [A]%_classical_set_scope 

@@ -783,7 +783,7 @@ library mathcomp.analysis.topology_theory.supremum_topology, line 174, character
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="countable_sup_ent" class="id"><a name="countable_sup_ent" class="" title="countable_sup_ent :
 forall [T : choiceType] [Ii : Type] [Tc : Ii -> Uniform.axioms_ T],
-countable (T:=Ii) [set: Ii] ->
+cardinality.countable (T:=Ii) [set: Ii] ->
 (forall n : Ii,
  countable_uniformity
    ((fun i : Ii => {| Uniform.sort := T; Uniform.class := Tc i |}) n)) ->

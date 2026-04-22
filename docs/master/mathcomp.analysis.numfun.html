@@ -3200,24 +3200,22 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvg_indic" class="id"><a name="cvg_indic" class="" title="cvg_indic :
 forall {R : realFieldType} [x : R^o] [k : R],
-x \in (pseudometric_structure.ball 0%R k : set R^o) ->
+x \in (ball 0%R k : set R^o) ->
 filter.cvg_to
   (filter.nbhs
-     (filter.fmap [eta (\1_(pseudometric_structure.ball 0 k : set R^o))%R]
-        (filter.nbhs x)))
-  (filter.nbhs ((\1_(pseudometric_structure.ball 0 k))%R x : R))
+     (filter.fmap [eta (\1_(ball 0 k : set R^o))%R] (filter.nbhs x)))
+  (filter.nbhs ((\1_(ball 0 k))%R x : R))
 
 cvg_indic is not universe polymorphic
 Expanded type for implicit arguments
 cvg_indic :
 forall {R : realFieldType} [x : R^o] [k : R],
-x \in (pseudometric_structure.ball 0%R k : set R^o) ->
+x \in (ball 0%R k : set R^o) ->
 forall [t : set R],
-filter.nbhs ((\1_(pseudometric_structure.ball 0 k))%R x : R) t ->
+filter.nbhs ((\1_(ball 0 k))%R x : R) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] x i
-   `<=` [eta (\1_(pseudometric_structure.ball 0 k : set R^o))%R] @^-1` t)%classic
+  (ball_ [eta normr] x i `<=` [eta (\1_(ball 0 k : set R^o))%R] @^-1` t)%classic
 
 Arguments cvg_indic {R} [x] [k]%_ring_scope _ [t] _
 cvg_indic is opaque
@@ -3828,7 +3826,7 @@ Declared in library mathcomp.analysis.numfun, line 1222, characters 2-46
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="urysohn_ext_itv" class="id"><a name="urysohn_ext_itv" class="" title="urysohn_ext_itv :
 forall {X : topology_structure.Topological.type} {R : realType},
-separation_axioms.normal_space X ->
+normal_space X ->
 forall [A B : set (topology_structure.Topological.sort X)] [x y : R],
 topology_structure.closed A ->
 topology_structure.closed B ->
@@ -3842,8 +3840,7 @@ exists f : topology_structure.Topological.sort X -> R,
       filter.continuous_at
         (T:=topology_structure.Topological.Exports.topology_structure_Topological__to__filter_Nbhs
               X)
-        (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-        x0 f,
+        (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0 f,
       ([set f x | x in A] `<=` [set x])%classic,
       ([set f x | x in B] `<=` [set y])%classic
     & (range f `<=` `[x, y])%classic]
@@ -3944,7 +3941,7 @@ Qed.</div></details>
 <div class="doc">Tietze's theorem: </div>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="continuous_bounded_extension" class="id"><a name="continuous_bounded_extension" class="" title="continuous_bounded_extension :
 forall {X : topology_structure.Topological.type} {R : realType},
-separation_axioms.normal_space X ->
+normal_space X ->
 forall [A : set (topology_structure.Topological.sort X)],
 topology_structure.closed A ->
 forall [f : topology_structure.Topological.sort X -> R^o]
@@ -3978,14 +3975,7 @@ forall [f : topology_structure.Topological.sort X -> R^o]
              |}
          |}],
 (0 < M)%R ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            A),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
-   (U:=num_topology.GRing_regular__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace A f)) ->
+{within A, continuous f}%classic ->
 (forall x : topology_structure.Topological.sort X, A x -> (`|f x| <= M)%R) ->
 exists g : topology_structure.Topological.sort X -> R^o,
   [/\ {in A, f =1 g},
@@ -3996,7 +3986,7 @@ exists g : topology_structure.Topological.sort X -> R^o,
       filter.continuous_at
         (T:=topology_structure.Topological.Exports.topology_structure_Topological__to__filter_Nbhs
               X)
-        (U:=num_topology.GRing_regular__canonical__filter_Nbhs R) x g
+        (U:=GRing_regular__canonical__filter_Nbhs R) x g
     & forall x : topology_structure.Topological.sort X, (`|g x| <= M)%R]
 
 continuous_bounded_extension is not universe polymorphic

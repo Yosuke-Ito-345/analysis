@@ -277,10 +277,10 @@ forall {R : realType} [n : nat] [x : R],
 {for x,
   forall
     x0 : filter.Nbhs.sort
-           (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+           (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0
+    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0
     (fun y : R => (unstable.onem y ^+ n)%R)}
 
 continuous_onemXn is not universe polymorphic
@@ -289,13 +289,11 @@ continuous_onemXn :
 forall {R : realType} [n : nat] [x : R]
   [t : set
          (filter.Nbhs.sort
-            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
-               R))],
+            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
 filter.nbhs ((fun y : R => (unstable.onem y ^+ n)%R) x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] x i
-   `<=` (fun y : R => (unstable.onem y ^+ n)%R) @^-1` t)%classic
+  (ball_ [eta normr] x i `<=` (fun y : R => (unstable.onem y ^+ n)%R) @^-1` t)%classic
 
 Arguments continuous_onemXn {R} [n]%_nat_scope [x]%_ring_scope [t] _
 continuous_onemXn is opaque
@@ -332,7 +330,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] 0%R i
+  (ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -590,10 +588,10 @@ library mathcomp.analysis.probability_theory.beta_distribution, line 132, charac
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="continuous_XMonemX" class="id"><a name="continuous_XMonemX" class="" title="continuous_XMonemX :
 forall {R : realType} [a b : nat]
   [x : filter.Nbhs.sort
-         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
+         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
 filter.continuous_at
-  (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-  (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+  (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+  (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x 
   (XMonemX a b)
 
 continuous_XMonemX is not universe polymorphic
@@ -601,15 +599,14 @@ Expanded type for implicit arguments
 continuous_XMonemX :
 forall {R : realType} [a b : nat]
   [x : filter.Nbhs.sort
-         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
+         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
   [t : set
          (filter.Nbhs.sort
-            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
-               R))],
+            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
 filter.nbhs (XMonemX a b x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] x i `<=` XMonemX a b @^-1` t)%classic
+  (ball_ [eta normr] x i `<=` XMonemX a b @^-1` t)%classic
 
 Arguments continuous_XMonemX {R} [a b]%_nat_scope [x t] _
 continuous_XMonemX is opaque
@@ -625,31 +622,23 @@ library mathcomp.analysis.probability_theory.beta_distribution, line 142, charac
 Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="within_continuous_XMonemX" class="id"><a name="within_continuous_XMonemX" class="" title="within_continuous_XMonemX :
-forall {R : realType} [A : set R] [a b : nat]
-  [x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            A)],
-filter.continuous_at
-  (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
-  (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-  (subspace_topology.from_subspace A (XMonemX a b))
+forall {R : realType} [A : set R] [a b : nat],
+{within A, continuous XMonemX a b}%classic
 
 within_continuous_XMonemX is not universe polymorphic
 Expanded type for implicit arguments
 within_continuous_XMonemX :
 forall {R : realType} [A : set R] [a b : nat]
   [x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            A)]
+         (subspace_topology_subspace__canonical__filter_Nbhs A)]
   [t : set
          (filter.Nbhs.sort
-            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
-               R))],
-filter.nbhs (subspace_topology.from_subspace A (XMonemX a b) x) t ->
+            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
+filter.nbhs (from_subspace A (XMonemX a b) x) t ->
 (if if if pselect (A x) then true else false then true else false
  then filter.within A (filter.nbhs x)
  else filter.globally [set x])
-  (subspace_topology.from_subspace A (XMonemX a b) @^-1` t)%classic
+  (from_subspace A (XMonemX a b) @^-1` t)%classic
 
 Arguments within_continuous_XMonemX {R} [A]%_classical_set_scope
   [a b]%_nat_scope [x t] _
@@ -1040,10 +1029,10 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="beta_funE" class="id"><a name="beta_funE" class="" title="beta_funE :
 forall {R : realType} (a b : nat),
 beta_fun a b =
-(if (a == 0) && (0 < b)
+(if (a == 0%N) && (0 < b)
  then b%:R^-1%R
  else
-  if (b == 0) && (0 < a)
+  if (b == 0%N) && (0 < a)
   then a%:R^-1%R
   else ((a.-1)`!%:R * (b.-1)`!%:R / ((a + b).-1)`!%:R)%R)
 

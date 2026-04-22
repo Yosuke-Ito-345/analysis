@@ -2477,7 +2477,7 @@ Qed.</div></details>
 forall {R : realType} [I : Type] [B : I -> set R] [D : set I],
 (forall i : I, topology_structure.open (B i)) ->
 (forall i : I, (B i !=set0)%classic) ->
-classical_sets.trivIset (T:=R) D B -> countable (T:=I) D
+trivIset (T:=R) D B -> cardinality.countable (T:=I) D
 
 separated_open_countable is not universe polymorphic
 Arguments separated_open_countable {R} [I]%_type_scope 
@@ -2524,7 +2524,7 @@ filter.continuous_at
         (n1 + n2) (numFieldTopology.NumField_sort__canonical__filter_Nbhs R))
   (U:=filter.matrix_matrix__canonical__filter_Nbhs m n2
         (numFieldTopology.NumField_sort__canonical__filter_Nbhs R))
-  x (rsubmx : 'M_(m, n1 + n2) -> 'M_(m, n2))
+  x (matrix.rsubmx : matrix.matrix R m (n1 + n2) -> matrix.matrix R m n2)
 
 continuous_rsubmx is not universe polymorphic
 Expanded type for implicit arguments
@@ -2538,7 +2538,8 @@ forall {R : numFieldType} [m : nat] {n1 n2 : nat}
          (filter.Nbhs.sort
             (filter.matrix_matrix__canonical__filter_Nbhs m n2
                (numFieldTopology.NumField_sort__canonical__filter_Nbhs R)))],
-filter.nbhs ((rsubmx : 'M_(m, n1 + n2) -> 'M_(m, n2)) x) t ->
+filter.nbhs
+  ((matrix.rsubmx : matrix.matrix R m (n1 + n2) -> matrix.matrix R m n2) x) t ->
 exists2
   i : 'I_m ->
       'I_(n1 + n2) ->
@@ -2546,7 +2547,7 @@ exists2
         (filter.Nbhs.sort
            (numFieldTopology.NumField_sort__canonical__filter_Nbhs R)),
   [set P | (forall (i0 : 'I_m) (j : 'I_(n1 + n2)),
-            filter.nbhs (x i0 j) (P i0 j))]%classic
+            filter.nbhs (matrix.fun_of_matrix x i0 j) (P i0 j))]%classic
     i &
   ((fun
       P : 'I_m ->
@@ -2554,8 +2555,11 @@ exists2
           set
             (filter.Nbhs.sort
                (numFieldTopology.NumField_sort__canonical__filter_Nbhs R)) =>
-    [set my | (forall (i0 : 'I_m) (j : 'I_(n1 + n2)), P i0 j (my i0 j))]) i
-   `<=` (rsubmx : 'M_(m, n1 + n2) -> 'M_(m, n2)) @^-1` t)%classic
+    [set my | (forall (i0 : 'I_m) (j : 'I_(n1 + n2)),
+               P i0 j (matrix.fun_of_matrix my i0 j))])
+     i
+   `<=` (matrix.rsubmx : matrix.matrix R m (n1 + n2) -> matrix.matrix R m n2) @^-1`
+        t)%classic
 
 Arguments continuous_rsubmx {R} [m]%_nat_scope {n1 n2}%_nat_scope [x t] _
 continuous_rsubmx is opaque
@@ -2584,7 +2588,7 @@ filter.continuous_at
         (n1 + n2) (numFieldTopology.NumField_sort__canonical__filter_Nbhs R))
   (U:=filter.matrix_matrix__canonical__filter_Nbhs m n1
         (numFieldTopology.NumField_sort__canonical__filter_Nbhs R))
-  x (lsubmx : 'M_(m, n1 + n2) -> 'M_(m, n1))
+  x (matrix.lsubmx : matrix.matrix R m (n1 + n2) -> matrix.matrix R m n1)
 
 continuous_lsubmx is not universe polymorphic
 Expanded type for implicit arguments
@@ -2598,7 +2602,8 @@ forall {R : numFieldType} [m : nat] {n1 n2 : nat}
          (filter.Nbhs.sort
             (filter.matrix_matrix__canonical__filter_Nbhs m n1
                (numFieldTopology.NumField_sort__canonical__filter_Nbhs R)))],
-filter.nbhs ((lsubmx : 'M_(m, n1 + n2) -> 'M_(m, n1)) x) t ->
+filter.nbhs
+  ((matrix.lsubmx : matrix.matrix R m (n1 + n2) -> matrix.matrix R m n1) x) t ->
 exists2
   i : 'I_m ->
       'I_(n1 + n2) ->
@@ -2606,7 +2611,7 @@ exists2
         (filter.Nbhs.sort
            (numFieldTopology.NumField_sort__canonical__filter_Nbhs R)),
   [set P | (forall (i0 : 'I_m) (j : 'I_(n1 + n2)),
-            filter.nbhs (x i0 j) (P i0 j))]%classic
+            filter.nbhs (matrix.fun_of_matrix x i0 j) (P i0 j))]%classic
     i &
   ((fun
       P : 'I_m ->
@@ -2614,8 +2619,11 @@ exists2
           set
             (filter.Nbhs.sort
                (numFieldTopology.NumField_sort__canonical__filter_Nbhs R)) =>
-    [set my | (forall (i0 : 'I_m) (j : 'I_(n1 + n2)), P i0 j (my i0 j))]) i
-   `<=` (lsubmx : 'M_(m, n1 + n2) -> 'M_(m, n1)) @^-1` t)%classic
+    [set my | (forall (i0 : 'I_m) (j : 'I_(n1 + n2)),
+               P i0 j (matrix.fun_of_matrix my i0 j))])
+     i
+   `<=` (matrix.lsubmx : matrix.matrix R m (n1 + n2) -> matrix.matrix R m n1) @^-1`
+        t)%classic
 
 Arguments continuous_lsubmx {R} [m]%_nat_scope {n1 n2}%_nat_scope [x t] _
 continuous_lsubmx is opaque

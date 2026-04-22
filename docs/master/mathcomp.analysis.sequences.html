@@ -1407,7 +1407,7 @@ Declared in library mathcomp.analysis.sequences, line 534, characters 6-14
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="series_addn" class="id"><a name="series_addn" class="" title="series_addn :
 forall [V : GRing.Zmodule.Exports.zmodType] (u_ : V ^nat) (m n : nat),
-series u_ (n + m) = (series u_ m + \sum_(m <= k < n + m) u_ k)%R
+series u_ (n + m)%N = (series u_ m + \sum_(m <= k < n + m) u_ k)%R
 
 series_addn is not universe polymorphic
 Arguments series_addn [V] u_ (m n)%_nat_scope
@@ -3712,8 +3712,8 @@ filter.cvg_to
   (filter.nbhs (filter.fmap (nseries u) (filter.nbhs filter.eventually)))
   (filter.nbhs
      (filter.lim (filter.fmap (nseries u) (filter.nbhs filter.eventually)))) ->
-filter.prop_near1 filter.eventually (P:=fun n : nat => u n = 0)
-  (inPhantom (forall n : nat, u n = 0))
+filter.prop_near1 filter.eventually (P:=fun n : nat => u n = 0%N)
+  (inPhantom (forall n : nat, u n = 0%N))
 
 cvg_nseries_near is not universe polymorphic
 Arguments cvg_nseries_near [u] _
@@ -3975,7 +3975,7 @@ Declared in library mathcomp.analysis.sequences, line 1371, characters 6-15
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="eseries_addn" class="id"><a name="eseries_addn" class="" title="eseries_addn :
 forall [R : numDomainType] (u_ : (\bar R) ^nat) (m n : nat),
-eseries u_ (n + m) = (eseries u_ m + (\sum_(m <= k < n + m) u_ k)%R)%E
+eseries u_ (n + m)%N = (eseries u_ m + (\sum_(m <= k < n + m) u_ k)%R)%E
 
 eseries_addn is not universe polymorphic
 Arguments eseries_addn [R] u_ (m n)%_nat_scope
@@ -4573,7 +4573,7 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="eseries_pred0" class="id"><a name="eseries_pred0" class="" title="eseries_pred0 :
 forall [R : realFieldType] (f : (\bar R) ^nat) [P : pred nat],
-P =1 false%:S -> \big[+%E/0%R]_(0 <= i <oo | P i) f i = 0%R
+P =1 xpred0 -> \big[+%E/0%R]_(0 <= i <oo | P i) f i = 0%R
 
 eseries_pred0 is not universe polymorphic
 Arguments eseries_pred0 [R] f [P] _
@@ -5279,7 +5279,7 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nneseries_recl" class="id"><a name="nneseries_recl" class="" title="nneseries_recl :
 forall {R : realType} [P : pred nat] [f : nat -> \bar R],
 (forall k : nat, P k -> (0%R <= f k)%E) ->
-P 0 ->
+P 0%N ->
 \big[+%E/0%R]_(0 <= k <oo | P k) f k =
 (f 0%N + \big[+%E/0%R]_(1 <= k <oo | P k) f k)%E
 
@@ -5444,7 +5444,7 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nneseries_addn" class="id"><a name="nneseries_addn" class="" title="nneseries_addn :
 forall {R : realType} [f : (\bar R) ^nat] (k : nat),
 (forall i : nat, (0%R <= f i)%E) ->
-\big[+%E/0%R]_(0 <= i <oo) f (i + k) = \big[+%E/0%R]_(k <= i <oo) f i
+\big[+%E/0%R]_(0 <= i <oo) f (i + k)%N = \big[+%E/0%R]_(k <= i <oo) f i
 
 nneseries_addn is not universe polymorphic
 Arguments nneseries_addn {R} [f] k%_nat_scope _%_function_scope

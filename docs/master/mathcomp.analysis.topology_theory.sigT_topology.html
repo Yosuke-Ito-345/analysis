@@ -595,7 +595,7 @@ library mathcomp.analysis.topology_theory.sigT_topology, line 78, characters 6-1
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="sigT_compact" class="id"><a name="sigT_compact" class="" title="sigT_compact :
 forall {I : choiceType} {X : I -> topology_structure.Topological.type},
-finite_set [set: I] ->
+cardinality.finite_set [set: I] ->
 (forall i : I, compact [set: topology_structure.Topological.sort (X i)]) ->
 compact [set: {i : I & topology_structure.Topological.sort (X i)}]
 
