@@ -829,8 +829,9 @@ Qed.</div></details>
 forall {I : choiceType} [X : I -> topology_structure.Topological.type]
   [p0 : forall i : I, topology_structure.Topological.sort (X i)],
 finite_set [set: I] ->
-(forall i : I, compact [set: topology_structure.Topological.sort (X i)]) ->
-compact [set: wedge (X:=X) p0]
+(forall i : I,
+ compact.compact [set: topology_structure.Topological.sort (X i)]) ->
+compact.compact [set: wedge (X:=X) p0]
 
 wedge_compact is not universe polymorphic
 Expanded type for implicit arguments
@@ -838,7 +839,8 @@ wedge_compact :
 forall {I : choiceType} [X : I -> topology_structure.Topological.type]
   [p0 : forall i : I, topology_structure.Topological.sort (X i)],
 finite_set [set: I] ->
-(forall i : I, compact [set: topology_structure.Topological.sort (X i)]) ->
+(forall i : I,
+ compact.compact [set: topology_structure.Topological.sort (X i)]) ->
 forall
   [F : set_system
          (topology_structure.Topological.sort
@@ -850,7 +852,7 @@ exists
   a : topology_structure.Topological.sort
         (wedge_sigT_wedge__canonical__topology_structure_Topological (X:=X)
            p0),
-  ([set: wedge (X:=X) p0] `&` cluster F)%classic a
+  ([set: wedge (X:=X) p0] `&` compact.cluster F)%classic a
 
 Arguments wedge_compact {I} [X p0]%_function_scope 
   _ _%_function_scope [F] _ _
@@ -874,15 +876,17 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="wedge_connected" class="id"><a name="wedge_connected" class="" title="wedge_connected :
 forall {I : choiceType} [X : I -> topology_structure.Topological.type]
   [p0 : forall i : I, topology_structure.Topological.sort (X i)],
-(forall i : I, connected [set: topology_structure.Topological.sort (X i)]) ->
-connected [set: wedge (X:=X) p0]
+(forall i : I,
+ connected.connected [set: topology_structure.Topological.sort (X i)]) ->
+connected.connected [set: wedge (X:=X) p0]
 
 wedge_connected is not universe polymorphic
 Expanded type for implicit arguments
 wedge_connected :
 forall {I : choiceType} [X : I -> topology_structure.Topological.type]
   [p0 : forall i : I, topology_structure.Topological.sort (X i)],
-(forall i : I, connected [set: topology_structure.Topological.sort (X i)]) ->
+(forall i : I,
+ connected.connected [set: topology_structure.Topological.sort (X i)]) ->
 forall
   [B : set
          (topology_structure.Topological.sort
@@ -995,7 +999,7 @@ forall
             (topology_structure.Topological.Exports.topology_structure_Topological__to__filter_Nbhs
                Z))],
 filter.nbhs (wedge_fun (X:=X) (p0:=p0) f x) t ->
-exists B : set (quotient_topology (wedge (X:=X) p0)),
+exists B : set (quotient_topology.quotient_topology (wedge (X:=X) p0)),
   [/\ topology_structure.isOpenTopological.op
         quotient_topology.HB_unnamed_factory_12 B,
       B x
@@ -1076,7 +1080,8 @@ library mathcomp.analysis.homotopy_theory.wedge_sigT, line 226, characters 6-20
 forall {I : choiceType} [X : I -> topology_structure.Topological.type]
   [p0 : forall i : I, topology_structure.Topological.sort (X i)],
 wedge (X:=X) p0 ->
-prod_topology (fun x : I => topology_structure.Topological.sort (X x))
+function_spaces.prod_topology
+  (fun x : I => topology_structure.Topological.sort (X x))
 
 wedge_prod is not universe polymorphic
 Arguments wedge_prod {I} [X p0]%_function_scope _ i
@@ -1150,8 +1155,8 @@ forall {I : choiceType} [X : I -> topology_structure.Topological.type]
   [p0 : forall i : I, topology_structure.Topological.sort (X i)]
   [x : filter.Nbhs.sort (wedge_sigT_wedge__canonical__filter_Nbhs (X:=X) p0)],
 filter.continuous_at (T:=wedge_sigT_wedge__canonical__filter_Nbhs (X:=X) p0)
-  (U:=function_spaces_prod_topology__canonical__filter_Nbhs X) x
-  (wedge_prod (X:=X) (p0:=p0))
+  (U:=function_spaces.function_spaces_prod_topology__canonical__filter_Nbhs X)
+  x (wedge_prod (X:=X) (p0:=p0))
 
 wedge_prod_continuous is not universe polymorphic
 Expanded type for implicit arguments
@@ -1161,9 +1166,10 @@ forall {I : choiceType} [X : I -> topology_structure.Topological.type]
   [x : filter.Nbhs.sort (wedge_sigT_wedge__canonical__filter_Nbhs (X:=X) p0)]
   [t : set
          (filter.Nbhs.sort
-            (function_spaces_prod_topology__canonical__filter_Nbhs X))],
+            (function_spaces.function_spaces_prod_topology__canonical__filter_Nbhs
+               X))],
 filter.nbhs (wedge_prod (X:=X) (p0:=p0) x) t ->
-exists B : set (quotient_topology (wedge (X:=X) p0)),
+exists B : set (quotient_topology.quotient_topology (wedge (X:=X) p0)),
   [/\ topology_structure.isOpenTopological.op
         quotient_topology.HB_unnamed_factory_12 B,
       B x
@@ -1269,16 +1275,17 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="wedge_hausdorff" class="id"><a name="wedge_hausdorff" class="" title="wedge_hausdorff :
 forall {I : choiceType} [X : I -> topology_structure.Topological.type]
   [p0 : forall i : I, topology_structure.Topological.sort (X i)],
-(forall i : I, hausdorff_space (X i)) -> hausdorff_space (wedge (X:=X) p0)
+(forall i : I, separation_axioms.hausdorff_space (X i)) ->
+separation_axioms.hausdorff_space (wedge (X:=X) p0)
 
 wedge_hausdorff is not universe polymorphic
 Expanded type for implicit arguments
 wedge_hausdorff :
 forall {I : choiceType} [X : I -> topology_structure.Topological.type]
   [p0 : forall i : I, topology_structure.Topological.sort (X i)],
-(forall i : I, hausdorff_space (X i)) ->
+(forall i : I, separation_axioms.hausdorff_space (X i)) ->
 forall [p q : topology_structure.Topological.sort (wedge (X:=X) p0)],
-cluster (filter.nbhs p) q -> p = q
+compact.cluster (filter.nbhs p) q -> p = q
 
 Arguments wedge_hausdorff {I} [X p0]%_function_scope 
   _%_function_scope [p q] _

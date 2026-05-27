@@ -1056,7 +1056,7 @@ forall [d : measure_display] {T : measurableType d}
 filter.nbhs (cdf (P:=P) X x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i
+  (pseudometric_structure.ball_ [eta normr] x i
    `<=` (fun t0 : R =>
          (fun u : R => is_true (x < u)%R) t0 -> (cdf (P:=P) X @^-1` t) t0))%classic
 
@@ -1459,7 +1459,8 @@ Qed.</div></details>
 forall {R : realType},
 probability (measurableTypeR R) R ->
 cumulative R
-  (numFieldTopology.RealField_sort__canonical__order_topology_OrderNbhs R)
+  (num_topology.numFieldTopology.RealField_sort__canonical__order_topology_OrderNbhs
+     R)
 
 random_variable_fcdf__canonical__lebesgue_stieltjes_measure_Cumulative is not universe polymorphic
 Arguments
@@ -1474,7 +1475,8 @@ library mathcomp.analysis.probability_theory.random_variable, line 392, characte
 forall {R : realType},
 probability (measurableTypeR R) R ->
 cumulative R
-  (numFieldTopology.RealField_sort__canonical__order_topology_OrderNbhs R)
+  (num_topology.numFieldTopology.RealField_sort__canonical__order_topology_OrderNbhs
+     R)
 
 random_variable_fcdf__canonical__lebesgue_stieltjes_measure_Cumulative is not universe polymorphic
 Arguments
@@ -1489,7 +1491,8 @@ library mathcomp.analysis.probability_theory.random_variable, line 392, characte
 forall {R : realType},
 probability (measurableTypeR R) R ->
 cumulative R
-  (numFieldTopology.RealField_sort__canonical__order_topology_OrderNbhs R)
+  (num_topology.numFieldTopology.RealField_sort__canonical__order_topology_OrderNbhs
+     R)
 
 random_variable_fcdf__canonical__lebesgue_stieltjes_measure_Cumulative is not universe polymorphic
 Arguments
@@ -1504,7 +1507,8 @@ library mathcomp.analysis.probability_theory.random_variable, line 392, characte
 forall {R : realType},
 probability (measurableTypeR R) R ->
 cumulative R
-  (numFieldTopology.RealField_sort__canonical__order_topology_OrderNbhs R)
+  (num_topology.numFieldTopology.RealField_sort__canonical__order_topology_OrderNbhs
+     R)
 
 random_variable_fcdf__canonical__lebesgue_stieltjes_measure_Cumulative is not universe polymorphic
 Arguments
@@ -1519,7 +1523,8 @@ library mathcomp.analysis.probability_theory.random_variable, line 392, characte
 forall {R : realType},
 probability (measurableTypeR R) R ->
 cumulative R
-  (numFieldTopology.RealField_sort__canonical__order_topology_OrderNbhs R)
+  (num_topology.numFieldTopology.RealField_sort__canonical__order_topology_OrderNbhs
+     R)
 
 random_variable_fcdf__canonical__lebesgue_stieltjes_measure_Cumulative is not universe polymorphic
 Arguments
@@ -1899,7 +1904,7 @@ forall [d : measure_display] {T : measurableType d}
 filter.nbhs (ccdf (P:=P) X x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i
+  (pseudometric_structure.ball_ [eta normr] x i
    `<=` (fun t0 : R =>
          (fun u : R => is_true (x < u)%R) t0 -> (ccdf (P:=P) X @^-1` t) t0))%classic
 

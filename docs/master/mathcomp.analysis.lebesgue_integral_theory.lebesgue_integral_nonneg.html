@@ -3045,8 +3045,9 @@ library mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_nonneg, lin
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ge0_integral_closed_ball" class="id"><a name="ge0_integral_closed_ball" class="" title="ge0_integral_closed_ball :
 forall {R : realType}
-  [c : numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
-         R]
+  [c : pseudometric_structure.PseudoMetric.sort
+         (num_topology.numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
+            R)]
   [r : R],
 (0 < r)%R ->
 forall [f : R -> \bar R],
@@ -3054,7 +3055,7 @@ measurable_fun (T:=Real_sort__canonical__measurable_structure_SigmaRing R)
   (U:=constructive_ereal_extended__canonical__measurable_structure_SigmaRing
         R)
   (closed_ball
-     (V:=numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
+     (V:=num_topology.numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
            R)
      c r
    :
@@ -3062,20 +3063,21 @@ measurable_fun (T:=Real_sort__canonical__measurable_structure_SigmaRing R)
   f ->
 (forall
    x : topology_structure.Topological.sort
-         (numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
-            R),
+         (pseudometric_structure.PseudoMetric.Exports.pseudometric_structure_PseudoMetric__to__topology_structure_Topological
+            (num_topology.numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
+               R)),
  x
    \in closed_ball
-         (V:=numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
+         (V:=num_topology.numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
                R)
          c r ->
  (0%R <= f x)%E) ->
 (\int[lebesgue_measure]_(x in closed_ball
-                                (V:=numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
+                                (V:=num_topology.numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
                                       R)
                                 c r)
     f x)%E =
-(\int[lebesgue_measure]_(x in ball c r) f x)%E
+(\int[lebesgue_measure]_(x in pseudometric_structure.ball c r) f x)%E
 
 ge0_integral_closed_ball is not universe polymorphic
 Arguments ge0_integral_closed_ball {R} [c] [r]%_ring_scope 

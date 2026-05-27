@@ -396,7 +396,8 @@ forall [R : numFieldType] [V : topology_structure.Topological.type]
 filter.cvg_to (filter.nbhs (filter.fmap [eta f] (filter.nbhs x)))
   (filter.nbhs l) ->
 filter.cvg_to
-  (filter.nbhs (filter.fmap [eta f] (filter.nbhs (x^'+)%classic)))
+  (filter.nbhs
+     (filter.fmap [eta f] (filter.nbhs (num_topology.at_right (R:=R) x))))
   (filter.nbhs l)
 
 cvg_at_right_filter is not universe polymorphic
@@ -411,7 +412,7 @@ forall [t : set (topology_structure.Topological.sort V)],
 filter.nbhs l t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i
+  (pseudometric_structure.ball_ [eta normr] x i
    `<=` (fun t0 : R =>
          (fun u : R => is_true (x < u)%R) t0 -> ([eta f] @^-1` t) t0))%classic
 
@@ -436,7 +437,8 @@ forall [R : numFieldType] [V : topology_structure.Topological.type]
 filter.cvg_to (filter.nbhs (filter.fmap [eta f] (filter.nbhs x)))
   (filter.nbhs l) ->
 filter.cvg_to
-  (filter.nbhs (filter.fmap [eta f] (filter.nbhs (x^'-)%classic)))
+  (filter.nbhs
+     (filter.fmap [eta f] (filter.nbhs (num_topology.at_left (R:=R) x))))
   (filter.nbhs l)
 
 cvg_at_left_filter is not universe polymorphic
@@ -451,7 +453,7 @@ forall [t : set (topology_structure.Topological.sort V)],
 filter.nbhs l t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i
+  (pseudometric_structure.ball_ [eta normr] x i
    `<=` (fun t0 : R =>
          (fun u : R => is_true (u < x)%R) t0 -> ([eta f] @^-1` t) t0))%classic
 
@@ -474,7 +476,8 @@ forall [R : numFieldType] [V : topology_structure.Topological.type]
   [f : R -> topology_structure.Topological.sort V] 
   [x : R],
 filter.cvg_to
-  (filter.nbhs (filter.fmap [eta f] (filter.nbhs (x^'+)%classic)))
+  (filter.nbhs
+     (filter.fmap [eta f] (filter.nbhs (num_topology.at_right (R:=R) x))))
   (filter.nbhs (f x)) ->
 filter.cvg_to
   (filter.nbhs
@@ -490,13 +493,14 @@ forall [R : numFieldType] [V : topology_structure.Topological.type]
   [f : R -> topology_structure.Topological.sort V] 
   [x : R],
 filter.cvg_to
-  (filter.nbhs (filter.fmap [eta f] (filter.nbhs (x^'+)%classic)))
+  (filter.nbhs
+     (filter.fmap [eta f] (filter.nbhs (num_topology.at_right (R:=R) x))))
   (filter.nbhs (f x)) ->
 forall [t : set (topology_structure.Topological.sort V)],
 filter.nbhs (f x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i
+  (pseudometric_structure.ball_ [eta normr] x i
    `<=` (fun t0 : R =>
          (fun u : R => is_true (x <= u)%R) t0 -> ([eta f] @^-1` t) t0))%classic
 
@@ -521,7 +525,8 @@ forall [R : numFieldType] [V : topology_structure.Topological.type]
   [f : R -> topology_structure.Topological.sort V] 
   [x : R],
 filter.cvg_to
-  (filter.nbhs (filter.fmap [eta f] (filter.nbhs (x^'-)%classic)))
+  (filter.nbhs
+     (filter.fmap [eta f] (filter.nbhs (num_topology.at_left (R:=R) x))))
   (filter.nbhs (f x)) ->
 filter.cvg_to
   (filter.nbhs
@@ -537,13 +542,14 @@ forall [R : numFieldType] [V : topology_structure.Topological.type]
   [f : R -> topology_structure.Topological.sort V] 
   [x : R],
 filter.cvg_to
-  (filter.nbhs (filter.fmap [eta f] (filter.nbhs (x^'-)%classic)))
+  (filter.nbhs
+     (filter.fmap [eta f] (filter.nbhs (num_topology.at_left (R:=R) x))))
   (filter.nbhs (f x)) ->
 forall [t : set (topology_structure.Topological.sort V)],
 filter.nbhs (f x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i
+  (pseudometric_structure.ball_ [eta normr] x i
    `<=` (fun t0 : R =>
          (fun u : R => is_true (u <= x)%R) t0 -> ([eta f] @^-1` t) t0))%classic
 
@@ -643,23 +649,23 @@ forall [R : numDomainType] [T : Type]
   [local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T]
   [local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   Nbhs_isUniform_mixin.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered]
+   uniform_structure.Nbhs_isUniform_mixin.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ T
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
      local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
   [local_mixin_pseudometric_structure_Uniform_isPseudoMetric : 
-   Uniform_isPseudoMetric.axioms_ R T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered
+   pseudometric_structure.Uniform_isPseudoMetric.axioms_ R T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_uniform_structure_Nbhs_isUniform_mixin
      local_mixin_topology_structure_Nbhs_isTopological]
   [local_mixin_metric_structure_PseudoMetric_isMetric : 
-   PseudoMetric_isMetric.axioms_ R T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered
+   metric_structure.PseudoMetric_isMetric.axioms_ R T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_uniform_structure_Nbhs_isUniform_mixin
      local_mixin_topology_structure_Nbhs_isTopological
      local_mixin_pseudometric_structure_Uniform_isPseudoMetric]
@@ -701,17 +707,21 @@ NormedZmoduleMetric.phant_axioms
          local_mixin_metric_structure_PseudoMetric_isMetric)
   id_phant
   (c0:={|
-         Metric.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-         Metric.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-         Metric.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-         Metric.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
-         Metric.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         metric_structure.Metric.choice_hasChoice_mixin :=
+           local_mixin_choice_hasChoice;
+         metric_structure.Metric.eqtype_hasDecEq_mixin :=
+           local_mixin_eqtype_hasDecEq;
+         metric_structure.Metric.filter_selfFiltered_mixin :=
+           local_mixin_filter_selfFiltered;
+         metric_structure.Metric.filter_isFiltered_mixin :=
+           local_mixin_filter_isFiltered;
+         metric_structure.Metric.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         Metric.topology_structure_Nbhs_isTopological_mixin :=
+         metric_structure.Metric.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological;
-         Metric.pseudometric_structure_Uniform_isPseudoMetric_mixin :=
+         metric_structure.Metric.pseudometric_structure_Uniform_isPseudoMetric_mixin :=
            local_mixin_pseudometric_structure_Uniform_isPseudoMetric;
-         Metric.metric_structure_PseudoMetric_isMetric_mixin :=
+         metric_structure.Metric.metric_structure_PseudoMetric_isMetric_mixin :=
            local_mixin_metric_structure_PseudoMetric_isMetric
        |})
   id_phant id_phant id_phant id_phant id_phant id_phant id_phant id_phant
@@ -800,23 +810,23 @@ forall [R : numDomainType] [T : Type]
   [local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T]
   [local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   Nbhs_isUniform_mixin.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered]
+   uniform_structure.Nbhs_isUniform_mixin.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ T
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
      local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
   [local_mixin_pseudometric_structure_Uniform_isPseudoMetric : 
-   Uniform_isPseudoMetric.axioms_ R T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered
+   pseudometric_structure.Uniform_isPseudoMetric.axioms_ R T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_uniform_structure_Nbhs_isUniform_mixin
      local_mixin_topology_structure_Nbhs_isTopological]
   [local_mixin_metric_structure_PseudoMetric_isMetric : 
-   PseudoMetric_isMetric.axioms_ R T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered
+   metric_structure.PseudoMetric_isMetric.axioms_ R T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_uniform_structure_Nbhs_isUniform_mixin
      local_mixin_topology_structure_Nbhs_isTopological
      local_mixin_pseudometric_structure_Uniform_isPseudoMetric]
@@ -858,17 +868,21 @@ NormedZmoduleMetric.phant_axioms
          local_mixin_metric_structure_PseudoMetric_isMetric)
   id_phant
   (c0:={|
-         Metric.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-         Metric.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-         Metric.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-         Metric.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
-         Metric.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         metric_structure.Metric.choice_hasChoice_mixin :=
+           local_mixin_choice_hasChoice;
+         metric_structure.Metric.eqtype_hasDecEq_mixin :=
+           local_mixin_eqtype_hasDecEq;
+         metric_structure.Metric.filter_selfFiltered_mixin :=
+           local_mixin_filter_selfFiltered;
+         metric_structure.Metric.filter_isFiltered_mixin :=
+           local_mixin_filter_isFiltered;
+         metric_structure.Metric.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         Metric.topology_structure_Nbhs_isTopological_mixin :=
+         metric_structure.Metric.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological;
-         Metric.pseudometric_structure_Uniform_isPseudoMetric_mixin :=
+         metric_structure.Metric.pseudometric_structure_Uniform_isPseudoMetric_mixin :=
            local_mixin_pseudometric_structure_Uniform_isPseudoMetric;
-         Metric.metric_structure_PseudoMetric_isMetric_mixin :=
+         metric_structure.Metric.metric_structure_PseudoMetric_isMetric_mixin :=
            local_mixin_metric_structure_PseudoMetric_isMetric
        |})
   id_phant id_phant id_phant id_phant id_phant id_phant id_phant id_phant
@@ -957,23 +971,23 @@ forall [R : numDomainType] [T : Type]
   [local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T]
   [local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   Nbhs_isUniform_mixin.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered]
+   uniform_structure.Nbhs_isUniform_mixin.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ T
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
      local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
   [local_mixin_pseudometric_structure_Uniform_isPseudoMetric : 
-   Uniform_isPseudoMetric.axioms_ R T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered
+   pseudometric_structure.Uniform_isPseudoMetric.axioms_ R T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_uniform_structure_Nbhs_isUniform_mixin
      local_mixin_topology_structure_Nbhs_isTopological]
   [local_mixin_metric_structure_PseudoMetric_isMetric : 
-   PseudoMetric_isMetric.axioms_ R T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered
+   metric_structure.PseudoMetric_isMetric.axioms_ R T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_uniform_structure_Nbhs_isUniform_mixin
      local_mixin_topology_structure_Nbhs_isTopological
      local_mixin_pseudometric_structure_Uniform_isPseudoMetric]
@@ -1015,17 +1029,21 @@ NormedZmoduleMetric.phant_axioms
          local_mixin_metric_structure_PseudoMetric_isMetric)
   id_phant
   (c0:={|
-         Metric.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-         Metric.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-         Metric.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-         Metric.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
-         Metric.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         metric_structure.Metric.choice_hasChoice_mixin :=
+           local_mixin_choice_hasChoice;
+         metric_structure.Metric.eqtype_hasDecEq_mixin :=
+           local_mixin_eqtype_hasDecEq;
+         metric_structure.Metric.filter_selfFiltered_mixin :=
+           local_mixin_filter_selfFiltered;
+         metric_structure.Metric.filter_isFiltered_mixin :=
+           local_mixin_filter_isFiltered;
+         metric_structure.Metric.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         Metric.topology_structure_Nbhs_isTopological_mixin :=
+         metric_structure.Metric.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological;
-         Metric.pseudometric_structure_Uniform_isPseudoMetric_mixin :=
+         metric_structure.Metric.pseudometric_structure_Uniform_isPseudoMetric_mixin :=
            local_mixin_pseudometric_structure_Uniform_isPseudoMetric;
-         Metric.metric_structure_PseudoMetric_isMetric_mixin :=
+         metric_structure.Metric.metric_structure_PseudoMetric_isMetric_mixin :=
            local_mixin_metric_structure_PseudoMetric_isMetric
        |})
   id_phant id_phant id_phant id_phant id_phant id_phant id_phant id_phant
@@ -1114,23 +1132,23 @@ forall [R : numDomainType] [T : Type]
   [local_mixin_filter_selfFiltered : filter.selfFiltered.axioms_ T]
   [local_mixin_filter_isFiltered : filter.isFiltered.axioms_ T T]
   [local_mixin_uniform_structure_Nbhs_isUniform_mixin : 
-   Nbhs_isUniform_mixin.axioms_ T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered]
+   uniform_structure.Nbhs_isUniform_mixin.axioms_ T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
   [local_mixin_topology_structure_Nbhs_isTopological : 
    topology_structure.Nbhs_isTopological.axioms_ T
      local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
      local_mixin_filter_selfFiltered local_mixin_filter_isFiltered]
   [local_mixin_pseudometric_structure_Uniform_isPseudoMetric : 
-   Uniform_isPseudoMetric.axioms_ R T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered
+   pseudometric_structure.Uniform_isPseudoMetric.axioms_ R T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_uniform_structure_Nbhs_isUniform_mixin
      local_mixin_topology_structure_Nbhs_isTopological]
   [local_mixin_metric_structure_PseudoMetric_isMetric : 
-   PseudoMetric_isMetric.axioms_ R T local_mixin_choice_hasChoice
-     local_mixin_eqtype_hasDecEq local_mixin_filter_selfFiltered
-     local_mixin_filter_isFiltered
+   metric_structure.PseudoMetric_isMetric.axioms_ R T
+     local_mixin_choice_hasChoice local_mixin_eqtype_hasDecEq
+     local_mixin_filter_selfFiltered local_mixin_filter_isFiltered
      local_mixin_uniform_structure_Nbhs_isUniform_mixin
      local_mixin_topology_structure_Nbhs_isTopological
      local_mixin_pseudometric_structure_Uniform_isPseudoMetric]
@@ -1172,17 +1190,21 @@ NormedZmoduleMetric.phant_axioms
          local_mixin_metric_structure_PseudoMetric_isMetric)
   id_phant
   (c0:={|
-         Metric.choice_hasChoice_mixin := local_mixin_choice_hasChoice;
-         Metric.eqtype_hasDecEq_mixin := local_mixin_eqtype_hasDecEq;
-         Metric.filter_selfFiltered_mixin := local_mixin_filter_selfFiltered;
-         Metric.filter_isFiltered_mixin := local_mixin_filter_isFiltered;
-         Metric.uniform_structure_Nbhs_isUniform_mixin_mixin :=
+         metric_structure.Metric.choice_hasChoice_mixin :=
+           local_mixin_choice_hasChoice;
+         metric_structure.Metric.eqtype_hasDecEq_mixin :=
+           local_mixin_eqtype_hasDecEq;
+         metric_structure.Metric.filter_selfFiltered_mixin :=
+           local_mixin_filter_selfFiltered;
+         metric_structure.Metric.filter_isFiltered_mixin :=
+           local_mixin_filter_isFiltered;
+         metric_structure.Metric.uniform_structure_Nbhs_isUniform_mixin_mixin :=
            local_mixin_uniform_structure_Nbhs_isUniform_mixin;
-         Metric.topology_structure_Nbhs_isTopological_mixin :=
+         metric_structure.Metric.topology_structure_Nbhs_isTopological_mixin :=
            local_mixin_topology_structure_Nbhs_isTopological;
-         Metric.pseudometric_structure_Uniform_isPseudoMetric_mixin :=
+         metric_structure.Metric.pseudometric_structure_Uniform_isPseudoMetric_mixin :=
            local_mixin_pseudometric_structure_Uniform_isPseudoMetric;
-         Metric.metric_structure_PseudoMetric_isMetric_mixin :=
+         metric_structure.Metric.metric_structure_PseudoMetric_isMetric_mixin :=
            local_mixin_metric_structure_PseudoMetric_isMetric
        |})
   id_phant id_phant id_phant id_phant id_phant id_phant id_phant id_phant
@@ -1240,7 +1262,7 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 16
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ball_normE" class="id"><a name="ball_normE" class="" title="ball_normE :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K},
-ball_ normr = ball
+pseudometric_structure.ball_ normr = pseudometric_structure.ball
 
 ball_normE is not universe polymorphic
 Arguments ball_normE {K V}
@@ -1257,7 +1279,7 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 17
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ball_open" class="id"><a name="ball_open" class="" title="ball_open :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} (x : V) (r : K),
-topology_structure.open (ball x r)
+topology_structure.open (pseudometric_structure.ball x r)
 
 ball_open is not universe polymorphic
 Arguments ball_open {K V} x r%_ring_scope
@@ -1278,7 +1300,7 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ball_open_nbhs" class="id"><a name="ball_open_nbhs" class="" title="ball_open_nbhs :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} (x : V) [r : K],
-(0 < r)%R -> topology_structure.open_nbhs x (ball x r)
+(0 < r)%R -> topology_structure.open_nbhs x (pseudometric_structure.ball x r)
 
 ball_open_nbhs is not universe polymorphic
 Arguments ball_open_nbhs {K V} x [r]%_ring_scope _
@@ -1298,7 +1320,8 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 18
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_nbhs_norm" class="id"><a name="nbhs_nbhs_norm" class="" title="nbhs_nbhs_norm :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K},
-nbhs_ball_ (ball_ normr) = filter.nbhs
+pseudometric_structure.nbhs_ball_ (pseudometric_structure.ball_ normr) =
+filter.nbhs
 
 nbhs_nbhs_norm is not universe polymorphic
 Arguments nbhs_nbhs_norm {K V}
@@ -1317,7 +1340,7 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 19
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K}
   (x : filter.Filtered.sort V) (P : V -> Prop),
 filter.prop_near1 x (P:=P) (inPhantom (forall x0 : V, P x0)) <->
-nbhs_ball_ (ball_ normr) x P
+pseudometric_structure.nbhs_ball_ (pseudometric_structure.ball_ normr) x P
 
 nbhs_normP is not universe polymorphic
 Arguments nbhs_normP {K V} x P%_function_scope
@@ -1334,14 +1357,15 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 19
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_le_nbhs_norm" class="id"><a name="nbhs_le_nbhs_norm" class="" title="nbhs_le_nbhs_norm :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} [x : V],
-filter.cvg_to (filter.nbhs x) (nbhs_ball_ (ball_ normr) x)
+filter.cvg_to (filter.nbhs x)
+  (pseudometric_structure.nbhs_ball_ (pseudometric_structure.ball_ normr) x)
 
 nbhs_le_nbhs_norm is not universe polymorphic
 Expanded type for implicit arguments
 nbhs_le_nbhs_norm :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} 
   [x : V] [t : set V],
-nbhs_ball_ (ball_ normr) x t ->
+pseudometric_structure.nbhs_ball_ (pseudometric_structure.ball_ normr) x t ->
 (let (nbhs) :=
    PseudoMetricNormedZmod.filter_isFiltered_mixin
      (let
@@ -1365,7 +1389,9 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 19
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_norm_le_nbhs" class="id"><a name="nbhs_norm_le_nbhs" class="" title="nbhs_norm_le_nbhs :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} [x : V],
-filter.cvg_to (nbhs_ball_ (ball_ normr) x) (filter.nbhs x)
+filter.cvg_to
+  (pseudometric_structure.nbhs_ball_ (pseudometric_structure.ball_ normr) x)
+  (filter.nbhs x)
 
 nbhs_norm_le_nbhs is not universe polymorphic
 Expanded type for implicit arguments
@@ -1374,7 +1400,8 @@ forall {K : numDomainType} {V : pseudoMetricNormedZmodType K}
   [x : V] [t : set V],
 filter.nbhs x t ->
 exists2 i : K,
-  [set e | (0 < e)%R]%classic i & (ball_ normr x i `<=` t)%classic
+  [set e | (0 < e)%R]%classic i &
+  (pseudometric_structure.ball_ normr x i `<=` t)%classic
 
 Arguments nbhs_norm_le_nbhs {K V} [x]%_ring_scope [t] _
 nbhs_norm_le_nbhs is opaque
@@ -1390,7 +1417,9 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 20
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="filter_from_norm_nbhs" class="id"><a name="filter_from_norm_nbhs" class="" title="filter_from_norm_nbhs :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} (x : V),
-filter.filter_from [set x0 | (0 < x0)%R] (ball_ normr x) = filter.nbhs x
+filter.filter_from [set x0 | (0 < x0)%R]
+  (pseudometric_structure.ball_ normr x) =
+filter.nbhs x
 
 filter_from_norm_nbhs is not universe polymorphic
 Arguments filter_from_norm_nbhs {K V} x%_ring_scope
@@ -1409,7 +1438,7 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 20
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_normE" class="id"><a name="nbhs_normE" class="" title="nbhs_normE :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} 
   (x : V) (P : V -> Prop),
-nbhs_ball_ (ball_ normr) x P =
+pseudometric_structure.nbhs_ball_ (pseudometric_structure.ball_ normr) x P =
 filter.prop_near1 x (P:=P) (inPhantom (forall x0 : V, P x0))
 
 nbhs_normE is not universe polymorphic
@@ -1429,7 +1458,8 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 20
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="filter_from_normE" class="id"><a name="filter_from_normE" class="" title="filter_from_normE :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} 
   (x : V) (P : V -> Prop),
-filter.filter_from [set x0 | (0 < x0)%R] (ball_ normr x) P =
+filter.filter_from [set x0 | (0 < x0)%R]
+  (pseudometric_structure.ball_ normr x) P =
 filter.prop_near1 x (P:=P) (inPhantom (forall x0 : V, P x0))
 
 filter_from_normE is not universe polymorphic
@@ -1449,8 +1479,9 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 21
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="near_nbhs_norm" class="id"><a name="near_nbhs_norm" class="" title="near_nbhs_norm :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} 
   (x : V) (P : V -> Prop),
-filter.prop_near1 (nbhs_ball_ (ball_ normr) x) (P:=P)
-  (inPhantom (forall x0 : V, P x0)) =
+filter.prop_near1
+  (pseudometric_structure.nbhs_ball_ (pseudometric_structure.ball_ normr) x)
+  (P:=P) (inPhantom (forall x0 : V, P x0)) =
 filter.prop_near1 x (P:=P) (inPhantom (forall x0 : V, P x0))
 
 near_nbhs_norm is not universe polymorphic
@@ -1470,7 +1501,8 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 21
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_norm_ball_norm" class="id"><a name="nbhs_norm_ball_norm" class="" title="nbhs_norm_ball_norm :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} 
   (x : V) (e : {posnum K}%R),
-nbhs_ball_ (ball_ normr) x (ball_ normr x e%:num)
+pseudometric_structure.nbhs_ball_ (pseudometric_structure.ball_ normr) x
+  (pseudometric_structure.ball_ normr x e%:num)
 
 nbhs_norm_ball_norm is not universe polymorphic
 Arguments nbhs_norm_ball_norm {K V} x%_ring_scope e
@@ -1489,7 +1521,7 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 22
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_ball_norm" class="id"><a name="nbhs_ball_norm" class="" title="nbhs_ball_norm :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} 
   (x : V) (eps : {posnum K}%R),
-filter.nbhs x (ball_ normr x eps%:num)
+filter.nbhs x (pseudometric_structure.ball_ normr x eps%:num)
 
 nbhs_ball_norm is not universe polymorphic
 Arguments nbhs_ball_norm {K V} x eps
@@ -1507,7 +1539,8 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 22
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ball_norm_dec" class="id"><a name="ball_norm_dec" class="" title="ball_norm_dec :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} 
   (x y : V) (e : K),
-{ball_ normr x e y} + {~ ball_ normr x e y}
+{pseudometric_structure.ball_ normr x e y} +
+{~ pseudometric_structure.ball_ normr x e y}
 
 ball_norm_dec is not universe polymorphic
 Arguments ball_norm_dec {K V} (x y e)%_ring_scope
@@ -1525,7 +1558,8 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 22
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ball_norm_sym" class="id"><a name="ball_norm_sym" class="" title="ball_norm_sym :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} 
   [x y : V] [e : K],
-ball_ normr x e y -> ball_ normr y e x
+pseudometric_structure.ball_ normr x e y ->
+pseudometric_structure.ball_ normr y e x
 
 ball_norm_sym is not universe polymorphic
 Arguments ball_norm_sym {K V} [x y e]%_ring_scope _
@@ -1543,7 +1577,9 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 23
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ball_norm_le" class="id"><a name="ball_norm_le" class="" title="ball_norm_le :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} 
   [x : V] [e1 e2 : K],
-(e1 <= e2)%R -> (ball_ normr x e1 `<=` ball_ normr x e2)%classic
+(e1 <= e2)%R ->
+(pseudometric_structure.ball_ normr x e1
+ `<=` pseudometric_structure.ball_ normr x e2)%classic
 
 ball_norm_le is not universe polymorphic
 Expanded type for implicit arguments
@@ -1551,7 +1587,8 @@ ball_norm_le :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} 
   [x : V] [e1 e2 : K],
 (e1 <= e2)%R ->
-forall [t : V], ball_ normr x e1 t -> (`|x - t| < e2)%R = true
+forall [t : V],
+pseudometric_structure.ball_ normr x e1 t -> (`|x - t| < e2)%R = true
 
 Arguments ball_norm_le {K V} [x e1 e2]%_ring_scope _ [t] _
 ball_norm_le is opaque
@@ -1963,7 +2000,8 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 30
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_norm_ball" class="id"><a name="nbhs_norm_ball" class="" title="nbhs_norm_ball :
 forall {K : numDomainType} {V : pseudoMetricNormedZmodType K} 
   (x : V) (eps : {posnum K}%R),
-nbhs_ball_ (ball_ normr) x (ball x eps%:num)
+pseudometric_structure.nbhs_ball_ (pseudometric_structure.ball_ normr) x
+  (pseudometric_structure.ball x eps%:num)
 
 nbhs_norm_ball is not universe polymorphic
 Arguments nbhs_norm_ball {K V} x%_ring_scope eps
@@ -2118,7 +2156,7 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="le0_ball0" class="id"><a name="le0_ball0" class="" title="le0_ball0 :
 forall [R : realDomainType] [V : pseudoMetricNormedZmodType R] 
   (a : V) [r : R],
-(r <= 0)%R -> ball a r = set0
+(r <= 0)%R -> pseudometric_structure.ball a r = set0
 
 le0_ball0 is not universe polymorphic
 Arguments le0_ball0 [R V] a [r]%_ring_scope _
@@ -2144,14 +2182,14 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="norm_hausdorff" class="id"><a name="norm_hausdorff" class="" title="norm_hausdorff :
 forall [R : numFieldType] [V : pseudoMetricNormedZmodType R],
-hausdorff_space V
+separation_axioms.hausdorff_space V
 
 norm_hausdorff is not universe polymorphic
 Expanded type for implicit arguments
 norm_hausdorff :
 forall [R : numFieldType] [V : pseudoMetricNormedZmodType R]
   [p q : topology_structure.Topological.sort V],
-cluster (filter.nbhs p) q -> p = q
+compact.cluster (filter.nbhs p) q -> p = q
 
 Arguments norm_hausdorff [R V p q] _
 norm_hausdorff is opaque
@@ -2177,7 +2215,7 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="norm_closeE" class="id"><a name="norm_closeE" class="" title="norm_closeE :
 forall [R : numFieldType] [V : pseudoMetricNormedZmodType R] (x y : V),
-close (T:=V) x y = (x = y)
+separation_axioms.close (T:=V) x y = (x = y)
 
 norm_closeE is not universe polymorphic
 Arguments norm_closeE [R V] x y
@@ -2193,7 +2231,7 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 39
 <span class="id"> exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.separation_axioms.html#closeE">closeE</a></span>. Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="norm_close_eq" class="id"><a name="norm_close_eq" class="" title="norm_close_eq :
 forall [R : numFieldType] [V : pseudoMetricNormedZmodType R] [x y : V],
-close (T:=V) x y -> x = y
+separation_axioms.close (T:=V) x y -> x = y
 
 norm_close_eq is not universe polymorphic
 Arguments norm_close_eq [R V x y] _
@@ -2504,8 +2542,8 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ball_prod_normE" class="id"><a name="ball_prod_normE" class="" title="ball_prod_normE :
 forall {K : numDomainType} {U V : pseudoMetricNormedZmodType K},
-ball =
-ball_
+pseudometric_structure.ball =
+pseudometric_structure.ball_
   (fun x : Datatypes_prod__canonical__Algebra_Zmodule U V => `|x : U * V|%R)
 
 ball_prod_normE is not universe polymorphic
@@ -2526,7 +2564,7 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="prod_norm_ball" class="id"><a name="prod_norm_ball" class="" title="prod_norm_ball :
 forall {K : numDomainType} {U V : pseudoMetricNormedZmodType K},
-ball = ball_ [eta normr]
+pseudometric_structure.ball = pseudometric_structure.ball_ [eta normr]
 
 prod_norm_ball is not universe polymorphic
 Arguments prod_norm_ball {K U V}
@@ -2857,7 +2895,7 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 47
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ball_itv" class="id"><a name="ball_itv" class="" title="ball_itv :
 forall {R : realFieldType} (x r : R),
-ball x r = `](x - r)%R, (x + r)%R[%classic
+pseudometric_structure.ball x r = `](x - r)%R, (x + r)%R[%classic
 
 ball_itv is not universe polymorphic
 Arguments ball_itv {R} (x r)%_ring_scope
@@ -3012,8 +3050,8 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 50
 forall {K : numFieldType} {V : pseudoMetricNormedZmodType K}
   [x : filter.Nbhs.sort V],
 filter.continuous_at (T:=V)
-  (U:=numFieldTopology.NumField_sort__canonical__filter_Nbhs K) x
-  (normr : V -> K)
+  (U:=num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs K)
+  x (normr : V -> K)
 
 norm_continuous is not universe polymorphic
 Expanded type for implicit arguments
@@ -3022,7 +3060,8 @@ forall {K : numFieldType} {V : pseudoMetricNormedZmodType K}
   [x : filter.Nbhs.sort V]
   [t : set
          (filter.Nbhs.sort
-            (numFieldTopology.NumField_sort__canonical__filter_Nbhs K))],
+            (num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs
+               K))],
 filter.nbhs ((normr : V -> K) x) t ->
 (let (nbhs) :=
    PseudoMetricNormedZmod.filter_isFiltered_mixin
@@ -3056,14 +3095,14 @@ Qed.</div></details>
 <span class="id">#[deprecated</span>(<span class="id">since=</span><span class="id">&quot;mathcomp-analysis 1.10.0&quot;</span><span class="id">,</span><span class="id"> note=</span><span class="id">&quot;use `norm_hausdorff` instead&quot;</span>)<span class="id">]</span><br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="pseudoMetricNormedZModType_hausdorff" class="id"><a name="pseudoMetricNormedZModType_hausdorff" class="" title="pseudoMetricNormedZModType_hausdorff :
 forall [R : realFieldType] [V : pseudoMetricNormedZmodType R],
-hausdorff_space V
+separation_axioms.hausdorff_space V
 
 pseudoMetricNormedZModType_hausdorff is not universe polymorphic
 Expanded type for implicit arguments
 pseudoMetricNormedZModType_hausdorff :
 forall [R : realFieldType] [V : pseudoMetricNormedZmodType R]
   [p q : topology_structure.Topological.sort V],
-cluster (filter.nbhs p) q -> p = q
+compact.cluster (filter.nbhs p) q -> p = q
 
 Arguments pseudoMetricNormedZModType_hausdorff [R V p q] _
 pseudoMetricNormedZModType_hausdorff is opaque
@@ -3086,9 +3125,10 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 52
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_right0P" class="id"><a name="nbhs_right0P" class="" title="nbhs_right0P :
 forall [R : numFieldType] (x : R) (P : set R),
-filter.prop_near1 (x^'+)%classic (P:=P) (inPhantom (forall y : R, P y)) <->
-filter.prop_near1 (0^'+)%classic (P:=fun e : R => P (x + e)%R)
-  (inPhantom (forall e : R, P (x + e)%R))
+filter.prop_near1 (num_topology.at_right (R:=R) x) (P:=P)
+  (inPhantom (forall y : R, P y)) <->
+filter.prop_near1 (num_topology.at_right (R:=R) 0)
+  (P:=fun e : R => P (x + e)%R) (inPhantom (forall e : R, P (x + e)%R))
 
 nbhs_right0P is not universe polymorphic
 Arguments nbhs_right0P [R] x%_ring_scope P%_classical_set_scope
@@ -3109,9 +3149,10 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_left0P" class="id"><a name="nbhs_left0P" class="" title="nbhs_left0P :
 forall [R : numFieldType] (x : R) (P : set R),
-filter.prop_near1 (x^'-)%classic (P:=P) (inPhantom (forall y : R, P y)) <->
-filter.prop_near1 (0^'+)%classic (P:=fun e : R => P (x - e)%R)
-  (inPhantom (forall e : R, P (x - e)%R))
+filter.prop_near1 (num_topology.at_left (R:=R) x) (P:=P)
+  (inPhantom (forall y : R, P y)) <->
+filter.prop_near1 (num_topology.at_right (R:=R) 0)
+  (P:=fun e : R => P (x - e)%R) (inPhantom (forall e : R, P (x - e)%R))
 
 nbhs_left0P is not universe polymorphic
 Arguments nbhs_left0P [R] x%_ring_scope P%_classical_set_scope
@@ -3133,10 +3174,10 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 54
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_right_leftP" class="id"><a name="nbhs_right_leftP" class="" title="nbhs_right_leftP :
 forall [R : numFieldType] (p : R) (P : pred R),
-filter.prop_near1 ((- p)^'+)%classic (P:=fun x : R => (P \o -%R%R) x)
-  (inPhantom (forall x : R, (P \o -%R%R) x)) <->
-filter.prop_near1 (p^'-)%classic (P:=fun x : R => P x)
-  (inPhantom (forall x : R, P x))
+filter.prop_near1 (num_topology.at_right (R:=R) (- p))
+  (P:=fun x : R => (P \o -%R%R) x) (inPhantom (forall x : R, (P \o -%R%R) x)) <->
+filter.prop_near1 (num_topology.at_left (R:=R) p) (P:=
+  fun x : R => P x) (inPhantom (forall x : R, P x))
 
 nbhs_right_leftP is not universe polymorphic
 Arguments nbhs_right_leftP [R] p%_ring_scope P
@@ -3157,8 +3198,8 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_left_gt" class="id"><a name="nbhs_left_gt" class="" title="nbhs_left_gt :
 forall [R : numFieldType] [x z : R],
 (z < x)%R ->
-filter.prop_near1 (x^'-)%classic (P:=fun y : R => (z < y)%R)
-  (inPhantom (forall y : R, (z < y)%R))
+filter.prop_near1 (num_topology.at_left (R:=R) x) (P:=
+  fun y : R => (z < y)%R) (inPhantom (forall y : R, (z < y)%R))
 
 nbhs_left_gt is not universe polymorphic
 Arguments nbhs_left_gt [R] [x z]%_ring_scope _
@@ -3178,8 +3219,8 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 55
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_left_ge" class="id"><a name="nbhs_left_ge" class="" title="nbhs_left_ge :
 forall [R : numFieldType] [x z : R],
 (z < x)%R ->
-filter.prop_near1 (x^'-)%classic (P:=fun y : R => (z <= y)%R)
-  (inPhantom (forall y : R, (z <= y)%R))
+filter.prop_near1 (num_topology.at_left (R:=R) x)
+  (P:=fun y : R => (z <= y)%R) (inPhantom (forall y : R, (z <= y)%R))
 
 nbhs_left_ge is not universe polymorphic
 Arguments nbhs_left_ge [R] [x z]%_ring_scope _
@@ -3200,8 +3241,8 @@ forall [R : numFieldType] (x : R)
   [e : join_Num_POrderedZmodule_between_Algebra_BaseAddUMagma_and_Order_Preorder
          R],
 (0 < e)%R ->
-filter.prop_near1 (x^'-)%classic (P:=fun y : R => (x - y < e)%R)
-  (inPhantom (forall y : R, (x - y < e)%R))
+filter.prop_near1 (num_topology.at_left (R:=R) x)
+  (P:=fun y : R => (x - y < e)%R) (inPhantom (forall y : R, (x - y < e)%R))
 
 nbhs_left_ltBl is not universe polymorphic
 Arguments nbhs_left_ltBl [R] x%_ring_scope [e] _
@@ -3221,8 +3262,8 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 56
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="not_near_at_leftP" class="id"><a name="not_near_at_leftP" class="" title="not_near_at_leftP :
 forall [R : numFieldType] (p : R) (P : pred R),
 ~
-filter.prop_near1 (p^'-)%classic (P:=fun x : R => P x)
-  (inPhantom (forall x : R, P x)) <->
+filter.prop_near1 (num_topology.at_left (R:=R) p) (P:=
+  fun x : R => P x) (inPhantom (forall x : R, P x)) <->
 (forall e : {posnum R}%R, exists2 x : R, (p - e%:num < x < p)%R & ~ P x)
 
 not_near_at_leftP is not universe polymorphic
@@ -3254,7 +3295,8 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="at_rightN" class="id"><a name="at_rightN" class="" title="at_rightN :
 forall [R : numFieldType] (a : R),
-((- a)^'+)%classic = filter.fmap -%R%R (filter.nbhs (a^'-)%classic)
+num_topology.at_right (R:=R) (- a) =
+filter.fmap -%R%R (filter.nbhs (num_topology.at_left (R:=R) a))
 
 at_rightN is not universe polymorphic
 Arguments at_rightN [R] a%_ring_scope
@@ -3274,7 +3316,8 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="at_leftN" class="id"><a name="at_leftN" class="" title="at_leftN :
 forall [R : numFieldType] (a : R),
-((- a)^'-)%classic = filter.fmap -%R%R (filter.nbhs (a^'+)%classic)
+num_topology.at_left (R:=R) (- a) =
+filter.fmap -%R%R (filter.nbhs (num_topology.at_right (R:=R) a))
 
 at_leftN is not universe polymorphic
 Arguments at_leftN [R] a%_ring_scope
@@ -3298,10 +3341,13 @@ Qed.</div></details>
 forall {T : topology_structure.Topological.type} {R : numFieldType}
   (f : R -> topology_structure.Topological.sort T) 
   (a : R) (l : topology_structure.Topological.sort T),
-filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs (a^'-)%classic)))
+filter.cvg_to
+  (filter.nbhs (filter.fmap f (filter.nbhs (num_topology.at_left (R:=R) a))))
   (filter.nbhs l) <->
 filter.cvg_to
-  (filter.nbhs (filter.fmap (f \o -%R%R) (filter.nbhs ((- a)^'+)%classic)))
+  (filter.nbhs
+     (filter.fmap (f \o -%R%R)
+        (filter.nbhs (num_topology.at_right (R:=R) (- a)))))
   (filter.nbhs l)
 
 cvg_at_leftNP is not universe polymorphic
@@ -3324,10 +3370,13 @@ Qed.</div></details>
 forall {T : topology_structure.Topological.type} {R : numFieldType}
   (f : R -> topology_structure.Topological.sort T) 
   (a : R) (l : topology_structure.Topological.sort T),
-filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs (a^'+)%classic)))
+filter.cvg_to
+  (filter.nbhs (filter.fmap f (filter.nbhs (num_topology.at_right (R:=R) a))))
   (filter.nbhs l) <->
 filter.cvg_to
-  (filter.nbhs (filter.fmap (f \o -%R%R) (filter.nbhs ((- a)^'-)%classic)))
+  (filter.nbhs
+     (filter.fmap (f \o -%R%R)
+        (filter.nbhs (num_topology.at_left (R:=R) (- a)))))
   (filter.nbhs l)
 
 cvg_at_rightNP is not universe polymorphic
@@ -3356,7 +3405,7 @@ forall [R : numFieldType] [V : pseudoMetricNormedZmodType R]
          (join_pseudometric_normed_Zmodule_NbhsNmodule_between_Algebra_BaseAddMagma_and_filter_Filtered
             V)),
 filter.prop_near1 x (P:=P) (inPhantom (forall y : V, P y)) <->
-filter.prop_near1 (0^'+)%classic
+filter.prop_near1 (num_topology.at_right (R:=R) 0)
   (P:=fun e : R => forall y : V, (`|x - y| <= e)%R -> P y)
   (inPhantom (forall (e : R) (y : V), (`|x - y| <= e)%R -> P y))
 
@@ -3437,7 +3486,7 @@ forall [R : numFieldType] [V : pseudoMetricNormedZmodType R]
 filter.Filter F ->
 forall (f : T -> V) (y : V),
 filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F))) (filter.nbhs y) <->
-filter.prop_near1 (0^'+)%classic
+filter.prop_near1 (num_topology.at_right (R:=R) 0)
   (P:=fun eps : R =>
       filter.prop_near1 F (P:=fun t : T => (`|y - f t| < eps)%R)
         (inPhantom (forall t : T, (`|y - f t| < eps)%R)))
@@ -3466,7 +3515,7 @@ forall [R : numFieldType] [V : pseudoMetricNormedZmodType R]
 filter.Filter F ->
 forall (f : T -> V) (y : V),
 filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F))) (filter.nbhs y) <->
-filter.prop_near1 (0^'+)%classic
+filter.prop_near1 (num_topology.at_right (R:=R) 0)
   (P:=fun eps : R =>
       filter.prop_near1 F (P:=fun t : T => (`|y - f t| <= eps)%R)
         (inPhantom (forall t : T, (`|y - f t| <= eps)%R)))
@@ -3524,7 +3573,7 @@ forall [R : numFieldType] [V : pseudoMetricNormedZmodType R]
 filter.Filter F ->
 forall (f : T -> V) (y : V),
 filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F))) (filter.nbhs y) <->
-filter.prop_near1 (0^'+)%classic
+filter.prop_near1 (num_topology.at_right (R:=R) 0)
   (P:=fun eps : R =>
       filter.prop_near1 F (P:=fun t : T => (`|f t - y| < eps)%R)
         (inPhantom (forall t : T, (`|f t - y| < eps)%R)))
@@ -3554,7 +3603,7 @@ forall [R : numFieldType] [V : pseudoMetricNormedZmodType R]
 filter.Filter F ->
 forall (f : T -> V) (y : V),
 filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F))) (filter.nbhs y) <->
-filter.prop_near1 (0^'+)%classic
+filter.prop_near1 (num_topology.at_right (R:=R) 0)
   (P:=fun eps : R =>
       filter.prop_near1 F (P:=fun t : T => (`|f t - y| <= eps)%R)
         (inPhantom (forall t : T, (`|f t - y| <= eps)%R)))
@@ -3613,7 +3662,7 @@ forall [R : numFieldType] [V : pseudoMetricNormedZmodType R]
 filter.Filter F ->
 forall f : T -> V,
 filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F))) (filter.nbhs 0%R) <->
-filter.prop_near1 (0^'+)%classic
+filter.prop_near1 (num_topology.at_right (R:=R) 0)
   (P:=fun eps : R =>
       filter.prop_near1 F (P:=fun t : T => (`|f t| < eps)%R)
         (inPhantom (forall t : T, (`|f t| < eps)%R)))
@@ -3643,7 +3692,7 @@ forall [R : numFieldType] [V : pseudoMetricNormedZmodType R]
 filter.Filter F ->
 forall f : T -> V,
 filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs F))) (filter.nbhs 0%R) <->
-filter.prop_near1 (0^'+)%classic
+filter.prop_near1 (num_topology.at_right (R:=R) 0)
   (P:=fun eps : R =>
       filter.prop_near1 F (P:=fun t : T => (`|f t| <= eps)%R)
         (inPhantom (forall t : T, (`|f t| <= eps)%R)))
@@ -3957,7 +4006,7 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 80
 forall {R : realFieldType} [A : set R] [x : R],
 topology_structure.open A ->
 A x ->
-filter.prop_near1 (0^'+)%classic
+filter.prop_near1 (num_topology.at_right (R:=R) 0)
   (P:=fun r : R => (`](x - r)%R, (x + r)%R[ `<=` A)%classic)
   (inPhantom (forall r : R, (`](x - r)%R, (x + r)%R[ `<=` A)%classic))
 
@@ -3983,7 +4032,7 @@ Qed.</div></details>
 forall {R : realFieldType} [A : set R] [x : R],
 topology_structure.open A ->
 A x ->
-filter.prop_near1 (0^'+)%classic
+filter.prop_near1 (num_topology.at_right (R:=R) 0)
   (P:=fun r : R => (`[(x - r)%R, (x + r)%R] `<=` A)%classic)
   (inPhantom (forall r : R, (`[(x - r)%R, (x + r)%R] `<=` A)%classic))
 
@@ -4013,7 +4062,7 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="dense_set1C" class="id"><a name="dense_set1C" class="" title="dense_set1C :
 forall {R : realFieldType} (r : R),
 topology_structure.dense
-  (T:=numFieldTopology.RealField_sort__canonical__topology_structure_Topological
+  (T:=num_topology.numFieldTopology.RealField_sort__canonical__topology_structure_Topological
         R)
   [set~ r]
 
@@ -4023,13 +4072,13 @@ dense_set1C :
 forall {R : realFieldType} (r : R)
   [O : set
          (topology_structure.Topological.sort
-            (numFieldTopology.RealField_sort__canonical__topology_structure_Topological
+            (num_topology.numFieldTopology.RealField_sort__canonical__topology_structure_Topological
                R))],
 (O !=set0)%classic ->
 topology_structure.open O ->
 exists
   a : topology_structure.Topological.sort
-        (numFieldTopology.RealField_sort__canonical__topology_structure_Topological
+        (num_topology.numFieldTopology.RealField_sort__canonical__topology_structure_Topological
            R),
   (O `&` [set~ r])%classic a
 
@@ -4319,7 +4368,7 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="at_right_in_segment" class="id"><a name="at_right_in_segment" class="" title="at_right_in_segment :
 forall [R : realFieldType] (x : R) (P : set R),
-filter.prop_near1 (0^'+)%classic
+filter.prop_near1 (num_topology.at_right (R:=R) 0)
   (P:=fun e : R => {in `[x - e, x + e]%R, forall x0 : R, P x0})
   (inPhantom (forall e : R, {in `[x - e, x + e]%R, forall x0 : R, P x0})) <->
 filter.prop_near1 x (P:=P) (inPhantom (forall x0 : R, P x0))
@@ -4457,13 +4506,20 @@ Qed.</div></details>
 (forall (T : Type) (F : set_system T), filter.nbhs F = F) *
 (forall (T : Type) (F : filter.filter_on T),
  filter.nbhs F = filter.nbhs (filter.filter F)) *
-(forall (M : uniformType) (x : M),
- filter.filter_from entourage ((xsection (T2:=M))^~ x) = filter.nbhs x) *
-(forall M : uniformType, nbhs_ entourage = filter.nbhs) *
+(forall (M : uniform_structure.Uniform.type)
+   (x : uniform_structure.Uniform.sort M),
+ filter.filter_from uniform_structure.entourage
+   ((xsection (T2:=uniform_structure.Uniform.sort M))^~ x) =
+ filter.nbhs x) *
+(forall M : uniform_structure.Uniform.type,
+ uniform_structure.nbhs_ uniform_structure.entourage = filter.nbhs) *
 (forall (K : numDomainType) (V : pseudoMetricNormedZmodType K),
- nbhs_ball_ (ball_ normr) = filter.nbhs) *
+ pseudometric_structure.nbhs_ball_ (pseudometric_structure.ball_ normr) =
+ filter.nbhs) *
 (forall (K : numDomainType) (V : pseudoMetricNormedZmodType K) (x : V),
- filter.filter_from [set x0 | (0 < x0)%R] (ball_ normr x) = filter.nbhs x)
+ filter.filter_from [set x0 | (0 < x0)%R]
+   (pseudometric_structure.ball_ normr x) =
+ filter.nbhs x)
 
 nbhs_simpl is not universe polymorphic
 nbhs_simpl is transparent
@@ -4525,17 +4581,30 @@ Qed.</div></details>
 forall {R : realFieldType} {K : numDomainType}
   {U : pseudoMetricNormedZmodType K} [a b : R] (f : R -> U),
 (a < b)%R ->
-{within `[a, b], continuous f}%classic <->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=U) x (subspace_topology.from_subspace `[a, b] f)) <->
 [/\ {in `]a, b[%R,
       forall
         x : filter.Nbhs.sort
-              (numFieldTopology.RealField_sort__canonical__filter_Nbhs R),
+              (num_topology.numFieldTopology.RealField_sort__canonical__filter_Nbhs
+                 R),
       filter.continuous_at
-        (T:=numFieldTopology.RealField_sort__canonical__filter_Nbhs R) (U:=U)
-        x f},
-    filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs (a^'+)%classic)))
+        (T:=num_topology.numFieldTopology.RealField_sort__canonical__filter_Nbhs
+              R)
+        (U:=U) x f},
+    filter.cvg_to
+      (filter.nbhs
+         (filter.fmap f (filter.nbhs (num_topology.at_right (R:=R) a))))
       (filter.nbhs (f a))
-  & filter.cvg_to (filter.nbhs (filter.fmap f (filter.nbhs (b^'-)%classic)))
+  & filter.cvg_to
+      (filter.nbhs
+         (filter.fmap f (filter.nbhs (num_topology.at_left (R:=R) b))))
       (filter.nbhs (f b))]
 
 continuous_within_itvP is not universe polymorphic
@@ -4579,15 +4648,26 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="continuous_within_itvcyP" class="id"><a name="continuous_within_itvcyP" class="" title="continuous_within_itvcyP :
 forall {R : realFieldType} {K : numDomainType}
   {U : pseudoMetricNormedZmodType K} (a : R) (f : R -> U),
-{within `[a, +oo[, continuous f}%classic <->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, +oo[),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, +oo[)
+   (U:=U) x (subspace_topology.from_subspace `[a, +oo[ f)) <->
 {in `]a, +oo[%R,
   forall
     x : filter.Nbhs.sort
-          (numFieldTopology.RealField_sort__canonical__filter_Nbhs R),
+          (num_topology.numFieldTopology.RealField_sort__canonical__filter_Nbhs
+             R),
   filter.continuous_at
-    (T:=numFieldTopology.RealField_sort__canonical__filter_Nbhs R) (U:=U) x f} /\
+    (T:=num_topology.numFieldTopology.RealField_sort__canonical__filter_Nbhs
+          R)
+    (U:=U) x f} /\
 filter.cvg_to
-  (filter.nbhs (filter.fmap [eta f] (filter.nbhs (a^'+)%classic)))
+  (filter.nbhs
+     (filter.fmap [eta f] (filter.nbhs (num_topology.at_right (R:=R) a))))
   (filter.nbhs (f a))
 
 continuous_within_itvcyP is not universe polymorphic
@@ -4624,15 +4704,26 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="continuous_within_itvNycP" class="id"><a name="continuous_within_itvNycP" class="" title="continuous_within_itvNycP :
 forall {R : realFieldType} {K : numDomainType}
   {U : pseudoMetricNormedZmodType K} (b : R) (f : R -> U),
-{within `]-oo, b], continuous f}%classic <->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `]-oo, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `]-oo, b])
+   (U:=U) x (subspace_topology.from_subspace `]-oo, b] f)) <->
 {in `]-oo, b[%R,
   forall
     x : filter.Nbhs.sort
-          (numFieldTopology.RealField_sort__canonical__filter_Nbhs R),
+          (num_topology.numFieldTopology.RealField_sort__canonical__filter_Nbhs
+             R),
   filter.continuous_at
-    (T:=numFieldTopology.RealField_sort__canonical__filter_Nbhs R) (U:=U) x f} /\
+    (T:=num_topology.numFieldTopology.RealField_sort__canonical__filter_Nbhs
+          R)
+    (U:=U) x f} /\
 filter.cvg_to
-  (filter.nbhs (filter.fmap [eta f] (filter.nbhs (b^'-)%classic)))
+  (filter.nbhs
+     (filter.fmap [eta f] (filter.nbhs (num_topology.at_left (R:=R) b))))
   (filter.nbhs (f b))
 
 continuous_within_itvNycP is not universe polymorphic
@@ -4673,15 +4764,24 @@ forall {R : realFieldType} {K : numDomainType}
   {U : pseudoMetricNormedZmodType K} [a b : R] [f : R -> U] 
   [x : R],
 (a < b)%R ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x0 : filter.Nbhs.sort
+          (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+             `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=U) x0 (subspace_topology.from_subspace `[a, b] f)) ->
 x \in `]a, b[%R ->
 {for x,
   forall
     x0 : filter.Nbhs.sort
-           (numFieldTopology.RealField_sort__canonical__filter_Nbhs R),
+           (num_topology.numFieldTopology.RealField_sort__canonical__filter_Nbhs
+              R),
   filter.continuous_at
-    (T:=numFieldTopology.RealField_sort__canonical__filter_Nbhs R) (U:=U) x0
-    f}
+    (T:=num_topology.numFieldTopology.RealField_sort__canonical__filter_Nbhs
+          R)
+    (U:=U) x0 f}
 
 within_continuous_continuous is not universe polymorphic
 Expanded type for implicit arguments
@@ -4690,13 +4790,20 @@ forall {R : realFieldType} {K : numDomainType}
   {U : pseudoMetricNormedZmodType K} [a b : R] [f : R -> U] 
   [x : R],
 (a < b)%R ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x0 : filter.Nbhs.sort
+          (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+             `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=U) x0 (subspace_topology.from_subspace `[a, b] f)) ->
 x \in `]a, b[%R ->
 forall [t : set (filter.Nbhs.sort U)],
 filter.nbhs (f x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i `<=` f @^-1` t)%classic
+  (pseudometric_structure.ball_ [eta normr] x i `<=` f @^-1` t)%classic
 
 Arguments within_continuous_continuous {R K U} [a b] 
   [f]%_function_scope [x] _ _%_function_scope _ [t] 
@@ -4753,16 +4860,18 @@ Qed.</div></details>
    (inPhantom (forall (x : T) (x' : T'), P (f x) (g x')))) *
 (forall (K : numDomainType) (V : pseudoMetricNormedZmodType K) 
    (x : V) (P : V -> Prop),
- nbhs_ball_ (ball_ normr) x P =
+ pseudometric_structure.nbhs_ball_ (pseudometric_structure.ball_ normr) x P =
  filter.prop_near1 x (P:=P) (inPhantom (forall x0 : V, P x0))) *
 (forall (K : numDomainType) (V : pseudoMetricNormedZmodType K) 
    (x : V) (P : V -> Prop),
- filter.filter_from [set x0 | (0 < x0)%R] (ball_ normr x) P =
+ filter.filter_from [set x0 | (0 < x0)%R]
+   (pseudometric_structure.ball_ normr x) P =
  filter.prop_near1 x (P:=P) (inPhantom (forall x0 : V, P x0))) *
 (forall (K : numDomainType) (V : pseudoMetricNormedZmodType K) 
    (x : V) (P : V -> Prop),
- filter.prop_near1 (nbhs_ball_ (ball_ normr) x) (P:=P)
-   (inPhantom (forall x0 : V, P x0)) =
+ filter.prop_near1
+   (pseudometric_structure.nbhs_ball_ (pseudometric_structure.ball_ normr) x)
+   (P:=P) (inPhantom (forall x0 : V, P x0)) =
  filter.prop_near1 x (P:=P) (inPhantom (forall x0 : V, P x0)))
 
 near_simpl is not universe polymorphic
@@ -5406,8 +5515,27 @@ forall {T : topology_structure.Topological.type} {K : numFieldType}
   {V : pseudoMetricNormedZmodType K}
   [A : set (topology_structure.Topological.sort T)]
   [f g : topology_structure.Topological.sort T -> V],
-{within A, continuous f}%classic ->
-{within A, continuous g}%classic -> {within A, continuous (f - g)%R}%classic
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
+   (U:=V) x (subspace_topology.from_subspace A f)) ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
+   (U:=V) x (subspace_topology.from_subspace A g)) ->
+forall
+  [x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A)],
+filter.continuous_at
+  (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
+  (U:=V) x (subspace_topology.from_subspace A (f - g)%R)
 
 within_continuousB is not universe polymorphic
 Expanded type for implicit arguments
@@ -5416,16 +5544,30 @@ forall {T : topology_structure.Topological.type} {K : numFieldType}
   {V : pseudoMetricNormedZmodType K}
   [A : set (topology_structure.Topological.sort T)]
   [f g : topology_structure.Topological.sort T -> V],
-{within A, continuous f}%classic ->
-{within A, continuous g}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
+   (U:=V) x (subspace_topology.from_subspace A f)) ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
+   (U:=V) x (subspace_topology.from_subspace A g)) ->
 forall
   [x : filter.Nbhs.sort
-         (subspace_topology_subspace__canonical__filter_Nbhs A)]
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A)]
   [t : set (filter.Nbhs.sort V)],
-filter.nbhs (from_subspace A (f - g)%R x) t ->
+filter.nbhs (subspace_topology.from_subspace A (f - g)%R x) t ->
 (if if if pselect (A x) then true else false then true else false
  then filter.within A (filter.nbhs x)
- else filter.globally [set x]) (from_subspace A (f - g)%R @^-1` t)%classic
+ else filter.globally [set x])
+  (subspace_topology.from_subspace A (f - g)%R @^-1` t)%classic
 
 Arguments within_continuousB {T K V} [A]%_classical_set_scope
   [f g]%_function_scope (_ _)%_function_scope [x t] 
@@ -5449,8 +5591,27 @@ forall {T : topology_structure.Topological.type} {K : numFieldType}
   {V : pseudoMetricNormedZmodType K}
   [A : set (topology_structure.Topological.sort T)]
   [f g : topology_structure.Topological.sort T -> V],
-{within A, continuous f}%classic ->
-{within A, continuous g}%classic -> {within A, continuous (f + g)%R}%classic
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
+   (U:=V) x (subspace_topology.from_subspace A f)) ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
+   (U:=V) x (subspace_topology.from_subspace A g)) ->
+forall
+  [x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A)],
+filter.continuous_at
+  (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
+  (U:=V) x (subspace_topology.from_subspace A (f + g)%R)
 
 within_continuousD is not universe polymorphic
 Expanded type for implicit arguments
@@ -5459,16 +5620,30 @@ forall {T : topology_structure.Topological.type} {K : numFieldType}
   {V : pseudoMetricNormedZmodType K}
   [A : set (topology_structure.Topological.sort T)]
   [f g : topology_structure.Topological.sort T -> V],
-{within A, continuous f}%classic ->
-{within A, continuous g}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
+   (U:=V) x (subspace_topology.from_subspace A f)) ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
+   (U:=V) x (subspace_topology.from_subspace A g)) ->
 forall
   [x : filter.Nbhs.sort
-         (subspace_topology_subspace__canonical__filter_Nbhs A)]
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A)]
   [t : set (filter.Nbhs.sort V)],
-filter.nbhs (from_subspace A (f + g)%R x) t ->
+filter.nbhs (subspace_topology.from_subspace A (f + g)%R x) t ->
 (if if if pselect (A x) then true else false then true else false
  then filter.within A (filter.nbhs x)
- else filter.globally [set x]) (from_subspace A (f + g)%R @^-1` t)%classic
+ else filter.globally [set x])
+  (subspace_topology.from_subspace A (f + g)%R @^-1` t)%classic
 
 Arguments within_continuousD {T K V} [A]%_classical_set_scope
   [f g]%_function_scope (_ _)%_function_scope [x t] 
@@ -5504,8 +5679,13 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 12
 &nbsp;&nbsp;(<span id="x:671" class="id"><a name="x:671" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html#V:669">V</a></span>) (<span id="e:672" class="id"><a name="e:672" class="">e</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html#R:668">R</a></span>)<span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9">[set</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9"> </a></span><span id="y:673" class="id"><a name="y:673" class="">y</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9"> |</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html#norm:670">norm</a></span> (<span class="id"><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html#x:671">x</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#::ring_scope:x_'-'_x"> -</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#::ring_scope:x_'-'_x"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html#y:673">y</a></span>)<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html#e:672">e</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9">]</a></span>.<br/>
 <br/>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="closed_ball" class="id"><a name="closed_ball" class="" title="closed_ball :
-forall [R : numDomainType] [V : pseudoMetricType R],
-V -> R -> set (topology_structure.Topological.sort V)
+forall [R : numDomainType] [V : pseudometric_structure.PseudoMetric.type R],
+pseudometric_structure.PseudoMetric.sort V ->
+R ->
+set
+  (topology_structure.Topological.sort
+     (pseudometric_structure.PseudoMetric.Exports.pseudometric_structure_PseudoMetric__to__topology_structure_Topological
+        V))
 
 closed_ball is not universe polymorphic
 Arguments closed_ball [R V] x e%_ring_scope _
@@ -5518,8 +5698,11 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 12
 &nbsp;&nbsp;(<span id="x:676" class="id"><a name="x:676" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html#V:675">V</a></span>) (<span id="e:677" class="id"><a name="e:677" class="">e</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html#R:674">R</a></span>)<span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#closure">closure</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#ball">ball</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html#x:676">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html#e:677">e</a></span>).<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="closure_ballE" class="id"><a name="closure_ballE" class="" title="closure_ballE :
-forall [R : numDomainType] [V : pseudoMetricType R] (c : V) (r : R),
-topology_structure.closure (ball c r) = closed_ball (V:=V) c r
+forall [R : numDomainType] [V : pseudometric_structure.PseudoMetric.type R]
+  (c : pseudometric_structure.PseudoMetric.sort V) 
+  (r : R),
+topology_structure.closure (pseudometric_structure.ball c r) =
+closed_ball (V:=V) c r
 
 closure_ballE is not universe polymorphic
 Arguments closure_ballE [R V] c r%_ring_scope
@@ -5556,17 +5739,29 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 12
 Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="closed_ballxx" class="id"><a name="closed_ballxx" class="" title="closed_ballxx :
-forall [R : numDomainType] [V : pseudoMetricType R] [x : V] [e : R],
+forall [R : numDomainType] [V : pseudometric_structure.PseudoMetric.type R]
+  [x : pseudometric_structure.PseudoMetric.sort V] 
+  [e : R],
 (0 < e)%R -> closed_ball (V:=V) x e x
 
 closed_ballxx is not universe polymorphic
 Expanded type for implicit arguments
 closed_ballxx :
-forall [R : numDomainType] [V : pseudoMetricType R] [x : V] [e : R],
+forall [R : numDomainType] [V : pseudometric_structure.PseudoMetric.type R]
+  [x : pseudometric_structure.PseudoMetric.sort V] 
+  [e : R],
 (0 < e)%R ->
-forall [B : set (topology_structure.Topological.sort V)],
+forall
+  [B : set
+         (topology_structure.Topological.sort
+            (pseudometric_structure.PseudoMetric.Exports.pseudometric_structure_PseudoMetric__to__topology_structure_Topological
+               V))],
 filter.nbhs x B ->
-exists a : topology_structure.Topological.sort V, (ball x e `&` B)%classic a
+exists
+  a : topology_structure.Topological.sort
+        (pseudometric_structure.PseudoMetric.Exports.pseudometric_structure_PseudoMetric__to__topology_structure_Topological
+           V),
+  (pseudometric_structure.ball x e `&` B)%classic a
 
 Arguments closed_ballxx [R V x] [e]%_ring_scope _ [B] _
 closed_ballxx is opaque
@@ -5582,18 +5777,32 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 12
 <span class="gallina-kwd"> by</span><span class="id"> move=&gt;</span><span class="id"> ?;</span><span class="id"> exact/</span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#subset_closure">subset_closure</a></span><span class="id">/</span><span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#ballxx">ballxx</a></span>. Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="closed_ball_closed" class="id"><a name="closed_ball_closed" class="" title="closed_ball_closed :
-forall [R : numDomainType] [V : pseudoMetricType R] [x : V] [r : R],
+forall [R : numDomainType] [V : pseudometric_structure.PseudoMetric.type R]
+  [x : pseudometric_structure.PseudoMetric.sort V] 
+  [r : R],
 topology_structure.closed (closed_ball (V:=V) x r)
 
 closed_ball_closed is not universe polymorphic
 Expanded type for implicit arguments
 closed_ball_closed :
-forall [R : numDomainType] [V : pseudoMetricType R] 
-  [x : V] [r : R] [t : topology_structure.Topological.sort V],
+forall [R : numDomainType] [V : pseudometric_structure.PseudoMetric.type R]
+  [x : pseudometric_structure.PseudoMetric.sort V] 
+  [r : R]
+  [t : topology_structure.Topological.sort
+         (pseudometric_structure.PseudoMetric.Exports.pseudometric_structure_PseudoMetric__to__topology_structure_Topological
+            V)],
 topology_structure.closure (closed_ball (V:=V) x r) t ->
-forall [B : set (topology_structure.Topological.sort V)],
+forall
+  [B : set
+         (topology_structure.Topological.sort
+            (pseudometric_structure.PseudoMetric.Exports.pseudometric_structure_PseudoMetric__to__topology_structure_Topological
+               V))],
 filter.nbhs t B ->
-exists a : topology_structure.Topological.sort V, (ball x r `&` B)%classic a
+exists
+  a : topology_structure.Topological.sort
+        (pseudometric_structure.PseudoMetric.Exports.pseudometric_structure_PseudoMetric__to__topology_structure_Topological
+           V),
+  (pseudometric_structure.ball x r `&` B)%classic a
 
 Arguments closed_ball_closed [R V x] [r]%_ring_scope [t] _ [B] _
 closed_ball_closed is opaque
@@ -5609,17 +5818,29 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 12
 <span class="id"> exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#closed_closure">closed_closure</a></span>. Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="subset_closed_ball" class="id"><a name="subset_closed_ball" class="" title="subset_closed_ball :
-forall [R : numDomainType] [V : pseudoMetricType R] [x : V] [r : R],
-(ball x r `<=` closed_ball (V:=V) x r)%classic
+forall [R : numDomainType] [V : pseudometric_structure.PseudoMetric.type R]
+  [x : pseudometric_structure.PseudoMetric.sort V] 
+  [r : R],
+(pseudometric_structure.ball x r `<=` closed_ball (V:=V) x r)%classic
 
 subset_closed_ball is not universe polymorphic
 Expanded type for implicit arguments
 subset_closed_ball :
-forall [R : numDomainType] [V : pseudoMetricType R] [x : V] [r : R] [t : V],
-ball x r t ->
-forall [B : set (topology_structure.Topological.sort V)],
+forall [R : numDomainType] [V : pseudometric_structure.PseudoMetric.type R]
+  [x : pseudometric_structure.PseudoMetric.sort V] 
+  [r : R] [t : pseudometric_structure.PseudoMetric.sort V],
+pseudometric_structure.ball x r t ->
+forall
+  [B : set
+         (topology_structure.Topological.sort
+            (pseudometric_structure.PseudoMetric.Exports.pseudometric_structure_PseudoMetric__to__topology_structure_Topological
+               V))],
 filter.nbhs t B ->
-exists a : topology_structure.Topological.sort V, (ball x r `&` B)%classic a
+exists
+  a : topology_structure.Topological.sort
+        (pseudometric_structure.PseudoMetric.Exports.pseudometric_structure_PseudoMetric__to__topology_structure_Topological
+           V),
+  (pseudometric_structure.ball x r `&` B)%classic a
 
 Arguments subset_closed_ball [R V x] [r]%_ring_scope [t] _ [B] _
 subset_closed_ball is opaque
@@ -5635,19 +5856,31 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 12
 <span class="id"> exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#subset_closure">subset_closure</a></span>. Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="subset_closure_half" class="id"><a name="subset_closure_half" class="" title="subset_closure_half :
-forall [R : numFieldType] [V : pseudoMetricType R] [x : V] [r : R],
-(0 < r)%R -> (closed_ball (V:=V) x (r / 2) `<=` ball x r)%classic
+forall [R : numFieldType] [V : pseudometric_structure.PseudoMetric.type R]
+  [x : pseudometric_structure.PseudoMetric.sort V] 
+  [r : R],
+(0 < r)%R ->
+(closed_ball (V:=V) x (r / 2) `<=` pseudometric_structure.ball x r)%classic
 
 subset_closure_half is not universe polymorphic
 Expanded type for implicit arguments
 subset_closure_half :
-forall [R : numFieldType] [V : pseudoMetricType R] [x : V] [r : R],
+forall [R : numFieldType] [V : pseudometric_structure.PseudoMetric.type R]
+  [x : pseudometric_structure.PseudoMetric.sort V] 
+  [r : R],
 (0 < r)%R ->
-forall [t : topology_structure.Topological.sort V],
+forall
+  [t : topology_structure.Topological.sort
+         (pseudometric_structure.PseudoMetric.Exports.pseudometric_structure_PseudoMetric__to__topology_structure_Topological
+            V)],
 closed_ball (V:=V) x (r / 2) t ->
 (let (ball, _, _, _, _) :=
-   PseudoMetric.pseudometric_structure_Uniform_isPseudoMetric_mixin
-     (let (sort, class) as record return (PseudoMetric.axioms_ R record) :=
+   pseudometric_structure.PseudoMetric.pseudometric_structure_Uniform_isPseudoMetric_mixin
+     (let
+        (sort, class) as record
+         return
+           (pseudometric_structure.PseudoMetric.axioms_ R
+              (pseudometric_structure.PseudoMetric.sort record)) :=
         V in
       class) in
  ball) x r t
@@ -5669,20 +5902,35 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 12
 Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="le_closed_ball" class="id"><a name="le_closed_ball" class="" title="le_closed_ball :
-forall [R : numFieldType] [M : pseudoMetricType R] [x : M] [e1 e2 : R],
+forall [R : numFieldType] [M : pseudometric_structure.PseudoMetric.type R]
+  [x : pseudometric_structure.PseudoMetric.sort M] 
+  [e1 e2 : R],
 (e1 <= e2)%R ->
 (closed_ball (V:=M) x e1 `<=` closed_ball (V:=M) x e2)%classic
 
 le_closed_ball is not universe polymorphic
 Expanded type for implicit arguments
 le_closed_ball :
-forall [R : numFieldType] [M : pseudoMetricType R] [x : M] [e1 e2 : R],
+forall [R : numFieldType] [M : pseudometric_structure.PseudoMetric.type R]
+  [x : pseudometric_structure.PseudoMetric.sort M] 
+  [e1 e2 : R],
 (e1 <= e2)%R ->
-forall [t : topology_structure.Topological.sort M],
+forall
+  [t : topology_structure.Topological.sort
+         (pseudometric_structure.PseudoMetric.Exports.pseudometric_structure_PseudoMetric__to__topology_structure_Topological
+            M)],
 closed_ball (V:=M) x e1 t ->
-forall [B : set (topology_structure.Topological.sort M)],
+forall
+  [B : set
+         (topology_structure.Topological.sort
+            (pseudometric_structure.PseudoMetric.Exports.pseudometric_structure_PseudoMetric__to__topology_structure_Topological
+               M))],
 filter.nbhs t B ->
-exists a : topology_structure.Topological.sort M, (ball x e2 `&` B)%classic a
+exists
+  a : topology_structure.Topological.sort
+        (pseudometric_structure.PseudoMetric.Exports.pseudometric_structure_PseudoMetric__to__topology_structure_Topological
+           M),
+  (pseudometric_structure.ball x e2 `&` B)%classic a
 
 Arguments le_closed_ball [R M x] [e1 e2]%_ring_scope _ [t] _ [B] _
 le_closed_ball is opaque

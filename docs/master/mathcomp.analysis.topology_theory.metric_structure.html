@@ -366,7 +366,7 @@ Expanded type for implicit arguments
 metric_hausdorff :
 forall {R : realFieldType} [T : metricType R]
   [p q : topology_structure.Topological.sort T],
-cluster (filter.nbhs p) q -> p = q
+compact.cluster (filter.nbhs p) q -> p = q
 
 Arguments metric_hausdorff {R} [T p q] _
 metric_hausdorff is opaque

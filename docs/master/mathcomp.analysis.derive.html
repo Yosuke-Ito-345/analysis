@@ -926,7 +926,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -2951,9 +2951,10 @@ forall [R : numFieldType] [x : R],
 x != 0%R ->
 (forall
    x0 : filter.Nbhs.sort
-          (numFieldTopology.NumField_sort__canonical__filter_Nbhs R),
+          (num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs
+             R),
  filter.continuous_at
-   (T:=numFieldTopology.NumField_sort__canonical__filter_Nbhs R)
+   (T:=num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs R)
    (U:=join_tvs_NbhsLmodule_between_GRing_LSemiModule_and_filter_Nbhs
          (numFieldNormedType.NumField_sort__canonical__tvs_NbhsLmodule R))
    x0 [eta  *:%R (- x ^- 2)]) /\
@@ -3235,7 +3236,14 @@ forall [R : numFieldType] [U : normedModType R] [f : R -> U] [i : interval R],
     x : numFieldNormedType.NumField_sort__canonical__normed_module_NormedModule
           R,
   derivable f x 1} ->
-{within [set` i], continuous f}%classic
+forall
+  [x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            [set` i])],
+filter.continuous_at
+  (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+        [set` i])
+  (U:=U) x (subspace_topology.from_subspace [set` i] f)
 
 derivable_within_continuous is not universe polymorphic
 Expanded type for implicit arguments
@@ -3248,15 +3256,17 @@ forall [R : numFieldType] [U : normedModType R] [f : R -> U] [i : interval R],
   derivable f x 1} ->
 forall
   [x : filter.Nbhs.sort
-         (subspace_topology_subspace__canonical__filter_Nbhs [set` i])]
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            [set` i])]
   [t : set (filter.Nbhs.sort U)],
-filter.nbhs (from_subspace [set` i] f x) t ->
+filter.nbhs (subspace_topology.from_subspace [set` i] f x) t ->
 (if
   if if pselect ([set` i]%classic x) then true else false
   then true
   else false
  then filter.within [set` i] (filter.nbhs x)
- else filter.globally [set x]) (from_subspace [set` i] f @^-1` t)%classic
+ else filter.globally [set x])
+  (subspace_topology.from_subspace [set` i] f @^-1` t)%classic
 
 Arguments derivable_within_continuous [R U] [f]%_function_scope [i] _ [x t] _
 derivable_within_continuous is opaque
@@ -3339,7 +3349,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -3435,7 +3445,7 @@ forall [t : set W],
 filter.nbhs ('D_v f x + 'D_v g x)%R t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -3504,7 +3514,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -3573,7 +3583,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -3647,7 +3657,7 @@ forall [t : set W],
 filter.nbhs (- 'D_v f x)%R t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -3711,7 +3721,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -3789,7 +3799,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -3838,7 +3848,7 @@ forall [t : set W],
 filter.nbhs (k *: 'D_v f x)%R t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -3908,7 +3918,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -3981,7 +3991,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -4039,7 +4049,7 @@ Declared in library mathcomp.analysis.derive, line 1278, characters 6-15
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="derive1_onem" class="id"><a name="derive1_onem" class="" title="derive1_onem :
 forall {R : numFieldType},
-(fun x : R => unstable.onem x : R^o)^`()%classic = cst (-1)%R
+(fun x : R => x.~%R : R^o)^`()%classic = cst (-1)%R
 
 derive1_onem is not universe polymorphic
 Arguments derive1_onem {R}
@@ -4080,7 +4090,7 @@ forall
 filter.nbhs (f x *: 'D_v g x + g x *: 'D_v f x)%R t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -4160,7 +4170,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -4270,7 +4280,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -4336,7 +4346,7 @@ forall
 filter.nbhs (- f x ^- 2 *: 'D_v f x)%R t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -4431,7 +4441,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -4578,7 +4588,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -4653,8 +4663,15 @@ forall [T : topology_structure.Topological.type] [R : realType]
   [f : topology_structure.Topological.sort T -> R]
   [A : set (topology_structure.Topological.sort T)],
 (A !=set0)%classic ->
-compact A ->
-{within A, continuous f}%classic ->
+compact.compact A ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace A f)) ->
 exists2 c : topology_structure.Topological.sort T,
   c \in A &
   forall t : topology_structure.Topological.sort T, t \in A -> (f t <= f c)%R
@@ -4703,8 +4720,15 @@ forall [T : topology_structure.Topological.type] [R : realType]
   [f : topology_structure.Topological.sort T -> R]
   [A : set (topology_structure.Topological.sort T)],
 (A !=set0)%classic ->
-compact A ->
-{within A, continuous f}%classic ->
+compact.compact A ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace A f)) ->
 exists2 c : topology_structure.Topological.sort T,
   c \in A &
   forall t : topology_structure.Topological.sort T, t \in A -> (f c <= f t)%R
@@ -4731,7 +4755,15 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="EVT_max" class="id"><a name="EVT_max" class="" title="EVT_max :
 forall [R : realType] [f : R -> R] [a b : R],
 (a <= b)%R ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 exists2 c : R,
   c \in `[a, b]%R & forall t : R, t \in `[a, b]%R -> (f t <= f c)%R
 
@@ -4756,7 +4788,15 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="EVT_min" class="id"><a name="EVT_min" class="" title="EVT_min :
 forall [R : realType] [f : R -> R] [a b : R],
 (a <= b)%R ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 exists2 c : R,
   c \in `[a, b]%R & forall t : R, t \in `[a, b]%R -> (f c <= f t)%R
 
@@ -4781,8 +4821,15 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="EVT_max_rV" class="id"><a name="EVT_max_rV" class="" title="EVT_max_rV :
 forall [R : realType] [n : nat] [f : 'rV_n -> R] [A : set 'rV_n],
 (A !=set0)%classic ->
-compact A ->
-{within A, continuous f}%classic ->
+compact.compact A ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace A f)) ->
 exists2 c : 'rV_n, c \in A & forall t : 'rV_n, t \in A -> (f t <= f c)%R
 
 EVT_max_rV is not universe polymorphic
@@ -4802,8 +4849,15 @@ Declared in library mathcomp.analysis.derive, line 1509, characters 6-16
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="EVT_min_rV" class="id"><a name="EVT_min_rV" class="" title="EVT_min_rV :
 forall [R : realType] [n : nat] [f : 'rV_n -> R] [A : set 'rV_n],
 (A !=set0)%classic ->
-compact A ->
-{within A, continuous f}%classic ->
+compact.compact A ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            A),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs A)
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace A f)) ->
 exists2 c : 'rV_n, c \in A & forall t : 'rV_n, t \in A -> (f c <= f t)%R
 
 EVT_min_rV is not universe polymorphic
@@ -4823,14 +4877,14 @@ Declared in library mathcomp.analysis.derive, line 1514, characters 6-16
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvg_at_rightE" class="id"><a name="cvg_at_rightE" class="" title="cvg_at_rightE :
 forall {K : numFieldType} {V : normedModType K} (f : K -> V)
   (x : topology_structure.Topological.sort
-         (numFieldTopology.NumField_sort__canonical__topology_structure_Topological
+         (num_topology.numFieldTopology.NumField_sort__canonical__topology_structure_Topological
             K)),
 filter.cvg_to
   (filter.nbhs (filter.fmap f (filter.nbhs (topology_structure.dnbhs x))))
   (filter.nbhs
      (filter.lim (filter.fmap f (filter.nbhs (topology_structure.dnbhs x))))) ->
 filter.lim (filter.fmap f (filter.nbhs (topology_structure.dnbhs x))) =
-filter.lim (filter.fmap f (filter.nbhs (x^'+)%classic))
+filter.lim (filter.fmap f (filter.nbhs (num_topology.at_right (R:=K) x)))
 
 cvg_at_rightE is not universe polymorphic
 Arguments cvg_at_rightE {K V} f%_function_scope x _
@@ -4853,14 +4907,14 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvg_at_leftE" class="id"><a name="cvg_at_leftE" class="" title="cvg_at_leftE :
 forall {K : numFieldType} {V : normedModType K} (f : K -> V)
   (x : topology_structure.Topological.sort
-         (numFieldTopology.NumField_sort__canonical__topology_structure_Topological
+         (num_topology.numFieldTopology.NumField_sort__canonical__topology_structure_Topological
             K)),
 filter.cvg_to
   (filter.nbhs (filter.fmap f (filter.nbhs (topology_structure.dnbhs x))))
   (filter.nbhs
      (filter.lim (filter.fmap f (filter.nbhs (topology_structure.dnbhs x))))) ->
 filter.lim (filter.fmap f (filter.nbhs (topology_structure.dnbhs x))) =
-filter.lim (filter.fmap f (filter.nbhs (x^'-)%classic))
+filter.lim (filter.fmap f (filter.nbhs (num_topology.at_left (R:=K) x)))
 
 cvg_at_leftE is not universe polymorphic
 Arguments cvg_at_leftE {K V} f%_function_scope x _
@@ -4961,7 +5015,15 @@ Qed.</div></details>
 forall [R : realType] [f : R -> R] [a b : R],
 (a < b)%R ->
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 f a = f b -> exists2 c : R, c \in `]a, b[%R & is_derive c 1%R f 0%R
 
 Rolle is not universe polymorphic
@@ -5006,7 +5068,15 @@ Qed.</div></details>
 forall [R : realType] [f df : R -> R] [a b : R],
 (a < b)%R ->
 (forall x : R, x \in `]a, b[%R -> is_derive x 1%R f (df x)) ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 exists2 c : R, c \in `]a, b[%R & (f b - f a)%R = (df c * (b - a))%R
 
 MVT is not universe polymorphic
@@ -5045,7 +5115,15 @@ Qed.</div></details>
 forall [R : realType] [f df : R -> R] [a b : R],
 (a <= b)%R ->
 (forall x : R, x \in `]a, b[%R -> is_derive x 1%R f (df x)) ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 exists2 c : R, c \in `[a, b]%R & (f b - f a)%R = (df c * (b - a))%R
 
 MVT_segment is not universe polymorphic
@@ -5078,7 +5156,16 @@ forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 <= f^`()%classic x)%R) ->
 forall [sa sb : bool],
-{within [set` Interval (BSide sa a) (BSide sb b)], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            [set` Interval (BSide sa a) (BSide sb b)]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         [set` Interval (BSide sa a) (BSide sb b)])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace [set` Interval (BSide sa a) (BSide sb b)]
+      f)) ->
 {in Interval (BSide sa a) (BSide sb b) &, {homo f : x y / (x <= y)%R}}
 
 ger0_derive1_le is not universe polymorphic
@@ -5088,7 +5175,16 @@ forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 <= f^`()%classic x)%R) ->
 forall [sa sb : bool],
-{within [set` Interval (BSide sa a) (BSide sb b)], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            [set` Interval (BSide sa a) (BSide sb b)]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         [set` Interval (BSide sa a) (BSide sb b)])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace [set` Interval (BSide sa a) (BSide sb b)]
+      f)) ->
 forall [x y : R],
 x \in Interval (BSide sa a) (BSide sb b) ->
 y \in Interval (BSide sa a) (BSide sb b) ->
@@ -5125,7 +5221,15 @@ Qed.</div></details>
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 <= f^`()%classic x)%R) ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 {in `[a, b]%R &, {homo f : x y / (x <= y)%R}}
 
 ger0_derive1_le_cc is not universe polymorphic
@@ -5134,7 +5238,15 @@ ger0_derive1_le_cc :
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 <= f^`()%classic x)%R) ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 forall [x y : R],
 x \in `[a, b]%R ->
 y \in `[a, b]%R ->
@@ -5157,7 +5269,15 @@ Declared in library mathcomp.analysis.derive, line 1675, characters 6-24
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 <= f^`()%classic x)%R) ->
-{within `[a, b[, continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b[),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b[)
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b[ f)) ->
 {in `[a, b[%R &, {homo f : x y / (x <= y)%R}}
 
 ger0_derive1_le_co is not universe polymorphic
@@ -5166,7 +5286,15 @@ ger0_derive1_le_co :
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 <= f^`()%classic x)%R) ->
-{within `[a, b[, continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b[),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b[)
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b[ f)) ->
 forall [x y : R],
 x \in `[a, b[%R ->
 y \in `[a, b[%R ->
@@ -5189,7 +5317,15 @@ Declared in library mathcomp.analysis.derive, line 1679, characters 6-24
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 <= f^`()%classic x)%R) ->
-{within `]a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `]a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `]a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `]a, b] f)) ->
 {in `]a, b]%R &, {homo f : x y / (x <= y)%R}}
 
 ger0_derive1_le_oc is not universe polymorphic
@@ -5198,7 +5334,15 @@ ger0_derive1_le_oc :
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 <= f^`()%classic x)%R) ->
-{within `]a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `]a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `]a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `]a, b] f)) ->
 forall [x y : R],
 x \in `]a, b]%R ->
 y \in `]a, b]%R ->
@@ -5224,10 +5368,11 @@ forall {R : realType} [f : R -> R] [a b : R],
 {in `]a, b[%classic,
   forall
     x : filter.Nbhs.sort
-          (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+          (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x f} ->
+    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+    f} ->
 {in `]a, b[%R &, {homo f : x y / (x <= y)%R}}
 
 ger0_derive1_le_oo is not universe polymorphic
@@ -5239,10 +5384,11 @@ forall {R : realType} [f : R -> R] [a b : R],
 {in `]a, b[%classic,
   forall
     x : filter.Nbhs.sort
-          (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+          (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x f} ->
+    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+    f} ->
 forall [x y : R],
 x \in `]a, b[%R ->
 y \in `]a, b[%R ->
@@ -5274,7 +5420,16 @@ forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x <= 0)%R) ->
 forall [sa sb : bool],
-{within [set` Interval (BSide sa a) (BSide sb b)], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            [set` Interval (BSide sa a) (BSide sb b)]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         [set` Interval (BSide sa a) (BSide sb b)])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace [set` Interval (BSide sa a) (BSide sb b)]
+      f)) ->
 {in Interval (BSide sa a) (BSide sb b) &, {homo f : x y /~ (x <= y)%R}}
 
 ler0_derive1_le is not universe polymorphic
@@ -5284,7 +5439,16 @@ forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x <= 0)%R) ->
 forall [sa sb : bool],
-{within [set` Interval (BSide sa a) (BSide sb b)], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            [set` Interval (BSide sa a) (BSide sb b)]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         [set` Interval (BSide sa a) (BSide sb b)])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace [set` Interval (BSide sa a) (BSide sb b)]
+      f)) ->
 forall [x y : R],
 x \in Interval (BSide sa a) (BSide sb b) ->
 y \in Interval (BSide sa a) (BSide sb b) ->
@@ -5316,7 +5480,15 @@ Qed.</div></details>
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x <= 0)%R) ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 {in `[a, b]%R &, {homo f : x y /~ (x <= y)%R}}
 
 ler0_derive1_le_cc is not universe polymorphic
@@ -5325,7 +5497,15 @@ ler0_derive1_le_cc :
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x <= 0)%R) ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 forall [x y : R],
 x \in `[a, b]%R ->
 y \in `[a, b]%R ->
@@ -5348,7 +5528,15 @@ Declared in library mathcomp.analysis.derive, line 1713, characters 6-24
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x <= 0)%R) ->
-{within `[a, b[, continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b[),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b[)
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b[ f)) ->
 {in `[a, b[%R &, {homo f : x y /~ (x <= y)%R}}
 
 ler0_derive1_le_co is not universe polymorphic
@@ -5357,7 +5545,15 @@ ler0_derive1_le_co :
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x <= 0)%R) ->
-{within `[a, b[, continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b[),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b[)
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b[ f)) ->
 forall [x y : R],
 x \in `[a, b[%R ->
 y \in `[a, b[%R ->
@@ -5380,7 +5576,15 @@ Declared in library mathcomp.analysis.derive, line 1717, characters 6-24
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x <= 0)%R) ->
-{within `]a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `]a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `]a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `]a, b] f)) ->
 {in `]a, b]%R &, {homo f : x y /~ (x <= y)%R}}
 
 ler0_derive1_le_oc is not universe polymorphic
@@ -5389,7 +5593,15 @@ ler0_derive1_le_oc :
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x <= 0)%R) ->
-{within `]a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `]a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `]a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `]a, b] f)) ->
 forall [x y : R],
 x \in `]a, b]%R ->
 y \in `]a, b]%R ->
@@ -5415,10 +5627,11 @@ forall {R : realType} [f : R -> R] [a b : R],
 {in `]a, b[%classic,
   forall
     x : filter.Nbhs.sort
-          (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+          (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x f} ->
+    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+    f} ->
 {in `]a, b[%R &, {homo f : x y /~ (x <= y)%R}}
 
 ler0_derive1_le_oo is not universe polymorphic
@@ -5430,10 +5643,11 @@ forall {R : realType} [f : R -> R] [a b : R],
 {in `]a, b[%classic,
   forall
     x : filter.Nbhs.sort
-          (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+          (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x f} ->
+    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+    f} ->
 forall [x y : R],
 x \in `]a, b[%R ->
 y \in `]a, b[%R ->
@@ -5460,7 +5674,15 @@ Declared in library mathcomp.analysis.derive, line 1725, characters 6-24
 forall [R : realType] [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x <= 0)%R) ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 forall [x y : R], (a <= x)%R -> (x <= y)%R -> (y <= b)%R -> (f y <= f x)%R
 
 ler0_derive1_nincr is not universe polymorphic
@@ -5494,7 +5716,16 @@ forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 < f^`()%classic x)%R) ->
 forall [sa sb : bool],
-{within [set` Interval (BSide sa a) (BSide sb b)], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            [set` Interval (BSide sa a) (BSide sb b)]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         [set` Interval (BSide sa a) (BSide sb b)])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace [set` Interval (BSide sa a) (BSide sb b)]
+      f)) ->
 {in Interval (BSide sa a) (BSide sb b) &, {homo f : x y / (x < y)%R}}
 
 gtr0_derive1_lt is not universe polymorphic
@@ -5504,7 +5735,16 @@ forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 < f^`()%classic x)%R) ->
 forall [sa sb : bool],
-{within [set` Interval (BSide sa a) (BSide sb b)], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            [set` Interval (BSide sa a) (BSide sb b)]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         [set` Interval (BSide sa a) (BSide sb b)])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace [set` Interval (BSide sa a) (BSide sb b)]
+      f)) ->
 forall [x y : R],
 x \in Interval (BSide sa a) (BSide sb b) ->
 y \in Interval (BSide sa a) (BSide sb b) ->
@@ -5540,7 +5780,15 @@ Qed.</div></details>
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 < f^`()%classic x)%R) ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 {in `[a, b]%R &, {homo f : x y / (x < y)%R}}
 
 gtr0_derive1_lt_cc is not universe polymorphic
@@ -5549,7 +5797,15 @@ gtr0_derive1_lt_cc :
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 < f^`()%classic x)%R) ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 forall [x y : R],
 x \in `[a, b]%R ->
 y \in `[a, b]%R ->
@@ -5572,7 +5828,15 @@ Declared in library mathcomp.analysis.derive, line 1768, characters 6-24
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 < f^`()%classic x)%R) ->
-{within `[a, b[, continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b[),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b[)
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b[ f)) ->
 {in `[a, b[%R &, {homo f : x y / (x < y)%R}}
 
 gtr0_derive1_lt_co is not universe polymorphic
@@ -5581,7 +5845,15 @@ gtr0_derive1_lt_co :
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 < f^`()%classic x)%R) ->
-{within `[a, b[, continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b[),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b[)
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b[ f)) ->
 forall [x y : R],
 x \in `[a, b[%R ->
 y \in `[a, b[%R ->
@@ -5604,7 +5876,15 @@ Declared in library mathcomp.analysis.derive, line 1772, characters 6-24
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 < f^`()%classic x)%R) ->
-{within `]a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `]a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `]a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `]a, b] f)) ->
 {in `]a, b]%R &, {homo f : x y / (x < y)%R}}
 
 gtr0_derive1_lt_oc is not universe polymorphic
@@ -5613,7 +5893,15 @@ gtr0_derive1_lt_oc :
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 < f^`()%classic x)%R) ->
-{within `]a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `]a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `]a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `]a, b] f)) ->
 forall [x y : R],
 x \in `]a, b]%R ->
 y \in `]a, b]%R ->
@@ -5639,10 +5927,11 @@ forall {R : realType} [f : R -> R] [a b : R],
 {in `]a, b[%classic,
   forall
     x : filter.Nbhs.sort
-          (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+          (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x f} ->
+    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+    f} ->
 {in `]a, b[%R &, {homo f : x y / (x < y)%R}}
 
 gtr0_derive1_lt_oo is not universe polymorphic
@@ -5654,10 +5943,11 @@ forall {R : realType} [f : R -> R] [a b : R],
 {in `]a, b[%classic,
   forall
     x : filter.Nbhs.sort
-          (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+          (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x f} ->
+    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+    f} ->
 forall [x y : R],
 x \in `]a, b[%R ->
 y \in `]a, b[%R ->
@@ -5684,7 +5974,15 @@ Declared in library mathcomp.analysis.derive, line 1780, characters 6-24
 forall [R : realType] [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 < f^`()%classic x)%R) ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 forall [x y : R], (a <= x)%R -> (x < y)%R -> (y <= b)%R -> (f x < f y)%R
 
 gtr0_derive1_incr is not universe polymorphic
@@ -5719,7 +6017,16 @@ forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x < 0)%R) ->
 forall [sa sb : bool],
-{within [set` Interval (BSide sa a) (BSide sb b)], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            [set` Interval (BSide sa a) (BSide sb b)]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         [set` Interval (BSide sa a) (BSide sb b)])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace [set` Interval (BSide sa a) (BSide sb b)]
+      f)) ->
 {in Interval (BSide sa a) (BSide sb b) &, {homo f : x y /~ (x < y)%R}}
 
 ltr0_derive1_lt is not universe polymorphic
@@ -5729,7 +6036,16 @@ forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x < 0)%R) ->
 forall [sa sb : bool],
-{within [set` Interval (BSide sa a) (BSide sb b)], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            [set` Interval (BSide sa a) (BSide sb b)]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         [set` Interval (BSide sa a) (BSide sb b)])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace [set` Interval (BSide sa a) (BSide sb b)]
+      f)) ->
 forall [x y : R],
 x \in Interval (BSide sa a) (BSide sb b) ->
 y \in Interval (BSide sa a) (BSide sb b) ->
@@ -5761,7 +6077,15 @@ Qed.</div></details>
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x < 0)%R) ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 {in `[a, b]%R &, {homo f : x y /~ (x < y)%R}}
 
 ltr0_derive1_lt_cc is not universe polymorphic
@@ -5770,7 +6094,15 @@ ltr0_derive1_lt_cc :
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x < 0)%R) ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 forall [x y : R],
 x \in `[a, b]%R ->
 y \in `[a, b]%R ->
@@ -5793,7 +6125,15 @@ Declared in library mathcomp.analysis.derive, line 1820, characters 6-24
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x < 0)%R) ->
-{within `[a, b[, continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b[),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b[)
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b[ f)) ->
 {in `[a, b[%R &, {homo f : x y /~ (x < y)%R}}
 
 ltr0_derive1_lt_co is not universe polymorphic
@@ -5802,7 +6142,15 @@ ltr0_derive1_lt_co :
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x < 0)%R) ->
-{within `[a, b[, continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b[),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b[)
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b[ f)) ->
 forall [x y : R],
 x \in `[a, b[%R ->
 y \in `[a, b[%R ->
@@ -5825,7 +6173,15 @@ Declared in library mathcomp.analysis.derive, line 1824, characters 6-24
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x < 0)%R) ->
-{within `]a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `]a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `]a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `]a, b] f)) ->
 {in `]a, b]%R &, {homo f : x y /~ (x < y)%R}}
 
 ltr0_derive1_lt_oc is not universe polymorphic
@@ -5834,7 +6190,15 @@ ltr0_derive1_lt_oc :
 forall {R : realType} [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x < 0)%R) ->
-{within `]a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `]a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `]a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `]a, b] f)) ->
 forall [x y : R],
 x \in `]a, b]%R ->
 y \in `]a, b]%R ->
@@ -5860,10 +6224,11 @@ forall {R : realType} [f : R -> R] [a b : R],
 {in `]a, b[%classic,
   forall
     x : filter.Nbhs.sort
-          (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+          (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x f} ->
+    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+    f} ->
 {in `]a, b[%R &, {homo f : x y /~ (x < y)%R}}
 
 ltr0_derive1_lt_oo is not universe polymorphic
@@ -5875,10 +6240,11 @@ forall {R : realType} [f : R -> R] [a b : R],
 {in `]a, b[%classic,
   forall
     x : filter.Nbhs.sort
-          (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+          (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x f} ->
+    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+    f} ->
 forall [x y : R],
 x \in `]a, b[%R ->
 y \in `]a, b[%R ->
@@ -5905,7 +6271,15 @@ Declared in library mathcomp.analysis.derive, line 1832, characters 6-24
 forall [R : realType] [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (f^`()%classic x < 0)%R) ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 forall [x y : R], (a <= x)%R -> (x < y)%R -> (y <= b)%R -> (f y < f x)%R
 
 ltr0_derive1_decr is not universe polymorphic
@@ -5943,7 +6317,15 @@ Qed.</div></details>
 forall {R : realType} [f : R -> R] [a : R],
 (forall x : R, x \in `]a, +oo[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, +oo[%R -> (f^`()%classic x <= 0)%R) ->
-{within `[a, +oo[, continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, +oo[),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, +oo[)
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, +oo[ f)) ->
 forall [x y : R], (a <= x)%R -> (x <= y)%R -> (f y <= f x)%R
 
 ler0_derive1_nincry is not universe polymorphic
@@ -5975,7 +6357,15 @@ Declared in library mathcomp.analysis.derive, line 1862, characters 6-25
 forall {R : realType} [f : R -> R] [b : R],
 (forall x : R, x \in `]-oo, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]-oo, b[%R -> (f^`()%classic x <= 0)%R) ->
-{within `]-oo, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `]-oo, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `]-oo, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `]-oo, b] f)) ->
 forall [x y : R], (x <= y)%R -> (y <= b)%R -> (f y <= f x)%R
 
 ler0_derive1_nincrNy is not universe polymorphic
@@ -6007,7 +6397,15 @@ Declared in library mathcomp.analysis.derive, line 1878, characters 6-26
 forall [R : realType] [f : R -> R] [a b : R],
 (forall x : R, x \in `]a, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, b[%R -> (0 <= f^`()%classic x)%R) ->
-{within `[a, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, b] f)) ->
 forall [x y : R], (a <= x)%R -> (x <= y)%R -> (y <= b)%R -> (f x <= f y)%R
 
 ger0_derive1_ndecr is not universe polymorphic
@@ -6037,7 +6435,15 @@ Qed.</div></details>
 forall {R : realType} [f : R -> R] [a : R],
 (forall x : R, x \in `]a, +oo[%R -> derivable f x 1) ->
 (forall x : R, x \in `]a, +oo[%R -> (0 <= f^`()%classic x)%R) ->
-{within `[a, +oo[, continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `[a, +oo[),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `[a, +oo[)
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `[a, +oo[ f)) ->
 forall [x y : R], (a <= x)%R -> (x <= y)%R -> (f x <= f y)%R
 
 ger0_derive1_ndecry is not universe polymorphic
@@ -6069,7 +6475,15 @@ Declared in library mathcomp.analysis.derive, line 1908, characters 6-25
 forall {R : realType} [f : R -> R] [b : R],
 (forall x : R, x \in `]-oo, b[%R -> derivable f x 1) ->
 (forall x : R, x \in `]-oo, b[%R -> (0 <= f^`()%classic x)%R) ->
-{within `]-oo, b], continuous f}%classic ->
+(forall
+   x : filter.Nbhs.sort
+         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+            `]-oo, b]),
+ filter.continuous_at
+   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
+         `]-oo, b])
+   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+   (subspace_topology.from_subspace `]-oo, b] f)) ->
 forall [x y : R], (x <= y)%R -> (y <= b)%R -> (f x <= f y)%R
 
 ger0_derive1_ndecrNy is not universe polymorphic
@@ -6406,7 +6820,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -6494,12 +6908,12 @@ derivable f x v ->
 derivable g x v ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    f} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 f} ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    g} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 g} ->
 filter.cvg_to
   (filter.nbhs
      (filter.fmap
@@ -6517,18 +6931,18 @@ derivable f x v ->
 derivable g x v ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    f} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 f} ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    g} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 g} ->
 forall
   [t : set (numFieldNormedType.Real_sort__canonical__GRing_LSemiModule K)],
 filter.nbhs (if (f x < g x)%R then 'D_v g x else 'D_v f x) t ->
 exists2 i : K,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -6588,12 +7002,12 @@ derivable f x v ->
 derivable g x v ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    f} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 f} ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    g} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 g} ->
 derivable (f \max g) x v
 
 derivable_max is not universe polymorphic
@@ -6605,12 +7019,12 @@ derivable f x v ->
 derivable g x v ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    f} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 f} ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    g} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 g} ->
 forall
   [t : set
          (numFieldNormedType.Real_sort__canonical__normed_module_NormedModule
@@ -6624,7 +7038,7 @@ filter.nbhs
   t ->
 exists2 i : K,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -6662,12 +7076,12 @@ forall {K : realType} {V : normedModType K} [f g : V -> K^o] [x : V] (v : V),
 (g x < f x)%R ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    f} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 f} ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    g} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 g} ->
 'D_v (f \max g) x = 'D_v f x
 
 derive_maxl is not universe polymorphic
@@ -6693,12 +7107,12 @@ forall {K : realType} {V : normedModType K} [f g : V -> K^o] [x : V] (v : V),
 (f x < g x)%R ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    f} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 f} ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    g} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 g} ->
 'D_v (f \max g) x = 'D_v g x
 
 derive_maxr is not universe polymorphic
@@ -6721,12 +7135,12 @@ derivable f x v ->
 derivable g x v ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    f} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 f} ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    g} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 g} ->
 derivable (f \min g) x v
 
 derivable_min is not universe polymorphic
@@ -6738,12 +7152,12 @@ derivable f x v ->
 derivable g x v ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    f} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 f} ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    g} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 g} ->
 forall
   [t : set
          (numFieldNormedType.Real_sort__canonical__normed_module_NormedModule
@@ -6757,7 +7171,7 @@ filter.nbhs
   t ->
 exists2 i : K,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -6795,12 +7209,12 @@ forall {K : realType} {V : normedModType K} [f g : V -> K^o] [x : V] (v : V),
 (g x < f x)%R ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    f} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 f} ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    g} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 g} ->
 'D_v (f \min g) x = 'D_v g x
 
 derive_minr is not universe polymorphic
@@ -6825,12 +7239,12 @@ forall {K : realType} {V : normedModType K} [f g : V -> K^o] [x : V] (v : V),
 (f x < g x)%R ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    f} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 f} ->
 {for x,
   forall x0 : filter.Nbhs.sort V,
-  filter.continuous_at (T:=V) (U:=GRing_regular__canonical__filter_Nbhs K) x0
-    g} ->
+  filter.continuous_at (T:=V)
+    (U:=num_topology.GRing_regular__canonical__filter_Nbhs K) x0 g} ->
 'D_v (f \min g) x = 'D_v f x
 
 derive_minl is not universe polymorphic
@@ -6887,7 +7301,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -7028,7 +7442,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -7111,9 +7525,10 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="continuous_horner" class="id"><a name="continuous_horner" class="" title="continuous_horner :
 forall [R : realFieldType] [p : {poly R}]
   [x : filter.Nbhs.sort
-         (numFieldTopology.RealField_sort__canonical__filter_Nbhs R)],
+         (num_topology.numFieldTopology.RealField_sort__canonical__filter_Nbhs
+            R)],
 filter.continuous_at
-  (T:=numFieldTopology.RealField_sort__canonical__filter_Nbhs R)
+  (T:=num_topology.numFieldTopology.RealField_sort__canonical__filter_Nbhs R)
   (U:=join_pseudometric_normed_Zmodule_NbhsNmodule_between_Algebra_BaseAddUMagma_and_filter_Nbhs
         (numFieldNormedType.RealField_sort__canonical__pseudometric_normed_Zmodule_NbhsNmodule
            R))
@@ -7124,7 +7539,8 @@ Expanded type for implicit arguments
 continuous_horner :
 forall [R : realFieldType] [p : {poly R}]
   [x : filter.Nbhs.sort
-         (numFieldTopology.RealField_sort__canonical__filter_Nbhs R)]
+         (num_topology.numFieldTopology.RealField_sort__canonical__filter_Nbhs
+            R)]
   [t : set
          (filter.Nbhs.sort
             (join_pseudometric_normed_Zmodule_NbhsNmodule_between_Algebra_BaseAddUMagma_and_filter_Nbhs
@@ -7133,7 +7549,7 @@ forall [R : realFieldType] [p : {poly R}]
 filter.nbhs p.[x]%R t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i `<=` horner p @^-1` t)%classic
+  (pseudometric_structure.ball_ [eta normr] x i `<=` horner p @^-1` t)%classic
 
 Arguments continuous_horner [R] [p]%_ring_scope [x t] _
 continuous_horner is opaque

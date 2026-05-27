@@ -295,10 +295,7 @@ library mathcomp.analysis.gauss_integral, line 35, characters 6-19
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvg_gauss_fun" class="id"><a name="cvg_gauss_fun" class="" title="cvg_gauss_fun :
 forall {R : realType},
-filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta gauss_fun]
-        (filter.nbhs (num_normedtype.pinfty_nbhs R))))
+filter.cvg_to (filter.nbhs (filter.fmap [eta gauss_fun] (filter.nbhs +oo%R)))
   (filter.nbhs (0%R : R))
 
 cvg_gauss_fun is not universe polymorphic
@@ -385,8 +382,7 @@ forall {R : realType}
 filter.nbhs (gauss_fun x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta Num.Def.normr] x i
-   `<=` gauss_fun @^-1` t)%classic
+  (pseudometric_structure.ball_ [eta normr] x i `<=` gauss_fun @^-1` t)%classic
 
 Arguments continuous_gauss_fun {R} [x t] _
 continuous_gauss_fun is opaque
@@ -766,7 +762,7 @@ filter.cvg_to
   (filter.nbhs
      (filter.fmap
         (fun x : R => (gauss_integral_proof.integral0_gauss x ^+ 2)%R)
-        (filter.nbhs (num_normedtype.pinfty_nbhs R))))
+        (filter.nbhs +oo%R)))
   (filter.nbhs (pi / 4)%R)
 
 gauss_integral_proof.cvg_integral0_gauss_sqr is not universe polymorphic

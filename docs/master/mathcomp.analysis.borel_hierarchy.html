@@ -367,7 +367,7 @@ library mathcomp.analysis.borel_hierarchy, line 50, characters 6-23
 Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="Gdelta_subspace_open" class="id"><a name="Gdelta_subspace_open" class="" title="Gdelta_subspace_open :
-forall {R : realType} [A : set R] [S : set (subspace A)],
+forall {R : realType} [A : set R] [S : set (subspace_topology.subspace A)],
 topology_structure.open A -> Gdelta S -> Gdelta (A `&` S)
 
 Gdelta_subspace_open is not universe polymorphic

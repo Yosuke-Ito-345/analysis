@@ -968,7 +968,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -1009,24 +1009,26 @@ Declared in library mathcomp.analysis.exp, line 375, characters 6-17
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="continuous_expR" class="id"><a name="continuous_expR" class="" title="continuous_expR :
 forall [R : realType]
   [x : filter.Nbhs.sort
-         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
+         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
 filter.continuous_at
-  (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-  (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x expR
+  (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+  (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+  expR
 
 continuous_expR is not universe polymorphic
 Expanded type for implicit arguments
 continuous_expR :
 forall [R : realType]
   [x : filter.Nbhs.sort
-         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
+         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
   [t : set
          (filter.Nbhs.sort
-            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
+            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
+               R))],
 filter.nbhs (expR x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i `<=` expR @^-1` t)%classic
+  (pseudometric_structure.ball_ [eta normr] x i `<=` expR @^-1` t)%classic
 
 Arguments continuous_expR [R x t] _
 continuous_expR is opaque
@@ -1297,7 +1299,7 @@ Declared in library mathcomp.analysis.exp, line 469, characters 6-14
 <span class="gallina-kwd">by</span><span class="id"> rewrite</span><span class="id"> -[in</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssrmatching.ssrmatching.html#SsrMatchingSyntax.LHS">LHS</a></span><span class="id">]</span>(<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#GRing.Theory.subrK">subrK</a></span><span class="id"> x</span><span class="id"> y</span>)<span class="id"> </span><span class="id"><a href="mathcomp.analysis.exp.html#expRD">expRD</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.ltr_pMl">ltr_pMl</a></span><span class="id"> ?</span><span class="id"><a href="mathcomp.analysis.exp.html#expR_gt0">expR_gt0</a></span><span class="id"> //</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.exp.html#expR_gt1">expR_gt1</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.subr_gt0">subr_gt0</a></span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="ler_expR" class="id"><a name="ler_expR" class="" title="ler_expR : forall [R : realType], increasing_fun expR
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="ler_expR" class="id"><a name="ler_expR" class="" title="ler_expR : forall [R : realType], {mono expR : x y / (x <= y)%R}
 
 ler_expR is not universe polymorphic
 Arguments ler_expR [R] x y
@@ -1996,7 +1998,8 @@ Declared in library mathcomp.analysis.exp, line 741, characters 6-12
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> move=&gt;</span><span class="id"> x</span><span class="id"> y</span><span class="id"> x_gt0</span><span class="id"> y_gt0;</span><span class="id"> rewrite</span><span class="id"> -</span><span class="id"><a href="mathcomp.analysis.exp.html#ltr_expR">ltr_expR</a></span><span class="id"> !</span><span class="id"><a href="mathcomp.analysis.exp.html#lnK">lnK</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="ler_ln" class="id"><a name="ler_ln" class="" title="ler_ln : forall [R : realType], {in Num.pos &, increasing_fun (ln (R:=R))}
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="ler_ln" class="id"><a name="ler_ln" class="" title="ler_ln :
+forall [R : realType], {in Num.pos &, {mono ln (R:=R) : x y / (x <= y)%R}}
 
 ler_ln is not universe polymorphic
 Expanded type for implicit arguments
@@ -2146,10 +2149,10 @@ forall [R : realType] [x : R],
 {for x,
   forall
     x0 : filter.Nbhs.sort
-           (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+           (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0 
+    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0
     (ln (R:=R))}
 
 continuous_ln is not universe polymorphic
@@ -2160,11 +2163,12 @@ forall [R : realType] [x : R],
 forall
   [t : set
          (filter.Nbhs.sort
-            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
+            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
+               R))],
 filter.nbhs (ln (R:=R) x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i `<=` ln (R:=R) @^-1` t)%classic
+  (pseudometric_structure.ball_ [eta normr] x i `<=` ln (R:=R) @^-1` t)%classic
 
 Arguments continuous_ln [R] [x]%_ring_scope _ [t] _
 continuous_ln is opaque
@@ -2214,7 +2218,9 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="lnNy" class="id"><a name="lnNy" class="" title="lnNy :
 forall [R : realType],
 filter.cvg_to
-  (filter.nbhs (filter.fmap [eta ln (R:=R)] (filter.nbhs (0^'+)%classic)))
+  (filter.nbhs
+     (filter.fmap [eta ln (R:=R)]
+        (filter.nbhs (num_topology.at_right (R:=R) 0))))
   (filter.nbhs -oo%R)
 
 lnNy is not universe polymorphic
@@ -2224,7 +2230,7 @@ forall [R : realType] [t : set R],
 filter.nbhs -oo%R t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun t0 : R =>
          (fun u : R => is_true (0 < u)%R) t0 -> ([eta ln (R:=R)] @^-1` t) t0))%classic
 
@@ -2987,7 +2993,9 @@ Declared in library mathcomp.analysis.exp, line 1080, characters 10-19
 forall [R : realType] [x : R],
 (0 < x)%R ->
 filter.cvg_to
-  (filter.nbhs (filter.fmap ((powR (R:=R))^~ x) (filter.nbhs (0^'+)%classic)))
+  (filter.nbhs
+     (filter.fmap ((powR (R:=R))^~ x)
+        (filter.nbhs (num_topology.at_right (R:=R) 0))))
   (filter.nbhs 0%R)
 
 powR_cvg0 is not universe polymorphic
@@ -2999,7 +3007,7 @@ forall [t : set R],
 filter.nbhs 0%R t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun t0 : R =>
          (fun u : R => is_true (0 < u)%R) t0 ->
          ((powR (R:=R))^~ x @^-1` t) t0))%classic
@@ -3048,7 +3056,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological

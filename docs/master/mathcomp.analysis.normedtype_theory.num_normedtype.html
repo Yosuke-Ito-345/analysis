@@ -323,14 +323,14 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 62, characters 
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="mono_mem_image_segment" class="id"><a name="mono_mem_image_segment" class="" title="mono_mem_image_segment :
 forall [R : realDomainType] [a b : R] [f : R -> R],
-unstable.monotonic (T:=R) (T':=R) (pT:=itvPredType R) `[a, b]%R f ->
+monotonic (T:=R) (T':=R) (pT:=itvPredType R) `[a, b]%R f ->
 {homo f : x / x \in `[a, b]%R >-> x \in (f @`[a, b])%R}
 
 mono_mem_image_segment is not universe polymorphic
 Expanded type for implicit arguments
 mono_mem_image_segment :
 forall [R : realDomainType] [a b : R] [f : R -> R],
-unstable.monotonic (T:=R) (T':=R) (pT:=itvPredType R) `[a, b]%R f ->
+monotonic (T:=R) (T':=R) (pT:=itvPredType R) `[a, b]%R f ->
 forall [x : R],
 (fun x0 : R => is_true (x0 \in `[a, b]%R)) x ->
 (f x \in (f @`[a, b])%R) = true
@@ -356,14 +356,14 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="mono_mem_image_itvoo" class="id"><a name="mono_mem_image_itvoo" class="" title="mono_mem_image_itvoo :
 forall [R : realDomainType] [a b : R] [f : R -> R],
-unstable.strict_monotonic (T:=R) (T':=R) (pT:=itvPredType R) `[a, b]%R f ->
+strict_monotonic (T:=R) (T':=R) (pT:=itvPredType R) `[a, b]%R f ->
 {homo f : x / x \in `]a, b[%R >-> x \in f @`]a, b[%R}
 
 mono_mem_image_itvoo is not universe polymorphic
 Expanded type for implicit arguments
 mono_mem_image_itvoo :
 forall [R : realDomainType] [a b : R] [f : R -> R],
-unstable.strict_monotonic (T:=R) (T':=R) (pT:=itvPredType R) `[a, b]%R f ->
+strict_monotonic (T:=R) (T':=R) (pT:=itvPredType R) `[a, b]%R f ->
 forall [x : R],
 (fun x0 : R => is_true (x0 \in `]a, b[%R)) x -> (f x \in f @`]a, b[%R) = true
 
@@ -390,7 +390,7 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="mono_surj_image_segment" class="id"><a name="mono_surj_image_segment" class="" title="mono_surj_image_segment :
 forall [R : realDomainType] [a b : R] [f : R -> R],
 (a <= b)%R ->
-unstable.monotonic (T:=R) (T':=R) (pT:=itvPredType R) `[a, b]%R f ->
+monotonic (T:=R) (T':=R) (pT:=itvPredType R) `[a, b]%R f ->
 set_surj `[a, b] (f @`[a, b]) f ->
 [set f x | x in `[a, b]]%classic = (f @`[a, b])%classic
 
@@ -555,7 +555,7 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="mono_surj_image_segmentP" class="id"><a name="mono_surj_image_segmentP" class="" title="mono_surj_image_segmentP :
 forall [R : realDomainType] [a b : R] [f : R -> R],
 (a <= b)%R ->
-unstable.monotonic (T:=R) (T':=R) (pT:=itvPredType R) `[a, b]%R f ->
+monotonic (T:=R) (T':=R) (pT:=itvPredType R) `[a, b]%R f ->
 set_surj `[a, b] (f @`[a, b]) f ->
 forall y : R,
 reflect (exists2 x : R, x \in `[a, b]%R & f x = y) (y \in (f @`[a, b])%R)
@@ -582,9 +582,10 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="bigcup_ballT" class="id"><a name="bigcup_ballT" class="" title="bigcup_ballT :
 forall {R : realType},
-(\bigcup_n ball (0%R : R) n%:R)%classic =
-[set: numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
-        R]%classic
+(\bigcup_n pseudometric_structure.ball (0%R : R) n%:R)%classic =
+[set: pseudometric_structure.PseudoMetric.sort
+        (num_topology.numFieldTopology.Real_sort__canonical__pseudometric_structure_PseudoMetric
+           R)]%classic
 
 bigcup_ballT is not universe polymorphic
 Arguments bigcup_ballT {R}
@@ -605,9 +606,13 @@ Qed.</div></details>
 <span class="vernacular">Context</span><span class="id"> {</span><span id="nbhs_pseudoMetricType.R" class="id"><a name="nbhs_pseudoMetricType.R" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.NumDomain.Exports.numDomainType">numDomainType</a></span><span class="id">}</span><span class="id"> {</span><span id="nbhs_pseudoMetricType.T" class="id"><a name="nbhs_pseudoMetricType.T" class="">T</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#PseudoMetric.Exports.pseudoMetricType">pseudoMetricType</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#R:67">R</a></span><span class="id">}</span>.<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ex_ball_sig" class="id"><a name="ex_ball_sig" class="" title="ex_ball_sig :
-forall {R : numDomainType} {T : pseudoMetricType R} [x : T] [P : set T],
-~ (forall eps : {posnum R}%R, ~ (ball x eps%:num `<=` ~` P)%classic) ->
-{d : {posnum R}%R | (ball x d%:num `<=` ~` P)%classic}
+forall {R : numDomainType} {T : pseudometric_structure.PseudoMetric.type R}
+  [x : pseudometric_structure.PseudoMetric.sort T]
+  [P : set (pseudometric_structure.PseudoMetric.sort T)],
+~
+(forall eps : {posnum R}%R,
+ ~ (pseudometric_structure.ball x eps%:num `<=` ~` P)%classic) ->
+{d : {posnum R}%R | (pseudometric_structure.ball x d%:num `<=` ~` P)%classic}
 
 ex_ball_sig is not universe polymorphic
 Arguments ex_ball_sig {R T} [x] [P]%_classical_set_scope _
@@ -629,8 +634,12 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 174, characters
 Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhsC" class="id"><a name="nbhsC" class="" title="nbhsC :
-forall {R : numDomainType} {T : pseudoMetricType R} [x : T] [P : set T],
-~ (forall eps : {posnum R}%R, ~ (ball x eps%:num `<=` ~` P)%classic) ->
+forall {R : numDomainType} {T : pseudometric_structure.PseudoMetric.type R}
+  [x : pseudometric_structure.PseudoMetric.sort T]
+  [P : set (pseudometric_structure.PseudoMetric.sort T)],
+~
+(forall eps : {posnum R}%R,
+ ~ (pseudometric_structure.ball x eps%:num `<=` ~` P)%classic) ->
 filter.nbhs x (~` P)%classic
 
 nbhsC is not universe polymorphic
@@ -648,9 +657,11 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 184, characters
 <span class="gallina-kwd"> by</span><span class="id"> move=&gt;</span><span class="id"> /</span><span class="id"><a href="mathcomp.analysis.normedtype_theory.num_normedtype.html#ex_ball_sig">ex_ball_sig</a></span><span class="id"> [e]</span><span class="id"> ?;</span><span class="id"> apply/</span><span class="id"><a href="mathcomp.analysis.topology_theory.pseudometric_structure.html#nbhs_ballP">nbhs_ballP</a></span><span class="id">;</span><span class="gallina-kwd"> exists</span><span class="id"> e</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html#1c0324eabc1cbd2d8f3ac221154b0692">%:num</a></span><span class="id"> =&gt;</span><span class="id"> /=</span>. Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhsC_ball" class="id"><a name="nbhsC_ball" class="" title="nbhsC_ball :
-forall {R : numDomainType} {T : pseudoMetricType R} [x : T] [P : set T],
+forall {R : numDomainType} {T : pseudometric_structure.PseudoMetric.type R}
+  [x : pseudometric_structure.PseudoMetric.sort T]
+  [P : set (pseudometric_structure.PseudoMetric.sort T)],
 filter.nbhs x (~` P)%classic ->
-{d : {posnum R}%R | (ball x d%:num `<=` ~` P)%classic}
+{d : {posnum R}%R | (pseudometric_structure.ball x d%:num `<=` ~` P)%classic}
 
 nbhsC_ball is not universe polymorphic
 Arguments nbhsC_ball {R T} [x] [P]%_classical_set_scope _
@@ -669,8 +680,13 @@ library mathcomp.analysis.normedtype_theory.num_normedtype, line 189, characters
 Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_ex" class="id"><a name="nbhs_ex" class="" title="nbhs_ex :
-forall {R : numDomainType} {T : pseudoMetricType R} [x : T] [P : T -> Prop],
-filter.nbhs x P -> {d : {posnum R}%R | forall y : T, ball x d%:num y -> P y}
+forall {R : numDomainType} {T : pseudometric_structure.PseudoMetric.type R}
+  [x : pseudometric_structure.PseudoMetric.sort T]
+  [P : pseudometric_structure.PseudoMetric.sort T -> Prop],
+filter.nbhs x P ->
+{d : {posnum R}%R
+| forall y : pseudometric_structure.PseudoMetric.sort T,
+  pseudometric_structure.ball x d%:num y -> P y}
 
 nbhs_ex is not universe polymorphic
 Arguments nbhs_ex {R T} [x] [P]%_function_scope _
@@ -2114,7 +2130,7 @@ forall {R : realFieldType} [y : R] [t : R^o],
 [set x | (x < y)%R]%classic t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] t i `<=` [set x | (x < y)%R])%classic
+  (pseudometric_structure.ball_ [eta normr] t i `<=` [set x | (x < y)%R])%classic
 
 Arguments open_lt {R} [y]%_ring_scope [t] _
 open_lt is opaque
@@ -2142,7 +2158,7 @@ forall {R : realFieldType} [y : R] [t : R^o],
 [set x | (y < x)%R]%classic t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] t i `<=` [set x | (y < x)%R])%classic
+  (pseudometric_structure.ball_ [eta normr] t i `<=` [set x | (y < x)%R])%classic
 
 Arguments open_gt {R} [y]%_ring_scope [t] _
 open_gt is opaque
@@ -2170,7 +2186,7 @@ forall {R : realFieldType} [y : R] [t : R^o],
 [set x | x != y]%classic t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] t i `<=` [set x | x != y])%classic
+  (pseudometric_structure.ball_ [eta normr] t i `<=` [set x | x != y])%classic
 
 Arguments open_neq {R} [y]%_ring_scope [t] _
 open_neq is opaque
@@ -2188,21 +2204,21 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="interval_open" class="id"><a name="interval_open" class="" title="interval_open :
 forall {R : realFieldType} [a b : itv_bound R],
-~~ unstable.bound_side (T:=R) true a ->
-~~ unstable.bound_side (T:=R) false b ->
+~~ bound_side (T:=R) true a ->
+~~ bound_side (T:=R) false b ->
 topology_structure.open [set` Interval a b]%classic
 
 interval_open is not universe polymorphic
 Expanded type for implicit arguments
 interval_open :
 forall {R : realFieldType} [a b : itv_bound R],
-~~ unstable.bound_side (T:=R) true a ->
-~~ unstable.bound_side (T:=R) false b ->
+~~ bound_side (T:=R) true a ->
+~~ bound_side (T:=R) false b ->
 forall [t : R^o],
 [set` Interval a b]%classic t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] t i `<=` [set` Interval a b])%classic
+  (pseudometric_structure.ball_ [eta normr] t i `<=` [set` Interval a b])%classic
 
 Arguments interval_open {R} [a b] _ _ [t] _
 interval_open is opaque
@@ -2234,8 +2250,8 @@ Expanded type for implicit arguments
 closed_le :
 forall {R : realFieldType} [y : R]
   [t : topology_structure.Topological.sort
-         (join_order_topology_POrderedTopological_between_Order_Preorder_and_topology_structure_Topological
-            (numFieldTopology.RealField_sort__canonical__order_topology_POrderedTopological
+         (order_topology.POrderedTopological.Exports.join_order_topology_POrderedTopological_between_Order_Preorder_and_topology_structure_Topological
+            (num_topology.numFieldTopology.RealField_sort__canonical__order_topology_POrderedTopological
                R))],
 topology_structure.closure [set x | (x <= y)%R] t -> (t <= y)%R = true
 
@@ -2262,8 +2278,8 @@ Expanded type for implicit arguments
 closed_ge :
 forall {R : realFieldType} [y : R]
   [t : topology_structure.Topological.sort
-         (join_order_topology_POrderedTopological_between_Order_Preorder_and_topology_structure_Topological
-            (numFieldTopology.RealField_sort__canonical__order_topology_POrderedTopological
+         (order_topology.POrderedTopological.Exports.join_order_topology_POrderedTopological_between_Order_Preorder_and_topology_structure_Topological
+            (num_topology.numFieldTopology.RealField_sort__canonical__order_topology_POrderedTopological
                R))],
 topology_structure.closure [set x | (y <= x)%R] t -> (y <= t)%R = true
 
@@ -2289,7 +2305,7 @@ Expanded type for implicit arguments
 closed_eq :
 forall {R : realFieldType} [y : R]
   [t : topology_structure.Topological.sort
-         (numFieldTopology.RealField_sort__canonical__topology_structure_Topological
+         (num_topology.numFieldTopology.RealField_sort__canonical__topology_structure_Topological
             R)],
 topology_structure.closure [set x | x = y] t -> t = y
 
@@ -2310,19 +2326,19 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="interval_closed" class="id"><a name="interval_closed" class="" title="interval_closed :
 forall {R : realFieldType} [a b : itv_bound R],
-~~ unstable.bound_side (T:=R) false a ->
-~~ unstable.bound_side (T:=R) true b ->
-topology_structure.closed [set` Interval a b]
+~~ bound_side (T:=R) false a ->
+~~ bound_side (T:=R) true b -> topology_structure.closed [set` Interval a b]
 
 interval_closed is not universe polymorphic
 Expanded type for implicit arguments
 interval_closed :
 forall {R : realFieldType} [a b : itv_bound R],
-~~ unstable.bound_side (T:=R) false a ->
-~~ unstable.bound_side (T:=R) true b ->
+~~ bound_side (T:=R) false a ->
+~~ bound_side (T:=R) true b ->
 forall
   [t : topology_structure.Topological.sort
-         (GRing_regular__canonical__topology_structure_Topological R)],
+         (num_topology.GRing_regular__canonical__topology_structure_Topological
+            R)],
 topology_structure.closure [set` Interval a b] t ->
 (t \in Interval a b) = true
 
@@ -2363,7 +2379,8 @@ forall {R : realFieldType} [a b : R],
 {in `]a, b[%R,
   forall
     y : filter.Filtered.sort
-          (numFieldTopology.RealField_sort__canonical__filter_Filtered R),
+          (num_topology.numFieldTopology.RealField_sort__canonical__filter_Filtered
+             R),
   filter.prop_near1 y (P:=fun z : R => z \in `]a, b[%R)
     (inPhantom (forall z : R, z \in `]a, b[%R))}
 
@@ -2374,7 +2391,8 @@ forall {R : realFieldType} [a b x : R],
 x \in `]a, b[%R ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i `<=` (fun z : R => z \in `]a, b[%R))%classic
+  (pseudometric_structure.ball_ [eta normr] x i
+   `<=` (fun z : R => z \in `]a, b[%R))%classic
 
 Arguments near_in_itvoo {R} [a b]%_ring_scope [x] _
 near_in_itvoo is opaque
@@ -2394,7 +2412,8 @@ forall {R : realFieldType} [a : R],
 {in `]a, +oo[%R,
   forall
     y : filter.Filtered.sort
-          (numFieldTopology.RealField_sort__canonical__filter_Filtered R),
+          (num_topology.numFieldTopology.RealField_sort__canonical__filter_Filtered
+             R),
   filter.prop_near1 y (P:=fun z : R => z \in `]a, +oo[%R)
     (inPhantom (forall z : R, z \in `]a, +oo[%R))}
 
@@ -2405,7 +2424,8 @@ forall {R : realFieldType} [a x : R],
 x \in `]a, +oo[%R ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i `<=` (fun z : R => z \in `]a, +oo[%R))%classic
+  (pseudometric_structure.ball_ [eta normr] x i
+   `<=` (fun z : R => z \in `]a, +oo[%R))%classic
 
 Arguments near_in_itvoy {R} [a]%_ring_scope [x] _
 near_in_itvoy is opaque
@@ -2425,7 +2445,8 @@ forall {R : realFieldType} [b : R],
 {in `]-oo, b[%R,
   forall
     y : filter.Filtered.sort
-          (numFieldTopology.RealField_sort__canonical__filter_Filtered R),
+          (num_topology.numFieldTopology.RealField_sort__canonical__filter_Filtered
+             R),
   filter.prop_near1 y (P:=fun z : R => z \in `]-oo, b[%R)
     (inPhantom (forall z : R, z \in `]-oo, b[%R))}
 
@@ -2436,7 +2457,8 @@ forall {R : realFieldType} [b x : R],
 x \in `]-oo, b[%R ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i `<=` (fun z : R => z \in `]-oo, b[%R))%classic
+  (pseudometric_structure.ball_ [eta normr] x i
+   `<=` (fun z : R => z \in `]-oo, b[%R))%classic
 
 Arguments near_in_itvNyo {R} [b]%_ring_scope [x] _
 near_in_itvNyo is opaque
@@ -2663,7 +2685,8 @@ forall [R : realType] [U : set R] [q : rat] [t : R^o],
 bigcup_ointsub (R:=R) U q t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] t i `<=` bigcup_ointsub (R:=R) U q)%classic
+  (pseudometric_structure.ball_ [eta normr] t i
+   `<=` bigcup_ointsub (R:=R) U q)%classic
 
 Arguments open_bigcup_ointsub [R] [U]%_classical_set_scope 
   [q]%_ring_scope [t] _
@@ -2840,7 +2863,9 @@ Qed.</div></details>
 <span class="vernacular">Section</span><span class="id"> ball_realFieldType</span>.<br/>
 <span class="vernacular">Variables</span> (<span id="ball_realFieldType.R" class="id"><a name="ball_realFieldType.R" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numfield.html#Num.RealField.Exports.realFieldType">realFieldType</a></span>).<br/>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="ball0" class="id"><a name="ball0" class="" title="ball0 : forall [R : realFieldType] (a r : R), ball a r = set0 <-> (r <= 0)%R
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="ball0" class="id"><a name="ball0" class="" title="ball0 :
+forall [R : realFieldType] (a r : R),
+pseudometric_structure.ball a r = set0 <-> (r <= 0)%R
 
 ball0 is not universe polymorphic
 Arguments ball0 [R] (a r)%_ring_scope

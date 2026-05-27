@@ -1158,7 +1158,7 @@ forall [R : realFieldType] [y : \bar R] [t : R^o],
 [set r | (r%:E < y)%E]%classic t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] t i `<=` [set r | (r%:E < y)%E])%classic
+  (pseudometric_structure.ball_ [eta normr] t i `<=` [set r | (r%:E < y)%E])%classic
 
 Arguments open_ereal_lt [R] [y]%_ereal_scope [t] _
 open_ereal_lt is opaque
@@ -1188,7 +1188,7 @@ forall [R : realFieldType] [y : \bar R] [t : R^o],
 [set r | (y < r%:E)%E]%classic t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] t i `<=` [set r | (y < r%:E)%E])%classic
+  (pseudometric_structure.ball_ [eta normr] t i `<=` [set r | (y < r%:E)%E])%classic
 
 Arguments open_ereal_gt [R] [y]%_ereal_scope [t] _
 open_ereal_gt is opaque
@@ -1500,13 +1500,14 @@ library mathcomp.analysis.normedtype_theory.ereal_normedtype, line 394, characte
 <span class="gallina-kwd">by</span><span class="id"> split;</span><span class="id"> [apply</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.ereal_normedtype.html#open_ereal_lt_ereal">open_ereal_lt_ereal</a></span><span class="id"> |</span><span class="id"> rewrite</span><span class="id"> /=</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#ltNyr">ltNyr</a></span><span class="id">]</span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="ereal_hausdorff" class="id"><a name="ereal_hausdorff" class="" title="ereal_hausdorff : forall [R : realFieldType], hausdorff_space \bar R
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="ereal_hausdorff" class="id"><a name="ereal_hausdorff" class="" title="ereal_hausdorff :
+forall [R : realFieldType], separation_axioms.hausdorff_space \bar R
 
 ereal_hausdorff is not universe polymorphic
 Expanded type for implicit arguments
 ereal_hausdorff :
 forall [R : realFieldType] [p q : topology_structure.Topological.sort \bar R],
-cluster (filter.nbhs p) q -> p = q
+compact.cluster (filter.nbhs p) q -> p = q
 
 Arguments ereal_hausdorff [R p q] _
 ereal_hausdorff is opaque
@@ -1782,7 +1783,8 @@ Qed.</div></details>
 Qed.</div></details>
 <br/>
 <span id="constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric" class="id"><span id="constructive_ereal_extended__canonical__order_topology_OrderUniform" class="id"><span id="constructive_ereal_extended__canonical__order_topology_OrderTopological" class="id"><span id="constructive_ereal_extended__canonical__order_topology_OrderNbhs" class="id"><span id="HB_unnamed_factory_1" class="id"><a name="constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric" class="" title="constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric :
-forall R : realFieldType, orderPseudoMetricType ereal_display R
+forall R : realFieldType,
+order_topology.OrderPseudoMetric.type ereal_display R
 
 constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric is not universe polymorphic
 Arguments
@@ -1794,7 +1796,8 @@ Expands to: Constant
 Declared in
 library mathcomp.analysis.normedtype_theory.ereal_normedtype, line 511, characters 0-76
 ">HB</a></span></span></span></span></span>.<span id="constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric" class="id"><span id="constructive_ereal_extended__canonical__order_topology_OrderUniform" class="id"><span id="constructive_ereal_extended__canonical__order_topology_OrderTopological" class="id"><span id="constructive_ereal_extended__canonical__order_topology_OrderNbhs" class="id"><span id="HB_unnamed_factory_1" class="id"><a name="constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric" class="" title="constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric :
-forall R : realFieldType, orderPseudoMetricType ereal_display R
+forall R : realFieldType,
+order_topology.OrderPseudoMetric.type ereal_display R
 
 constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric is not universe polymorphic
 Arguments
@@ -1806,7 +1809,8 @@ Expands to: Constant
 Declared in
 library mathcomp.analysis.normedtype_theory.ereal_normedtype, line 511, characters 0-76
 ">instance</a></span></span></span></span></span><span class="vernacular"> Definition</span><span id="constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric" class="id"><span id="constructive_ereal_extended__canonical__order_topology_OrderUniform" class="id"><span id="constructive_ereal_extended__canonical__order_topology_OrderTopological" class="id"><span id="constructive_ereal_extended__canonical__order_topology_OrderNbhs" class="id"><span id="HB_unnamed_factory_1" class="id"><a name="constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric" class="" title="constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric :
-forall R : realFieldType, orderPseudoMetricType ereal_display R
+forall R : realFieldType,
+order_topology.OrderPseudoMetric.type ereal_display R
 
 constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric is not universe polymorphic
 Arguments
@@ -1818,7 +1822,8 @@ Expands to: Constant
 Declared in
 library mathcomp.analysis.normedtype_theory.ereal_normedtype, line 511, characters 0-76
 "> _</a></span></span></span></span></span><span id="constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric" class="id"><span id="constructive_ereal_extended__canonical__order_topology_OrderUniform" class="id"><span id="constructive_ereal_extended__canonical__order_topology_OrderTopological" class="id"><span id="constructive_ereal_extended__canonical__order_topology_OrderNbhs" class="id"><span id="HB_unnamed_factory_1" class="id"><a name="constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric" class="" title="constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric :
-forall R : realFieldType, orderPseudoMetricType ereal_display R
+forall R : realFieldType,
+order_topology.OrderPseudoMetric.type ereal_display R
 
 constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric is not universe polymorphic
 Arguments
@@ -1830,7 +1835,8 @@ Expands to: Constant
 Declared in
 library mathcomp.analysis.normedtype_theory.ereal_normedtype, line 511, characters 0-76
 "> :=</a></span></span></span></span></span><span id="constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric" class="id"><span id="constructive_ereal_extended__canonical__order_topology_OrderUniform" class="id"><span id="constructive_ereal_extended__canonical__order_topology_OrderTopological" class="id"><span id="constructive_ereal_extended__canonical__order_topology_OrderNbhs" class="id"><span id="HB_unnamed_factory_1" class="id"><a name="constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric" class="" title="constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric :
-forall R : realFieldType, orderPseudoMetricType ereal_display R
+forall R : realFieldType,
+order_topology.OrderPseudoMetric.type ereal_display R
 
 constructive_ereal_extended__canonical__order_topology_OrderPseudoMetric is not universe polymorphic
 Arguments

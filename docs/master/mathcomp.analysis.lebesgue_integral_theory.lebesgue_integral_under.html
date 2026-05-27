@@ -291,12 +291,12 @@ forall [u v : R],
                    {in `]u, v[%classic,
                      forall
                        x : filter.Nbhs.sort
-                             (numFieldTopology.Real_sort__canonical__filter_Nbhs
+                             (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
                                 R),
                      filter.continuous_at
-                       (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs
+                       (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
                              R)
-                       (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs
+                       (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
                              R)
                        x (f^~ y)}) ->
 forall [g : Y -> R],
@@ -306,13 +306,16 @@ mu.-integrable B (EFin \o g) ->
 {in `]u, v[%classic,
   forall
     x0 : filter.Nbhs.sort
-           (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+           (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=numFieldTopology.RealField_sort__canonical__filter_Nbhs R) x0
+    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=num_topology.numFieldTopology.RealField_sort__canonical__filter_Nbhs
+          R)
+    x0
     (fun
        l : filter.Nbhs.sort
-             (numFieldTopology.Real_sort__canonical__filter_Nbhs R) =>
+             (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
+                R) =>
      (\int[mu]_(x in B) f l x)%R)}
 
 continuity_under_integral is not universe polymorphic
@@ -327,12 +330,12 @@ forall [u v : R],
                    {in `]u, v[%classic,
                      forall
                        x : filter.Nbhs.sort
-                             (numFieldTopology.Real_sort__canonical__filter_Nbhs
+                             (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
                                 R),
                      filter.continuous_at
-                       (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs
+                       (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
                              R)
-                       (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs
+                       (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
                              R)
                        x (f^~ y)}) ->
 forall [g : Y -> R],
@@ -344,19 +347,22 @@ x \in `]u, v[%classic ->
 forall
   [t : set
          (filter.Nbhs.sort
-            (numFieldTopology.RealField_sort__canonical__filter_Nbhs R))],
+            (num_topology.numFieldTopology.RealField_sort__canonical__filter_Nbhs
+               R))],
 filter.nbhs
   ((fun
       l : filter.Nbhs.sort
-            (numFieldTopology.Real_sort__canonical__filter_Nbhs R) =>
+            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
+               R) =>
     (\int[mu]_(x0 in B) f l x0)%R) x)
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i
+  (pseudometric_structure.ball_ [eta normr] x i
    `<=` (fun
            l : filter.Nbhs.sort
-                 (numFieldTopology.Real_sort__canonical__filter_Nbhs R) =>
+                 (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
+                    R) =>
          (\int[mu]_(x0 in B) f l x0)%R) @^-1`
         t)%classic
 
@@ -540,7 +546,7 @@ forall
 filter.nbhs (\int[mu]_(y in B) partial1of2 f a y)%R t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -771,7 +777,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] 0%R i
+  (pseudometric_structure.ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological

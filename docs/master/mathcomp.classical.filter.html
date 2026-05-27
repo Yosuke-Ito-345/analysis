@@ -942,24 +942,7 @@ Qed.</div></details>
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> []</span>. Qed.</div></details>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="nbhs_simpl" class="id"><a name="nbhs_simpl" class="" title="nbhs_simpl :
-(forall (T : Type) (F : set_system T), filter.nbhs F = F) *
-(forall (T : Type) (F : filter.filter_on T),
- filter.nbhs F = filter.nbhs (filter.filter F)) *
-(forall (M : uniformType) (x : M),
- filter.filter_from entourage ((xsection (T2:=M))^~ x) = filter.nbhs x) *
-(forall M : uniformType, nbhs_ entourage = filter.nbhs) *
-(forall (K : numDomainType) (V : pseudoMetricNormedZmodType K),
- nbhs_ball_ (ball_ normr) = filter.nbhs) *
-(forall (K : numDomainType) (V : pseudoMetricNormedZmodType K) (x : V),
- filter.filter_from [set x0 | (0 < x0)%R] (ball_ normr x) = filter.nbhs x)
-
-nbhs_simpl is not universe polymorphic
-nbhs_simpl is transparent
-Expands to: Constant
-            mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.NbhsNorm.nbhs_simpl
-Declared in
-library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 984, characters 11-21
+<span class="vernacular">Definition</span><span class="id"> </span><span id="nbhs_simpl" class="id"><a name="nbhs_simpl" class="" title="nbhs_simpl not a defined object.
 ">nbhs_simpl</a></span><span class="id"> :=</span> (<span class="id">@</span><span class="id"><a href="mathcomp.classical.filter.html#nbhs_simpl">nbhs_simpl</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"> </a></span><span class="id">@</span><span class="id"><a href="mathcomp.classical.filter.html#nbhs_filter_onE">nbhs_filter_onE</a></span>).<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="near_filter_onE" class="id"><a name="near_filter_onE" class="" title="near_filter_onE not a defined object.
@@ -969,61 +952,7 @@ library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 98
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> []</span>. Qed.</div></details>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="near_simpl" class="id"><a name="near_simpl" class="" title="near_simpl :
-(forall (U : Type) (T : filter.Filtered.type U) (x : filter.Filtered.sort T)
-   (P : set U),
- filter.prop_near1 (filter.nbhs x) (P:=P) (inPhantom (forall x0 : U, P x0)) =
- filter.prop_near1 x (P:=P) (inPhantom (forall x0 : U, P x0))) *
-(forall (U : Type) (T : filter.Filtered.type U) (x : filter.Filtered.sort T)
-   (P : set U),
- filter.nbhs x P =
- filter.prop_near1 x (P:=P) (inPhantom (forall x0 : U, P x0))) *
-(forall (X : Type) (fX : filter.Filtered.type X)
-   (x : filter.Filtered.sort fX) (P : set X),
- filter.nbhs x P =
- filter.prop_near1 x (P:=P) (inPhantom (forall x0 : X, P x0))) *
-(forall (T : Type) (F : filter.filter_on T) (P : set T),
- filter.prop_near1 F (P:=P) (inPhantom (forall x : T, P x)) =
- filter.prop_near1 (filter.filter F) (P:=P) (inPhantom (forall x : T, P x))) *
-(forall (T U : Type) (f : T -> U) (F : set_system T) (P : set U),
- filter.prop_near1 (filter.fmap f (filter.nbhs F)) (P:=P)
-   (inPhantom (forall y : U, P y)) =
- filter.prop_near1 F (P:=fun x : T => P (f x))
-   (inPhantom (forall x : T, P (f x)))) *
-(forall (T U : Type) (f : T -> set U) (F : set_system T) (P : set U),
- filter.prop_near1 (filter.fmapi f (filter.nbhs F)) (P:=P)
-   (inPhantom (forall y : U, P y)) =
- filter.prop_near1 F (P:=fun x : T => exists y : U, f x y /\ P y)
-   (inPhantom (forall x : T, exists y : U, f x y /\ P y))) *
-(forall (T T' U U' : Type) (f : T -> U) (g : T' -> U') 
-   (F : set_system T) (G : set_system T') (P : U -> set U'),
- filter.Filter F ->
- filter.Filter G ->
- filter.prop_near2 (filter.fmap f (filter.nbhs F))
-   (filter.fmap g (filter.nbhs G)) (P:=P)
-   (inPhantom (forall (y : U) (y' : U'), P y y')) =
- filter.prop_near2 F G (P:=fun (x : T) (x' : T') => P (f x) (g x'))
-   (inPhantom (forall (x : T) (x' : T'), P (f x) (g x')))) *
-(forall (K : numDomainType) (V : pseudoMetricNormedZmodType K) 
-   (x : V) (P : V -> Prop),
- nbhs_ball_ (ball_ normr) x P =
- filter.prop_near1 x (P:=P) (inPhantom (forall x0 : V, P x0))) *
-(forall (K : numDomainType) (V : pseudoMetricNormedZmodType K) 
-   (x : V) (P : V -> Prop),
- filter.filter_from [set x0 | (0 < x0)%R] (ball_ normr x) P =
- filter.prop_near1 x (P:=P) (inPhantom (forall x0 : V, P x0))) *
-(forall (K : numDomainType) (V : pseudoMetricNormedZmodType K) 
-   (x : V) (P : V -> Prop),
- filter.prop_near1 (nbhs_ball_ (ball_ normr) x) (P:=P)
-   (inPhantom (forall x0 : V, P x0)) =
- filter.prop_near1 x (P:=P) (inPhantom (forall x0 : V, P x0)))
-
-near_simpl is not universe polymorphic
-near_simpl is transparent
-Expands to: Constant
-            mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.NearNorm.near_simpl
-Declared in
-library mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule, line 1113, characters 11-21
+<span class="vernacular">Definition</span><span class="id"> </span><span id="near_simpl" class="id"><a name="near_simpl" class="" title="near_simpl not a defined object.
 ">near_simpl</a></span><span class="id"> :=</span> (<span class="id">@</span><span class="id"><a href="mathcomp.classical.filter.html#near_simpl">near_simpl</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"> </a></span><span class="id">@</span><span class="id"><a href="mathcomp.classical.filter.html#near_filter_onE">near_filter_onE</a></span>).<br/>
 <br/>
 <span class="id">Program</span><span class="vernacular"> Definition</span><span class="id"> </span><span id="trivial_filter_on" class="id"><a name="trivial_filter_on" class="" title="trivial_filter_on not a defined object.

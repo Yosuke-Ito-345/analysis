@@ -537,10 +537,10 @@ forall {R : realType} [m s : R],
 s != 0%R ->
 forall
   [x : filter.Nbhs.sort
-         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
+         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
 filter.continuous_at
-  (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-  (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+  (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+  (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
   (normal_pdf m s)
 
 continuous_normal_pdf is not universe polymorphic
@@ -550,14 +550,15 @@ forall {R : realType} [m s : R],
 s != 0%R ->
 forall
   [x : filter.Nbhs.sort
-         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
+         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
   [t : set
          (filter.Nbhs.sort
-            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
+            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
+               R))],
 filter.nbhs (normal_pdf m s x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] x i `<=` normal_pdf m s @^-1` t)%classic
+  (pseudometric_structure.ball_ [eta normr] x i `<=` normal_pdf m s @^-1` t)%classic
 
 Arguments continuous_normal_pdf {R} [m s]%_ring_scope _ [x t] _
 continuous_normal_pdf is opaque

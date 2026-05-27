@@ -2041,7 +2041,7 @@ Qed.</div></details>
 forall {T U : topology_structure.Topological.type}
   [f : topology_structure.Topological.sort T ->
        topology_structure.Topological.sort U],
-{within classical_sets.set0, continuous f}%classic
+{within set0, continuous f}%classic
 
 continuous_subspace0 is not universe polymorphic
 Expanded type for implicit arguments
@@ -2050,20 +2050,15 @@ forall {T U : topology_structure.Topological.type}
   [f : topology_structure.Topological.sort T ->
        topology_structure.Topological.sort U]
   [x : filter.Nbhs.sort
-         (subspace_topology_subspace__canonical__filter_Nbhs
-            classical_sets.set0)]
+         (subspace_topology_subspace__canonical__filter_Nbhs set0)]
   [t : set
          (filter.Nbhs.sort
             (topology_structure.Topological.Exports.topology_structure_Topological__to__filter_Nbhs
                U))],
-filter.nbhs (from_subspace classical_sets.set0 f x) t ->
-(if
-  if if pselect (classical_sets.set0 x) then true else false
-  then true
-  else false
- then filter.within classical_sets.set0 (filter.nbhs x)
- else filter.globally [set x])
-  (from_subspace classical_sets.set0 f @^-1` t)%classic
+filter.nbhs (from_subspace set0 f x) t ->
+(if if if pselect (set0 x) then true else false then true else false
+ then filter.within set0 (filter.nbhs x)
+ else filter.globally [set x]) (from_subspace set0 f @^-1` t)%classic
 
 Arguments continuous_subspace0 {T U} [f]%_function_scope [x t] _
 continuous_subspace0 is opaque
