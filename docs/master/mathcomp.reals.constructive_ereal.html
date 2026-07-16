@@ -2916,7 +2916,7 @@ fine_abse is not universe polymorphic
 Expanded type for implicit arguments
 fine_abse :
 forall {R : numDomainType} [x : \bar R],
-x \is a fin_num -> fine ([eta abse] x) = [eta normr] (fine x)
+x \is a fin_num -> fine ([eta abse] x) = [eta Num.Def.normr] (fine x)
 
 Arguments fine_abse {R} [x] _
 fine_abse is opaque
@@ -3754,7 +3754,7 @@ library mathcomp.reals.constructive_ereal, line 1077, characters 6-11
 <span class="gallina-kwd"> by</span><span class="id"> move:</span><span class="id"> x</span><span class="id"> =&gt;</span><span class="id"> [r|</span><span class="id"> |]/=;</span><span class="id"> rewrite</span><span class="id"> /</span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#mule">mule</a></span><span class="id">/=</span><span class="id"> ?</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.ssralg.html#GRing.Theory.mul0r">mul0r</a></span><span class="id">//</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#eqxx">eqxx</a></span>. Qed.</div></details>
 <br/>
 <span id="constructive_ereal_mule__canonical__Monoid_MulLaw" class="id"><span id="HB_unnamed_factory_66" class="id"><a name="constructive_ereal_mule__canonical__Monoid_MulLaw" class="" title="constructive_ereal_mule__canonical__Monoid_MulLaw :
-forall {R : numDomainType}, Monoid.mul_law 0%R
+forall {R : numDomainType}, mul_law 0%R
 
 constructive_ereal_mule__canonical__Monoid_MulLaw is not universe polymorphic
 Arguments constructive_ereal_mule__canonical__Monoid_MulLaw {R}
@@ -3764,7 +3764,7 @@ Expands to: Constant
 Declared in
 library mathcomp.reals.constructive_ereal, line 1080, characters 0-78
 ">HB</a></span></span>.<span id="constructive_ereal_mule__canonical__Monoid_MulLaw" class="id"><span id="HB_unnamed_factory_66" class="id"><a name="constructive_ereal_mule__canonical__Monoid_MulLaw" class="" title="constructive_ereal_mule__canonical__Monoid_MulLaw :
-forall {R : numDomainType}, Monoid.mul_law 0%R
+forall {R : numDomainType}, mul_law 0%R
 
 constructive_ereal_mule__canonical__Monoid_MulLaw is not universe polymorphic
 Arguments constructive_ereal_mule__canonical__Monoid_MulLaw {R}
@@ -3774,7 +3774,7 @@ Expands to: Constant
 Declared in
 library mathcomp.reals.constructive_ereal, line 1080, characters 0-78
 ">instance</a></span></span><span class="vernacular"> Definition</span><span id="constructive_ereal_mule__canonical__Monoid_MulLaw" class="id"><span id="HB_unnamed_factory_66" class="id"><a name="constructive_ereal_mule__canonical__Monoid_MulLaw" class="" title="constructive_ereal_mule__canonical__Monoid_MulLaw :
-forall {R : numDomainType}, Monoid.mul_law 0%R
+forall {R : numDomainType}, mul_law 0%R
 
 constructive_ereal_mule__canonical__Monoid_MulLaw is not universe polymorphic
 Arguments constructive_ereal_mule__canonical__Monoid_MulLaw {R}
@@ -3784,7 +3784,7 @@ Expands to: Constant
 Declared in
 library mathcomp.reals.constructive_ereal, line 1080, characters 0-78
 "> _</a></span></span><span id="constructive_ereal_mule__canonical__Monoid_MulLaw" class="id"><span id="HB_unnamed_factory_66" class="id"><a name="constructive_ereal_mule__canonical__Monoid_MulLaw" class="" title="constructive_ereal_mule__canonical__Monoid_MulLaw :
-forall {R : numDomainType}, Monoid.mul_law 0%R
+forall {R : numDomainType}, mul_law 0%R
 
 constructive_ereal_mule__canonical__Monoid_MulLaw is not universe polymorphic
 Arguments constructive_ereal_mule__canonical__Monoid_MulLaw {R}
@@ -3794,7 +3794,7 @@ Expands to: Constant
 Declared in
 library mathcomp.reals.constructive_ereal, line 1080, characters 0-78
 "> :=</a></span></span><span id="constructive_ereal_mule__canonical__Monoid_MulLaw" class="id"><span id="HB_unnamed_factory_66" class="id"><a name="constructive_ereal_mule__canonical__Monoid_MulLaw" class="" title="constructive_ereal_mule__canonical__Monoid_MulLaw :
-forall {R : numDomainType}, Monoid.mul_law 0%R
+forall {R : numDomainType}, mul_law 0%R
 
 constructive_ereal_mule__canonical__Monoid_MulLaw is not universe polymorphic
 Arguments constructive_ereal_mule__canonical__Monoid_MulLaw {R}
@@ -8917,7 +8917,7 @@ library mathcomp.reals.constructive_ereal, line 2439, characters 6-15
 <span class="gallina-kwd"> by</span><span class="id"> elim:</span><span class="id"> n</span><span class="id"> =&gt;</span><span class="id"> [|n</span><span class="id"> ih];</span><span class="id"> rewrite</span><span class="id"> ?</span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#mul1e">mul1e</a></span><span class="id">//</span><span class="id"> [</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssrmatching.ssrmatching.html#SsrMatchingSyntax.LHS">LHS</a></span><span class="id">]/=</span><span class="id"> ih</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#expeS">expeS</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#muleA">muleA</a></span>. Qed.</div></details>
 <br/>
 <span id="constructive_ereal_mule__canonical__Monoid_ComLaw" class="id"><span id="constructive_ereal_mule__canonical__Monoid_Law" class="id"><span id="HB_unnamed_mixin_76" class="id"><span id="constructive_ereal_mule__canonical__SemiGroup_ComLaw" class="id"><span id="HB_unnamed_mixin_75" class="id"><span id="constructive_ereal_mule__canonical__SemiGroup_Law" class="id"><span id="HB_unnamed_mixin_74" class="id"><span id="Monoid_isComLaw__to__Monoid_isMonoidLaw" class="id"><span id="Monoid_isComLaw__to__SemiGroup_isLaw" class="id"><span id="Monoid_isComLaw__to__SemiGroup_isCommutativeLaw" class="id"><span id="HB_unnamed_factory_70" class="id"><a name="constructive_ereal_mule__canonical__Monoid_ComLaw" class="" title="constructive_ereal_mule__canonical__Monoid_ComLaw :
-forall {R : realDomainType}, Monoid.com_law 1%E
+forall {R : realDomainType}, com_law 1%E
 
 constructive_ereal_mule__canonical__Monoid_ComLaw is not universe polymorphic
 Arguments constructive_ereal_mule__canonical__Monoid_ComLaw {R}
@@ -8927,7 +8927,7 @@ Expands to: Constant
 Declared in
 library mathcomp.reals.constructive_ereal, line 2442, characters 0-86
 ">HB</a></span></span></span></span></span></span></span></span></span></span></span>.<span id="constructive_ereal_mule__canonical__Monoid_ComLaw" class="id"><span id="constructive_ereal_mule__canonical__Monoid_Law" class="id"><span id="HB_unnamed_mixin_76" class="id"><span id="constructive_ereal_mule__canonical__SemiGroup_ComLaw" class="id"><span id="HB_unnamed_mixin_75" class="id"><span id="constructive_ereal_mule__canonical__SemiGroup_Law" class="id"><span id="HB_unnamed_mixin_74" class="id"><span id="Monoid_isComLaw__to__Monoid_isMonoidLaw" class="id"><span id="Monoid_isComLaw__to__SemiGroup_isLaw" class="id"><span id="Monoid_isComLaw__to__SemiGroup_isCommutativeLaw" class="id"><span id="HB_unnamed_factory_70" class="id"><a name="constructive_ereal_mule__canonical__Monoid_ComLaw" class="" title="constructive_ereal_mule__canonical__Monoid_ComLaw :
-forall {R : realDomainType}, Monoid.com_law 1%E
+forall {R : realDomainType}, com_law 1%E
 
 constructive_ereal_mule__canonical__Monoid_ComLaw is not universe polymorphic
 Arguments constructive_ereal_mule__canonical__Monoid_ComLaw {R}
@@ -8937,7 +8937,7 @@ Expands to: Constant
 Declared in
 library mathcomp.reals.constructive_ereal, line 2442, characters 0-86
 ">instance</a></span></span></span></span></span></span></span></span></span></span></span><span class="vernacular"> Definition</span><span id="constructive_ereal_mule__canonical__Monoid_ComLaw" class="id"><span id="constructive_ereal_mule__canonical__Monoid_Law" class="id"><span id="HB_unnamed_mixin_76" class="id"><span id="constructive_ereal_mule__canonical__SemiGroup_ComLaw" class="id"><span id="HB_unnamed_mixin_75" class="id"><span id="constructive_ereal_mule__canonical__SemiGroup_Law" class="id"><span id="HB_unnamed_mixin_74" class="id"><span id="Monoid_isComLaw__to__Monoid_isMonoidLaw" class="id"><span id="Monoid_isComLaw__to__SemiGroup_isLaw" class="id"><span id="Monoid_isComLaw__to__SemiGroup_isCommutativeLaw" class="id"><span id="HB_unnamed_factory_70" class="id"><a name="constructive_ereal_mule__canonical__Monoid_ComLaw" class="" title="constructive_ereal_mule__canonical__Monoid_ComLaw :
-forall {R : realDomainType}, Monoid.com_law 1%E
+forall {R : realDomainType}, com_law 1%E
 
 constructive_ereal_mule__canonical__Monoid_ComLaw is not universe polymorphic
 Arguments constructive_ereal_mule__canonical__Monoid_ComLaw {R}
@@ -8947,7 +8947,7 @@ Expands to: Constant
 Declared in
 library mathcomp.reals.constructive_ereal, line 2442, characters 0-86
 "> _</a></span></span></span></span></span></span></span></span></span></span></span><span id="constructive_ereal_mule__canonical__Monoid_ComLaw" class="id"><span id="constructive_ereal_mule__canonical__Monoid_Law" class="id"><span id="HB_unnamed_mixin_76" class="id"><span id="constructive_ereal_mule__canonical__SemiGroup_ComLaw" class="id"><span id="HB_unnamed_mixin_75" class="id"><span id="constructive_ereal_mule__canonical__SemiGroup_Law" class="id"><span id="HB_unnamed_mixin_74" class="id"><span id="Monoid_isComLaw__to__Monoid_isMonoidLaw" class="id"><span id="Monoid_isComLaw__to__SemiGroup_isLaw" class="id"><span id="Monoid_isComLaw__to__SemiGroup_isCommutativeLaw" class="id"><span id="HB_unnamed_factory_70" class="id"><a name="constructive_ereal_mule__canonical__Monoid_ComLaw" class="" title="constructive_ereal_mule__canonical__Monoid_ComLaw :
-forall {R : realDomainType}, Monoid.com_law 1%E
+forall {R : realDomainType}, com_law 1%E
 
 constructive_ereal_mule__canonical__Monoid_ComLaw is not universe polymorphic
 Arguments constructive_ereal_mule__canonical__Monoid_ComLaw {R}
@@ -8957,7 +8957,7 @@ Expands to: Constant
 Declared in
 library mathcomp.reals.constructive_ereal, line 2442, characters 0-86
 "> :=</a></span></span></span></span></span></span></span></span></span></span></span><span id="constructive_ereal_mule__canonical__Monoid_ComLaw" class="id"><span id="constructive_ereal_mule__canonical__Monoid_Law" class="id"><span id="HB_unnamed_mixin_76" class="id"><span id="constructive_ereal_mule__canonical__SemiGroup_ComLaw" class="id"><span id="HB_unnamed_mixin_75" class="id"><span id="constructive_ereal_mule__canonical__SemiGroup_Law" class="id"><span id="HB_unnamed_mixin_74" class="id"><span id="Monoid_isComLaw__to__Monoid_isMonoidLaw" class="id"><span id="Monoid_isComLaw__to__SemiGroup_isLaw" class="id"><span id="Monoid_isComLaw__to__SemiGroup_isCommutativeLaw" class="id"><span id="HB_unnamed_factory_70" class="id"><a name="constructive_ereal_mule__canonical__Monoid_ComLaw" class="" title="constructive_ereal_mule__canonical__Monoid_ComLaw :
-forall {R : realDomainType}, Monoid.com_law 1%E
+forall {R : realDomainType}, com_law 1%E
 
 constructive_ereal_mule__canonical__Monoid_ComLaw is not universe polymorphic
 Arguments constructive_ereal_mule__canonical__Monoid_ComLaw {R}
@@ -10074,7 +10074,7 @@ library mathcomp.reals.constructive_ereal, line 2795, characters 6-12
 <span class="gallina-kwd"> by</span><span class="id"> move=&gt;</span><span class="id"> x;</span><span class="id"> have</span><span class="id"> [//|]</span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.TotalTheory.leP">leP</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#::ereal_scope:'-oo'">-oo</a></span><span class="id"> x;</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.TotalTheory.ltNge">ltNge</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#leNye">leNye</a></span>. Qed.</div></details>
 <br/>
 <span id="Order_max__canonical__Monoid_ComLaw" class="id"><span id="Order_max__canonical__Monoid_Law" class="id"><span id="HB_unnamed_mixin_80" class="id"><span id="Monoid_isLaw__to__SemiGroup_isLaw" class="id"><span id="Monoid_isLaw__to__Monoid_isMonoidLaw" class="id"><span id="HB_unnamed_factory_77" class="id"><a name="Order_max__canonical__Monoid_ComLaw" class="" title="Order_max__canonical__Monoid_ComLaw :
-forall {R : realDomainType}, Monoid.com_law -oo%E
+forall {R : realDomainType}, com_law -oo%E
 
 Order_max__canonical__Monoid_ComLaw is not universe polymorphic
 Arguments Order_max__canonical__Monoid_ComLaw {R}
@@ -10084,7 +10084,7 @@ Expands to: Constant
 Declared in
 library mathcomp.reals.constructive_ereal, line 2798, characters 0-86
 ">HB</a></span></span></span></span></span></span>.<span id="Order_max__canonical__Monoid_ComLaw" class="id"><span id="Order_max__canonical__Monoid_Law" class="id"><span id="HB_unnamed_mixin_80" class="id"><span id="Monoid_isLaw__to__SemiGroup_isLaw" class="id"><span id="Monoid_isLaw__to__Monoid_isMonoidLaw" class="id"><span id="HB_unnamed_factory_77" class="id"><a name="Order_max__canonical__Monoid_ComLaw" class="" title="Order_max__canonical__Monoid_ComLaw :
-forall {R : realDomainType}, Monoid.com_law -oo%E
+forall {R : realDomainType}, com_law -oo%E
 
 Order_max__canonical__Monoid_ComLaw is not universe polymorphic
 Arguments Order_max__canonical__Monoid_ComLaw {R}
@@ -10094,7 +10094,7 @@ Expands to: Constant
 Declared in
 library mathcomp.reals.constructive_ereal, line 2798, characters 0-86
 ">instance</a></span></span></span></span></span></span><span class="vernacular"> Definition</span><span id="Order_max__canonical__Monoid_ComLaw" class="id"><span id="Order_max__canonical__Monoid_Law" class="id"><span id="HB_unnamed_mixin_80" class="id"><span id="Monoid_isLaw__to__SemiGroup_isLaw" class="id"><span id="Monoid_isLaw__to__Monoid_isMonoidLaw" class="id"><span id="HB_unnamed_factory_77" class="id"><a name="Order_max__canonical__Monoid_ComLaw" class="" title="Order_max__canonical__Monoid_ComLaw :
-forall {R : realDomainType}, Monoid.com_law -oo%E
+forall {R : realDomainType}, com_law -oo%E
 
 Order_max__canonical__Monoid_ComLaw is not universe polymorphic
 Arguments Order_max__canonical__Monoid_ComLaw {R}
@@ -10104,7 +10104,7 @@ Expands to: Constant
 Declared in
 library mathcomp.reals.constructive_ereal, line 2798, characters 0-86
 "> _</a></span></span></span></span></span></span><span id="Order_max__canonical__Monoid_ComLaw" class="id"><span id="Order_max__canonical__Monoid_Law" class="id"><span id="HB_unnamed_mixin_80" class="id"><span id="Monoid_isLaw__to__SemiGroup_isLaw" class="id"><span id="Monoid_isLaw__to__Monoid_isMonoidLaw" class="id"><span id="HB_unnamed_factory_77" class="id"><a name="Order_max__canonical__Monoid_ComLaw" class="" title="Order_max__canonical__Monoid_ComLaw :
-forall {R : realDomainType}, Monoid.com_law -oo%E
+forall {R : realDomainType}, com_law -oo%E
 
 Order_max__canonical__Monoid_ComLaw is not universe polymorphic
 Arguments Order_max__canonical__Monoid_ComLaw {R}
@@ -10146,7 +10146,7 @@ library mathcomp.reals.constructive_ereal, line 2804, characters 6-11
 <span class="gallina-kwd"> by</span><span class="id"> move=&gt;</span><span class="id"> x;</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.TotalTheory.minC">minC</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#minye">minye</a></span>. Qed.</div></details>
 <br/>
 <span id="Order_min__canonical__Monoid_ComLaw" class="id"><span id="Order_min__canonical__Monoid_Law" class="id"><span id="HB_unnamed_mixin_86" class="id"><span id="Monoid_isLaw__to__SemiGroup_isLaw__85" class="id"><span id="Monoid_isLaw__to__Monoid_isMonoidLaw__83" class="id"><span id="HB_unnamed_factory_81" class="id"><a name="Order_min__canonical__Monoid_ComLaw" class="" title="Order_min__canonical__Monoid_ComLaw :
-forall {R : realDomainType}, Monoid.com_law +oo%E
+forall {R : realDomainType}, com_law +oo%E
 
 Order_min__canonical__Monoid_ComLaw is not universe polymorphic
 Arguments Order_min__canonical__Monoid_ComLaw {R}
@@ -10156,7 +10156,7 @@ Expands to: Constant
 Declared in
 library mathcomp.reals.constructive_ereal, line 2807, characters 0-84
 ">HB</a></span></span></span></span></span></span>.<span id="Order_min__canonical__Monoid_ComLaw" class="id"><span id="Order_min__canonical__Monoid_Law" class="id"><span id="HB_unnamed_mixin_86" class="id"><span id="Monoid_isLaw__to__SemiGroup_isLaw__85" class="id"><span id="Monoid_isLaw__to__Monoid_isMonoidLaw__83" class="id"><span id="HB_unnamed_factory_81" class="id"><a name="Order_min__canonical__Monoid_ComLaw" class="" title="Order_min__canonical__Monoid_ComLaw :
-forall {R : realDomainType}, Monoid.com_law +oo%E
+forall {R : realDomainType}, com_law +oo%E
 
 Order_min__canonical__Monoid_ComLaw is not universe polymorphic
 Arguments Order_min__canonical__Monoid_ComLaw {R}
@@ -10166,7 +10166,7 @@ Expands to: Constant
 Declared in
 library mathcomp.reals.constructive_ereal, line 2807, characters 0-84
 ">instance</a></span></span></span></span></span></span><span class="vernacular"> Definition</span><span id="Order_min__canonical__Monoid_ComLaw" class="id"><span id="Order_min__canonical__Monoid_Law" class="id"><span id="HB_unnamed_mixin_86" class="id"><span id="Monoid_isLaw__to__SemiGroup_isLaw__85" class="id"><span id="Monoid_isLaw__to__Monoid_isMonoidLaw__83" class="id"><span id="HB_unnamed_factory_81" class="id"><a name="Order_min__canonical__Monoid_ComLaw" class="" title="Order_min__canonical__Monoid_ComLaw :
-forall {R : realDomainType}, Monoid.com_law +oo%E
+forall {R : realDomainType}, com_law +oo%E
 
 Order_min__canonical__Monoid_ComLaw is not universe polymorphic
 Arguments Order_min__canonical__Monoid_ComLaw {R}
@@ -10176,7 +10176,7 @@ Expands to: Constant
 Declared in
 library mathcomp.reals.constructive_ereal, line 2807, characters 0-84
 "> _</a></span></span></span></span></span></span><span id="Order_min__canonical__Monoid_ComLaw" class="id"><span id="Order_min__canonical__Monoid_Law" class="id"><span id="HB_unnamed_mixin_86" class="id"><span id="Monoid_isLaw__to__SemiGroup_isLaw__85" class="id"><span id="Monoid_isLaw__to__Monoid_isMonoidLaw__83" class="id"><span id="HB_unnamed_factory_81" class="id"><a name="Order_min__canonical__Monoid_ComLaw" class="" title="Order_min__canonical__Monoid_ComLaw :
-forall {R : realDomainType}, Monoid.com_law +oo%E
+forall {R : realDomainType}, com_law +oo%E
 
 Order_min__canonical__Monoid_ComLaw is not universe polymorphic
 Arguments Order_min__canonical__Monoid_ComLaw {R}

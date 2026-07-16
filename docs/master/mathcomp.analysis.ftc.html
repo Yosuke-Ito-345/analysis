@@ -630,11 +630,10 @@ let F :=
 {for x,
   forall
     x0 : filter.Nbhs.sort
-           (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+           (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0
-    f} ->
+    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0 f} ->
 derivable F x 1 /\ F^`()%classic x = f x
 
 continuous_FTC1 is not universe polymorphic
@@ -667,11 +666,10 @@ let F := fun x0 : R => (\int[lebesgue_measure]_(t in `[a, x0]) f t)%R in
 {for x,
   forall
     x0 : filter.Nbhs.sort
-           (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+           (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0
-    f} ->
+    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0 f} ->
 derivable F x 1 /\ F^`()%classic x = f x
 
 continuous_FTC1_closed is not universe polymorphic
@@ -795,7 +793,7 @@ forall [t : set R],
 filter.nbhs 0%R t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] a i
+  (ball_ [eta normr] a i
    `<=` (parameterized_integral lebesgue_measure a)^~ f @^-1` t)%classic
 
 Arguments parameterized_integral_cvg_left {R} [a b] 
@@ -827,7 +825,7 @@ lebesgue_measure.-integrable `[a, b] (EFin \o f) ->
 filter.cvg_to
   (filter.nbhs
      (filter.fmap ((parameterized_integral lebesgue_measure a)^~ f)
-        (filter.nbhs (num_topology.at_left (R:=R) b))))
+        (filter.nbhs (b^'-)%classic)))
   (filter.nbhs (parameterized_integral lebesgue_measure a b f))
 
 parameterized_integral_cvg_at_left is not universe polymorphic
@@ -840,7 +838,7 @@ forall [t : set R],
 filter.nbhs (parameterized_integral lebesgue_measure a b f) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] b i
+  (ball_ [eta normr] b i
    `<=` (fun t0 : R =>
          (fun u : R => is_true (u < b)%R) t0 ->
          ((parameterized_integral lebesgue_measure a)^~ f @^-1` t) t0))%classic
@@ -894,16 +892,7 @@ Declared in library mathcomp.analysis.ftc, line 417, characters 6-40
 forall {R : realType} [a b : R] [f : R -> R],
 (a <= b)%R ->
 lebesgue_measure.-integrable `[a, b] (EFin \o f) ->
-forall
-  [x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[a, b])],
-filter.continuous_at
-  (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-        `[a, b])
-  (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-  (subspace_topology.from_subspace `[a, b]
-     ((parameterized_integral lebesgue_measure a)^~ f))
+{within `[a, b], continuous (parameterized_integral lebesgue_measure a)^~ f}%classic
 
 parameterized_integral_continuous is not universe polymorphic
 Expanded type for implicit arguments
@@ -913,22 +902,18 @@ forall {R : realType} [a b : R] [f : R -> R],
 lebesgue_measure.-integrable `[a, b] (EFin \o f) ->
 forall
   [x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[a, b])]
+         (subspace_topology_subspace__canonical__filter_Nbhs `[a, b])]
   [t : set
          (filter.Nbhs.sort
-            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
-               R))],
+            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
 filter.nbhs
-  (subspace_topology.from_subspace `[a, b]
-     ((parameterized_integral lebesgue_measure a)^~ f) x)
+  (from_subspace `[a, b] ((parameterized_integral lebesgue_measure a)^~ f) x)
   t ->
 (if
   if if pselect (`[a, b]%classic x) then true else false then true else false
  then filter.within `[a, b] (filter.nbhs x)
  else filter.globally [set x])
-  (subspace_topology.from_subspace `[a, b]
-     ((parameterized_integral lebesgue_measure a)^~ f) @^-1`
+  (from_subspace `[a, b] ((parameterized_integral lebesgue_measure a)^~ f) @^-1`
    t)%classic
 
 Arguments parameterized_integral_continuous {R} [a b] 
@@ -1033,15 +1018,7 @@ forall {R : realType} [f : R -> R]
   [F : R -> Real_sort__canonical__normed_module_NormedModule R] 
   [a b : R],
 (a < b)%R ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[a, b]),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `[a, b])
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `[a, b] f)) ->
+{within `[a, b], continuous f}%classic ->
 derivable_oo_LRcontinuous F a b ->
 {in `]a, b[%R, F^`()%classic =1 f} ->
 (\int[lebesgue_measure]_(x in `[a, b]) (f x)%:E)%E = ((F b)%:E - (F a)%:E)%E
@@ -1159,21 +1136,12 @@ Declared in library mathcomp.analysis.ftc, line 544, characters 10-25
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ge0_continuous_FTC2y" class="id"><a name="ge0_continuous_FTC2y" class="" title="ge0_continuous_FTC2y :
 forall {R : realType} [f F : R -> R] [a l : R],
 (forall x : R, (a <= x)%R -> (0 <= f x)%R) ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[a, +oo[),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `[a, +oo[)
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `[a, +oo[ f)) ->
+{within `[a, +oo[, continuous f}%classic ->
 filter.cvg_to (filter.nbhs (filter.fmap [eta F] (filter.nbhs +oo%R)))
   (filter.nbhs l) ->
 (forall x : R, (a < x)%R -> derivable F x 1) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F] (filter.nbhs (num_topology.at_right (R:=R) a))))
+  (filter.nbhs (filter.fmap [eta F] (filter.nbhs (a^'+)%classic)))
   (filter.nbhs (F a)) ->
 {in `]a, +oo[%R, F^`()%classic =1 f} ->
 (\int[lebesgue_measure]_(x in `[a, +oo[) (f x)%:E)%E = (l%:E - (F a)%:E)%E
@@ -1286,21 +1254,12 @@ Declared in library mathcomp.analysis.ftc, line 646, characters 6-26
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="Rintegral_ge0_continuous_FTC2y" class="id"><a name="Rintegral_ge0_continuous_FTC2y" class="" title="Rintegral_ge0_continuous_FTC2y :
 forall {R : realType} [f F : R -> R] [a l : R],
 (forall x : R, (a <= x)%R -> (0 <= f x)%R) ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[a, +oo[),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `[a, +oo[)
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `[a, +oo[ f)) ->
+{within `[a, +oo[, continuous f}%classic ->
 filter.cvg_to (filter.nbhs (filter.fmap [eta F] (filter.nbhs +oo%R)))
   (filter.nbhs l) ->
 (forall x : R, (a < x)%R -> derivable F x 1) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F] (filter.nbhs (num_topology.at_right (R:=R) a))))
+  (filter.nbhs (filter.fmap [eta F] (filter.nbhs (a^'+)%classic)))
   (filter.nbhs (F a)) ->
 {in `]a, +oo[%R, F^`()%classic =1 f} ->
 (\int[lebesgue_measure]_(x in `[a, +oo[) f x)%R = (l - F a)%R
@@ -1329,20 +1288,11 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="le0_continuous_FTC2y" class="id"><a name="le0_continuous_FTC2y" class="" title="le0_continuous_FTC2y :
 forall {R : realType} [f F : R -> R] [a l : R],
 (forall x : R, (a <= x)%R -> (f x <= 0)%R) ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[a, +oo[),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `[a, +oo[)
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `[a, +oo[ f)) ->
+{within `[a, +oo[, continuous f}%classic ->
 filter.cvg_to (filter.nbhs (filter.fmap [eta F] (filter.nbhs +oo%R)))
   (filter.nbhs l) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F] (filter.nbhs (num_topology.at_right (R:=R) a))))
+  (filter.nbhs (filter.fmap [eta F] (filter.nbhs (a^'+)%classic)))
   (filter.nbhs (F a)) ->
 (forall x : R, (a < x)%R -> derivable F x 1) ->
 {in `]a, +oo[%R, F^`()%classic =1 f} ->
@@ -1398,26 +1348,10 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="integration_by_parts" class="id"><a name="integration_by_parts" class="" title="integration_by_parts :
 forall {R : realType} [F G f g : R -> R] [a b : R],
 (a < b)%R ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[a, b]),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `[a, b])
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `[a, b] f)) ->
+{within `[a, b], continuous f}%classic ->
 derivable_oo_LRcontinuous F a b ->
 {in `]a, b[%R, F^`()%classic =1 f} ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[a, b]),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `[a, b])
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `[a, b] g)) ->
+{within `[a, b], continuous g}%classic ->
 derivable_oo_LRcontinuous G a b ->
 {in `]a, b[%R, G^`()%classic =1 g} ->
 (\int[lebesgue_measure]_(x in `[a, b]) (F x * g x)%:E)%E =
@@ -1488,26 +1422,10 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="Rintegration_by_parts" class="id"><a name="Rintegration_by_parts" class="" title="Rintegration_by_parts :
 forall {R : realType} [F G f g : R -> R] [a b : R],
 (a < b)%R ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[a, b]),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `[a, b])
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `[a, b] f)) ->
+{within `[a, b], continuous f}%classic ->
 derivable_oo_LRcontinuous F a b ->
 {in `]a, b[%R, F^`()%classic =1 f} ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[a, b]),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `[a, b])
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `[a, b] g)) ->
+{within `[a, b], continuous g}%classic ->
 derivable_oo_LRcontinuous G a b ->
 {in `]a, b[%R, G^`()%classic =1 g} ->
 (\int[lebesgue_measure]_(x in `[a, b]) (F x * g x))%R =
@@ -1617,16 +1535,13 @@ forall {R : realType} [F G : R -> R] [a : R] [b : itv_bound R] [l : R],
 (BRight a < b)%O ->
 {in Interval (BLeft a) b &, {homo F : x y / (x < y)%R}} ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F] (filter.nbhs (num_topology.at_right (R:=R) a))))
+  (filter.nbhs (filter.fmap [eta F] (filter.nbhs (a^'+)%classic)))
   (filter.nbhs (F a)) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta G] (filter.nbhs (num_topology.at_right (R:=R) (F a)))))
+  (filter.nbhs (filter.fmap [eta G] (filter.nbhs ((F a)^'+)%classic)))
   (filter.nbhs l) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta G \o F] (filter.nbhs (num_topology.at_right (R:=R) a))))
+  (filter.nbhs (filter.fmap [eta G \o F] (filter.nbhs (a^'+)%classic)))
   (filter.nbhs l)
 
 increasing_cvg_at_right_comp is not universe polymorphic
@@ -1636,18 +1551,16 @@ forall {R : realType} [F G : R -> R] [a : R] [b : itv_bound R] [l : R],
 (BRight a < b)%O ->
 {in Interval (BLeft a) b &, {homo F : x y / (x < y)%R}} ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F] (filter.nbhs (num_topology.at_right (R:=R) a))))
+  (filter.nbhs (filter.fmap [eta F] (filter.nbhs (a^'+)%classic)))
   (filter.nbhs (F a)) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta G] (filter.nbhs (num_topology.at_right (R:=R) (F a)))))
+  (filter.nbhs (filter.fmap [eta G] (filter.nbhs ((F a)^'+)%classic)))
   (filter.nbhs l) ->
 forall [t : set R],
 filter.nbhs l t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] a i
+  (ball_ [eta normr] a i
    `<=` (fun t0 : R =>
          (fun u : R => is_true (a < u)%R) t0 -> ([eta G \o F] @^-1` t) t0))%classic
 
@@ -1699,16 +1612,13 @@ forall {R : realType} [F G : R -> R] [a : itv_bound R] [b l : R],
 (a < BLeft b)%O ->
 {in Interval a (BRight b) &, {homo F : x y / (x < y)%R}} ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F] (filter.nbhs (num_topology.at_left (R:=R) b))))
+  (filter.nbhs (filter.fmap [eta F] (filter.nbhs (b^'-)%classic)))
   (filter.nbhs (F b)) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta G] (filter.nbhs (num_topology.at_left (R:=R) (F b)))))
+  (filter.nbhs (filter.fmap [eta G] (filter.nbhs ((F b)^'-)%classic)))
   (filter.nbhs l) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta G \o F] (filter.nbhs (num_topology.at_left (R:=R) b))))
+  (filter.nbhs (filter.fmap [eta G \o F] (filter.nbhs (b^'-)%classic)))
   (filter.nbhs l)
 
 increasing_cvg_at_left_comp is not universe polymorphic
@@ -1718,18 +1628,16 @@ forall {R : realType} [F G : R -> R] [a : itv_bound R] [b l : R],
 (a < BLeft b)%O ->
 {in Interval a (BRight b) &, {homo F : x y / (x < y)%R}} ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F] (filter.nbhs (num_topology.at_left (R:=R) b))))
+  (filter.nbhs (filter.fmap [eta F] (filter.nbhs (b^'-)%classic)))
   (filter.nbhs (F b)) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta G] (filter.nbhs (num_topology.at_left (R:=R) (F b)))))
+  (filter.nbhs (filter.fmap [eta G] (filter.nbhs ((F b)^'-)%classic)))
   (filter.nbhs l) ->
 forall [t : set R],
 filter.nbhs l t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] b i
+  (ball_ [eta normr] b i
    `<=` (fun t0 : R =>
          (fun u : R => is_true (u < b)%R) t0 -> ([eta G \o F] @^-1` t) t0))%classic
 
@@ -1778,16 +1686,13 @@ forall {R : realType} [F G : R -> R] [a : R] [b : itv_bound R] [l : R],
 (BRight a < b)%O ->
 {in Interval (BLeft a) b &, {homo F : x y /~ (x < y)%R}} ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F] (filter.nbhs (num_topology.at_right (R:=R) a))))
+  (filter.nbhs (filter.fmap [eta F] (filter.nbhs (a^'+)%classic)))
   (filter.nbhs (F a)) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta G] (filter.nbhs (num_topology.at_left (R:=R) (F a)))))
+  (filter.nbhs (filter.fmap [eta G] (filter.nbhs ((F a)^'-)%classic)))
   (filter.nbhs l) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta G \o F] (filter.nbhs (num_topology.at_right (R:=R) a))))
+  (filter.nbhs (filter.fmap [eta G \o F] (filter.nbhs (a^'+)%classic)))
   (filter.nbhs l)
 
 decreasing_cvg_at_right_comp is not universe polymorphic
@@ -1797,18 +1702,16 @@ forall {R : realType} [F G : R -> R] [a : R] [b : itv_bound R] [l : R],
 (BRight a < b)%O ->
 {in Interval (BLeft a) b &, {homo F : x y /~ (x < y)%R}} ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F] (filter.nbhs (num_topology.at_right (R:=R) a))))
+  (filter.nbhs (filter.fmap [eta F] (filter.nbhs (a^'+)%classic)))
   (filter.nbhs (F a)) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta G] (filter.nbhs (num_topology.at_left (R:=R) (F a)))))
+  (filter.nbhs (filter.fmap [eta G] (filter.nbhs ((F a)^'-)%classic)))
   (filter.nbhs l) ->
 forall [t : set R],
 filter.nbhs l t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] a i
+  (ball_ [eta normr] a i
    `<=` (fun t0 : R =>
          (fun u : R => is_true (a < u)%R) t0 -> ([eta G \o F] @^-1` t) t0))%classic
 
@@ -1858,16 +1761,13 @@ forall {R : realType} [F G : R -> R] [a : itv_bound R] [b l : R],
 (a < BLeft b)%O ->
 {in Interval a (BRight b) &, {homo F : x y /~ (x < y)%R}} ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F] (filter.nbhs (num_topology.at_left (R:=R) b))))
+  (filter.nbhs (filter.fmap [eta F] (filter.nbhs (b^'-)%classic)))
   (filter.nbhs (F b)) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta G] (filter.nbhs (num_topology.at_right (R:=R) (F b)))))
+  (filter.nbhs (filter.fmap [eta G] (filter.nbhs ((F b)^'+)%classic)))
   (filter.nbhs l) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta G \o F] (filter.nbhs (num_topology.at_left (R:=R) b))))
+  (filter.nbhs (filter.fmap [eta G \o F] (filter.nbhs (b^'-)%classic)))
   (filter.nbhs l)
 
 decreasing_cvg_at_left_comp is not universe polymorphic
@@ -1877,18 +1777,16 @@ forall {R : realType} [F G : R -> R] [a : itv_bound R] [b l : R],
 (a < BLeft b)%O ->
 {in Interval a (BRight b) &, {homo F : x y /~ (x < y)%R}} ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F] (filter.nbhs (num_topology.at_left (R:=R) b))))
+  (filter.nbhs (filter.fmap [eta F] (filter.nbhs (b^'-)%classic)))
   (filter.nbhs (F b)) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta G] (filter.nbhs (num_topology.at_right (R:=R) (F b)))))
+  (filter.nbhs (filter.fmap [eta G] (filter.nbhs ((F b)^'+)%classic)))
   (filter.nbhs l) ->
 forall [t : set R],
 filter.nbhs l t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] b i
+  (ball_ [eta normr] b i
    `<=` (fun t0 : R =>
          (fun u : R => is_true (u < b)%R) t0 -> ([eta G \o F] @^-1` t) t0))%classic
 
@@ -2001,40 +1899,25 @@ forall {R : realType} [F G : R -> R] [a b : R],
 {in `]a, b[%R,
   forall
     x : filter.Nbhs.sort
-          (num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs
-             R),
+          (numFieldTopology.NumField_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs R)
+    (T:=numFieldTopology.NumField_sort__canonical__filter_Nbhs R)
     (U:=filter.PointedNbhs.Exports.filter_PointedNbhs__to__filter_Nbhs
           (join_normed_module_NormedModule_between_GRing_LSemiModule_and_filter_PointedNbhs
              (Real_sort__canonical__normed_module_NormedModule R)))
     x F^`()%classic} ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F^`()%classic]
-        (filter.nbhs (num_topology.at_right (R:=R) a))))
+  (filter.nbhs (filter.fmap [eta F^`()%classic] (filter.nbhs (a^'+)%classic)))
   (filter.nbhs
      (filter.lim
-        (filter.fmap [eta F^`()%classic]
-           (filter.nbhs (num_topology.at_right (R:=R) a))))) ->
+        (filter.fmap [eta F^`()%classic] (filter.nbhs (a^'+)%classic)))) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F^`()%classic]
-        (filter.nbhs (num_topology.at_left (R:=R) b))))
+  (filter.nbhs (filter.fmap [eta F^`()%classic] (filter.nbhs (b^'-)%classic)))
   (filter.nbhs
      (filter.lim
-        (filter.fmap [eta F^`()%classic]
-           (filter.nbhs (num_topology.at_left (R:=R) b))))) ->
+        (filter.fmap [eta F^`()%classic] (filter.nbhs (b^'-)%classic)))) ->
 derivable_oo_LRcontinuous F a b ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[F b, F a]),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `[F b, F a])
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `[F b, F a] G)) ->
+{within `[F b, F a], continuous G}%classic ->
 (\int[lebesgue_measure]_(x in `[F b, F a]) (G x)%:E)%E =
 (\int[lebesgue_measure]_(x in `[a, b]) (((G \o F) * - F^`()%classic) x)%:E)%E
 
@@ -2184,15 +2067,7 @@ Declared in library mathcomp.analysis.ftc, line 1050, characters 6-44
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="integration_by_substitution_oppr" class="id"><a name="integration_by_substitution_oppr" class="" title="integration_by_substitution_oppr :
 forall {R : realType} [G : R -> R] [a b : R],
 (a <= b)%R ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[(- b)%R, (- a)%R]),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `[(- b)%R, (- a)%R])
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `[(- b)%R, (- a)%R] G)) ->
+{within `[(- b)%R, (- a)%R], continuous G}%classic ->
 (\int[lebesgue_measure]_(x in `[(- b)%R, (- a)%R]) (G x)%:E)%E =
 (\int[lebesgue_measure]_(x in `[a, b]) ((G \o -%R) x)%:E)%E
 
@@ -2230,40 +2105,25 @@ forall {R : realType} [F G : R -> R] [a b : R],
 {in `]a, b[%R,
   forall
     x : filter.Nbhs.sort
-          (num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs
-             R),
+          (numFieldTopology.NumField_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs R)
+    (T:=numFieldTopology.NumField_sort__canonical__filter_Nbhs R)
     (U:=filter.PointedNbhs.Exports.filter_PointedNbhs__to__filter_Nbhs
           (join_normed_module_NormedModule_between_GRing_LSemiModule_and_filter_PointedNbhs
              (Real_sort__canonical__normed_module_NormedModule R)))
     x F^`()%classic} ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F^`()%classic]
-        (filter.nbhs (num_topology.at_right (R:=R) a))))
+  (filter.nbhs (filter.fmap [eta F^`()%classic] (filter.nbhs (a^'+)%classic)))
   (filter.nbhs
      (filter.lim
-        (filter.fmap [eta F^`()%classic]
-           (filter.nbhs (num_topology.at_right (R:=R) a))))) ->
+        (filter.fmap [eta F^`()%classic] (filter.nbhs (a^'+)%classic)))) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F^`()%classic]
-        (filter.nbhs (num_topology.at_left (R:=R) b))))
+  (filter.nbhs (filter.fmap [eta F^`()%classic] (filter.nbhs (b^'-)%classic)))
   (filter.nbhs
      (filter.lim
-        (filter.fmap [eta F^`()%classic]
-           (filter.nbhs (num_topology.at_left (R:=R) b))))) ->
+        (filter.fmap [eta F^`()%classic] (filter.nbhs (b^'-)%classic)))) ->
 derivable_oo_LRcontinuous F a b ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[F a, F b]),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `[F a, F b])
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `[F a, F b] G)) ->
+{within `[F a, F b], continuous G}%classic ->
 (\int[lebesgue_measure]_(x in `[F a, F b]) (G x)%:E)%E =
 (\int[lebesgue_measure]_(x in `[a, b]) (((G \o F) * F^`()%classic) x)%:E)%E
 
@@ -2355,22 +2215,18 @@ forall {R : realType} [F G : R -> R] [a : R],
 {in `]a, +oo[%R,
   forall
     x : filter.Nbhs.sort
-          (num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs
-             R),
+          (numFieldTopology.NumField_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs R)
+    (T:=numFieldTopology.NumField_sort__canonical__filter_Nbhs R)
     (U:=filter.PointedNbhs.Exports.filter_PointedNbhs__to__filter_Nbhs
           (join_normed_module_NormedModule_between_GRing_LSemiModule_and_filter_PointedNbhs
              (Real_sort__canonical__normed_module_NormedModule R)))
     x F^`()%classic} ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F^`()%classic]
-        (filter.nbhs (num_topology.at_right (R:=R) a))))
+  (filter.nbhs (filter.fmap [eta F^`()%classic] (filter.nbhs (a^'+)%classic)))
   (filter.nbhs
      (filter.lim
-        (filter.fmap [eta F^`()%classic]
-           (filter.nbhs (num_topology.at_right (R:=R) a))))) ->
+        (filter.fmap [eta F^`()%classic] (filter.nbhs (a^'+)%classic)))) ->
 filter.cvg_to
   (filter.nbhs (filter.fmap [eta F^`()%classic] (filter.nbhs +oo%R)))
   (filter.nbhs
@@ -2378,15 +2234,7 @@ filter.cvg_to
 derivable_oy_Rcontinuous F a ->
 filter.cvg_to (filter.nbhs (filter.fmap [eta F] (filter.nbhs +oo%R)))
   (filter.nbhs -oo%R) ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `]-oo, F a]),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `]-oo, F a])
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `]-oo, F a] G)) ->
+{within `]-oo, F a], continuous G}%classic ->
 {in `]-oo, F a[%R, forall x : R, (0 <= G x)%R} ->
 (\int[lebesgue_measure]_(x in `]-oo, F a]) (G x)%:E)%E =
 (\int[lebesgue_measure]_(x in `[a, +oo[) (((G \o F) * - F^`()%classic) x)%:E)%E
@@ -2555,15 +2403,7 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="ge0_integration_by_substitutionNy" class="id"><a name="ge0_integration_by_substitutionNy" class="" title="ge0_integration_by_substitutionNy :
 forall {R : realType} [G : R -> R] [a : R],
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `]-oo, (- a)%R]),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `]-oo, (- a)%R])
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `]-oo, (- a)%R] G)) ->
+{within `]-oo, (- a)%R], continuous G}%classic ->
 {in `]-oo, - a[%R, forall x : R, (0 <= G x)%R} ->
 (\int[lebesgue_measure]_(x in `]-oo, (- a)%R]) (G x)%:E)%E =
 (\int[lebesgue_measure]_(x in `[a, +oo[) ((G \o -%R) x)%:E)%E
@@ -2606,22 +2446,18 @@ forall {R : realType} [F G : R -> R] [a : R],
 {in `]a, +oo[%R,
   forall
     x : filter.Nbhs.sort
-          (num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs
-             R),
+          (numFieldTopology.NumField_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs R)
+    (T:=numFieldTopology.NumField_sort__canonical__filter_Nbhs R)
     (U:=filter.PointedNbhs.Exports.filter_PointedNbhs__to__filter_Nbhs
           (join_normed_module_NormedModule_between_GRing_LSemiModule_and_filter_PointedNbhs
              (Real_sort__canonical__normed_module_NormedModule R)))
     x F^`()%classic} ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F^`()%classic]
-        (filter.nbhs (num_topology.at_right (R:=R) a))))
+  (filter.nbhs (filter.fmap [eta F^`()%classic] (filter.nbhs (a^'+)%classic)))
   (filter.nbhs
      (filter.lim
-        (filter.fmap [eta F^`()%classic]
-           (filter.nbhs (num_topology.at_right (R:=R) a))))) ->
+        (filter.fmap [eta F^`()%classic] (filter.nbhs (a^'+)%classic)))) ->
 filter.cvg_to
   (filter.nbhs (filter.fmap [eta F^`()%classic] (filter.nbhs +oo%R)))
   (filter.nbhs
@@ -2629,15 +2465,7 @@ filter.cvg_to
 derivable_oy_Rcontinuous F a ->
 filter.cvg_to (filter.nbhs (filter.fmap [eta F] (filter.nbhs +oo%R)))
   (filter.nbhs +oo%R) ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[F a, +oo[),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `[F a, +oo[)
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `[F a, +oo[ G)) ->
+{within `[F a, +oo[, continuous G}%classic ->
 {in `]F a, +oo[%R, forall x : R, (0 <= G x)%R} ->
 (\int[lebesgue_measure]_(x in `[F a, +oo[) (G x)%:E)%E =
 (\int[lebesgue_measure]_(x in `[a, +oo[) (((G \o F) * F^`()%classic) x)%:E)%E
@@ -2756,10 +2584,9 @@ forall {R : realType} [F G : R -> R] [b : R],
 {in `]-oo, b[%R,
   forall
     x : filter.Nbhs.sort
-          (num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs
-             R),
+          (numFieldTopology.NumField_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs R)
+    (T:=numFieldTopology.NumField_sort__canonical__filter_Nbhs R)
     (U:=filter.PointedNbhs.Exports.filter_PointedNbhs__to__filter_Nbhs
           (join_normed_module_NormedModule_between_GRing_LSemiModule_and_filter_PointedNbhs
              (Real_sort__canonical__normed_module_NormedModule R)))
@@ -2769,22 +2596,12 @@ filter.cvg_to
   (filter.nbhs
      (filter.lim (filter.fmap [eta F^`()%classic] (filter.nbhs -oo%R)))) ->
 filter.cvg_to
-  (filter.nbhs
-     (filter.fmap [eta F^`()%classic]
-        (filter.nbhs (num_topology.at_left (R:=R) b))))
+  (filter.nbhs (filter.fmap [eta F^`()%classic] (filter.nbhs (b^'-)%classic)))
   (filter.nbhs (F^`()%classic b)) ->
 derivable_Nyo_Lcontinuous F b ->
 filter.cvg_to (filter.nbhs (filter.fmap [eta F] (filter.nbhs -oo%R)))
   (filter.nbhs -oo%R) ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `]-oo, F b]),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `]-oo, F b])
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `]-oo, F b] G)) ->
+{within `]-oo, F b], continuous G}%classic ->
 {in `]-oo, F b[%R, forall x : R, (0 <= G x)%R} ->
 (\int[lebesgue_measure]_(x in `]-oo, F b]) (G x)%:E)%E =
 (\int[lebesgue_measure]_(x in `]-oo, b]) (((G \o F) * F^`()%classic) x)%:E)%E
@@ -2987,10 +2804,9 @@ forall {R : realType} [F G : R -> R],
 {homo F : x y / (x < y)%R} ->
 (forall
    x : filter.Nbhs.sort
-         (num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs
-            R),
+         (numFieldTopology.NumField_sort__canonical__filter_Nbhs R),
  filter.continuous_at
-   (T:=num_topology.numFieldTopology.NumField_sort__canonical__filter_Nbhs R)
+   (T:=numFieldTopology.NumField_sort__canonical__filter_Nbhs R)
    (U:=filter.PointedNbhs.Exports.filter_PointedNbhs__to__filter_Nbhs
          (join_normed_module_NormedModule_between_GRing_LSemiModule_and_filter_PointedNbhs
             (Real_sort__canonical__normed_module_NormedModule R)))
@@ -3011,10 +2827,10 @@ filter.cvg_to (filter.nbhs (filter.fmap [eta F] (filter.nbhs +oo%R)))
   (filter.nbhs +oo%R) ->
 (forall
    x : filter.Nbhs.sort
-         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+         (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
  filter.continuous_at
-   (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x G) ->
+   (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+   (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x G) ->
 (forall x : R, (0 <= G x)%R) ->
 (\int[lebesgue_measure]_x (G x)%:E)%E =
 (\int[lebesgue_measure]_x (((G \o F) * F^`()%classic) x)%:E)%E
@@ -3102,17 +2918,10 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="integration_by_substitution_onem" class="id"><a name="integration_by_substitution_onem" class="" title="integration_by_substitution_onem :
 forall {R : realType} [G : R -> R] [r : R],
 (0 <= r <= 1)%R ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[0%R, r]),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `[0%R, r])
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `[0%R, r] G)) ->
+{within `[0%R, r], continuous G}%classic ->
 (\int[lebesgue_measure]_(x in `[0%R, r]) (G x)%:E)%E =
-(\int[lebesgue_measure]_(x in `[r.~%R, 1%R]) (G x.~)%:E)%E
+(\int[lebesgue_measure]_(x in `[unstable.onem r, 1%R])
+    (G (unstable.onem x))%:E)%E
 
 integration_by_substitution_onem is not universe polymorphic
 Arguments integration_by_substitution_onem {R} [G]%_function_scope
@@ -3150,17 +2959,9 @@ Qed.</div></details>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="Rintegration_by_substitution_onem" class="id"><a name="Rintegration_by_substitution_onem" class="" title="Rintegration_by_substitution_onem :
 forall {R : realType} [G : R -> R] [r : R],
 (0 <= r <= 1)%R ->
-(forall
-   x : filter.Nbhs.sort
-         (subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-            `[0%R, r]),
- filter.continuous_at
-   (T:=subspace_topology.subspace_topology_subspace__canonical__filter_Nbhs
-         `[0%R, r])
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-   (subspace_topology.from_subspace `[0%R, r] G)) ->
+{within `[0%R, r], continuous G}%classic ->
 (\int[lebesgue_measure]_(x in `[0, r]) G x)%R =
-(\int[lebesgue_measure]_(x in `[r.~, 1]) G x.~)%R
+(\int[lebesgue_measure]_(x in `[unstable.onem r, 1]) G (unstable.onem x))%R
 
 Rintegration_by_substitution_onem is not universe polymorphic
 Arguments Rintegration_by_substitution_onem {R} [G]%_function_scope
@@ -3191,10 +2992,10 @@ forall {R : realType} [f : R -> R],
 (forall x : R, (0 <= f x)%R) ->
 (forall
    x : filter.Nbhs.sort
-         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+         (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
  filter.continuous_at
-   (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-   (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x f) ->
+   (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+   (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x f) ->
 f =1 f \o -%R%R ->
 (\int[lebesgue_measure]_x (f x)%:E)%E =
 (2 * \int[lebesgue_measure]_(x in [set x | (0 <= x)%R]) (f x)%:E)%E

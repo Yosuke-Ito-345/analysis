@@ -558,7 +558,7 @@ forall x : filter.Nbhs.sort Specif_sigT__canonical__filter_Nbhs,
 filter.continuous_at (T:=Specif_sigT__canonical__filter_Nbhs)
   (U:=topology_structure.Topological.Exports.topology_structure_Topological__to__filter_Nbhs
         Z)
-  x (sigT_fun f)
+  x (unstable.sigT_fun f)
 
 sigT_continuous is not universe polymorphic
 Arguments sigT_continuous {I} {X}%_function_scope 
@@ -596,9 +596,8 @@ library mathcomp.analysis.topology_theory.sigT_topology, line 78, characters 6-1
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="sigT_compact" class="id"><a name="sigT_compact" class="" title="sigT_compact :
 forall {I : choiceType} {X : I -> topology_structure.Topological.type},
 finite_set [set: I] ->
-(forall i : I,
- compact.compact [set: topology_structure.Topological.sort (X i)]) ->
-compact.compact [set: {i : I & topology_structure.Topological.sort (X i)}]
+(forall i : I, compact [set: topology_structure.Topological.sort (X i)]) ->
+compact [set: {i : I & topology_structure.Topological.sort (X i)}]
 
 sigT_compact is not universe polymorphic
 Arguments sigT_compact {I} {X}%_function_scope _ _%_function_scope F _ _

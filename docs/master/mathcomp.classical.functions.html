@@ -25312,7 +25312,8 @@ Declared in library mathcomp.classical.functions, line 2542, characters 6-15
 <span class="vernacular">Definition</span><span class="id"> </span><span id="cst" class="id"><a name="cst" class="" title="cst : forall {T T' : Type}, T' -> T -> T'
 
 cst is not universe polymorphic
-Arguments cst {T T'}%_type_scope x _
+Arguments cst {T T'}%_type_scope x _ /
+The reduction tactics unfold cst when applied to 4 arguments
 cst is transparent
 Expands to: Constant mathcomp.classical.functions.cst
 Declared in library mathcomp.classical.functions, line 2563, characters 11-14
@@ -25873,7 +25874,7 @@ Declared in library mathcomp.classical.functions, line 2685, characters 6-20
 <span class="gallina-kwd"> by</span><span class="id"> apply/</span><span class="id"><a href="mathcomp.classical.boolp.html#funext">funext</a></span><span class="id"> =&gt;</span><span class="id"> x/=;</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.maxr_to_min">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.maxr_to_min">Theory</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.maxr_to_min">maxr_to_min</a></span>. Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="fun_maxC" class="id"><a name="fun_maxC" class="" title="fun_maxC :
-forall [T : Type] [d : Order.disp_t] [T' : orderType d] (f g : T -> T'),
+forall [T : Type] [d : disp_t] [T' : orderType d] (f g : T -> T'),
 f \max g = g \max f
 
 fun_maxC is not universe polymorphic
@@ -25889,7 +25890,7 @@ Declared in library mathcomp.classical.functions, line 2689, characters 6-14
 <span class="gallina-kwd"> by</span><span class="id"> apply/</span><span class="id"><a href="mathcomp.classical.boolp.html#funext">funext</a></span><span class="id"> =&gt;</span><span class="id"> z/=;</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.TotalTheory.maxC">Order</a></span>.<span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.TotalTheory.maxC">TotalTheory</a></span>.<span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.TotalTheory.maxC">maxC</a></span>. Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="fun_minC" class="id"><a name="fun_minC" class="" title="fun_minC :
-forall [T : Type] [d : Order.disp_t] [T' : orderType d] (f g : T -> T'),
+forall [T : Type] [d : disp_t] [T' : orderType d] (f g : T -> T'),
 f \min g = g \min f
 
 fun_minC is not universe polymorphic

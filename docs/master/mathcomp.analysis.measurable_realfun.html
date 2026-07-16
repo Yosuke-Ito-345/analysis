@@ -6665,7 +6665,7 @@ measurable_fun (T:=T)
 measurable_fun (T:=T)
   (U:=constructive_ereal_extended__canonical__measurable_structure_SigmaRing
         R)
-  D (fun x : T => Def.max (f x) (g x))
+  D (fun x : T => Order.Def.max (f x) (g x))
 
 measurable_maxe is not universe polymorphic
 Expanded type for implicit arguments
@@ -6691,7 +6691,7 @@ forall
      (let (sort, class) as record return (Measurable.axioms_ d record) :=
         T in
       class) in
- measurable) (D `&` (fun x : T => Def.max (f x) (g x)) @^-1` Y)%classic
+ measurable) (D `&` (fun x : T => Order.Def.max (f x) (g x)) @^-1` Y)%classic
 
 Arguments measurable_maxe [d]%_measure_display_scope 
   [T R] [D]%_classical_set_scope [f g]%_function_scope 
@@ -6829,7 +6829,7 @@ measurable_fun (T:=T)
 measurable_fun (T:=T)
   (U:=constructive_ereal_extended__canonical__measurable_structure_SigmaRing
         R)
-  D (fun x : T => Def.min (f x) (g x))
+  D (fun x : T => Order.Def.min (f x) (g x))
 
 measurable_mine is not universe polymorphic
 Expanded type for implicit arguments
@@ -6855,7 +6855,7 @@ forall
      (let (sort, class) as record return (Measurable.axioms_ d record) :=
         T in
       class) in
- measurable) (D `&` (fun x : T => Def.min (f x) (g x)) @^-1` Y)%classic
+ measurable) (D `&` (fun x : T => Order.Def.min (f x) (g x)) @^-1` Y)%classic
 
 Arguments measurable_mine [d]%_measure_display_scope 
   [T R] [D]%_classical_set_scope [f g]%_function_scope 

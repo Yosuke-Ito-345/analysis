@@ -2477,7 +2477,7 @@ Qed.</div></details>
 forall {R : realType} [I : Type] [B : I -> set R] [D : set I],
 (forall i : I, topology_structure.open (B i)) ->
 (forall i : I, (B i !=set0)%classic) ->
-trivIset (T:=R) D B -> countable (T:=I) D
+classical_sets.trivIset (T:=R) D B -> countable (T:=I) D
 
 separated_open_countable is not universe polymorphic
 Arguments separated_open_countable {R} [I]%_type_scope 

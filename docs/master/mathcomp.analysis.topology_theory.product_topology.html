@@ -1081,7 +1081,7 @@ filter.continuous_at
            Y)
         (topology_structure.Topological.Exports.topology_structure_Topological__to__filter_Nbhs
            X))
-  x swap
+  x unstable.swap
 
 swap_continuous is not universe polymorphic
 Expanded type for implicit arguments
@@ -1100,7 +1100,7 @@ forall {X Y : topology_structure.Topological.type}
                   Y)
                (topology_structure.Topological.Exports.topology_structure_Topological__to__filter_Nbhs
                   X)))],
-filter.nbhs (swap x) t ->
+filter.nbhs (unstable.swap x) t ->
 exists2
   i : set
         (filter.Nbhs.sort
@@ -1130,7 +1130,7 @@ exists2
                (topology_structure.Topological.Exports.topology_structure_Topological__to__filter_Nbhs
                   Y)) =>
     P.1 `*` P.2) i
-   `<=` swap @^-1` t)%classic
+   `<=` unstable.swap @^-1` t)%classic
 
 Arguments swap_continuous {X Y} [x t] _
 swap_continuous is opaque
@@ -1177,7 +1177,7 @@ filter.continuous_at
               Y)
            (topology_structure.Topological.Exports.topology_structure_Topological__to__filter_Nbhs
               Z)))
-  x prodA
+  x unstable.prodA
 
 prodA_continuous is not universe polymorphic
 Expanded type for implicit arguments
@@ -1202,7 +1202,7 @@ forall {X Y Z : topology_structure.Topological.type}
                      Y)
                   (topology_structure.Topological.Exports.topology_structure_Topological__to__filter_Nbhs
                      Z))))],
-filter.nbhs (prodA x) t ->
+filter.nbhs (unstable.prodA x) t ->
 exists2
   i : set
         (filter.Nbhs.sort
@@ -1241,7 +1241,7 @@ exists2
                (topology_structure.Topological.Exports.topology_structure_Topological__to__filter_Nbhs
                   Z)) =>
     P.1 `*` P.2) i
-   `<=` prodA @^-1` t)%classic
+   `<=` unstable.prodA @^-1` t)%classic
 
 Arguments prodA_continuous {X Y Z} [x t] _
 prodA_continuous is opaque
@@ -1289,7 +1289,7 @@ filter.continuous_at
               Y))
         (topology_structure.Topological.Exports.topology_structure_Topological__to__filter_Nbhs
            Z))
-  x prodAr
+  x unstable.prodAr
 
 prodAr_continuous is not universe polymorphic
 Expanded type for implicit arguments
@@ -1314,7 +1314,7 @@ forall {X Y Z : topology_structure.Topological.type}
                      Y))
                (topology_structure.Topological.Exports.topology_structure_Topological__to__filter_Nbhs
                   Z)))],
-filter.nbhs (prodAr x) t ->
+filter.nbhs (unstable.prodAr x) t ->
 exists2
   i : set
         (filter.Nbhs.sort
@@ -1353,7 +1353,7 @@ exists2
                   (topology_structure.Topological.Exports.topology_structure_Topological__to__filter_Nbhs
                      Z))) =>
     P.1 `*` P.2) i
-   `<=` prodAr @^-1` t)%classic
+   `<=` unstable.prodAr @^-1` t)%classic
 
 Arguments prodAr_continuous {X Y Z} [x t] _
 prodAr_continuous is opaque

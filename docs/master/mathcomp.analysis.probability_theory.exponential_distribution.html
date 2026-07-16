@@ -525,7 +525,10 @@ library mathcomp.analysis.probability_theory.exponential_distribution, line 92, 
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="derive1_exponential_pdf" class="id"><a name="derive1_exponential_pdf" class="" title="derive1_exponential_pdf :
 forall {R : realType} (rate : R),
 {in `]0, +oo[%R,
-  (fun x : R => (- expR (- rate * x))%R)^`()%classic =1 exponential_pdf rate}
+  derive.derive1 (R:=R)
+    (V:=Real_sort__canonical__normed_module_NormedModule R)
+    (fun x : R => (- expR (- rate * x))%R) =1
+  exponential_pdf rate}
 
 derive1_exponential_pdf is not universe polymorphic
 Expanded type for implicit arguments
@@ -534,7 +537,8 @@ forall {R : realType} (rate : R)
   [x : join_Num_POrderedZmodule_between_Algebra_BaseAddUMagma_and_Order_POrder
          R],
 x \in `]0, +oo[%R ->
-(fun x0 : R => (- expR (- rate * x0))%R)^`()%classic x =
+derive.derive1 (R:=R) (V:=Real_sort__canonical__normed_module_NormedModule R)
+  (fun x0 : R => (- expR (- rate * x0))%R) x =
 exponential_pdf rate x
 
 Arguments derive1_exponential_pdf {R} rate%_ring_scope [x] _

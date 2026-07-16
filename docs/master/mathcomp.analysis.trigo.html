@@ -1069,7 +1069,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] 0%R i
+  (ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -1097,26 +1097,24 @@ Declared in library mathcomp.analysis.trigo, line 292, characters 6-19
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="continuous_sin" class="id"><a name="continuous_sin" class="" title="continuous_sin :
 forall [R : realType]
   [x : filter.Nbhs.sort
-         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
+         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
 filter.continuous_at
-  (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-  (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-  sin
+  (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+  (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x sin
 
 continuous_sin is not universe polymorphic
 Expanded type for implicit arguments
 continuous_sin :
 forall [R : realType]
   [x : filter.Nbhs.sort
-         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
+         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
   [t : set
          (filter.Nbhs.sort
-            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
-               R))],
+            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
 filter.nbhs (sin x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] x i `<=` sin @^-1` t)%classic
+  (ball_ [eta normr] x i `<=` sin @^-1` t)%classic
 
 Arguments continuous_sin [R x t] _
 continuous_sin is opaque
@@ -1169,7 +1167,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] 0%R i
+  (ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -1197,26 +1195,24 @@ Declared in library mathcomp.analysis.trigo, line 324, characters 6-19
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="continuous_cos" class="id"><a name="continuous_cos" class="" title="continuous_cos :
 forall [R : realType]
   [x : filter.Nbhs.sort
-         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
+         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
 filter.continuous_at
-  (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-  (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-  cos
+  (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+  (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x cos
 
 continuous_cos is not universe polymorphic
 Expanded type for implicit arguments
 continuous_cos :
 forall [R : realType]
   [x : filter.Nbhs.sort
-         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
+         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
   [t : set
          (filter.Nbhs.sort
-            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
-               R))],
+            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
 filter.nbhs (cos x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] x i `<=` cos @^-1` t)%classic
+  (ball_ [eta normr] x i `<=` cos @^-1` t)%classic
 
 Arguments continuous_cos [R x t] _
 continuous_cos is opaque
@@ -2560,11 +2556,10 @@ cos x != 0%R ->
 {for x,
   forall
     x0 : filter.Nbhs.sort
-           (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+           (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0
-    tan}
+    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0 tan}
 
 continuous_tan is not universe polymorphic
 Expanded type for implicit arguments
@@ -2574,12 +2569,11 @@ cos x != 0%R ->
 forall
   [t : set
          (filter.Nbhs.sort
-            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
-               R))],
+            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
 filter.nbhs (tan x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] x i `<=` tan @^-1` t)%classic
+  (ball_ [eta normr] x i `<=` tan @^-1` t)%classic
 
 Arguments continuous_tan [R] [x]%_ring_scope _ [t] _
 continuous_tan is opaque
@@ -2628,7 +2622,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] 0%R i
+  (ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
@@ -3015,11 +3009,10 @@ forall [R : realType] [x : R],
 {for x,
   forall
     x0 : filter.Nbhs.sort
-           (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+           (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0
-    acos}
+    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0 acos}
 
 continuous_acos is not universe polymorphic
 Expanded type for implicit arguments
@@ -3029,12 +3022,11 @@ forall [R : realType] [x : R],
 forall
   [t : set
          (filter.Nbhs.sort
-            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
-               R))],
+            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
 filter.nbhs (acos x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] x i `<=` acos @^-1` t)%classic
+  (ball_ [eta normr] x i `<=` acos @^-1` t)%classic
 
 Arguments continuous_acos [R] [x]%_ring_scope _ [t] _
 continuous_acos is opaque
@@ -3315,11 +3307,10 @@ forall [R : realType] [x : R],
 {for x,
   forall
     x0 : filter.Nbhs.sort
-           (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+           (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0
-    asin}
+    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0 asin}
 
 continuous_asin is not universe polymorphic
 Expanded type for implicit arguments
@@ -3329,12 +3320,11 @@ forall [R : realType] [x : R],
 forall
   [t : set
          (filter.Nbhs.sort
-            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
-               R))],
+            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
 filter.nbhs (asin x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] x i `<=` asin @^-1` t)%classic
+  (ball_ [eta normr] x i `<=` asin @^-1` t)%classic
 
 Arguments continuous_asin [R] [x]%_ring_scope _ [t] _
 continuous_asin is opaque
@@ -3488,7 +3478,8 @@ Declared in library mathcomp.analysis.trigo, line 1114, characters 10-22
 ">oneDsqr_inum</a></span><span class="id"> </span><span id="x:280" class="id"><a name="x:280" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html#1d654871949ca8d814504e500b52e67c">{itv</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html#1d654871949ca8d814504e500b52e67c"> </a></span><span class="id"><a href="mathcomp.analysis.trigo.html#oneDsqr.R">R</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html#1d654871949ca8d814504e500b52e67c"> &amp;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html#1d654871949ca8d814504e500b52e67c"> </a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval.html#c5d1424554ae4f6d783beb7e2b68e8c1">`[</a></span><span class="id">1</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval.html#c5d1424554ae4f6d783beb7e2b68e8c1">,</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval.html#c5d1424554ae4f6d783beb7e2b68e8c1"> +oo[</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html#1d654871949ca8d814504e500b52e67c">}</a></span><span class="id"> :=</span><span class="id"> @</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval_inference.html#ItvReal">ItvReal</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.trigo.html#oneDsqr.R">R</a></span> (<span class="id"><a href="mathcomp.analysis.trigo.html#oneDsqr">oneDsqr</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.trigo.html#x:280">x</a></span>)<br/>
 &nbsp;&nbsp;(<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval.html#BLeft">BLeft</a></span><span class="id"> 1%Z</span>) (<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.interval.html#BInfty">BInfty</a></span><span class="id"> _</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#false">false</a></span>) (<span class="id"><a href="mathcomp.analysis.trigo.html#oneDsqr_ge1">oneDsqr_ge1</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.trigo.html#x:280">x</a></span>)<span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#erefl">erefl</a></span>.<br/>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="oneDsqrV_le1" class="id"><a name="oneDsqrV_le1" class="" title="oneDsqrV_le1 : forall {R : realType} (x : R), ((oneDsqr\^-1) x <= 1)%R
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="oneDsqrV_le1" class="id"><a name="oneDsqrV_le1" class="" title="oneDsqrV_le1 :
+forall {R : realType} (x : R), (unstable.inv_fun oneDsqr x <= 1)%R
 
 oneDsqrV_le1 is not universe polymorphic
 Arguments oneDsqrV_le1 {R} x%_ring_scope
@@ -3504,26 +3495,24 @@ Declared in library mathcomp.analysis.trigo, line 1117, characters 6-18
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="continuous_oneDsqr" class="id"><a name="continuous_oneDsqr" class="" title="continuous_oneDsqr :
 forall {R : realType}
   [x : filter.Nbhs.sort
-         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
+         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
 filter.continuous_at
-  (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-  (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-  oneDsqr
+  (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+  (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x oneDsqr
 
 continuous_oneDsqr is not universe polymorphic
 Expanded type for implicit arguments
 continuous_oneDsqr :
 forall {R : realType}
   [x : filter.Nbhs.sort
-         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
+         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
   [t : set
          (filter.Nbhs.sort
-            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
-               R))],
+            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
 filter.nbhs (oneDsqr x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] x i `<=` oneDsqr @^-1` t)%classic
+  (ball_ [eta normr] x i `<=` oneDsqr @^-1` t)%classic
 
 Arguments continuous_oneDsqr {R} [x t] _
 continuous_oneDsqr is opaque
@@ -3538,26 +3527,25 @@ Declared in library mathcomp.analysis.trigo, line 1119, characters 6-24
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="continuous_oneDsqrV" class="id"><a name="continuous_oneDsqrV" class="" title="continuous_oneDsqrV :
 forall {R : realType}
   [x : filter.Nbhs.sort
-         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
+         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)],
 filter.continuous_at
-  (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-  (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
-  (oneDsqr\^-1)%R
+  (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+  (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x
+  (unstable.inv_fun oneDsqr)
 
 continuous_oneDsqrV is not universe polymorphic
 Expanded type for implicit arguments
 continuous_oneDsqrV :
 forall {R : realType}
   [x : filter.Nbhs.sort
-         (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
+         (numFieldTopology.Real_sort__canonical__filter_Nbhs R)]
   [t : set
          (filter.Nbhs.sort
-            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
-               R))],
-filter.nbhs ((oneDsqr\^-1)%R x) t ->
+            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
+filter.nbhs (unstable.inv_fun oneDsqr x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] x i `<=` (oneDsqr\^-1)%R @^-1` t)%classic
+  (ball_ [eta normr] x i `<=` unstable.inv_fun oneDsqr @^-1` t)%classic
 
 Arguments continuous_oneDsqrV {R} [x t] _
 continuous_oneDsqrV is opaque
@@ -3732,11 +3720,10 @@ forall [R : realType] [x : R],
 {for x,
   forall
     x0 : filter.Nbhs.sort
-           (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R),
+           (numFieldTopology.Real_sort__canonical__filter_Nbhs R),
   filter.continuous_at
-    (T:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R)
-    (U:=num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0
-    atan}
+    (T:=numFieldTopology.Real_sort__canonical__filter_Nbhs R)
+    (U:=numFieldTopology.Real_sort__canonical__filter_Nbhs R) x0 atan}
 
 continuous_atan is not universe polymorphic
 Expanded type for implicit arguments
@@ -3744,12 +3731,11 @@ continuous_atan :
 forall [R : realType] [x : R]
   [t : set
          (filter.Nbhs.sort
-            (num_topology.numFieldTopology.Real_sort__canonical__filter_Nbhs
-               R))],
+            (numFieldTopology.Real_sort__canonical__filter_Nbhs R))],
 filter.nbhs (atan x) t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] x i `<=` atan @^-1` t)%classic
+  (ball_ [eta normr] x i `<=` atan @^-1` t)%classic
 
 Arguments continuous_atan [R] [x]%_ring_scope [t] _
 continuous_atan is opaque
@@ -3821,7 +3807,7 @@ filter.nbhs
   t ->
 exists2 i : R,
   [set e | (0 < e)%R]%classic i &
-  (pseudometric_structure.ball_ [eta normr] 0%R i
+  (ball_ [eta normr] 0%R i
    `<=` (fun
            t0 : topology_structure.Topological.Exports.topology_structure_Topological__to__eqtype_Equality
                   (join_pseudometric_normed_Zmodule_PreTopologicalNmodule_between_Algebra_BaseAddUMagma_and_topology_structure_Topological
